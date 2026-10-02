@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Audio Take Recordings (Avoid committing 45 x 38s heavy WAV files to git)
+*.wav
+*.aif
+*.aiff
+takes/
+output/
+output_parametric/
+*.nam
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# OS / Editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Internal indexes
+openwiki/
+.graphify/
+

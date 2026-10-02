@@ -1,0 +1,37 @@
+{
+  "train_dataloader": {
+    "batch_size": 16,
+    "shuffle": true,
+    "pin_memory": true,
+    "drop_last": true,
+    "num_workers": 2
+  },
+  "val_dataloader": {
+    "batch_size": 1,
+    "shuffle": false,
+    "pin_memory": true,
+    "drop_last": false,
+    "num_workers": 2
+  },
+  "loss": {
+    "val_loss": "esr",
+    "mask_first": 4096,
+    "mrstft_weight": 0.0002,
+    "fft_sizes": [4096, 2048, 1024, 512, 256, 128],
+    "hop_sizes": [1024, 512, 256, 128, 64, 32],
+    "win_lengths": [4096, 2048, 1024, 512, 256, 128]
+  },
+  "optimizer": {
+    "lr": 0.004,
+    "weight_decay": 0.0001
+  },
+  "lr_scheduler": {
+    "class_name": "ExponentialLR",
+    "kwargs": {
+      "gamma": 0.993
+    }
+  },
+  "trainer": {
+    "max_epochs": 100
+  }
+}

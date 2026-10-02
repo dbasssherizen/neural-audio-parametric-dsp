@@ -1,0 +1,501 @@
+{
+  "x": "./takes/inputTrunc.wav",
+  "sample_rate": 48000,
+  "y": [
+    {
+      "val": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.7
+      ],
+      "path": "./takes/take_00_anchor_G5.0_B5.0_M5.0_T5.0_M7.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.65,
+        0.5,
+        0.85,
+        0.7,
+        0.35
+      ],
+      "path": "./takes/take_01_G6.5_B5.0_M8.5_T7.0_M3.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.55,
+        0.35,
+        0.65,
+        0.9,
+        0.6
+      ],
+      "path": "./takes/take_02_G5.5_B3.5_M6.5_T9.0_M6.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.3,
+        0.9,
+        0.75,
+        0.4,
+        0.35
+      ],
+      "path": "./takes/take_03_G3.0_B9.0_M7.5_T4.0_M3.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.55,
+        0.7,
+        0.65,
+        0.1,
+        0.6
+      ],
+      "path": "./takes/take_04_G5.5_B7.0_M6.5_T1.0_M6.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.85,
+        0.15,
+        0.65,
+        0.15,
+        0.4
+      ],
+      "path": "./takes/take_05_G8.5_B1.5_M6.5_T1.5_M4.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.15,
+        0.25,
+        0.8,
+        0.6,
+        0.2
+      ],
+      "path": "./takes/take_06_G1.5_B2.5_M8.0_T6.0_M2.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.25,
+        0.85,
+        0.55,
+        0.85,
+        0.45
+      ],
+      "path": "./takes/take_07_G2.5_B8.5_M5.5_T8.5_M4.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.5,
+        0.15,
+        0.15,
+        0.6,
+        0.7
+      ],
+      "path": "./takes/take_08_G5.0_B1.5_M1.5_T6.0_M7.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.3,
+        0.7,
+        0.3,
+        0.35,
+        0.8
+      ],
+      "path": "./takes/take_09_G3.0_B7.0_M3.0_T3.5_M8.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.85,
+        0.55,
+        0.3,
+        0.35,
+        0.45
+      ],
+      "path": "./takes/take_10_G8.5_B5.5_M3.0_T3.5_M4.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.15,
+        0.7,
+        0.7,
+        0.7,
+        0.95
+      ],
+      "path": "./takes/take_11_G1.5_B7.0_M7.0_T7.0_M9.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.2,
+        0.95,
+        0.5,
+        0.95,
+        0.3
+      ],
+      "path": "./takes/take_12_G2.0_B9.5_M5.0_T9.5_M3.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.2,
+        0.1,
+        0.4,
+        0.55,
+        0.7
+      ],
+      "path": "./takes/take_13_G2.0_B1.0_M4.0_T5.5_M7.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.9,
+        0.15,
+        0.75,
+        0.95,
+        0.4
+      ],
+      "path": "./takes/take_14_G9.0_B1.5_M7.5_T9.5_M4.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.75,
+        0.25,
+        0.55,
+        0.85,
+        0.3
+      ],
+      "path": "./takes/take_15_G7.5_B2.5_M5.5_T8.5_M3.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        1.0,
+        0.6,
+        0.9,
+        0.5,
+        0.65
+      ],
+      "path": "./takes/take_16_G10.0_B6.0_M9.0_T5.0_M6.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.4,
+        0.65,
+        0.4,
+        0.75,
+        0.45
+      ],
+      "path": "./takes/take_17_G4.0_B6.5_M4.0_T7.5_M4.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.5,
+        0.85,
+        0.75,
+        1.0,
+        0.9
+      ],
+      "path": "./takes/take_18_G5.0_B8.5_M7.5_T10.0_M9.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.5,
+        0.6,
+        0.35,
+        0.2,
+        0.75
+      ],
+      "path": "./takes/take_19_G5.0_B6.0_M3.5_T2.0_M7.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.4,
+        0.8,
+        0.9,
+        0.2,
+        0.6
+      ],
+      "path": "./takes/take_20_G4.0_B8.0_M9.0_T2.0_M6.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.85,
+        0.2,
+        1.0,
+        0.25,
+        0.75
+      ],
+      "path": "./takes/take_21_G8.5_B2.0_M10.0_T2.5_M7.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.75,
+        0.3,
+        0.45,
+        0.25,
+        0.7
+      ],
+      "path": "./takes/take_22_G7.5_B3.0_M4.5_T2.5_M7.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.4,
+        0.3,
+        0.65,
+        0.9,
+        0.45
+      ],
+      "path": "./takes/take_23_G4.0_B3.0_M6.5_T9.0_M4.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.8,
+        0.45,
+        0.2,
+        0.9,
+        0.5
+      ],
+      "path": "./takes/take_24_G8.0_B4.5_M2.0_T9.0_M5.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.1,
+        0.75,
+        0.65,
+        0.9,
+        0.95
+      ],
+      "path": "./takes/take_25_G1.0_B7.5_M6.5_T9.0_M9.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.3,
+        0.65,
+        0.55,
+        0.25,
+        0.25
+      ],
+      "path": "./takes/take_26_G3.0_B6.5_M5.5_T2.5_M2.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.75,
+        0.75,
+        0.35,
+        0.35,
+        0.45
+      ],
+      "path": "./takes/take_27_G7.5_B7.5_M3.5_T3.5_M4.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.15,
+        0.3,
+        1.0,
+        0.6,
+        1.0
+      ],
+      "path": "./takes/take_28_G1.5_B3.0_M10.0_T6.0_M10.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.25,
+        0.25,
+        0.6,
+        0.35,
+        0.5
+      ],
+      "path": "./takes/take_29_G2.5_B2.5_M6.0_T3.5_M5.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.5,
+        0.5,
+        0.7,
+        0.45,
+        0.45
+      ],
+      "path": "./takes/take_30_G5.0_B5.0_M7.0_T4.5_M4.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.9,
+        0.4,
+        0.55,
+        0.65,
+        0.65
+      ],
+      "path": "./takes/take_31_G9.0_B4.0_M5.5_T6.5_M6.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.65,
+        0.3,
+        0.4,
+        0.35,
+        0.45
+      ],
+      "path": "./takes/take_32_G6.5_B3.0_M4.0_T3.5_M4.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.7,
+        0.3,
+        0.25,
+        0.75,
+        0.45
+      ],
+      "path": "./takes/take_33_G7.0_B3.0_M2.5_T7.5_M4.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.2,
+        0.4,
+        0.15,
+        0.6,
+        0.35
+      ],
+      "path": "./takes/take_34_G2.0_B4.0_M1.5_T6.0_M3.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.55,
+        0.45,
+        0.75,
+        0.9,
+        0.85
+      ],
+      "path": "./takes/take_35_G5.5_B4.5_M7.5_T9.0_M8.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.5,
+        0.25,
+        0.9,
+        0.55,
+        0.85
+      ],
+      "path": "./takes/take_36_G5.0_B2.5_M9.0_T5.5_M8.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.9,
+        0.5,
+        0.25,
+        0.65,
+        0.85
+      ],
+      "path": "./takes/take_37_G9.0_B5.0_M2.5_T6.5_M8.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.3,
+        0.45,
+        0.6,
+        1.0,
+        0.6
+      ],
+      "path": "./takes/take_38_G3.0_B4.5_M6.0_T10.0_M6.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.85,
+        0.85,
+        0.75,
+        0.15,
+        0.25
+      ],
+      "path": "./takes/take_39_G8.5_B8.5_M7.5_T1.5_M2.5.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.25,
+        0.55,
+        0.7,
+        0.8,
+        1.0
+      ],
+      "path": "./takes/take_40_G2.5_B5.5_M7.0_T8.0_M10.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.2,
+        0.6,
+        0.4,
+        0.8,
+        0.6
+      ],
+      "path": "./takes/take_41_holdout_val_G2.0_B6.0_M4.0_T8.0_M6.0.wav",
+      "is_validation": true
+    },
+    {
+      "val": [
+        0.75,
+        0.3,
+        0.7,
+        0.55,
+        0.7
+      ],
+      "path": "./takes/take_42_holdout_val_G7.5_B3.0_M7.0_T5.5_M7.0.wav",
+      "is_validation": true
+    },
+    {
+      "val": [
+        1.0,
+        0.2,
+        0.8,
+        0.9,
+        0.5
+      ],
+      "path": "./takes/take_43_extreme_edge_G10.0_B2.0_M8.0_T9.0_M5.0.wav",
+      "is_validation": false
+    },
+    {
+      "val": [
+        0.85,
+        0.95,
+        0.1,
+        0.4,
+        0.6
+      ],
+      "path": "./takes/take_44_extreme_edge_G8.5_B9.5_M1.0_T4.0_M6.0.wav",
+      "is_validation": false
+    }
+  ]
+}
