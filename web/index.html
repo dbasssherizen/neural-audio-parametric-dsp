@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Justin Muir • Parametric Neural Amp Modeler & Hardware Blueprint (Live Redline Studio)</title>
+  <title>Parametric Neural Amp Modeler & Hardware Blueprint (Live Redline Studio)</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎸</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
@@ -263,7 +263,7 @@
               LIVE WEB.APP DEPLOYMENT
             </span>
             <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
-              ⚡ JUSTIN MUIR • NETOPS & 48kHz AUDIO DSP
+              ⚡ PARAMETRIC AUDIO • NETOPS & 48kHz AUDIO DSP
             </span>
             <span class="text-xs text-purple-300 font-medium flex items-center gap-1 bg-purple-500/10 px-2.5 py-0.5 rounded-full border border-purple-500/20">
               🎛️ Dedicated Hardware &amp; Neural DSP Studio
@@ -697,13 +697,13 @@
 
     <!-- WORKSPACE 2: PHYSICAL RIG -->
     <div id="workspace-rig" class="studio-workspace space-y-6 hidden">
-    <!-- SECTION B: HARDWARE MICROCONTROLLER BRIDGE (JUSTIN'S HARDWARE VISION) -->
+    <!-- SECTION B: HARDWARE MICROCONTROLLER BRIDGE (HARDWARE ARCHITECTURE VISION) -->
     <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-4" data-redline-target="Hardware Microcontroller & Potentiometer Bridge">
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-800 pb-4">
         <div>
           <h2 class="text-lg font-bold text-white flex items-center gap-2">
             <span>🔌 Hardware Implementation: RP2040 / Pico USB-MIDI Pot Bridge</span>
-            <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/30">Justin's Target</span>
+            <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/30">Target Benchmark</span>
           </h2>
           <p class="text-xs text-slate-400 mt-0.5">
             Reading analog potentiometers via ADC, debouncing with exponential smoothing, and streaming high-res MIDI CC #20–24.
@@ -1030,7 +1030,7 @@
             <a href="/Reaper_AutoReamp_NAM.lua" download class="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-purple-300 border border-slate-800 text-xs font-mono flex items-center gap-1.5 transition">
               <span>📜 Reaper Script (.lua)</span>
             </a>
-            <a href="/justin_nam_run_sheet.csv" download class="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-slate-800 text-xs font-mono flex items-center gap-1.5 transition">
+            <a href="/parametric_nam_run_sheet.csv" download class="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-slate-800 text-xs font-mono flex items-center gap-1.5 transition">
               <span>📊 Default 45-Take CSV</span>
             </a>
             <button onclick="resetRunSheetProgress()" class="px-3 py-2 text-slate-500 hover:text-rose-400 text-xs transition">
@@ -1089,7 +1089,7 @@
             <span class="text-[10px] font-mono text-slate-500">Reaper / Studio One</span>
           </div>
           <p class="text-slate-400 leading-relaxed">
-            Justin can render all audio offline in any DAW on his Windows or Linux rig:
+            Audio engineers can render all audio offline in any DAW on Windows, Mac, or Linux rigs:
           </p>
           <ul class="text-slate-400 space-y-1.5 list-disc list-inside">
             <li>Load the standard <code class="text-slate-300">inputTrunc.wav</code> (38s sweep at 48kHz 24-bit).</li>
@@ -1184,7 +1184,7 @@
           <span class="text-[10px] font-mono bg-sky-500/20 text-sky-200 border border-sky-500/30 px-2 py-0.5 rounded-full self-start sm:self-auto">Google Colab &bull; RunPod &bull; Remote Server</span>
         </div>
         <p class="text-xs text-slate-300 leading-relaxed">
-          <strong>Yes, Justin! You do NOT need a local GPU to run sweeps.</strong> Audio capture in your DAW uses 0% GPU. You run your re-amp sweeps locally on any computer, zip your rendered WAVs + <code class="text-sky-300 font-mono">data.json</code>, and dispatch the crunching offsite to an NVIDIA GPU cloud renderer:
+          <strong>Yes! You do NOT need a local GPU to run sweeps.</strong> Audio capture in your DAW uses 0% GPU. You run your re-amp sweeps locally on any computer, zip your rendered WAVs + <code class="text-sky-300 font-mono">data.json</code>, and dispatch the crunching offsite to an NVIDIA GPU cloud renderer:
         </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-[11px] pt-1">
           <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
@@ -1248,7 +1248,7 @@
       </div>
 
       <!-- STUDIO AUDIO BRIEFING & WALKTHROUGH -->
-      <div class="bg-gradient-to-r from-indigo-950/70 via-slate-950 to-purple-950/70 border border-indigo-500/40 rounded-2xl p-4.5 space-y-3 shadow-inner">
+      <div class="bg-gradient-to-r from-indigo-950/70 via-slate-950 to-purple-950/70 border border-indigo-500/40 rounded-2xl p-6 sm:p-7 space-y-4 shadow-inner">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div class="flex items-center gap-3">
             <button id="btnCodeWikiAudioPlay" onclick="toggleCodeWikiAudio()" class="w-11 h-11 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white flex items-center justify-center shadow-lg shadow-indigo-600/40 transition active:scale-95 shrink-0">
@@ -1256,7 +1256,7 @@
             </button>
             <div>
               <div class="flex items-center gap-2 flex-wrap">
-                <span class="text-xs font-extrabold text-white">🎙️ 4-Min Audio Code Overview • Justin's Deep Dive</span>
+                <span class="text-xs font-extrabold text-white">🎙️ 4-Min Audio Code Overview • Audio Engineer Deep Dive</span>
                 <span class="text-[9px] font-mono bg-indigo-500/20 text-indigo-300 px-2 py-0.5 rounded-full border border-indigo-500/30">Guided Audio Walkthrough</span>
                 <span class="text-[9px] font-mono bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-500/30">Live Web Speech</span>
               </div>
@@ -1329,7 +1329,7 @@
       <div id="tab-content-python" class="codewiki-tab-panel space-y-4">
         
         <!-- Executive Summary -->
-        <div class="bg-sky-950/30 border border-sky-500/30 rounded-2xl p-4 flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <div class="bg-sky-950/30 border border-sky-500/30 rounded-2xl p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div class="space-y-1">
             <div class="flex items-center gap-2">
               <span class="text-[10px] font-mono uppercase bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded font-bold border border-sky-500/30">Python Engine</span>
@@ -1350,13 +1350,13 @@
         </div>
 
         <!-- Architectural Code Breakdown -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
           
           <!-- Left Column: Dataflow Architecture Diagram -->
-          <div class="lg:col-span-5 bg-slate-950 p-4.5 rounded-2xl border border-slate-800 space-y-3">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-              <span class="text-xs font-bold text-sky-400">📐 Dataflow &amp; Audio Buffer Lifecycle</span>
-              <span class="text-[10px] font-mono text-slate-500">sounddevice C-API</span>
+          <div class="lg:col-span-5 bg-slate-950 p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-1">
+              <span class="text-sm font-bold text-sky-400">📐 Dataflow &amp; Audio Buffer Lifecycle</span>
+              <span class="text-[11px] font-mono text-slate-500">sounddevice C-API</span>
             </div>
 
             <!-- Visual Flowchart -->
@@ -1389,10 +1389,10 @@
           </div>
 
           <!-- Right Column: Annotated Code Walkthrough -->
-          <div class="lg:col-span-7 bg-slate-950 p-4.5 rounded-2xl border border-slate-800 space-y-3">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-              <span class="text-xs font-bold text-slate-200">🔍 Annotated Code Highlights (<code class="text-sky-400">reamp_automation.py</code>)</span>
-              <span class="text-[10px] font-mono text-slate-500">Python 3.10+</span>
+          <div class="lg:col-span-7 bg-slate-950 p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-1">
+              <span class="text-sm font-bold text-slate-200">🔍 Annotated Code Highlights (<code class="text-sky-400">reamp_automation.py</code>)</span>
+              <span class="text-[11px] font-mono text-slate-500">Python 3.10+</span>
             </div>
 
             <!-- Code Chunks with Explanations -->
@@ -1428,7 +1428,7 @@ if peak &lt; 0.001:
 else:
     print(f"✓ Recorded successfully! Peak: {peak:.2f} ({20*np.log10(peak+1e-6):.1f}dBFS)")</code></pre>
                 <p class="text-[11px] text-slate-300 leading-relaxed">
-                  <strong>Why this matters:</strong> If Justin accidentally leaves a standby switch on or forgets a cable, this check immediately flags silent takes before 45 empty files ruin the neural training batch.
+                  <strong>Why this matters:</strong> If an operator accidentally leaves a standby switch on or forgets a cable, this check immediately flags silent takes before 45 empty files ruin the neural training batch.
                 </p>
               </div>
 
@@ -1439,7 +1439,7 @@ else:
                   <span class="text-[9px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded">Zero-Config Resilience</span>
                 </div>
                 <p class="text-[11px] text-slate-300 leading-relaxed">
-                  If Justin runs the script without first downloading <code class="text-amber-300">justin_nam_run_sheet.csv</code>, <code class="text-amber-300">generate_default_run_sheet()</code> uses a seeded Mulberry32 PRNG to compute the exact 45-take Latin Hypercube matrix locally with zero human intervention.
+                  If the operator runs the script without first downloading <code class="text-amber-300">parametric_nam_run_sheet.csv</code>, <code class="text-amber-300">generate_default_run_sheet()</code> uses a seeded Mulberry32 PRNG to compute the exact 45-take Latin Hypercube matrix locally with zero human intervention.
                 </p>
               </div>
 
@@ -1455,7 +1455,7 @@ else:
       <div id="tab-content-reaper" class="codewiki-tab-panel space-y-4 hidden">
         
         <!-- Executive Summary -->
-        <div class="bg-purple-950/30 border border-purple-500/30 rounded-2xl p-4 flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <div class="bg-purple-950/30 border border-purple-500/30 rounded-2xl p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div class="space-y-1">
             <div class="flex items-center gap-2">
               <span class="text-[10px] font-mono uppercase bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded font-bold border border-purple-500/30">ReaScript Engine</span>
@@ -1475,12 +1475,12 @@ else:
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
           <!-- Left: State Machine Flow -->
-          <div class="lg:col-span-5 bg-slate-950 p-4.5 rounded-2xl border border-slate-800 space-y-3">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-              <span class="text-xs font-bold text-purple-400">🎛️ REAPER Transport State Machine</span>
-              <span class="text-[10px] font-mono text-slate-500">ReaScript Lua API</span>
+          <div class="lg:col-span-5 bg-slate-950 p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-1">
+              <span class="text-sm font-bold text-purple-400">🎛️ REAPER Transport State Machine</span>
+              <span class="text-[11px] font-mono text-slate-500">ReaScript Lua API</span>
             </div>
 
             <div class="space-y-2 text-xs font-mono">
@@ -1512,10 +1512,10 @@ else:
           </div>
 
           <!-- Right: Annotated Code -->
-          <div class="lg:col-span-7 bg-slate-950 p-4.5 rounded-2xl border border-slate-800 space-y-3">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-              <span class="text-xs font-bold text-slate-200">🔍 Annotated Code Highlights (<code class="text-purple-400">Reaper_AutoReamp_NAM.lua</code>)</span>
-              <span class="text-[10px] font-mono text-slate-500">Lua 5.3 / ReaScript</span>
+          <div class="lg:col-span-7 bg-slate-950 p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-1">
+              <span class="text-sm font-bold text-slate-200">🔍 Annotated Code Highlights (<code class="text-purple-400">Reaper_AutoReamp_NAM.lua</code>)</span>
+              <span class="text-[11px] font-mono text-slate-500">Lua 5.3 / ReaScript</span>
             </div>
 
             <div class="space-y-3 text-xs">
@@ -1566,7 +1566,7 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
       <div id="tab-content-neural" class="codewiki-tab-panel space-y-4 hidden">
         
         <!-- Executive Summary -->
-        <div class="bg-emerald-950/30 border border-emerald-500/30 rounded-2xl p-4 flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <div class="bg-emerald-950/30 border border-emerald-500/30 rounded-2xl p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div class="space-y-1">
             <div class="flex items-center gap-2">
               <span class="text-[10px] font-mono uppercase bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded font-bold border border-emerald-500/30">Neural Core</span>
@@ -1586,12 +1586,12 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
           <!-- Left: Tensor Graph -->
-          <div class="lg:col-span-5 bg-slate-950 p-4.5 rounded-2xl border border-slate-800 space-y-3">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-              <span class="text-xs font-bold text-emerald-400">🧠 PyTorch Forward Pass Flow</span>
-              <span class="text-[10px] font-mono text-slate-500">Parametric WaveNet</span>
+          <div class="lg:col-span-5 bg-slate-950 p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-1">
+              <span class="text-sm font-bold text-emerald-400">🧠 PyTorch Forward Pass Flow</span>
+              <span class="text-[11px] font-mono text-slate-500">Parametric WaveNet</span>
             </div>
 
             <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 font-mono text-[11px] text-slate-300 space-y-2">
@@ -1614,16 +1614,16 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
           </div>
 
           <!-- Right: Loss Function & Mathematical Breakdown -->
-          <div class="lg:col-span-7 bg-slate-950 p-4.5 rounded-2xl border border-slate-800 space-y-3">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-              <span class="text-xs font-bold text-slate-200">📐 Mathematical Objective &amp; Loss Function</span>
-              <span class="text-[10px] font-mono text-slate-500">Multi-Scale STFT</span>
+          <div class="lg:col-span-7 bg-slate-950 p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-1">
+              <span class="text-sm font-bold text-slate-200">📐 Mathematical Objective &amp; Loss Function</span>
+              <span class="text-[11px] font-mono text-slate-500">Multi-Scale STFT</span>
             </div>
 
-            <div class="space-y-3 text-xs">
-              <div class="bg-slate-900/90 rounded-xl p-3 border border-slate-800 space-y-2">
-                <div class="font-bold text-amber-300">1. Error-to-Signal Ratio (ESR Loss)</div>
-                <div class="font-mono text-[11px] bg-slate-950 p-2.5 rounded text-amber-200 overflow-x-auto">
+            <div class="space-y-4 text-xs">
+              <div class="bg-slate-900/90 rounded-xl p-4 sm:p-5 border border-slate-800 space-y-2.5">
+                <div class="font-bold text-amber-300 text-sm">1. Error-to-Signal Ratio (ESR Loss)</div>
+                <div class="font-mono text-[11px] bg-slate-950 p-3 rounded-lg text-amber-200 overflow-x-auto">
                   $$\mathcal{L}_{\text{ESR}} = \frac{\sum_{t} (y[t] - \hat{y}[t])^2}{\sum_{t} y[t]^2 + \epsilon}$$
                 </div>
                 <p class="text-[11px] text-slate-300 leading-relaxed">
@@ -1631,9 +1631,9 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
                 </p>
               </div>
 
-              <div class="bg-slate-900/90 rounded-xl p-3 border border-slate-800 space-y-2">
-                <div class="font-bold text-emerald-300">2. Multi-Scale Spectral Loss (Frequency Domain)</div>
-                <div class="font-mono text-[11px] bg-slate-950 p-2.5 rounded text-emerald-200 overflow-x-auto">
+              <div class="bg-slate-900/90 rounded-xl p-4 sm:p-5 border border-slate-800 space-y-2.5">
+                <div class="font-bold text-emerald-300 text-sm">2. Multi-Scale Spectral Loss (Frequency Domain)</div>
+                <div class="font-mono text-[11px] bg-slate-950 p-3 rounded-lg text-emerald-200 overflow-x-auto">
                   $$\mathcal{L}_{\text{spec}} = \frac{1}{M} \sum_{m=1}^{M} \left( \|\log |S_m(y)| - \log |S_m(\hat{y})| \|_1 \right)$$
                 </div>
                 <p class="text-[11px] text-slate-300 leading-relaxed">
@@ -1651,7 +1651,7 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
       <div id="tab-content-manifest" class="codewiki-tab-panel space-y-4 hidden">
         
         <!-- Executive Summary -->
-        <div class="bg-amber-950/30 border border-amber-500/30 rounded-2xl p-4 flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <div class="bg-amber-950/30 border border-amber-500/30 rounded-2xl p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div class="space-y-1">
             <div class="flex items-center gap-2">
               <span class="text-[10px] font-mono uppercase bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded font-bold border border-amber-500/30">Dataset Specification</span>
@@ -1671,12 +1671,12 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
           <!-- Left: JSON Schema -->
-          <div class="lg:col-span-6 bg-slate-950 p-4.5 rounded-2xl border border-slate-800 space-y-2">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-              <span class="text-xs font-bold text-amber-400">📄 data.json Structure</span>
-              <span class="text-[10px] font-mono text-slate-500">JSON RFC 8259</span>
+          <div class="lg:col-span-6 bg-slate-950 p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-1">
+              <span class="text-sm font-bold text-amber-400">📄 data.json Structure</span>
+              <span class="text-[11px] font-mono text-slate-500">JSON RFC 8259</span>
             </div>
             <pre class="bg-slate-900 p-3 rounded-xl font-mono text-[10px] text-amber-200 overflow-x-auto max-h-80"><code>{
   "x": "inputTrunc.wav",
@@ -1702,24 +1702,24 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
           </div>
 
           <!-- Right: Field Breakdown -->
-          <div class="lg:col-span-6 bg-slate-950 p-4.5 rounded-2xl border border-slate-800 space-y-3">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-              <span class="text-xs font-bold text-slate-200">🔍 Field-by-Field Breakdown</span>
-              <span class="text-[10px] font-mono text-slate-500">Validation Protocol</span>
+          <div class="lg:col-span-6 bg-slate-950 p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-1">
+              <span class="text-sm font-bold text-slate-200">🔍 Field-by-Field Breakdown</span>
+              <span class="text-[11px] font-mono text-slate-500">Validation Protocol</span>
             </div>
 
-            <div class="space-y-2.5 text-xs">
-              <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800">
+            <div class="space-y-3 text-xs">
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 space-y-1">
                 <div class="font-bold text-sky-400 font-mono">"x": "inputTrunc.wav"</div>
                 <div class="text-[11px] text-slate-300">The single 38-second dry calibration sweep played into your physical amp. Every recorded take in <code class="text-sky-300">"y"</code> is aligned sample-for-sample against this baseline.</div>
               </div>
 
-              <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800">
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 space-y-1">
                 <div class="font-bold text-amber-400 font-mono">"val": [gain, bass, mid, treble, master]</div>
                 <div class="text-[11px] text-slate-300">Divided by 10.0 so all knob positions map between <code class="text-amber-300">0.0 and 1.0</code>. Neural networks calculate gradients much faster with normalized floating point values.</div>
               </div>
 
-              <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800">
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 space-y-1">
                 <div class="font-bold text-emerald-400 font-mono">"is_validation": true / false</div>
                 <div class="text-[11px] text-slate-300">Tells PyTorch whether to use the take for gradient updates (<code class="text-emerald-300">false</code>) or hold it out to verify that the model doesn't overfit (<code class="text-emerald-300">true</code>). This is why you never need to record two sweeps per knob!</div>
               </div>
@@ -1736,7 +1736,7 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
       <!-- ===================================================================== -->
       <div id="tab-content-diagrams" class="codewiki-tab-panel space-y-6 hidden">
         
-        <div class="bg-indigo-950/30 border border-indigo-500/30 rounded-2xl p-4 flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <div class="bg-indigo-950/30 border border-indigo-500/30 rounded-2xl p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div class="space-y-1">
             <div class="flex items-center gap-2">
               <span class="text-[10px] font-mono uppercase bg-indigo-500/20 text-indigo-300 px-2 py-0.5 rounded font-bold border border-indigo-500/30">AST Visual Models</span>
@@ -1754,13 +1754,13 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
         </div>
 
         <!-- Diagram 1: Hardware Re-Amp Flowchart -->
-        <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-3">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+        <div class="bg-slate-950 p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-1">
             <div>
-              <span class="text-xs font-bold text-sky-400">1. Physical Studio Re-Amp Signal Flowchart</span>
-              <p class="text-[11px] text-slate-400">Hardware loop through Focusrite/Apollo, Radial Re-Amp Box, 50W Tube Head, and Reactive Load.</p>
+              <span class="text-sm font-bold text-sky-400">1. Physical Studio Re-Amp Signal Flowchart</span>
+              <p class="text-xs text-slate-400">Hardware loop through Focusrite/Apollo, Radial Re-Amp Box, 50W Tube Head, and Reactive Load.</p>
             </div>
-            <button onclick="copyDiagramCode('flowchart-code')" class="text-[10px] font-mono text-sky-300 hover:text-white bg-slate-900 border border-slate-800 px-2 py-1 rounded">Copy Mermaid</button>
+            <button onclick="copyDiagramCode('flowchart-code')" class="text-[10px] font-mono text-sky-300 hover:text-white bg-slate-900 border border-slate-800 px-2.5 py-1.5 rounded-lg">Copy Mermaid</button>
           </div>
           <div class="mermaid-code-container overflow-x-auto p-3 bg-slate-900/60 rounded-xl" id="mermaid-flowchart" data-mermaid-src="flowchart TD
     subgraph LocalStudio[&quot;Local Studio Audio Hardware (48kHz 24-bit)&quot;]
@@ -1835,17 +1835,17 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
         </div>
 
         <!-- Diagram 2: Cockos REAPER ReaScript Sequence Diagram -->
-        <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-3">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+        <div class="bg-slate-950 p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-1">
             <div>
-              <span class="text-xs font-bold text-purple-400">2. Cockos REAPER Auto-Reamp Sequence Diagram</span>
-              <p class="text-[11px] text-slate-400">ReaScript 120Hz GUI loop, F1 hotkey trigger, 38.0s calibration sweep, zero clock drift, region marker bounding, 10s batch export.</p>
+              <span class="text-sm font-bold text-purple-400">2. Cockos REAPER Auto-Reamp Sequence Diagram</span>
+              <p class="text-xs text-slate-400">ReaScript 120Hz GUI loop, F1 hotkey trigger, 38.0s calibration sweep, zero clock drift, region marker bounding, 10s batch export.</p>
             </div>
-            <button onclick="copyDiagramCode('sequence-code')" class="text-[10px] font-mono text-purple-300 hover:text-white bg-slate-900 border border-slate-800 px-2 py-1 rounded">Copy Mermaid</button>
+            <button onclick="copyDiagramCode('sequence-code')" class="text-[10px] font-mono text-purple-300 hover:text-white bg-slate-900 border border-slate-800 px-2.5 py-1.5 rounded-lg">Copy Mermaid</button>
           </div>
           <div class="mermaid-code-container overflow-x-auto p-3 bg-slate-900/60 rounded-xl" id="mermaid-sequence" data-mermaid-src="sequenceDiagram
     autonumber
-    actor Engineer as Justin (Audio Engineer)
+    actor Engineer as Audio Engineer
     participant REAPER as Cockos REAPER (DAW)
     participant Lua as Reaper_AutoReamp_NAM.lua
     participant AudioHW as 48kHz Audio Interface
@@ -1869,7 +1869,7 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
     REAPER->>Disk: Export 45 Normalized WAV Takes in 10 Seconds"></div>
           <pre id="sequence-code" class="hidden">sequenceDiagram
     autonumber
-    actor Engineer as Justin (Audio Engineer)
+    actor Engineer as Audio Engineer
     participant REAPER as Cockos REAPER (DAW)
     participant Lua as Reaper_AutoReamp_NAM.lua
     participant AudioHW as 48kHz Audio Interface
@@ -1894,13 +1894,13 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
         </div>
 
         <!-- Diagram 3: Parametric WaveNet & CatMLP Class Diagram -->
-        <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-3">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+        <div class="bg-slate-950 p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-1">
             <div>
-              <span class="text-xs font-bold text-emerald-400">3. Parametric WaveNet &amp; CatMLP DSP Class Architecture</span>
-              <p class="text-[11px] text-slate-400">5-dimensional continuous knob projection concatenated with causal dilated Conv1D channels.</p>
+              <span class="text-sm font-bold text-emerald-400">3. Parametric WaveNet &amp; CatMLP DSP Class Architecture</span>
+              <p class="text-xs text-slate-400">5-dimensional continuous knob projection concatenated with causal dilated Conv1D channels.</p>
             </div>
-            <button onclick="copyDiagramCode('class-code')" class="text-[10px] font-mono text-emerald-300 hover:text-white bg-slate-900 border border-slate-800 px-2 py-1 rounded">Copy Mermaid</button>
+            <button onclick="copyDiagramCode('class-code')" class="text-[10px] font-mono text-emerald-300 hover:text-white bg-slate-900 border border-slate-800 px-2.5 py-1.5 rounded-lg">Copy Mermaid</button>
           </div>
           <div class="mermaid-code-container overflow-x-auto p-3 bg-slate-900/60 rounded-xl" id="mermaid-class" data-mermaid-src="classDiagram
     class ContinuousKnobVector {
@@ -1987,7 +1987,7 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
       <div id="tab-content-colab" class="codewiki-tab-panel space-y-4 hidden">
         
         <!-- Executive Summary -->
-        <div class="bg-indigo-950/30 border border-indigo-500/30 rounded-2xl p-4 flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <div class="bg-indigo-950/30 border border-indigo-500/30 rounded-2xl p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div class="space-y-1">
             <div class="flex items-center gap-2">
               <span class="text-[10px] font-mono uppercase bg-indigo-500/20 text-indigo-300 px-2 py-0.5 rounded font-bold border border-indigo-500/30">Cloud GPU Pipeline</span>
@@ -2007,31 +2007,31 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
           <!-- Left: Colab Flow -->
-          <div class="lg:col-span-5 bg-slate-950 p-4.5 rounded-2xl border border-slate-800 space-y-3">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-              <span class="text-xs font-bold text-indigo-400">☁️ Cloud Training Stages</span>
-              <span class="text-[10px] font-mono text-slate-500">Google Colab Runtime</span>
+          <div class="lg:col-span-5 bg-slate-950 p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-1">
+              <span class="text-sm font-bold text-indigo-400">☁️ Cloud Training Stages</span>
+              <span class="text-[11px] font-mono text-slate-500">Google Colab Runtime</span>
             </div>
 
             <div class="space-y-2 text-xs font-mono">
-              <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
                 <div class="text-sky-400 font-bold">1. Free GPU Allocation</div>
                 <div class="text-[11px] text-slate-400">Colab provisions a virtual machine with an NVIDIA Tesla T4 GPU (16GB VRAM) for zero cost.</div>
               </div>
               <div class="text-center text-slate-600 text-sm">↓</div>
-              <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
                 <div class="text-amber-400 font-bold">2. Upload takes.zip</div>
                 <div class="text-[11px] text-slate-400">Zip your local <code class="text-amber-300">./takes</code> folder containing the 45 WAVs and <code class="text-amber-300">data.json</code> &rarr; upload via browser.</div>
               </div>
               <div class="text-center text-slate-600 text-sm">↓</div>
-              <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
                 <div class="text-emerald-400 font-bold">3. 100-Epoch Backpropagation</div>
                 <div class="text-[11px] text-slate-400">PyTorch runs AdamW optimizer on ESR + Spectral Loss across all 45 takes. Completes in 35–45 minutes.</div>
               </div>
               <div class="text-center text-slate-600 text-sm">↓</div>
-              <div class="p-2.5 rounded-xl bg-slate-900 border border-indigo-500/40 text-indigo-300">
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-indigo-500/40 text-indigo-300">
                 <div class="text-indigo-400 font-bold">4. Standalone Binary Export</div>
                 <div class="text-[11px] text-slate-400">PyTorch weights are serialized into a single <code class="text-indigo-300">model_parametric.nam</code> (~2MB) and auto-downloaded to your PC.</div>
               </div>
@@ -2039,13 +2039,13 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
           </div>
 
           <!-- Right: Command Walkthrough -->
-          <div class="lg:col-span-7 bg-slate-950 p-4.5 rounded-2xl border border-slate-800 space-y-3">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-              <span class="text-xs font-bold text-slate-200">🔍 Colab Execution Command</span>
-              <span class="text-[10px] font-mono text-slate-500">Bash / Jupyter</span>
+          <div class="lg:col-span-7 bg-slate-950 p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-1">
+              <span class="text-sm font-bold text-slate-200">🔍 Colab Execution Command</span>
+              <span class="text-[11px] font-mono text-slate-500">Bash / Jupyter</span>
             </div>
 
-            <pre class="bg-slate-900 p-3 rounded-xl font-mono text-[10px] text-sky-300 overflow-x-auto leading-relaxed"><code># 1. Run headless PyTorch training
+            <pre class="bg-slate-900 p-4 rounded-xl font-mono text-[10px] text-sky-300 overflow-x-auto leading-relaxed"><code># 1. Run headless PyTorch training
 !python -m nam.train.colab \
     ./data/data.json \
     configs/model_concat.json \
@@ -2056,7 +2056,7 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
 from google.colab import files
 files.download("./output/model_parametric.nam")</code></pre>
 
-            <div class="bg-slate-900/90 rounded-xl p-3 border border-slate-800 space-y-1.5 text-xs text-slate-300">
+            <div class="bg-slate-900/90 rounded-xl p-4 sm:p-5 border border-slate-800 space-y-2 text-xs text-slate-300">
               <div class="font-bold text-emerald-400">Zero Local GPU Strain:</div>
               <p class="text-[11px] leading-relaxed text-slate-400">
                 Because all tensor mathematics, backpropagation, and loss calculations happen on Google Cloud's data center GPUs, your local Windows / Linux PC never runs hot, fans don't spin up, and you don't need expensive local NVIDIA hardware.
@@ -2067,37 +2067,37 @@ files.download("./output/model_parametric.nam")</code></pre>
       </div>
 
       <!-- FAQ & DEEP CODE SEARCH ACCORDION -->
-      <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4.5 space-y-3">
-        <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-          <span class="text-xs font-bold text-slate-300">❓ Frequently Asked Architectural Questions</span>
-          <span class="text-[10px] font-mono text-indigo-400">Technical FAQ</span>
+      <div class="bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-6">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-2">
+          <span class="text-sm font-bold text-slate-200">❓ Frequently Asked Architectural Questions</span>
+          <span class="text-xs font-mono text-indigo-400">Technical FAQ</span>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-          <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 space-y-1">
-            <div class="font-bold text-sky-300">Q: Why 48kHz 24-bit PCM instead of 44.1kHz?</div>
-            <div class="text-[11px] text-slate-400 leading-relaxed">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 text-xs">
+          <div class="bg-slate-900/90 p-5 sm:p-6 rounded-2xl border border-slate-800 space-y-2">
+            <div class="font-bold text-sky-300 text-sm">Q: Why 48kHz 24-bit PCM instead of 44.1kHz?</div>
+            <div class="text-xs text-slate-400 leading-relaxed">
               Neural Amp Modeler's DSP core and modern audio plugin standards (VST3/AU/LV2) are locked to 48kHz. Training on 44.1kHz requires real-time sinc interpolation which introduces high-frequency aliasing artifacts in the neural weights.
             </div>
           </div>
 
-          <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 space-y-1">
-            <div class="font-bold text-purple-300">Q: Can I run this Lua script on Windows REAPER?</div>
-            <div class="text-[11px] text-slate-400 leading-relaxed">
+          <div class="bg-slate-900/90 p-5 sm:p-6 rounded-2xl border border-slate-800 space-y-2">
+            <div class="font-bold text-purple-300 text-sm">Q: Can I run this Lua script on Windows REAPER?</div>
+            <div class="text-xs text-slate-400 leading-relaxed">
               Yes! Cockos REAPER bundles Lua 5.3 natively across Windows, Linux, and macOS. The script uses pure ReaScript API commands (<code class="text-purple-300">reaper.Main_OnCommand</code>, <code class="text-purple-300">reaper.defer</code>) without any OS-specific shell dependencies.
             </div>
           </div>
 
-          <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 space-y-1">
-            <div class="font-bold text-emerald-300">Q: How does the final .nam file load into a plugin?</div>
-            <div class="text-[11px] text-slate-400 leading-relaxed">
+          <div class="bg-slate-900/90 p-5 sm:p-6 rounded-2xl border border-slate-800 space-y-2">
+            <div class="font-bold text-emerald-300 text-sm">Q: How does the final .nam file load into a plugin?</div>
+            <div class="text-xs text-slate-400 leading-relaxed">
               Steven Atkinson's official open-source <strong>NAM VST3/AU plugin</strong> natively reads parametric models. When loaded, it automatically creates 5 sliders for Gain, Bass, Mid, Treble, and Master right on the GUI.
             </div>
           </div>
 
-          <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 space-y-1">
-            <div class="font-bold text-amber-300">Q: Can this model run on hardware (e.g. Raspberry Pi)?</div>
-            <div class="text-[11px] text-slate-400 leading-relaxed">
+          <div class="bg-slate-900/90 p-5 sm:p-6 rounded-2xl border border-slate-800 space-y-2">
+            <div class="font-bold text-amber-300 text-sm">Q: Can this model run on hardware (e.g. Raspberry Pi)?</div>
+            <div class="text-xs text-slate-400 leading-relaxed">
               Yes! Using <code class="text-amber-300">nam-core</code> compiled in C++17 with NEON SIMD optimizations, a Raspberry Pi 5 runs standard WaveNet models with less than 2.1ms roundtrip latency.
             </div>
           </div>
@@ -2199,7 +2199,7 @@ files.download("./output/model_parametric.nam")</code></pre>
       <div class="flex items-center justify-between border-b border-slate-800 pb-3">
         <div>
           <h3 class="text-base font-bold text-white flex items-center gap-2">
-            <span>📝 Justin's Redline Notes</span>
+            <span>📝 Engineering Redline Notes</span>
             <span id="drawerCount" class="bg-rose-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">0</span>
           </h3>
           <p class="text-xs text-slate-400">Direct feedback on the Parametric NAM blueprint</p>
@@ -2244,7 +2244,7 @@ files.download("./output/model_parametric.nam")</code></pre>
               <h3 class="text-base font-extrabold text-white">Audio AI Architect & Co-Pilot</h3>
               <span class="text-[10px] font-bold uppercase tracking-wider bg-indigo-500/20 text-indigo-300 px-2 py-0.5 rounded-full border border-indigo-500/30">v2.5 DSP</span>
             </div>
-            <p class="text-[11px] text-slate-400">Justin Muir's Dedicated Neural DSP & Hardware Assistant</p>
+            <p class="text-[11px] text-slate-400">Dedicated Neural DSP & Hardware Engineering Assistant</p>
           </div>
         </div>
         <button onclick="closeAIDrawer()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-400 flex items-center justify-center transition">✕</button>
@@ -2273,7 +2273,7 @@ files.download("./output/model_parametric.nam")</code></pre>
             <span class="text-[10px] text-slate-500">Live</span>
           </div>
           <p class="text-slate-200 leading-relaxed">
-            Hey Justin! I’m your dedicated Audio AI Co-Pilot. I have full context on your text, your 48kHz 24-bit amp capture setup, the NAM platform, and your microcontroller vision.
+            Welcome! I’m your dedicated Audio AI Co-Pilot. I have full context on your text, your 48kHz 24-bit amp capture setup, the NAM platform, and your microcontroller vision.
           </p>
           <p class="text-slate-300 leading-relaxed">
             I can generate and modify your <strong>CUDA training scripts</strong>, generate your <strong>RP2040 / ESP32 firmware</strong> with ADC anti-jitter filters, calculate optimal <strong>Latin Hypercube sampling matrices</strong>, or alter any part of your blueprint. Click any pill above or ask me anything below!
@@ -2322,7 +2322,7 @@ files.download("./output/model_parametric.nam")</code></pre>
     // Load redlines from LocalStorage
     function loadSavedRedlines() {
       try {
-        const saved = localStorage.getItem('justin_muir_redline_store_v1');
+        const saved = localStorage.getItem('parametric_nam_redline_store_v1');
         if (saved) {
           state.redlines = JSON.parse(saved);
           renderRedlines();
@@ -2334,7 +2334,7 @@ files.download("./output/model_parametric.nam")</code></pre>
 
     function saveRedlinesToStorage() {
       try {
-        localStorage.setItem('justin_muir_redline_store_v1', JSON.stringify(state.redlines));
+        localStorage.setItem('parametric_nam_redline_store_v1', JSON.stringify(state.redlines));
       } catch (e) {}
     }
 
@@ -2419,7 +2419,7 @@ class ParametricWaveNetBlock(nn.Module):
         filename: "colab_train_parametric_nam.ipynb",
         lang: "python",
         code: `# colab_train_parametric_nam.ipynb - 1-Click Offsite GPU Training for Parametric NAM
-# Justin Muir - 48kHz Audio DSP Lab
+# Parametric NAM - 48kHz Audio DSP Lab
 # Run on Google Colab (Runtime -> Change runtime type -> T4 GPU)
 
 # 1. Check GPU availability
@@ -2497,7 +2497,7 @@ echo "✅ Training Complete! Your binary model is at: ./output_parametric/model_
         filename: "prepare_data_manifest.py",
         lang: "python",
         code: `# prepare_data_manifest.py - Manifest Generator for Offline NAM Training
-# Justin Muir - 48kHz 24-bit Offline DAW Re-amping Pipeline
+# Parametric NAM - 48kHz 24-bit Offline DAW Re-amping Pipeline
 import os
 import json
 
@@ -2544,7 +2544,7 @@ if __name__ == "__main__":
         filename: "firmware_pico_pots.py",
         lang: "python",
         code: `# firmware_pico_pots.py - RP2040 MicroPython USB-MIDI Pot Controller
-# Justin Muir - 48kHz Audio DSP Lab
+# Parametric NAM - 48kHz Audio DSP Lab
 import time
 from machine import ADC, Pin
 import usb_midi
@@ -2585,7 +2585,7 @@ while True:
         filename: "generate_matrix.py",
         lang: "python",
         code: `# generate_matrix.py - Latin Hypercube Matrix for Parametric NAM
-# Justin Muir - 40 to 50 Re-amp Sweeps (48kHz 24-bit)
+# Parametric NAM - 40 to 50 Re-amp Sweeps (48kHz 24-bit)
 import numpy as np
 import pandas as pd
 from scipy.stats import qmc
@@ -2660,7 +2660,7 @@ print("⚡ FiLM WaveNet Architecture Loaded with ESR + STFT Loss Engine.")`
 #include <BLEMIDI_Transport.h>
 #include <hardware/BLEMIDI_ESP32.h>
 
-BLEMIDI_CREATE_INSTANCE("Justin-NAM-Pedal", MIDI);
+BLEMIDI_CREATE_INSTANCE("Parametric-NAM-Pedal", MIDI);
 
 const int POT_PINS[] = {1, 2, 3, 4, 5}; // ADC1 pins
 const int NUM_POTS = 5;
@@ -2749,7 +2749,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
 
       if (role === "user") {
         card.className = "bg-slate-800/90 text-slate-100 rounded-2xl p-3.5 max-w-[85%] ml-auto text-xs border border-slate-700 shadow-md";
-        card.innerHTML = `<span class="font-bold text-slate-400 block mb-1">Justin:</span>${escapeHtml(text)}`;
+        card.innerHTML = `<span class="font-bold text-slate-400 block mb-1">Engineer:</span>${escapeHtml(text)}`;
       } else {
         card.className = "bg-slate-950 border border-indigo-500/30 rounded-2xl p-4 space-y-3 text-xs shadow-xl";
         let contentHtml = `<div class="flex items-center justify-between">
@@ -2829,7 +2829,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
             "```\n\n" +
             "1. **Zero Sample Clock Drift**: By invoking `sd.playrec()` with a single unified buffer instead of separate play/record calls, the audio interface shares the exact same hardware clock for D/A and A/D conversion.\n" +
             "2. **Level Validation (Lines 123-128)**: Computes `np.sqrt(np.mean(take_audio**2))` (RMS) and `np.max(np.abs(take_audio))` (Peak). If peak is below 0.001 (-60dBFS), it halts and warns you before saving empty takes.\n" +
-            "3. **Self-Healing Run Sheet (Lines 31-72)**: If `justin_nam_run_sheet.csv` is missing, it automatically creates the 45-take Latin Hypercube on the fly using a seeded PRNG!"
+            "3. **Self-Healing Run Sheet (Lines 31-72)**: If `parametric_nam_run_sheet.csv` is missing, it automatically creates the 45-take Latin Hypercube on the fly using a seeded PRNG!"
           );
         } else if (q.includes("reaper") || q.includes("lua") || q.includes("reascript") || q.includes("defer") || q.includes("hotkey") || q.includes("f1")) {
           appendAIMessage("assistant",
@@ -2934,7 +2934,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
       stream.scrollTop = stream.scrollHeight;
 
       try {
-        const sysPrompt = "You are Justin Muir's dedicated expert Audio AI DSP and Embedded Hardware Architect. Justin is building a Parametric Neural Amp Modeler (NAM) using 40-50 sweeps at 48kHz 24-bit with Latin Hypercube Sampling, PyTorch FiLM WaveNet, and physical hardware potentiometers via RP2040/ESP32. Answer with deep technical rigor, production-ready code, pinouts, and mathematical clarity.";
+        const sysPrompt = "You are the dedicated expert Audio AI DSP and Embedded Hardware Architect. The engineering team is building a Parametric Neural Amp Modeler (NAM) using 40-50 sweeps at 48kHz 24-bit with Latin Hypercube Sampling, PyTorch FiLM WaveNet, and physical hardware potentiometers via RP2040/ESP32. Answer with deep technical rigor, production-ready code, pinouts, and mathematical clarity.";
         const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -2982,7 +2982,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
         target: "Hardware Microcontroller & Potentiometer Bridge",
         category: "Hardware Spec",
         comment: note,
-        author: "Justin & AI Co-Pilot",
+        author: "Audio Engineer & AI Co-Pilot",
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
 
@@ -3094,7 +3094,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
         target: target,
         category: category,
         comment: comment,
-        author: "Justin Muir",
+        author: "Audio Engineer",
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
 
@@ -3184,7 +3184,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
 
     // Export & Send to Daniel
     function generateReportMarkdown() {
-      let md = `# Justin Muir • Parametric NAM Redline Review\n`;
+      let md = `# Parametric NAM Studio • Redline Review\n`;
       md += `**Date:** ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}\n`;
       md += `**Total Redlines:** ${state.redlines.length}\n\n`;
 
@@ -3214,7 +3214,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
         alert("No redlines to email yet! Click 'Enable Redline Mode' to leave feedback first.");
         return;
       }
-      const subject = encodeURIComponent("Justin Muir • Parametric NAM Blueprint Redlines");
+      const subject = encodeURIComponent("Parametric NAM Blueprint Redlines");
       const body = encodeURIComponent(generateReportMarkdown());
       window.location.href = `mailto:?subject=${subject}&body=${body}`;
     }
@@ -3726,7 +3726,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
       }
 
       // Save preference
-      try { localStorage.setItem('justin_nam_workspace', workspaceId); } catch(e){}
+      try { localStorage.setItem('parametric_nam_workspace', workspaceId); } catch(e){}
     }
 
     function setViewMode(mode) {
@@ -3749,7 +3749,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
           btnFlow.className = "px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition";
         }
       }
-      try { localStorage.setItem('justin_nam_view_mode', mode); } catch(e){}
+      try { localStorage.setItem('parametric_nam_view_mode', mode); } catch(e){}
     }
 
     function toggleThemePosture() {
@@ -3770,7 +3770,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
         if (icon) icon.textContent = '🌙';
         if (label) label.textContent = 'Obsidian';
       }
-      try { localStorage.setItem('justin_nam_theme', theme); } catch(e){}
+      try { localStorage.setItem('parametric_nam_theme', theme); } catch(e){}
     }
 
     function updateStudioHUD() {
@@ -3832,7 +3832,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
     }
 
     const CODEWIKI_AUDIO_SCRIPT = [
-      "Welcome, Justin. Here is your architectural walkthrough of the Parametric Neural Amp Modeler codebase and tracking automation pipeline.",
+      "Welcome. Here is your architectural walkthrough of the Parametric Neural Amp Modeler codebase and tracking automation pipeline.",
       "First, reamp_automation.py is our headless Python audio engine. It uses the sounddevice library to open a full-duplex 48 kilohertz stream.",
       "This means it plays the thirty-eight second calibration sweep out of channel 3 into your re-amp box, and records the microphone or loadbox on channel 1 simultaneously in the exact same PortAudio buffer.",
       "This eliminates clock drift between takes and automatically calculates RMS and peak headroom to prevent silent or clipped files.",
@@ -4305,7 +4305,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
 
     function initRunSheet() {
       try {
-        const saved = localStorage.getItem('justin_nam_runsheet_v1');
+        const saved = localStorage.getItem('parametric_nam_runsheet_v1');
         if (saved) {
           runSheetData = JSON.parse(saved);
         } else {
@@ -4330,7 +4330,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
 
     function saveRunSheetProgress() {
       try {
-        localStorage.setItem('justin_nam_runsheet_v1', JSON.stringify(runSheetData));
+        localStorage.setItem('parametric_nam_runsheet_v1', JSON.stringify(runSheetData));
       } catch (e) {}
     }
 
@@ -4456,7 +4456,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
       });
       const blob = new Blob([csv], { type: 'text/csv' });
       const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href = url; a.download = "justin_nam_run_sheet.csv"; a.click();
+      const a = document.createElement('a'); a.href = url; a.download = "parametric_nam_run_sheet.csv"; a.click();
       URL.revokeObjectURL(url);
     }
 
@@ -4477,10 +4477,10 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
     // Initial setup
     drawCurve(); drawOscilloscope(); updateAudioParams(); loadSavedRedlines(); initRunSheet();
     try {
-      const savedTheme = localStorage.getItem('justin_nam_theme') || 'obsidian';
+      const savedTheme = localStorage.getItem('parametric_nam_theme') || 'obsidian';
       applyThemePosture(savedTheme);
-      const savedWorkspace = localStorage.getItem('justin_nam_workspace') || 'workspace-amp';
-      const savedViewMode = localStorage.getItem('justin_nam_view_mode') || 'tabs';
+      const savedWorkspace = localStorage.getItem('parametric_nam_workspace') || 'workspace-amp';
+      const savedViewMode = localStorage.getItem('parametric_nam_view_mode') || 'tabs';
       currentViewMode = savedViewMode;
       setViewMode(savedViewMode);
       if (savedViewMode === 'tabs') switchStudioWorkspace(savedWorkspace);

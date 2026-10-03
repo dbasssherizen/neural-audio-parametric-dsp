@@ -1,7 +1,7 @@
-# 🎸 justin-parametric-nam
+# 🎸 neural-audio-parametric-dsp
 
 > **Parametric Neural Amp Modeler (NAM) Studio Re-Amping Automation & Cloud GPU Pipeline**  
-> *Developed for Justin Muir • 48kHz / 24-bit Audio DSP Architecture*
+> *48kHz / 24-bit Audio DSP & Re-Amping Architecture*
 
 [![Tests](https://img.shields.io/badge/tests-7%20passed-brightgreen?style=flat-square)](file:///Users/danielbasssherizen/Developer/justin-parametric-nam/tests/test_audio_pipeline.py)
 [![Audio Standard](https://img.shields.io/badge/audio-48kHz%2024--bit%20PCM-blue?style=flat-square)](https://github.com/sdatkinson/neural-amp-modeler)
@@ -181,11 +181,11 @@ OK
 
 Experience the real-time browser companion featuring photorealistic 3D tube glow, knurled analog knobs, graticule CRT oscilloscope, and audio AI co-pilot:
 
-👉 **[Launch Justin's NetOps Parametric Amp Studio](https://justin-muir-netops-hub.web.app/parametric-amp.html)**
+👉 **[Launch Parametric NAM Studio](https://justin-muir-netops-hub.web.app/parametric-amp.html)**
 
 ---
 
 ## 📜 License & Acknowledgments
 - Built on the open-source [Neural Amp Modeler](https://github.com/sdatkinson/neural-amp-modeler) foundation by Steven Atkinson.
 - Parametric multidimensional extensions inspired by Phillip M. Self.
-- Tailored for Justin Muir's 48kHz audio engineering studio workflow.
+- Tailored for professional 48kHz audio engineering studio workflows.
