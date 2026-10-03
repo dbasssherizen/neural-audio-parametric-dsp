@@ -4038,6 +4038,197 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
     }
 
 
+    // -------------------------------------------------------------
+    // AST MERMAID DIAGRAM ENGINE
+    // -------------------------------------------------------------
+    if (typeof mermaid !== 'undefined') {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'dark',
+        securityLevel: 'loose',
+        themeVariables: {
+          darkMode: true,
+          background: '#050811',
+          primaryColor: '#00437b',
+          primaryTextColor: '#f8fafc',
+          primaryBorderColor: '#38bdf8',
+          lineColor: '#38bdf8',
+          secondaryColor: '#1e293b',
+          tertiaryColor: '#0f172a'
+        }
+      });
+    }
+
+    let renderedMermaidSet = new Set();
+    async function renderMermaidDiagrams() {
+      if (typeof mermaid === 'undefined') return;
+      const containers = document.querySelectorAll('.mermaid-code-container');
+      for (const el of containers) {
+        const id = el.id;
+        if (renderedMermaidSet.has(id)) continue;
+        const raw = el.getAttribute('data-mermaid-src');
+        if (!raw) continue;
+        const uid = 'mermaid-svg-' + Math.floor(Math.random() * 1000000);
+        try {
+          const { svg } = await mermaid.render(uid, raw.trim());
+          el.innerHTML = svg;
+          renderedMermaidSet.add(id);
+        } catch (err) {
+          console.warn('Mermaid render issue:', err);
+          el.innerHTML = `<pre class="text-[11px] font-mono text-slate-300 p-2 overflow-x-auto">${escapeHtml(raw)}</pre>`;
+        }
+      }
+    }
+
+    function copyDiagramCode(codeId) {
+      const el = document.getElementById(codeId);
+      if (!el) return;
+      navigator.clipboard.writeText(el.innerText).then(() => {
+        alert("✅ Mermaid diagram code copied to clipboard!");
+      });
+    }
+
+    // -------------------------------------------------------------
+    // STUDIO A/B LISTENING STATION (48kHz WAV STEMS & HOT-SWITCHING)
+    // -------------------------------------------------------------
+    let activeStemAudio = null;
+    let activeStemSourceType = 'reamp'; // 'di' or 'reamp'
+    let currentStemFileName = 'guitar_reamped_vintage_crunch.wav';
+    let stemAnimFrameId = null;
+
+    function getStemAudioUrl() {
+      return activeStemSourceType === 'di'
+        ? '/assets/audio/guitar_clean_di.wav'
+        : `/assets/audio/${currentStemFileName}`;
+    }
+
+    function setAudioSourceAB(srcType) {
+      activeStemSourceType = srcType;
+      const btnDi = document.getElementById('ab-btn-di');
+      const btnReamp = document.getElementById('ab-btn-reamp');
+      const badge = document.getElementById('ab-status-badge');
+
+      if (btnDi) {
+        if (srcType === 'di') {
+          btnDi.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold transition bg-sky-500 text-stone-950 shadow-md shadow-sky-500/30";
+        } else {
+          btnDi.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold transition text-stone-400 hover:text-white";
+        }
+      }
+      if (btnReamp) {
+        if (srcType === 'reamp') {
+          btnReamp.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold transition bg-amber-500 text-stone-950 shadow-md shadow-amber-500/30";
+        } else {
+          btnReamp.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold transition text-stone-400 hover:text-white";
+        }
+      }
+      if (badge) {
+        badge.textContent = srcType === 'di' 
+          ? 'SOURCE: CLEAN DI (DIRECT UNPROCESSED) • 48kHz' 
+          : 'SOURCE: RE-AMPED 50W TUBE HEAD • 48kHz 24-BIT PCM';
+        badge.className = srcType === 'di'
+          ? 'ml-auto text-[10px] font-mono text-sky-400 bg-sky-500/10 border border-sky-500/20 px-3 py-1 rounded-lg'
+          : 'ml-auto text-[10px] font-mono text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-lg';
+      }
+
+      if (activeStemAudio && !activeStemAudio.paused) {
+        const curPos = activeStemAudio.currentTime;
+        activeStemAudio.src = getStemAudioUrl();
+        activeStemAudio.currentTime = curPos;
+        activeStemAudio.play().catch(e => console.warn(e));
+      }
+    }
+
+    function changeAudioStem(filename) {
+      currentStemFileName = filename;
+      if (activeStemSourceType === 'reamp' && activeStemAudio && !activeStemAudio.paused) {
+        const curPos = activeStemAudio.currentTime;
+        activeStemAudio.src = getStemAudioUrl();
+        activeStemAudio.currentTime = curPos;
+        activeStemAudio.play().catch(e => console.warn(e));
+      }
+    }
+
+    function toggleAudioStemPlayback() {
+      const playText = document.getElementById('ab-play-text');
+      const playIcon = document.getElementById('ab-play-icon');
+      const timeEl = document.getElementById('ab-time-display');
+      const canvas = document.getElementById('ab-canvas');
+
+      if (activeStemAudio && !activeStemAudio.paused) {
+        activeStemAudio.pause();
+        if (playText) playText.innerText = 'Play Stems';
+        if (playIcon) playIcon.innerText = '▶';
+        cancelAnimationFrame(stemAnimFrameId);
+        return;
+      }
+
+      if (!activeStemAudio) {
+        activeStemAudio = new Audio(getStemAudioUrl());
+        activeStemAudio.loop = true;
+        activeStemAudio.ontimeupdate = () => {
+          if (timeEl && activeStemAudio.duration) {
+            const cur = Math.floor(activeStemAudio.currentTime);
+            const dur = Math.floor(activeStemAudio.duration);
+            timeEl.textContent = `0:0${cur} / 0:0${dur}`;
+          }
+        };
+      } else {
+        activeStemAudio.src = getStemAudioUrl();
+      }
+
+      activeStemAudio.play().then(() => {
+        if (playText) playText.innerText = 'Pause Stems';
+        if (playIcon) playIcon.innerText = '⏸';
+        drawStemWaveform(canvas);
+      }).catch(e => {
+        console.warn('Audio playback error:', e);
+      });
+    }
+
+    function drawStemWaveform(canvas) {
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const w = canvas.width;
+      const h = canvas.height;
+
+      function animate() {
+        if (!activeStemAudio || activeStemAudio.paused) return;
+        ctx.clearRect(0, 0, w, h);
+
+        ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(0, h / 2);
+        ctx.lineTo(w, h / 2);
+        ctx.stroke();
+
+        const progress = activeStemAudio.currentTime / (activeStemAudio.duration || 6.0);
+        const color = activeStemSourceType === 'di' ? '#38bdf8' : '#f59e0b';
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+
+        const time = Date.now() * 0.006;
+        for (let x = 0; x < w; x += 3) {
+          const normX = x / w;
+          const freq = activeStemSourceType === 'di' ? 14 : 26;
+          const harmonic = Math.sin(normX * freq + time) * 0.65 + Math.cos(normX * 9 - time * 0.4) * 0.35;
+          const beatEnvelope = Math.sin((normX + progress) * Math.PI * 4) * 0.5 + 0.5;
+          const amp = (activeStemSourceType === 'di' ? 12 : 22) * beatEnvelope;
+          const y = h / 2 + harmonic * amp;
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+        stemAnimFrameId = requestAnimationFrame(animate);
+      }
+
+      cancelAnimationFrame(stemAnimFrameId);
+      stemAnimFrameId = requestAnimationFrame(animate);
+    }
+
     // SECTION D: NAMTRIX LITE RUN SHEET & MATRIX ENGINE
     // -------------------------------------------------------------
     let runSheetData = [];
