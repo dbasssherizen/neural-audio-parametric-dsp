@@ -697,6 +697,90 @@
 
     <!-- WORKSPACE 2: PHYSICAL RIG -->
     <div id="workspace-rig" class="studio-workspace space-y-6 hidden">
+
+    <!-- MASTER PHYSICAL RIG & TRANSFORMER PROTECTION SCHEMATIC -->
+    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+        <div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-xl">🔌</span>
+            <h2 class="text-lg font-bold text-white flex items-center gap-2">
+              Physical Tube Amp Re-Amping Rig &amp; Hardware Safety Schematic
+            </h2>
+            <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2.5 py-0.5 rounded-full border border-emerald-500/30 font-bold font-mono">
+              Live Verified
+            </span>
+          </div>
+          <p class="text-xs text-slate-400 mt-1">
+            Closed-loop 48kHz 24-bit audio signal flow: Focusrite/Apollo Out 3 &rarr; Radial Re-Amp &rarr; 50W Tube Amp Head &rarr; Two Notes Captor Loadbox &rarr; Line In 1.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <a href="/assets/images/hardware_wiring_diagram.svg" target="_blank" class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-mono font-bold flex items-center gap-1.5 transition">
+            <span>🔍 Fullscreen SVG ↗</span>
+          </a>
+          <a href="/printable_studio_run_sheet.html" target="_blank" class="px-3.5 py-2 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs font-mono font-bold flex items-center gap-1.5 transition">
+            <span>📋 Clipboard Run Sheet ↗</span>
+          </a>
+          <a href="/Justin_Muir_Parametric_NAM_Studio_Kit.zip" download class="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-mono font-bold flex items-center gap-1.5 transition shadow">
+            <span>📦 Studio Kit (.zip)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Vector SVG Wiring Diagram -->
+      <div class="bg-slate-950 p-3 sm:p-4 rounded-2xl border border-slate-800 shadow-inner overflow-hidden">
+        <img src="/assets/images/hardware_wiring_diagram.svg" alt="Physical Hardware Re-Amping Rig Schematic" class="w-full h-auto rounded-xl border border-slate-800/80 shadow-2xl block">
+      </div>
+
+      <!-- 4 Core Electrical & Audio Safety Axioms -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+        <!-- Card 1 -->
+        <div class="bg-slate-950 p-4 rounded-2xl border border-rose-500/30 space-y-2">
+          <div class="flex items-center gap-2 text-rose-400 font-bold">
+            <span class="w-5 h-5 rounded-full bg-rose-500/20 flex items-center justify-center text-[10px]">⚠️</span>
+            <span>Speaker Cable Mandate</span>
+          </div>
+          <p class="text-slate-300 text-[11px] leading-relaxed">
+            <strong>Unshielded 14/16AWG Speaker Cable ONLY</strong> between Amp Head and Captor Loadbox. Thin guitar instrument cables melt under tube power current, causing an open circuit!
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-slate-950 p-4 rounded-2xl border border-amber-500/30 space-y-2">
+          <div class="flex items-center gap-2 text-amber-400 font-bold">
+            <span class="w-5 h-5 rounded-full bg-amber-500/20 flex items-center justify-center text-[10px]">🔥</span>
+            <span>Transformer Protection</span>
+          </div>
+          <p class="text-slate-300 text-[11px] leading-relaxed">
+            <strong>Never power on without load connected.</strong> Tube output transformers without a secondary load experience &gt;2,000V inductive flyback spikes that destroy windings!
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-slate-950 p-4 rounded-2xl border border-sky-500/30 space-y-2">
+          <div class="flex items-center gap-2 text-sky-400 font-bold">
+            <span class="w-5 h-5 rounded-full bg-sky-500/20 flex items-center justify-center text-[10px]">🎚️</span>
+            <span>-12 to -6 dBFS Target</span>
+          </div>
+          <p class="text-slate-300 text-[11px] leading-relaxed">
+            Calibrate Line In 1 preamp so loudest sweep peaks between <strong>-12dBFS and -6dBFS</strong>. Leaves 6dB safety headroom against thermal tube drift and converter flat-topping.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-slate-950 p-4 rounded-2xl border border-emerald-500/30 space-y-2">
+          <div class="flex items-center gap-2 text-emerald-400 font-bold">
+            <span class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center text-[10px]">⚡</span>
+            <span>Ground Hum Isolation</span>
+          </div>
+          <p class="text-slate-300 text-[11px] leading-relaxed">
+            Engage the <strong>LIFT switch</strong> on the Radial Re-Amp box to sever computer-amp chassis loops. Plug amp and interface into the same star-grounded outlet strip.
+          </p>
+        </div>
+      </div>
+    </div>
     <!-- SECTION B: HARDWARE MICROCONTROLLER BRIDGE (JUSTIN'S HARDWARE VISION) -->
     <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-4" data-redline-target="Hardware Microcontroller & Potentiometer Bridge">
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-800 pb-4">
@@ -1018,8 +1102,14 @@
         <!-- Export Buttons -->
         <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-900">
           <div class="flex flex-wrap items-center gap-2">
+            <a href="/Justin_Muir_Parametric_NAM_Studio_Kit.zip" download class="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-slate-950 font-black text-xs font-mono flex items-center gap-1.5 transition shadow-lg shadow-amber-500/20">
+              <span>📦 Download Studio Kit (.zip)</span>
+            </a>
+            <a href="/printable_studio_run_sheet.html" target="_blank" class="px-3.5 py-2 rounded-xl bg-indigo-950/80 hover:bg-indigo-900 text-indigo-300 border border-indigo-500/40 text-xs font-mono font-bold flex items-center gap-1.5 transition">
+              <span>📋 Clipboard Run Sheet ↗</span>
+            </a>
             <button onclick="exportDataJson()" class="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-300 border border-slate-800 text-xs font-mono flex items-center gap-1.5 transition">
-              <span>⬇️ Download data.json</span>
+              <span>⬇️ data.json</span>
             </button>
             <button onclick="exportRunSheetCsv()" class="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 text-xs font-mono flex items-center gap-1.5 transition">
               <span>📄 Download run_sheet.csv</span>
@@ -1997,12 +2087,18 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
               <strong class="text-white">Key Specification:</strong> Free offsite NVIDIA T4 / A100 batch execution producing a standalone binary <code class="text-indigo-300">model_parametric.nam</code> in 35–45 minutes.
             </div>
           </div>
-          <div class="flex items-center gap-2 shrink-0">
-            <button onclick="copyCudaCommand('colab')" class="px-3 py-1.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition flex items-center gap-1 shadow">
-              <span>☁️ Copy Colab Script</span>
-            </button>
-            <button onclick="askAIAssistant('How do I upload my takes.zip to Google Colab and run the free NVIDIA GPU training step by step?')" class="px-3 py-1.5 rounded-xl bg-indigo-600/30 hover:bg-indigo-600/40 text-indigo-200 border border-indigo-500/40 text-xs font-semibold transition">
-              💬 Ask AI About Cloud Training
+          <div class="flex flex-wrap items-center gap-2 shrink-0">
+            <a href="https://colab.research.google.com/github/danielsherizen/neural-audio-parametric-dsp/blob/main/notebooks/colab_train_parametric_nam.ipynb" target="_blank" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-slate-950 text-xs font-black transition flex items-center gap-1.5 shadow">
+              <span>🚀 Open in Google Colab ↗</span>
+            </a>
+            <a href="/colab_train_parametric_nam.ipynb" download class="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition flex items-center gap-1 shadow">
+              <span>⬇️ Download .ipynb</span>
+            </a>
+            <a href="/data.json" download class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700 text-xs font-bold transition flex items-center gap-1">
+              <span>📋 data.json</span>
+            </a>
+            <button onclick="copyCudaCommand('colab')" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold transition flex items-center gap-1">
+              <span>☁️ Copy Script</span>
             </button>
           </div>
         </div>
@@ -2262,6 +2358,8 @@ files.download("./output/model_parametric.nam")</code></pre>
         <button onclick="askAIAssistant('Why am I hearing a 60Hz ground hum or buzz through my re-amp box, and how do I use the ground lift and 180 phase switch to fix it?')" class="text-[11px] bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 px-2.5 py-1 rounded-xl transition">⚡ Ground Hum &amp; Polarity Fix</button>
         <button onclick="askAIAssistant('Explain how CatMLP continuous conditioning works with the 5D knob vector in WaveNet and how it eliminates zipper noise')" class="text-[11px] bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 px-2.5 py-1 rounded-xl transition font-bold">🧠 CatMLP Conditioning</button>
         <button onclick="askAIAssistant('Why did the script say audio level < -60dBFS detected, or why does my take sound distorted and clipped?')" class="text-[11px] bg-red-500/10 hover:bg-red-500/20 text-red-300 border border-red-500/30 px-2.5 py-1 rounded-xl transition">⚠️ Silent / Clipped Take Troubleshooting</button>
+        <button onclick="askAIAssistant('Where can I download the complete Justin Muir Parametric NAM Studio Kit zip and what does it include?')" class="text-[11px] bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 px-2.5 py-1 rounded-xl transition font-bold">📦 Complete Studio Kit (.zip)</button>
+        <button onclick="askAIAssistant('How do I use the printable studio clipboard run sheet during my tube amp re-amping session?')" class="text-[11px] bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 border border-indigo-500/40 px-2.5 py-1 rounded-xl transition font-bold">📋 Printable Clipboard Run Sheet</button>
       </div>
 
       <!-- Live Chat Messages Container -->
@@ -3368,6 +3466,79 @@ To maximize tube life and protect your physical amplifier during re-amping sessi
    - **Step 1**: Verify reactive loadbox connection.
    - **Step 2**: Flip **POWER ON** with **STANDBY OFF**. Wait at least 60 seconds.
    - **Step 3**: Flip **STANDBY ON** to engage plate voltage.`
+      },
+
+      {
+        id: "studio_kit_package",
+        title: "The Complete Studio Kit (.zip): Starter Package Contents & File Tree",
+        category: "Tooling & Distribution",
+        keywords: ["studio kit", "complete kit", "zip", "starter kit", "package", "download package", "bundle", "all-in-one", "download zip", "kit"],
+        suggested: [
+          "Printable Studio Run Sheet (Clipboard Companion) & Session Tracking",
+          "Safe Physical Re-Amping Rig: Interface, Re-Amp Box, Tube Amp & Reactive Load",
+          "Google Colab 1-Click GPU Training: Fast PyTorch Parametric NAM"
+        ],
+        codeLang: "text",
+        filename: "studio_kit_tree.txt",
+        code: `Justin_Muir_Parametric_NAM_Studio_Kit/
+├── README.md                           # Master Quickstart & Documentation
+├── printable_studio_run_sheet.html     # Interactive & Printable Clipboard Sheet
+├── scripts/
+│   ├── reamp_automation.py             # Full-Duplex PortAudio Re-Amping Engine
+│   ├── Reaper_AutoReamp_NAM.lua        # Single-Key F1 REAPER ReaScript
+│   └── generate_run_sheet.py           # 5D Latin Hypercube Matrix Generator
+├── data/
+│   ├── justin_nam_run_sheet.csv        # 45-Take Stratified Run Sheet
+│   └── data.json                       # RFC 8259 PyTorch Training Manifest
+├── notebooks/
+│   └── colab_train_parametric_nam.ipynb # 1-Click Google Colab T4 GPU Notebook
+├── configs/
+│   ├── environment_gpu.yml             # Conda Spec for Local NVIDIA RTX CUDA
+│   ├── model_concat.json               # WaveNet CatMLP Architecture Spec
+│   └── learning_concat.json            # Dual Objective Loss Hyperparameters
+├── docs/
+│   └── HARDWARE_SAFETY_GUIDE.md        # Physical Rig & Transformer Protection
+└── assets/images/
+    └── hardware_wiring_diagram.svg     # Vector Schematic of Complete Signal Flow`,
+        markdown: `### 📦 The Complete Studio Kit (.zip): Everything Justin Needs in One Archive
+
+Justin, the **Justin_Muir_Parametric_NAM_Studio_Kit.zip** bundle brings together your entire re-amping and neural modeling production suite into a single download:
+
+1. **Automation Scripts**: Both \`reamp_automation.py\` (Python PortAudio CLI with peak meter safety) and \`Reaper_AutoReamp_NAM.lua\` (single-key F1 REAPER automation).
+2. **Data & Manifests**: Pre-generated 45-take Latin Hypercube matrix (\`justin_nam_run_sheet.csv\`) and training manifest (\`data.json\`).
+3. **Cloud & Local Training**: The 1-click Google Colab notebook (\`colab_train_parametric_nam.ipynb\`) and Conda GPU spec (\`environment_gpu.yml\`).
+4. **Safety & Clipboard Tools**: \`printable_studio_run_sheet.html\` for tracking takes on your desk clipboard and \`HARDWARE_SAFETY_GUIDE.md\` for transformer flyback protection!`
+      },
+
+      {
+        id: "clipboard_run_sheet",
+        title: "Printable Studio Run Sheet (Clipboard Companion) & Session Tracking",
+        category: "Sampling Strategy & Run Sheet",
+        keywords: ["clipboard", "printable", "print sheet", "run sheet print", "paper run sheet", "clipboard mode", "physical run sheet", "tracking sheet"],
+        suggested: [
+          "The Complete Studio Kit (.zip): Starter Package Contents & File Tree",
+          "Take 0 Anchor Baseline & Takes 41-45 Holdout Validation",
+          "Latin Hypercube Sampling (LHS): 45 Takes vs 3,125 Grid Steps"
+        ],
+        codeLang: "text",
+        filename: "clipboard_features.txt",
+        code: `STUDIO CLIPBOARD RUN SHEET FEATURES:
+=============================================================
+1. High-Contrast Typography: Large, bold numbers for Gain, Bass,
+   Mid, Treble, and Master readable from 3 feet away.
+2. LocalStorage Persistence: Checkboxes stay checked even if you
+   refresh or pause your re-amping session.
+3. Live Progress Tracker: Real-time % complete indicator.
+4. Filter Pills: Switch between All, Unrecorded, Validation, Anchor.
+5. Print Optimization (@media print): Clean black-and-white 2-page
+   layout formatted for standard home printers (Cmd+P / Ctrl+P).`,
+        markdown: `### 📋 Printable Studio Run Sheet (Clipboard Companion)
+
+When you're tracking in the studio leaning over a hot 50W tube amplifier, scrolling on a laptop can disrupt your workflow. We created the dedicated **Studio Clipboard Run Sheet**:
+
+1. **How to Launch**: Click **"📋 Clipboard Run Sheet ↗"** on the hero bar or navigate to \`/printable_studio_run_sheet.html\`.
+2. **Persistent Checkboxes**: Check off takes as you record them. Your progress automatically saves in browser \`localStorage\`.
+3. **Print to Physical Paper**: Tap **"🖨️ Print Sheet / Save PDF"** to print a crisp, high-contrast 2-page printout to attach to a physical clipboard on your amp desk!`
       },
 
       {

@@ -1,0 +1,212 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="100%" height="100%" style="background-color: #0b0f19; font-family: 'JetBrains Mono', monospace;">
+  <defs>
+    <!-- Gradients & Glow Filters -->
+    <linearGradient id="grid-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="danger-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+    <filter id="glow-danger" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="glow-blue" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Blueprint Grid Pattern -->
+  <rect width="1000" height="520" fill="#070b14"/>
+  <g stroke="#1e293b" stroke-width="0.5" opacity="0.4">
+    <path d="M 0,40 L 1000,40 M 0,80 L 1000,80 M 0,120 L 1000,120 M 0,160 L 1000,160 M 0,200 L 1000,200 M 0,240 L 1000,240 M 0,280 L 1000,280 M 0,320 L 1000,320 M 0,360 L 1000,360 M 0,400 L 1000,400 M 0,440 L 1000,440 M 0,480 L 1000,480" />
+    <path d="M 50,0 L 50,520 M 100,0 L 100,520 M 150,0 L 150,520 M 200,0 L 200,520 M 250,0 L 250,520 M 300,0 L 300,520 M 350,0 L 350,520 M 400,0 L 400,520 M 450,0 L 450,520 M 500,0 L 500,520 M 550,0 L 550,520 M 600,0 L 600,520 M 650,0 L 650,520 M 700,0 L 700,520 M 750,0 L 750,520 M 800,0 L 800,520 M 850,0 L 850,520 M 900,0 L 900,520 M 950,0 L 950,520" />
+  </g>
+
+  <!-- Title & Architecture Subtitle -->
+  <text x="35" y="38" fill="#f8fafc" font-size="16" font-weight="800" letter-spacing="1">JUSTIN MUIR • RE-AMPING HARDWARE SIGNAL FLOW &amp; SAFETY SCHEMATIC</text>
+  <text x="35" y="56" fill="#94a3b8" font-size="11">Closed-Loop 48kHz 24-bit PCM D/A &amp; A/D Flow • Inductive Transformer Protection Axiom</text>
+
+  <!-- Cable Legend (Top Right) -->
+  <g transform="translate(620, 20)">
+    <rect width="345" height="42" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <!-- Line Legend -->
+    <line x1="12" y1="14" x2="35" y2="14" stroke="#38bdf8" stroke-width="3"/>
+    <text x="42" y="17" fill="#cbd5e1" font-size="9">Balanced TRS Line (+4dBu)</text>
+    <!-- Guitar Legend -->
+    <line x1="180" y1="14" x2="203" y2="14" stroke="#f59e0b" stroke-width="3"/>
+    <text x="210" y="17" fill="#cbd5e1" font-size="9">Shielded Guitar (Hi-Z)</text>
+    <!-- Speaker Legend -->
+    <line x1="12" y1="30" x2="35" y2="30" stroke="#ef4444" stroke-width="4" stroke-dasharray="4,2"/>
+    <text x="42" y="33" fill="#fca5a5" font-size="9" font-weight="700">14/16AWG SPEAKER CABLE ⚠️</text>
+    <!-- USB Legend -->
+    <line x1="180" y1="30" x2="203" y2="30" stroke="#a855f7" stroke-width="2"/>
+    <text x="210" y="33" fill="#cbd5e1" font-size="9">USB-C / Thunderbolt</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- 1. COMPUTER / DAW BLOCK -->
+  <!-- ========================================================================= -->
+  <g transform="translate(35, 95)">
+    <rect width="180" height="230" rx="14" fill="url(#card-grad)" stroke="#3b82f6" stroke-width="1.5"/>
+    <rect width="180" height="32" rx="14" fill="#1e293b"/>
+    <rect x="0" y="18" width="180" height="14" fill="#1e293b"/>
+    <text x="14" y="21" fill="#60a5fa" font-size="11" font-weight="700">🖥️ DAW WORKSTATION</text>
+    <text x="14" y="55" fill="#f8fafc" font-size="12" font-weight="700">Cockos REAPER</text>
+    <text x="14" y="72" fill="#94a3b8" font-size="10">or reamp_automation.py</text>
+    
+    <rect x="12" y="85" width="156" height="50" rx="6" fill="#090d16" stroke="#1e293b"/>
+    <text x="20" y="103" fill="#38bdf8" font-size="10" font-weight="700">Track 1: Dry Sweep</text>
+    <text x="20" y="118" fill="#64748b" font-size="9">inputTrunc.wav (38.0s)</text>
+    <text x="20" y="129" fill="#e2e8f0" font-size="9">Fader: 0.0dBFS (Unity)</text>
+
+    <rect x="12" y="145" width="156" height="50" rx="6" fill="#090d16" stroke="#1e293b"/>
+    <text x="20" y="163" fill="#a855f7" font-size="10" font-weight="700">Track 2: Amp Return</text>
+    <text x="20" y="178" fill="#64748b" font-size="9">take_001.wav ... take_045</text>
+    <text x="20" y="189" fill="#10b981" font-size="9">Armed for Recording</text>
+
+    <text x="14" y="215" fill="#eab308" font-size="9" font-weight="600">HotKey: F1 (Auto-Reamp)</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- 2. AUDIO INTERFACE BLOCK -->
+  <!-- ========================================================================= -->
+  <g transform="translate(265, 95)">
+    <rect width="200" height="230" rx="14" fill="url(#card-grad)" stroke="#0ea5e9" stroke-width="1.5"/>
+    <rect width="200" height="32" rx="14" fill="#0369a1"/>
+    <rect x="0" y="18" width="200" height="14" fill="#0369a1"/>
+    <text x="14" y="21" fill="#ffffff" font-size="11" font-weight="700">🎚️ AUDIO INTERFACE</text>
+    <text x="14" y="55" fill="#f8fafc" font-size="12" font-weight="700">Focusrite / Apollo Twin</text>
+    <text x="14" y="72" fill="#bae6fd" font-size="10">48kHz 24-bit Hardware Clock</text>
+
+    <!-- Out 3 Port -->
+    <rect x="12" y="88" width="176" height="48" rx="8" fill="#082f49" stroke="#0284c7"/>
+    <circle cx="28" cy="112" r="7" fill="#0284c7" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="44" y="107" fill="#38bdf8" font-size="10" font-weight="700">LINE OUT 3</text>
+    <text x="44" y="122" fill="#bae6fd" font-size="9">+4dBu Balanced TRS (Unity)</text>
+
+    <!-- In 1 Port -->
+    <rect x="12" y="152" width="176" height="58" rx="8" fill="#082f49" stroke="#0284c7"/>
+    <circle cx="28" cy="181" r="7" fill="#059669" stroke="#34d399" stroke-width="1.5"/>
+    <text x="44" y="171" fill="#34d399" font-size="10" font-weight="700">LINE IN 1 (Return)</text>
+    <text x="44" y="186" fill="#93c5fd" font-size="9">Balanced Line (NOT Hi-Z/Mic)</text>
+    <text x="44" y="200" fill="#f59e0b" font-size="9" font-weight="700">Target: -12 to -6 dBFS</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- 3. RADIAL RE-AMP BOX BLOCK -->
+  <!-- ========================================================================= -->
+  <g transform="translate(515, 95)">
+    <rect width="180" height="230" rx="14" fill="url(#card-grad)" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect width="180" height="32" rx="14" fill="#b45309"/>
+    <rect x="0" y="18" width="180" height="14" fill="#b45309"/>
+    <text x="14" y="21" fill="#ffffff" font-size="11" font-weight="700">⚡ RE-AMP BOX</text>
+    <text x="14" y="55" fill="#f8fafc" font-size="12" font-weight="700">Radial ProRmp / X-Amp</text>
+    <text x="14" y="72" fill="#fde68a" font-size="10">Passive Transformer Isolation</text>
+
+    <!-- Trim Pot Visual -->
+    <rect x="12" y="88" width="156" height="42" rx="6" fill="#451a03" stroke="#d97706"/>
+    <text x="20" y="105" fill="#fde68a" font-size="9" font-weight="700">LEVEL TRIM POT</text>
+    <text x="20" y="120" fill="#fef3c7" font-size="9">Set ~65-75% (~ -14dBu)</text>
+
+    <!-- Ground Lift Switch -->
+    <rect x="12" y="138" width="156" height="38" rx="6" fill="#064e3b" stroke="#059669"/>
+    <text x="20" y="154" fill="#6ee7b7" font-size="9" font-weight="700">GROUND LIFT: PRESSED IN</text>
+    <text x="20" y="167" fill="#a7f3d0" font-size="8">Breaks 60Hz Chassis Ground Loop</text>
+
+    <!-- 180 Polarity Switch -->
+    <rect x="12" y="184" width="156" height="30" rx="6" fill="#1e293b" stroke="#475569"/>
+    <text x="20" y="202" fill="#cbd5e1" font-size="9">Polarity 180° Invert: Check Phase</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- 4. PHYSICAL TUBE GUITAR AMPLIFIER HEAD -->
+  <!-- ========================================================================= -->
+  <g transform="translate(745, 95)">
+    <rect width="220" height="230" rx="14" fill="url(#card-grad)" stroke="#ef4444" stroke-width="2"/>
+    <rect width="220" height="32" rx="14" fill="#991b1b"/>
+    <rect x="0" y="18" width="220" height="14" fill="#991b1b"/>
+    <text x="14" y="21" fill="#ffffff" font-size="11" font-weight="800">🔥 TUBE AMP HEAD</text>
+    <text x="14" y="55" fill="#f8fafc" font-size="12" font-weight="700">50W 6L6 / EL34 Head</text>
+    <text x="14" y="72" fill="#fca5a5" font-size="10">High-Voltage Vacuum Tubes</text>
+
+    <!-- Front Guitar Input -->
+    <rect x="12" y="85" width="196" height="36" rx="6" fill="#450a0a" stroke="#b91c1c"/>
+    <text x="20" y="100" fill="#fca5a5" font-size="9" font-weight="700">FRONT GUITAR IN (1MΩ)</text>
+    <text x="20" y="113" fill="#fecaca" font-size="8">Receives Unbalanced Instrument Level</text>
+
+    <!-- Potentiometer Knobs Representation -->
+    <rect x="12" y="127" width="196" height="38" rx="6" fill="#18181b" stroke="#3f3f46"/>
+    <text x="20" y="142" fill="#e4e4e7" font-size="8" font-weight="700">5D LHS KNOBS: [G, B, M, T, V]</text>
+    <text x="20" y="156" fill="#a1a1aa" font-size="8">45 Takes Adjusted per Run Sheet</text>
+
+    <!-- Speaker Output (CRITICAL WARNING) -->
+    <rect x="12" y="172" width="196" height="46" rx="6" fill="#7f1d1d" stroke="#ef4444" stroke-width="1.5" filter="url(#glow-danger)"/>
+    <text x="20" y="189" fill="#fef2f2" font-size="9" font-weight="800">SPEAKER OUT (8Ω/16Ω)</text>
+    <text x="20" y="205" fill="#fecaca" font-size="8" font-weight="700">⚠️ MUST CONNECT TO LOAD!</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- 5. TWO NOTES TORPEDO CAPTOR / REACTIVE LOADBOX (Bottom Center) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(515, 370)">
+    <rect width="450" height="120" rx="14" fill="url(#card-grad)" stroke="#10b981" stroke-width="2"/>
+    <rect width="450" height="30" rx="14" fill="#065f46"/>
+    <rect x="0" y="16" width="450" height="14" fill="#065f46"/>
+    <text x="14" y="20" fill="#ffffff" font-size="11" font-weight="800">🛡️ REACTIVE LOADBOX (Two Notes Torpedo Captor / Suhr)</text>
+
+    <g transform="translate(14, 40)">
+      <!-- Left side: Speaker In -->
+      <rect width="200" height="66" rx="8" fill="#022c22" stroke="#059669"/>
+      <text x="12" y="20" fill="#6ee7b7" font-size="10" font-weight="800">SPEAKER LOAD IN (8Ω)</text>
+      <text x="12" y="36" fill="#a7f3d0" font-size="8">Dissipates up to 100W RMS heat</text>
+      <text x="12" y="52" fill="#fca5a5" font-size="8" font-weight="700">Dynamic Voice Coil Impedance</text>
+    </g>
+
+    <g transform="translate(230, 40)">
+      <!-- Right side: Line Out -->
+      <rect width="205" height="66" rx="8" fill="#0c4a6e" stroke="#0284c7"/>
+      <text x="12" y="20" fill="#38bdf8" font-size="10" font-weight="800">BALANCED LINE OUT</text>
+      <text x="12" y="36" fill="#bae6fd" font-size="8">Raw Pre-Cabinet Power Tube Tap</text>
+      <text x="12" y="52" fill="#e0f2fe" font-size="8">TRS to Audio Interface In 1</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- CABLE CONNECTIONS & SIGNAL ROUTING PATHS -->
+  <!-- ========================================================================= -->
+
+  <!-- Cable 1: Computer to Interface (USB-C) -->
+  <path d="M 215,210 L 265,210" stroke="#a855f7" stroke-width="3" stroke-dasharray="5,3" fill="none"/>
+  <text x="224" y="202" fill="#c084fc" font-size="8" font-weight="700">USB-C</text>
+
+  <!-- Cable 2: Interface Out 3 to Radial Re-Amp Box (Balanced Line Level TRS) -->
+  <path d="M 465,130 L 515,130" stroke="#38bdf8" stroke-width="3" fill="none" filter="url(#glow-blue)"/>
+  <polygon points="513,126 523,130 513,134" fill="#38bdf8"/>
+  <text x="473" y="122" fill="#38bdf8" font-size="8" font-weight="700">+4dBu</text>
+
+  <!-- Cable 3: Radial Re-Amp to Tube Amp Input (Shielded Guitar Instrument Cable) -->
+  <path d="M 695,120 L 745,120" stroke="#f59e0b" stroke-width="3" fill="none"/>
+  <polygon points="743,116 753,120 743,124" fill="#f59e0b"/>
+  <text x="702" y="112" fill="#f59e0b" font-size="8" font-weight="700">Hi-Z TS</text>
+
+  <!-- Cable 4: Amp Speaker Out to Captor In (14/16AWG UNSHIELDED SPEAKER CABLE - HAZARD!) -->
+  <path d="M 855,325 L 855,355 L 615,355 L 615,410" stroke="#ef4444" stroke-width="4" stroke-dasharray="6,3" fill="none" filter="url(#glow-danger)"/>
+  <polygon points="611,408 615,418 619,408" fill="#ef4444"/>
+  <rect x="685" y="342" width="220" height="22" rx="4" fill="#7f1d1d" stroke="#ef4444"/>
+  <text x="692" y="357" fill="#ffffff" font-size="9" font-weight="800">⚠️ 16AWG SPEAKER CABLE ONLY</text>
+
+  <!-- Cable 5: Captor Line Out to Interface Line In 1 (Balanced TRS Line Return) -->
+  <path d="M 745,476 L 365,476 L 365,325" stroke="#38bdf8" stroke-width="3" fill="none" filter="url(#glow-blue)"/>
+  <polygon points="361,327 365,317 369,327" fill="#38bdf8"/>
+  <rect x="420" y="465" width="210" height="20" rx="4" fill="#082f49" stroke="#0284c7"/>
+  <text x="428" y="479" fill="#38bdf8" font-size="9" font-weight="700">BALANCED LINE RETURN (-6dBFS)</text>
+
+</svg>

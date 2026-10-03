@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Justin Muir • Parametric Tube Amp Studio Run Sheet (Clipboard Companion)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-size: 10pt;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-only {
+        display: block !important;
+      }
+      .print-border {
+        border-color: #000000 !important;
+      }
+      .print-bg-white {
+        background-color: #ffffff !important;
+      }
+      .print-text-black {
+        color: #000000 !important;
+      }
+      table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+      }
+      th, td {
+        border: 1px solid #333333 !important;
+        padding: 4px 6px !important;
+        color: #000000 !important;
+      }
+      th {
+        background-color: #f0f0f0 !important;
+        font-weight: 800 !important;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen p-4 sm:p-8">
+
+  <div class="max-w-6xl mx-auto space-y-6">
+
+    <!-- Top Action Toolbar (No Print) -->
+    <div class="no-print flex flex-wrap items-center justify-between gap-4 bg-slate-900 border border-slate-800 p-4 rounded-2xl shadow-xl">
+      <div class="flex items-center gap-3">
+        <a href="/parametric-amp.html" class="px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold flex items-center gap-1.5 transition">
+          <span>&larr; Back to Live Portal</span>
+        </a>
+        <div class="h-4 w-[1px] bg-slate-700"></div>
+        <span class="text-xs font-bold text-amber-400 font-mono">📋 Studio Clipboard Mode</span>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button onclick="window.print()" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs flex items-center gap-1.5 transition shadow-lg shadow-amber-500/20 cursor-pointer">
+          <span>🖨️ Print Sheet / Save PDF</span>
+        </button>
+        <button onclick="resetProgress()" class="px-3 py-2 rounded-xl bg-rose-950/60 hover:bg-rose-900 text-rose-300 border border-rose-800/40 text-xs font-semibold transition cursor-pointer">
+          Reset Checkboxes
+        </button>
+      </div>
+    </div>
+
+    <!-- Printable Header Banner -->
+    <div class="bg-slate-900/90 border border-slate-800 p-6 rounded-3xl print-bg-white print-border print-text-black shadow-2xl space-y-4">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-800 pb-4 print-border">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-xl">🎸</span>
+            <h1 class="text-xl sm:text-2xl font-black tracking-tight text-white print-text-black">
+              JUSTIN MUIR • PARAMETRIC TUBE AMP RUN SHEET
+            </h1>
+          </div>
+          <p class="text-xs text-slate-400 print-text-black mt-1">
+            45-Take Stratified Latin Hypercube Matrix (LHS) &bull; 48kHz 24-bit PCM Mono Calibration
+          </p>
+        </div>
+        <div class="text-right">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-500/10 text-amber-400 border border-amber-500/30 print-border print-text-black">
+            CatMLP Continuous Conditioning
+          </span>
+        </div>
+      </div>
+
+      <!-- Tracking Session Metadata Form -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-xs">
+        <div class="bg-slate-950 border border-slate-800 p-2.5 rounded-xl print-bg-white print-border">
+          <span class="text-[10px] text-slate-400 uppercase font-mono block">Amp Head:</span>
+          <input type="text" id="meta-amp" value="50W Tube Head (12AX7/6L6)" class="w-full bg-transparent font-bold text-white print-text-black focus:outline-none text-xs">
+        </div>
+        <div class="bg-slate-950 border border-slate-800 p-2.5 rounded-xl print-bg-white print-border">
+          <span class="text-[10px] text-slate-400 uppercase font-mono block">Loadbox:</span>
+          <input type="text" id="meta-load" value="Two Notes Captor (8Ω)" class="w-full bg-transparent font-bold text-amber-400 print-text-black focus:outline-none text-xs">
+        </div>
+        <div class="bg-slate-950 border border-slate-800 p-2.5 rounded-xl print-bg-white print-border">
+          <span class="text-[10px] text-slate-400 uppercase font-mono block">Interface Pre:</span>
+          <input type="text" id="meta-pre" value="Line In 1 (-6dBFS Peak)" class="w-full bg-transparent font-bold text-sky-400 print-text-black focus:outline-none text-xs">
+        </div>
+        <div class="bg-slate-950 border border-slate-800 p-2.5 rounded-xl print-bg-white print-border">
+          <span class="text-[10px] text-slate-400 uppercase font-mono block">Reamp Box Trim:</span>
+          <input type="text" id="meta-trim" value="Radial ProRmp @ ~70%" class="w-full bg-transparent font-bold text-emerald-400 print-text-black focus:outline-none text-xs">
+        </div>
+        <div class="bg-slate-950 border border-slate-800 p-2.5 rounded-xl print-bg-white print-border">
+          <span class="text-[10px] text-slate-400 uppercase font-mono block">Engineer:</span>
+          <input type="text" id="meta-eng" value="Justin Muir" class="w-full bg-transparent font-bold text-white print-text-black focus:outline-none text-xs">
+        </div>
+        <div class="bg-slate-950 border border-slate-800 p-2.5 rounded-xl print-bg-white print-border">
+          <span class="text-[10px] text-slate-400 uppercase font-mono block">Session Date:</span>
+          <input type="text" id="meta-date" value="2026-10-03" class="w-full bg-transparent font-bold text-white print-text-black focus:outline-none text-xs">
+        </div>
+      </div>
+
+      <!-- Critical Safety Reminder Banner (Printable) -->
+      <div class="bg-rose-950/30 border border-rose-500/40 p-3 rounded-2xl text-[11px] space-y-1 print-border">
+        <div class="flex items-center gap-2 font-bold text-rose-300 print-text-black uppercase tracking-wider text-[10px]">
+          <span>⚠️ MANDATORY HARDWARE PROTECTION CHECKLIST BEFORE FIRING TAKE 0:</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-slate-300 print-text-black">
+          <div>&bull; <strong>16AWG Speaker Cable ONLY</strong> between Amp and Captor load.</div>
+          <div>&bull; <strong>5-Min Pre-Heat</strong>: Power ON 60s &rarr; Standby ON 5 mins.</div>
+          <div>&bull; <strong>Level Target</strong>: Interface Line In peaking between -12 and -6 dBFS.</div>
+        </div>
+      </div>
+
+      <!-- Interactive Session Progress Tracker (No Print) -->
+      <div class="no-print pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-t border-slate-800">
+        <div class="space-y-1 flex-1 max-w-md">
+          <div class="flex justify-between text-xs font-mono font-bold">
+            <span class="text-slate-300">Session Capture Progress:</span>
+            <span id="progress-text" class="text-amber-400">0 / 46 (0%)</span>
+          </div>
+          <div class="w-full h-2.5 bg-slate-950 rounded-full overflow-hidden border border-slate-800">
+            <div id="progress-bar" class="h-full bg-gradient-to-r from-amber-500 to-emerald-500 w-0 transition-all duration-300"></div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-1.5 text-xs font-mono">
+          <span class="text-slate-400 mr-1 text-[10px]">FILTER:</span>
+          <button onclick="filterTakes('all')" id="flt-all" class="px-2.5 py-1 rounded-lg bg-amber-500 text-slate-950 font-bold transition">All (46)</button>
+          <button onclick="filterTakes('unrecorded')" id="flt-unrec" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:text-white transition">Unrecorded</button>
+          <button onclick="filterTakes('val')" id="flt-val" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:text-white transition">Holdout Val (5)</button>
+          <button onclick="filterTakes('anchor')" id="flt-anchor" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:text-white transition">Anchor (1)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- The 46-Take Matrix Table -->
+    <div class="bg-slate-900/90 border border-slate-800 rounded-3xl overflow-hidden print-bg-white print-border shadow-2xl">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs font-mono" id="takes-table">
+          <thead>
+            <tr class="bg-slate-950 text-slate-400 border-b border-slate-800 text-[11px] uppercase tracking-wider print-border">
+              <th class="py-3 px-3 w-12 text-center no-print">Done</th>
+              <th class="py-3 px-3 w-20">Take ID</th>
+              <th class="py-3 px-3 w-28">Type</th>
+              <th class="py-3 px-3 text-center bg-amber-950/20 text-amber-300 font-bold border-x border-slate-800 print-border">GAIN</th>
+              <th class="py-3 px-3 text-center bg-blue-950/20 text-blue-300 font-bold border-r border-slate-800 print-border">BASS</th>
+              <th class="py-3 px-3 text-center bg-purple-950/20 text-purple-300 font-bold border-r border-slate-800 print-border">MID</th>
+              <th class="py-3 px-3 text-center bg-emerald-950/20 text-emerald-300 font-bold border-r border-slate-800 print-border">TREBLE</th>
+              <th class="py-3 px-3 text-center bg-rose-950/20 text-rose-300 font-bold border-r border-slate-800 print-border">MASTER</th>
+              <th class="py-3 px-3">Target File</th>
+              <th class="py-3 px-3 w-28 print-only">Peak (dBFS)</th>
+              <th class="py-3 px-3 w-36 print-only">Notes / Temp</th>
+            </tr>
+          </thead>
+          <tbody id="takes-body" class="divide-y divide-slate-800/60 print-border">
+            <!-- Rendered dynamically by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Print Footer (Print Only) -->
+    <div class="print-only text-[10px] text-slate-600 border-t border-slate-400 pt-2 flex justify-between">
+      <span>Justin Muir • Parametric NAM Matrix &bull; Generated from Cockos REAPER / Python PortAudio Engine</span>
+      <span>Page 1 of 2</span>
+    </div>
+
+  </div>
+
+  <script>
+    const RUN_SHEET_DATA = [
+      { id: "take_00", type: "Anchor", g: 5.0, b: 5.0, m: 5.0, t: 5.0, v: 7.0, val: false, file: "take_00_anchor_G5.0_B5.0_M5.0_T5.0_M7.0.wav" },
+      { id: "take_01", type: "LHS Train", g: 6.5, b: 5.0, m: 8.5, t: 7.0, v: 3.5, val: false, file: "take_01_G6.5_B5.0_M8.5_T7.0_M3.5.wav" },
+      { id: "take_02", type: "LHS Train", g: 5.5, b: 3.5, m: 6.5, t: 9.0, v: 6.0, val: false, file: "take_02_G5.5_B3.5_M6.5_T9.0_M6.0.wav" },
+      { id: "take_03", type: "LHS Train", g: 3.0, b: 9.0, m: 7.5, t: 4.0, v: 3.5, val: false, file: "take_03_G3.0_B9.0_M7.5_T4.0_M3.5.wav" },
+      { id: "take_04", type: "LHS Train", g: 5.5, b: 7.0, m: 6.5, t: 1.0, v: 6.0, val: false, file: "take_04_G5.5_B7.0_M6.5_T1.0_M6.0.wav" },
+      { id: "take_05", type: "LHS Train", g: 8.5, b: 1.5, m: 6.5, t: 1.5, v: 4.0, val: false, file: "take_05_G8.5_B1.5_M6.5_T1.5_M4.0.wav" },
+      { id: "take_06", type: "LHS Train", g: 1.5, b: 2.5, m: 8.0, t: 6.0, v: 2.0, val: false, file: "take_06_G1.5_B2.5_M8.0_T6.0_M2.0.wav" },
+      { id: "take_07", type: "LHS Train", g: 2.5, b: 8.5, m: 5.5, t: 8.5, v: 4.5, val: false, file: "take_07_G2.5_B8.5_M5.5_T8.5_M4.5.wav" },
+      { id: "take_08", type: "LHS Train", g: 5.0, b: 1.5, m: 1.5, t: 6.0, v: 7.0, val: false, file: "take_08_G5.0_B1.5_M1.5_T6.0_M7.0.wav" },
+      { id: "take_09", type: "LHS Train", g: 3.0, b: 7.0, m: 3.0, t: 3.5, v: 8.0, val: false, file: "take_09_G3.0_B7.0_M3.0_T3.5_M8.0.wav" },
+      { id: "take_10", type: "LHS Train", g: 8.5, b: 5.5, m: 3.0, t: 3.5, v: 4.5, val: false, file: "take_10_G8.5_B5.5_M3.0_T3.5_M4.5.wav" },
+      { id: "take_11", type: "LHS Train", g: 1.5, b: 7.0, m: 7.0, t: 7.0, v: 9.5, val: false, file: "take_11_G1.5_B7.0_M7.0_T7.0_M9.5.wav" },
+      { id: "take_12", type: "LHS Train", g: 2.0, b: 9.5, m: 5.0, t: 9.5, v: 3.0, val: false, file: "take_12_G2.0_B9.5_M5.0_T9.5_M3.0.wav" },
+      { id: "take_13", type: "LHS Train", g: 2.0, b: 1.0, m: 4.0, t: 5.5, v: 7.0, val: false, file: "take_13_G2.0_B1.0_M4.0_T5.5_M7.0.wav" },
+      { id: "take_14", type: "LHS Train", g: 9.0, b: 1.5, m: 7.5, t: 9.5, v: 4.0, val: false, file: "take_14_G9.0_B1.5_M7.5_T9.5_M4.0.wav" },
+      { id: "take_15", type: "LHS Train", g: 7.5, b: 2.5, m: 5.5, t: 8.5, v: 3.0, val: false, file: "take_15_G7.5_B2.5_M5.5_T8.5_M3.0.wav" },
+      { id: "take_16", type: "LHS Train", g: 10.0, b: 6.0, m: 9.0, t: 5.0, v: 6.5, val: false, file: "take_16_G10.0_B6.0_M9.0_T5.0_M6.5.wav" },
+      { id: "take_17", type: "LHS Train", g: 4.0, b: 6.5, m: 4.0, t: 7.5, v: 4.5, val: false, file: "take_17_G4.0_B6.5_M4.0_T7.5_M4.5.wav" },
+      { id: "take_18", type: "LHS Train", g: 5.0, b: 8.5, m: 7.5, t: 10.0, v: 9.0, val: false, file: "take_18_G5.0_B8.5_M7.5_T10.0_M9.0.wav" },
+      { id: "take_19", type: "LHS Train", g: 5.0, b: 6.0, m: 3.5, t: 2.0, v: 7.5, val: false, file: "take_19_G5.0_B6.0_M3.5_T2.0_M7.5.wav" },
+      { id: "take_20", type: "LHS Train", g: 4.0, b: 8.0, m: 9.0, t: 2.0, v: 6.0, val: false, file: "take_20_G4.0_B8.0_M9.0_T2.0_M6.0.wav" },
+      { id: "take_21", type: "LHS Train", g: 8.5, b: 2.0, m: 10.0, t: 2.5, v: 7.5, val: false, file: "take_21_G8.5_B2.0_M10.0_T2.5_M7.5.wav" },
+      { id: "take_22", type: "LHS Train", g: 7.5, b: 3.0, m: 4.5, t: 2.5, v: 7.0, val: false, file: "take_22_G7.5_B3.0_M4.5_T2.5_M7.0.wav" },
+      { id: "take_23", type: "LHS Train", g: 4.0, b: 3.0, m: 6.5, t: 9.0, v: 4.5, val: false, file: "take_23_G4.0_B3.0_M6.5_T9.0_M4.5.wav" },
+      { id: "take_24", type: "LHS Train", g: 8.0, b: 4.5, m: 2.0, t: 9.0, v: 5.0, val: false, file: "take_24_G8.0_B4.5_M2.0_T9.0_M5.0.wav" },
+      { id: "take_25", type: "LHS Train", g: 1.0, b: 7.5, m: 6.5, t: 9.0, v: 9.5, val: false, file: "take_25_G1.0_B7.5_M6.5_T9.0_M9.5.wav" },
+      { id: "take_26", type: "LHS Train", g: 3.0, b: 6.5, m: 5.5, t: 2.5, v: 2.5, val: false, file: "take_26_G3.0_B6.5_M5.5_T2.5_M2.5.wav" },
+      { id: "take_27", type: "LHS Train", g: 7.5, b: 7.5, m: 3.5, t: 3.5, v: 4.5, val: false, file: "take_27_G7.5_B7.5_M3.5_T3.5_M4.5.wav" },
+      { id: "take_28", type: "LHS Train", g: 1.5, b: 3.0, m: 10.0, t: 6.0, v: 10.0, val: false, file: "take_28_G1.5_B3.0_M10.0_T6.0_M10.0.wav" },
+      { id: "take_29", type: "LHS Train", g: 2.5, b: 2.5, m: 6.0, t: 3.5, v: 5.0, val: false, file: "take_29_G2.5_B2.5_M6.0_T3.5_M5.0.wav" },
+      { id: "take_30", type: "LHS Train", g: 5.0, b: 5.0, m: 7.0, t: 4.5, v: 4.5, val: false, file: "take_30_G5.0_B5.0_M7.0_T4.5_M4.5.wav" },
+      { id: "take_31", type: "LHS Train", g: 9.0, b: 4.0, m: 5.5, t: 6.5, v: 6.5, val: false, file: "take_31_G9.0_B4.0_M5.5_T6.5_M6.5.wav" },
+      { id: "take_32", type: "LHS Train", g: 6.5, b: 3.0, m: 4.0, t: 3.5, v: 4.5, val: false, file: "take_32_G6.5_B3.0_M4.0_T3.5_M4.5.wav" },
+      { id: "take_33", type: "LHS Train", g: 7.0, b: 3.0, m: 2.5, t: 7.5, v: 4.5, val: false, file: "take_33_G7.0_B3.0_M2.5_T7.5_M4.5.wav" },
+      { id: "take_34", type: "LHS Train", g: 2.0, b: 4.0, m: 1.5, t: 6.0, v: 3.5, val: false, file: "take_34_G2.0_B4.0_M1.5_T6.0_M3.5.wav" },
+      { id: "take_35", type: "LHS Train", g: 5.5, b: 4.5, m: 7.5, t: 9.0, v: 8.5, val: false, file: "take_35_G5.5_B4.5_M7.5_T9.0_M8.5.wav" },
+      { id: "take_36", type: "LHS Train", g: 5.0, b: 2.5, m: 9.0, t: 5.5, v: 8.5, val: false, file: "take_36_G5.0_B2.5_M9.0_T5.5_M8.5.wav" },
+      { id: "take_37", type: "LHS Train", g: 9.0, b: 5.0, m: 2.5, t: 6.5, v: 8.5, val: false, file: "take_37_G9.0_B5.0_M2.5_T6.5_M8.5.wav" },
+      { id: "take_38", type: "LHS Train", g: 3.0, b: 4.5, m: 6.0, t: 10.0, v: 6.0, val: false, file: "take_38_G3.0_B4.5_M6.0_T10.0_M6.0.wav" },
+      { id: "take_39", type: "LHS Train", g: 8.5, b: 8.5, m: 7.5, t: 1.5, v: 2.5, val: false, file: "take_39_G8.5_B8.5_M7.5_T1.5_M2.5.wav" },
+      { id: "take_40", type: "LHS Train", g: 2.5, b: 5.5, m: 7.0, t: 8.0, v: 10.0, val: false, file: "take_40_G2.5_B5.5_M7.0_T8.0_M10.0.wav" },
+      { id: "take_41", type: "Holdout Val", g: 2.0, b: 6.0, m: 4.0, t: 8.0, v: 6.0, val: true, file: "take_41_holdout_val_G2.0_B6.0_M4.0_T8.0_M6.0.wav" },
+      { id: "take_42", type: "Holdout Val", g: 7.5, b: 3.0, m: 7.0, t: 5.5, v: 7.0, val: true, file: "take_42_holdout_val_G7.5_B3.0_M7.0_T5.5_M7.0.wav" },
+      { id: "take_43", type: "Extreme Edge", g: 10.0, b: 2.0, m: 8.0, t: 9.0, v: 5.0, val: false, file: "take_43_extreme_edge_G10.0_B2.0_M8.0_T9.0_M5.0.wav" },
+      { id: "take_44", type: "Extreme Edge", g: 8.5, b: 9.5, m: 1.0, t: 4.0, v: 6.0, val: false, file: "take_44_extreme_edge_G8.5_B9.5_M1.0_T4.0_M6.0.wav" },
+      { id: "take_45", type: "Final Check", g: 5.0, b: 5.0, m: 5.0, t: 5.0, v: 7.0, val: true, file: "take_45_final_anchor_G5.0_B5.0_M5.0_T5.0_M7.0.wav" }
+    ];
+
+    let currentFilter = 'all';
+
+    function getStorageKey() {
+      return 'justin_nam_takes_progress_v1';
+    }
+
+    function loadProgress() {
+      try {
+        const raw = localStorage.getItem(getStorageKey());
+        return raw ? JSON.parse(raw) : {};
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function saveProgress(data) {
+      try {
+        localStorage.setItem(getStorageKey(), JSON.stringify(data));
+      } catch (e) {}
+    }
+
+    function toggleTakeDone(takeId) {
+      const progress = loadProgress();
+      progress[takeId] = !progress[takeId];
+      saveProgress(progress);
+      renderTable();
+      updateProgressBar();
+    }
+
+    function resetProgress() {
+      if (confirm("Reset all checked takes for a new session?")) {
+        localStorage.removeItem(getStorageKey());
+        renderTable();
+        updateProgressBar();
+      }
+    }
+
+    function updateProgressBar() {
+      const progress = loadProgress();
+      const doneCount = Object.values(progress).filter(Boolean).length;
+      const total = RUN_SHEET_DATA.length;
+      const pct = Math.round((doneCount / total) * 100);
+
+      const bar = document.getElementById('progress-bar');
+      const txt = document.getElementById('progress-text');
+      if (bar) bar.style.width = pct + '%';
+      if (txt) txt.textContent = `${doneCount} / ${total} (${pct}%)`;
+    }
+
+    function filterTakes(flt) {
+      currentFilter = flt;
+      ['all', 'unrec', 'val', 'anchor'].forEach(k => {
+        const btn = document.getElementById(`flt-${k}`);
+        if (!btn) return;
+        if (k === (flt === 'unrecorded' ? 'unrec' : flt)) {
+          btn.className = "px-2.5 py-1 rounded-lg bg-amber-500 text-slate-950 font-bold transition";
+        } else {
+          btn.className = "px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:text-white transition";
+        }
+      });
+      renderTable();
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('takes-body');
+      if (!tbody) return;
+      const progress = loadProgress();
+
+      let rowsHtml = '';
+      RUN_SHEET_DATA.forEach(row => {
+        const isDone = !!progress[row.id];
+
+        // Filter logic
+        if (currentFilter === 'unrecorded' && isDone) return;
+        if (currentFilter === 'val' && !row.val) return;
+        if (currentFilter === 'anchor' && row.type !== 'Anchor' && row.type !== 'Final Check') return;
+
+        const rowBg = isDone ? 'bg-emerald-950/20' : '';
+        const badgeColor = row.type === 'Anchor' || row.type === 'Final Check'
+          ? 'bg-sky-500/20 text-sky-300 border-sky-500/30'
+          : (row.val ? 'bg-purple-500/20 text-purple-300 border-purple-500/30 font-bold' : 'bg-slate-800 text-slate-400 border-slate-700');
+
+        rowsHtml += `
+          <tr class="${rowBg} hover:bg-slate-800/40 transition print-border">
+            <td class="py-2.5 px-3 text-center no-print">
+              <input type="checkbox" onchange="toggleTakeDone('${row.id}')" ${isDone ? 'checked' : ''} class="w-4 h-4 rounded bg-slate-950 border-slate-700 text-amber-500 focus:ring-0 cursor-pointer">
+            </td>
+            <td class="py-2.5 px-3 font-bold ${isDone ? 'line-through text-slate-500' : 'text-slate-200'}">
+              ${row.id}
+            </td>
+            <td class="py-2.5 px-3">
+              <span class="inline-block px-2 py-0.5 rounded text-[10px] border ${badgeColor}">
+                ${row.type}
+              </span>
+            </td>
+            <td class="py-2.5 px-3 text-center font-bold text-amber-400 bg-amber-950/10 border-x border-slate-800 print-border text-sm">
+              ${row.g.toFixed(1)}
+            </td>
+            <td class="py-2.5 px-3 text-center font-bold text-blue-400 bg-blue-950/10 border-r border-slate-800 print-border text-sm">
+              ${row.b.toFixed(1)}
+            </td>
+            <td class="py-2.5 px-3 text-center font-bold text-purple-400 bg-purple-950/10 border-r border-slate-800 print-border text-sm">
+              ${row.m.toFixed(1)}
+            </td>
+            <td class="py-2.5 px-3 text-center font-bold text-emerald-400 bg-emerald-950/10 border-r border-slate-800 print-border text-sm">
+              ${row.t.toFixed(1)}
+            </td>
+            <td class="py-2.5 px-3 text-center font-bold text-rose-400 bg-rose-950/10 border-r border-slate-800 print-border text-sm">
+              ${row.v.toFixed(1)}
+            </td>
+            <td class="py-2.5 px-3 text-[10px] text-slate-400 font-mono truncate max-w-xs">
+              ${row.file}
+            </td>
+            <td class="py-2.5 px-3 print-only text-center border-r border-slate-800">
+              _______
+            </td>
+            <td class="py-2.5 px-3 print-only">
+              ___________________
+            </td>
+          </tr>
+        `;
+      });
+
+      tbody.innerHTML = rowsHtml;
+    }
+
+    // Initialize on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderTable();
+      updateProgressBar();
+    });
+  </script>
+</body>
+</html>

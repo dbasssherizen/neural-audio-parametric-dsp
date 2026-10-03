@@ -1,0 +1,23 @@
+name: nam_gpu
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pytorch=2.2.1
+  - torchvision
+  - torchaudio=2.2.1
+  - pytorch-cuda=12.1
+  - numpy>=1.24.0
+  - scipy>=1.10.0
+  - soundfile>=0.12.1
+  - librosa>=0.10.1
+  - pip:
+      - lightning>=2.1.0
+      - sounddevice>=0.4.6
+      - matplotlib>=3.8.0
+      - tqdm>=4.66.0
+      - rich>=13.7.0
