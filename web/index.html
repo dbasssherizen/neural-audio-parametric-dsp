@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parametric Neural Amp Modeler & Hardware Blueprint (Live Redline Studio)</title>
+  <title>Justin Muir • Parametric Neural Amp Modeler & Hardware Blueprint (Live Redline Studio)</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎸</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
@@ -263,7 +263,7 @@
               LIVE WEB.APP DEPLOYMENT
             </span>
             <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
-              ⚡ PARAMETRIC AUDIO • NETOPS & 48kHz AUDIO DSP
+              ⚡ JUSTIN MUIR • NETOPS & 48kHz AUDIO DSP
             </span>
             <span class="text-xs text-purple-300 font-medium flex items-center gap-1 bg-purple-500/10 px-2.5 py-0.5 rounded-full border border-purple-500/20">
               🎛️ Dedicated Hardware &amp; Neural DSP Studio
@@ -697,13 +697,13 @@
 
     <!-- WORKSPACE 2: PHYSICAL RIG -->
     <div id="workspace-rig" class="studio-workspace space-y-6 hidden">
-    <!-- SECTION B: HARDWARE MICROCONTROLLER BRIDGE (HARDWARE ARCHITECTURE VISION) -->
+    <!-- SECTION B: HARDWARE MICROCONTROLLER BRIDGE (JUSTIN'S HARDWARE VISION) -->
     <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-4" data-redline-target="Hardware Microcontroller & Potentiometer Bridge">
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-800 pb-4">
         <div>
           <h2 class="text-lg font-bold text-white flex items-center gap-2">
             <span>🔌 Hardware Implementation: RP2040 / Pico USB-MIDI Pot Bridge</span>
-            <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/30">Target Benchmark</span>
+            <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/30">Justin's Target</span>
           </h2>
           <p class="text-xs text-slate-400 mt-0.5">
             Reading analog potentiometers via ADC, debouncing with exponential smoothing, and streaming high-res MIDI CC #20–24.
@@ -1030,7 +1030,7 @@
             <a href="/Reaper_AutoReamp_NAM.lua" download class="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-purple-300 border border-slate-800 text-xs font-mono flex items-center gap-1.5 transition">
               <span>📜 Reaper Script (.lua)</span>
             </a>
-            <a href="/parametric_nam_run_sheet.csv" download class="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-slate-800 text-xs font-mono flex items-center gap-1.5 transition">
+            <a href="/justin_nam_run_sheet.csv" download class="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-slate-800 text-xs font-mono flex items-center gap-1.5 transition">
               <span>📊 Default 45-Take CSV</span>
             </a>
             <button onclick="resetRunSheetProgress()" class="px-3 py-2 text-slate-500 hover:text-rose-400 text-xs transition">
@@ -1089,7 +1089,7 @@
             <span class="text-[10px] font-mono text-slate-500">Reaper / Studio One</span>
           </div>
           <p class="text-slate-400 leading-relaxed">
-            Audio engineers can render all audio offline in any DAW on Windows, Mac, or Linux rigs:
+            Justin can render all audio offline in any DAW on his Windows or Linux rig:
           </p>
           <ul class="text-slate-400 space-y-1.5 list-disc list-inside">
             <li>Load the standard <code class="text-slate-300">inputTrunc.wav</code> (38s sweep at 48kHz 24-bit).</li>
@@ -1184,7 +1184,7 @@
           <span class="text-[10px] font-mono bg-sky-500/20 text-sky-200 border border-sky-500/30 px-2 py-0.5 rounded-full self-start sm:self-auto">Google Colab &bull; RunPod &bull; Remote Server</span>
         </div>
         <p class="text-xs text-slate-300 leading-relaxed">
-          <strong>Yes! You do NOT need a local GPU to run sweeps.</strong> Audio capture in your DAW uses 0% GPU. You run your re-amp sweeps locally on any computer, zip your rendered WAVs + <code class="text-sky-300 font-mono">data.json</code>, and dispatch the crunching offsite to an NVIDIA GPU cloud renderer:
+          <strong>Yes, Justin! You do NOT need a local GPU to run sweeps.</strong> Audio capture in your DAW uses 0% GPU. You run your re-amp sweeps locally on any computer, zip your rendered WAVs + <code class="text-sky-300 font-mono">data.json</code>, and dispatch the crunching offsite to an NVIDIA GPU cloud renderer:
         </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-[11px] pt-1">
           <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
@@ -1256,7 +1256,7 @@
             </button>
             <div>
               <div class="flex items-center gap-2 flex-wrap">
-                <span class="text-xs font-extrabold text-white">🎙️ 4-Min Audio Code Overview • Audio Engineer Deep Dive</span>
+                <span class="text-xs font-extrabold text-white">🎙️ 4-Min Audio Code Overview • Justin's Deep Dive</span>
                 <span class="text-[9px] font-mono bg-indigo-500/20 text-indigo-300 px-2 py-0.5 rounded-full border border-indigo-500/30">Guided Audio Walkthrough</span>
                 <span class="text-[9px] font-mono bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-500/30">Live Web Speech</span>
               </div>
@@ -1428,7 +1428,7 @@ if peak &lt; 0.001:
 else:
     print(f"✓ Recorded successfully! Peak: {peak:.2f} ({20*np.log10(peak+1e-6):.1f}dBFS)")</code></pre>
                 <p class="text-[11px] text-slate-300 leading-relaxed">
-                  <strong>Why this matters:</strong> If an operator accidentally leaves a standby switch on or forgets a cable, this check immediately flags silent takes before 45 empty files ruin the neural training batch.
+                  <strong>Why this matters:</strong> If Justin accidentally leaves a standby switch on or forgets a cable, this check immediately flags silent takes before 45 empty files ruin the neural training batch.
                 </p>
               </div>
 
@@ -1439,7 +1439,7 @@ else:
                   <span class="text-[9px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded">Zero-Config Resilience</span>
                 </div>
                 <p class="text-[11px] text-slate-300 leading-relaxed">
-                  If the operator runs the script without first downloading <code class="text-amber-300">parametric_nam_run_sheet.csv</code>, <code class="text-amber-300">generate_default_run_sheet()</code> uses a seeded Mulberry32 PRNG to compute the exact 45-take Latin Hypercube matrix locally with zero human intervention.
+                  If Justin runs the script without first downloading <code class="text-amber-300">justin_nam_run_sheet.csv</code>, <code class="text-amber-300">generate_default_run_sheet()</code> uses a seeded Mulberry32 PRNG to compute the exact 45-take Latin Hypercube matrix locally with zero human intervention.
                 </p>
               </div>
 
@@ -1845,7 +1845,7 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
           </div>
           <div class="mermaid-code-container overflow-x-auto p-3 bg-slate-900/60 rounded-xl" id="mermaid-sequence" data-mermaid-src="sequenceDiagram
     autonumber
-    actor Engineer as Audio Engineer
+    actor Engineer as Justin (Audio Engineer)
     participant REAPER as Cockos REAPER (DAW)
     participant Lua as Reaper_AutoReamp_NAM.lua
     participant AudioHW as 48kHz Audio Interface
@@ -1869,7 +1869,7 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
     REAPER->>Disk: Export 45 Normalized WAV Takes in 10 Seconds"></div>
           <pre id="sequence-code" class="hidden">sequenceDiagram
     autonumber
-    actor Engineer as Audio Engineer
+    actor Engineer as Justin (Audio Engineer)
     participant REAPER as Cockos REAPER (DAW)
     participant Lua as Reaper_AutoReamp_NAM.lua
     participant AudioHW as 48kHz Audio Interface
@@ -2199,7 +2199,7 @@ files.download("./output/model_parametric.nam")</code></pre>
       <div class="flex items-center justify-between border-b border-slate-800 pb-3">
         <div>
           <h3 class="text-base font-bold text-white flex items-center gap-2">
-            <span>📝 Engineering Redline Notes</span>
+            <span>📝 Justin's Redline Notes</span>
             <span id="drawerCount" class="bg-rose-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">0</span>
           </h3>
           <p class="text-xs text-slate-400">Direct feedback on the Parametric NAM blueprint</p>
@@ -2241,10 +2241,10 @@ files.download("./output/model_parametric.nam")</code></pre>
           </div>
           <div>
             <div class="flex items-center gap-2">
-              <h3 class="text-base font-extrabold text-white">Audio AI Architect & Co-Pilot</h3>
-              <span class="text-[10px] font-bold uppercase tracking-wider bg-indigo-500/20 text-indigo-300 px-2 py-0.5 rounded-full border border-indigo-500/30">v2.5 DSP</span>
+              <h3 class="text-base font-extrabold text-white">Audio AI Architect &amp; Studio Co-Pilot</h3>
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-500/30">v3.0 Neural Brain</span>
             </div>
-            <p class="text-[11px] text-slate-400">Dedicated Neural DSP & Hardware Engineering Assistant</p>
+            <p class="text-[11px] text-slate-400">Justin Muir's Dedicated Tube Amp Re-Amping &amp; NAM Engine</p>
           </div>
         </div>
         <button onclick="closeAIDrawer()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-400 flex items-center justify-center transition">✕</button>
@@ -2252,15 +2252,16 @@ files.download("./output/model_parametric.nam")</code></pre>
 
       <!-- Quick Action Prompt Pills -->
       <div class="flex flex-wrap gap-1.5 pt-1 border-b border-slate-800/80 pb-3">
-        <button onclick="sendQuickPrompt('colab_offsite')" class="text-[11px] bg-sky-500/10 hover:bg-sky-500/20 text-sky-300 border border-sky-500/30 px-2.5 py-1 rounded-xl transition">☁️ Offsite Cloud GPU (Colab)</button>
-        <button onclick="sendQuickPrompt('linux_cuda')" class="text-[11px] bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2.5 py-1 rounded-xl transition">🐧 Linux/Win CUDA (No Mac)</button>
-        <button onclick="sendQuickPrompt('offline_binary')" class="text-[11px] bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 px-2.5 py-1 rounded-xl transition">📦 Offline WAV to .nam Binary</button>
-        <button onclick="sendQuickPrompt('pico_adc')" class="text-[11px] bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-2.5 py-1 rounded-xl transition">⚡ RP2040 Pico Pots</button>
-        <button onclick="sendQuickPrompt('latin_matrix')" class="text-[11px] bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 px-2.5 py-1 rounded-xl transition">📊 45-Take Sampling Matrix</button>
-                <button onclick="askAIAssistant('Explain how CatMLP continuous conditioning works with the 5D knob vector in WaveNet and how it eliminates zipper noise')" class="text-[11px] bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 px-2.5 py-1 rounded-xl transition font-bold">🧠 CatMLP Conditioning</button>
-        <button onclick="sendQuickPrompt('film_loop')" class="text-[11px] bg-sky-500/10 hover:bg-sky-500/20 text-sky-300 border border-sky-500/30 px-2.5 py-1 rounded-xl transition">🔥 Parametric Model Training</button>
-        <button onclick="sendQuickPrompt('esp32_ble')" class="text-[11px] bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 px-2.5 py-1 rounded-xl transition">🔌 ESP32-S3 BLE MIDI</button>
-        <button onclick="sendQuickPrompt('rpi5_rt')" class="text-[11px] bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/30 px-2.5 py-1 rounded-xl transition">🎛️ RPi 5 RT Setup</button>
+        <button onclick="askAIAssistant('What is the exact physical wiring diagram for my interface, re-amp box, tube amp head, and reactive loadbox, and how do I prevent blowing an output transformer?')" class="text-[11px] bg-sky-500/10 hover:bg-sky-500/20 text-sky-300 border border-sky-500/30 px-2.5 py-1 rounded-xl transition">🔌 Hardware Rig &amp; Load Safety</button>
+        <button onclick="askAIAssistant('What levels should I set for my dry sweep output and interface line-in preamp to avoid clipping during re-amping?')" class="text-[11px] bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 px-2.5 py-1 rounded-xl transition">🎚️ Gain Staging &amp; dBFS Targets</button>
+        <button onclick="askAIAssistant('How do I install Reaper_AutoReamp_NAM.lua into REAPER, bind it to F1, and do a 10-second wildcard batch render?')" class="text-[11px] bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 px-2.5 py-1 rounded-xl transition">📜 REAPER F1 Auto-Reamp</button>
+        <button onclick="askAIAssistant('How do I run reamp_automation.py from the terminal, select my audio interface device ID, and handle full-duplex buffers?')" class="text-[11px] bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2.5 py-1 rounded-xl transition">🐍 Python reamp_automation.py</button>
+        <button onclick="askAIAssistant('How does Latin Hypercube Sampling work for the 45 takes, and what are the Anchor and Holdout Validation takes?')" class="text-[11px] bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-2.5 py-1 rounded-xl transition">📊 45 Latin Hypercube Takes</button>
+        <button onclick="askAIAssistant('Step-by-step: How do I zip my takes, upload to Google Colab, run the headless PyTorch training, and download my .nam model?')" class="text-[11px] bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 border border-blue-500/30 px-2.5 py-1 rounded-xl transition">☁️ Free Colab GPU Training</button>
+        <button onclick="askAIAssistant('How do I load model_parametric.nam into the official NAM plugin in REAPER or Logic, and why do I need a Cabinet IR?')" class="text-[11px] bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/30 px-2.5 py-1 rounded-xl transition">🎸 Loading .nam in DAW Plugins &amp; IRs</button>
+        <button onclick="askAIAssistant('Why am I hearing a 60Hz ground hum or buzz through my re-amp box, and how do I use the ground lift and 180 phase switch to fix it?')" class="text-[11px] bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 px-2.5 py-1 rounded-xl transition">⚡ Ground Hum &amp; Polarity Fix</button>
+        <button onclick="askAIAssistant('Explain how CatMLP continuous conditioning works with the 5D knob vector in WaveNet and how it eliminates zipper noise')" class="text-[11px] bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 px-2.5 py-1 rounded-xl transition font-bold">🧠 CatMLP Conditioning</button>
+        <button onclick="askAIAssistant('Why did the script say audio level < -60dBFS detected, or why does my take sound distorted and clipped?')" class="text-[11px] bg-red-500/10 hover:bg-red-500/20 text-red-300 border border-red-500/30 px-2.5 py-1 rounded-xl transition">⚠️ Silent / Clipped Take Troubleshooting</button>
       </div>
 
       <!-- Live Chat Messages Container -->
@@ -2270,13 +2271,13 @@ files.download("./output/model_parametric.nam")</code></pre>
           <div class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
             <span class="font-bold text-indigo-300">Audio AI Co-Pilot:</span>
-            <span class="text-[10px] text-slate-500">Live</span>
+            <span class="text-[10px] text-slate-500">Live • Grounded Studio Brain</span>
           </div>
           <p class="text-slate-200 leading-relaxed">
-            Welcome! I’m your dedicated Audio AI Co-Pilot. I have full context on your text, your 48kHz 24-bit amp capture setup, the NAM platform, and your microcontroller vision.
+            Hey Justin! I’m your dedicated Neural Audio AI Co-Pilot. I am fully grounded in your physical 48kHz 24-bit tube amp re-amping chain, Cockos REAPER Lua automation, full-duplex PortAudio stream, Latin Hypercube sampling runs, and Google Colab GPU training.
           </p>
           <p class="text-slate-300 leading-relaxed">
-            I can generate and modify your <strong>CUDA training scripts</strong>, generate your <strong>RP2040 / ESP32 firmware</strong> with ADC anti-jitter filters, calculate optimal <strong>Latin Hypercube sampling matrices</strong>, or alter any part of your blueprint. Click any pill above or ask me anything below!
+            Ask me anything about safe tube loadbox wiring, gain staging targets, ground loop hum removal, troubleshooting silent or clipped takes, REAPER F1 automation, or loading continuous <code class="text-emerald-300">.nam</code> models into your DAW plugins. Click any quick pill above or type your question below!
           </p>
         </div>
       </div>
@@ -2322,7 +2323,7 @@ files.download("./output/model_parametric.nam")</code></pre>
     // Load redlines from LocalStorage
     function loadSavedRedlines() {
       try {
-        const saved = localStorage.getItem('parametric_nam_redline_store_v1');
+        const saved = localStorage.getItem('justin_muir_redline_store_v1');
         if (saved) {
           state.redlines = JSON.parse(saved);
           renderRedlines();
@@ -2334,7 +2335,7 @@ files.download("./output/model_parametric.nam")</code></pre>
 
     function saveRedlinesToStorage() {
       try {
-        localStorage.setItem('parametric_nam_redline_store_v1', JSON.stringify(state.redlines));
+        localStorage.setItem('justin_muir_redline_store_v1', JSON.stringify(state.redlines));
       } catch (e) {}
     }
 
@@ -2355,15 +2356,448 @@ files.download("./output/model_parametric.nam")</code></pre>
       row.classList.toggle('hidden');
     }
 
-    // AI Pre-loaded Engineering Modules
-    const aiKnowledge = {
-      cat_mlp: {
-        title: "CatMLP Continuous Conditioning Engine (Zero Zipper Noise)",
-        desc: "PyTorch module that projects 5 normalized potentiometer knob positions into high-dimensional latent space and concatenates directly with dilated causal Conv1D audio features.",
+    // =========================================================================
+    // SOVEREIGN STUDIO KNOWLEDGE BASE (v3.0 Neural Brain)
+    // 25+ Deep Technical Audio Engineering Capsules for Justin Muir
+    // =========================================================================
+    const STUDIO_KNOWLEDGE_BASE = [
+      {
+        id: "hardware_rig",
+        title: "Safe Physical Re-Amping Rig: Interface, Re-Amp Box, Tube Amp & Reactive Load",
+        category: "Hardware & Electrical Safety",
+        keywords: ["wiring", "hookup", "hook up", "rig", "diagram", "connection", "connect", "cable", "cables", "hardware", "physical", "radial", "reamp", "re-amp", "captor", "two notes", "suhr", "torpedo", "loadbox", "reactive load", "transformer", "blowout", "danger", "speaker cable", "instrument cable", "safe", "safety"],
+        suggested: [
+          "What levels should I set for my dry sweep output and line in preamp?",
+          "Why am I hearing a 60Hz ground hum or buzz through my re-amp box?",
+          "How do I avoid cathode stripping when using the standby switch?"
+        ],
+        codeLang: "text",
+        filename: "hardware_signal_flow.txt",
+        code: `[DAW / Computer: Cockos REAPER or Python reamp_automation.py]
+  │ (USB-C / Thunderbolt)
+  ▼
+[Audio Interface: Focusrite Scarlett / Apollo Twin]
+  │ Line Out 3 (+4dBu Balanced TRS Cable)
+  ▼
+[Radial Re-Amp Box (ProRmp or X-Amp)]
+  ├─ Transformer Isolation (Ground Lift ENGAGED)
+  ├─ Level Trim Pot (~65% rotation)
+  │ Hi-Z Unbalanced 1/4" Shielded Guitar Cable
+  ▼
+[Physical Tube Guitar Amp Head (e.g. 50W 6L6/EL34)]
+  ├─ High-Z Guitar Input
+  ├─ Preamp & EQ Tone Stack (Gain, Bass, Mid, Treble, Master)
+  │ Power Tubes & Output Transformer
+  │ !!! CRITICAL WARNING: UN-SHIELDED 16AWG SPEAKER CABLE ONLY !!!
+  ▼
+[Two Notes Torpedo Captor / Suhr Reactive Loadbox (8 or 16 Ohm In)]
+  ├─ Reactive Voice Coil Impedance Network (Dissipates up to 100W RMS heat)
+  │ Balanced Line Out (1/4" TRS or XLR Cable)
+  ▼
+[Audio Interface: Line In 1 (Balanced Line Level, Preamp Pad as needed)]
+  │ 48kHz 24-bit A/D Conversion
+  ▼
+[DAW / Storage: Recorded Take (Peaking -12dBFS to -6dBFS)]`,
+        markdown: `### 🔌 Physical Re-Amping Rig & Output Transformer Protection Axiom
+
+Justin, this is your complete, battle-tested hardware signal flow for re-amping physical tube amplifiers into Neural Amp Modeler without ever risking catastrophic transformer damage:
+
+1. **D/A Output Routing**:
+   - Send the dry calibration sweep (\`inputTrunc.wav\`) out of your audio interface on **Line Out 3** using a balanced 1/4" TRS-to-TRS cable.
+   - Never send instrument-level guitar inputs to your amp directly from an interface line output without a re-amp box. Line outputs are low-impedance (+4dBu balanced ~100Ω), whereas tube guitar amp inputs expect a high-impedance (-20dBu unbalanced ~1MΩ) signal.
+
+2. **The Re-Amp Box (Radial ProRmp / X-Amp)**:
+   - Converts the balanced line signal to unbalanced instrument level with a custom-wound Jensen or Radial isolation transformer.
+   - **Ground Lift Switch**: Keep this pressed IN (Engaged) to sever the ground loop between your computer AC ground and the amplifier chassis ground.
+   - Connect the re-amp box output to the amplifier's front-panel guitar input with a high-quality shielded guitar instrument cable.
+
+3. **⚠️ THE SPEAKER CABLE & TRANSFORMER SAFETY RULE (NON-NEGOTIABLE)**:
+   - **Always use a heavy unshielded 14AWG or 16AWG SPEAKER CABLE** between the amp's Speaker Output jack and the Two Notes Captor / Suhr Reactive Load input.
+   - **NEVER use a thin shielded guitar instrument cable** for the speaker connection. Guitar cables have thin center cores that will melt under power amp current, causing an open circuit.
+   - **NEVER power on or take a tube amp off Standby without the reactive load firmly plugged in!** Tube amplifier output transformers require a continuous secondary load impedance (8Ω or 16Ω). If fired into an open circuit, inductive flyback voltage spikes exceed **2,000 Volts**, causing internal winding arcing, destroying the output transformer, and potentially taking the power tubes with it.`
+      },
+
+      {
+        id: "gain_staging",
+        title: "Pristine Gain Staging: D/A Output, Radial Trim, and Interface Line-In dBFS Targets",
+        category: "Signal Flow & Gain Staging",
+        keywords: ["gain staging", "levels", "level", "dbfs", "dbu", "-12dbfs", "-6dbfs", "-18dbfs", "trim", "pad", "dry sweep", "output volume", "line in", "preamp", "headroom", "calibration", "signal level", "hot", "meter", "target"],
+        suggested: [
+          "Fixing Harsh Digital Clipping vs Authentic Analog Tube Saturation",
+          "Anatomy of the 38.0-Second Calibration Sweep (inputTrunc.wav)",
+          "Why did the script say audio level < -60dBFS detected?"
+        ],
+        codeLang: "text",
+        filename: "gain_staging_cheat_sheet.txt",
+        code: `GAIN STAGING CALIBRATION MATRIX (48kHz 24-bit):
+====================================================================
+Point 1: DAW Master / Track Playback Out 3:
+  Target: 0.0dBFS True Peak (Unity Digital D/A Conversion)
+  Do NOT reduce DAW faders. Keep conversion bit depth at full resolution.
+
+Point 2: Radial Re-Amp Level Potentiometer:
+  Target: 60% to 75% rotation (~ -14dBu output)
+  Matches average passive humbucker pickup output (~200mV - 500mV RMS).
+  If modeling high-output active pickups, adjust trim to 80-85%.
+
+Point 3: Amp Controls (Initial Calibration Run):
+  Set Amp knobs to Noon [0.5, 0.5, 0.5, 0.5, 0.5] for Take 0 Anchor.
+
+Point 4: Audio Interface Return (Line In 1):
+  Target Peak Range: -12.0 dBFS to -6.0 dBFS on loudest transient chirp
+  RMS Range: -22.0 dBFS to -16.0 dBFS
+  Headroom Margin: Exactly 6.0dB safety cushion below 0.0dBFS`,
+        markdown: `### 🎚️ Gain Staging & Precision dBFS Calibration Matrix
+
+Achieving state-of-the-art Neural Amp Modeler accuracy requires disciplined, calibrated gain staging across both digital and analog domains:
+
+1. **Unity D/A Digital Playback**:
+   - In REAPER or \`reamp_automation.py\`, ensure the playback track for \`inputTrunc.wav\` is set to **0.0dBFS unity gain**.
+   - Do not pull down digital faders to attenuate signal, as lowering digital bit depth before D/A conversion increases quantization noise floor.
+
+2. **Radial Re-Amp Level Setting**:
+   - The Radial trim pot controls how hard the dry signal hits the first tube pre-amp grid (V1A 12AX7).
+   - Set the trim pot to approximately **2 o'clock (~65-75% rotation)**. This presents ~300mV to 500mV RMS to the tube grid, matching standard Seymour Duncan or Gibson PAF humbuckers.
+
+3. **Interface Line In Preamp Calibration (-12dBFS to -6dBFS Peak)**:
+   - In your audio interface (Focusrite / Apollo), select **Line Input mode** (NOT Instrument/Hi-Z and NOT Mic).
+   - Play the calibration sweep through your tube amp at maximum gain. Observe the input peak meter in REAPER.
+   - Adjust the interface input preamp so the loudest resonant peaks reach **-6dBFS peak** (leaving a 6dB safety ceiling).
+   - **Why 6dB of headroom?** Tube amplifiers exhibit non-linear dynamic expansion at certain resonant frequencies, and bias drift can cause later takes in the 45-take Latin Hypercube sequence to hit slightly harder. If a single take clips at 0.0dBFS, the entire training dataset is contaminated with square-wave flat-tops!`
+      },
+
+      {
+        id: "ground_loop_hum",
+        title: "Eliminating 60Hz Ground Hum, Buzz, and Phase Cancellation",
+        category: "Hardware & Electrical Safety",
+        keywords: ["hum", "60hz", "50hz", "buzz", "noise", "ground loop", "ground lift", "polarity", "phase", "180", "isolation transformer", "buzz fix", "noisy", "hummer", "grounding"],
+        suggested: [
+          "Safe Physical Re-Amping Rig: Interface, Re-Amp Box, Tube Amp & Reactive Load",
+          "Troubleshooting Silent Takes: Audio Level < -60dBFS Detected",
+          "Calibrating Clean vs High-Gain Lead Channels"
+        ],
+        codeLang: "bash",
+        filename: "hum_diagnostic_steps.sh",
+        code: `# Quick Studio Ground Hum Triage Protocol:
+# 1. Engage Ground Lift on Radial Re-Amp box (Depress 'LIFT' switch)
+# 2. Check AC power: Plug interface and tube amp into SAME star-grounded outlet strip
+# 3. Test 180-degree polarity toggle on reamp box
+# 4. Keep re-amp box at least 2 feet away from amp power transformer (magnetic coupling)`,
+        markdown: `### ⚡ Eliminating 60Hz Ground Hum, Electromagnetic Buzz & Phase Inversion
+
+When connecting a computer audio interface to a high-gain tube guitar amplifier, ground loops and magnetic interference are the #1 source of noise. Here is how to eliminate them completely:
+
+1. **Why Ground Hum Occurs**:
+   - Your audio interface is grounded through your Mac/PC AC cable and USB ground shield. Your tube amplifier is grounded through its heavy 3-prong chassis earth.
+   - When an audio cable connects the two, a closed conductive loop is formed. Stray electromagnetic flux from power transformers induces 60Hz (or 50Hz) AC current around this loop, which the sensitive high-gain tube preamp amplifies by 60dB+!
+
+2. **The 3-Step Studio Remediation**:
+   - **Step 1: Engage Ground Lift on Re-Amp Box**: The Radial Re-Amp box features an internal galvanic isolation transformer. Press the **LIFT** button. This breaks the copper ground path while audio signals pass effortlessly through the magnetic core. Hum drops immediately by 30-40dB.
+   - **Step 2: Single-Point Star AC Grounding**: Plug both your audio interface power supply and your tube amplifier into the **same heavy-duty surge-protected power strip**. This ensures both chassis share identical ground potential (zero ground differential).
+   - **Step 3: Distance from Power Transformers**: Do not place your Radial Re-Amp box or guitar cables directly on top of the amp head near its power transformer! Power transformers emit an electromagnetic field that induces hum directly into passive inductors. Maintain at least 18-24 inches of physical separation.
+   - **Polarity / Phase Switch**: If combining re-amped audio with an acoustic mic or direct feed, flip the **180° Polarity Invert** switch on the Radial box to test for phase cancellation. Use whichever position delivers tighter, fuller low end.`
+      },
+
+      {
+        id: "latin_hypercube",
+        title: "Latin Hypercube Sampling (LHS): 45 Takes vs 3,125 Grid Steps",
+        category: "Sampling Strategy & Run Sheet",
+        keywords: ["latin hypercube", "lhs", "sampling", "45 takes", "45", "grid", "matrix", "3125", "combinations", "parameter space", "stratified", "space-filling", "multidimensional", "run sheet", "sweep matrix", "takes"],
+        suggested: [
+          "Take 0 Anchor Baseline & Takes 41-45 Holdout Validation",
+          "Python CLI Automation: reamp_automation.py PortAudio Stream",
+          "CatMLP Conditioning: 5D Knob Vectors & Zero Zipper Noise"
+        ],
+        codeLang: "python",
+        filename: "generate_lhs_matrix.py",
+        code: `import numpy as np
+from scipy.stats import qmc
+
+def generate_justin_run_sheet(num_takes=45, seed=42):
+    sampler = qmc.LatinHypercube(d=5, seed=seed)
+    sample = sampler.random(n=num_takes)
+    dial_matrix = np.round(sample * 10.0, 1)
+    print("Take 001 Dial Settings (G, B, M, T, V):", dial_matrix[0])
+    return sample, dial_matrix
+
+if __name__ == "__main__":
+    generate_justin_run_sheet()`,
+        markdown: `### 📊 Latin Hypercube Sampling (LHS): 45 Takes vs 3,125 Grid Combinations
+
+In standard neural modeling, capturing a 5-knob tube amp (Gain, Bass, Mid, Treble, Master) across all combinations would require grid sampling:
+
+- **The Curse of Dimensionality (Grid Sampling)**:
+  - If you test just 5 discrete positions per knob ($0, 2.5, 5, 7.5, 10$):
+  $$\\text{Takes} = 5^5 = 3,125 \\text{ takes}$$
+  - At 38 seconds per take plus manual adjustment, that equals **33 straight hours of continuous re-amping**! Your tubes would overheat, bias would drift, and your studio session would be ruined.
+
+- **The Latin Hypercube Solution**:
+  - Latin Hypercube Sampling (LHS) is a stratified multidimensional space-filling algorithm. It partitions the range of each of the 5 knobs into $N=45$ equiprobable intervals and samples exactly once from each bin in orthogonal projection.
+  - **Result**: In just **45 takes (~30 minutes)**, the neural network observes 45 distinct continuous settings for *every individual potentiometer*, spanning the entire 5-dimensional volume.
+  - Because our neural engine uses continuous non-linear MLP projection (CatMLP), it learns the smooth physical transfer function of the tone stack and power tubes, accurately predicting any intermediate setting (e.g. Gain at 6.38, Treble at 4.12) with zero discrete stepping!`
+      },
+
+      {
+        id: "anchor_validation_takes",
+        title: "Take 0 Anchor Baseline & Takes 41-45 Holdout Validation",
+        category: "Sampling Strategy & Run Sheet",
+        keywords: ["anchor", "take 0", "take 000", "baseline", "drift", "thermal", "validation", "holdout", "test set", "takes 41-45", "is_validation", "overfitting", "generalization"],
+        suggested: [
+          "Dual Objective Loss: ESR Loss (Transients) + Multi-Scale STFT (Tube Sag)",
+          "The data.json Manifest: RFC 8259 Standard & Normalization",
+          "Google Colab 1-Click GPU Training: Fast PyTorch Parametric NAM"
+        ],
+        codeLang: "json",
+        filename: "take_manifest_snippet.json",
+        code: `{
+  "take_000": {
+    "role": "anchor_baseline",
+    "params": [0.5, 0.5, 0.5, 0.5, 0.5],
+    "description": "All knobs at noon (5.0). Run at T=0min and optionally T=30min to detect thermal bias drift."
+  },
+  "takes_001_to_040": {
+    "role": "training_set",
+    "count": 40,
+    "is_validation": false,
+    "description": "Backpropagated into CatMLP and WaveNet weights."
+  },
+  "takes_041_to_045": {
+    "role": "holdout_validation_set",
+    "count": 5,
+    "is_validation": true,
+    "description": "Strictly withheld during training. Used to compute unbiased validation ESR and STFT losses."
+  }
+}`,
+        markdown: `### 🎯 Take 0 Anchor Baseline & Takes 41-45 Holdout Validation Protocol
+
+To ensure scientific ground-truth fidelity and eliminate overfitting, the 45-take sequence contains two essential structural safeguards:
+
+1. **Take 0 (The Noon Anchor Baseline)**:
+   - Before beginning the Latin Hypercube sequence, record **Take 0** with all 5 knobs placed squarely at **5.0 (Noon)**: \`[0.5, 0.5, 0.5, 0.5, 0.5]\`.
+   - **Thermal Drift Detection**: If you record Take 0 at the start of your session and re-record it after Take 45, you can overlay the two audio files in REAPER and check phase cancellation. If they cancel out by >40dB, your amplifier's tubes stayed thermally stable throughout the entire run!
+
+2. **Takes 41 through 45 (Holdout Validation Set)**:
+   - In \`data.json\`, takes 41, 42, 43, 44, and 45 are flagged with \`"is_validation": true\`.
+   - During PyTorch training on Google Colab, gradient backpropagation is **strictly disabled** on these 5 takes.
+   - At the conclusion of every epoch, the model evaluates its predictive accuracy (ESR Loss & Multi-Scale STFT Loss) exclusively against these unseen knob configurations.
+   - If the validation error decreases alongside the training error, you have mathematical proof that the model has internalized the physical analog electronics of your tube amp rather than memorizing individual WAV files!`
+      },
+
+      {
+        id: "reamp_automation_cli",
+        title: "Python CLI Automation: reamp_automation.py PortAudio Stream",
+        category: "CLI & Terminal Tooling",
+        keywords: ["reamp_automation.py", "python", "sounddevice", "portaudio", "cli", "terminal", "playrec", "buffer", "device id", "--list-devices", "automated reamp", "duplex"],
+        suggested: [
+          "Troubleshooting Silent Takes: Audio Level < -60dBFS Detected",
+          "Cockos REAPER Workflow: Reaper_AutoReamp_NAM.lua & F1 Auto-Reamp",
+          "Pristine Gain Staging: D/A Output, Radial Trim, and Interface Line-In dBFS Targets"
+        ],
+        codeLang: "bash",
+        filename: "run_reamp_cli.sh",
+        code: `# 1. List all available audio interfaces and PortAudio IDs:
+python scripts/reamp_automation.py --list-devices
+
+# 2. Run the automated re-amping sequence:
+#    --device: Your audio interface index (e.g. Focusrite or Apollo)
+#    --out-ch: Hardware Output 3 (to Radial Reamp Box)
+#    --in-ch: Hardware Input 1 (from Captor Line Out)
+python scripts/reamp_automation.py --device 2 --out-ch 3 --in-ch 1
+
+# Note: Press SPACEBAR in terminal between takes to confirm knob settings!`,
+        markdown: `### 🐍 CLI Deep Dive: \`reamp_automation.py\` Synchronous PortAudio Engine
+
+\`reamp_automation.py\` is our standalone Python automation script that handles physical re-amping without needing a complex DAW project:
+
+1. **Hardware Device Discovery (\`--list-devices\`):**
+   - Running \`python scripts/reamp_automation.py --list-devices\` queries the PortAudio subsystem and displays every connected input and output device with its channel count and default sample rates.
+
+2. **Synchronous Full-Duplex \`sounddevice.playrec\`**:
+   - The script creates a single unified float32 memory buffer and calls \`sd.playrec(play_buf, samplerate=48000, channels=2)\`.
+   - **Why full duplex?** Running separate \`play()\` and \`record()\` commands causes clock drift, sample slips, and unpredictable startup latencies. \`playrec()\` locks D/A and A/D conversion to the exact same audio interface crystal clock.
+
+3. **Built-in Peak Level Guard (< -60dBFS Detector)**:
+   - Immediately following each 38-second take, the script checks:
+   \`np.max(np.abs(take_audio))\`
+   - If the peak is lower than 0.001 (-60dBFS), the script pauses, sounds an audible alert, and displays: \`⚠️ WARNING: Silent take detected! Check amp standby switch and cables!\` This prevents you from wasting 30 minutes recording silent files.
+
+4. **Self-Generating Run Sheet**:
+   - If \`justin_nam_run_sheet.csv\` does not exist in your directory, the script automatically seeds and writes the 45-take Latin Hypercube sampling matrix on the fly!`
+      },
+
+      {
+        id: "reaper_lua_workflow",
+        title: "Cockos REAPER Workflow: Reaper_AutoReamp_NAM.lua & F1 Auto-Reamp",
+        category: "DAW & Lua Automation",
+        keywords: ["reaper", "lua", "reascript", "reaper_autoreamp_nam.lua", "f1", "hotkey", "action list", "timeline", "marker", "region", "wildcard", "$region.wav", "batch render", "non-blocking", "defer"],
+        suggested: [
+          "REAPER Region Wildcards ($region.wav) & File Naming Alignment",
+          "Latin Hypercube Sampling (LHS): 45 Takes vs 3,125 Grid Steps",
+          "Google Colab 1-Click GPU Training: Fast PyTorch Parametric NAM"
+        ],
+        codeLang: "lua",
+        filename: "Reaper_AutoReamp_NAM.lua",
+        code: `-- Cockos REAPER Lua Auto-Reamping Script
+-- Binds to 'F1' hotkey in Action List
+
+local SWEEP_LEN_SEC = 38.0
+local GAP_SEC = 2.0
+
+function check_stop()
+  local elapsed = reaper.time_precise() - startTime
+  if elapsed >= SWEEP_LEN_SEC then
+    reaper.Main_OnCommand(1016, 0) -- Transport: Stop
+    local regionName = string.format("take_%03d.wav", currentTake)
+    reaper.AddProjectMarker2(0, true, startTime, startTime + SWEEP_LEN_SEC, regionName, currentTake, 0)
+    currentTake = currentTake + 1
+    reaper.SetEditCurPos(startTime + SWEEP_LEN_SEC + GAP_SEC, true, false)
+    reaper.ShowConsoleMsg(string.format("✅ Take %d finished! Set knobs for next take and tap F1.\\n", currentTake - 1))
+  else
+    reaper.defer(check_stop) -- 120Hz non-blocking GUI loop tick
+  end
+end
+
+function start_take()
+  startTime = reaper.GetCursorPosition()
+  reaper.Main_OnCommand(1013, 0) -- Transport: Record
+  check_stop()
+end
+
+start_take()`,
+        markdown: `### 📜 Cockos REAPER Workflow: \`Reaper_AutoReamp_NAM.lua\` & Single-Key F1 Workflow
+
+If you prefer using your DAW rather than the Python terminal, \`Reaper_AutoReamp_NAM.lua\` turns Cockos REAPER into an automated re-amping command center:
+
+1. **REAPER Track Configuration**:
+   - **Track 1 ("Dry Sweep")**: Place \`inputTrunc.wav\` on this track. Route its hardware output to **Output 3** (connecting to your Radial Reamp Box). Uncheck "Master send".
+   - **Track 2 ("Amp Return")**: Set input to **Line In 1** (from Two Notes Captor Line Out). Arm for recording.
+
+2. **One-Time Installation in REAPER**:
+   - In REAPER, click **Actions -> Show action list...**
+   - Click **New action... -> Load ReaScript...**
+   - Select \`scripts/Reaper_AutoReamp_NAM.lua\`.
+   - In the "Filter" box, search for \`Reaper_AutoReamp_NAM\`. Click **Add Shortcut** and press **F1** on your keyboard.
+
+3. **The 30-Minute Rapid Workflow**:
+   - Look at your Latin Hypercube Run Sheet on screen.
+   - Adjust the 5 knobs on your tube amp to match Take 1.
+   - Tap **F1**. REAPER automatically arms recording, starts the transport, plays the 38-second sweep, stops cleanly at 38.0s, drops a timeline Region named \`take_001.wav\`, advances the edit cursor by 2 seconds, and notifies you!
+   - Repeat for all 45 takes. Total session time: under 32 minutes!`
+      },
+
+      {
+        id: "colab_training_loop",
+        title: "Google Colab 1-Click GPU Training: Fast PyTorch Parametric NAM",
+        category: "Cloud & Colab GPU",
+        keywords: ["colab", "google colab", "gpu", "t4", "cloud training", "free gpu", "train", "takes.zip", "headless", "terminal", "upload", "download", "model_parametric.nam", "training"],
+        suggested: [
+          "Dual Objective Loss: ESR Loss (Transients) + Multi-Scale STFT (Tube Sag)",
+          "Loading model_parametric.nam in DAW Plugins (REAPER, Logic, Pro Tools)",
+          "CatMLP Conditioning: 5D Knob Vectors & Zero Zipper Noise"
+        ],
+        codeLang: "bash",
+        filename: "colab_train_headless.sh",
+        code: `# Google Colab Headless Training Cell:
+# 1. Unzip uploaded takes & manifest:
+!unzip -q takes.zip -d ./dataset
+
+# 2. Run Headless PyTorch Parametric Training:
+!python train_parametric.py \\
+    --data_dir ./dataset \\
+    --epochs 100 \\
+    --batch_size 16 \\
+    --lr 0.003 \\
+    --model_type wavenet_catmlp \\
+    --output_nam ./model_parametric.nam
+
+# 3. Trigger automatic download of trained .nam model:
+from google.colab import files
+files.download('./model_parametric.nam')`,
+        markdown: `### ☁️ Google Colab 1-Click GPU Training Pipeline
+
+You do not need an expensive local gaming PC or NVIDIA GPU to train Parametric NAM. You can use Google Colab's free cloud NVIDIA T4 GPUs (16GB VRAM):
+
+1. **Preparing Your Dataset**:
+   - Collect your 45 recorded takes (\`take_001.wav\` through \`take_045.wav\`) and your \`data.json\` manifest.
+   - Compress them into a single archive named \`takes.zip\`.
+
+2. **Running the Colab Notebook**:
+   - Open \`notebooks/colab_train_parametric_nam.ipynb\` in Google Colab.
+   - Click **Runtime -> Change runtime type -> Hardware accelerator -> T4 GPU**.
+   - Run Cell 1: Clones Justin's repo and installs PyTorch, soundfile, and librosa.
+   - Run Cell 2: Prompts you to upload \`takes.zip\` (drag-and-drop into the browser).
+   - Run Cell 3: Unpacks data and starts the training loop with mixed-precision FP16.
+   - **Training Time**: On a T4 GPU, 100 epochs takes approximately **35 minutes**.
+   - Run Cell 4: Evaluates final validation loss, serializes continuous CatMLP weights into \`model_parametric.nam\`, and automatically prompts your browser to save the file locally!`
+      },
+
+      {
+        id: "loss_functions",
+        title: "Dual Objective Loss: ESR Loss (Transients) + Multi-Scale STFT (Tube Sag)",
+        category: "Neural DSP & PyTorch",
+        keywords: ["loss", "loss function", "esr", "error-to-signal", "error to signal ratio", "stft", "multi-scale stft", "spectral", "fft", "tube sag", "harmonic", "attack", "pick transient", "overtones", "loss functions"],
+        suggested: [
+          "CatMLP Conditioning: 5D Knob Vectors & Zero Zipper Noise",
+          "Take 0 Anchor Baseline & Takes 41-45 Holdout Validation",
+          "Google Colab 1-Click GPU Training: Fast PyTorch Parametric NAM"
+        ],
+        codeLang: "python",
+        filename: "loss_functions.py",
+        code: `import torch
+import torch.nn as nn
+
+class ESRLoss(nn.Module):
+    """Error-to-Signal Ratio (Time Domain Pick Transient Loss)"""
+    def __init__(self, eps=1e-5):
+        super().__init__()
+        self.eps = eps
+
+    def forward(self, pred, target):
+        return torch.sum((target - pred) ** 2) / (torch.sum(target ** 2) + self.eps)
+
+class MultiScaleSTFTLoss(nn.Module):
+    """Multi-Scale STFT Loss (Frequency Domain Harmonic & Tube Sag Loss)"""
+    def __init__(self, fft_sizes=[2048, 1024, 512, 256, 128]):
+        super().__init__()
+        self.fft_sizes = fft_sizes
+
+    def forward(self, pred, target):
+        loss = 0.0
+        for n_fft in self.fft_sizes:
+            hop_length = n_fft // 4
+            stft_target = torch.stft(target, n_fft, hop_length, return_complex=True).abs()
+            stft_pred = torch.stft(pred, n_fft, hop_length, return_complex=True).abs()
+            loss += torch.mean(torch.abs(stft_target - stft_pred))
+            loss += torch.mean(torch.abs(torch.log(stft_target + 1e-5) - torch.log(stft_pred + 1e-5)))
+        return loss / len(self.fft_sizes)`,
+        markdown: `### 🧠 Dual Objective Loss Engine: ESR Loss & Multi-Scale Spectral STFT
+
+Standard neural networks trained with simple Mean Squared Error (MSE) sound dead, flat, and hollow. Parametric NAM uses a dual-objective loss function optimized specifically for non-linear tube physics:
+
+1. **Error-to-Signal Ratio (ESR Loss)**:
+   - Measures time-domain deviations normalized by signal energy:
+     $$\\mathcal{L}_{\\text{ESR}} = \\frac{\\sum_{t} |y[t] - \\hat{y}[t]|^2}{\\sum_{t} |y[t]|^2 + \\epsilon}$$
+   - **Role**: Preserves sharp pick transients, string attack definition, and micro-timing phase accuracy. Target: $\\mathcal{L}_{\\text{ESR}} < 0.01$.
+
+2. **Multi-Scale Spectral STFT Loss**:
+   - Computes magnitude and log-magnitude spectral differences across 5 distinct FFT analysis windows ($N=2048, 1024, 512, 256, 128$):
+     $$\\mathcal{L}_{\\text{STFT}} = \\frac{1}{M}\\sum_{m} \\left( \\| |S_m(y)| - |S_m(\\hat{y})| \\|_1 + \\| \\log|S_m(y)| - \\log|S_m(\\hat{y})| \\|_1 \\right)$$
+   - **Role**: Models non-linear harmonic saturation, power supply capacitor sag, and the complex interaction of the tone stack EQ. Target: $\\mathcal{L}_{\\text{STFT}} < 0.15$.`
+      },
+
+      {
+        id: "catmlp_engine",
+        title: "CatMLP Conditioning: 5D Knob Vectors & Zero Zipper Noise",
+        category: "Neural DSP & PyTorch",
+        keywords: ["catmlp", "cat_mlp", "conditioning", "5d", "knob", "continuous", "latent", "wavenet", "conv1d", "channel concatenation", "zipper noise", "interpolation", "smooth", "potentiometer"],
+        suggested: [
+          "Loading model_parametric.nam in DAW Plugins (REAPER, Logic, Pro Tools)",
+          "Adapting 5D Vectors to 2-Knob or 3-Knob Vintage Tube Amps (Fender Champ, Vox AC15)",
+          "Anatomy of the 38.0-Second Calibration Sweep (inputTrunc.wav)"
+        ],
+        codeLang: "python",
         filename: "cat_mlp.py",
-        lang: "python",
-        code: `# cat_mlp.py - Parametric NAM Continuous Knob Conditioning
-import torch
+        code: `import torch
 import torch.nn as nn
 
 class CatMLP(nn.Module):
@@ -2383,345 +2817,673 @@ class CatMLP(nn.Module):
         )
         
     def forward(self, cond_vec):
-        """
-        cond_vec: Tensor of shape [batch_size, 5]
-        Returns: Tensor of shape [batch_size, out_dim, 1] for broadcasting across audio length T
-        """
-        emb = self.net(cond_vec) # [B, out_dim]
-        return emb.unsqueeze(-1) # [B, out_dim, 1]
+        emb = self.net(cond_vec)
+        return emb.unsqueeze(-1)`,
+        markdown: `### 🧠 CatMLP: Continuous 5D Potentiometer Conditioning & Zero Zipper Noise
 
-class ParametricWaveNetBlock(nn.Module):
-    def __init__(self, in_channels, cond_channels, dilation=1):
-        super().__init__()
-        self.conv = nn.Conv1d(
-            in_channels + cond_channels,
-            in_channels * 2,
-            kernel_size=3,
-            dilation=dilation,
-            padding=dilation
-        )
-        self.res = nn.Conv1d(in_channels, in_channels, 1)
-        self.skip = nn.Conv1d(in_channels, in_channels, 1)
+Standard Neural Amp Modeler models a static amplifier snapshot. **Parametric NAM** introduces continuous parametric conditioning via CatMLP:
 
-    def forward(self, x, cond):
-        cond_t = cond.expand(-1, -1, x.shape[-1])
-        x_cond = torch.cat([x, cond_t], dim=1)
-        z = self.conv(x_cond)
-        f, g = torch.chunk(z, 2, dim=1)
-        act = torch.tanh(f) * torch.sigmoid(g)
-        return x + self.res(act), self.skip(act)
-`
+1. **Continuous Non-Linear Latent Manifold**:
+   - Maps normalized 5D knob coordinates $[g, b, m, t, v] \\in [0.0, 1.0]^5$ through a 3-layer MLP with SiLU activation functions into a 32-channel latent feature tensor.
+   - When Justin turns a knob to \`5.372\`, the network evaluates smooth non-linear interpolation rather than jumping between discrete snapshots.
+
+2. **Dilated Conv1D Feature Concatenation**:
+   - The latent conditioning tensor is expanded across the audio timeline and concatenated along the feature channel dimension: \`torch.cat([audio_features, cond_tensor], dim=1)\`.
+   - Each dilated WaveNet layer dynamically reshapes its filtering and distortion curves in response to knob changes.
+
+3. **Eliminating Zipper Noise**:
+   - Discrete preset models suffer from digital audio crackles ("zipper noise") when knobs are swept. Because CatMLP operates on a continuous manifold with dense low-pass smoothing, knob sweeps respond with authentic analog warmth and zero buffer clicks!`
       },
 
-      colab_offsite: {
-        title: "Google Colab 1-Click Offsite GPU Training Notebook",
-        desc: "Complete cloud pipeline: capture 45 takes locally on your DAW without any GPU, upload takes.zip to Google Colab, crunch on a free NVIDIA T4 GPU in 35 mins, and download model_parametric.nam.",
-        filename: "colab_train_parametric_nam.ipynb",
-        lang: "python",
-        code: `# colab_train_parametric_nam.ipynb - 1-Click Offsite GPU Training for Parametric NAM
-# Parametric NAM - 48kHz Audio DSP Lab
-# Run on Google Colab (Runtime -> Change runtime type -> T4 GPU)
+      {
+        id: "nam_plugin_loading",
+        title: "Loading model_parametric.nam in DAW Plugins (REAPER, Logic, Pro Tools)",
+        category: "DAW & Lua Automation",
+        keywords: ["nam plugin", "plugin", "vst3", "au", "aax", "lv2", "daw", "load model", "steven atkinson", "parametric controls", "rotary sliders", "load"],
+        suggested: [
+          "Cabinet IR Pairing: Why Loadbox Signals Sound Fizzy Without Speaker Emulation",
+          "Pristine Gain Staging: D/A Output, Radial Trim, and Interface Line-In dBFS Targets",
+          "Eliminating 60Hz Ground Hum, Buzz, and Phase Cancellation"
+        ],
+        codeLang: "text",
+        filename: "daw_track_chain.txt",
+        code: `REAPER / LOGIC TRACK FX CHAIN:
+======================================================
+Slot 1: Steven Atkinson NAM (Neural Amp Modeler) VST3 / AU
+        Model: model_parametric.nam
+        Controls: Gain [0.0-10.0], Bass [0.0-10.0], Mid [0.0-10.0],
+                  Treble [0.0-10.0], Master [0.0-10.0]
+Slot 2: Zero-Latency IR Loader (Ignite Amps NadIR / Pulse / ReaVerb)
+        IR: Celestion_Vintage30_4x12_SM57_CapEdge_48k24b.wav
+Slot 3: Studio EQ / High-Pass Filter (80Hz HPF, 12kHz LPF)`,
+        markdown: `### 🎸 Loading \`model_parametric.nam\` in Steven Atkinson's NAM DAW Plugin
 
-# 1. Check GPU availability
-import torch
-print(f"⚡ GPU Online: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'No GPU found'}")
+Once your model finishes training in Google Colab, you can play it live inside Cockos REAPER, Apple Logic Pro, or Pro Tools:
 
-# 2. Clone Phillip Self's Parametric NAM Repository
-!git clone https://github.com/phillipmself/neural-amp-modeler-parametric.git
-%cd neural-amp-modeler-parametric
+1. **Download the Official NAM Plugin**:
+   - Install Steven Atkinson's open-source Neural Amp Modeler VST3/AU/CLAP plugin.
+   - Insert NAM on your guitar audio track.
 
-# 3. Install PyTorch Lightning & dependencies
-!pip install -q lightning torch torchaudio soundfile scipy pandas
+2. **Load \`model_parametric.nam\`**:
+   - Click "Select Model" and choose your exported \`model_parametric.nam\` file.
+   - Because our export script packs metadata declaring 5 parametric dimensions, the plugin dynamically displays **5 rotary sliders**: Gain, Bass, Mid, Treble, and Master!
+   - You can automate these 5 sliders via DAW lane automation just like any native software plugin.
 
-# 4. Upload your zipped takes & data.json from your local DAW
-from google.colab import files
-import zipfile, os
-
-print("📤 Please upload your 'takes.zip' containing your rendered WAVs and data.json:")
-uploaded = files.upload()
-
-for filename in uploaded.keys():
-    if filename.endswith(".zip"):
-        with zipfile.ZipFile(filename, 'r') as zip_ref:
-            zip_ref.extractall("./data/")
-        print(f"✅ Unzipped {filename} into ./data/")
-
-# 5. Run headless batch training offsite on Colab GPU (~35-45 mins)
-!python -m nam.train.colab \\
-    ./data/data.json \\
-    configs/model_concat.json \\
-    configs/learning_concat.json \\
-    ./output/
-
-# 6. Automatically download the standalone binary output (.nam) back to your local PC!
-if os.path.exists("./output/model_parametric.nam"):
-    print("🎉 Training complete! Downloading model_parametric.nam...")
-    files.download("./output/model_parametric.nam")
-else:
-    print("⚠️ Check ./output/ for the generated checkpoint.")`
+3. **🚨 CRITICAL STEP: Add a Cabinet IR Loader**:
+   - Remember: Your re-amping chain recorded the raw line output of the Two Notes Captor loadbox (pre-cabinet).
+   - If you listen to NAM alone, it will sound buzzy, harsh, and fizzy!
+   - **Immediately insert an IR loader (like NadIR or ReaVerb) after the NAM plugin** and load a 48kHz 24-bit Celestion 4x12 or 2x12 Impulse Response!`
       },
-      linux_cuda: {
-        title: "Linux & Windows NVIDIA CUDA Headless Training Pipeline",
-        desc: "Debunking the Mac misconception: Phillip Self's repo is standard PyTorch+CUDA. Here is the exact headless setup for Ubuntu / Debian / Windows WSL2 using environment_gpu.yml and nam-full-parametric.",
-        filename: "setup_linux_cuda_nam.sh",
-        lang: "bash",
-        code: `#!/bin/bash
-# setup_linux_cuda_nam.sh - Headless Linux & Windows CUDA Pipeline for Parametric NAM
-# Works on Linux (Ubuntu/Debian) or Windows 10/11 (WSL2 / native conda) with NVIDIA RTX GPUs
-# NO MAC OR APPLE SILICON HARDWARE NEEDED!
-set -e
 
-echo "🐧 1. Cloning Phillip Self's Parametric NAM Repository..."
-git clone https://github.com/phillipmself/neural-amp-modeler-parametric.git
-cd neural-amp-modeler-parametric
+      {
+        id: "cabinet_ir_pairing",
+        title: "Cabinet IR Pairing: Why Loadbox Signals Sound Fizzy Without Speaker Emulation",
+        category: "Signal Flow & Gain Staging",
+        keywords: ["cabinet ir", "ir", "impulse response", "speaker", "celestion", "4x12", "2x12", "nadir", "pulse", "two notes", "cab sim", "fizzy", "harsh", "loadbox output", "pre-cab", "cabinet", "ir loader", "loader", "cab"],
+        suggested: [
+          "Loading model_parametric.nam in DAW Plugins (REAPER, Logic, Pro Tools)",
+          "Reactive Loadboxes (Two Notes / Suhr) vs Resistive Dummy Loads",
+          "Safe Physical Re-Amping Rig: Interface, Re-Amp Box, Tube Amp & Reactive Load"
+        ],
+        codeLang: "text",
+        filename: "speaker_filter_acoustics.txt",
+        code: `PHYSICAL SPEAKER FREQUENCY RESPONSE (Celestion V30):
+================================================================
+20Hz - 70Hz:    Sharp mechanical high-pass rolloff
+75Hz - 110Hz:   Resonant bass peak (+4dB punch)
+500Hz - 2kHz:   Woody midrange scoop
+2.5kHz - 4.5kHz: Piercing cone-breakup bite
+5.0kHz+:        STEEP ACOUSTIC ROLLOFF (-24dB/octave)
 
-echo "⚡ 2. Creating NVIDIA GPU Conda Environment (environments/environment_gpu.yml)..."
-# Note: environment_cpu_apple.yml was only a fallback for Mac users without GPUs.
-# environment_gpu.yml uses standard PyTorch + CUDA 11.8/12.x for NVIDIA GPUs!
-conda env create -f environments/environment_gpu.yml
-conda activate nam_parametric
+* The loadbox line-out captures everything flat up to 20kHz!
+* Without a Cabinet IR, the 5kHz-20kHz distortion fizz is audible and harsh.`,
+        markdown: `### 🔊 Cabinet IR Pairing: Why Loadbox Signals Sound Fizzy Without Speaker IRs
 
-echo "🔍 3. Verifying NVIDIA CUDA Acceleration..."
-python -c "import torch; print('CUDA Available:', torch.cuda.is_available()); print('Device:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU')"
+Justin, many engineers are alarmed when they first listen to a raw re-amped take or newly trained NAM model because it sounds like a "swarm of bees". Here is the physical acoustic explanation:
 
-echo "🚀 4. Running Offline Headless Batch Training (Outputs Standalone .nam Binary)..."
-# Arguments: <data.json> <model_config.json> <learning_config.json> <output_dir>
-# configs/model_concat.json uses ConcatWaveNet (anti-zipper noise architecture)
-nam-full-parametric data.json configs/model_concat.json configs/learning_concat.json ./output_parametric/
+1. **A Guitar Speaker is a Severe Low-Pass Acoustic Filter**:
+   - Unlike high-fidelity studio monitors that reproduce frequencies up to 20kHz, guitar speakers (such as Celestion Vintage 30s or Greenbacks) roll off sharply above **5kHz** (-18dB to -24dB per octave).
+   - When tube power stages clip, they produce intense high-frequency odd-order harmonics (7kHz to 18kHz). In a live room, the heavy paper speaker cone physically dampens these frequencies.
 
-echo "✅ Training Complete! Your binary model is at: ./output_parametric/model_parametric.nam"`
+2. **What the Two Notes Captor Line Out Delivers**:
+   - The Captor's line output taps the signal directly from the amplifier's output transformer before any speaker cone movement. This means all the harsh 6kHz-20kHz harmonic content is captured at full bandwidth.
+
+3. **The Solution: 48kHz 24-bit Cabinet IR**:
+   - Load a zero-latency convolution plugin (Ignite Amps NadIR, Lancini Lancaster Pulse, or REAPER ReaVerb) immediately after NAM.
+   - Select a high-quality Celestion 4x12 or 2x12 IR captured with a Shure SM57 or Royer R-121 at 48kHz 24-bit. Instantly, the harsh fizz is transformed into thick, punchy, authentic tube tone!`
       },
-      offline_binary: {
-        title: "Offline DAW RAW Wave Capture to Standalone .nam Binary Workflow",
-        desc: "Complete re-amping guide: recording 40-50 takes at 48kHz 24-bit in Reaper/Pro Tools, writing data.json, and compiling model_parametric.nam.",
-        filename: "prepare_data_manifest.py",
-        lang: "python",
-        code: `# prepare_data_manifest.py - Manifest Generator for Offline NAM Training
-# Parametric NAM - 48kHz 24-bit Offline DAW Re-amping Pipeline
-import os
-import json
 
-def build_data_json(wav_dir="./takes", input_file="inputTrunc.wav", output_json="data.json"):
-    """
-    Builds the data.json manifest that maps 40-50 rendered WAV takes
-    to their normalized knob coordinates [0.0 to 1.0].
-    """
-    # Example 5-knob configuration: [Gain, Bass, Mid, Treble, Master]
-    # Coordinates are normalized between 0.0 and 1.0
-    takes = [
-        {"file": "take_00_anchor.wav", "knobs": [0.5, 0.5, 0.5, 0.5, 0.7]}, # Noon center
-        {"file": "take_01_clean.wav",  "knobs": [0.1, 0.5, 0.5, 0.5, 0.9]}, # Low gain
-        {"file": "take_02_lead.wav",   "knobs": [0.9, 0.3, 0.8, 0.7, 0.5]}, # High gain lead
-        {"file": "take_03_scoop.wav",  "knobs": [0.8, 0.9, 0.1, 0.8, 0.5]}, # Mid scoop
-        # ... remaining 36-46 Latin Hypercube takes ...
-    ]
-    
-    y_entries = []
-    for t in takes:
-        wav_path = os.path.join(wav_dir, t["file"])
-        y_entries.append({
-            "val": t["knobs"],
-            "path": wav_path
-        })
-        
-    manifest = {
-        "x": os.path.join(wav_dir, input_file),
-        "y": y_entries
+      {
+        id: "silent_take_troubleshoot",
+        title: "Troubleshooting Silent Takes: Audio Level < -60dBFS Detected",
+        category: "CLI & Terminal Tooling",
+        keywords: ["silent take", "silent", "-60dbfs", "no audio", "low level", "no sound", "troubleshoot", "error", "script warning", "volume", "empty take"],
+        suggested: [
+          "Safe Physical Re-Amping Rig: Interface, Re-Amp Box, Tube Amp & Reactive Load",
+          "Pristine Gain Staging: D/A Output, Radial Trim, and Interface Line-In dBFS Targets",
+          "Eliminating 60Hz Ground Hum, Buzz, and Phase Cancellation"
+        ],
+        codeLang: "bash",
+        filename: "silent_take_checklist.sh",
+        code: `# 5-Point Immediate Hardware Triage:
+# 1. Amp Standby Switch: Is it flipped to ON? (Filament heaters glowing orange?)
+# 2. Amp Knobs: Did the LHS run sheet set Gain or Master to 0.0 for this take?
+# 3. Focusrite / Apollo Routing: Is Output 3 unmuted in software mixer?
+# 4. Radial Reamp Trim: Is the level knob turned down to zero?
+# 5. Captor Line Out: Is cable plugged into Line Out (not Attenuated Out)?`,
+        markdown: `### ⚠️ Troubleshooting Silent Takes: Audio Level < -60dBFS Detected
+
+If \`reamp_automation.py\` stops and displays:
+\`⚠️ WARNING: Take audio level peak < -60dBFS (0.001)! Halting capture.\`
+
+Follow this immediate 5-point hardware checklist to resolve it:
+
+1. **Tube Amp Standby Switch**:
+   - Verify the amplifier's Standby switch is engaged in **PLAY mode** (ON), not Standby mode.
+   - If tubes have no plate voltage, zero audio will pass to the output transformer.
+
+2. **Amplifier Potentiometer Run Sheet Check**:
+   - Look at the Latin Hypercube parameter line for the current take. If the LHS sample drew \`Gain = 0.0\` or \`Master = 0.0\`, the amp is completely attenuated. (In our generator, knobs are bounded in $[0.05, 1.0]$ to prevent this, but check if a dial was bumped).
+
+3. **Audio Interface Output Routing (Focusrite Control / Apollo Console)**:
+   - Ensure hardware **Line Output 3** is actively assigned to "DAW Playback 3" and is not muted in your interface's desktop control software.
+
+4. **Radial Re-Amp Box Level Potentiometer**:
+   - Ensure the rotary level knob on the side of the Radial Reamp box has not been accidentally turned all the way down. Set it to approximately 65-75% rotation.
+
+5. **Two Notes Captor Output Jack**:
+   - Ensure your return cable to the interface is plugged into the **balanced 1/4" Line Out**, NOT the speaker thru or headphone jack!`
+      },
+
+      {
+        id: "clipping_troubleshoot",
+        title: "Fixing Harsh Digital Clipping vs Authentic Analog Tube Saturation",
+        category: "Signal Flow & Gain Staging",
+        keywords: ["clipping", "clipped", "digital clipping", "flat-top", "distortion", "red light", "over", "0dbfs", "adc clip", "square wave", "fuzz"],
+        suggested: [
+          "Pristine Gain Staging: D/A Output, Radial Trim, and Interface Line-In dBFS Targets",
+          "Troubleshooting Silent Takes: Audio Level < -60dBFS Detected",
+          "Anatomy of the 38.0-Second Calibration Sweep (inputTrunc.wav)"
+        ],
+        codeLang: "text",
+        filename: "clipping_diagnostic.txt",
+        code: `WAVEFORM VISUAL DIAGNOSTIC:
+------------------------------------------------------------------
+Analog Tube Compression:
+  - Smooth rounded peaks at maximum saturation
+  - Soft-knee progressive harmonic generation
+  - Peak level remains within -12dBFS to -6dBFS
+
+Digital Converter Clipping:
+  - Waveforms have hard, sheared-off flat horizontal tops at 0.0dBFS
+  - Inharmonic buzz and harsh digital spatter
+  - Interface input ring LED turns SOLID RED`,
+        markdown: `### 🚨 Fixing Harsh Digital Clipping vs Authentic Analog Tube Saturation
+
+A common mistake in neural amp capture is confusing analog tube saturation with digital A/D converter clipping:
+
+1. **The Essential Difference**:
+   - **Analog Tube Saturation**: Tubes saturate progressively through thermal electron limiting, rounding off waveform peaks with rich even- and odd-order harmonics. This is desirable and musical.
+   - **Digital Converter Clipping**: When an analog voltage exceeds the maximum voltage range of your audio interface's A/D converter chips, the waveform is brutally truncated at $1.0$ (0.0dBFS). The neural network will attempt to learn this digital flat-topping, resulting in a harsh, fizzy, and unplayable model.
+
+2. **How to Detect Converter Clipping**:
+   - Zoom in on the recorded take in REAPER. If the tops of the waveforms look like a flat horizontal line, the converter clipped.
+   - If the input meter halo on your Focusrite or Apollo illuminates red, clipping occurred.
+
+3. **The Solution**:
+   - Reduce the input preamp gain on **Line In 1** of your audio interface until the loudest, highest-gain sweep peaks between **-12dBFS and -6dBFS**.
+   - If the interface preamp is already at 0dB and the signal is still clipping, engage the **-20dB Pad switch** on your interface or the pad on your loadbox.`
+      },
+
+      {
+        id: "sweep_calibration_anatomy",
+        title: "Anatomy of the 38.0-Second Calibration Sweep (inputTrunc.wav)",
+        category: "Sampling Strategy & Run Sheet",
+        keywords: ["inputtrunc.wav", "sweep", "calibration", "38 seconds", "38s", "chirp", "test signal", "sine sweep", "pulse train", "test tone", "sweep audio"],
+        suggested: [
+          "Pristine Gain Staging: D/A Output, Radial Trim, and Interface Line-In dBFS Targets",
+          "Latin Hypercube Sampling (LHS): 45 Takes vs 3,125 Grid Steps",
+          "Dual Objective Loss: ESR Loss (Transients) + Multi-Scale STFT (Tube Sag)"
+        ],
+        codeLang: "text",
+        filename: "sweep_timeline_breakdown.txt",
+        code: `inputTrunc.wav (38.0 Seconds, 48000Hz, 24-bit PCM Mono):
+======================================================================
+0.0s  - 14.5s: Logarithmic Sine Sweep (20Hz to 20,000Hz)
+               Excites tone stack EQ, inter-stage coupling caps, and resonance.
+14.5s - 24.0s: Dynamic Pick Transient Pulse Trains
+               High-amplitude sharp spikes to capture power tube sag & attack.
+24.0s - 34.0s: Broadband White & Pink Noise Bursts
+               Measures multi-frequency harmonic intermodulation distortion.
+34.0s - 38.0s: Exponential Ring-Out & Silent Floor
+               Captures thermal tube hiss, power hum, and natural decay.`,
+        markdown: `### 🔬 Anatomy of the 38.0-Second Calibration Sweep (\`inputTrunc.wav\`)
+
+Justin, standard guitar recordings are insufficient for training robust neural models because normal playing only excites a narrow band of frequencies and dynamic levels. \`inputTrunc.wav\` is a specialized acoustic calibration signal:
+
+1. **0.0s – 14.5s: Continuous Logarithmic Sine Sweep (20Hz to 20kHz)**:
+   - Sweeps from sub-bass to ultrasonic frequencies. This allows the neural network to map the exact frequency transfer curve of the amplifier's tone stack (Bass, Mid, Treble) and interstage filter networks.
+
+2. **14.5s – 24.0s: Pick Transient Pulse Trains**:
+   - Sends rapid, sharp transient spikes that mimic aggressive guitar pick attacks. This tests the amplifier's power supply capacitor discharge rate, capturing authentic power amp "sag" and dynamic touch sensitivity.
+
+3. **24.0s – 34.0s: Pink & White Noise Bursts**:
+   - Broad-spectrum multi-frequency excitation. This forces the tube stages into complex intermodulation distortion, teaching the model how chords distort compared to single notes.
+
+4. **34.0s – 38.0s: Decay and Noise Floor**:
+   - Measures ambient room noise, tube filament thermal noise, and transformer shielding performance.`
+      },
+
+      {
+        id: "three_knob_amps",
+        title: "Adapting 5D Vectors to 2-Knob or 3-Knob Vintage Tube Amps (Fender Champ, Vox AC15)",
+        category: "Neural DSP & PyTorch",
+        keywords: ["2-knob", "3-knob", "vintage", "fender champ", "tweed", "vox ac15", "tone knob", "bass treble", "no mid", "no master", "fixed parameter", "dimension reduction", "2 knob", "3 knob"],
+        suggested: [
+          "The data.json Manifest: RFC 8259 Standard & Normalization",
+          "Latin Hypercube Sampling (LHS): 45 Takes vs 3,125 Grid Steps",
+          "CatMLP Conditioning: 5D Knob Vectors & Zero Zipper Noise"
+        ],
+        codeLang: "json",
+        filename: "fender_deluxe_3knob_manifest.json",
+        code: `// Example: 3-Knob Amp (Volume, Treble, Bass)
+// Active Knobs: Volume -> Gain (slot 0), Treble (slot 3), Bass (slot 1)
+// Inactive Knobs: Mid (slot 2) and Master (slot 4) LOCKED to 0.50
+{
+  "take_id": 1,
+  "params": [0.35, 0.62, 0.50, 0.48, 0.50]
+}`,
+        markdown: `### 🎛️ Adapting 5D Vectors to 2-Knob or 3-Knob Vintage Tube Amps
+
+Many of the greatest tube amps in history have fewer than 5 knobs:
+- **Fender Tweed Champ**: 1 Knob (Volume)
+- **Fender Princeton / Deluxe**: 3 Knobs (Volume, Treble, Bass)
+- **Vox AC15 / AC30 Top Boost**: 4 Knobs (Volume, Treble, Bass, Cut)
+
+**How to model these without rewriting the neural architecture**:
+1. Keep the standard 5-dimensional vector: \`[Gain, Bass, Mid, Treble, Master]\`.
+2. For any knob your amp does not physically have, **lock that dimension to \`0.5\` (Noon)** across every single take in your run sheet and \`data.json\`!
+3. For example, on a 3-knob Fender Deluxe:
+   - Slot 0 (Gain): Map to physical Volume knob.
+   - Slot 1 (Bass): Map to physical Bass knob.
+   - Slot 2 (Mid): **Lock to 0.50**.
+   - Slot 3 (Treble): Map to physical Treble knob.
+   - Slot 4 (Master): **Lock to 0.50**.
+4. During training, the PyTorch CatMLP network easily learns that slots 2 and 4 are static invariant offsets, while fully learning the continuous non-linear sweep of your active knobs!`
+      },
+
+      {
+        id: "data_json_manifest",
+        title: "The data.json Manifest: RFC 8259 Standard & Normalization",
+        category: "Sampling Strategy & Run Sheet",
+        keywords: ["data.json", "manifest", "json", "schema", "take_id", "params", "sample_rate", "48000", "48khz", "format", "specification"],
+        suggested: [
+          "Take 0 Anchor Baseline & Takes 41-45 Holdout Validation",
+          "Google Colab 1-Click GPU Training: Fast PyTorch Parametric NAM",
+          "Dual Objective Loss: ESR Loss (Transients) + Multi-Scale STFT (Tube Sag)"
+        ],
+        codeLang: "json",
+        filename: "data.json",
+        code: `{
+  "sample_rate": 48000,
+  "parameter_names": ["gain", "bass", "mid", "treble", "master"],
+  "takes": [
+    {
+      "take_id": 1,
+      "input": "data/inputTrunc.wav",
+      "output": "takes/take_001.wav",
+      "params": [0.15, 0.40, 0.50, 0.65, 0.70],
+      "is_validation": false
+    },
+    {
+      "take_id": 42,
+      "input": "data/inputTrunc.wav",
+      "output": "takes/take_042.wav",
+      "params": [0.85, 0.60, 0.55, 0.45, 0.50],
+      "is_validation": true
     }
-    
-    with open(output_json, "w") as f:
-        json.dump(manifest, f, indent=2)
-        
-    print(f"✅ Generated {output_json} with {len(y_entries)} takes mapped to knob coordinates!")
-    print(f"📦 Ready to execute: nam-full-parametric {output_json} configs/model_concat.json configs/learning_concat.json ./output/")
+  ]
+}`,
+        markdown: `### 📋 The \`data.json\` Manifest: RFC 8259 Schema & Normalization Standard
 
-if __name__ == "__main__":
-    build_data_json()`
+The \`data.json\` file is the contract that bridges your physical WAV takes with the PyTorch training engine:
+
+1. **Why Parameters Must Be Normalized $[0.0, 1.0]$**:
+   - Real amp knobs read 0 to 10 or 1 to 12. If raw numbers are passed to neural networks, the weight gradients explode or favor knobs with higher numerical scales.
+   - All parameters in \`data.json\` must be floats strictly bounded between **0.0 and 1.0**.
+
+2. **Schema Fields**:
+   - \`sample_rate\`: Must be \`48000\`.
+   - \`input\`: Path to the source calibration sweep (\`"data/inputTrunc.wav"\`).
+   - \`output\`: Path to the recorded re-amp take (\`"takes/take_001.wav"\`).
+   - \`params\`: 5-element array of floats $[g, b, m, t, v]$.
+   - \`is_validation\`: Boolean flag (\`false\` for training takes 1-40; \`true\` for holdout validation takes 41-45).`
       },
-      pico_adc: {
-        title: "Raspberry Pi Pico (RP2040) MicroPython USB-MIDI Firmware",
-        desc: "High-speed 1000Hz ADC polling with Exponential Moving Average (EMA) jitter suppression for 5 physical knobs.",
-        filename: "firmware_pico_pots.py",
-        lang: "python",
-        code: `# firmware_pico_pots.py - RP2040 MicroPython USB-MIDI Pot Controller
-# Parametric NAM - 48kHz Audio DSP Lab
-import time
-from machine import ADC, Pin
-import usb_midi
-import adafruit_midi
-from adafruit_midi.control_change import ControlChange
 
-# Setup ADC pins for Pots (Gain, Bass, Mid, Treble, Master)
-pot_pins = [ADC(26), ADC(27), ADC(28)] # GP26, GP27, GP28
-midi = adafruit_midi.MIDI(midi_out=usb_midi.ports[1], out_channel=0)
-CC_NUMS = [20, 21, 22, 23, 24] # MIDI CC numbers
+      {
+        id: "realtime_latency",
+        title: "Real-Time DSP Latency Optimization: 64-Sample Buffers & 1.33ms Delay",
+        category: "Neural DSP & PyTorch",
+        keywords: ["latency", "buffer size", "64 samples", "128 samples", "roundtrip", "round-trip", "delay", "realtime", "sample rate", "coreaudio", "asio", "lag"],
+        suggested: [
+          "Loading model_parametric.nam in DAW Plugins (REAPER, Logic, Pro Tools)",
+          "Safe Physical Re-Amping Rig: Interface, Re-Amp Box, Tube Amp & Reactive Load",
+          "CatMLP Conditioning: 5D Knob Vectors & Zero Zipper Noise"
+        ],
+        codeLang: "text",
+        filename: "latency_calculation.txt",
+        code: `ROUND-TRIP LATENCY (48kHz Sample Rate):
+======================================================
+At 64 samples buffer:
+  - Input A/D Buffer:   64 / 48000 = 1.33 ms
+  - Output D/A Buffer:  64 / 48000 = 1.33 ms
+  - Neural Inference:   ~0.38 ms (M-series / Intel AVX2)
+  - Hardware Converters: ~0.80 ms
+  -----------------------------------------------
+  TOTAL ROUND-TRIP:     ~3.84 ms (< 5ms threshold!)
 
-# State variables for Exponential Moving Average (EMA) filter
-ema_vals = [0.0] * len(pot_pins)
-last_midi = [-1] * len(pot_pins)
-ALPHA = 0.15 # Filter coefficient (0.05-0.20 optimal for audio pots)
-DEADBAND = 2  # Suppress electrical wiper noise
+At 128 samples buffer:
+  - Buffer latency:     2.66 ms x 2 = 5.33 ms
+  - Total Round-Trip:   ~6.5 ms`,
+        markdown: `### ⚡ Real-Time DSP Latency Optimization: 64-Sample Buffers & Sub-4ms Round-Trip
 
-print("⚡ RP2040 USB-MIDI Control Surface Active (1000Hz Poll Rate)...")
+When tracking guitar live through software monitoring, professional players notice latency once it exceeds 5 to 7 milliseconds:
 
-while True:
-    for i, pot in enumerate(pot_pins):
-        raw = pot.read_u16() # 16-bit unsigned (0 - 65535)
-        # Apply low-pass EMA filter to eliminate wiper jitter
-        ema_vals[i] = (ALPHA * raw) + ((1.0 - ALPHA) * ema_vals[i])
-        midi_val = int((ema_vals[i] / 65535.0) * 127)
-        
-        # Only transmit when change exceeds noise deadband
-        if abs(midi_val - last_midi[i]) >= DEADBAND:
-            last_midi[i] = midi_val
-            midi.send(ControlChange(CC_NUMS[i], midi_val))
-            print(f"CC #{CC_NUMS[i]} -> {midi_val}")
-            
-    time.sleep_ms(1) # 1ms poll rate = 1kHz responsiveness`
+1. **Buffer Size vs Sample Rate**:
+   - At **48,000 samples per second**, a buffer size of **64 samples** yields an input delay of exactly:
+     $$\\tau = \\frac{64}{48000} = 1.33\\text{ ms}$$
+   - A 64-sample buffer combined with hardware converter delay results in a total round-trip latency under **3.84ms**, feeling as immediate and responsive as playing directly through an analog amp in the room.
+
+2. **DSP Execution Optimization**:
+   - Parametric NAM uses causal 1D convolutions with optimized ARM NEON and AVX2 vector SIMD instructions.
+   - Processing a 64-sample block takes under **0.38ms** on modern Mac or PC processors, leaving over 70% of the buffer period available for other DAW tracks and reverbs.`
       },
-      latin_matrix: {
-        title: "45-Take Latin Hypercube Sampling Matrix Generator",
-        desc: "Generates optimal 40-50 capture points spanning the multi-dimensional parameter volume without combinatorial explosion.",
-        filename: "generate_matrix.py",
-        lang: "python",
-        code: `# generate_matrix.py - Latin Hypercube Matrix for Parametric NAM
-# Parametric NAM - 40 to 50 Re-amp Sweeps (48kHz 24-bit)
-import numpy as np
-import pandas as pd
-from scipy.stats import qmc
 
-def generate_amp_matrix(num_samples=40, knobs=["gain", "bass", "mid", "treble", "master"]):
-    # 1. Initialize Latin Hypercube Sampler
-    sampler = qmc.LatinHypercube(d=len(knobs), seed=42)
-    sample_points = sampler.random(n=num_samples)
-    
-    # Scale from [0, 1] to Amp Dial Scale [0.0, 10.0]
-    scaled_points = np.round(sample_points * 10.0, 1)
-    df_samples = pd.DataFrame(scaled_points, columns=knobs)
-    
-    # 2. Add Baseline Anchor Take (All Knobs at Noon = 5.0)
-    anchor = pd.DataFrame([[5.0, 5.0, 5.0, 5.0, 7.0]], columns=knobs)
-    
-    # 3. Add 4 Dynamic Edge-Case Takes (Extreme tube non-linearities)
-    edges = pd.DataFrame([
-        [1.0, 5.0, 5.0, 5.0, 10.0],  # Clean Headroom Edge
-        [10.0, 2.0, 8.0, 8.0, 5.0],  # High-Gain Lead Edge
-        [8.5, 10.0, 1.0, 4.0, 5.0],  # Scooped Doom/Fuzz Edge
-        [5.0, 0.0, 10.0, 10.0, 6.0]  # Treble Boost / Crunch Edge
-    ], columns=knobs)
-    
-    manifest = pd.concat([anchor, df_samples, edges], ignore_index=True)
-    manifest.insert(0, "take_id", [f"take_{i:02d}.wav" for i in range(len(manifest))])
-    
-    manifest.to_csv("knob_matrix.csv", index=False)
-    print(f"✅ Generated {len(manifest)} takes in knob_matrix.csv!")
-    return manifest
+      {
+        id: "warmup_bias",
+        title: "Tube Amp Thermal Stabilization: The 5-Minute Pre-Heat Rule",
+        category: "Hardware & Electrical Safety",
+        keywords: ["warmup", "warm up", "thermal", "preheat", "pre-heat", "filaments", "cathode", "bias", "tube drift", "plate voltage", "5 minutes", "60 seconds", "warm", "heating"],
+        suggested: [
+          "Take 0 Anchor Baseline & Takes 41-45 Holdout Validation",
+          "Safe Physical Re-Amping Rig: Interface, Re-Amp Box, Tube Amp & Reactive Load",
+          "Pristine Gain Staging: D/A Output, Radial Trim, and Interface Line-In dBFS Targets"
+        ],
+        codeLang: "text",
+        filename: "preheat_protocol.txt",
+        code: `PRE-HEAT STUDIO SEQUENCE:
+======================================================
+T = 0:00  Plug speaker output into Two Notes Captor load!
+T = 0:05  Turn POWER switch ON. (Leave STANDBY in standby/off).
+T = 1:00  Inspect tube filaments (glowing warm orange).
+T = 1:30  Flip STANDBY switch ON. (High voltage DC plate on).
+T = 5:00+ Amplifier is thermally stabilized. Run Take 0 Anchor!`,
+        markdown: `### 🌡️ Tube Amp Thermal Stabilization: The 5-Minute Pre-Heat Rule
 
-if __name__ == "__main__":
-    generate_amp_matrix(40)`
+Vacuum tubes rely on thermionic emission. Heating the cathode to ~1,000°C creates an electron cloud that flows to the plate:
+
+1. **Why Immediate Re-Amping Ruins Datasets**:
+   - If you start recording sweeps 30 seconds after powering on your amp, the tube internal geometry and plate bias will drift significantly during takes 1 through 10 as heat builds up.
+   - The neural network will mistake this physical thermal drift for changes in knob positions!
+
+2. **The 5-Minute Studio Protocol**:
+   - Turn Power ON with Standby OFF for **60 seconds** to allow filaments to reach operating temperature.
+   - Turn Standby ON and allow the amp to idle under active plate voltage for **at least 5 to 10 minutes** before recording Take 0.
+   - Keep the studio ambient temperature steady throughout the session.`
       },
-      film_loop: {
-        title: "PyTorch FiLM WaveNet Training Loop with MRSTFT Loss",
-        desc: "Feature-wise Linear Modulation conditioning layer injecting knob positions into dilated convolutions.",
-        filename: "train_film_wavenet.py",
-        lang: "python",
-        code: `# train_film_wavenet.py - Parametric NAM FiLM Layer & Training Loop
-import torch
-import torch.nn as nn
-import torchaudio
 
-class FiLMBlock(nn.Module):
-    def __init__(self, in_channels, out_channels, num_params=5):
-        super().__init__()
-        self.conv = nn.Conv1d(in_channels, out_channels, kernel_size=3, padding=1)
-        self.film_gen = nn.Linear(num_params, out_channels * 2)
-        
-    def forward(self, x, condition_vec):
-        # x: [Batch, Channels, Length], condition_vec: [Batch, 5]
-        h = self.conv(x)
-        film = self.film_gen(condition_vec).unsqueeze(-1)
-        gamma, beta = torch.chunk(film, 2, dim=1)
-        # Affine feature modulation: gamma * h + beta
-        return torch.tanh(gamma * h + beta)
+      {
+        id: "clean_vs_lead",
+        title: "Calibrating Clean vs High-Gain Lead Channels",
+        category: "Signal Flow & Gain Staging",
+        keywords: ["clean", "lead", "high gain", "crunch", "channel", "dynamic range", "high-gain", "channels"],
+        suggested: [
+          "Pristine Gain Staging: D/A Output, Radial Trim, and Interface Line-In dBFS Targets",
+          "Eliminating 60Hz Ground Hum, Buzz, and Phase Cancellation",
+          "Latin Hypercube Sampling (LHS): 45 Takes vs 3,125 Grid Steps"
+        ],
+        codeLang: "text",
+        filename: "clean_vs_lead_calibration.txt",
+        code: `CHANNEL CALIBRATION RULES:
+=============================================================
+CLEAN CHANNELS (Fender Twin / Vox Normal):
+  - Wide dynamic range, high transient spikes.
+  - Set interface line preamp so loudest pick attack peaks at -6dBFS.
+  - Background noise floor is low (-75dBFS).
 
-# Multi-Scale Spectral Loss (MRSTFT) + ESR
-def esr_loss(y_true, y_pred):
-    return torch.sum((y_true - y_pred) ** 2) / (torch.sum(y_true ** 2) + 1e-8)
+HIGH-GAIN LEAD CHANNELS (Marshall JCM800 / Mesa Dual Rectifier / 5150):
+  - Heavy natural compression; lower peak-to-average ratio.
+  - Background tube thermal hiss is amplified (+40dB).
+  - Ground lift on Radial Reamp box is mandatory.`,
+        markdown: `### 🎸 Calibrating Clean vs High-Gain Lead Channels
 
-print("⚡ FiLM WaveNet Architecture Loaded with ESR + STFT Loss Engine.")`
+Capturing clean channels vs high-gain lead channels requires distinct gain staging approaches:
+
+1. **Clean Channels (High Dynamic Range)**:
+   - Clean channels do not compress peaks naturally. Transient spikes from the calibration sweep's pulse trains can be 12dB higher than the sustained tone.
+   - Ensure you calibrate your interface preamp based on the **sharpest transient spike**, leaving a full 6dB headroom cushion.
+
+2. **High-Gain Lead Channels (Heavy Compression & High Noise Floor)**:
+   - High-gain channels naturally compress the dynamic range, but amplify background 60Hz hum and tube hiss by 40dB+.
+   - Keep the re-amp box ground lift engaged and keep the re-amp box separated from the amplifier's power transformer.`
       },
-      esp32_ble: {
-        title: "ESP32-S3 Wireless Bluetooth (BLE) MIDI Firmware",
-        desc: "Zero-latency wireless MIDI CC stream from 10k pots to NAM host without any USB cable tether.",
-        filename: "esp32_ble_midi.ino",
-        lang: "cpp",
-        code: `// esp32_ble_midi.ino - Wireless BLE MIDI Pot Controller for NAM
-// Board: ESP32-S3 Dev Module | Library: BLE-MIDI
-#include <BLEMIDI_Transport.h>
-#include <hardware/BLEMIDI_ESP32.h>
 
-BLEMIDI_CREATE_INSTANCE("Parametric-NAM-Pedal", MIDI);
+      {
+        id: "reactive_vs_resistive",
+        title: "Reactive Loadboxes (Two Notes / Suhr) vs Resistive Dummy Loads",
+        category: "Hardware & Electrical Safety",
+        keywords: ["reactive", "resistive", "dummy load", "impedance curve", "voice coil", "reactance", "natural tone", "feel", "resistor"],
+        suggested: [
+          "Cabinet IR Pairing: Why Loadbox Signals Sound Fizzy Without Speaker Emulation",
+          "Safe Physical Re-Amping Rig: Interface, Re-Amp Box, Tube Amp & Reactive Load",
+          "Pristine Gain Staging: D/A Output, Radial Trim, and Interface Line-In dBFS Targets"
+        ],
+        codeLang: "text",
+        filename: "loadbox_physics.txt",
+        code: `ELECTRICAL IMPEDANCE CHARACTERISTICS:
+=============================================================
+Pure Resistive Dummy Load (Cheap Resistor Box):
+  - Flat 8.0 Ohm resistance across all frequencies (20Hz - 20kHz).
+  - Power tubes see zero reactance. Tone sounds stiff, muffled, and flat.
 
-const int POT_PINS[] = {1, 2, 3, 4, 5}; // ADC1 pins
-const int NUM_POTS = 5;
-int lastVals[] = {-1, -1, -1, -1, -1};
+Reactive Loadbox (Two Notes Captor / Suhr Reactive Load):
+  - Real voice coil RLC circuit (Resistor + Inductor + Capacitor).
+  - 75Hz bass resonance spike rises to ~35 Ohms.
+  - High-frequency inductive rise starts above 1kHz.
+  - Output tubes interact naturally with the reactive load!`,
+        markdown: `### 🎛️ Reactive Loadboxes (Two Notes / Suhr) vs Resistive Dummy Loads
 
-void setup() {
-  MIDI.begin(MIDI_CHANNEL_OMNI);
-  analogReadResolution(12); // 12-bit ADC (0-4095)
-}
+Why an authentic reactive loadbox is critical for capturing realistic tube amplifier tone:
 
-void loop() {
-  for (int i = 0; i < NUM_POTS; i++) {
-    int raw = analogRead(POT_PINS[i]);
-    int midiVal = map(raw, 0, 4095, 0, 127);
-    if (abs(midiVal - lastVals[i]) >= 2) {
-      lastVals[i] = midiVal;
-      MIDI.sendControlChange(20 + i, midiVal, 1);
-    }
-  }
-  delay(2); // 500Hz stream
-}`
+1. **A Guitar Speaker is Not a Resistor**:
+   - A real guitar speaker is an electromechanical motor with a voice coil moving inside a magnetic gap.
+   - Its impedance is not a flat line: It spikes dramatically at its mechanical resonant frequency (~75Hz) and rises steadily above 1kHz due to voice coil inductance.
+
+2. **The Output Transformer Feedback Loop**:
+   - Vacuum tube power stages are sensitive to load impedance. The reactive impedance curve reflects back through the output transformer into the power tube plates.
+   - A **Reactive Load** (Two Notes Torpedo Captor or Suhr) replicates this complex impedance curve, allowing the power tubes to breathe, sag, and compress naturally.`
       },
-      rpi5_rt: {
-        title: "Raspberry Pi 5 Real-Time Linux (PREEMPT_RT) Setup Guide",
-        desc: "Deploying nam-core C++ runtime on headless Raspberry Pi 5 with HiFiBerry DAC+ADC under 3ms round-trip latency.",
-        filename: "setup_rpi5_rt_nam.sh",
-        lang: "bash",
-        code: `#!/bin/bash
-# setup_rpi5_rt_nam.sh - Configure RPi5 Standalone Neural Stompbox
-set -e
 
-echo "1. Installing Real-Time Kernel (PREEMPT_RT) on Raspberry Pi 5..."
-sudo apt-get update
-sudo apt-get install -y linux-image-rt-arm64 alsa-utils libasound2-dev libjack-jackd2-dev cmake
+      {
+        id: "linux_win_cuda",
+        title: "Local GPU Training on Linux / Windows WSL2 (NVIDIA RTX GPUs)",
+        category: "Cloud & Colab GPU",
+        keywords: ["local training", "linux", "windows", "wsl2", "cuda", "nvidia", "rtx", "environment_gpu.yml", "conda", "local gpu"],
+        suggested: [
+          "Google Colab 1-Click GPU Training: Fast PyTorch Parametric NAM",
+          "Dual Objective Loss: ESR Loss (Transients) + Multi-Scale STFT (Tube Sag)",
+          "The data.json Manifest: RFC 8259 Standard & Normalization"
+        ],
+        codeLang: "bash",
+        filename: "setup_local_gpu.sh",
+        code: `# 1. Create dedicated Conda environment with CUDA 12.1:
+conda env create -f environment_gpu.yml
+conda activate nam_gpu
 
-echo "2. Setting Audio Thread CPU Affinity & RT Priorities in /etc/security/limits.d/audio.conf..."
-sudo tee /etc/security/limits.d/audio.conf > /dev/null <<EOF
-@audio   -  rtprio     95
-@audio   -  memlock    unlimited
-@audio   -  nice      -19
-EOF
+# 2. Run local high-speed training on local NVIDIA RTX GPU:
+python train_parametric.py \\
+    --data_dir ./data \\
+    --epochs 120 \\
+    --batch_size 32 \\
+    --device cuda \\
+    --output_nam ./model_parametric.nam`,
+        markdown: `### 💻 Local GPU Training on Linux / Windows WSL2 (NVIDIA RTX)
 
-echo "3. Compiling nam-core C++ runtime with ARM Cortex-A76 NEON optimizations..."
-git clone https://github.com/sdatkinson/neural-amp-modeler.git
-cd neural-amp-modeler
-mkdir build && cd build
-cmake -DCMAKE_BUILD_TYPE=Release -DNAM_ARM_NEON=ON ..
-make -j4
+If you have a local PC equipped with an NVIDIA RTX 3060, 3080, 4070, or 4090:
 
-echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 samples 48kHz."`
+1. **Conda Environment Setup**:
+   - We provide \`environment_gpu.yml\` configured for CUDA 12.1+ and PyTorch 2.2+.
+   - Run \`conda env create -f environment_gpu.yml\` followed by \`conda activate nam_gpu\`.
+
+2. **Training Speed**:
+   - On an RTX 4070 or 3080, training takes just **15 to 20 minutes** for 100 epochs, allowing rapid model iteration.`
+      },
+
+      {
+        id: "batch_renaming",
+        title: "REAPER Region Wildcards ($region.wav) & File Naming Alignment",
+        category: "DAW & Lua Automation",
+        keywords: ["batch rename", "wildcard", "$region", "$region.wav", "naming", "take_001.wav", "take_045.wav", "regions", "render dialog", "file names"],
+        suggested: [
+          "Cockos REAPER Workflow: Reaper_AutoReamp_NAM.lua & F1 Auto-Reamp",
+          "The data.json Manifest: RFC 8259 Standard & Normalization",
+          "Google Colab 1-Click GPU Training: Fast PyTorch Parametric NAM"
+        ],
+        codeLang: "text",
+        filename: "reaper_render_settings.txt",
+        code: `REAPER RENDER DIALOG SETTINGS (Cmd+Opt+R / Ctrl+Alt+R):
+=============================================================
+Bounds:       All project regions
+Directory:    /path/to/justin-parametric-nam/takes
+File name:    $region
+Sample rate:  48000 Hz
+Channels:     Mono
+Format:       WAV (24 bit PCM)`,
+        markdown: `### 📁 REAPER Region Wildcards (\`$region\`) & 10-Second Batch Rendering
+
+When using \`Reaper_AutoReamp_NAM.lua\`, manual file trimming and renaming are completely eliminated:
+
+1. **Automated Timeline Regions**:
+   - As you press F1, REAPER stamps project timeline regions named \`take_001.wav\`, \`take_002.wav\`, etc.
+
+2. **Wildcard Rendering**:
+   - Open REAPER's Render dialog (\`Cmd+Opt+R\` on Mac, \`Ctrl+Alt+R\` on Windows).
+   - Set **Bounds** to **"All project regions"**.
+   - In **File name**, enter \`$region\`.
+   - Click **Render 45 files**. REAPER exports all 45 trimmed, aligned takes in approximately 10 seconds!`
+      },
+
+      {
+        id: "standby_switch",
+        title: "Tube Amp Power & Standby Sequence: Preventing Tube Cathode Stripping",
+        category: "Hardware & Electrical Safety",
+        keywords: ["standby", "power switch", "cathode stripping", "turn on", "turn off", "sequence", "power down", "startup", "shutdown", "tubes", "amplifier safety"],
+        suggested: [
+          "Safe Physical Re-Amping Rig: Interface, Re-Amp Box, Tube Amp & Reactive Load",
+          "Tube Amp Thermal Stabilization: The 5-Minute Pre-Heat Rule",
+          "Troubleshooting Silent Takes: Audio Level < -60dBFS Detected"
+        ],
+        codeLang: "text",
+        filename: "tube_switch_sequence.txt",
+        code: `PROPER TUBE AMPLIFIER POWER SEQUENCE:
+=============================================================
+Power-ON Sequence:
+  1. Verify speaker cable is plugged into Two Notes Captor load!
+  2. Turn POWER switch ON. (Leave STANDBY switch OFF).
+  3. Wait 60 to 90 seconds for tube heaters to warm up.
+  4. Turn STANDBY switch ON (Play mode).
+
+Power-OFF Sequence:
+  1. Turn STANDBY switch OFF.
+  2. Wait 15 seconds.
+  3. Turn POWER switch OFF.`,
+        markdown: `### ⚡ Tube Amp Power & Standby Sequence: Preventing Cathode Stripping
+
+To maximize tube life and protect your physical amplifier during re-amping sessions:
+
+1. **What Cathode Stripping Is**:
+   - If high plate voltage (350V–500V DC) is applied while tube cathodes are cold, positive ions bombard the delicate barium-strontium oxide coating, physically degrading the cathode and causing premature tube failure.
+
+2. **The Golden Power-On Sequence**:
+   - **Step 1**: Verify reactive loadbox connection.
+   - **Step 2**: Flip **POWER ON** with **STANDBY OFF**. Wait at least 60 seconds.
+   - **Step 3**: Flip **STANDBY ON** to engage plate voltage.`
+      },
+
+      {
+        id: "model_size_dsp",
+        title: "WaveNet Receptive Field Requirements & Neural Channel Dimensions",
+        category: "Neural DSP & PyTorch",
+        keywords: ["receptive field", "wavenet", "dilation", "4096 samples", "85ms", "memory", "conv1d", "hidden channels", "architecture"],
+        suggested: [
+          "CatMLP Conditioning: 5D Knob Vectors & Zero Zipper Noise",
+          "Real-Time DSP Latency Optimization: 64-Sample Buffers & 1.33ms Delay",
+          "Dual Objective Loss: ESR Loss (Transients) + Multi-Scale STFT (Tube Sag)"
+        ],
+        codeLang: "text",
+        filename: "wavenet_dimensions.txt",
+        code: `WAVENET RECEPTIVE FIELD CALCULATION:
+=============================================================
+Dilation pattern: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512] x 2 blocks
+Receptive Field = 4,096 samples at 48kHz:
+  Memory Duration = 4096 / 48000 = 85.3 milliseconds
+  Fully covers pickup strike, tone-stack filter group delay,
+  and power tube bias sag!`,
+        markdown: `### 🧠 WaveNet Receptive Field Requirements & Neural Channel Dimensions
+
+Audio amplifiers have physical memory: energy is stored in inductors, capacitors, and power supply reservoirs over tens of milliseconds:
+
+1. **Receptive Field Duration (85.3ms)**:
+   - With 10 dilated Conv1D layers ($2^0$ to $2^9$) stacked across 2 blocks, our WaveNet architecture achieves a receptive field of **4,096 samples**.
+   - At 48kHz, this provides **85.3 milliseconds of continuous acoustic memory**, accurately capturing tone stack filter delays and tube sag.
+
+2. **Channel Sizing**:
+   - 16 audio feature channels paired with 32 CatMLP latent conditioning channels delivers pristine harmonic modeling while executing comfortably in real time on any modern CPU.`
       }
-    };
+    ];
+
+    // Backwards-compatible map for quick prompt links
+    const aiKnowledge = {};
+    STUDIO_KNOWLEDGE_BASE.forEach(cap => {
+      aiKnowledge[cap.id] = {
+        title: cap.title,
+        desc: cap.markdown.split('\n')[0].replace(/^###\s*/, ''),
+        filename: cap.filename,
+        lang: cap.codeLang,
+        code: cap.code
+      };
+    });
+    // Add legacy aliases
+    aiKnowledge.cat_mlp = aiKnowledge.catmlp_engine;
+    aiKnowledge.colab_offsite = aiKnowledge.colab_training_loop;
+    aiKnowledge.latin_matrix = aiKnowledge.latin_hypercube;
+    aiKnowledge.linux_cuda = aiKnowledge.linux_win_cuda;
+    aiKnowledge.film_loop = aiKnowledge.loss_functions;
+
+    // Fast Intelligent Semantic Intent Matcher
+    function matchStudioKnowledge(query) {
+      const qClean = query.toLowerCase().trim();
+      let bestMatch = null;
+      let topScore = 0;
+      const scored = [];
+
+      for (const cap of STUDIO_KNOWLEDGE_BASE) {
+        let score = 0;
+        
+        // Exact keyword phrase matching (high priority)
+        for (const kw of cap.keywords) {
+          const kwLow = kw.toLowerCase();
+          if (qClean.includes(kwLow)) {
+            score += 15 + (kwLow.split(' ').length * 5);
+          }
+        }
+
+        // Title token matching
+        const titleTokens = cap.title.toLowerCase().match(/\w+/g) || [];
+        for (const t of titleTokens) {
+          if (t.length > 3 && qClean.includes(t)) {
+            score += 8;
+          }
+        }
+
+        scored.push({ cap, score });
+        if (score > topScore) {
+          topScore = score;
+          bestMatch = cap;
+        }
+      }
+
+      scored.sort((a, b) => b.score - a.score);
+      const alternatives = scored.slice(1, 4).map(s => s.cap.title);
+
+      return { bestMatch, topScore, alternatives };
+    }
+
+    function askAIAssistant(query) {
+      openAIDrawer();
+      document.getElementById('aiInput').value = query;
+      handleAIChatSubmit({ preventDefault: () => {} });
+    }
+    window.askAIAssistant = askAIAssistant;
+
+    function sendFollowUpPrompt(btn) {
+      const q = btn.getAttribute('data-query');
+      if (!q) return;
+      document.getElementById('aiInput').value = q;
+      handleAIChatSubmit({ preventDefault: () => {} });
+    }
+    window.sendFollowUpPrompt = sendFollowUpPrompt;
 
     function sendQuickPrompt(key) {
-      const item = aiKnowledge[key];
+      const item = aiKnowledge[key] || STUDIO_KNOWLEDGE_BASE.find(c => c.id === key);
       if (!item) return;
       openAIDrawer();
-      appendAIMessage("user", `Generate blueprint & code: ${item.title}`);
-      
+      appendAIMessage("user", `Tell me about: ${item.title}`);
       setTimeout(() => {
-        appendAIMessage("assistant", `### ⚡ ${item.title}\n${item.desc}`, item.code, item.lang, item.filename);
+        const fullCap = STUDIO_KNOWLEDGE_BASE.find(c => c.id === key) || item;
+        const text = fullCap.markdown || `### ⚡ ${item.title}\n${item.desc}`;
+        const followUps = fullCap.suggested || [];
+        appendAIMessage("assistant", text, fullCap.code, fullCap.codeLang || fullCap.lang || "text", fullCap.filename, followUps);
       }, 300);
     }
 
@@ -2742,14 +3504,14 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
       }
     }
 
-    function appendAIMessage(role, text, code = null, codeLang = "text", filename = "code_export.txt") {
+    function appendAIMessage(role, text, code = null, codeLang = "text", filename = "code_export.txt", followUps = []) {
       const stream = document.getElementById('aiChatStream');
-      const msgId = 'aimsg-' + Date.now();
+      const msgId = 'aimsg-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
       const card = document.createElement('div');
 
       if (role === "user") {
         card.className = "bg-slate-800/90 text-slate-100 rounded-2xl p-3.5 max-w-[85%] ml-auto text-xs border border-slate-700 shadow-md";
-        card.innerHTML = `<span class="font-bold text-slate-400 block mb-1">Engineer:</span>${escapeHtml(text)}`;
+        card.innerHTML = `<span class="font-bold text-slate-400 block mb-1">Justin:</span>${escapeHtml(text)}`;
       } else {
         card.className = "bg-slate-950 border border-indigo-500/30 rounded-2xl p-4 space-y-3 text-xs shadow-xl";
         let contentHtml = `<div class="flex items-center justify-between">
@@ -2759,13 +3521,13 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
           </div>
           <span class="text-[10px] text-slate-500 font-mono">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
         </div>
-        <div class="text-slate-300 leading-relaxed space-y-1.5">${formatMarkdown(text)}</div>`;
+        <div class="text-slate-300 leading-relaxed space-y-2">${formatMarkdown(text)}</div>`;
 
         if (code) {
           contentHtml += `
             <div class="mt-2 bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
               <div class="bg-slate-950 px-3 py-1.5 flex items-center justify-between border-b border-slate-800 text-[10px] font-mono text-slate-400">
-                <span>📄 ${filename} (${codeLang})</span>
+                <span>📄 ${escapeHtml(filename)} (${escapeHtml(codeLang)})</span>
                 <button onclick="copyCode('${msgId}')" class="text-indigo-400 hover:text-white transition">Copy Code</button>
               </div>
               <pre class="p-3 text-[11px] font-mono text-emerald-400 overflow-x-auto max-h-64" id="${msgId}">${escapeHtml(code)}</pre>
@@ -2781,6 +3543,19 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
           `;
         }
 
+        if (followUps && followUps.length > 0) {
+          contentHtml += `
+            <div class="mt-3 pt-2.5 border-t border-slate-800/80">
+              <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <span>💡 Suggested Follow-Up Inquiries:</span>
+              </div>
+              <div class="flex flex-wrap gap-1.5">
+                ${followUps.map(fu => `<button onclick="sendFollowUpPrompt(this)" data-query="${escapeHtml(fu)}" class="px-2.5 py-1 rounded-lg bg-indigo-950/60 hover:bg-indigo-900/80 text-indigo-300 hover:text-white border border-indigo-500/30 hover:border-indigo-400 text-[10px] transition text-left cursor-pointer flex items-center gap-1.5"><span>💬</span><span>${escapeHtml(fu)}</span></button>`).join('')}
+              </div>
+            </div>
+          `;
+        }
+
         card.innerHTML = contentHtml;
       }
 
@@ -2789,152 +3564,62 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
     }
 
     function synthesizeExpertResponse(query) {
-      const q = query.toLowerCase();
       setTimeout(() => {
-                if (q.includes("catmlp") || q.includes("cat_mlp") || (q.includes("continuous") && q.includes("knob"))) {
-          appendAIMessage("assistant",
-            "### 🧠 CatMLP: Continuous Multidimensional Knob Conditioning Engine\n\n" +
-            "In Parametric Neural Amp Modeler, **CatMLP** solves the fundamental limitation of static captures where an amplifier had to be re-captured for every knob change.\n\n" +
-            "```python\n" +
-            "# CatMLP Continuous Conditioning Architecture\n" +
-            "class CatMLP(nn.Module):\n" +
-            "    def __init__(self, cond_dim=5, hidden_dim=64, out_dim=32):\n" +
-            "        super().__init__()\n" +
-            "        self.net = nn.Sequential(\n" +
-            "            nn.Linear(cond_dim, hidden_dim),   # 5D knob input [gain, bass, mid, treble, master]\n" +
-            "            nn.SiLU(),\n" +
-            "            nn.Linear(hidden_dim, hidden_dim),\n" +
-            "            nn.SiLU(),\n" +
-            "            nn.Linear(hidden_dim, out_dim)     # Latent conditioning embedding\n" +
-            "        )\n\n" +
-            "    def forward(self, knob_tensor):\n" +
-            "        # Projects normalized [0.0, 1.0] knob vector to latent space\n" +
-            "        return self.net(knob_tensor).unsqueeze(-1) # [B, out_dim, 1]\n" +
-            "```\n\n" +
-            "1. **Continuous Non-Linear Latent Manifold**: Instead of discrete stepped models, CatMLP maps $[g, b, m, t, v]$ into a smooth 32-channel latent feature tensor. You can turn a gain knob to `5.372` and the model generates exact intermediate saturation profiles.\n" +
-            "2. **Dilated Conv1D Concatenation**: The conditioning embedding is concatenated along the channel dimension of each dilated WaveNet layer `torch.cat([audio_x, cond_tensor], dim=1)`, dynamically altering filtering and distortion across time.\n" +
-            "3. **Zero Zipper Noise**: By conditioning through continuous dense projections and low-pass filtering knob inputs (`alpha = 0.15`), knob sweeps produce smooth analog warmth with zero audio clicking or buffer crackle.\n" +
-            "4. **Ultra-Low Latency**: Inference executes in ~0.38ms on Apple Silicon Neural Engine cores and 0.12ms on NVIDIA Tensor Cores (for a 64-sample buffer at 48kHz)."
+        const { bestMatch, topScore, alternatives } = matchStudioKnowledge(query);
+
+        if (bestMatch && topScore >= 8) {
+          const followUps = bestMatch.suggested || [];
+          appendAIMessage(
+            "assistant",
+            bestMatch.markdown,
+            bestMatch.code,
+            bestMatch.codeLang,
+            bestMatch.filename,
+            followUps
           );
-        } else if (q.includes("reamp_automation") || q.includes("sounddevice") || q.includes("playrec") || q.includes("full duplex") || q.includes("buffer") || q.includes("peak meter")) {
-          appendAIMessage("assistant",
-            "### 🐍 Deconstruction: `reamp_automation.py` Full-Duplex Audio Engine\n\n" +
-            "In `reamp_automation.py`, the critical breakthrough is **synchronous full-duplex I/O** via PortAudio:\n\n" +
-            "```python\n" +
-            "# Lines 110-118 in reamp_automation.py\n" +
-            "play_buf = np.zeros((len(sweep_data), max(out_ch, max_out)), dtype='float32')\n" +
-            "play_buf[:, out_ch - 1] = sweep_data\n" +
-            "rec_data = sd.playrec(play_buf, samplerate=sr, channels=max(in_ch, 2), dtype='float32')\n" +
-            "sd.wait()\n" +
-            "```\n\n" +
-            "1. **Zero Sample Clock Drift**: By invoking `sd.playrec()` with a single unified buffer instead of separate play/record calls, the audio interface shares the exact same hardware clock for D/A and A/D conversion.\n" +
-            "2. **Level Validation (Lines 123-128)**: Computes `np.sqrt(np.mean(take_audio**2))` (RMS) and `np.max(np.abs(take_audio))` (Peak). If peak is below 0.001 (-60dBFS), it halts and warns you before saving empty takes.\n" +
-            "3. **Self-Healing Run Sheet (Lines 31-72)**: If `parametric_nam_run_sheet.csv` is missing, it automatically creates the 45-take Latin Hypercube on the fly using a seeded PRNG!"
-          );
-        } else if (q.includes("reaper") || q.includes("lua") || q.includes("reascript") || q.includes("defer") || q.includes("hotkey") || q.includes("f1")) {
-          appendAIMessage("assistant",
-            "### 📜 Deconstruction: `Reaper_AutoReamp_NAM.lua` ReaScript Transport Engine\n\n" +
-            "In Cockos REAPER, running blocking scripts causes audio crackles and GUI freezes. Here is how our Lua script solves it:\n\n" +
-            "```lua\n" +
-            "-- Lines 60-75 in Reaper_AutoReamp_NAM.lua\n" +
-            "function check_stop()\n" +
-            "  local elapsed = reaper.time_precise() - startTime\n" +
-            "  if elapsed >= SWEEP_LEN_SEC then\n" +
-            "    reaper.Main_OnCommand(1016, 0) -- Transport: Stop\n" +
-            "    local nextPos = endTime + GAP_SEC\n" +
-            "    reaper.SetEditCurPos(nextPos, true, false) -- Advance playhead!\n" +
-            "  else\n" +
-            "    reaper.defer(check_stop) -- Reschedule on REAPER's GUI tick!\n" +
-            "  end\n" +
-            "end\n" +
-            "```\n\n" +
-            "1. **`reaper.defer(check_stop)`**: Instead of a blocking sleep, this hooks into REAPER's 120Hz GUI loop. It checks high-precision timestamps without interrupting audio streaming.\n" +
-            "2. **`reaper.AddProjectMarker2()`**: Draws a timeline Region bounded by the 38-second take. When you open REAPER's Render dialog, choosing `Source: All Project Regions` and `File name: $region.wav` exports all 45 trimmed WAVs in 10 seconds flat."
-          );
-        } else if (q.includes("catmlp") || q.includes("parametric") || q.includes("conditioning") || q.includes("neural") || q.includes("wavenet") || q.includes("loss") || q.includes("spectral") || q.includes("esr")) {
-          appendAIMessage("assistant",
-            "### 🧠 Neural Core: Parametric Knob Conditioning\n\n" +
-            "Standard Neural Amp Modeler models a static amplifier setting using dilated 1D convolutions. **Parametric NAM** introduces dynamic continuous conditioning:\n\n" +
-            "1. **Continuous Knob Conditioning**: The 5-dimensional knob vector $[g, b, m, t, v]$ is projected through a neural dense layer directly into the audio feature channels, dynamically adjusting the amplifier's response across any continuous setting without discrete stepped jumps.\n" +
-            "2. **Normalized Floating Point Coordinates**: Knob settings are normalized to $[0.0, 1.0]$ in `data.json` to prevent exploding gradients.\n" +
-            "3. **Dual Objective Loss**:\n" +
-            "   - **ESR Loss**: Enforces time-domain pick attack and transient accuracy.\n" +
-            "   - **Multi-Scale STFT Loss**: Computes frequency-domain differences across 5 FFT windows (128 to 2048) to capture authentic harmonic tube saturation."
-          );
-        } else if (q.includes("data.json") || (q.includes("manifest") && !q.includes(".nam"))) {
-          appendAIMessage("assistant",
-            "### 📊 Manifest Specification: `data.json` (45-Take Matrix)\n\n" +
-            "In `data.json`, each take maps the physical 48kHz audio file to its 5D parameter coordinates and validation holdout flags:\n\n" +
-            "```json\n" +
-            "{\n" +
-            "  \"sample_rate\": 48000,\n" +
-            "  \"takes\": [\n" +
-            "    {\n" +
-            "      \"take_id\": 1,\n" +
-            "      \"input\": \"data/inputTrunc.wav\",\n" +
-            "      \"output\": \"takes/take_001.wav\",\n" +
-            "      \"params\": [0.15, 0.40, 0.50, 0.65, 0.70],\n" +
-            "      \"is_validation\": false\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"take_id\": 42,\n" +
-            "      \"input\": \"data/inputTrunc.wav\",\n" +
-            "      \"output\": \"takes/take_042.wav\",\n" +
-            "      \"params\": [0.85, 0.60, 0.55, 0.45, 0.50],\n" +
-            "      \"is_validation\": true\n" +
-            "    }\n" +
-            "  ]\n" +
-            "}\n" +
-            "```\n\n" +
-            "1. **Zero Redundant Sweeps**: Standard static NAM requires 2 sweeps per tone (training & validation). Parametric NAM designates 4-5 takes (e.g. takes 41-45) as holdout validation points across the 5D hypercube space.\n" +
-            "2. **Continuous Generalization**: The network evaluates loss on unseen knob settings during validation epochs, proving it learned the physical tube saturation response rather than memorizing individual audio files."
-          );
-        } else if (q.includes("colab") || q.includes("offsite") || q.includes("cloud") || q.includes("t4") || q.includes("upload")) {
-          const item = aiKnowledge.colab_offsite;
-          appendAIMessage("assistant", "### ⚡ " + item.title + "\n\n" + item.desc + "\n\n1. Zip your 45 audio takes into `takes.zip` alongside `data.json`.\n2. Open Google Colab and set Runtime to **T4 GPU**.\n3. Upload `takes.zip` and run the one-click training script below:", item.code, item.lang, item.filename);
-        } else if (q.includes("mac") || q.includes("linux") || q.includes("cuda") || q.includes("nvidia") || q.includes("gpu")) {
-          const item = aiKnowledge.linux_cuda;
-          appendAIMessage("assistant", "### ⚡ " + item.title + "\n\n" + item.desc, item.code, item.lang, item.filename);
-        } else if (q.includes("offline") || q.includes("binary") || q.includes(".nam") || q.includes("export")) {
-          const item = aiKnowledge.offline_binary;
-          appendAIMessage("assistant", "### ⚡ " + item.title + "\n\n" + item.desc, item.code, item.lang, item.filename);
-        } else if (q.includes("pot") || q.includes("pico") || q.includes("adc") || q.includes("jitter") || q.includes("rp2040")) {
-          const item = aiKnowledge.pico_adc;
-          appendAIMessage("assistant", "### ⚡ " + item.title + "\n\n" + item.desc, item.code, item.lang, item.filename);
-        } else if (q.includes("matrix") || q.includes("sample") || q.includes("latin") || q.includes("45") || q.includes("takes")) {
-          const item = aiKnowledge.latin_matrix;
-          appendAIMessage("assistant", "### ⚡ " + item.title + "\n\n" + item.desc, item.code, item.lang, item.filename);
-        } else if (q.includes("film") || q.includes("pytorch") || q.includes("train") || q.includes("loss") || q.includes("concat")) {
-          const item = aiKnowledge.film_loop;
-          appendAIMessage("assistant", "### ⚡ " + item.title + "\n\n" + item.desc, item.code, item.lang, item.filename);
-        } else if (q.includes("esp32") || q.includes("ble") || q.includes("midi") || q.includes("wireless")) {
-          const item = aiKnowledge.esp32_ble;
-          appendAIMessage("assistant", "### ⚡ " + item.title + "\n\n" + item.desc, item.code, item.lang, item.filename);
-        } else if (q.includes("pi 5") || q.includes("pedal") || q.includes("latency") || q.includes("rt") || q.includes("realtime")) {
-          const item = aiKnowledge.rpi5_rt;
-          appendAIMessage("assistant", "### ⚡ " + item.title + "\n\n" + item.desc, item.code, item.lang, item.filename);
         } else {
-          appendAIMessage("assistant", 
-            `Great question regarding **"${query}"**.\n\n` +
-            `To achieve optimal real-time neural modeling at 48kHz, the two critical pillars are:\n` +
-            `1. **Latency Minimization:** Keep buffer sizes at 64 samples (1.33ms delay) using ALSA direct I/O or JACK.\n` +
-            `2. **Continuous Conditioning Invariance:** Ensure the parameter conditioning tensor is normalized $[0.0, 1.0]$ with an exponential moving average low-pass filter to prevent zipper noise when turning pots.\n\n` +
-            `Would you like me to generate the **RP2040 MicroPython code**, the **45-take Latin Hypercube script**, or the **PyTorch CUDA training loop**?`
-          );
+          // Comprehensive Studio Diagnostic Navigator
+          const fallbackText = `### 🎛️ Studio Diagnostic Navigator: Justin Muir's Re-Amping & NAM Engine
+
+Justin, I didn't find an exact single capsule for **"${query}"**, but here is how your end-to-end parametric system is organized across its 5 physical stages:
+
+1. **Phase 1: Physical Rig & Transformer Protection**
+   - Focusrite/Apollo Out 3 -> Radial Reamp Box -> 50W Tube Amp -> Two Notes Captor Loadbox -> Interface Line In 1.
+   - *Strict Rule: Always connect the Captor with an unshielded 16AWG speaker cable before powering on!*
+
+2. **Phase 2: Pristine Gain Staging & Calibration**
+   - 0.0dBFS DAW dry output, ~70% Radial trim pot, interface line-in preamp set for **-12dBFS to -6dBFS peak**.
+
+3. **Phase 3: Automated Re-Amping (Python or REAPER F1)**
+   - Run \`reamp_automation.py\` or tap **F1** in REAPER with \`Reaper_AutoReamp_NAM.lua\` to capture 45 Latin Hypercube takes in ~30 minutes.
+
+4. **Phase 4: Google Colab GPU Training (Headless PyTorch)**
+   - Zip takes into \`takes.zip\`, upload to free T4 GPU in Colab, train CatMLP + WaveNet in 35 mins, download \`model_parametric.nam\`.
+
+5. **Phase 5: Real-Time DAW Plugin & Cabinet IR Loading**
+   - Load \`model_parametric.nam\` in Steven Atkinson's NAM VST3/AU plugin. Follow immediately with a 48kHz 24-bit Celestion Cabinet IR!`;
+
+          const quickPicks = [
+            "What is the exact physical wiring diagram for my interface, re-amp box, tube amp head, and reactive loadbox?",
+            "What levels should I set for my dry sweep output and interface line-in preamp to avoid clipping?",
+            "How do I install Reaper_AutoReamp_NAM.lua into REAPER, bind it to F1, and do a 10-second wildcard batch render?"
+          ];
+
+          appendAIMessage("assistant", fallbackText, null, "text", "overview.txt", quickPicks);
         }
-      }, 400);
+      }, 350);
     }
 
     async function callLiveGeminiAPI(query, apiKey) {
       const stream = document.getElementById('aiChatStream');
       const loading = document.createElement('div');
       loading.className = "text-xs text-indigo-400 italic py-2 animate-pulse";
-      loading.innerText = "⚡ Thinking with Gemini 2.0 Flash...";
+      loading.innerText = "⚡ Thinking with Gemini 2.0 Flash (Grounded Studio Brain)...";
       stream.appendChild(loading);
       stream.scrollTop = stream.scrollHeight;
 
       try {
-        const sysPrompt = "You are the dedicated expert Audio AI DSP and Embedded Hardware Architect. The engineering team is building a Parametric Neural Amp Modeler (NAM) using 40-50 sweeps at 48kHz 24-bit with Latin Hypercube Sampling, PyTorch FiLM WaveNet, and physical hardware potentiometers via RP2040/ESP32. Answer with deep technical rigor, production-ready code, pinouts, and mathematical clarity.";
+        const sysPrompt = "You are Justin Muir's dedicated expert Audio AI DSP and Hardware Re-Amping Architect. Justin is building a Parametric Neural Amp Modeler (NAM) using 45 physical tube amp sweeps at 48kHz 24-bit with Latin Hypercube Sampling, a Radial Re-Amp Box, Two Notes Torpedo Captor reactive loadbox, Cockos REAPER Lua automation, and Google Colab GPU training. Answer with deep studio engineering rigor, practical checklists, exact routing, pinouts, and zero generic microcontroller fluff.";
         const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -2953,6 +3638,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
         synthesizeExpertResponse(query);
       }
     }
+
 
     function copyCode(id) {
       const el = document.getElementById(id);
@@ -2982,7 +3668,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
         target: "Hardware Microcontroller & Potentiometer Bridge",
         category: "Hardware Spec",
         comment: note,
-        author: "Audio Engineer & AI Co-Pilot",
+        author: "Justin & AI Co-Pilot",
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
 
@@ -3094,7 +3780,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
         target: target,
         category: category,
         comment: comment,
-        author: "Audio Engineer",
+        author: "Justin Muir",
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
 
@@ -3184,7 +3870,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
 
     // Export & Send to Daniel
     function generateReportMarkdown() {
-      let md = `# Parametric NAM Studio • Redline Review\n`;
+      let md = `# Justin Muir • Parametric NAM Redline Review\n`;
       md += `**Date:** ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}\n`;
       md += `**Total Redlines:** ${state.redlines.length}\n\n`;
 
@@ -3214,7 +3900,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
         alert("No redlines to email yet! Click 'Enable Redline Mode' to leave feedback first.");
         return;
       }
-      const subject = encodeURIComponent("Parametric NAM Blueprint Redlines");
+      const subject = encodeURIComponent("Justin Muir • Parametric NAM Blueprint Redlines");
       const body = encodeURIComponent(generateReportMarkdown());
       window.location.href = `mailto:?subject=${subject}&body=${body}`;
     }
@@ -3726,7 +4412,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
       }
 
       // Save preference
-      try { localStorage.setItem('parametric_nam_workspace', workspaceId); } catch(e){}
+      try { localStorage.setItem('justin_nam_workspace', workspaceId); } catch(e){}
     }
 
     function setViewMode(mode) {
@@ -3749,7 +4435,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
           btnFlow.className = "px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition";
         }
       }
-      try { localStorage.setItem('parametric_nam_view_mode', mode); } catch(e){}
+      try { localStorage.setItem('justin_nam_view_mode', mode); } catch(e){}
     }
 
     function toggleThemePosture() {
@@ -3770,7 +4456,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
         if (icon) icon.textContent = '🌙';
         if (label) label.textContent = 'Obsidian';
       }
-      try { localStorage.setItem('parametric_nam_theme', theme); } catch(e){}
+      try { localStorage.setItem('justin_nam_theme', theme); } catch(e){}
     }
 
     function updateStudioHUD() {
@@ -3832,7 +4518,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
     }
 
     const CODEWIKI_AUDIO_SCRIPT = [
-      "Welcome. Here is your architectural walkthrough of the Parametric Neural Amp Modeler codebase and tracking automation pipeline.",
+      "Welcome, Justin. Here is your architectural walkthrough of the Parametric Neural Amp Modeler codebase and tracking automation pipeline.",
       "First, reamp_automation.py is our headless Python audio engine. It uses the sounddevice library to open a full-duplex 48 kilohertz stream.",
       "This means it plays the thirty-eight second calibration sweep out of channel 3 into your re-amp box, and records the microphone or loadbox on channel 1 simultaneously in the exact same PortAudio buffer.",
       "This eliminates clock drift between takes and automatically calculates RMS and peak headroom to prevent silent or clipped files.",
@@ -4305,7 +4991,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
 
     function initRunSheet() {
       try {
-        const saved = localStorage.getItem('parametric_nam_runsheet_v1');
+        const saved = localStorage.getItem('justin_nam_runsheet_v1');
         if (saved) {
           runSheetData = JSON.parse(saved);
         } else {
@@ -4330,7 +5016,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
 
     function saveRunSheetProgress() {
       try {
-        localStorage.setItem('parametric_nam_runsheet_v1', JSON.stringify(runSheetData));
+        localStorage.setItem('justin_nam_runsheet_v1', JSON.stringify(runSheetData));
       } catch (e) {}
     }
 
@@ -4456,7 +5142,7 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
       });
       const blob = new Blob([csv], { type: 'text/csv' });
       const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href = url; a.download = "parametric_nam_run_sheet.csv"; a.click();
+      const a = document.createElement('a'); a.href = url; a.download = "justin_nam_run_sheet.csv"; a.click();
       URL.revokeObjectURL(url);
     }
 
@@ -4477,10 +5163,10 @@ echo "✅ Realtime NAM Core Engine Ready! Round-trip latency: ~2.4ms at 64 sampl
     // Initial setup
     drawCurve(); drawOscilloscope(); updateAudioParams(); loadSavedRedlines(); initRunSheet();
     try {
-      const savedTheme = localStorage.getItem('parametric_nam_theme') || 'obsidian';
+      const savedTheme = localStorage.getItem('justin_nam_theme') || 'obsidian';
       applyThemePosture(savedTheme);
-      const savedWorkspace = localStorage.getItem('parametric_nam_workspace') || 'workspace-amp';
-      const savedViewMode = localStorage.getItem('parametric_nam_view_mode') || 'tabs';
+      const savedWorkspace = localStorage.getItem('justin_nam_workspace') || 'workspace-amp';
+      const savedViewMode = localStorage.getItem('justin_nam_view_mode') || 'tabs';
       currentViewMode = savedViewMode;
       setViewMode(savedViewMode);
       if (savedViewMode === 'tabs') switchStudioWorkspace(savedWorkspace);
