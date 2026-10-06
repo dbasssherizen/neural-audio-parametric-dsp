@@ -1487,6 +1487,79 @@
         <span class="text-xs text-emerald-400 font-mono bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-xl self-start sm:self-auto font-bold">42 Takes Recorded • 100% Ready</span>
       </div>
 
+      <!-- STEP 2 DIRECT ACTION: HOW TO CRUNCH YOUR 250MB FOLDER -->
+      <div class="bg-gradient-to-r from-sky-950/70 via-slate-900 to-indigo-950/70 border-2 border-sky-500/60 rounded-2xl p-5 space-y-4 shadow-2xl">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
+          <div class="flex items-center gap-3">
+            <span class="w-10 h-10 rounded-2xl bg-sky-500/20 text-sky-300 border border-sky-500/40 flex items-center justify-center text-xl shrink-0">🔥</span>
+            <div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h4 class="font-extrabold text-white text-sm">Step 2 Demystified: How to Render &amp; Crunch Your 42 Sweeps</h4>
+                <span class="text-[9px] font-mono bg-sky-500/20 text-sky-300 px-2.5 py-0.5 rounded-full border border-sky-500/40 font-bold">"Fat of the Land" GPU Pipeline</span>
+                <span class="text-[9px] font-mono bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full border border-amber-500/30 font-bold">~250MB Folder</span>
+              </div>
+              <p class="text-xs text-slate-300 mt-1">
+                You’ve finished Step 1 (the 42 sweeps + CSV). Step 2 is the GPU training pass where PyTorch crunches that data into continuous rotary tube response. Here are the two ways to run it:
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs pt-1">
+          <!-- Option A: Cloud Handoff -->
+          <div class="bg-slate-950/90 p-4 rounded-xl border border-sky-500/40 space-y-2.5 flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-sky-300 font-extrabold text-xs flex items-center gap-1.5">
+                  <span>⚡</span> Option A: The Zero-Effort Handoff
+                </span>
+                <span class="text-[9px] font-mono bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded-full">Daniel &amp; Max Crunch It</span>
+              </div>
+              <p class="text-slate-400 text-[11px] leading-relaxed">
+                Bundle your 42 raw WAV sweeps and <code class="text-sky-300">marshall_origin50_params.csv</code> into a single zip file (<code class="text-slate-200">marshall_origin50_captures.zip</code>, ~250MB).
+              </p>
+              <ul class="text-[11px] text-slate-300 space-y-1 list-disc list-inside">
+                <li>Upload to Google Drive, Dropbox, or WeTransfer</li>
+                <li>Send the link to Daniel or Max over text/email</li>
+                <li>We run the PyTorch CUDA pipeline on our GPU cluster and send back <code class="text-emerald-300 font-mono">marshall_origin50.param.nam</code></li>
+              </ul>
+            </div>
+            <div class="pt-2 border-t border-slate-800">
+              <span class="text-[10px] text-slate-500 font-mono">Zero local GPU wear • Delivered ready-to-play</span>
+            </div>
+          </div>
+
+          <!-- Option B: Google Colab DIY -->
+          <div class="bg-slate-950/90 p-4 rounded-xl border border-amber-500/40 space-y-2.5 flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-amber-300 font-extrabold text-xs flex items-center gap-1.5">
+                  <span>🚀</span> Option B: Free Google Colab GPU
+                </span>
+                <span class="text-[9px] font-mono bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full">Self-Crunch in Browser</span>
+              </div>
+              <p class="text-slate-400 text-[11px] leading-relaxed">
+                Run the official mrgeneko cloud training notebook in your browser on Google's free datacenter NVIDIA T4 GPUs:
+              </p>
+              <ol class="text-[11px] text-slate-300 space-y-1 list-decimal list-inside">
+                <li>Click <strong>Open Colab Notebook</strong> below</li>
+                <li>Verify <em>Runtime &rarr; Hardware accelerator: T4 GPU</em></li>
+                <li>Run cells &amp; select your <code class="text-amber-300 font-mono">.zip</code> file when prompted</li>
+                <li>Colab trains in ~35-45 mins &amp; automatically downloads your model!</li>
+              </ol>
+            </div>
+            <div class="pt-2 border-t border-slate-800 flex items-center gap-2 flex-wrap">
+              <a href="https://colab.research.google.com/github/dbasssherizen/neural-audio-parametric-dsp/blob/main/notebooks/colab_train_parametric_nam.ipynb" target="_blank" class="px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-slate-950 text-xs font-bold transition flex items-center gap-1 shadow">
+                <span>🚀 Open Colab Notebook ↗</span>
+              </a>
+              <a href="/colab_train_parametric_nam.ipynb" download class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono transition border border-slate-700">
+                <span>⬇️ .ipynb</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- CALLOUT: HOW MRGENEKO VALIDATION WORKS (THE "VAL.WAV" EXPLANATION) -->
       <div class="bg-gradient-to-r from-amber-950/60 via-slate-950 to-indigo-950/60 border-2 border-amber-500/50 rounded-2xl p-5 space-y-3 shadow-xl">
         <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
@@ -1559,7 +1632,7 @@
             Open the updated Colab notebook, upload your zip file, and let Google's datacenter GPUs do the heavy lifting:
           </p>
           <div class="flex items-center gap-2 pt-1 flex-wrap">
-            <a href="https://colab.research.google.com/github/danielsherizen/neural-audio-parametric-dsp/blob/main/notebooks/colab_train_parametric_nam.ipynb" target="_blank" class="px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-slate-950 text-xs font-bold transition flex items-center gap-1.5 shadow">
+            <a href="https://colab.research.google.com/github/dbasssherizen/neural-audio-parametric-dsp/blob/main/notebooks/colab_train_parametric_nam.ipynb" target="_blank" class="px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-slate-950 text-xs font-bold transition flex items-center gap-1.5 shadow">
               <span>🚀 Open Colab Notebook ↗</span>
             </a>
             <a href="/colab_train_parametric_nam.ipynb" download class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono transition border border-slate-700">
@@ -2606,7 +2679,7 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
             </div>
           </div>
           <div class="flex flex-wrap items-center gap-2 shrink-0">
-            <a href="https://colab.research.google.com/github/danielsherizen/neural-audio-parametric-dsp/blob/main/notebooks/colab_train_parametric_nam.ipynb" target="_blank" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-slate-950 text-xs font-black transition flex items-center gap-1.5 shadow">
+            <a href="https://colab.research.google.com/github/dbasssherizen/neural-audio-parametric-dsp/blob/main/notebooks/colab_train_parametric_nam.ipynb" target="_blank" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-slate-950 text-xs font-black transition flex items-center gap-1.5 shadow">
               <span>🚀 Open in Google Colab ↗</span>
             </a>
             <a href="/colab_train_parametric_nam.ipynb" download class="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition flex items-center gap-1 shadow">
@@ -3756,6 +3829,49 @@ Justin, many engineers are alarmed when they first listen to a raw re-amped take
 3. **The Solution: 48kHz 24-bit Cabinet IR**:
    - Load a zero-latency convolution plugin (Ignite Amps NadIR, Lancini Lancaster Pulse, or REAPER ReaVerb) immediately after NAM.
    - Select a high-quality Celestion 4x12 or 2x12 IR captured with a Shure SM57 or Royer R-121 at 48kHz 24-bit. Instantly, the harsh fizz is transformed into thick, punchy, authentic tube tone!`
+      },
+
+      {
+        id: "step_2_crunch_sweeps",
+        title: "Step 2 Demystified: How to Render & Crunch Your ~250MB Captures Folder ('Fat of the Land')",
+        category: "Neural DSP & PyTorch",
+        keywords: ["step 2", "step two", "crunch", "render", "fat of the land", "250mb", "what is step 2", "how to train", "offsite training", "upload captures", "next step", "what now", "csv", "sweeps", "how to begin", "cuda training"],
+        suggested: [
+          "Google Colab Offsite Cloud GPU Training for mrgeneko & Marshall Origin 50",
+          "mrgeneko Validation Architecture: Continuous Parameter Partitioning vs Static val.wav",
+          "Windows Native ASIO Driver & IK AXE I/O Output 5 Amp Out Routing"
+        ],
+        codeLang: "bash",
+        filename: "step_2_workflow.sh",
+        code: `# STEP 2 IN A NUTSHELL:
+# 1. Zip your 42 raw .wav sweeps + CSV:
+zip -r marshall_origin50_captures.zip ./captures marshall_origin50_params.csv
+# 2. Pick your path:
+# Option A (Zero Effort): Send the zip link to Max & Daniel -> We crunch on our GPU rig
+# Option B (DIY Colab): Open Colab notebook -> Upload zip -> Download .param.nam in 45 mins!`,
+        markdown: `### 🚀 Step 2 Demystified: How to Render & Crunch Your 42 Sweeps ("The Fat of the Land")
+
+Justin asked: *"So we left convo where I feel I don’t know what step 2 is except rendering fat to give back to the rich. It really is fat of the land. By that I mean how we render and crunch some serious data using the 40+ wav sweeps and parameters given by the csv"*
+
+Here is the crystal-clear breakdown of **Step 2**:
+
+1. **What Step 2 Actually Is**:
+   - **Step 1 was Re-Amping (100% Complete!)**: You dialed in the hardware, ran the Python ASIO automation, and generated 42 pristine sweeps mapped to \`marshall_origin50_params.csv\` (~250MB).
+   - **Step 2 is Neural Training**: Taking those 42 audio files and knob coordinates and feeding them into PyTorch WaveNet (\`SlimmableParametricA2\`) so the AI learns the continuous non-linear tube behavior between all 8 knobs.
+
+2. **How to Hand Off Your ~250MB Folder (Two Painless Options)**:
+   - **Option A — Zero Effort Cloud Handoff (Let Daniel & Max Crunch It)**:
+     - Bundle your folder into \`marshall_origin50_captures.zip\`.
+     - Upload to Google Drive, Dropbox, WeTransfer, or a shared drive and send the link.
+     - Max will run the full CUDA batch training run on our GPU cluster and send back \`marshall_origin50.param.nam\`.
+   - **Option B — Free Google Colab Cloud GPU (Run It Yourself in 3 Clicks)**:
+     - Open \`colab_train_parametric_nam.ipynb\` directly in Google Colab.
+     - Ensure Runtime is set to **T4 GPU** (free, no local heat/fan noise).
+     - Click **Run All**, pick your \`marshall_origin50_captures.zip\` when prompted.
+     - Colab extracts the sweeps, runs \`gen_dataset_from_captures.py\`, trains the WaveNet in ~35–45 minutes, and automatically downloads \`marshall_origin50.param.nam\` to your browser!
+
+3. **Step 3 (The Payoff)**:
+   - Drop \`marshall_origin50.param.nam\` into **NAMix (VST3/AU)** or onto an ARM Cortex pedal and enjoy real-time continuous tube response!`
       },
 
       {

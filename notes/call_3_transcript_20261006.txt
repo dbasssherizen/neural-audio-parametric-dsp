@@ -1,0 +1,461 @@
+Justin Muir • Call 3
+October 6 at 3:46 PM • Duration: 20m 44s (20:44)
+
+=== SUMMARY ===
+You called to discuss coding, Google Colab, and the importance of taking action on opportunities. 
+• The user was encouraged to explore open-source tools and to focus on future opportunities rather than dwelling on past mistakes. 
+• The conversation also touched on the user's interests in music, technology, and martial arts. 
+• The user was reminded of the value of networking and the potential for new opportunities.
+
+=== TRANSCRIPT ===
+The speaker
+Yeah, I got a second.
+
+You
+Okay, uh, just because I am walking, and uh.
+
+The speaker
+Sure.
+
+You
+It is much easier for me to do this, and so I set it by default. Now, where, whenever we are?
+
+You
+Actually, sorry I.
+
+You
+Something about engineering, because that is, okay, oh okay.
+
+You
+Very cool.
+
+You
+I love that. Okay, so?
+
+You
+You were questioned into assistance. You want to do training, uh, the python training, so?
+
+You
+I honestly think is a good exercise for you.
+
+The speaker
+Okay.
+
+You
+Doing Google collab would be the way to do it, so it's setting up something called the Jupiter Network or Jupiter net net.
+
+You
+I can't speak Jupiter, notebook, and Jupiter spelled. Oddly, it's like J, u, b, y, t, r something like that, and so.
+
+You
+Actually, let's step back.
+
+The speaker
+Okay.
+
+You
+Uh.
+
+You
+Right now, what I, what I, I'll tell you kind of what I've been up to since we chatted and you can do the same and then?
+
+You
+Oh yeah, yeah.
+
+You
+Oh, oh.
+
+The speaker
+Okay, I'm hanging in. I'm just letting, you know, I got the flu vaccine this morning, burning out symptoms. Um, so if I'm a little like?
+
+The speaker
+You know?
+
+The speaker
+No, I appreciate that.
+
+You
+No, no, no, we can talk later. It was just that, uh, I had a free moment, which is not the common place. Yeah, so totally, like, you set boundaries as well, um.
+
+You
+Man, you really got to come to this God. You never hear this awesome. I mean, my old neighborhood was awesome.
+
+You
+Anyways, I will lure you and back out of the summer sometimes, perhaps, um?
+
+The speaker
+Well, it'll be sooner than you think.
+
+You
+Oh, great! Cool, all right.
+
+You
+Yeah, and I.
+
+The speaker
+I know she's dying to see you. She keeps us like Daniel coming over and Daniel. I'm like, no.
+
+You
+No, I promise, I will. I will like, I will.
+
+You
+I am, they're they're literally. So, can I tell you the cool thing, so I'll tell you the very cool thing, and then I'll answer your questions so?
+
+You
+What they are doing today. I had to stop by and see construction is.
+
+You
+I'm a pretty. I'm not a simple man, but I'm a man of Simple Pleasures, which is to say that the three things that I really enjoy and have enjoyed throughout my life. The creation of music, uh, through a variety of strings instruments at play bass.
+
+The speaker
+I hear you.
+
+The speaker
+I do.
+
+You
+Uh, sitar, and all these things right, you get it right. So, uh, the creation music, the other is.
+
+You
+Technology in a variety of forms. But, like, in this particular moment, it's code, but it's been a variety of things in the past, right? I was. I started on Hardware so you understand that as well. And the third?
+
+You
+Part of that, the Troika of the the transverse power for me?
+
+The speaker
+I'm jealous.
+
+You
+Is physical movements, so I did martial arts and weightlifting, um, you know, I grew up. I grew up, you know. You don't have to be, so it's literally never too late to start, um.
+
+The speaker
+Well, you're a dick, so I can be jealous.
+
+The speaker
+God damn ring!
+
+You
+Sure. Yeah, you can do whatever the f*** you want. Like, I, I truly like I, I dislike libertarianism.
+
+You
+But I truly believe, like, whatever, makes y'all happy as long as I hurt anybody else. So, um.
+
+The speaker
+Yep, same power.
+
+You
+Which is, I know, which is to say that, uh.
+
+You
+I, I am old and out of shape in this moment, but you know, I, I know how this goes. I know my body, so it tis the season for me to become a giant, plant-based monster again. So, I'm gonna do that. And so, this closet?
+
+The speaker
+Well, that's good.
+
+You
+They are they, they are turning the closet. Yeah, sure, uh, I mean, here's the thing, every entrance or every exit's also, right? So, it's truly how you look at it. Um, it's a matter of perspective. Is it egress only, or is it the grass and in grass so?
+
+You
+To answer your question, the closet is being transformed Anew.
+
+You
+And in its place, they are mounting the tonal, which is, like, the best piece of exercise engineering I've ever seen in my life in the back of this closet.
+
+You
+It also will have a space for my, uh, my high memory. I don't know whether I'm just gonna go pure GPU.
+
+You
+What I'm going to mix in some apple silicon npu?
+
+You
+And maybe maybe even get my hands on it. If the budget allows, I'll get some tensor processing units, which is what you are going to process your Google Club on. See, it came back to it, um.
+
+You
+So, you need to, I would. I would highly recommend you do a run on this. Get used to playing around with Google collab. It's f****** free like, if they make it dead, easy for you to get comfortable with this. And you know, there's have you played around with sdks or anything just to like, look at them?
+
+The speaker
+Um, it's.
+
+You
+It doesn't matter.
+
+The speaker
+Long time since.
+
+You
+Cool, then you don't need.
+
+The speaker
+I think it was PlayStation or Dreamcast SDK when it got leaked.
+
+The speaker
+I love that City.
+
+You
+Okay, okay, cool, but the thing is, like, you're good at pattern recognition, right? So you're just reading a book. It's like this, right? I can read. So I read the ship that, my, that my system spit out and made for you. And like, I can read it, and I can kind of understand it because I've been a musician. And like, I'm an engineer, and so I can kind of understand it, but it's reading a book in a language that is, like, kind of like my native language, but not really, which is to say, man, I'm not, f****** from Chicago. I am from everywhere, but here I sent the first 25 years of my life on the East Coast, becoming a rude person, and then I spent the next 20 years of my life on the west coast learned that chill the f*** out, and now I'm in Chicago and y'all are unusual. I like, you like, I like it here, but you're sprays, yeah. So, that is to say, that's it's a similar thing is that you are going to encounter things that are far beyond what you have perhaps seen before or are used to or un.
+
+You
+In existence. However, what I'm trying to explain to you is, they are still familiar enough because it's like a language adjacent to the language that used to be fluently and have spoken fluently for f****** decades so.
+
+The speaker
+I do have something I want to say in this conversation eventually.
+
+You
+Yeah, yeah, yeah, please bars the f*** in.
+
+You
+I'm just walking to Trader Joe's. Go ahead.
+
+The speaker
+Um, all right, I got my curl bars. So, I was, like, f***, how am I supposed to adjust the script? I was, like, everyone knows chatty, GPT, and.
+
+You
+I mean, you can.
+
+The speaker
+I did. If I I uploaded the the python script, hold on. Let me finish.
+
+You
+Okay, okay, okay, okay?
+
+The speaker
+I know, I know, the feeling you're feeling right now, and I was like as.
+
+You
+Yeah, why didn't the other person to shut the f******?
+
+The speaker
+Uh, it was, I was like as he was not working.
+
+You
+Yeah, yeah.
+
+The speaker
+And it took about three different prompts to get through because the first one didn't work. Second, one didn't work, and then finally, it adjusted it. And I was, like, I was, really f******.
+
+The speaker
+Blown away that I could just talk to it and say like and give the error and say, well, this is still happening.
+
+You
+Yep, yeah.
+
+The speaker
+And then eventually we got to the point where the python script that started.
+
+You
+Yeah.
+
+The speaker
+Works on asio, and I was able to put in the switches.
+
+You
+Yep.
+
+The speaker
+Say out. Five interface gave the number.
+
+The speaker
+And.
+
+The speaker
+I've got to download the CSV, so then I downloaded that.
+
+The speaker
+And.
+
+The speaker
+Yeah, that's one thing I love about python, the air, the the.
+
+The speaker
+Way it spits back errors.
+
+The speaker
+It's amazingly better than Microsoft ever, which is kind of why I felt in love with Linux because I would use ashtrays a lot.
+
+You
+I don't know, or if I know what's factories.
+
+The speaker
+Um.
+
+You
+Is that what that is? What's S phrase?
+
+You
+I don't actually know.
+
+You
+Yeah, sure.
+
+The speaker
+So, let's say I, I run like Samba right around a binary, and s***'s f****** not coming out right? S trace will give me a debug of like, which more often than not. If you're missing a dependency, so died a die, so a library.
+
+You
+Oh, oh, okay, okay?
+
+You
+Yeah, yeah.
+
+The speaker
+Yeah, so it hunts that down and everybody is grep with a pipe to home in on that and be like, okay, I need to compile this Library.
+
+The speaker
+Which would be a dynamic library, and so anyways, I got the script to run.
+
+You
+I used to write my own dlls man f*** out of here.
+
+The speaker
+Ah, f****** hate BLLs.
+
+The speaker
+I mean.
+
+You
+Yes, sir, but listen, I'm going to explain something to you. You, are you just, you just got a hint?
+
+You
+You just got a hint with a s***** product when?
+
+The speaker
+Yes, I know, I know, and I felt bad using it.
+
+You
+No, no, no, no, no? But no, but it's not that what I'm trying to say is, I think?
+
+You
+And it's not like this is your first step out, and I think you had an ahumo if I'm understanding correctly. You were just like, maybe you have felt I am intimidated, or I can't do this. That or the other. There's some barrier because I am not a hardcore, you know, uh?
+
+You
+Uh, code monkey or whatever it is that you have said to yourself or believed or felt or whatever. The f*** doesn't matter different now, because now you can go to the Oracle and type things using whatever language you wish, the way you speak, and this thing transpiles what it is that you're trying to do into its zeros and ones, and then spits back up against machine. Like before, this was called AI. It was, it was machine learning, right? Like, this is not a f****** new thing. I'm playing around with neuromax for a long time, so I have a neuroscience.com. So, like, this is all modeled after that s***, which is to say.
+
+You
+But I strategy again.
+
+You
+But I think you might have gotten, uh, you might have had an aha moment, which I just want to explicitly call out as being. So, that's why I am interrupting, please continue.
+
+The speaker
+I felt guilty using it.
+
+You
+Why it's dumb? It's sorry, that's not that. Is that language is not appropriate? May I ask man choir? I have a curiosity. I have a journey.
+
+The speaker
+There you go. That's why I knew it going into it.
+
+You
+What why?
+
+The speaker
+That that using technp was inappropriate, and I felt it was, like, oh.
+
+You
+What the f*** he's talking about. Oh dude, that's no the reason why it's been a problem.
+
+The speaker
+I didn't. I didn't know where else to go, cuz I, I couldn't. I was trying to go through the site. I was, like, all right, I need to modify this script. It upload, it make changes.
+
+You
+So listen, here's what I'm asking of you. Listen, I have to interrupt you.
+
+The speaker
+Oh, thank God.
+
+You
+You have choices, and I want you to know that you're safe healing, and I'm going to teach you how to navigate this where you don't have to give any big tech company your data. You don't have to pay them a subscription. This is all encrypted open source stuff. So, so here's the thing here.
+
+You
+Here's what I would like from you. You have some homework because I did you a solid because I like you, you help me with guitars, your wife's a nice person. She helped me. I help you all. The world goes around around. I need you to do your homework. Here's the homework assignment four years. Remember, my dad, so my wife was a school teacher.
+
+You
+My father-in-law's also school teacher.
+
+You
+So anyway, point is, here's homework.
+
+The speaker
+Which movie?
+
+You
+I, I want you to go, and actually, this is perfect. Oh man, perfect! It's perfect! So, here's the thing about me, I am a bibliophile. I am actually Senate file. I love South poetic Poleniac. I repronounce his name, and I've read the book cycle of many, many, many times more times than I've seen the movie, but I've also seen the movie slight a number of times and have quite a good bit of, uh, trivia-based knowledge on the movie and Canon in general Fight Club.
+
+The speaker
+Oh yeah.
+
+You
+So?
+
+The speaker
+Pollinate.
+
+You
+The reason I share this with you, right? Uh, sorry, I'm walking in downtown Chicago.
+
+The speaker
+I'm also a huge David Fincher fan, so that's also why I love that.
+
+You
+Awesome me too great. I am as well. I love picturing can speak deeply about him. I in particular enjoy the collaboration he has done with current president Atticus Ross, uh, on a number of different soundtracks.
+
+The speaker
+Uh, yeah, he just had, even though I didn't like it, um.
+
+The speaker
+Grow up in Dragon Tattoo.
+
+You
+Correct, I know soundtracks good?
+
+The speaker
+Um, I've got the graphic novels.
+
+The speaker
+And I, I love the Swedish. I've got the Swedish extended on Blu-ray.
+
+You
+Yeah, oh, yeah, Spirits is way better. Yeah, it's way better.
+
+The speaker
+That's good, and then that is one of my all-time favorite movies. Elizabeth philander is just incredible.
+
+You
+Right there with you. Yeah, yeah, the badass in San Francisco. I used to date a woman who pretty much looked exactly like her and was just as intense.
+
+You
+So?
+
+You
+Point is.
+
+You
+Yeah, I don't know what the point is. The point is.
+
+The speaker
+You don't need to know the point every time.
+
+You
+We can get you. No, I don't. I'm literally just wandering to Trader Joe's.
+
+You
+Kind of knowing where I'm going there. It is all right so, uh?
+
+You
+So, I don't know. I don't know Chicago. Well, I want to be very clear. Like, I barely know this place. You kind of know this place, though, right?
+
+You
+Okay.
+
+The speaker
+Not really, no, I'm directionally challenged.
+
+You
+No, so am I? You're left-handed, uh, so as am I so?
+
+You
+Have you play guitar left-handed or right-handed?
+
+You
+I play a right-handed.
+
+
