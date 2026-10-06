@@ -898,7 +898,7 @@
       <div class="bg-gradient-to-r from-slate-900 via-indigo-950/40 to-slate-900 border-2 border-indigo-500/40 rounded-3xl p-6 shadow-2xl space-y-5">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-800 pb-4">
           <div>
-            <div class="flex items-center gap-2 flex-wrap">
+            <div class="flex items-center gap-2">
               <span class="text-xl">🎛️</span>
               <h3 class="text-lg font-black text-white">
                 Justin's Actual Gear: IK Multimedia AXE I/O &amp; Suhr Reactive Load
@@ -906,12 +906,9 @@
               <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-0.5 rounded-full border border-indigo-500/30 font-bold font-mono">
                 Verified Signal Chain
               </span>
-              <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2.5 py-0.5 rounded-full border border-emerald-500/30 font-bold font-mono">
-                Windows ASIO Unlocked
-              </span>
             </div>
             <p class="text-xs text-slate-300 mt-1">
-              Optimized for Justin's modded Marshall Origin 50, dedicated front-panel AMP OUT (Output 5 on ASIO), and Suhr Loadbox Line In 2 return.
+              Optimized for Justin's modded Marshall Origin 50, dedicated front-panel AMP OUT, and Linux ALSA 2-Output mode.
             </p>
           </div>
           <div class="flex items-center gap-2 shrink-0">
@@ -921,19 +918,19 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-          <!-- Column 1: Dedicated Amp Out (Jack 5 / Jack 3) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          <!-- Column 1: Dedicated Amp Out -->
           <div class="bg-slate-950 p-4 rounded-2xl border border-indigo-500/30 space-y-2">
             <div class="flex items-center gap-2 text-indigo-300 font-bold">
               <span class="w-5 h-5 rounded-full bg-indigo-500/20 flex items-center justify-center text-[10px]">1</span>
-              <span>Front AMP OUT (Out 5 / Out 3)</span>
+              <span>Dedicated AMP OUT (Jack 3)</span>
             </div>
             <p class="text-slate-300 text-[11px] leading-relaxed">
-              <strong>No Re-Amp Box Needed!</strong> The AXE I/O features a built-in isolated 1/4" Amp Out jack with custom galvanic ground isolation right on the front panel. Output 5 on Windows ASIO feeds instrument-level signal straight into the Marshall Origin 50 front guitar input.
+              <strong>No Radial Re-Amp Box Needed!</strong> The AXE I/O has a built-in isolated 1/4" Amp Out jack with custom galvanic ground isolation right on the front panel. Plug a standard 1/4" guitar cable directly from AXE I/O Amp Out into the Marshall Origin 50 front guitar input.
             </p>
             <div class="font-mono text-[10px] text-emerald-400 bg-slate-900/90 p-2 rounded-xl border border-slate-800">
-              ✓ Ground loop hum eliminated<br>
-              ✓ Direct 1/4" guitar cable to amp input
+              ✓ Ground loop hum eliminated at the jack<br>
+              ✓ Unity-gain instrument level output
             </div>
           </div>
 
@@ -941,42 +938,28 @@
           <div class="bg-slate-950 p-4 rounded-2xl border border-amber-500/30 space-y-2">
             <div class="flex items-center gap-2 text-amber-300 font-bold">
               <span class="w-5 h-5 rounded-full bg-amber-500/20 flex items-center justify-center text-[10px]">2</span>
-              <span>Suhr Reactive Load Return (In 2)</span>
+              <span>Suhr Reactive Load Integration</span>
             </div>
             <p class="text-slate-300 text-[11px] leading-relaxed">
-              Connect Marshall 8Ω/16Ω Speaker Out to the Suhr Reactive Load using <strong>16-AWG unshielded speaker cable ONLY</strong>. Connect Suhr Balanced Line Out (1/4" TRS) back into <strong>AXE I/O Line In 2 (or 1)</strong>.
+              Connect Marshall 8Ω/16Ω Speaker Out to the Suhr Reactive Load using <strong>16-AWG unshielded speaker cable ONLY</strong>. Connect Suhr Balanced Line Out (1/4" TRS) into <strong>AXE I/O Line In 1</strong>.
             </p>
             <div class="font-mono text-[10px] text-amber-400 bg-slate-900/90 p-2 rounded-xl border border-slate-800">
-              ⚠️ Never use instrument cable for speaker out!<br>
+              ⚠️ Never use thin guitar cable for speaker out!<br>
               🎯 Preamp target: -12dBFS to -6dBFS peak
             </div>
           </div>
 
-          <!-- Column 3: Windows Native ASIO Driver Mode -->
-          <div class="bg-slate-950 p-4 rounded-2xl border border-sky-500/30 space-y-2">
-            <div class="flex items-center gap-2 text-sky-300 font-bold">
-              <span class="w-5 h-5 rounded-full bg-sky-500/20 flex items-center justify-center text-[10px]">3</span>
-              <span>Windows ASIO Driver Resolution</span>
-            </div>
-            <p class="text-slate-300 text-[11px] leading-relaxed">
-              Windows WDM/MME limits audio to stereo Line 1/2. By switching <code class="text-sky-300">reamp_automation.py</code> to <strong>ASIO</strong>, all 6 outputs open up, allowing direct programmatic routing to Output 5 without DAW routing headaches.
-            </p>
-            <div class="font-mono text-[10px] text-sky-400 bg-slate-900/90 p-2 rounded-xl border border-slate-800">
-              python reamp_automation.py --asio --out-ch 5 --in-ch 2
-            </div>
-          </div>
-
-          <!-- Column 4: Linux 2-Out Stereo Workaround -->
+          <!-- Column 3: Linux 2-Out Routing Architecture -->
           <div class="bg-slate-950 p-4 rounded-2xl border border-emerald-500/30 space-y-2">
             <div class="flex items-center gap-2 text-emerald-300 font-bold">
-              <span class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center text-[10px]">4</span>
-              <span>Linux 2-Out Stereo Fallback</span>
+              <span class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center text-[10px]">3</span>
+              <span>Linux 2-Out Stereo Workaround</span>
             </div>
             <p class="text-slate-300 text-[11px] leading-relaxed">
-              If running Linux ALSA where only 2 stereo outputs are exposed (<code class="text-emerald-300">hw:0,0</code>):<br>
+              Under Linux ALSA/PipeWire, the interface may expose 2 channels (<code class="text-emerald-300">hw:0,0</code>):<br>
               • <strong>Channel 1 (Left)</strong>: Studio Monitors / Headphones.<br>
               • <strong>Channel 2 (Right)</strong>: Amp Send to Marshall Input.<br>
-              Auto-detected by the script!
+              <code class="text-sky-300">reamp_automation.py</code> automatically detects this and routes cleanly.
             </p>
             <div class="font-mono text-[10px] text-emerald-400 bg-slate-900/90 p-2 rounded-xl border border-slate-800">
               python reamp_automation.py --out-ch 2
@@ -1123,48 +1106,7 @@
           <p class="text-xs text-slate-400 mt-0.5">Harvested from u/MrsmPeek &amp; NAMTRIX Lite — optimized for Windows &amp; Linux DAW recording</p>
         </div>
         <div class="flex items-center gap-2">
-          <button onclick="markAll42TakesDone()" class="px-3 py-1 rounded-xl bg-emerald-600/30 hover:bg-emerald-600/40 text-emerald-200 border border-emerald-500/40 text-xs font-bold font-mono transition flex items-center gap-1.5 cursor-pointer">
-            <span>✓</span> <span>Mark 42 Sweeps Captured</span>
-          </button>
-          <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-xl font-bold" id="runsheetProgressBadge">42 / 42 Takes Recorded (100%)</span>
-        </div>
-      </div>
-
-      <!-- SESSION MILESTONE: 42 TAKES COMPLETED VIA PYTHON REAMP SCRIPT -->
-      <div class="bg-gradient-to-r from-emerald-950/70 via-slate-900 to-indigo-950/70 border-2 border-emerald-500/60 rounded-2xl p-5 space-y-3 shadow-2xl">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
-          <div class="flex items-center gap-3">
-            <span class="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center justify-center text-xl shrink-0">🎉</span>
-            <div>
-              <div class="flex items-center gap-2 flex-wrap">
-                <h4 class="font-extrabold text-white text-sm">Session Milestone: All 42 Takes Captured via Python ASIO!</h4>
-                <span class="text-[9px] font-mono bg-emerald-500/20 text-emerald-300 px-2.5 py-0.5 rounded-full border border-emerald-500/40 font-bold">1.5 Hr Run Complete</span>
-                <span class="text-[9px] font-mono bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded-full border border-sky-500/30 font-bold">Ready for Cloud Training</span>
-              </div>
-              <p class="text-xs text-slate-300 mt-0.5">
-                Justin ran all 42 sweeps through his Marshall Origin 50 tube head + Suhr Reactive Load into his AXE I/O over ASIO. Total capture run took ~1.5 hours.
-              </p>
-            </div>
-          </div>
-          <div class="flex items-center gap-2 shrink-0">
-            <button onclick="switchStudioWorkspace('workspace-cloud')" class="px-4 py-2 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-600 hover:to-indigo-700 text-white font-bold text-xs font-mono flex items-center gap-1.5 shadow-lg transition cursor-pointer">
-              <span>☁️ Train on Cloud GPU &rarr;</span>
-            </button>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-[11px] pt-1">
-          <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800 text-slate-300">
-            <div class="text-emerald-400 font-bold">✓ 42 Audio Takes Saved</div>
-            <div class="text-[10px] text-slate-400">Pristine 48kHz 24-bit PCM sweeps mapped to Marshall Origin 50 CSV coordinates.</div>
-          </div>
-          <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800 text-slate-300">
-            <div class="text-sky-400 font-bold">✓ Windows ASIO Active</div>
-            <div class="text-[10px] text-slate-400">Output 5 Front Amp Out directly drove guitar input with zero ground loop hum.</div>
-          </div>
-          <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800 text-slate-300">
-            <div class="text-amber-400 font-bold">✓ Ready for mrgeneko</div>
-            <div class="text-[10px] text-slate-400">No manual val.wav needed! Dataset generator automatically partitions validation holdouts.</div>
-          </div>
+          <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-xl" id="runsheetProgressBadge">0 / 45 Takes Recorded</span>
         </div>
       </div>
 
@@ -1473,208 +1415,145 @@
 
     <!-- WORKSPACE 4: CLOUD GPU TRAINING -->
     <div id="workspace-cloud" class="studio-workspace space-y-6 hidden">
-    <!-- SECTION C: MRGENEKO PARAMETRIC NAM & CLOUD GPU TRAINING PIPELINE -->
+    <!-- SECTION C: DATASET SAMPLING & CUDA TRAINING PIPELINE -->
     <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-6" data-redline-target="Dataset Sampling Matrix & CUDA Training">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-3 gap-2">
         <div>
-          <h3 class="font-bold text-white text-base flex items-center gap-2 flex-wrap">
-            <span>☁️ Section C: Off-Site Cloud GPU Training &amp; mrgeneko Dataset Pipeline</span>
-            <span class="text-[10px] font-mono bg-amber-500/20 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded-full font-bold">mrgeneko/parametric-nam</span>
-            <span class="text-[10px] font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2 py-0.5 rounded-full font-bold">Zero Local GPU Load</span>
+          <h3 class="font-bold text-white text-base flex items-center gap-2">
+            <span>📊 Section C: Offline RAW Wave Rendering &amp; CUDA Training Pipeline</span>
+            <span class="text-[10px] font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2 py-0.5 rounded-full">Linux &amp; Windows Native</span>
           </h3>
-          <p class="text-xs text-slate-400 mt-0.5">Train your 42 Marshall Origin 50 sweeps on free Google Cloud GPUs without straining your local PC</p>
+          <p class="text-xs text-slate-400 mt-0.5">Solving the 10,000 file combinatorial trap with Latin Hypercube Sampling</p>
         </div>
-        <span class="text-xs text-emerald-400 font-mono bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-xl self-start sm:self-auto font-bold">42 Takes Recorded • 100% Ready</span>
+        <span class="text-xs text-amber-400 font-mono bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-xl self-start sm:self-auto">40–50 Takes @ 48kHz 24-bit</span>
       </div>
 
-      <!-- CALLOUT: HOW MRGENEKO VALIDATION WORKS (THE "VAL.WAV" EXPLANATION) -->
-      <div class="bg-gradient-to-r from-amber-950/60 via-slate-950 to-indigo-950/60 border-2 border-amber-500/50 rounded-2xl p-5 space-y-3 shadow-xl">
-        <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
-          <span class="w-10 h-10 rounded-2xl bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center justify-center text-xl shrink-0">💡</span>
-          <div>
-            <div class="flex items-center gap-2 flex-wrap">
-              <h4 class="font-extrabold text-white text-sm">How mrgeneko Validation Works (Why You Don't Need a Separate val.wav)</h4>
-              <span class="text-[9px] font-mono bg-amber-500/20 text-amber-300 px-2.5 py-0.5 rounded-full border border-amber-500/40 font-bold">Architectural Clarification</span>
-            </div>
-            <p class="text-xs text-slate-300 mt-0.5">
-              Justin noticed: <em>"I don’t think the last 5 titles validate worked correctly as it didn’t use the Val WAV file... It seems the GitHub I sent doesn’t do validation, it just asks for the sweeps."</em>
-            </p>
-          </div>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs pt-1">
-          <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800 space-y-2">
-            <span class="text-amber-300 font-bold text-xs flex items-center gap-1.5">
-              <span>📻</span> Traditional Static NAM (Single Snapshot)
-            </span>
-            <p class="text-slate-400 text-[11px] leading-relaxed">
-              Standard NAM captures a <em>single fixed knob position</em>. It uses a static 3-minute file (<code class="text-slate-300">v1_1_1.wav</code>) where the last 30 seconds are an isolated holdout segment used exclusively to compute test loss on that exact snapshot.
-            </p>
-          </div>
 
-          <div class="bg-slate-900/90 p-4 rounded-xl border border-emerald-500/30 space-y-2">
-            <span class="text-emerald-300 font-bold text-xs flex items-center gap-1.5">
-              <span>🧠</span> mrgeneko Parametric NAM (Continuous 8D Space)
-            </span>
-            <p class="text-slate-400 text-[11px] leading-relaxed">
-              Parametric NAM models <em>continuous interpolation across all 8 knobs simultaneously</em>! Its toolchain (<code class="text-emerald-300">gen_dataset_from_captures.py</code>) automatically slices your 42 sweeps and partitions them across the parameter space (e.g. 90% training / 10% validation). <strong>Your 42 recorded sweeps are 100% complete, fully valid, and ready to train right now!</strong>
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3-STEP PIPELINE: RE-AMP -> GOOGLE COLAB -> NAMIX -->
+      <!-- 3-STEP PIPELINE: RE-AMP -> MANIFEST -> HEADLESS CUDA TRAINING -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 text-xs">
         
-        <!-- Step 1: Zip Local Captures -->
+        <!-- Step 1: Offline RAW Wave Capture -->
         <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2.5" data-redline-target="Offline RAW Wave DAW Re-Amping">
           <div class="font-bold text-sky-400 flex items-center justify-between">
             <span class="flex items-center gap-2">
               <span class="w-5 h-5 rounded-full bg-sky-500/20 text-sky-300 flex items-center justify-center text-[10px]">1</span>
-              Zip Your 42 Recorded Takes
+              Offline DAW Re-Amping
             </span>
-            <span class="text-[10px] font-mono text-emerald-400 font-bold">✓ Captured</span>
+            <span class="text-[10px] font-mono text-slate-500">Reaper / Studio One</span>
           </div>
           <p class="text-slate-400 leading-relaxed">
-            Your 42 takes recorded via <code class="text-sky-300">reamp_automation.py</code> are saved in your local folder:
+            Justin can render all audio offline in any DAW on his Windows or Linux rig:
           </p>
-          <div class="bg-slate-900 border border-slate-800 rounded-xl p-2.5 font-mono text-[10px] text-sky-300 overflow-x-auto">
-            zip -r marshall_origin50_captures.zip ./captures marshall_origin50_params.csv
-          </div>
-          <p class="text-[11px] text-slate-400">
-            This archive contains <code class="text-slate-300">amp_run_001.wav</code> ... <code class="text-slate-300">amp_val_005.wav</code> plus the knob coordinate map.
-          </p>
+          <ul class="text-slate-400 space-y-1.5 list-disc list-inside">
+            <li>Load the standard <code class="text-slate-300">inputTrunc.wav</code> (38s sweep at 48kHz 24-bit).</li>
+            <li>Route through re-amp box into amp input; take load-box/mic out back to DAW.</li>
+            <li>Record <strong>40–50 takes</strong> as knobs are turned per sampling matrix.</li>
+            <li>Export takes as <code class="text-slate-300">take_01.wav</code> ... <code class="text-slate-300">take_45.wav</code>.</li>
+          </ul>
         </div>
 
-        <!-- Step 2: Google Colab Cloud Training -->
-        <div class="bg-slate-950 p-4 rounded-2xl border border-amber-500/30 space-y-2.5" data-redline-target="Data Manifest JSON Schema">
+        <!-- Step 2: Manifest Mapping (data.json) -->
+        <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2.5" data-redline-target="Data Manifest JSON Schema">
           <div class="font-bold text-amber-400 flex items-center justify-between">
             <span class="flex items-center gap-2">
               <span class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-300 flex items-center justify-center text-[10px]">2</span>
-              Google Colab Free GPU
+              Manifest File (<code class="text-amber-300">data.json</code>)
             </span>
-            <span class="text-[10px] font-mono text-amber-300">NVIDIA T4 / A100</span>
+            <span class="text-[10px] font-mono text-slate-500">Coordinate Map</span>
           </div>
           <p class="text-slate-400 leading-relaxed">
-            Open the updated Colab notebook, upload your zip file, and let Google's datacenter GPUs do the heavy lifting:
+            Map each rendered take to its normalized knob coordinates <code class="text-slate-300">[0.0, 1.0]</code>:
           </p>
-          <div class="flex items-center gap-2 pt-1 flex-wrap">
-            <a href="https://colab.research.google.com/github/danielsherizen/neural-audio-parametric-dsp/blob/main/notebooks/colab_train_parametric_nam.ipynb" target="_blank" class="px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-slate-950 text-xs font-bold transition flex items-center gap-1.5 shadow">
-              <span>🚀 Open Colab Notebook ↗</span>
-            </a>
-            <a href="/colab_train_parametric_nam.ipynb" download class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono transition border border-slate-700">
-              <span>⬇️ .ipynb</span>
-            </a>
+          <div class="bg-slate-900 border border-slate-800 rounded-xl p-2.5 font-mono text-[11px] text-amber-300 overflow-x-auto">
+{<br>
+&nbsp;&nbsp;"x": "inputTrunc.wav",<br>
+&nbsp;&nbsp;"y": [<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{"val": [0.2, 0.5, 0.5, 0.5, 0.7], "path": "take_01.wav"},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{"val": [0.8, 0.3, 0.7, 0.6, 0.7], "path": "take_02.wav"},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{"val": [0.5, 0.5, 0.5, 0.5, 0.5], "path": "take_03_center.wav"}<br>
+&nbsp;&nbsp;]<br>
+}
           </div>
-          <p class="text-[11px] text-slate-400">
-            PyTorch trains the <code class="text-amber-300">SlimmableParametricA2</code> WaveNet in ~35–45 minutes with zero local fan noise or heat!
-          </p>
         </div>
 
-        <!-- Step 3: Standalone Binary Output (.param.nam) -->
-        <div class="bg-slate-950 p-4 rounded-2xl border border-purple-500/30 space-y-2.5" data-redline-target="Binary .nam Compilation">
+        <!-- Step 3: Standalone Binary Output (.nam) -->
+        <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2.5" data-redline-target="Binary .nam Compilation">
           <div class="font-bold text-purple-400 flex items-center justify-between">
             <span class="flex items-center gap-2">
               <span class="w-5 h-5 rounded-full bg-purple-500/20 text-purple-300 flex items-center justify-center text-[10px]">3</span>
-              Download &amp; Play in NAMix
+              Binary Output (<code class="text-purple-300">.nam</code>)
             </span>
-            <span class="text-[10px] font-mono text-slate-500">Live Continuous Knobs</span>
+            <span class="text-[10px] font-mono text-slate-500">Standalone Weight File</span>
           </div>
           <p class="text-slate-400 leading-relaxed">
-            The Colab trainer exports a single standalone binary file:
+            Headless trainer outputs a single standalone binary file:
           </p>
           <div class="bg-slate-900 border border-slate-800 rounded-xl p-2.5 space-y-1 font-mono text-[11px]">
-            <div class="text-emerald-400 font-bold">📦 marshall_origin50.param.nam</div>
-            <div class="text-slate-400 text-[10px]">• 8-knob continuous CatMLP conditioning</div>
-            <div class="text-slate-400 text-[10px]">• 4-ch (Lite) &amp; 8-ch (Full) tiers in one file</div>
-            <div class="text-slate-400 text-[10px]">• Zero zipper noise during live pot sweeps</div>
+            <div class="text-emerald-400 font-bold">📦 model_parametric.nam</div>
+            <div class="text-slate-500 text-[10px]">Binary container includes:</div>
+            <div class="text-slate-400 text-[10px]">• Dilated ConcatWaveNet weights</div>
+            <div class="text-slate-400 text-[10px]">• Input calibration &amp; sample rate (48kHz)</div>
+            <div class="text-slate-400 text-[10px]">• Knob parameter names &amp; indices</div>
           </div>
           <p class="text-[11px] text-slate-400">
-            Load into <a href="https://github.com/mrgeneko/NAMix" target="_blank" class="text-purple-300 underline font-bold hover:text-purple-200">NAMix (VST3/AU) ↗</a> or flash onto a Raspberry Pi / ARM Cortex pedal!
+            Loads directly into <code class="text-purple-300">NamParametricPlugin</code> (VST3/CLAP) or custom embedded pedal hardware.
           </p>
         </div>
 
       </div>
 
-      <!-- HEADLESS LINUX / CLOUD VM TERMINAL COMMANDS -->
+      <!-- HEADLESS LINUX / WINDOWS CUDA COMMANDS -->
       <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4 space-y-3" data-redline-target="Headless Linux CUDA Execution">
-        <div class="flex items-center justify-between flex-wrap gap-2">
+        <div class="flex items-center justify-between">
           <h4 class="font-semibold text-slate-200 text-xs flex items-center gap-2">
-            <span>💻 Terminal Commands: Headless Linux / Cloud GPU Execution (mrgeneko Toolchain)</span>
+            <span>💻 Headless Linux / Windows CUDA Command (Phillip Self Pipeline)</span>
           </h4>
-          <span class="text-[11px] text-emerald-400 font-mono">PyTorch + CUDA Acceleration</span>
+          <span class="text-[11px] text-emerald-400 font-mono">RTX 3080/4090: ~45–60 mins</span>
         </div>
-        <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 font-mono text-xs text-emerald-400 overflow-x-auto space-y-1.5">
-          <div><span class="text-slate-500"># 1. Clone mrgeneko/parametric-nam repository</span></div>
-          <div>git clone https://github.com/mrgeneko/parametric-nam.git &amp;&amp; cd parametric-nam</div>
-          <div class="pt-1"><span class="text-slate-500"># 2. Setup Python environment and install PyTorch Lightning</span></div>
-          <div>./setup.sh --no-cli &amp;&amp; source .venv/bin/activate</div>
-          <div class="pt-1"><span class="text-slate-500"># 3. Build multi-knob dataset from your 42 recorded sweeps + CSV</span></div>
-          <div>python gen_dataset_from_captures.py --captures "./captures/*.wav" --csv ./captures/marshall_origin50_params.csv --output ./dataset --gear-make "Marshall" --gear-model "Origin 50 Modded"</div>
-          <div>python gen_dataset_from_captures.py --combine ./dataset</div>
-          <div class="pt-1"><span class="text-slate-500"># 4. Train SlimmableParametricA2 WaveNet (exports .param.nam)</span></div>
-          <div>python param_train.py --dataset ./dataset --output ./marshall_origin50.param.nam --checkpoint-dir ./checkpoints --batch-size 32 --widths 4 8</div>
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 font-mono text-xs text-emerald-400 overflow-x-auto space-y-1">
+          <div><span class="text-slate-500"># 1. Clone Phillip Self's repo on Linux or Windows (WSL2 / native)</span></div>
+          <div>git clone https://github.com/phillipmself/neural-amp-modeler-parametric.git &amp;&amp; cd neural-amp-modeler-parametric</div>
+          <div class="pt-1"><span class="text-slate-500"># 2. Create standard NVIDIA CUDA GPU conda environment</span></div>
+          <div>conda env create -f environments/environment_gpu.yml</div>
+          <div>conda activate nam_parametric</div>
+          <div class="pt-1"><span class="text-slate-500"># 3. Run headless batch training (produces standalone .nam binary)</span></div>
+          <div>nam-full-parametric data.json configs/model_concat.json configs/learning_concat.json ./output_dir/</div>
         </div>
         <div class="flex flex-wrap items-center justify-between text-[11px] text-slate-400 pt-1 border-t border-slate-900">
-          <span><strong>Engine Note:</strong>mrgeneko's C++17 engine (<code class="text-slate-300">NeuralAmpModelerCore</code>) executes on ARM Cortex with &lt;15% CPU load at 48kHz.</span>
-          <a href="https://github.com/mrgeneko/parametric-nam" target="_blank" class="text-indigo-400 hover:text-indigo-300 underline inline-flex items-center gap-1 font-bold">mrgeneko/parametric-nam ↗</a>
+          <span><strong>Architecture Note:</strong> <code class="text-slate-300">model_concat.json</code> uses <strong>ConcatWaveNet</strong> (concatenates knob values directly to audio samples in dilated conv layers, guaranteeing zero zipper noise during live pot adjustments).</span>
+          <a href="https://github.com/phillipmself/neural-amp-modeler-parametric" target="_blank" class="text-indigo-400 hover:text-indigo-300 underline inline-flex items-center gap-1">phillipmself/neural-amp-modeler-parametric ↗</a>
         </div>
       </div>
 
-      <!-- JUSTIN'S NETOPS MEDIA VAULT: PLEX HOMELAB & INFRASTRUCTURE INTEGRATION -->
-      <div class="bg-gradient-to-r from-slate-950 via-indigo-950/40 to-slate-950 border border-indigo-500/40 rounded-2xl p-5 space-y-4 shadow-xl">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
-          <div class="flex items-center gap-3">
-            <span class="w-10 h-10 rounded-2xl bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 flex items-center justify-center text-xl shrink-0">🍿</span>
-            <div>
-              <div class="flex items-center gap-2 flex-wrap">
-                <h4 class="font-extrabold text-white text-sm">Justin's NetOps Media Vault: 3,172 Blu-ray Rips / 4K Local Plex Server</h4>
-                <span class="text-[9px] font-mono bg-indigo-500/20 text-indigo-300 px-2 py-0.5 rounded-full border border-indigo-500/40 font-bold">Local Homelab Storage</span>
-                <span class="text-[9px] font-mono bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-500/40 font-bold">Zero Cloud Egress</span>
-              </div>
-              <p class="text-xs text-slate-300 mt-0.5">
-                Justin shared: <em>"I run a local plex and have about 15GB of 1080p content if you are interested keeping things local. I have some 3,172 blu Ray rips and small selection of 4K content."</em>
-              </p>
-            </div>
+      <!-- OFFSITE / CLOUD GPU DISPATCH (RECORD SANS-GPU -> CRUNCH OFFSITE) -->
+      <div class="bg-gradient-to-r from-sky-950/60 to-slate-900 border border-sky-500/40 rounded-2xl p-4 space-y-3" data-redline-target="Offsite Cloud GPU Pipeline">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div class="flex items-center gap-2">
+            <span class="text-base">☁️</span>
+            <h4 class="font-bold text-sky-300 text-xs uppercase tracking-wide">
+              Offsite Cloud GPU Dispatch: Record Sweeps Locally (Sans-GPU) &rarr; Train Remotely
+            </h4>
           </div>
-          <div class="flex items-center gap-2 shrink-0">
-            <span class="text-xs font-mono text-indigo-300 bg-indigo-500/10 border border-indigo-500/30 px-3 py-1.5 rounded-xl font-bold">
-              3,172 Films Verified
-            </span>
-          </div>
+          <span class="text-[10px] font-mono bg-sky-500/20 text-sky-200 border border-sky-500/30 px-2 py-0.5 rounded-full self-start sm:self-auto">Google Colab &bull; RunPod &bull; Remote Server</span>
         </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-          <div class="bg-slate-900/90 p-3 rounded-xl border border-slate-800 space-y-1.5">
-            <div class="text-indigo-400 font-bold flex items-center gap-1.5">
-              <span>🎞️</span> 3,172 Blu-ray Rips
-            </div>
-            <p class="text-[11px] text-slate-400">
-              High-bitrate uncompressed 1080p and 4K masters hosted locally on dedicated storage arrays. No streaming subscriptions, no digital revocation.
-            </p>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          <strong>Yes, Justin! You do NOT need a local GPU to run sweeps.</strong> Audio capture in your DAW uses 0% GPU. You run your re-amp sweeps locally on any computer, zip your rendered WAVs + <code class="text-sky-300 font-mono">data.json</code>, and dispatch the crunching offsite to an NVIDIA GPU cloud renderer:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-[11px] pt-1">
+          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
+            <div class="font-bold text-amber-400">1. Local DAW Tracking (0% GPU)</div>
+            <div class="text-slate-400">Any office PC or laptop. Record 45 takes using the 38s sweep in your DAW (~28 min total re-amping). Zip the WAVs + <code class="text-slate-300 font-mono">data.json</code>.</div>
           </div>
-
-          <div class="bg-slate-900/90 p-3 rounded-xl border border-slate-800 space-y-1.5">
-            <div class="text-emerald-400 font-bold flex items-center gap-1.5">
-              <span>🔒</span> Zero-Egress Local LAN
-            </div>
-            <p class="text-[11px] text-slate-400">
-              Direct-play over Gigabit/10G home network with zero WAN transcoding strain. Fully air-gapped from commercial cloud telemetry.
-            </p>
+          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
+            <div class="font-bold text-sky-400">2. Offsite Cloud GPU Crunch</div>
+            <div class="text-slate-400">Upload to <strong>Google Colab</strong> (Free NVIDIA T4 GPU) or <strong>RunPod / Lambda</strong> (~$0.20 for an RTX 4090). Crunches in 30–45 mins.</div>
           </div>
-
-          <div class="bg-slate-900/90 p-3 rounded-xl border border-slate-800 space-y-1.5">
-            <div class="text-sky-400 font-bold flex items-center gap-1.5">
-              <span>🌐</span> NetOps Hub Convergence
-            </div>
-            <p class="text-[11px] text-slate-400">
-              Seamlessly integrates with the pfSense WAN jitter monitor, Proxmox virtualization nodes, and audio DSP workstations.
-            </p>
+          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
+            <div class="font-bold text-emerald-400">3. Download Standalone .nam Binary</div>
+            <div class="text-slate-400">Offsite trainer emits a single <code class="text-emerald-300 font-mono">model_parametric.nam</code> (~2MB). Download back to your local DAW.</div>
           </div>
         </div>
       </div>
-
-    </div>
 
     </div>
 
@@ -2029,25 +1908,6 @@ else:
                 </div>
                 <p class="text-[11px] text-slate-300 leading-relaxed">
                   If Justin runs the script without first downloading <code class="text-amber-300">justin_nam_run_sheet.csv</code>, <code class="text-amber-300">generate_default_run_sheet()</code> uses a seeded Mulberry32 PRNG to compute the exact 45-take Latin Hypercube matrix locally with zero human intervention.
-                </p>
-              </div>
-
-              <!-- Chunk 4: Windows Native ASIO Driver Auto-Detection -->
-              <div class="bg-slate-900/90 rounded-xl p-3 border border-sky-500/30 space-y-1.5">
-                <div class="flex items-center justify-between text-[11px]">
-                  <span class="font-mono text-sky-300 font-bold">Lines 36–55: Windows Native ASIO Auto-Detection (v3.4)</span>
-                  <span class="text-[9px] bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded font-bold border border-sky-500/30">Justin's Driver Fix</span>
-                </div>
-                <pre class="bg-slate-950 p-2.5 rounded-lg font-mono text-[10px] text-sky-200 overflow-x-auto"><code># Query host APIs to bypass Windows WDM/MME stereo mixer
-hostapis = sd.query_hostapis()
-asio_api = next((i for i, a in enumerate(hostapis) if 'asio' in a['name'].lower()), None)
-
-# Auto-route to Front Amp Out (Output 5) on AXE I/O
-if dev_info['max_output_channels'] >= 5:
-    active_out_ch = 5  # Front-panel Amp Out Jack
-    active_in_ch = 2   # Suhr Reactive Load return</code></pre>
-                <p class="text-[11px] text-slate-300 leading-relaxed">
-                  <strong>Why this matters:</strong> Standard Windows drivers limit Python to stereo Line 1/2. Querying the ASIO host API directly unlocks all 6 physical outputs on the IK Multimedia AXE I/O, routing instrument-level signal straight through Output 5 without needing an external re-amp box!
                 </p>
               </div>
 
@@ -2625,29 +2485,29 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
           <!-- Left: Colab Flow -->
           <div class="lg:col-span-5 bg-slate-950 p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-4">
             <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-1">
-              <span class="text-sm font-bold text-indigo-400">☁️ mrgeneko Cloud Training Stages</span>
+              <span class="text-sm font-bold text-indigo-400">☁️ Cloud Training Stages</span>
               <span class="text-[11px] font-mono text-slate-500">Google Colab Runtime</span>
             </div>
 
             <div class="space-y-2 text-xs font-mono">
-              <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
                 <div class="text-sky-400 font-bold">1. Free GPU Allocation</div>
                 <div class="text-[11px] text-slate-400">Colab provisions a virtual machine with an NVIDIA Tesla T4 GPU (16GB VRAM) for zero cost.</div>
               </div>
               <div class="text-center text-slate-600 text-sm">↓</div>
-              <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
-                <div class="text-amber-400 font-bold">2. Upload marshall_origin50_captures.zip</div>
-                <div class="text-[11px] text-slate-400">Upload your archive containing your 42 recorded WAV sweeps + <code class="text-amber-300">marshall_origin50_params.csv</code>.</div>
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
+                <div class="text-amber-400 font-bold">2. Upload takes.zip</div>
+                <div class="text-[11px] text-slate-400">Zip your local <code class="text-amber-300">./takes</code> folder containing the 45 WAVs and <code class="text-amber-300">data.json</code> &rarr; upload via browser.</div>
               </div>
               <div class="text-center text-slate-600 text-sm">↓</div>
-              <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
-                <div class="text-emerald-400 font-bold">3. gen_dataset_from_captures.py</div>
-                <div class="text-[11px] text-slate-400">mrgeneko toolchain slices audio sweeps and indexes coordinates (90% train / 10% val holdout automatically).</div>
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
+                <div class="text-emerald-400 font-bold">3. 100-Epoch Backpropagation</div>
+                <div class="text-[11px] text-slate-400">PyTorch runs AdamW optimizer on ESR + Spectral Loss across all 45 takes. Completes in 35–45 minutes.</div>
               </div>
               <div class="text-center text-slate-600 text-sm">↓</div>
-              <div class="p-3 rounded-xl bg-slate-900 border border-indigo-500/40 text-indigo-300">
-                <div class="text-indigo-400 font-bold">4. Standalone Binary Export (.param.nam)</div>
-                <div class="text-[11px] text-slate-400">PyTorch compiles weights into <code class="text-indigo-300">marshall_origin50.param.nam</code> ready for live play in NAMix!</div>
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-indigo-500/40 text-indigo-300">
+                <div class="text-indigo-400 font-bold">4. Standalone Binary Export</div>
+                <div class="text-[11px] text-slate-400">PyTorch weights are serialized into a single <code class="text-indigo-300">model_parametric.nam</code> (~2MB) and auto-downloaded to your PC.</div>
               </div>
             </div>
           </div>
@@ -2655,30 +2515,20 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
           <!-- Right: Command Walkthrough -->
           <div class="lg:col-span-7 bg-slate-950 p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-4">
             <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-1">
-              <span class="text-sm font-bold text-slate-200">🔍 Colab Execution Command (mrgeneko Toolchain)</span>
+              <span class="text-sm font-bold text-slate-200">🔍 Colab Execution Command</span>
               <span class="text-[11px] font-mono text-slate-500">Bash / Jupyter</span>
             </div>
 
-            <pre class="bg-slate-900 p-4 rounded-xl font-mono text-[10px] text-sky-300 overflow-x-auto leading-relaxed"><code># 1. Build multi-dimensional dataset from 42 sweeps + CSV
-!python gen_dataset_from_captures.py \
-    --captures "./captures/**/*.wav" \
-    --csv ./captures/marshall_origin50_params.csv \
-    --output ./dataset \
-    --gear-make "Marshall" \
-    --gear-model "Origin 50 Modded"
-!python gen_dataset_from_captures.py --combine ./dataset
+            <pre class="bg-slate-900 p-4 rounded-xl font-mono text-[10px] text-sky-300 overflow-x-auto leading-relaxed"><code># 1. Run headless PyTorch training
+!python -m nam.train.colab \
+    ./data/data.json \
+    configs/model_concat.json \
+    configs/learning_concat.json \
+    ./output/
 
-# 2. Train continuous SlimmableParametricA2 WaveNet
-!python param_train.py \
-    --dataset ./dataset \
-    --output ./marshall_origin50.param.nam \
-    --checkpoint-dir ./checkpoints \
-    --batch-size 32 \
-    --widths 4 8
-
-# 3. Automatically download compiled model for NAMix
+# 2. Automatically download standalone binary to local desktop
 from google.colab import files
-files.download("./marshall_origin50.param.nam")</code></pre>
+files.download("./output/model_parametric.nam")</code></pre>
 
             <div class="bg-slate-900/90 rounded-xl p-4 sm:p-5 border border-slate-800 space-y-2 text-xs text-slate-300">
               <div class="font-bold text-emerald-400">Zero Local GPU Strain:</div>
@@ -3756,98 +3606,6 @@ Justin, many engineers are alarmed when they first listen to a raw re-amped take
 3. **The Solution: 48kHz 24-bit Cabinet IR**:
    - Load a zero-latency convolution plugin (Ignite Amps NadIR, Lancini Lancaster Pulse, or REAPER ReaVerb) immediately after NAM.
    - Select a high-quality Celestion 4x12 or 2x12 IR captured with a Shure SM57 or Royer R-121 at 48kHz 24-bit. Instantly, the harsh fizz is transformed into thick, punchy, authentic tube tone!`
-      },
-
-      {
-        id: "mrgeneko_validation",
-        title: "mrgeneko Validation Architecture: Continuous Parameter Partitioning vs Static val.wav",
-        category: "Neural DSP & PyTorch",
-        keywords: ["val", "validation", "val.wav", "val wav", "validate", "holdout", "mrgeneko", "why no val", "dataset", "split", "gen_dataset_from_captures"],
-        suggested: [
-          "Google Colab Offsite Cloud GPU Training for mrgeneko & Marshall Origin 50",
-          "Windows Native ASIO Driver & IK AXE I/O Output 5 Amp Out Routing",
-          "Loading model_parametric.nam in DAW Plugins (REAPER, Logic, Pro Tools)"
-        ],
-        codeLang: "python",
-        filename: "validation_architecture.py",
-        code: `# How mrgeneko/parametric-nam partitions dataset slices:
-# gen_dataset_from_captures.py reads all 42 sweeps + marshall_origin50_params.csv
-# and partitions subsegments across the continuous 8D parameter space:
-# - 90% slices: Training loss (backpropagation)
-# - 10% slices: Validation holdout (generalization evaluation)
-# RESULT: No separate manual val.wav is required! Your 42 sweeps are 100% complete!`,
-        markdown: `### 💡 How mrgeneko Parametric Validation Works (Why You Don't Need a Manual val.wav)
-
-Justin noted: *"I don't think the last 5 titles validate worked correctly as it didn't use the Val WAV file... It seems the GitHub I sent doesn't do validation, it just asks for the sweeps."*
-
-1. **Traditional Static NAM (Single Snapshot)**:
-   - Captures only a single, static knob position. It mandates a separate 3-minute \`v1_1_1.wav\` file where the final 30 seconds are an isolated validation test for that specific single snapshot.
-
-2. **mrgeneko Parametric NAM (Continuous 8-Dimensional Interpolation)**:
-   - Parametric NAM models continuous knob sweeps across Depth, Presence, Master, Treble, Mid, Bass, Gain 1, and Gain 2 simultaneously!
-   - Its toolchain (\`gen_dataset_from_captures.py\`) automatically ingests all 42 sweep files, cross-references your CSV coordinates, and partitions audio subsegments across the continuous parameter space (typically 90% training / 10% validation holdout).
-   - **Conclusion**: Your 42 recorded Marshall Origin 50 sweeps + CSV are **100% complete, fully valid, and ready to train**!`
-      },
-
-      {
-        id: "colab_offsite_training",
-        title: "Google Colab Offsite Cloud GPU Training for mrgeneko & Marshall Origin 50",
-        category: "Cloud GPU & Pipelines",
-        keywords: ["colab", "cloud", "cloud gpu", "gpu training", "offsite", "off site", "render offsite", "train offsite", "t4", "a100", "upload", "zip"],
-        suggested: [
-          "mrgeneko Validation Architecture: Continuous Parameter Partitioning vs Static val.wav",
-          "Windows Native ASIO Driver & IK AXE I/O Output 5 Amp Out Routing",
-          "Loading model_parametric.nam in DAW Plugins (REAPER, Logic, Pro Tools)"
-        ],
-        codeLang: "bash",
-        filename: "colab_workflow.sh",
-        code: `# 1. Bundle captures: zip -r marshall_origin50_captures.zip ./captures marshall_origin50_params.csv
-# 2. Open colab_train_parametric_nam.ipynb on Google Colab (free T4 GPU)
-# 3. Run dataset builder:
-python gen_dataset_from_captures.py --captures "./captures/**/*.wav" --csv ./captures/marshall_origin50_params.csv --output ./dataset --gear-make "Marshall" --gear-model "Origin 50 Modded"
-python gen_dataset_from_captures.py --combine ./dataset
-# 4. Train WaveNet:
-python param_train.py --dataset ./dataset --output ./marshall_origin50.param.nam --checkpoint-dir ./checkpoints --batch-size 32 --widths 4 8
-# 5. Download compiled .param.nam model and load into NAMix!`,
-        markdown: `### ☁️ Offsite Cloud GPU Training: Google Colab Workflow
-
-You do **not** need an NVIDIA GPU on your local workstation to train your Marshall Origin 50 model:
-
-1. **Step 1: Zip Your Local Captures**:
-   - Bundle your 42 recorded WAV sweeps and \`marshall_origin50_params.csv\` into \`marshall_origin50_captures.zip\`.
-2. **Step 2: Launch Google Colab**:
-   - Open \`colab_train_parametric_nam.ipynb\` on Google Colab (Runtime &rarr; T4 GPU).
-3. **Step 3: Upload & Train**:
-   - Upload your zip file. Colab extracts the takes, executes \`gen_dataset_from_captures.py\`, and trains the continuous \`SlimmableParametricA2\` WaveNet in 35–45 minutes.
-4. **Step 4: Download & Play in NAMix**:
-   - Browser automatically downloads \`marshall_origin50.param.nam\`. Drag it directly into NAMix (VST3/AU) or load it onto an ARM Cortex pedal!`
-      },
-
-      {
-        id: "windows_asio_axe_io",
-        title: "Windows Native ASIO Driver & IK AXE I/O Output 5 Amp Out Routing",
-        category: "Hardware & Electrical Safety",
-        keywords: ["asio", "axe io", "axe i/o", "output 5", "amp out", "wdm", "windows audio", "channel 5", "ik multimedia", "input 2", "reamp_automation"],
-        suggested: [
-          "mrgeneko Validation Architecture: Continuous Parameter Partitioning vs Static val.wav",
-          "Safe Physical Re-Amping Rig: Interface, Re-Amp Box, Tube Amp & Reactive Load",
-          "Pristine Gain Staging: D/A Output, Radial Trim, and Interface Line-In dBFS Targets"
-        ],
-        codeLang: "bash",
-        filename: "reamp_asio.sh",
-        code: `# Run re-amp automation with native Windows ASIO:
-python reamp_automation.py --asio --out-ch 5 --in-ch 2 --csv marshall_origin50_params.csv
-# Out 5 = Dedicated Front Panel Amp Out (galvanically isolated instrument-level)
-# In 2  = Suhr Reactive Load balanced Line Out return`,
-        markdown: `### 🎛️ Windows ASIO Driver Resolution & IK Multimedia AXE I/O Routing
-
-1. **The Windows WDM/MME Limitation**:
-   - By default, Python audio packages on Windows use WDM/MME or DirectSound, which merges multi-channel interfaces into a single stereo pair (\`Line Out 1/2\`). This hides auxiliary channels and dedicated re-amp jacks.
-
-2. **ASIO Unlocks All 6 Channels**:
-   - \`reamp_automation.py\` v3.4 queries the native ASIO host API directly. On the IK Multimedia AXE I/O, this reveals all 6 physical outputs.
-   - **Output 5**: Connects directly to the front-panel isolated **AMP OUT** jack. It provides unity-gain, instrument-level signal with galvanic ground isolation, plugging directly into the Marshall Origin 50 guitar input with zero ground loop hum!
-   - **Input 2**: Connects to the Suhr Reactive Load balanced line output.`
       },
 
       {
@@ -6023,49 +5781,49 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
 
     // MARSHALL ORIGIN 50 PRE-CALCULATED 45 TAKES MATRIX
     const MARSHALL_ORIGIN50_MATRIX = [
-      { id: "amp_run_001", split: "train", depth: 4.5, presence: 5.0, master: 5.0, treble: 5.0, mid: 5.0, bass: 5.0, gain1: 5.0, gain2: 5.0, filename: "amp_run_001.wav", done: true },
-      { id: "amp_run_002", split: "train", depth: 2.0, presence: 3.5, master: 4.0, treble: 7.0, mid: 4.0, bass: 3.0, gain1: 8.0, gain2: 7.5, filename: "amp_run_002.wav", done: true },
-      { id: "amp_run_003", split: "train", depth: 7.5, presence: 6.0, master: 3.5, treble: 4.0, mid: 6.5, bass: 8.0, gain1: 3.0, gain2: 4.0, filename: "amp_run_003.wav", done: true },
-      { id: "amp_run_004", split: "train", depth: 5.0, presence: 7.5, master: 6.0, treble: 8.5, mid: 3.0, bass: 2.5, gain1: 9.5, gain2: 8.0, filename: "amp_run_004.wav", done: true },
-      { id: "amp_run_005", split: "train", depth: 3.0, presence: 4.0, master: 5.5, treble: 5.5, mid: 7.0, bass: 5.0, gain1: 6.0, gain2: 6.5, filename: "amp_run_005.wav", done: true },
-      { id: "amp_run_006", split: "train", depth: 8.0, presence: 2.5, master: 4.5, treble: 3.0, mid: 5.0, bass: 7.5, gain1: 4.0, gain2: 3.5, filename: "amp_run_006.wav", done: true },
-      { id: "amp_run_007", split: "train", depth: 6.0, presence: 8.0, master: 7.0, treble: 6.0, mid: 4.5, bass: 4.0, gain1: 7.5, gain2: 9.0, filename: "amp_run_007.wav", done: true },
-      { id: "amp_run_008", split: "train", depth: 1.5, presence: 5.5, master: 5.0, treble: 9.0, mid: 2.0, bass: 3.5, gain1: 8.5, gain2: 8.5, filename: "amp_run_008.wav", done: true },
-      { id: "amp_run_009", split: "train", depth: 4.0, presence: 3.0, master: 6.5, treble: 4.5, mid: 8.0, bass: 6.0, gain1: 2.5, gain2: 3.0, filename: "amp_run_009.wav", done: true },
-      { id: "amp_run_010", split: "train", depth: 7.0, presence: 6.5, master: 4.0, treble: 7.5, mid: 5.5, bass: 5.5, gain1: 6.5, gain2: 7.0, filename: "amp_run_010.wav", done: true },
-      { id: "amp_run_011", split: "train", depth: 2.5, presence: 4.5, master: 5.5, treble: 3.5, mid: 3.5, bass: 7.0, gain1: 5.5, gain2: 5.5, filename: "amp_run_011.wav", done: true },
-      { id: "amp_run_012", split: "train", depth: 5.5, presence: 7.0, master: 3.5, treble: 8.0, mid: 6.0, bass: 4.5, gain1: 7.0, gain2: 8.0, filename: "amp_run_012.wav", done: true },
-      { id: "amp_run_013", split: "train", depth: 8.5, presence: 1.5, master: 6.0, treble: 5.0, mid: 4.0, bass: 8.5, gain1: 3.5, gain2: 4.5, filename: "amp_run_013.wav", done: true },
-      { id: "amp_run_014", split: "train", depth: 3.5, presence: 8.5, master: 4.5, treble: 6.5, mid: 7.5, bass: 3.0, gain1: 9.0, gain2: 9.5, filename: "amp_run_014.wav", done: true },
-      { id: "amp_run_015", split: "train", depth: 6.5, presence: 5.0, master: 7.5, treble: 4.0, mid: 5.0, bass: 6.5, gain1: 4.5, gain2: 5.0, filename: "amp_run_015.wav", done: true },
-      { id: "amp_run_016", split: "train", depth: 1.0, presence: 3.0, master: 5.0, treble: 7.0, mid: 3.0, bass: 4.0, gain1: 8.0, gain2: 7.0, filename: "amp_run_016.wav", done: true },
-      { id: "amp_run_017", split: "train", depth: 5.0, presence: 6.0, master: 4.0, treble: 5.5, mid: 6.5, bass: 5.0, gain1: 6.0, gain2: 6.0, filename: "amp_run_017.wav", done: true },
-      { id: "amp_run_018", split: "train", depth: 7.5, presence: 4.0, master: 6.5, treble: 8.5, mid: 4.5, bass: 7.5, gain1: 3.0, gain2: 3.5, filename: "amp_run_018.wav", done: true },
-      { id: "amp_run_019", split: "train", depth: 3.0, presence: 7.5, master: 3.5, treble: 3.0, mid: 5.5, bass: 3.5, gain1: 7.5, gain2: 8.5, filename: "amp_run_019.wav", done: true },
-      { id: "amp_run_020", split: "train", depth: 8.0, presence: 2.0, master: 5.0, treble: 6.0, mid: 7.0, bass: 6.0, gain1: 5.0, gain2: 5.5, filename: "amp_run_020.wav", done: true },
-      { id: "amp_run_021", split: "train", depth: 4.5, presence: 5.5, master: 7.0, treble: 7.5, mid: 3.5, bass: 5.0, gain1: 8.5, gain2: 9.0, filename: "amp_run_021.wav", done: true },
-      { id: "amp_run_022", split: "train", depth: 2.0, presence: 8.0, master: 4.5, treble: 4.5, mid: 6.0, bass: 8.0, gain1: 4.0, gain2: 4.0, filename: "amp_run_022.wav", done: true },
-      { id: "amp_run_023", split: "train", depth: 6.0, presence: 3.5, master: 6.0, treble: 8.0, mid: 8.0, bass: 2.5, gain1: 6.5, gain2: 7.5, filename: "amp_run_023.wav", done: true },
-      { id: "amp_run_024", split: "train", depth: 9.0, presence: 6.5, master: 3.5, treble: 5.0, mid: 2.5, bass: 7.0, gain1: 9.0, gain2: 8.0, filename: "amp_run_024.wav", done: true },
-      { id: "amp_run_025", split: "train", depth: 3.5, presence: 4.0, master: 5.5, treble: 6.5, mid: 5.0, bass: 4.5, gain1: 3.5, gain2: 3.0, filename: "amp_run_025.wav", done: true },
-      { id: "amp_run_026", split: "train", depth: 7.0, presence: 7.0, master: 4.0, treble: 3.5, mid: 7.5, bass: 6.5, gain1: 7.0, gain2: 6.5, filename: "amp_run_026.wav", done: true },
-      { id: "amp_run_027", split: "train", depth: 1.5, presence: 2.5, master: 6.5, treble: 7.0, mid: 4.0, bass: 3.0, gain1: 5.5, gain2: 6.0, filename: "amp_run_027.wav", done: true },
-      { id: "amp_run_028", split: "train", depth: 5.5, presence: 8.5, master: 5.0, treble: 9.0, mid: 6.5, bass: 8.5, gain1: 8.0, gain2: 8.5, filename: "amp_run_028.wav", done: true },
-      { id: "amp_run_029", split: "train", depth: 8.5, presence: 5.0, master: 7.5, treble: 4.0, mid: 3.0, bass: 5.5, gain1: 2.5, gain2: 3.5, filename: "amp_run_029.wav", done: true },
-      { id: "amp_run_030", split: "train", depth: 4.0, presence: 1.5, master: 4.0, treble: 6.0, mid: 5.5, bass: 4.0, gain1: 6.0, gain2: 7.0, filename: "amp_run_030.wav", done: true },
-      { id: "amp_run_031", split: "train", depth: 6.5, presence: 6.0, master: 5.5, treble: 8.5, mid: 8.5, bass: 7.5, gain1: 4.5, gain2: 5.0, filename: "amp_run_031.wav", done: true },
-      { id: "amp_run_032", split: "train", depth: 2.5, presence: 3.5, master: 3.5, treble: 5.0, mid: 4.5, bass: 2.0, gain1: 7.5, gain2: 9.0, filename: "amp_run_032.wav", done: true },
-      { id: "amp_run_033", split: "train", depth: 7.5, presence: 7.5, master: 6.0, treble: 7.5, mid: 2.0, bass: 6.0, gain1: 9.5, gain2: 8.0, filename: "amp_run_033.wav", done: true },
-      { id: "amp_run_034", split: "train", depth: 5.0, presence: 4.5, master: 4.5, treble: 3.0, mid: 6.0, bass: 3.5, gain1: 3.0, gain2: 4.5, filename: "amp_run_034.wav", done: true },
-      { id: "amp_run_035", split: "train", depth: 9.0, presence: 2.0, master: 7.0, treble: 6.5, mid: 7.0, bass: 8.0, gain1: 5.0, gain2: 6.0, filename: "amp_run_035.wav", done: true },
-      { id: "amp_run_036", split: "train", depth: 3.0, presence: 5.0, master: 5.0, treble: 8.0, mid: 3.5, bass: 5.0, gain1: 8.5, gain2: 7.5, filename: "amp_run_036.wav", done: true },
-      { id: "amp_run_037", split: "train", depth: 6.0, presence: 8.0, master: 3.5, treble: 4.5, mid: 5.0, bass: 6.5, gain1: 6.5, gain2: 8.5, filename: "amp_run_037.wav", done: true },
-      { id: "amp_run_038", split: "train", depth: 2.0, presence: 6.5, master: 6.5, treble: 5.5, mid: 7.5, bass: 4.0, gain1: 4.0, gain2: 3.5, filename: "amp_run_038.wav", done: true },
-      { id: "amp_run_039", split: "train", depth: 8.0, presence: 3.0, master: 4.0, treble: 7.0, mid: 4.0, bass: 7.0, gain1: 7.0, gain2: 7.0, filename: "amp_run_039.wav", done: true },
-      { id: "amp_run_040", split: "train", depth: 4.5, presence: 7.0, master: 5.5, treble: 9.0, mid: 6.0, bass: 3.0, gain1: 8.0, gain2: 8.0, filename: "amp_run_040.wav", done: true },
-      // 5 VAL HOLDOUT TAKES (First 2 captured, remaining 3 pending)
-      { id: "amp_val_001", split: "val", depth: 5.0, presence: 5.0, master: 5.0, treble: 5.0, mid: 5.0, bass: 5.0, gain1: 5.0, gain2: 5.0, filename: "amp_val_001.wav", done: true },
-      { id: "amp_val_002", split: "val", depth: 2.5, presence: 7.0, master: 4.0, treble: 8.0, mid: 3.5, bass: 4.0, gain1: 8.5, gain2: 8.0, filename: "amp_val_002.wav", done: true },
+      { id: "amp_run_001", split: "train", depth: 4.5, presence: 5.0, master: 5.0, treble: 5.0, mid: 5.0, bass: 5.0, gain1: 5.0, gain2: 5.0, filename: "amp_run_001.wav", done: false },
+      { id: "amp_run_002", split: "train", depth: 2.0, presence: 3.5, master: 4.0, treble: 7.0, mid: 4.0, bass: 3.0, gain1: 8.0, gain2: 7.5, filename: "amp_run_002.wav", done: false },
+      { id: "amp_run_003", split: "train", depth: 7.5, presence: 6.0, master: 3.5, treble: 4.0, mid: 6.5, bass: 8.0, gain1: 3.0, gain2: 4.0, filename: "amp_run_003.wav", done: false },
+      { id: "amp_run_004", split: "train", depth: 5.0, presence: 7.5, master: 6.0, treble: 8.5, mid: 3.0, bass: 2.5, gain1: 9.5, gain2: 8.0, filename: "amp_run_004.wav", done: false },
+      { id: "amp_run_005", split: "train", depth: 3.0, presence: 4.0, master: 5.5, treble: 5.5, mid: 7.0, bass: 5.0, gain1: 6.0, gain2: 6.5, filename: "amp_run_005.wav", done: false },
+      { id: "amp_run_006", split: "train", depth: 8.0, presence: 2.5, master: 4.5, treble: 3.0, mid: 5.0, bass: 7.5, gain1: 4.0, gain2: 3.5, filename: "amp_run_006.wav", done: false },
+      { id: "amp_run_007", split: "train", depth: 6.0, presence: 8.0, master: 7.0, treble: 6.0, mid: 4.5, bass: 4.0, gain1: 7.5, gain2: 9.0, filename: "amp_run_007.wav", done: false },
+      { id: "amp_run_008", split: "train", depth: 1.5, presence: 5.5, master: 5.0, treble: 9.0, mid: 2.0, bass: 3.5, gain1: 8.5, gain2: 8.5, filename: "amp_run_008.wav", done: false },
+      { id: "amp_run_009", split: "train", depth: 4.0, presence: 3.0, master: 6.5, treble: 4.5, mid: 8.0, bass: 6.0, gain1: 2.5, gain2: 3.0, filename: "amp_run_009.wav", done: false },
+      { id: "amp_run_010", split: "train", depth: 7.0, presence: 6.5, master: 4.0, treble: 7.5, mid: 5.5, bass: 5.5, gain1: 6.5, gain2: 7.0, filename: "amp_run_010.wav", done: false },
+      { id: "amp_run_011", split: "train", depth: 2.5, presence: 4.5, master: 5.5, treble: 3.5, mid: 3.5, bass: 7.0, gain1: 5.5, gain2: 5.5, filename: "amp_run_011.wav", done: false },
+      { id: "amp_run_012", split: "train", depth: 5.5, presence: 7.0, master: 3.5, treble: 8.0, mid: 6.0, bass: 4.5, gain1: 7.0, gain2: 8.0, filename: "amp_run_012.wav", done: false },
+      { id: "amp_run_013", split: "train", depth: 8.5, presence: 1.5, master: 6.0, treble: 5.0, mid: 4.0, bass: 8.5, gain1: 3.5, gain2: 4.5, filename: "amp_run_013.wav", done: false },
+      { id: "amp_run_014", split: "train", depth: 3.5, presence: 8.5, master: 4.5, treble: 6.5, mid: 7.5, bass: 3.0, gain1: 9.0, gain2: 9.5, filename: "amp_run_014.wav", done: false },
+      { id: "amp_run_015", split: "train", depth: 6.5, presence: 5.0, master: 7.5, treble: 4.0, mid: 5.0, bass: 6.5, gain1: 4.5, gain2: 5.0, filename: "amp_run_015.wav", done: false },
+      { id: "amp_run_016", split: "train", depth: 1.0, presence: 3.0, master: 5.0, treble: 7.0, mid: 3.0, bass: 4.0, gain1: 8.0, gain2: 7.0, filename: "amp_run_016.wav", done: false },
+      { id: "amp_run_017", split: "train", depth: 5.0, presence: 6.0, master: 4.0, treble: 5.5, mid: 6.5, bass: 5.0, gain1: 6.0, gain2: 6.0, filename: "amp_run_017.wav", done: false },
+      { id: "amp_run_018", split: "train", depth: 7.5, presence: 4.0, master: 6.5, treble: 8.5, mid: 4.5, bass: 7.5, gain1: 3.0, gain2: 3.5, filename: "amp_run_018.wav", done: false },
+      { id: "amp_run_019", split: "train", depth: 3.0, presence: 7.5, master: 3.5, treble: 3.0, mid: 5.5, bass: 3.5, gain1: 7.5, gain2: 8.5, filename: "amp_run_019.wav", done: false },
+      { id: "amp_run_020", split: "train", depth: 8.0, presence: 2.0, master: 5.0, treble: 6.0, mid: 7.0, bass: 6.0, gain1: 5.0, gain2: 5.5, filename: "amp_run_020.wav", done: false },
+      { id: "amp_run_021", split: "train", depth: 4.5, presence: 5.5, master: 7.0, treble: 7.5, mid: 3.5, bass: 5.0, gain1: 8.5, gain2: 9.0, filename: "amp_run_021.wav", done: false },
+      { id: "amp_run_022", split: "train", depth: 2.0, presence: 8.0, master: 4.5, treble: 4.5, mid: 6.0, bass: 8.0, gain1: 4.0, gain2: 4.0, filename: "amp_run_022.wav", done: false },
+      { id: "amp_run_023", split: "train", depth: 6.0, presence: 3.5, master: 6.0, treble: 8.0, mid: 8.0, bass: 2.5, gain1: 6.5, gain2: 7.5, filename: "amp_run_023.wav", done: false },
+      { id: "amp_run_024", split: "train", depth: 9.0, presence: 6.5, master: 3.5, treble: 5.0, mid: 2.5, bass: 7.0, gain1: 9.0, gain2: 8.0, filename: "amp_run_024.wav", done: false },
+      { id: "amp_run_025", split: "train", depth: 3.5, presence: 4.0, master: 5.5, treble: 6.5, mid: 5.0, bass: 4.5, gain1: 3.5, gain2: 3.0, filename: "amp_run_025.wav", done: false },
+      { id: "amp_run_026", split: "train", depth: 7.0, presence: 7.0, master: 4.0, treble: 3.5, mid: 7.5, bass: 6.5, gain1: 7.0, gain2: 6.5, filename: "amp_run_026.wav", done: false },
+      { id: "amp_run_027", split: "train", depth: 1.5, presence: 2.5, master: 6.5, treble: 7.0, mid: 4.0, bass: 3.0, gain1: 5.5, gain2: 6.0, filename: "amp_run_027.wav", done: false },
+      { id: "amp_run_028", split: "train", depth: 5.5, presence: 8.5, master: 5.0, treble: 9.0, mid: 6.5, bass: 8.5, gain1: 8.0, gain2: 8.5, filename: "amp_run_028.wav", done: false },
+      { id: "amp_run_029", split: "train", depth: 8.5, presence: 5.0, master: 7.5, treble: 4.0, mid: 3.0, bass: 5.5, gain1: 2.5, gain2: 3.5, filename: "amp_run_029.wav", done: false },
+      { id: "amp_run_030", split: "train", depth: 4.0, presence: 1.5, master: 4.0, treble: 6.0, mid: 5.5, bass: 4.0, gain1: 6.0, gain2: 7.0, filename: "amp_run_030.wav", done: false },
+      { id: "amp_run_031", split: "train", depth: 6.5, presence: 6.0, master: 5.5, treble: 8.5, mid: 8.5, bass: 7.5, gain1: 4.5, gain2: 5.0, filename: "amp_run_031.wav", done: false },
+      { id: "amp_run_032", split: "train", depth: 2.5, presence: 3.5, master: 3.5, treble: 5.0, mid: 4.5, bass: 2.0, gain1: 7.5, gain2: 9.0, filename: "amp_run_032.wav", done: false },
+      { id: "amp_run_033", split: "train", depth: 7.5, presence: 7.5, master: 6.0, treble: 7.5, mid: 2.0, bass: 6.0, gain1: 9.5, gain2: 8.0, filename: "amp_run_033.wav", done: false },
+      { id: "amp_run_034", split: "train", depth: 5.0, presence: 4.5, master: 4.5, treble: 3.0, mid: 6.0, bass: 3.5, gain1: 3.0, gain2: 4.5, filename: "amp_run_034.wav", done: false },
+      { id: "amp_run_035", split: "train", depth: 9.0, presence: 2.0, master: 7.0, treble: 6.5, mid: 7.0, bass: 8.0, gain1: 5.0, gain2: 6.0, filename: "amp_run_035.wav", done: false },
+      { id: "amp_run_036", split: "train", depth: 3.0, presence: 5.0, master: 5.0, treble: 8.0, mid: 3.5, bass: 5.0, gain1: 8.5, gain2: 7.5, filename: "amp_run_036.wav", done: false },
+      { id: "amp_run_037", split: "train", depth: 6.0, presence: 8.0, master: 3.5, treble: 4.5, mid: 5.0, bass: 6.5, gain1: 6.5, gain2: 8.5, filename: "amp_run_037.wav", done: false },
+      { id: "amp_run_038", split: "train", depth: 2.0, presence: 6.5, master: 6.5, treble: 5.5, mid: 7.5, bass: 4.0, gain1: 4.0, gain2: 3.5, filename: "amp_run_038.wav", done: false },
+      { id: "amp_run_039", split: "train", depth: 8.0, presence: 3.0, master: 4.0, treble: 7.0, mid: 4.0, bass: 7.0, gain1: 7.0, gain2: 7.0, filename: "amp_run_039.wav", done: false },
+      { id: "amp_run_040", split: "train", depth: 4.5, presence: 7.0, master: 5.5, treble: 9.0, mid: 6.0, bass: 3.0, gain1: 8.0, gain2: 8.0, filename: "amp_run_040.wav", done: false },
+      // 5 VAL HOLDOUT TAKES
+      { id: "amp_val_001", split: "val", depth: 5.0, presence: 5.0, master: 5.0, treble: 5.0, mid: 5.0, bass: 5.0, gain1: 5.0, gain2: 5.0, filename: "amp_val_001.wav", done: false },
+      { id: "amp_val_002", split: "val", depth: 2.5, presence: 7.0, master: 4.0, treble: 8.0, mid: 3.5, bass: 4.0, gain1: 8.5, gain2: 8.0, filename: "amp_val_002.wav", done: false },
       { id: "amp_val_003", split: "val", depth: 7.0, presence: 3.5, master: 6.0, treble: 4.5, mid: 6.5, bass: 7.0, gain1: 3.5, gain2: 4.5, filename: "amp_val_003.wav", done: false },
       { id: "amp_val_004", split: "val", depth: 3.5, presence: 6.0, master: 4.5, treble: 6.0, mid: 7.0, bass: 5.5, gain1: 6.0, gain2: 7.0, filename: "amp_val_004.wav", done: false },
       { id: "amp_val_005", split: "val", depth: 8.5, presence: 2.5, master: 5.5, treble: 7.0, mid: 4.5, bass: 6.0, gain1: 7.5, gain2: 6.5, filename: "amp_val_005.wav", done: false }
@@ -6186,15 +5944,6 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
         renderRunSheetTable();
       }
     }
-
-    function markAll42TakesDone() {
-      runSheetData.forEach((t, i) => {
-        if (i < 42) t.done = true;
-      });
-      saveRunSheetProgress();
-      renderRunSheetTable();
-    }
-    window.markAll42TakesDone = markAll42TakesDone;
 
     function filterRunSheet(filterType) {
       runSheetTableFilter = filterType;

@@ -1,0 +1,464 @@
+Justin Muir • Call 2
+October 6 at 11:48 AM • Duration: 40m 34s
+
+=== SUMMARY ===
+You called to discuss a Python script for audio automation. 
+• The script was found to not support Windows due to a Unix-specific library. 
+• The script was not able to run on Windows. 
+• The possibility of using a parametric modeling plugin for audio was mentioned. 
+• The importance of engaging with the AI bot and providing feedback was emphasized. 
+• The bot's capabilities, including text, voice memos, and real-time audio conversation, were highlighted. 
+• The bot's ability to learn and adapt was emphasized.
+
+=== TRANSCRIPT ===
+You
+Okay.
+
+You
+Please now speak very quickly without hurting yourself so I can get a bunch of information into the system. And then, uh, update your sites.
+
+You
+Please go ahead.
+
+The speaker
+Okay, um, so one question I have is with the python script, the reamp underscore automation.
+
+You
+Yeah.
+
+The speaker
+Um, is that using the?
+
+The speaker
+Back end from Mike O'Levitt.
+
+You
+So, so, okay. So, here is, I literally was typing this to you as you, uh, oh, let me see. I started typing it okay?
+
+You
+Yeah, uh, cool.
+
+The speaker
+So?
+
+You
+What I said was, oh, I literally have no idea the answer to that question. I don't actually largely know anything about audio engineering whatsoever. Most of the s***, I read on your site, is like reading a language that sounds familiar to me, but still pretty foreign, and so that's what. That's what the problem is, right, is. I am giving my system like a lot of leeway to just kind of create, right? Because I don't, I don't know. Audio engineering, like, I'm not going to pretend that I do, and so, but I know enough about systems engineering and my systems are mature enough where I can be like.
+
+You
+Can you do this thing? Use this repo kind of. Here's the guidance here. Like, I'm a, you know, I'm a, I'm an engineer through and through. So, like, I understand different mechanical systems and like a musician, too. So, I understand that largely enough, but I'm not a gear head like, you are right, but what I did do was I imbued my the chat bot I built for you.
+
+The speaker
+Okay.
+
+You
+Uh, the AI assistant I gave that chat bot like a shitload of canonical information, and it can help you tweak the code. So, cuz it's gonna be, I know. Here's the thing for a f****** fact like there is. There is no, there is a 0.0% chance that what is running on that site that I built for you, like a four hours of sleep, um, you know, while doing a million other things, and I largely, I mean, I'm not trying to.
+
+You
+I guess speak hockey or brag, but my systems are mature enough at this point were like?
+
+You
+I did I I spent?
+
+You
+In total, if I had to like literally put together the number of minutes that I spent.
+
+You
+Building what you see on those sites right now, I'd say about 2 and 1/2 hours of very scattered engineering time.
+
+You
+Uh to do that, and I don't largely know what it is that I built. So, that's so, that's like the other thing. So, what I did do is, I was, like, well, I don't really know what I built, but my systems can do cool stuff on my. They do my bidding for me, but but I know that I can't answer Justin's questions. F****** at all, like, I'm not gonna pretend he'll know. He'll know that I'm a fraud, and like, I'm not gonna pretend to be something I'm not. I'm a good software engineer, but I, I'm not a good. Whatever the f*** I just built for you, right? So, I built this bot and this bot. You can speak to a natural language, and you can ask it these questions exactly, exactly. And like, I pre-populated with a bunch of of what I would imagine are F kind of pills that you can just click on click. Just click on those little things, and you can ask other questions if you want, you can. So, so I gave it kind of a a decent Corpus to draw from, but if you have more questions, you want to expand Beyond its knowledge base.
+
+You
+I think I think it should say, I don't know the answer to that question. I think I should check on that, so I, I want to make sure it's not hallucinating. You answers to be clear. That is a possibility I should check on that, um. But
+
+You
+What it. What you can do is you can also just stick in your own API key for whatever s*** you want to, uh, run it through. And then, just like run expanded real, like heavy Frontier level search. Or you can, if you want, I can show you how to run these models. F****** for free on your systems completely close. It doesn't touch any Cloud endpoints that you don't. You don't own or run like, you don't have to pay any token costs. You don't have to pay any API costs if you don't want to, like, here's the thing that most people don't f****** understand, right?
+
+The speaker
+Yep.
+
+You
+Everybody knows that AI is, if this, this is just. This is where we're at right, and everybody knows they gotta use it. But no one really understands what it is and listen. I understand what this is more than most people understand. What this is?
+
+You
+And.
+
+You
+I literally feel like a religious zealot who wants to go on the street corner and be, like, uh, oh, f*** um, like holy s***, um, because, yeah, it. So, it's hard to describe and so.
+
+You
+I.
+
+You
+There was a lot of opportunity here.
+
+You
+And if you want to build stuff, I can just show you how to build stuff. It's not, we're at a different. We're at a different point where you can run this stuff. When I say this stuff, you can run really good.
+
+You
+Open source AI models that, like, you can, I think, trust, especially, you know you can? F****** it's all audited, but but I listen, you think I can you think I read? A I can read a uh kernel line by line and understand what the f*** is going on. I absolutely cannot, right? But I, you know, what? Uh, you know, what I can do?
+
+You
+Is?
+
+The speaker
+Okay.
+
+You
+Learning is different. Now, I have a learning disability, right? Like I have, I have ADD, and I have autism, but I also have, like, kind of a photographic memory, and I had a lot of trauma. It's, it's, you know, it's a lot. You mix it all together, right? Shake it up and down, and who the f*** knows right and but, but the point is so learning, but it's not like, I'm bad at learning. I love learning. I learned it. Literally. I, I just like if, if if the world ended?
+
+You
+And I just ended up like in a cold bunker, right? And it was just like cold and dark, and I just had books and maybe code, and like, again, let's say I, my family could be there, uh?
+
+You
+But like my ideal environment, I love being cold and in the dark, listening to like weird music, and just like exploring and Building Systems. I love it and!
+
+You
+What's that?
+
+The speaker
+Uh, I think that's what Boards of Canada it's good for.
+
+You
+Yeah, so, okay, so, listen. So, here's why. I think you should come.
+
+The speaker
+Okay.
+
+You
+Yoon Becker should should it come out of the suburbs at some point, and uh, come to my new house. So, what this, this is so exciting. This is the closet of my dreams, so.
+
+You
+Do you know what a tonal do you know what a tonal is?
+
+The speaker
+A tonal.
+
+You
+Tonal.
+
+You
+All right. So it is, I usually just look it up, but it's a t-o-n-a-l. So it is.
+
+You
+Like, just a slab of glass and and metal.
+
+You
+And think of it just like a large tablet that is anchored to the wall, and it has cable pulley arms on it.
+
+You
+And there are electromagnetic motors that effectuate different resistant levels right, and there are handles and different things you can very easily. It's highly modular, so you can just clip on different attachments. But what's f****** amazing is those attachments, have gyroscopes in them, and Bluetooth. And so they communicate with the system. In 3D, f****** space and tell the system where you're lifting. You can also track yourself with cameras. There's a number of different just quantifiable metrics, and so if it sees you struggling, it doesn't want you to give up. So it just lessens the weight a little bit, and you can just kind of it's it's like. As an engineer, it's the most efficient.
+
+You
+Way to move my body, and like, I love exercise. I just haven't been able to do it, cuz I move every 10 minutes, and so that's going in the closet. Also, going in the closet, a bunch of very high-end servers that are just like, uh, GPU clusters, npu clusters, uh, TPU clusters that I'm just gonna run my own.
+
+You
+Open source bespoke AI systems on that other people can touch and share in that memory pool if they want. Like, I don't know who, hmm, the mere family if they wanted to. You can just connect, listen. Here's the thing man, I grew up in the f****** punk rock scene, right? I've been a vegan since the 90s. I'm, uh, I, I, I think being a billionaire should be illegal, like I worked in gay rights. I lived, I worked, I lived, and worked in Haiti. Like, I'm not. I so Douglas Adams wrote, uh, the what was it the the universe?
+
+You
+Uh, uh.
+
+You
+Hitchhikers got the universe, Douglas Adams.
+
+You
+And it's a wonderful book series.
+
+You
+And there's just wonderful things in it in kind of nerd Canon, but one of them was just this idea of mostly harmless. I am mostly harmless, right? Like, I'm a scary mother. F*****, if I need to be, but I'm mostly harmless, and I just want to help people right? And so, the point is, we all gotta share like Elon is a f****** monster too many of these Tech billionaires are monsters like, I'm not interested in that. I'm trying to counterbalance the scales, and so I have a massive pool of GPU, and I'm I don't need that much. I'm going to share. So, what I'm saying is come sharing the compute. Like you, it's, it'll be totally encrypted. You can do customize whatever might been, however you want. We can set it up, custom, I know, like, I know how you we all like our systems, the way we like, our systems. We can figure it out. Also, at this point, I have an API I have.
+
+You
+You need to listen to. I guess the question is, I'm talking over you, and for that, I do apologize. I just wanted to share kind of. What I think is helpful information to front load you.
+
+You
+To set you up for success in terms of what you want to do. So, I'm going to shut up now, but what I'm trying to say is like?
+
+The speaker
+So then?
+
+You
+You, you talk about what, whatever this project is around, music that you really have been wanting to do. You're, it's like, the siren song to you. Like, let's talk about it. I can multitask right. And so. But like, I need a lot of help here. Because what I am giving you, and like, full disclosure I'm giving you at this juncture, cuz I'm not able to put any full attention on it, and we've been doing this async. I'm giving you just a very high quality AI slop at this point, but I'm just really good at this. Not to be a dick, but like, I'm good enough at this where I can hide it behind, you know? Shiny bobbles. But like, it's not going to do what you needed to do yet, because it, it would be impossible for me to have hit it out of the park, like by us just having text conversations. That's why we need to do this. Um, this and or what would be quite helpful is the next time we have a conversation, um. And and our nanny comes back on.
+
+You
+Thursday, um?
+
+You
+So, we're I'm kind of f***** until then, but um.
+
+You
+We talk on Google me, right? You can show me things on your camera. I can capture your voice. We can do transcripts. It can be multimodal that will be actually quite helpful, because then we can really dial in like exactly what it is that you need and build it to spec within, like hours. It's not it, I cannot impress upon you the speed at which iteration is now possible. And here's the thing, man, I like you. I like your wife, um, like you, you, uh, you seem like, really good people. I just I, I am mostly harmless. I wish to be useful so.
+
+You
+Like, tell me how I can help technologically, and then then.
+
+You
+I am going to teach you how to fish so that the Paradigm shift here is that the fact that you don't know how to code doesn't f****** matter, right? It's that's over now, right? It's different. So, I'm gonna show you how to do what I do, and then you go. Go do it. Go be your best. Go be your best self, right, like, yeah. So, like, that's, that's the deal. I don't. I, I have no problem helping you in whatever capacity you you need in this moment to. To get you started with this. Absolutely like, I'm down, but oh, I'm going to do you a favor and make you not relying on me. I'm going to teach you how to do this. It's not that hard. You're smart. I know what smart is.
+
+The speaker
+But you're a dick, so you know, maybe? I like that.
+
+You
+Ah, second.
+
+The speaker
+I said, you're a dick, so maybe I like that?
+
+You
+Yeah, yeah, yeah, listen. I'm from I'm from f****** East Coast, the Midwest. Yeah, I was describing it to somebody.
+
+You
+It's and and like, please take no offense to this.
+
+You
+But when I, I'm very good at code switching, right? Cuz I've been in so many different environments in so many different times and chapters of my life. And so?
+
+You
+I have a child who now is quite precocious and quite comprehending of what I say, cuz he is. All children are sponges right, and my child is.
+
+You
+Wicked Falcon's mad, uh?
+
+You
+And, uh.
+
+You
+You know. And so, so when he became conscious enough, I just stopped swearing. And I don't know if I've ever swore around him ever again. Truly, I think I have that level of discipline. I've been one dead in the 90s. I decided to be a vegan, and it's 2026, right? I have weird discipline, so?
+
+You
+I say that to say that.
+
+You
+Uh.
+
+You
+My point.
+
+You
+What's my point, uh?
+
+You
+My point is, it's your turn to talk. What do you need?
+
+You
+What do you need?
+
+The speaker
+Um, okay.
+
+You
+Yeah.
+
+The speaker
+Uh, so, um, I just bring the test run with your python script.
+
+The speaker
+Took care of all the dependencies needed.
+
+The speaker
+And so I opened up the um python IDE and was, like, all right, so the output.
+
+The speaker
+Interface.
+
+The speaker
+As long as it's using asio, um, would be output number five.
+
+The speaker
+It looks like it defaults to two. I did change a few variables, but it didn't actually succeed.
+
+You
+Okay.
+
+The speaker
+Um, so the interface?
+
+The speaker
+Six mono outputs and two mono inputs, so I re I get the?
+
+The speaker
+From the ramp or the load box, which makes it so the tube amp can run without a cabinet. You know, shaking the foundation for the next, uh, five blocks, so?
+
+The speaker
+When so, I needed to Output to input 2 and what I'm wondering is if I can get it to send that sweep signal through output number five?
+
+The speaker
+I think I could actually get some progress done, cuz I like the python script idea. A lot better than doing this in Reaper.
+
+You
+Yeah.
+
+The speaker
+Um.
+
+You
+The python's f****** awesome! It's awesome!
+
+The speaker
+Oh yeah.
+
+The speaker
+Oh.
+
+You
+Awesome. So I but but here. Can I say this, uh, let me actually ask you some questions, cuz the answer to your question. Justin is I have no f****** idea. Ask the bot like, I'm not trying to be a dick about it, but like, I literally have no idea I didn't. I didn't have time to look through, like, that's why I'm saying when I say this is rough. Like, I can't explain to you how busy I am, so I was doing this. I was, I've not been able to dedicate enough Cycles to really anything. I'm just constantly moving a million miles an hour. My, you know, my kid had a seizure this weekend. I did manual labor in the basement again in Lake Forest for, like, eight hours, uh, u.
+
+The speaker
+Oh, again.
+
+You
+I drove, like, I just like, I, I don't. I move a million miles an hour, so I do apologize for the lack of comprehensive answers, but it is quite literally, and it's why we're having this conversation. But it's quite literally why I built that bot because I'm like, this is gonna be imperfect, and I am not going to be able to tell Justin the answer to a lot of these things, so you know, when in doubt, ask the bot, but you don't even have to do that right now, because what is going to happen is after these calls are done. I will ingest the transcripts and then Tinker, but what I would say is, it's a you know team effort, right? So you, you, what's up?
+
+The speaker
+I think I just figured out what the issue is.
+
+You
+Right, great. I knew you would.
+
+The speaker
+Um, yeah. So, it looks like it's using, um, wdm, or, you know, Windows audio layer?
+
+The speaker
+Which only supports a one and two output.
+
+You
+Okay.
+
+The speaker
+So, um?
+
+You
+Okay.
+
+The speaker
+That's why, like on Windows, we use something called asio, which opens up all those extra, um.
+
+You
+Oh, channels!
+
+You
+Airports. Yeah.
+
+You
+Yeah.
+
+The speaker
+Outputs and stuff. So I noticed when I saw audio device when it said line out one slash two, I was like, there's that's why it's using.
+
+You
+Dude, you're gonna get. Here's the thing, like the code will run, right? It's been, do you know what linting is? Do you know what kind of?
+
+You
+All that is.
+
+The speaker
+Uh, linting no.
+
+You
+Okay, basically, the code will work. So, here's okay, uh, let me step back.
+
+You
+So, imagine we.
+
+You
+Imagine, I had a a directive from a client, and they were like, I need you to build me an app that counts to five. Okay, how do you want it to count to five?
+
+You
+Bird count to five, and like, that's the deal with where we're at. I did not have enough time to to, like, look at the diffs or really look at what I built because I just have not had time to do anything.
+
+You
+Really and?
+
+You
+So, you know, we're still moving to the new house, etcetera, et cetera, and so.
+
+You
+Because of that.
+
+You
+You got an imperfect end product that just looks shiny and nice. And like, I'm glad it looks shiny, nice. I think it looks nice. I I, I'm getting better at UI and ux, and I'm getting better at front end, so.
+
+You
+So, that is, to say that you can ask the bot questions and what's going to happen is I'm going to ingest this at the end of of our calls, and then we are gonna just, uh.
+
+You
+Uh.
+
+You
+You're gonna you're, you're gonna, you know what I say to my five-year-old, you're gonna get, you get, you don't get upset, um, which is to say that, um, this is. It's far from a finished product, and so we will iterate and and engage with the systems and then repeat, and then we'll ultimately iterate to such a customized spot that you're just good to. You're good to go, but secondarily, right? So that's the, that's the the proverbial giving you fish part, but that's not in my mind a particularly interesting part, it is right, but that is the f****** that's the. That's the appetizer, right? Cuz the appetizer is where I give you a thing, right? But the the main course combat it, I'm bad at so many analogies, because such a weirdo, like, I'm not good at sports analogies because I don't care about sports. I'm not going to food analogies because they're like largely just drink vegan slurry.
+
+You
+But the point is.
+
+You
+Like, I'm gonna teach you how to fish. I'm gonna teach you how to take your skills and translate them into whatever the f*** you want, right? Like the cool thing about where we are at when I talk about this paradigmatic shift is?
+
+You
+You. If you have enough curiosity enough?
+
+You
+Technical understanding and systems understanding and enough, like code, like, here's the thing. I'm not a I'm not really a software engineer, right? Like, I'm just kind of a.
+
+You
+All around technologist. I can read code, right? But like.
+
+You
+I'm not I, I like, I'm a pretty. S*****, if you ask me to like, write an app from beginning to end top to bottom. Just like by hand, I would it would be bad, like, straight up. Um, but I'm very good at a bunch of things that now, I'm able to stitch together with the glue that is AI. And that's how I want you to think about it, right? Like, do you? Yeah, so?
+
+You
+I will teach you how to do what I did, but right now, what I'm asking, I suppose, because you're going to ask me a lot of questions and I will have virtually no answers is?
+
+You
+Iterate like f*** around with it. You now, it is now. It's your turn right, like, so, Q a it or not? QA it, but like, tell me what needs to be changed. Leave notes you can enable. Let me go see where that is.
+
+You
+Uh, pop-up, all right. So, if you go to?
+
+You
+A red line.
+
+You
+You see where red line is?
+
+You
+You said yes?
+
+You
+Cool! Red light is active.
+
+You
+Do you get to edit the site and then it pushes to me? And then I Boop beep boop on my ends, and then I can push changes pretty quickly.
+
+The speaker
+Okay, um?
+
+You
+Yeah.
+
+The speaker
+That's interesting, not sure.
+
+The speaker
+And you used used a kind of a more traditional open notepad and taking notes.
+
+You
+Okay, do whatever you want.
+
+The speaker
+Um and.
+
+The speaker
+Or paper.
+
+You
+Cool, like, see what I'm doing. I'm just saying I'm embedding what's up, sorry?
+
+The speaker
+I think I, I still like to use paper, especially when I'm doing like Network diagramming.
+
+You
+Sure.
+
+The speaker
+I always prefer like paper making flow charts.
+
+
