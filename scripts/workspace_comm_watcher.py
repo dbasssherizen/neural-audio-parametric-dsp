@@ -39,6 +39,8 @@ from datetime import datetime
 from typing import Dict, Any, List, Optional, Tuple
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
+import urllib.request
+import urllib.error
 import threading
 
 # Directory Anchors
@@ -51,6 +53,10 @@ LOG_FILE = os.path.join(NOTES_DIR, "watcher_activity.log")
 EVENTS_LOG = os.path.join(NOTES_DIR, "pedagogical_events.log")
 PROCESSED_FILES_LOG = os.path.join(NOTES_DIR, "watcher_processed_files.json")
 ADB_BIN = "/Users/danielbasssherizen/Library/Android/sdk/platform-tools/adb"
+CLOUD_RUN_INGEST_URL = os.environ.get(
+    "CLOUD_RUN_INGEST_URL",
+    "https://justin-comm-watcher-75904656792.us-central1.run.app/ingest"
+)
 
 os.makedirs(NOTES_DIR, exist_ok=True)
 os.makedirs(OUTBOX_DIR, exist_ok=True)
@@ -484,6 +490,30 @@ def trigger_stage_unlock(stage_id: int, state: Dict[str, Any]) -> Dict[str, Any]
     return payload
 
 
+def forward_to_cloud_run(text: str, sender: str = "Justin Muir", channel: str = "local_watcher"):
+    """Optionally forwards ingested text to Cloud Run watcher endpoint."""
+    if not CLOUD_RUN_INGEST_URL:
+        return
+    try:
+        payload = json.dumps({
+            "text": text,
+            "sender": sender,
+            "channel": channel,
+            "timestamp": datetime.now().isoformat()
+        }).encode("utf-8")
+        req = urllib.request.Request(
+            CLOUD_RUN_INGEST_URL,
+            data=payload,
+            headers={"Content-Type": "application/json", "User-Agent": "WorkspaceCommWatcher-Bridge/1.0"},
+            method="POST"
+        )
+        with urllib.request.urlopen(req, timeout=5) as response:
+            if response.status == 200:
+                logger.debug(f"☁️ Forwarded to Cloud Run: {channel}")
+    except Exception as e:
+        logger.debug(f"Could not forward to Cloud Run: {e}")
+
+
 # ==============================================================================
 # MULTI-CHANNEL INGESTION ADAPTERS (ZERO-ADB)
 # ==============================================================================
@@ -571,6 +601,7 @@ def ingest_transcript_file(file_path: str, state: Dict[str, Any], processed_file
         for text in eval_texts:
             triggers = evaluate_readiness(text, source=f"file:{os.path.basename(file_path)}", state=state)
             total_triggers += len(triggers)
+            forward_to_cloud_run(text, sender="Justin Muir", channel=f"file:{os.path.basename(file_path)}")
 
         processed_files[file_path] = {
             "hash": file_hash,
@@ -675,6 +706,7 @@ class CommWatcherHTTPHandler(BaseHTTPRequestHandler):
 
             logger.info(f"📥 INGESTED VIA {channel.upper()}: '{text[:70]}...'")
             triggers = evaluate_readiness(text, source=channel, state=self.state_ref)
+            forward_to_cloud_run(text, sender=sender, channel=channel)
 
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
@@ -766,6 +798,7 @@ def query_opportunistic_adb_sms(state: Dict[str, Any]) -> int:
                 if msg_id > last_id and msg_type == 1 and body:
                     logger.info(f"📱 Ingested SMS via ADB (ID {msg_id}): '{body}'")
                     triggers = evaluate_readiness(body, source="adb:sms", state=state)
+                    forward_to_cloud_run(body, sender="Justin Muir", channel="adb:sms")
                     new_triggers += len(triggers)
                     if msg_id > state.get("last_processed_sms_id", 0):
                         state["last_processed_sms_id"] = msg_id

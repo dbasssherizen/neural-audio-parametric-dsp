@@ -46,3 +46,7 @@ Thumbs.db
 openwiki/
 .graphify/
 
+# Logs
+*.log
+notes/*.log
+
