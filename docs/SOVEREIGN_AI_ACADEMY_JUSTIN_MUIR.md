@@ -82,51 +82,51 @@ You are presented with a rich, interactive Terminal User Interface (TUI).
 
 ---
 
-## Pillar 4: The Gemma 4 & QAT Checkpoint Matrix (100% Private, Zero Cloud Cost)
-### 1. What is Quantization-Aware Training (QAT)?
-Standard 16-bit AI models require massive enterprise GPUs with 24GB–80GB of VRAM. 
-**Quantization-Aware Training (QAT)** trains neural weights while actively simulating 4-bit integer (INT4) mathematics.
-- **Zero Cognitive Loss**: Unlike crude post-training quantization which degrades reasoning, QAT retains full fp16 cognitive acuity.
-- **Slashing VRAM by 75%**: A 9B model that once required 18GB of VRAM runs smoothly in **~5.8GB of RAM** on consumer GPUs, Apple Silicon, or Linux mini PCs.
-- **Zero API Bills**: No OpenAI tokens, no monthly subscription fees. Runs 100% air-gapped on your LAN.
+## Pillar 4: The Gemma 4 Architecture: 12B Unified, 31B Flagship & QAT Checkpoints
+### 1. Why Gemma 4 12B is CRITICAL for Audio & Studio Engineering
+Released in mid-2026, **Gemma 4 12B Unified** is one of the most critical open-weights models ever released for audio engineers.
+- **Native Audio Input Processing**: Unlike previous models that required a separate speech-to-text pipeline (like Whisper), **12B natively ingests audio waveforms and acoustic tokens directly**. It can "hear" audio transients, evaluate distortion harmonics, and analyze frequency spectra alongside text and code!
+- **Encoder-Free Multimodal**: A unified transformer architecture processing Audio, Vision (circuit schematics, oscilloscope screenshots, front panel knobs), and Text simultaneously.
+- **The Workstation Sweet Spot**: Quantized with 4-bit QAT (`Q4_K_M`), Gemma 4 12B runs in **~7.2 GB of VRAM**. It fits comfortably on standard consumer GPUs (NVIDIA RTX 3060/4060 with 8GB–12GB) and 16GB Apple Silicon Macs.
 
-### 2. The Complete Gemma 4 & Specialized Checkpoint Catalog
+### 2. Why Gemma 4 31B is the Flagship Sovereign Architect
+Google's flagship dense open model is **Gemma 4 31B** (30.7B parameters):
+- **Configurable Thinking Modes**: Supports extended chain-of-thought test-time compute, allowing the model to deliberate deeply on complex circuit routing, multi-stage gain structures, and kernel-level audio buffer tuning.
+- **256K Context Window**: Large enough to ingest entire software repositories, multiple hardware service manuals, and days of raw pfSense firewall logs in a single prompt.
+- **VRAM Footprint**: With 4-bit QAT (`Q4_K_M`), 31B runs in **~18.5 GB VRAM**, accessible on 24GB GPUs (RTX 3090/4090) or unified-memory Mac Studios (24GB–32GB).
 
-| Model Tier | Ollama Tag | Parameter Count | Quantization (QAT) | Min VRAM / RAM | Primary Studio / NetOps Use Case |
-| :--- | :--- | :---: | :---: | :---: | :--- |
-| **Gemma 4 Edge** | `gemma:2b` | 2.6B | 4-bit QAT (`Q4_K_M`) | ~1.6 GB | Low-latency daemon telemetry, edge Pi / pfSense bridge, background jitter monitoring |
-| **Gemma 4 Studio Pro** *(Sweet Spot)* | `gemma:9b` | 9.2B | 4-bit QAT (`Q4_K_M`) | ~5.8 GB | Deep technical NetOps reasoning, multi-turn troubleshooting, audio DSP theory, sweep planning |
-| **Gemma 4 Studio High-Res** | `gemma:9b-instruct-q8_0` | 9.2B | 8-bit QAT (`Q8_0`) | ~10.2 GB | Near-FP16 mathematical fidelity for complex filter calculations, transfer curves, and impedance math |
-| **Gemma 4 Sovereign Master** | `gemma:27b` | 27.2B | 4-bit QAT (`Q4_K_M`) | ~16.5 GB | Frontier-grade coding and circuit analysis; complete system refactoring across large repos |
-| **CodeGemma Inline** | `codegemma:2b` | 2.5B | 4-bit / FP16 | ~2.0 GB | Ultra-fast inline code completion and syntax checking for Lua ReaScripts & C++ RTNeural |
-| **CodeGemma Engineer** | `codegemma:7b` | 8.5B | 4-bit QAT (`Q4_K_M`) | ~5.2 GB | Full autonomous script synthesis, Python daemon authoring, automated REAPER ReaScript generation |
-| **PaliGemma Visual Scope** | `paligemma:3b` | 2.9B | 4-bit / FP16 | ~3.4 GB | Multimodal vision: analyzing amp schematic PDFs, oscilloscope photos, front-panel knob positions |
+### 3. Complete Gemma 4 & Specialized Checkpoint Catalog
 
-### 3. Understanding the Quantization Levels
-- **Q4_K_M (4-bit QAT)**: Recommended default. Runs on almost any modern laptop or gaming PC with 6GB–8GB VRAM.
-- **Q5_K_M (5-bit QAT)**: Enhanced precision for subtle numerical nuances in DSP equations with only ~15% more RAM.
-- **Q8_0 (8-bit QAT)**: Ideal if you have 12GB+ VRAM on an NVIDIA card or 16GB+ on Mac. Bit-for-bit indistinguishable from uncompressed models.
+| Model Tier | Ollama Tag | Params | Quantization (QAT) | Min VRAM | Modalities | Primary Studio / NetOps Use Case |
+| :--- | :--- | :---: | :---: | :---: | :---: | :--- |
+| **Gemma 4 12B Unified** 🏆 *(Critical Audio)* | `gemma4:12b` | 12.2B | 4-bit QAT (`Q4_K_M`) | **~7.2 GB** | **Audio + Vision + Code** | **Direct waveform & audio transient evaluation**, Marshall Origin 50 tone analysis, circuit schematics, NetOps reasoning |
+| **Gemma 4 31B Flagship** 👑 *(Frontier Dense)* | `gemma4:31b` | 30.7B | 4-bit QAT (`Q4_K_M`) | **~18.5 GB** | **Vision + Code (256K Context)** | **Frontier thinking modes**, full multi-file autonomous repo refactoring, complete pfSense syslog forensic synthesis |
+| **Gemma 4 26B A4B MoE** ⚡ *(Sparse Speed)* | `gemma4:26b-a4b` | 26B (4B act) | 4-bit QAT (`Q4_K_M`) | **~15.0 GB** | **Text + Code (128K Context)** | High-speed routing, concurrent daemon processing at 4B latency with 26B reasoning depth |
+| **Gemma 4 E4B Studio Edge** | `gemma4:e4b` | 8.0B | 4-bit QAT (`Q4_K_M`) | **~4.8 GB** | **Audio + Vision + Text** | Lightweight edge audio/video monitoring on Proxmox VMs or mini studio PCs |
+| **Gemma 4 E2B Mobile Edge** | `gemma4:e2b` | 5.1B (2.3B act)| 4-bit QAT (`Q4_K_M`) | **~1.6 GB** | **Audio + Text** | Real-time audio buffer underrun watcher, Raspberry Pi / pfSense gateway sidecar |
+| **CodeGemma Engineer** | `codegemma:7b` | 8.5B | 4-bit QAT (`Q4_K_M`) | **~5.2 GB** | **Code + Text** | Full autonomous script synthesis: Python daemons, automated sweep orchestrators, REAPER ReaScripts |
+| **PaliGemma Visual Scope** | `paligemma:3b` | 2.9B | 4-bit / FP16 | **~3.4 GB** | **Vision + Text** | Dedicated hardware schematic PDF inspector, oscilloscope screenshots, and physical amp faceplate reading |
 
 ### 4. Running Any Gemma Checkpoint Locally
 1. Install Ollama:
    ```bash
    curl -fsSL https://ollama.ai/install.sh | sh
    ```
-2. Pull the model matching your hardware:
+2. Pull and run the model matching your hardware:
    ```bash
-   # Edge / Pi:
-   ollama run gemma:2b
+   # Studio Workstation (Premier Choice - Native Audio Input):
+   ollama run gemma4:12b
 
-   # Studio Workstation (Recommended):
-   ollama run gemma:9b
+   # Heavyweight Dense Architect (256K Context + Thinking Modes):
+   ollama run gemma4:31b
 
-   # High-Accuracy Audio DSP Math:
-   ollama run gemma:9b-instruct-q8_0
+   # Sparse MoE (26B Knowledge at 4B Speed):
+   ollama run gemma4:26b-a4b
 
-   # Heavyweight Autonomous Architect:
-   ollama run gemma:27b
+   # Edge Audio & Telemetry Daemon (<2GB VRAM):
+   ollama run gemma4:e2b
 
-   # Studio ReaScript & Python Coder:
+   # Autonomous REAPER ReaScript & Python Coder:
    ollama run codegemma:7b
 
    # Multimodal Hardware & Scope Vision:
@@ -142,15 +142,15 @@ By attaching a lightweight **Natural Language Daemon Bridge**, your infrastructu
 
 ### 2. The Multi-Model Daemon Architecture
 ```
-[pfSense / REAPER / Hardware Rig]
-             │ (syslog, pings, audio xruns)
+[pfSense / REAPER / AXE I/O Rig]
+             │ (syslog, pings, audio waveforms & xruns)
              ▼
 [Telemetry Collector & Ring Buffer]
-             │ (JSON snapshot)
+             │ (JSON snapshot + audio buffer)
              ▼
-[Local Gemma Model: 2B / 9B / 27B / CodeGemma / PaliGemma]
+[Local Gemma 4: 12B Unified (Audio) / 31B (256K Thinking) / 26B (MoE)]
              ▲
-             │ ("How did jitter behave during the 42 takes?")
+             │ ("How did jitter & audio transients behave during take 24?")
              ▼
 [Justin's Terminal / Web Interface / curl]
 ```
@@ -159,25 +159,25 @@ By attaching a lightweight **Natural Language Daemon Bridge**, your infrastructu
 The included script [`scripts/nl_daemon_bridge.py`](scripts/nl_daemon_bridge.py) supports dynamic model switching right from the CLI or REST API:
 
 ```bash
-# 1. Interactive Terminal REPL with 9B Studio Pro (Recommended):
-python3 scripts/nl_daemon_bridge.py --cli --model gemma:9b
+# 1. Interactive Terminal REPL with 12B Unified (Native Audio Enabled):
+python3 scripts/nl_daemon_bridge.py --cli --model gemma4:12b
 
-# 2. Or Run with CodeGemma for ReaScript coding:
-python3 scripts/nl_daemon_bridge.py --cli --model codegemma:7b
+# 2. Or Run with 31B Dense Flagship for deep architectural thinking:
+python3 scripts/nl_daemon_bridge.py --cli --model gemma4:31b
 
-# 3. Or Run with Ultra-Lightweight 2B on an Edge device:
-python3 scripts/nl_daemon_bridge.py --cli --model gemma:2b
+# 3. Or Run with 26B A4B MoE for high-speed concurrent processing:
+python3 scripts/nl_daemon_bridge.py --cli --model gemma4:26b-a4b
 
 # 4. In the REPL, type :models to see the full catalog or :use <model> to switch on the fly!
 ```
 
 To run it as a continuous background daemon with a REST API:
 ```bash
-python3 scripts/nl_daemon_bridge.py --server --port 5040 --model gemma:9b
+python3 scripts/nl_daemon_bridge.py --server --port 5040 --model gemma4:12b
 ```
 Endpoints:
 - Query: `curl "http://localhost:5040/ask?q=Is+network+jitter+clean?"`
-- Query with specific model: `curl "http://localhost:5040/ask?q=Write+a+REAPER+script&model=codegemma:7b"`
+- Query with specific model: `curl "http://localhost:5040/ask?q=Analyze+transients&model=gemma4:12b"`
 - Model Catalog: `curl "http://localhost:5040/models"`
 - System Status: `curl "http://localhost:5040/status"`
 
@@ -201,8 +201,32 @@ Here is your cheat sheet of battle-tested open-source repositories to explore an
 ## Your First Weekend Mission
 1. Launch **Google Colab** and run the Marshall Origin 50 notebook to train one parametric model.
 2. Go to **NotebookLM**, upload your Marshall Origin 50 schematic and AXE I/O manual, and generate a 10-minute Audio Overview.
-3. Open your terminal, run `ollama run gemma:9b`, and test asking technical questions about your rig.
-4. Launch `python3 scripts/nl_daemon_bridge.py --cli --model gemma:9b` and chat with your live network telemetry.
+3. Pull **Gemma 4 12B Unified** locally (`ollama run gemma4:12b`) to test native audio and technical reasoning.
+4. Launch `python3 scripts/nl_daemon_bridge.py --cli --model gemma4:12b` and chat with your live network and audio telemetry.
 
 You've got the rig. You've got the ears. Now you've got the keys to the engine room.
 🎣 **Tight lines, Justin.**
+
+
+---
+
+## 🔒 Advanced Track (Unlock When Ready): Structured Schemas (JSON, YAML, BAML)
+*Note: Do not worry about this section on Day 1. Focus on your first Colab run and NotebookLM Audio Overview first! When you find yourself wanting to automate your session logs, feed data between scripts, or configure Proxmox daemons, come back to this section.*
+
+### 1. JSON (The Universal Machine Wire)
+* **What It Is**: The universal format machines use to exchange live state. In your studio, every `.nam` model contains a `config.json` listing knob names, sample rates, and training loss.
+* **Why You Care**: When our Python daemon or web app reports `xruns: 0`, it speaks JSON. Any script in Python, C++, or JavaScript can parse it with one line.
+* **Inspect It**: Open `web/data.json` to see how your 42 takes are stored.
+
+### 2. YAML (Declarative NetOps Configuration)
+* **What It Is**: Human-readable data formatting that relies on clean indentation instead of curly braces.
+* **Why You Care**: All modern NetOps tools (Proxmox cloud-init, Docker Compose, pfSense automation, GitHub Actions) use YAML. It reads like a clean studio patch sheet.
+
+### 3. BAML (Type-Safe AI Prompt Schemas)
+* **What It Is**: *Boundary's Almost Markdown Language*.
+* **The Superpower**: Standard LLMs give messy paragraph responses when you just want numbers. BAML forces local models (like Gemma 4 12B) to return **100% typed, valid data** with zero formatting hallucinations.
+* **Runnable Demonstration Script**:
+  ```bash
+  python3 scripts/demo_structured_schemas.py
+  ```
+  Run this anytime to see side-by-side examples of JSON, YAML, and BAML generated from your Marshall Origin 50 knob data.
