@@ -283,7 +283,19 @@
 
         <!-- Quick Launch Action Tools inside Hero -->
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:flex lg:flex-wrap items-center gap-2 shrink-0 w-full lg:w-auto">
-          <button id="btnOpenAI" class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl font-bold text-xs bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-indigo-500 hover:to-purple-500 text-white flex items-center justify-center gap-2 shadow-lg shadow-indigo-600/30 transition active:scale-95 border border-indigo-400/40 cursor-pointer">
+          <button onclick="switchStudioWorkspace('workspace-mermaid')" class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-600/30 transition active:scale-95 text-center cursor-pointer border border-emerald-400/40">
+            <span>📐</span>
+            <span>Mermaid Studio ↗</span>
+          </button>
+          <button onclick="switchStudioWorkspace('workspace-academy')" class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl bg-gradient-to-r from-emerald-600 via-indigo-600 to-purple-600 hover:from-emerald-500 hover:to-purple-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-indigo-600/30 transition active:scale-95 text-center cursor-pointer border border-indigo-400/40">
+            <span>🎣</span>
+            <span>AI Academy ↗</span>
+          </button>
+          <button onclick="openJustinVoiceMirror()" class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl bg-gradient-to-r from-purple-700 via-indigo-700 to-blue-700 hover:from-purple-600 hover:to-blue-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-purple-600/30 transition active:scale-95 text-center cursor-pointer border border-purple-400/40">
+            <span>🎙️</span>
+            <span>Voice Mirror &amp; ELI5 ↗</span>
+          </button>
+          <button id="btnOpenAI" class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl font-bold text-xs bg-slate-900/90 hover:bg-slate-800 text-indigo-300 border border-indigo-500/40 flex items-center justify-center gap-1.5 shadow backdrop-blur-md transition active:scale-95 cursor-pointer">
             <span class="text-sm">🤖</span>
             <span>Audio AI Co-Pilot</span>
           </button>
@@ -377,29 +389,34 @@
     </header>
 
     <!-- STUDIO SEGMENTED WORKSPACE CONTROLLER (STICKY RAIL) -->
-    <nav id="studioWorkspaceNav" class="sticky top-2 z-30 bg-slate-950/95 backdrop-blur-md border border-slate-800 rounded-2xl p-1.5 sm:p-2 shadow-2xl flex items-center justify-between gap-2 overflow-x-auto scrollbar-none">
-      <div class="flex items-center gap-1 sm:gap-1.5 shrink-0 flex-nowrap">
-        <button onclick="switchStudioWorkspace('workspace-amp')" id="tab-btn-amp" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 whitespace-nowrap shrink-0">
+    <nav id="studioWorkspaceNav" class="sticky top-2 z-30 bg-slate-950/95 backdrop-blur-md border border-slate-800 rounded-2xl p-2 sm:p-2.5 shadow-2xl flex items-center justify-between gap-2 overflow-hidden">
+      <!-- Scrollable Tabs Rail (Smooth Horizontal Scrolling Across Any Device / Aspect Ratio) -->
+      <div class="flex items-center gap-1 sm:gap-1.5 flex-1 min-w-0 overflow-x-auto scrollbar-none py-0.5">
+        <button onclick="switchStudioWorkspace('workspace-amp')" id="tab-btn-amp" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 whitespace-nowrap shrink-0 cursor-pointer">
           <span>🎸</span> <span>1. Amp Studio</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-rig')" id="tab-btn-rig" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0">
+        <button onclick="switchStudioWorkspace('workspace-rig')" id="tab-btn-rig" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0 cursor-pointer">
           <span>🎛️</span> <span>2. Physical Rig</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-tracking')" id="tab-btn-tracking" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0">
+        <button onclick="switchStudioWorkspace('workspace-tracking')" id="tab-btn-tracking" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0 cursor-pointer">
           <span>⚡</span> <span>3. Tracking &amp; Re-Amp</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-cloud')" id="tab-btn-cloud" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0">
+        <button onclick="switchStudioWorkspace('workspace-cloud')" id="tab-btn-cloud" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0 cursor-pointer">
           <span>☁️</span> <span>4. Cloud GPU</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-codewiki')" id="tab-btn-codewiki" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0">
+        <button onclick="switchStudioWorkspace('workspace-codewiki')" id="tab-btn-codewiki" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0 cursor-pointer">
           <span>📖</span> <span>5. Automation &amp; Code Guide</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-academy')" id="tab-btn-academy" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-emerald-400 hover:text-emerald-200 border border-emerald-500/40 whitespace-nowrap shrink-0">
+        <button onclick="switchStudioWorkspace('workspace-academy')" id="tab-btn-academy" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-emerald-400 hover:text-emerald-200 border border-emerald-500/40 whitespace-nowrap shrink-0 cursor-pointer">
           <span>🎣</span> <span>6. Sovereign AI Academy</span>
+        </button>
+        <button onclick="switchStudioWorkspace('workspace-mermaid')" id="tab-btn-mermaid" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-teal-400 hover:text-teal-200 border border-teal-500/40 whitespace-nowrap shrink-0 cursor-pointer">
+          <span>📐</span> <span>7. Mermaid Studio</span>
         </button>
       </div>
 
-      <div class="hidden lg:flex items-center gap-2 pr-1 shrink-0 text-[10px] font-mono">
+      <!-- Right Telemetry Badge (XL >= 1280px Only to Guarantee Zero Tab Squish / Collision) -->
+      <div class="hidden xl:flex items-center gap-2 pr-1 shrink-0 text-[10px] font-mono">
         <span class="text-slate-500 uppercase tracking-wider">HUD:</span>
         <span id="hudKnobBadge" class="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-2 py-0.5 rounded-full font-bold">8 Knobs Active (Origin 50)</span>
         <span class="bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 px-2 py-0.5 rounded-full font-bold">0.0 Egress</span>
@@ -3966,55 +3983,121 @@ files.download("./marshall_origin50.param.nam")</code></pre>
         </div>
       </div>
 
-      <!-- LAB 8: VISUAL ARCHITECTURE & INTERACTIVE MERMAID STUDIO ("DIAGRAMS IN CODE") -->
-      <div id="lab-mermaid-studio" class="bg-slate-900/90 border border-emerald-500/30 rounded-3xl p-6 sm:p-8 space-y-6">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-lg font-bold">8</div>
+      <!-- LAB 8 & 9: VISUAL ARCHITECTURE & DEDICATED MERMAID STUDIO SHOWCASE -->
+      <div class="bg-gradient-to-br from-slate-900 via-teal-950/30 to-slate-900 border border-teal-500/40 rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-5">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 text-xl font-bold">8</div>
             <div>
-              <h3 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
-                <span>Visual Architecture &amp; Interactive Mermaid Studio</span>
-                <span class="text-[10px] font-mono uppercase bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 px-2 py-0.5 rounded-full">Interactive Visuals Hub</span>
-              </h3>
-              <p class="text-xs text-slate-400">Justin's native flowcharts in code: dual-pane live diagram editor, studio presets, netops topology, and instant SVG/Markdown export.</p>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-base sm:text-lg font-bold text-white">Visual Architecture, Mermaid Studio &amp; ELI5 Voice Mirror</h3>
+                <span class="text-[10px] font-mono uppercase bg-teal-500/10 text-teal-300 border border-teal-500/30 px-2 py-0.5 rounded-full">Dedicated Workspace 7</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-0.5">Justin's full dual-pane flowchart engine, instant SVG generator, and 4-tier cognitive explainer dial.</p>
             </div>
           </div>
-          <div class="flex items-center gap-2 flex-wrap">
-            <button type="button" onclick="copyMermaidSVG()" class="px-3 py-1.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-mono text-xs font-bold transition flex items-center gap-1.5 shrink-0 cursor-pointer">
-              <span>🖼️</span> Copy SVG
+          <div class="flex items-center gap-2 shrink-0 flex-wrap">
+            <button onclick="switchStudioWorkspace('workspace-mermaid')" class="px-4 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-teal-600/30 transition active:scale-95 cursor-pointer">
+              <span>📐</span>
+              <span>Open Dedicated Mermaid Studio ↗</span>
             </button>
-            <button type="button" onclick="downloadMermaidSVG()" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 font-mono text-xs font-bold transition flex items-center gap-1.5 shrink-0 cursor-pointer">
-              <span>⬇️</span> Download SVG
+            <button onclick="openJustinVoiceMirror()" class="px-3.5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-indigo-600/30 transition active:scale-95 cursor-pointer">
+              <span>🎙️</span>
+              <span>Voice Mirror &amp; ELI5 ↗</span>
             </button>
           </div>
         </div>
 
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 text-xs font-mono">
+          <button type="button" onclick="switchStudioWorkspace('workspace-mermaid'); loadMermaidPreset('reamp')" class="p-3 rounded-2xl bg-slate-950/80 hover:bg-slate-900 border border-slate-800 hover:border-teal-500/40 text-left transition cursor-pointer flex flex-col gap-1">
+            <span class="text-teal-300 font-bold text-sm">🎛️ Re-Amp Chain</span>
+            <span class="text-[11px] text-slate-400 font-sans">AXE I/O &bull; Redeye &bull; Loadbox</span>
+          </button>
+          <button type="button" onclick="switchStudioWorkspace('workspace-mermaid'); loadMermaidPreset('netops')" class="p-3 rounded-2xl bg-slate-950/80 hover:bg-slate-900 border border-slate-800 hover:border-teal-500/40 text-left transition cursor-pointer flex flex-col gap-1">
+            <span class="text-sky-300 font-bold text-sm">🛡️ NetOps pfSense</span>
+            <span class="text-[11px] text-slate-400 font-sans">VLAN 10 &bull; Proxmox &bull; Firewall</span>
+          </button>
+          <button type="button" onclick="switchStudioWorkspace('workspace-mermaid'); loadMermaidPreset('reaper')" class="p-3 rounded-2xl bg-slate-950/80 hover:bg-slate-900 border border-slate-800 hover:border-teal-500/40 text-left transition cursor-pointer flex flex-col gap-1">
+            <span class="text-purple-300 font-bold text-sm">⚡ REAPER Sequence</span>
+            <span class="text-[11px] text-slate-400 font-sans">Lua &bull; ASIO &bull; nl_daemon</span>
+          </button>
+          <button type="button" onclick="switchStudioWorkspace('workspace-mermaid'); loadMermaidPreset('catmlp')" class="p-3 rounded-2xl bg-slate-950/80 hover:bg-slate-900 border border-slate-800 hover:border-teal-500/40 text-left transition cursor-pointer flex flex-col gap-1">
+            <span class="text-amber-300 font-bold text-sm">🧠 CatMLP DSP</span>
+            <span class="text-[11px] text-slate-400 font-sans">Knobs &bull; FiLM &bull; DilatedConv</span>
+          </button>
+          <button type="button" onclick="switchStudioWorkspace('workspace-mermaid'); loadMermaidPreset('learnlm')" class="p-3 rounded-2xl bg-slate-950/80 hover:bg-slate-900 border border-slate-800 hover:border-teal-500/40 text-left transition cursor-pointer flex flex-col gap-1 col-span-2 sm:col-span-1">
+            <span class="text-emerald-300 font-bold text-sm">📈 LearnLM Stages</span>
+            <span class="text-[11px] text-slate-400 font-sans">Stage 1 to 7 Progression</span>
+          </button>
+        </div>
+      </div>
+</div>
+
+    </div>
+    <!-- /workspace-academy -->
+
+    <!-- WORKSPACE 7: VISUAL ARCHITECTURE, MERMAID STUDIO & ELI5 COGNITIVE EXPLAINER DIAL -->
+    <div id="workspace-mermaid" class="studio-workspace space-y-6 hidden" data-redline-target="Mermaid Studio Workspace">
+
+      <!-- MASTER WORKSPACE 7 HEADER -->
+      <div class="bg-gradient-to-r from-slate-900 via-teal-950/40 to-slate-900 border border-teal-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl relative">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div class="space-y-2">
+            <div class="flex items-center gap-2.5 flex-wrap">
+              <span class="text-xs font-mono font-bold uppercase tracking-wider text-teal-300 bg-teal-500/10 border border-teal-500/30 px-3 py-1 rounded-full">Workspace 7 • Visual System</span>
+              <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-0.5 rounded-full">Mermaid.js 10.x Native</span>
+              <span class="text-xs font-mono text-indigo-300 bg-indigo-500/10 border border-indigo-500/30 px-2.5 py-0.5 rounded-full">ELI5 Multi-Level Transpiler</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center gap-3">
+              <span>📐 Visual Architecture &amp; Interactive Mermaid Studio</span>
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
+              Justin's live diagram compiler and cognitive explainer: edit flowcharts in Markdown code, inspect live vector SVGs, export architecture blueprints, or turn the <strong>ELI5 Dial</strong> to unpack high-dimensional AI through vacuum tube bias and studio patchbays.
+            </p>
+          </div>
+
+          <div class="flex items-center gap-2 flex-wrap shrink-0">
+            <button type="button" onclick="switchStudioWorkspace('workspace-academy')" class="px-3.5 py-2 rounded-xl bg-slate-950 hover:bg-slate-900 text-emerald-300 border border-emerald-500/40 text-xs font-mono font-bold transition flex items-center gap-1.5 cursor-pointer">
+              <span>🎣</span> <span>Back to Academy</span>
+            </button>
+            <button type="button" onclick="copyMermaidSVG()" class="px-3.5 py-2 rounded-xl bg-teal-500/10 hover:bg-teal-500/20 text-teal-300 border border-teal-500/40 text-xs font-mono font-bold transition flex items-center gap-1.5 cursor-pointer">
+              <span>🖼️</span> <span>Copy SVG</span>
+            </button>
+            <button type="button" onclick="downloadMermaidSVG()" class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-mono font-bold transition flex items-center gap-1.5 cursor-pointer">
+              <span>⬇️</span> <span>Download SVG</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- LAB 8: DUAL-PANE LIVE MERMAID STUDIO -->
+      <div id="lab-mermaid-studio" class="bg-slate-900/90 border border-teal-500/30 rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl">
         <!-- Presets Selection Bar -->
         <div class="space-y-3">
           <div class="flex items-center justify-between flex-wrap gap-2">
             <span class="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
               <span>📐</span> Select Studio &amp; Architecture Blueprint:
             </span>
-            <span class="text-[11px] text-slate-500 font-mono hidden sm:inline" id="mermaidActivePresetBadge">Preset: Re-Amp Signal Chain</span>
+            <span class="text-[11px] text-teal-400 font-mono" id="mermaidActivePresetBadge">Preset: Re-Amp Signal Chain</span>
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 text-xs font-mono">
-            <button type="button" onclick="loadMermaidPreset('reamp')" id="btn-preset-reamp" class="px-3 py-2 rounded-xl font-bold bg-emerald-600 text-white shadow-lg shadow-emerald-950 transition cursor-pointer text-left flex flex-col gap-0.5">
+            <button type="button" onclick="loadMermaidPreset('reamp')" id="btn-preset-reamp" class="px-3 py-2.5 rounded-xl font-bold bg-teal-600 text-white shadow-lg shadow-teal-950 transition cursor-pointer text-left flex flex-col gap-0.5">
               <span class="text-sm">🎛️ Re-Amp Chain</span>
-              <span class="text-[10px] text-emerald-200 font-sans font-normal">AXE I/O &bull; Redeye &bull; Loadbox</span>
+              <span class="text-[10px] text-teal-200 font-sans font-normal">AXE I/O • Redeye • Loadbox</span>
             </button>
-            <button type="button" onclick="loadMermaidPreset('netops')" id="btn-preset-netops" class="px-3 py-2 rounded-xl text-slate-400 hover:text-white bg-slate-950 border border-slate-800 transition cursor-pointer text-left flex flex-col gap-0.5">
+            <button type="button" onclick="loadMermaidPreset('netops')" id="btn-preset-netops" class="px-3 py-2.5 rounded-xl text-slate-400 hover:text-white bg-slate-950 border border-slate-800 transition cursor-pointer text-left flex flex-col gap-0.5">
               <span class="text-sm">🛡️ NetOps pfSense</span>
-              <span class="text-[10px] text-slate-500 font-sans font-normal">VLAN 10 Audio &bull; Proxmox</span>
+              <span class="text-[10px] text-slate-500 font-sans font-normal">VLAN 10 Audio • Proxmox</span>
             </button>
-            <button type="button" onclick="loadMermaidPreset('reaper')" id="btn-preset-reaper" class="px-3 py-2 rounded-xl text-slate-400 hover:text-white bg-slate-950 border border-slate-800 transition cursor-pointer text-left flex flex-col gap-0.5">
+            <button type="button" onclick="loadMermaidPreset('reaper')" id="btn-preset-reaper" class="px-3 py-2.5 rounded-xl text-slate-400 hover:text-white bg-slate-950 border border-slate-800 transition cursor-pointer text-left flex flex-col gap-0.5">
               <span class="text-sm">⚡ REAPER Sequence</span>
-              <span class="text-[10px] text-slate-500 font-sans font-normal">Lua &bull; ASIO &bull; nl_daemon</span>
+              <span class="text-[10px] text-slate-500 font-sans font-normal">Lua • ASIO • nl_daemon</span>
             </button>
-            <button type="button" onclick="loadMermaidPreset('catmlp')" id="btn-preset-catmlp" class="px-3 py-2 rounded-xl text-slate-400 hover:text-white bg-slate-950 border border-slate-800 transition cursor-pointer text-left flex flex-col gap-0.5">
+            <button type="button" onclick="loadMermaidPreset('catmlp')" id="btn-preset-catmlp" class="px-3 py-2.5 rounded-xl text-slate-400 hover:text-white bg-slate-950 border border-slate-800 transition cursor-pointer text-left flex flex-col gap-0.5">
               <span class="text-sm">🧠 CatMLP DSP</span>
-              <span class="text-[10px] text-slate-500 font-sans font-normal">Knobs &bull; FiLM &bull; DilatedConv</span>
+              <span class="text-[10px] text-slate-500 font-sans font-normal">Knobs • FiLM • DilatedConv</span>
             </button>
-            <button type="button" onclick="loadMermaidPreset('learnlm')" id="btn-preset-learnlm" class="px-3 py-2 rounded-xl text-slate-400 hover:text-white bg-slate-950 border border-slate-800 transition cursor-pointer text-left flex flex-col gap-0.5 col-span-2 sm:col-span-1">
+            <button type="button" onclick="loadMermaidPreset('learnlm')" id="btn-preset-learnlm" class="px-3 py-2.5 rounded-xl text-slate-400 hover:text-white bg-slate-950 border border-slate-800 transition cursor-pointer text-left flex flex-col gap-0.5 col-span-2 sm:col-span-1">
               <span class="text-sm">📈 LearnLM Stages</span>
               <span class="text-[10px] text-slate-500 font-sans font-normal">Stage 1 to 7 Progression</span>
             </button>
@@ -4032,7 +4115,7 @@ files.download("./marshall_origin50.param.nam")</code></pre>
               </span>
               <div class="flex items-center gap-1 text-[10px] font-mono text-slate-400">
                 <span id="mermaidLineCount">0 lines</span>
-                <span>&bull;</span>
+                <span>•</span>
                 <span id="mermaidStatusBadge" class="text-emerald-400">Valid</span>
               </div>
             </div>
@@ -4048,14 +4131,14 @@ files.download("./marshall_origin50.param.nam")</code></pre>
             </div>
 
             <div class="relative rounded-2xl border border-slate-800 bg-slate-950 overflow-hidden shadow-inner">
-              <textarea id="mermaidEditorTextarea" oninput="handleMermaidEditorInput()" spellcheck="false" class="w-full h-80 sm:h-96 p-4 bg-slate-950 text-cyan-300 font-mono text-xs leading-relaxed focus:outline-none focus:ring-1 focus:ring-emerald-500/50 resize-y" placeholder="Type or paste Mermaid diagram syntax here..."></textarea>
+              <textarea id="mermaidEditorTextarea" oninput="handleMermaidEditorInput()" spellcheck="false" class="w-full h-80 sm:h-96 p-4 bg-slate-950 text-cyan-300 font-mono text-xs leading-relaxed focus:outline-none focus:ring-1 focus:ring-teal-500/50 resize-y" placeholder="Type or paste Mermaid diagram syntax here..."></textarea>
             </div>
 
             <div class="flex items-center justify-between text-[11px] text-slate-400 pt-1">
-              <button type="button" onclick="copyMermaidEditorCode()" class="text-emerald-400 hover:underline flex items-center gap-1 cursor-pointer">
+              <button type="button" onclick="copyMermaidEditorCode()" class="text-teal-400 hover:underline flex items-center gap-1 cursor-pointer">
                 <span>📋 Copy Diagram Markdown</span>
               </button>
-              <span class="text-slate-500">Autosaves in live memory</span>
+              <span class="text-slate-500 font-mono text-[10px]">Autosaves in live memory</span>
             </div>
 
             <div id="mermaidEditorError" class="hidden p-3 rounded-xl bg-rose-950/80 border border-rose-500/50 text-[11px] font-mono text-rose-200">
@@ -4089,89 +4172,106 @@ files.download("./marshall_origin50.param.nam")</code></pre>
             </div>
 
             <div class="flex items-center justify-between text-[11px] text-slate-500 font-mono px-1">
-              <span>Engine: Mermaid.js 10.x &bull; Theme: Sovereign Dark</span>
+              <span>Engine: Mermaid.js 10.x • Theme: Sovereign Dark</span>
               <span>Vector Scalable (SVG)</span>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- JUSTIN'S AI VOICE MIRROR & COGNITIVE TRANSPILER CARD -->
-        <div id="lab-justin-mirror" class="mt-8 bg-slate-950 p-6 sm:p-7 rounded-2xl border border-indigo-500/40 space-y-5">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-lg font-bold">🎙️</div>
-              <div>
-                <h4 class="text-sm sm:text-base font-bold text-white flex items-center gap-2">
-                  <span>Justin's AI Stylometric Voice Mirror</span>
-                  <span class="text-[10px] font-mono uppercase bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 px-2 py-0.5 rounded-full">Call Corpus Clone</span>
-                </h4>
-                <p class="text-xs text-slate-400">Extracted from 149 call utterances (1,395 audited words): Justin's twin brother in the control room teaching AI in his own cadence, humor, and hardware mental models.</p>
+      <!-- JUSTIN'S AI VOICE MIRROR & ELI5 COGNITIVE EXPLAINER DIAL -->
+      <div id="lab-justin-mirror" class="bg-slate-950 p-6 sm:p-8 rounded-3xl border border-indigo-500/40 space-y-6 shadow-2xl">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-800 pb-5">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-2xl font-bold">🎙️</div>
+            <div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h4 class="text-base sm:text-lg font-bold text-white">Justin's AI Stylometric Voice Mirror &amp; ELI5 Explainer</h4>
+                <span class="text-[10px] font-mono uppercase bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 px-2 py-0.5 rounded-full">4-Level Cognitive Dial</span>
               </div>
-            </div>
-
-            <!-- Voice Persona Switcher -->
-            <div class="flex items-center gap-1.5 bg-slate-900 p-1 rounded-xl border border-slate-800 font-mono text-xs shrink-0">
-              <button type="button" onclick="switchVoicePersona('justin')" id="btn-voice-justin" class="px-3 py-1.5 rounded-lg font-bold bg-indigo-600 text-white shadow transition cursor-pointer flex items-center gap-1.5">
-                <span>🎙️</span> Justin's Voice Mirror
-              </button>
-              <button type="button" onclick="switchVoicePersona('conductor')" id="btn-voice-conductor" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition cursor-pointer flex items-center gap-1.5">
-                <span>🎓</span> Conductor (Academic)
-              </button>
+              <p class="text-xs text-slate-400 mt-0.5">Audited from 149 call turns (1,395 verified words) + ELI5 physical gear analogies: Justin teaches Justin AI concepts in his own tone or via patchbay metaphors.</p>
             </div>
           </div>
 
-          <!-- Suggested Prompt Chips in Justin's Domain -->
-          <div class="space-y-2">
-            <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-              <span>💡</span> Click a question to test Justin's AI Mirror:
-            </div>
-            <div class="flex flex-wrap gap-2 text-xs">
-              <button type="button" onclick="askJustinVoiceMirror('baml_patchbay')" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-cyan-500/30 transition text-left cursor-pointer flex items-center gap-1.5">
-                <span>🎸</span> Explain BAML like wiring a patchbay
-              </button>
-              <button type="button" onclick="askJustinVoiceMirror('catmlp_nam')" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-indigo-300 border border-indigo-500/30 transition text-left cursor-pointer flex items-center gap-1.5">
-                <span>🎛️</span> Why CatMLP instead of 50 separate NAMs?
-              </button>
-              <button type="button" onclick="askJustinVoiceMirror('asio_underrun')" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-300 border border-amber-500/30 transition text-left cursor-pointer flex items-center gap-1.5">
-                <span>⚡</span> ASIO underrun vs LLM context overflow
-              </button>
-              <button type="button" onclick="askJustinVoiceMirror('pfsense_vlan')" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-emerald-500/30 transition text-left cursor-pointer flex items-center gap-1.5">
-                <span>🛡️</span> pfSense VLANs as studio audio buses
-              </button>
-              <button type="button" onclick="askJustinVoiceMirror('python_vs_reaper')" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-rose-300 border border-rose-500/30 transition text-left cursor-pointer flex items-center gap-1.5">
-                <span>🐍</span> Why Python scripts beat REAPER plugins
-              </button>
-            </div>
-          </div>
-
-          <!-- Freeform Question Input -->
-          <div class="flex gap-2">
-            <input type="text" id="justinMirrorInput" onkeydown="if(event.key==='Enter') submitJustinMirrorQuestion()" placeholder="Ask Justin's clone anything about AI, GPUs, tube heads, or networking..." class="flex-1 bg-slate-900 border border-slate-800 focus:border-indigo-500 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none transition">
-            <button type="button" onclick="submitJustinMirrorQuestion()" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs shadow-lg transition active:scale-95 cursor-pointer flex items-center gap-1.5 shrink-0">
-              <span>Ask Justin's Clone</span> <span>↗</span>
+          <!-- 4-Level Cognitive Explainer Dial Switcher -->
+          <div class="flex items-center gap-1 bg-slate-900 p-1.5 rounded-2xl border border-slate-800 font-mono text-xs flex-wrap sm:flex-nowrap shrink-0">
+            <button type="button" onclick="switchVoicePersona('eli5')" id="btn-voice-eli5" class="px-2.5 py-1.5 rounded-xl text-amber-300 hover:text-white bg-slate-950 border border-slate-800 transition cursor-pointer flex items-center gap-1 text-[11px]" title="Level 1: Physical Solder & Patchbay Hardware Analogy (Zero Jargon)">
+              <span>👶</span> <span>1. ELI5 Gear</span>
             </button>
-          </div>
-
-          <!-- Response Container -->
-          <div id="justinMirrorResponseCard" class="p-4 sm:p-5 rounded-xl bg-slate-900/90 border border-indigo-500/30 space-y-3">
-            <div class="flex items-center justify-between text-xs">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span class="font-bold text-indigo-300" id="mirrorSpeakerLabel">Justin Muir (AI Voice Clone)</span>
-                <span class="text-[10px] text-slate-500 font-mono" id="mirrorCadenceLabel">Cadence: 9.36 w/turn &bull; Dry Midwestern Realism</span>
-              </div>
-              <button type="button" onclick="copyMirrorResponse()" class="text-[10px] font-mono text-indigo-400 hover:text-white transition cursor-pointer">Copy Answer</button>
-            </div>
-            <div class="text-xs text-slate-200 leading-relaxed font-sans space-y-2" id="justinMirrorResponseText">
-              All right, so look. You know how when you patch an AXE I/O line out into a Little Labs Redeye, the whole point of that box is transformer isolation and impedance matching so you don't send phantom power back into an input and fry your converters? BAML is literally the Redeye 3D box for Chatty GPT. It compiles a native Rust boundary that guarantees your LLM outputs exact enums with zero syntax crashes.
-            </div>
+            <button type="button" onclick="switchVoicePersona('justin')" id="btn-voice-justin" class="px-2.5 py-1.5 rounded-xl font-bold bg-indigo-600 text-white shadow transition cursor-pointer flex items-center gap-1 text-[11px]" title="Level 2: Justin's Authentic Midwestern Hacker Voice">
+              <span>🎙️</span> <span>2. Justin's Mirror</span>
+            </button>
+            <button type="button" onclick="switchVoicePersona('code')" id="btn-voice-code" class="px-2.5 py-1.5 rounded-xl text-sky-300 hover:text-white bg-slate-950 border border-slate-800 transition cursor-pointer flex items-center gap-1 text-[11px]" title="Level 3: Executable Python & BAML Code">
+              <span>💻</span> <span>3. Python / BAML</span>
+            </button>
+            <button type="button" onclick="switchVoicePersona('conductor')" id="btn-voice-conductor" class="px-2.5 py-1.5 rounded-xl text-purple-300 hover:text-white bg-slate-950 border border-slate-800 transition cursor-pointer flex items-center gap-1 text-[11px]" title="Level 4: Rigorous WaveNet Dilated Convolutions & PyTorch Math">
+              <span>🎓</span> <span>4. Tensor Math</span>
+            </button>
           </div>
         </div>
 
+        <!-- Topic Buttons Grid (8 Core Audio AI Concepts) -->
+        <div class="space-y-2">
+          <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+            <span>⚡</span> <span>Instant Cognitive Translations (Click to Switch Topic):</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 text-xs font-mono">
+            <button type="button" onclick="askJustinVoiceMirror('attention_mixer')" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-300 border border-amber-500/30 transition text-left cursor-pointer flex items-center gap-2">
+              <span>🎛️</span> <span>Attention Fader Automation</span>
+            </button>
+            <button type="button" onclick="askJustinVoiceMirror('lora_pedal')" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-indigo-300 border border-indigo-500/30 transition text-left cursor-pointer flex items-center gap-2">
+              <span>⚡</span> <span>LoRA Overdrive Stompbox</span>
+            </button>
+            <button type="button" onclick="askJustinVoiceMirror('embeddings_patchbay')" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-sky-300 border border-sky-500/30 transition text-left cursor-pointer flex items-center gap-2">
+              <span>🔌</span> <span>Embeddings Patchbay Grid</span>
+            </button>
+            <button type="button" onclick="askJustinVoiceMirror('temperature_bias')" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-rose-300 border border-rose-500/30 transition text-left cursor-pointer flex items-center gap-2">
+              <span>🔥</span> <span>Temperature Tube Plate Bias</span>
+            </button>
+            <button type="button" onclick="askJustinVoiceMirror('baml_patchbay')" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-cyan-500/30 transition text-left cursor-pointer flex items-center gap-2">
+              <span>📦</span> <span>BAML Redeye Isolation</span>
+            </button>
+            <button type="button" onclick="askJustinVoiceMirror('catmlp_nam')" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-purple-300 border border-purple-500/30 transition text-left cursor-pointer flex items-center gap-2">
+              <span>🎛️</span> <span>CatMLP Potentiometers</span>
+            </button>
+            <button type="button" onclick="askJustinVoiceMirror('pfsense_vlan')" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-emerald-500/30 transition text-left cursor-pointer flex items-center gap-2">
+              <span>🛡️</span> <span>pfSense VLAN Audio Buses</span>
+            </button>
+            <button type="button" onclick="askJustinVoiceMirror('python_vs_reaper')" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-teal-300 border border-teal-500/30 transition text-left cursor-pointer flex items-center gap-2">
+              <span>🐍</span> <span>Python vs REAPER Lua</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Freeform Question Input -->
+        <div class="flex gap-2">
+          <input type="text" id="justinMirrorInput" onkeydown="if(event.key==='Enter') submitJustinMirrorQuestion()" placeholder="Ask Justin's clone or ELI5 anything about AI, GPUs, tube heads, or networking..." class="flex-1 bg-slate-900 border border-slate-800 focus:border-indigo-500 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none transition">
+          <button type="button" onclick="submitJustinMirrorQuestion()" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs shadow-lg transition active:scale-95 cursor-pointer flex items-center gap-1.5 shrink-0">
+            <span>Transpile</span> <span>↗</span>
+          </button>
+        </div>
+
+        <!-- Response Container -->
+        <div id="justinMirrorResponseCard" class="p-5 rounded-2xl bg-slate-900/90 border border-indigo-500/40 space-y-3.5 transition-all">
+          <div class="flex items-center justify-between text-xs flex-wrap gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="font-bold text-indigo-300" id="mirrorSpeakerLabel">Justin Muir (AI Voice Clone)</span>
+              <span class="text-[10px] text-slate-500 font-mono" id="mirrorCadenceLabel">Level 2 • 9.36 w/turn • Dry Midwestern Realism</span>
+            </div>
+            <button type="button" onclick="copyMirrorResponse()" class="text-[10px] font-mono text-indigo-400 hover:text-white transition cursor-pointer">Copy Answer</button>
+          </div>
+          <div class="text-xs text-slate-200 leading-relaxed font-sans space-y-2 whitespace-pre-wrap" id="justinMirrorResponseText">All right, so look. You know how when you patch an AXE I/O line out into a Little Labs Redeye, the whole point of that box is transformer isolation and impedance matching so you don't send phantom power back into an input and fry your converters?
+
+BAML is literally the Redeye 3D box for Chatty GPT.
+
+When you ask a raw LLM to write JSON, it's like sending raw high-impedance guitar signal down 50 feet of cheap unshielded copper — half the time a missing curly bracket grounds out and crashes your Python script. BAML compiles a native Rust boundary that guarantees your LLM outputs exact enums with zero syntax crashes.</div>
+        </div>
       </div>
 
     </div>
-    <!-- /workspace-academy -->
+    <!-- /workspace-mermaid -->
+
 
   <!-- /max-w-7xl master container -->
   <!-- MOBILE BOTTOM WORKSPACE NAVIGATION (Phones & Tablets < 768px) -->
@@ -4199,6 +4299,10 @@ files.download("./marshall_origin50.param.nam")</code></pre>
     <button onclick="switchStudioWorkspace('workspace-academy')" class="mobile-nav-btn flex flex-col items-center gap-1 text-[10px] font-bold text-slate-400" id="mob-tab-academy">
       <span class="text-base">🎣</span>
       <span>Academy</span>
+    </button>
+    <button onclick="switchStudioWorkspace('workspace-mermaid')" class="mobile-nav-btn flex flex-col items-center gap-1 text-[10px] font-bold text-slate-400" id="mob-tab-mermaid">
+      <span class="text-base">📐</span>
+      <span>Diagrams</span>
     </button>
   </div>
 
@@ -6890,6 +6994,7 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
     function switchStudioWorkspace(workspaceId) {
       if (workspaceId === 'workspace-codewiki') setTimeout(renderMermaidDiagrams, 80);
       if (workspaceId === 'workspace-academy') setTimeout(initMermaidStudio, 80);
+      if (workspaceId === 'workspace-mermaid') setTimeout(initMermaidStudio, 80);
       activeStudioWorkspace = workspaceId;
 
       if (currentViewMode === 'tabs') {
@@ -6909,7 +7014,8 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
         'workspace-tracking': 'tab-btn-tracking',
         'workspace-cloud': 'tab-btn-cloud',
         'workspace-codewiki': 'tab-btn-codewiki',
-        'workspace-academy': 'tab-btn-academy'
+        'workspace-academy': 'tab-btn-academy',
+        'workspace-mermaid': 'tab-btn-mermaid'
       };
 
       document.querySelectorAll('.studio-tab-btn').forEach(btn => {
@@ -6919,9 +7025,11 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
       const activeBtn = document.getElementById(tabMap[workspaceId]);
       if (activeBtn) {
         if (workspaceId === 'workspace-academy') {
-          activeBtn.className = "studio-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-emerald-600 text-white shadow-lg shadow-emerald-600/30";
+          activeBtn.className = "studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-emerald-600 text-white shadow-lg shadow-emerald-600/30 whitespace-nowrap shrink-0 cursor-pointer";
+        } else if (workspaceId === 'workspace-mermaid') {
+          activeBtn.className = "studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-teal-600 text-white shadow-lg shadow-teal-600/30 whitespace-nowrap shrink-0 cursor-pointer";
         } else {
-          activeBtn.className = "studio-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/30";
+          activeBtn.className = "studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 whitespace-nowrap shrink-0 cursor-pointer";
         }
       }
 
@@ -6932,7 +7040,8 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
         'workspace-tracking': 'mob-tab-tracking',
         'workspace-cloud': 'mob-tab-cloud',
         'workspace-codewiki': 'mob-tab-codewiki',
-        'workspace-academy': 'mob-tab-academy'
+        'workspace-academy': 'mob-tab-academy',
+        'workspace-mermaid': 'mob-tab-mermaid'
       };
 
       document.querySelectorAll('.mobile-nav-btn').forEach(btn => {
@@ -6941,9 +7050,13 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
 
       const activeMobBtn = document.getElementById(mobMap[workspaceId]);
       if (activeMobBtn) {
-        activeMobBtn.className = workspaceId === 'workspace-academy'
-          ? "mobile-nav-btn flex flex-col items-center gap-1 text-[10px] font-bold text-emerald-400"
-          : "mobile-nav-btn flex flex-col items-center gap-1 text-[10px] font-bold text-indigo-400";
+        if (workspaceId === 'workspace-academy') {
+          activeMobBtn.className = "mobile-nav-btn flex flex-col items-center gap-1 text-[10px] font-bold text-emerald-400";
+        } else if (workspaceId === 'workspace-mermaid') {
+          activeMobBtn.className = "mobile-nav-btn flex flex-col items-center gap-1 text-[10px] font-bold text-teal-400";
+        } else {
+          activeMobBtn.className = "mobile-nav-btn flex flex-col items-center gap-1 text-[10px] font-bold text-indigo-400";
+        }
       }
 
       // Save preference
@@ -7899,7 +8012,8 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
           '#lab-daemons': 'workspace-academy',
           '#lab-structured-schemas': 'workspace-academy',
           '#lab-schemas': 'workspace-academy',
-          '#lab-mermaid-studio': 'workspace-academy',
+          '#lab-mermaid-studio': 'workspace-mermaid',
+          '#workspace-mermaid': 'workspace-mermaid',
           '#lab-visual-tools': 'workspace-academy',
           '#lab-justin-mirror': 'workspace-academy',
           '#lab-markdown-wiki': 'workspace-academy',
@@ -8537,7 +8651,20 @@ function showAudioToast(msg, icon) {
       showAudioToast("➕ Inserted Mermaid snippet!", "✏️");
     }
 
-    function loadDiagramIntoMermaidStudio(diagramType) {
+        function openJustinVoiceMirror() {
+      switchStudioWorkspace('workspace-mermaid');
+      setTimeout(() => {
+        const mirrorEl = document.getElementById('lab-justin-mirror');
+        if (mirrorEl) {
+          mirrorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          mirrorEl.classList.add('ring-4', 'ring-indigo-500/80');
+          setTimeout(() => mirrorEl.classList.remove('ring-4', 'ring-indigo-500/80'), 1500);
+        }
+      }, 120);
+      showAudioToast("🎙️ Opened Justin's AI Voice Mirror & ELI5 Explainer", "✨");
+    }
+
+function loadDiagramIntoMermaidStudio(diagramType) {
       const codeMap = {
         flowchart: { id: 'flowchart-code', name: 'Physical Studio Re-Amp Flowchart' },
         sequence: { id: 'sequence-code', name: 'Cockos REAPER ReaScript Sequence' },
@@ -8553,7 +8680,7 @@ function showAudioToast(msg, icon) {
       const textarea = document.getElementById('mermaidEditorTextarea');
       const badge = document.getElementById('mermaidActivePresetBadge');
 
-      switchStudioWorkspace('workspace-academy');
+      switchStudioWorkspace('workspace-mermaid');
 
       setTimeout(() => {
         if (textarea) textarea.value = raw;
@@ -8571,75 +8698,230 @@ function showAudioToast(msg, icon) {
     // -------------------------------------------------------------
     // JUSTIN MUIR STYLOMETRIC VOICE MIRROR & PERSONA ENGINE
     // -------------------------------------------------------------
-    let activeVoicePersona = 'justin'; // 'justin' or 'conductor'
+    let activeVoicePersona = 'justin'; // 'eli5', 'justin', 'code', 'conductor'
+    let lastMirrorTopicKey = 'baml_patchbay';
 
     const JUSTIN_MIRROR_KNOWLEDGE = {
+      attention_mixer: {
+        title: "Self-Attention vs Console Mixing Automation",
+        eli5: `Imagine you're mixing a 16-channel drum kit. You have an automated robot mixer with motorized faders.
+Every time the drummer smacks the snare drum hard, the robot instantly pushes the snare fader up and pulls down the hi-hat and cymbal mics so the loud cymbal noise doesn't bleed into the snare.
+In an AI, the attention mechanism is that exact motorized fader: as words flow by, it turns up the volume on words that belong together (like 'Marshall' and 'Origin 50') and dips the volume on filler noise.`,
+        justin: `All right, so look. Attention in a transformer is basically motorized SSL console fader automation on steroids.
+When the model reads 'Marshall Origin 50', it doesn't read every word in the sentence with equal gain. The QK^T dot-product calculation is literally calculating sidechain compression: it ducks the filler words and slams the fader up on 'EL34 tubes' and 'master volume'. It's all about gain staging your tokens so the signal path stays clean.`,
+        code: `import torch
+import torch.nn.functional as F
+
+def self_attention_faders(Q, K, V):
+    # Q, K, V: [batch, sequence_len, dim]
+    d_k = Q.size(-1)
+    # Sidechain gain matrix: dot-product token cross-correlation
+    fader_automation = torch.matmul(Q, K.transpose(-2, -1)) / (d_k ** 0.5)
+    # Normalize with softmax to get 0.0 to 1.0 fader percentages
+    fader_levels = F.softmax(fader_automation, dim=-1)
+    # Mix token content according to fader levels
+    output_audio_mix = torch.matmul(fader_levels, V)
+    return output_audio_mix, fader_levels`,
+        conductor: `Self-attention computes dynamic affinity matrices via scaled dot-product formulation: A = softmax(Q K^T / sqrt(d_k)) V. Positional rotary embeddings preserve temporal causality while multi-head projections allow concurrent subspace feature extraction across divergent semantic hierarchies.`
+      },
+
+      lora_pedal: {
+        title: "LoRA Fine-Tuning vs Rewinding Marshall Transformers",
+        eli5: `Imagine you bought a great vintage Marshall tube amplifier. If you want a heavier metal distortion tone, you don't take a blowtorch, melt down the iron power transformer, and rebuild the entire amp from scratch!
+You simply plug an overdrive distortion pedal into the guitar input cable. The big amp stays untouched, and the little pedal changes the sound for 1% of the cost.
+A LoRA adapter is that little overdrive pedal for an AI model.`,
+        justin: `Man, full model fine-tuning is like replacing the entire power transformer, filter caps, and rewiring the turret board just because you wanted a lead boost. You're wasting 80GB of VRAM and risking blowing up the model's baseline intelligence.
+LoRA is literally plugging an Ibanez TS9 Tube Screamer into the front end. You freeze all 12 billion base weights, slip in two tiny low-rank adapter matrices (A and B with rank r=8), and only train 0.1% of the parameters. 15 minutes on a free Colab GPU and your Origin 50 tone model is dialed in without touching the base network.`,
+        code: `import torch
+import torch.nn as nn
+
+class LoRAPedalAdapter(nn.Module):
+    def __init__(self, base_layer, rank=8, alpha=16):
+        super().__init__()
+        self.base_layer = base_layer  # Frozen 12B transformer weights
+        self.base_layer.weight.requires_grad = False
+        in_dim, out_dim = base_layer.in_features, base_layer.out_features
+        # Little pedal bypass loop (A -> B down/up projection)
+        self.lora_A = nn.Parameter(torch.randn(in_dim, rank) * 0.01)
+        self.lora_B = nn.Parameter(torch.zeros(rank, out_dim))
+        self.scaling = alpha / rank
+
+    def forward(self, x):
+        # Base amp clean signal + pedal distortion boost
+        return self.base_layer(x) + (x @ self.lora_A @ self.lora_B) * self.scaling`,
+        conductor: `Low-Rank Adaptation (LoRA) factorizes weight updates Delta W into low-rank matrices B x A where B in R^{d x r} and A in R^{r x k} with intrinsic rank r << min(d, k), reducing trainable gradient volume by >99.8% while preserving foundational knowledge representations.`
+      },
+
+      embeddings_patchbay: {
+        title: "Vector Embeddings vs Patchbay Rack Coordinates",
+        eli5: `Imagine you have a giant pegboard in your garage with labeled hooks for every tool.
+Hammers are in the top left, screwdrivers are right next to them, and paintbrushes are down in the corner. If you want something that does the same job as a hammer, you just look at the nearest hooks on the board.
+In AI, every word and sound gets its own hook coordinate on a giant mathematical pegboard so similar things sit side-by-side.`,
+        justin: `All right, so you've got a 48-point TRS patchbay rack in the studio. Jack A1 is your Marshall Origin 50 preamp out. Jack A2 is a JCM800 preamp out. Jack B12 is a Lexicon reverb return.
+Notice that A1 and A2 are separated by half an inch of rack metal — you only need a 3-inch patch cable to connect them because they're sonic cousins. But to patch from A1 to B12 requires a long 2-foot snake cable across the rack.
+An embedding vector is just the 3D rack coordinates (x, y, z) of that jack. When two amp tones or two audio tracks have similar harmonic grit, their patch points are right next to each other in vector space.`,
+        code: `import numpy as np
+
+def cosine_similarity_patchbay(vector_a, vector_b):
+    # Calculate physical proximity in 768-dimensional audio rack space
+    dot_product = np.dot(vector_a, vector_b)
+    norm_a = np.linalg.norm(vector_a)
+    norm_b = np.linalg.norm(vector_b)
+    # Returns 1.0 if identical jacks (0 inches cable), 0.0 if orthogonal
+    return dot_product / (norm_a * norm_b)`,
+        conductor: `Vector embeddings project discrete symbolic or acoustic tokens into a dense metric manifold R^D. Spatial proximity is quantified via cosine distance or Euclidean metrics, mapping semantic topological invariants to directional orientation.`
+      },
+
+      temperature_bias: {
+        title: "Temperature vs Tube Plate Voltage Bias",
+        eli5: `Think of temperature like the heat knob on a toaster.
+At zero heat, bread never browns and stays exactly the same every single time. At medium heat, it gets golden and delicious with warm flavor. But if you crank the heat to maximum, the bread bursts into flames and fills the room with black smoke!
+In AI, high temperature makes the computer wild and creative, while zero temperature makes it strict and predictable.`,
+        justin: `Temperature is 100% the plate voltage bias on the Marshall Origin 50's EL34 power tubes.
+When bias is set cold (Temperature = 0.0 or greedy search), the tubes are dead linear. No crunch, no warmth, and every single chord you strum produces the exact same predictable waveform.
+When you warm up the bias to Temperature = 0.7, you hit the sweet spot: subtle even-order harmonic distortion, touch sensitivity, and dynamic crunch.
+But if you crank Temperature to 1.8, the tubes redplate, self-oscillate, and scream uncontrolled feedback — that's when Chatty GPT starts hallucinating fake Python libraries and making up gibberish.`,
+        code: `import torch
+import torch.nn.functional as F
+
+def sample_with_tube_bias(logits, temperature=0.7):
+    # Cold bias (Temp -> 0.0): Strict deterministic Marshall Plexi tone
+    # Hot bias (Temp -> 1.0): Harmonic saturation and creative dynamics
+    # Redplating (Temp > 1.5): Uncontrolled feedback hallucination
+    if temperature <= 1e-4:
+        return torch.argmax(logits, dim=-1)
+    scaled_logits = logits / temperature
+    probabilities = F.softmax(scaled_logits, dim=-1)
+    return torch.multinomial(probabilities, num_samples=1)`,
+        conductor: `Temperature parameter tau scales output logit energy before the softmax activation: P(y_i) = exp(z_i / tau) / sum_j exp(z_j / tau). As tau -> 0, the probability density collapses to a discrete Kronecker delta; as tau -> infty, entropy is maximized towards a uniform distribution.`
+      },
+
       baml_patchbay: {
-        title: "Explain BAML like wiring a patchbay",
+        title: "BAML vs Little Labs Redeye DI Isolation",
+        eli5: `Imagine plugging a fragile home headphone cable into a high-powered wall electric outlet. It would pop and spark!
+To protect the sound gear, audio engineers use a little heavy metal box called an isolation transformer. It stops electric shocks while passing the clean music through.
+BAML is that little metal safety box for AI: it stops the computer from sending broken garbage that crashes your software.`,
         justin: `All right, so look. You know how when you patch an AXE I/O line out into a Little Labs Redeye, the whole point of that box is transformer isolation and impedance matching so you don't send phantom power back into an input and fry your converters?
-
 BAML is literally the Redeye 3D box for Chatty GPT.
-
 When you ask a raw LLM to write JSON, it's like sending raw high-impedance guitar signal down 50 feet of cheap unshielded copper — half the time a missing curly bracket grounds out and crashes your Python script. BAML compiles a native Rust boundary that says: 'No, you WILL give me an enum of PlexiClean or JCM800Crunch, and if you hallucinate some corporate nonsense, the compiler rejects it before it even touches REAPER.' Zero smoke, zero runtime crashes.`,
-        conductor: `Under formal systems engineering, BAML (Boundary Abstract Modeling Language) replaces probabilistic schema deduction with deterministic algebraic type boundaries. By compiling target types into an embedded Rust verification AST, BAML guarantees strict isomorphism between LLM generation streams and your DAW control runtime.`
+        code: `// BAML Schema Contract (Zero Runtime JSON Crashes)
+enum ToneCategory {
+  PlexiClean
+  JCM800Crunch
+  SaturatedLead
+}
+
+class AmpControlPacket {
+  gain_knob: float @assert(this >= 0.0 && this <= 10.0)
+  master_knob: float @assert(this >= 0.0 && this <= 10.0)
+  topology: ToneCategory
+}
+
+function GenerateStudioSweep(prompt: string) -> AmpControlPacket {
+  client GPT4o
+  prompt #"Extract exact knob settings: {{ prompt }}"#
+}`,
+        conductor: `BAML eliminates probabilistic JSON schema parse failure by compiling schema definitions into deterministic Rust deserialization state machines, guaranteeing strict algebraic type bounds before runtime dispatch.`
       },
+
       catmlp_nam: {
-        title: "Why CatMLP instead of 50 separate NAMs?",
+        title: "CatMLP Potentiometers vs 45 Static Models",
+        eli5: `Imagine having to carry 45 separate guitar amplifier boxes in your car, one for each volume setting: Amp #1 for volume 1, Amp #2 for volume 2, all the way to 45!
+That's silly. Real amps have a turning dial knob.
+CatMLP puts that turning knob back onto the computer: instead of 45 huge files, one single lightweight model smoothly turns from clean to loud crunch as you turn the knob on your screen.`,
         justin: `So here's the thing. If I capture 45 takes on the Origin 50 — Gain at 2, 4, 6, 8, Tilt swept, Master cranked — the old-school way means training 45 separate static .nam snapshot files. That's a pain in the ass. You're constantly reloading plugins, your hard drive fills up with gigs of redundant weights, and what happens when you want Gain at 5.5? You're screwed.
-
 CatMLP basically solders a continuous potentiometer wire directly onto the neural network. We feed the 7 knob positions right into a conditioning MLP alongside the audio tensor. Now, one single 12MB model interpolates every millimeter of the sweep between clean and saturated lead. It's like having the physical Marshall head right in your DAW track instead of 45 frozen Polaroid photos.`,
-        conductor: `Rather than partitioning parametric manifold hyperspace into discrete disconnected checkpoints, CatMLP projects continuous conditioning parameters into low-dimensional latent vectors via a Feature-wise Linear Modulation (FiLM) layer, enabling continuous interpolation over arbitrary potentiometer permutations.`
-      },
-      asio_underrun: {
-        title: "ASIO underrun vs LLM context overflow",
-        justin: `All right, you know that lovely loud digital click and pop when Windows WDM interrupts your ASIO buffer at 64 samples because your CPU choked? That's an audio underrun. Your buffer starved for data before the DAC could clock out the next cycle.
+        code: `import torch
+import torch.nn as nn
 
-LLM context window overflow is the exact same problem in reverse. The model has a fixed ring buffer — say 8k or 32k tokens. The second your prompt and chat history push past that limit, the earliest tokens fall off the cliff. Suddenly the model forgets your AXE I/O input routing from three messages ago and recommends something stupid. That's why Karpathy's minimal wiki rule matters: you keep your context clean, lean, and cache-aligned so you never blow your buffer headroom.`,
-        conductor: `Buffer starvation in low-latency ASIO drivers mirrors transformer context window degradation: when prompt token sequences exceed the bounded attention matrix dimension, early positional embeddings are evicted, causing catastrophic attention attenuation.`
+class CatMLPConditioner(nn.Module):
+    def __init__(self, num_knobs=8, hidden_dim=64):
+        super().__init__()
+        # Continuous potentiometer shaper
+        self.mlp = nn.Sequential(
+            nn.Linear(num_knobs, hidden_dim),
+            nn.SiLU(),
+            nn.Linear(hidden_dim, hidden_dim)
+        )
+    def forward(self, knob_tensor):
+        # knob_tensor: [Gain, Bass, Mid, Treble, Tilt, Master, Presence, Level]
+        return self.mlp(knob_tensor)`,
+        conductor: `CatMLP conditions causal temporal convolutional networks via Feature-wise Linear Modulation (FiLM) embeddings, projecting continuous potentiometer vectors into hyper-dimensional manifold transformations.`
       },
+
       pfsense_vlan: {
-        title: "pfSense VLANs as studio audio buses",
+        title: "pfSense VLANs as Studio Audio Subgroups",
+        eli5: `Think of a house with different rooms. You don't want the loud lawnmower running in the baby's bedroom!
+You close the heavy bedroom door so the baby sleeps in peace.
+In computer networking, a pfSense VLAN is that heavy closed door: it keeps noisy smart TVs and web traffic away from your quiet, high-speed guitar recording computer.`,
         justin: `Think of your network like a 32-channel analog console. If you put all your mics, line-outs, guitar feeds, and dirty stage returns into one single un-isolated mono bus, you get crosstalk, feedback loops, and garbage noise bleeding into your vocal track.
-
 pfSense VLANs are just dedicated audio subgroups with Mute and Solo switches:
 - VLAN 10 is the Soloed Control Room bus — zero traffic except ASIO streams and REAPER OSC control. Ultra-low latency, no chatter.
 - VLAN 20 is the machine room where the Proxmox cluster and RTX 4090 live, churning away on CUDA training runs without flooding the audio subnet.
-
 If some smart TV or IoT bulb on the home network gets hacked, pfSense firewall rules drop the packets like a hard brickwall noise gate. Nothing bleeds into the studio.`,
-        conductor: `Layer 2/3 802.1Q VLAN network segmentation on pfSense enforces topological packet isolation, mitigating broadcast storm latency jitter and preventing cross-domain telemetry contention between real-time DAW endpoints and distributed CUDA training nodes.`
+        code: `# pfSense Free-BSD Packet Filter Rule (Zero Egress Studio Audio Isolation)
+# /etc/pf.conf - VLAN 10 Isolated Audio Subnet
+table <audio_endpoints> { 192.168.10.10, 192.168.10.15 }
+block in quick on vlan10 from !<audio_endpoints> to any
+pass in quick on vlan10 proto udp from <audio_endpoints> to any port 8000:9000 keep state
+# Drop all non-local broadcast storms
+block out quick on vlan10 from any to 255.255.255.255`,
+        conductor: `Layer 2 IEEE 802.1Q tag segmentation establishes deterministic packet isolation boundaries, minimizing queuing jitter on audio streaming sockets while prohibiting cross-VLAN egress.`
       },
-      python_vs_reaper: {
-        title: "Why Python scripts beat REAPER plugins",
-        justin: `Look, I love REAPER, but writing complex logic in ReaScript Lua feels like trying to rewire a tube amp through the headphone jack. Lua is fine for 'arm track 2 and hit record,' but the second you want to do Latin Hypercube sweep generation, calculate true spectral loss, or talk to an Ollama daemon over HTTP sockets, Lua turns into a spaghetti nightmare.
 
+      python_vs_reaper: {
+        title: "Python Daemons vs REAPER Lua Scripts",
+        eli5: `Think of REAPER like a racing sports car. The driver needs both hands on the steering wheel to stay on the road!
+You don't ask the driver to cook a 4-course gourmet dinner while driving 100 miles per hour.
+You let a chef cook the food in the restaurant (Python) and hand the lunch through the drive-thru window (OSC ping) so the driver never takes their eyes off the road.`,
+        justin: `Look, I love REAPER, but writing complex logic in ReaScript Lua feels like trying to rewire a tube amp through the headphone jack. Lua is fine for 'arm track 2 and hit record,' but the second you want to do Latin Hypercube sweep generation, calculate true spectral loss, or talk to an Ollama daemon over HTTP sockets, Lua turns into a spaghetti nightmare.
 With Python, you've got NumPy, PyTorch, Librosa, and standard sockets. You run one clean background daemon in your terminal, and all REAPER has to do is fire a single HTTP ping when you press F1. Let Python do the heavy lifting while REAPER just plays the audio.`,
-        conductor: `Decoupling real-time DAW transport control (Lua ReaScript execution within REAPER's GUI event loop) from asynchronous computational heuristics (PyTorch CUDA execution in standalone Python daemons) guarantees zero transport jitter and maximizes compute throughput.`
+        code: `import socket
+import json
+
+def listen_for_reaper_trigger(port=5042):
+    server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    server.bind(('127.0.0.1', port))
+    print(f"⚡ Python Studio Daemon listening on UDP :{port}...")
+    while True:
+        data, addr = server.recvfrom(1024)
+        msg = json.loads(data.decode('utf-8'))
+        print(f"Received REAPER OSC command: {msg['action']}")
+        # Execute heavy PyTorch GPU sweep without blocking DAW transport`,
+        conductor: `Decoupling synchronous DAW transport threads from asynchronous tensor execution prevents thread priority inversion and audio buffer starvation.`
       }
     };
-
-    let lastMirrorTopicKey = 'baml_patchbay';
 
     function switchVoicePersona(persona) {
       activeVoicePersona = persona;
 
-      // Update Academy Lab 8 Buttons
+      // Update 4 Buttons in lab-justin-mirror
+      const btnEli5 = document.getElementById('btn-voice-eli5');
       const btnJustin = document.getElementById('btn-voice-justin');
+      const btnCode = document.getElementById('btn-voice-code');
       const btnCond = document.getElementById('btn-voice-conductor');
-      if (btnJustin && btnCond) {
-        if (persona === 'justin') {
-          btnJustin.className = "px-3 py-1.5 rounded-lg font-bold bg-indigo-600 text-white shadow transition cursor-pointer flex items-center gap-1.5";
-          btnCond.className = "px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition cursor-pointer flex items-center gap-1.5";
+
+      const allBtns = [
+        { el: btnEli5, key: 'eli5', activeCls: 'bg-amber-600 text-white shadow font-bold' },
+        { el: btnJustin, key: 'justin', activeCls: 'bg-indigo-600 text-white shadow font-bold' },
+        { el: btnCode, key: 'code', activeCls: 'bg-sky-600 text-white shadow font-bold' },
+        { el: btnCond, key: 'conductor', activeCls: 'bg-purple-600 text-white shadow font-bold' }
+      ];
+
+      allBtns.forEach(b => {
+        if (!b.el) return;
+        if (b.key === persona) {
+          b.el.className = `px-2.5 py-1.5 rounded-xl transition cursor-pointer flex items-center gap-1 text-[11px] ${b.activeCls}`;
         } else {
-          btnJustin.className = "px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition cursor-pointer flex items-center gap-1.5";
-          btnCond.className = "px-3 py-1.5 rounded-lg font-bold bg-indigo-600 text-white shadow transition cursor-pointer flex items-center gap-1.5";
+          b.el.className = "px-2.5 py-1.5 rounded-xl text-slate-400 hover:text-white bg-slate-950 border border-slate-800 transition cursor-pointer flex items-center gap-1 text-[11px]";
         }
-      }
+      });
 
       // Update AI Drawer Buttons
       const dBtnJustin = document.getElementById('drawer-btn-voice-justin');
       const dBtnCond = document.getElementById('drawer-btn-voice-conductor');
       if (dBtnJustin && dBtnCond) {
-        if (persona === 'justin') {
+        if (persona === 'justin' || persona === 'eli5') {
           dBtnJustin.className = "px-2.5 py-1 rounded-lg font-bold bg-indigo-600 text-white shadow transition cursor-pointer flex items-center gap-1";
           dBtnCond.className = "px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition cursor-pointer flex items-center gap-1";
         } else {
@@ -8652,12 +8934,18 @@ With Python, you've got NumPy, PyTorch, Librosa, and standard sockets. You run o
       const speaker = document.getElementById('mirrorSpeakerLabel');
       const cadence = document.getElementById('mirrorCadenceLabel');
       if (speaker && cadence) {
-        if (persona === 'justin') {
+        if (persona === 'eli5') {
+          speaker.textContent = "Justin's Studio Analogy (ELI5)";
+          cadence.textContent = "Level 1 • Zero Jargon • Physical Hardware Intuition";
+        } else if (persona === 'justin') {
           speaker.textContent = "Justin Muir (AI Voice Clone)";
-          cadence.textContent = "Cadence: 9.36 w/turn • Dry Midwestern Realism";
+          cadence.textContent = "Level 2 • 9.36 w/turn • Dry Midwestern Realism";
+        } else if (persona === 'code') {
+          speaker.textContent = "Python / BAML Compiler View";
+          cadence.textContent = "Level 3 • Executable Code & Type Contracts";
         } else {
           speaker.textContent = "The Conductor (Academic Architect)";
-          cadence.textContent = "Formal Systems Rigor • Mathematical Schemas";
+          cadence.textContent = "Level 4 • Formal Systems Rigor • Mathematical Schemas";
         }
       }
 
@@ -8665,10 +8953,18 @@ With Python, you've got NumPy, PyTorch, Librosa, and standard sockets. You run o
       if (JUSTIN_MIRROR_KNOWLEDGE[lastMirrorTopicKey]) {
         const item = JUSTIN_MIRROR_KNOWLEDGE[lastMirrorTopicKey];
         const textEl = document.getElementById('justinMirrorResponseText');
-        if (textEl) textEl.textContent = (persona === 'justin') ? item.justin : item.conductor;
+        if (textEl) {
+          textEl.textContent = item[persona] || item.justin;
+        }
       }
 
-      showAudioToast(`🎙️ Tutor Voice switched to: ${persona === 'justin' ? "Justin's Studio Mirror" : "Conductor Academic"}`, "✨");
+      const labels = {
+        eli5: "👶 Level 1: ELI5 Hardware Analogy",
+        justin: "🎙️ Level 2: Justin's Voice Mirror",
+        code: "💻 Level 3: Python & BAML Code",
+        conductor: "🎓 Level 4: Tensor Mathematics"
+      };
+      showAudioToast(`Cognitive Mode: ${labels[persona]}`, "✨");
     }
 
     function askJustinVoiceMirror(topicKey) {
@@ -8679,7 +8975,7 @@ With Python, you've got NumPy, PyTorch, Librosa, and standard sockets. You run o
       const card = document.getElementById('justinMirrorResponseCard');
 
       if (textEl) {
-        textEl.textContent = (activeVoicePersona === 'justin') ? item.justin : item.conductor;
+        textEl.textContent = item[activeVoicePersona] || item.justin;
       }
       if (card) {
         card.classList.add('ring-2', 'ring-indigo-500/60');
@@ -8696,28 +8992,52 @@ With Python, you've got NumPy, PyTorch, Librosa, and standard sockets. You run o
       const textEl = document.getElementById('justinMirrorResponseText');
       const card = document.getElementById('justinMirrorResponseCard');
       if (textEl) {
-        textEl.innerHTML = `<span class="text-amber-400 font-mono animate-pulse">Thinking in Justin's voice...</span>`;
+        textEl.innerHTML = `<span class="text-amber-400 font-mono animate-pulse">Transpiling question across cognitive layers...</span>`;
       }
 
       setTimeout(() => {
         let answer = "";
         const lower = q.toLowerCase();
-        if (lower.includes('baml') || lower.includes('schema') || lower.includes('json')) {
-          answer = JUSTIN_MIRROR_KNOWLEDGE.baml_patchbay.justin;
+        let matchedKey = null;
+
+        if (lower.includes('attention') || lower.includes('mixer') || lower.includes('fader') || lower.includes('transformer')) {
+          matchedKey = 'attention_mixer';
+        } else if (lower.includes('lora') || lower.includes('pedal') || lower.includes('adapter') || lower.includes('finetun')) {
+          matchedKey = 'lora_pedal';
+        } else if (lower.includes('embed') || lower.includes('vector') || lower.includes('patchbay') || lower.includes('cosine')) {
+          matchedKey = 'embeddings_patchbay';
+        } else if (lower.includes('temp') || lower.includes('bias') || lower.includes('heat') || lower.includes('plate') || lower.includes('tube')) {
+          matchedKey = 'temperature_bias';
+        } else if (lower.includes('baml') || lower.includes('schema') || lower.includes('json') || lower.includes('redeye')) {
+          matchedKey = 'baml_patchbay';
         } else if (lower.includes('catmlp') || lower.includes('sweep') || lower.includes('knob') || lower.includes('nam')) {
-          answer = JUSTIN_MIRROR_KNOWLEDGE.catmlp_nam.justin;
-        } else if (lower.includes('asio') || lower.includes('buffer') || lower.includes('latency') || lower.includes('context')) {
-          answer = JUSTIN_MIRROR_KNOWLEDGE.asio_underrun.justin;
+          matchedKey = 'catmlp_nam';
         } else if (lower.includes('pfsense') || lower.includes('vlan') || lower.includes('network') || lower.includes('firewall')) {
-          answer = JUSTIN_MIRROR_KNOWLEDGE.pfsense_vlan.justin;
+          matchedKey = 'pfsense_vlan';
         } else if (lower.includes('python') || lower.includes('reaper') || lower.includes('script') || lower.includes('lua')) {
-          answer = JUSTIN_MIRROR_KNOWLEDGE.python_vs_reaper.justin;
-        } else {
-          answer = `All right, so look. Regarding "${q}": think of it like dialing in bias on the Origin 50 without an oscilloscope. If you just jump into Chatty GPT and ask it to guess, you're gonna clip the input and get muddy noise. What we do instead is write a tiny, reproducible Python script with exact boundaries, run it locally on your machine or Colab GPU, and verify the output waveform before touching the DAW timeline. Keep it simple, match your impedances, and don't overcomplicate it.`;
+          matchedKey = 'python_vs_reaper';
         }
 
-        if (activeVoicePersona === 'conductor') {
-          answer = `Addressing inquiry regarding "${q}": The recommended architectural paradigm isolates compute workloads behind verifiable API contracts, ensuring deterministic validation metrics before committing runtime state transitions.`;
+        if (matchedKey && JUSTIN_MIRROR_KNOWLEDGE[matchedKey]) {
+          lastMirrorTopicKey = matchedKey;
+          answer = JUSTIN_MIRROR_KNOWLEDGE[matchedKey][activeVoicePersona] || JUSTIN_MIRROR_KNOWLEDGE[matchedKey].justin;
+        } else {
+          if (activeVoicePersona === 'eli5') {
+            answer = `Think of "${q}" like choosing the right guitar cable in the studio. If you plug a cheap unshielded wire into a high-gain Marshall tube head, you'll hear buzzing radio stations and hum. When you use a heavy shielded cable with gold jacks and an isolation transformer, the sound is crystal clear. Keep the setup simple, shield your signal, and only plug in what you actually need.`;
+          } else if (activeVoicePersona === 'justin') {
+            answer = `All right, so look. Regarding "${q}": think of it like dialing in bias on the Origin 50 without an oscilloscope. If you just jump into Chatty GPT and ask it to guess, you're gonna clip the input and get muddy noise. What we do instead is write a tiny, reproducible Python script with exact boundaries, run it locally on your machine or Colab GPU, and verify the output waveform before touching the DAW timeline. Keep it simple, match your impedances, and don't overcomplicate it.`;
+          } else if (activeVoicePersona === 'code') {
+            answer = `# Python 3.12 Reproducible Studio Test for: "${q}"
+import torch
+
+def verify_signal_boundary(input_tensor: torch.Tensor) -> bool:
+    assert input_tensor.ndim == 3, "Shape mismatch: expected [batch, channels, samples]"
+    # Clamp to prevent DAC clipping
+    safe_tensor = torch.clamp(input_tensor, -1.0, 1.0)
+    return safe_tensor.isfinite().all().item()`;
+          } else {
+            answer = `Addressing inquiry regarding "${q}": The recommended architectural paradigm isolates compute workloads behind verifiable API contracts, ensuring deterministic validation metrics before committing runtime state transitions.`;
+          }
         }
 
         if (textEl) textEl.textContent = answer;
@@ -8728,13 +9048,6 @@ With Python, you've got NumPy, PyTorch, Librosa, and standard sockets. You run o
       }, 300);
     }
 
-    function copyMirrorResponse() {
-      const textEl = document.getElementById('justinMirrorResponseText');
-      if (!textEl) return;
-      navigator.clipboard.writeText(textEl.textContent.trim()).then(() => {
-        showAudioToast("✅ Copied tutor response to clipboard!", "📋");
-      });
-    }
 
     // Auto-init Mermaid Studio when DOM is ready
     if (document.readyState === 'loading') {
