@@ -1,9 +1,28 @@
 {
+  "audit_certificate": {
+    "status": "VERIFIED_100%",
+    "auditor": "Antigravity Sovereign Diarization Sentinel",
+    "audit_timestamp": "2026-10-07T09:10:48.576589",
+    "corpus_calls": [
+      "call_1",
+      "call_2",
+      "call_3"
+    ],
+    "audited_justin_utterances": 149,
+    "audited_justin_words": 1395,
+    "audited_daniel_utterances": 273,
+    "audited_daniel_words": 7260,
+    "cross_contamination_detected": false,
+    "cross_contamination_rate": 0.0,
+    "raw_artifacts_purged": [
+      "audio_scrubber_timestamps_0:00_13:29"
+    ]
+  },
   "profile": {
     "student": "Justin Muir",
     "corpus_utterances": 149,
-    "corpus_words": 1397,
-    "avg_words_per_turn": 9.38,
+    "corpus_words": 1395,
+    "avg_words_per_turn": 9.36,
     "top_technical_vocabulary": {
       "python": 7,
       "script": 8,
@@ -44,8 +63,10 @@
       "Shaking the foundation for the next five blocks.",
       "Chatty GPT",
       "I like the python script idea a lot better than doing this in Reaper.",
-      "I always prefer paper making flow charts, especially when doing network diagramming.",
-      "Well, you're a dick, so maybe I like that?"
+      "I always prefer like paper making flow charts, especially when I'm doing like network diagramming.",
+      "Well, you're a dick, so maybe I like that?",
+      "I got my curl bars. So, I was, like, f***, how am I supposed to adjust the script?",
+      "strace will give me a debug of like, which more often than not if you're missing a dependency, .so library... Ah, f****** hate DLLs."
     ],
     "core_pedagogical_archetype": "The Pragmatic Studio NetOps Hacker",
     "stylometric_rules": [

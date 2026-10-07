@@ -1,22 +1,43 @@
 {
   "/Users/danielbasssherizen/Developer/neural-audio-parametric-dsp/notes/call_1_transcript_20261006.txt": {
+    "hash": "e09168711c4b37cbc1118e5788a786f954340216f6930577990b03457b48f0da",
+    "mtime": 1791382210.8387702,
+    "ingested_at": "2026-10-07T09:10:16.511848",
+    "turns_count": 1,
+    "justin_turns_count": 1
+  },
+  "/Users/danielbasssherizen/Developer/neural-audio-parametric-dsp/notes/call_2_transcript_20261006.txt": {
+    "hash": "67ca63995be60e38f9d58d84a44743143e975593578dfead974e969c05dea5fc",
+    "mtime": 1791382210.842288,
+    "ingested_at": "2026-10-07T09:10:16.553438",
+    "turns_count": 1,
+    "justin_turns_count": 0
+  },
+  "/Users/danielbasssherizen/Developer/neural-audio-parametric-dsp/notes/call_3_transcript_20261006.txt": {
+    "hash": "ec63cb7f652071fb019eff48030336dda3adf2cdac5040cd0f9d1bdfb543771c",
+    "mtime": 1791382210.8445735,
+    "ingested_at": "2026-10-07T09:10:16.600760",
+    "turns_count": 1,
+    "justin_turns_count": 0
+  },
+  "/Users/danielbasssherizen/Developer/neural-audio-parametric-dsp/notes/call_1_transcript_20261006.raw.txt": {
     "hash": "b0d8acfa51ae582de9eed40a4e1116814597d832783831ed0b92dfda126d1f8a",
-    "mtime": 1791317213.288852,
-    "ingested_at": "2026-10-06T22:33:55.465426",
+    "mtime": 1791382210.8374505,
+    "ingested_at": "2026-10-07T09:10:16.506770",
     "turns_count": 123,
     "justin_turns_count": 48
   },
-  "/Users/danielbasssherizen/Developer/neural-audio-parametric-dsp/notes/call_2_transcript_20261006.txt": {
+  "/Users/danielbasssherizen/Developer/neural-audio-parametric-dsp/notes/call_2_transcript_20261006.raw.txt": {
     "hash": "41fc4875881061872ea510daee311e882be5071ec1d5d450ce312874155e6d59",
-    "mtime": 1791317306.1950233,
-    "ingested_at": "2026-10-06T22:33:55.534438",
+    "mtime": 1791382210.8408017,
+    "ingested_at": "2026-10-07T09:10:16.547697",
     "turns_count": 151,
     "justin_turns_count": 43
   },
-  "/Users/danielbasssherizen/Developer/neural-audio-parametric-dsp/notes/call_3_transcript_20261006.txt": {
+  "/Users/danielbasssherizen/Developer/neural-audio-parametric-dsp/notes/call_3_transcript_20261006.raw.txt": {
     "hash": "3306f7cc53607d875d8ba411e3bbfa7c145c243f3292ee384ede7054f94a6e39",
-    "mtime": 1791324946.1661408,
-    "ingested_at": "2026-10-06T22:33:55.616469",
+    "mtime": 1791382210.8435893,
+    "ingested_at": "2026-10-07T09:10:16.592707",
     "turns_count": 151,
     "justin_turns_count": 59
   }

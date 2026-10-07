@@ -21,368 +21,375 @@ Call Notes are AI-generated and may summarize sensitive content. Learn more
 
 Call transcript
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 All right, we don't tell me.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Okay.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Yeah, that's fine. See what I did there?
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 No, I did not because it literally talked over you, um?
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 I maybe don't tell me.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Oh, that's good. That's good. I do appreciate no, I listen. I'm a f******, I'm a huge woke lib. I grew up on NPR and PBS, so wait until tomorrow.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Npr's best?
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 It is, I.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 It's, um, it's on. It's the only station on my radio.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Go backward much, much respect, uh. So to give you just let me just kind of at the head of this kind of gate. This simply because, um, our nanny is also getting her doctorate.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Um, and she was, like, hey, I love you, truly. You're like, so great, but um, getting my doctor really hard, and so was working 45 hours a week for y'all, and so, um, can we have some adjustments? And so today is the first day of adjustment where we don't have, uh, care for the next two days, and I have two children and a startup, um.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 And so this is the only time I have before 8 P.M to take a breath. So I'm gonna gate this.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 For like 10 or 15 minutes, and I have to go take a nap.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Holy thing!
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Cool okay, uh, your wife taught me to set boundaries, uh, so?
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Yeah, okay, I, I will tell her that today, and she'll probably have the biggest, uh, smile on her face.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Sure.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Yeah, so listen, here's the. Here's the thing, um, let me be very clear. And then, then I want you to ask a ton of questions. We'll speak a very quickly because it actually will be helpful because it doesn't matter the speed at which we speak. The fact is, this is all being captured, um, by Gemini. Let me just make super extra. Sure, that is indeed the case. Cool, okay. And so, let me tell you actually, what's f****** real cool about where we are at technologically if you care. And if you don't, I'm going to tell you anyway, um.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 So?
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 I love your Force.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Because I'm the same way.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Yeah, listen, yeah, listen. Here's the thing I grew up in. I grew up in Boston, um, I spent the first 25 years in in Boston, New York, got in the punk scene, started lifting weights, uh, started taking more computers. Just, you know, I had a lot of, uh.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Emotion and and stuff to get out. And then I just started lifting more weights and understanding my body. And right now, I'm like 205.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 And I try not to. I try to be, have you read, um?
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 What is it?
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 What is the author? I'm so ashamed of myself, Douglas Adams.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Is that the missionary position, because yes, I have read that?
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 No, no, no, no, no, no, no, no, no, no, please? I live in San Francisco, that is, uh, for a long time, uh?
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 You know who wrote the book, right?
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 The missionary business, you know, who wrote it?
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Which one I'm talking about?
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 No, no. Christopher Hitchens basically about how a mother trees does the devil, and she is.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 She's a f****** sadist.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 I love it!
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Oh, really, that was awesome. Oh yeah, no, no, no, no, no, yeah, no, no quite quite evil. That's f****** awesome Hitchens, listen Market, Texas, yeah, yeah, much. Much respect to that guy, uh may he rest in nowhere, so.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 That's, that's what we're going to. So, here's the deal, um.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 When I build your stuff, right? I just have very mature systems, just like you do, right? I know for a fact, you know, every inch of your f****** systems. You know what lives where you know what talks to what and how? And, like, so my s***'s really finely tuned and highly customized. And so.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 In this moment.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 We've reached a an inflection point where natural language NLP right has gotten to a mature enough place where I can now take multi-modal.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Input.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 So you can right now. What's happening is we are Gemini's recording?
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 This call or Google is recording this call. Uh, Google and Gemini are largely going to be interchangeable from sure on out, um.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 And.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 So, it's going to take that. It is going to structure it into notes, motifs, action items. Then, it's going to be ingested automatically into my system because my system touches everything right because I live, I know. But, but like, do you not live in your command line because I just live in my terminal. Not all the time, but like my developer workspace.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 I used to, um, when I was building, um, my Linux distro, and I still prefer command line over GUI because it's just you get things done so much more efficiently.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Yeah.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Right. So here's.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 And you don't have to worry about it. The GUI f**** up and you don't like, you know, when it hangs you're like, what's it doing?
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Like Tui.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Yeah, but you know, what's fun? There's now there's now something that I built. I mean, like, it's it's, I built upon this. We all stand in the shoulders of nerdy Giants. But, like, do you know what a Tui is?
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Is that a drug reference?
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Uh, well, that's a graphical user interface.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Think about it, right? What's it Google? What's what's a gooey?
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 What's it gooey?
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 I'm assuming it's terminal something.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Right. What's the two? What's T?
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Yes, sir.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 So?
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Well, let's be honest, though.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 That is a nice little Middle Point, right where you have.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Terminal is very vast. I prefer to say, like, are we using Ash? Are we using bash?
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 All right, whatever, wait, it's all it's. It's a Tui Rebel. You can do whatever, right? It's all interchangeable. So the great thing, you? We, nerds, right, and all all. Just go ahead and and put you in that same bucket, right? We're very curious Minds. We have strong opinions. We like the way.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 We like our things right. I like my systems the way you like them. You do not like Docker. You like the things you like, I get it, right? I boy, do I get it right, and so you can set this however you want, right? You want it through bass, you want it through whatever. Go ahead like, I can. What I'm trying to say to you, I suppose, is my systems are finely tuned.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 And you said, hey, I have this idea.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 And I had my sisters just ingest a transcript, right? And then it's, it puts it. It my systems are mature enough where it can take that. That messy, raw data structure it largely understand it. Then it passes it to me. We then have a natural language conversation about it. I take some notes, I do a little bit of research do like a little bit of tweaking largely natural language, right? Like, I'm not handwriting code at this point.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Because you don't f****** need to. And then, I'm, like, cool, yeah, oh, oh, hey, uh, just sorry, I know you were in the middle of doing something for me. AI, uh, you're doing my bidding, which I really appreciate.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 But, like, I just got a text message from Justin so, uh, hey, oh, we sent this repo cool, could we just, uh, dig into that for a second. Like, I'm I'm not exaggerating what I'm saying. This is largely what I'm doing, and and what I'm also saying is the ease at which I did this.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 We'll get you there.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 I mean, let me ask you a question. Here's the thing I would be. F****** shocked if the thing that I have given you the iterations that I've given you is anywhere close to what you want. And that's fine because I don't actually know any. Largely anything about audio engineering. I love music. I'm a self-taught musician. I suspect you are as well, right? Like, I love systems, I love, I'm I. I am an engineer at heart eyes, are you? But like, when it comes to Gearhead stuff, I know f*** all about that. I've never been that, like, I would just get like s***, guitars, and s*** amps, and just I moved a lot, and I just you know. And so whatever, and so I never, not whatever. But like I, that was never a thing that that I had the I think capacity or did not draw me in. And so, and I say that to say, that's what makes this more interesting in my mind, because you can tell me what's that? Yeah, no, no, and totally. I'm quite amenable, right? Like, I am very excited. I just was at my new house, um, and.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 You will if I can. If I can lure you and Becca out of the suburbs, you got to come see it. It's pretty f****** dope, um, and I just built the.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 This is insane, but like I, I'm a pretty s i I'm?
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 I don't want anything other than people just to be kind to one another. And you know, people not to hurt animals and be nice to the Earth and like, and just be curious, right, that really every, every single day. My kid gets out of the car, right? I drop them off at school. He's been to five schools. He's five. He's been to five schools in.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Four different states. I think I think that's right, um.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 And every day I've dropped them off. I say to him the following, because I f****** mean this.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Okay.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Falcon. He's named after, by the way, my kid's named after a gay black man.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 So, both my kids are, uh. So, I say, Baldwin.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Um.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Kind, curious, and gentle, because that is how I try to live my life, right? So I like you and I can teach you how to do what I do. It is not hard. You have all of the tools you just need someone to go. Hey.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Hey, it's different. Now, like, you don't have to be, I think intimidated or overwhelmed, because I know, I know, what an engineer.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Is, I know what an engineer looks like. Sounds like I know what they smell like, I, I like, I can. I can sniff them out, right? I can sniff out somebody who is highly capable and highly curious and and highly.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Um, adoptable, I suppose, and so you intelligence responsible. You can do this, and so if you want to build the thing of your dreams. You don't have to keep calling a stranger on the telephone whose face you've never. F****** seen, we can do that. Like, I don't care. I'll happily do it. I like you, I like your wife like, I. I like helping people. It was, listen you. I don't know how much you know about me, so I'm just gonna ramble a little bit. Um, and then I want to have, I will. I will give you the floor, but like, you know, I'm, I'm like a weird. I'm a curious, weird man. Um, I was an only child to, uh, grew up in Boston, taught myself a bunch of stuff didn't do particularly well in school started. School early shouldn't have bounce around a lot, but like man, I've been a vegan since the 90s. I was part of the gay straight Alliance in the 90s.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 I, yeah, yeah, but like, I, I?
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 I don't know. I worked in Haiti, I've just I'm trying to the world. Is f****** hard man, and so I'm just trying to do my part to make it less s*****, and so that brings me to the point of this conversation, perhaps one of the points, which is.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Listen, I can. I can do this s*** in my sleep, right? Like, I have been taking apart systems and, and we're now at a point where my canonical knowledge and capabilities.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Have met a maturation of where we are Hardware, wise price points, and open source AI, model wise, and algorithm and algorithm-wise. Where, like there is some holy f****** s*** stuff that I can teach you?
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Uh, like I had a crazy meeting yesterday. I don't know what's gonna happen.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 But I, I think stuff starts stuff's gonna start to turn.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 We'll see, right? I don't know. Timeline, I make zero promises, because I don't know what the f***** about to happen. That's not how I lived my life. I'm not a planner, um, I, and, and so, you know, I will let you know opportunities as they come. I guess the question is?
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Yeah, like, we should meet and talk first because I would like to understand, what do you want to do?
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Okay, uh, just as I know when I learned.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Music wise and otherwise, and what are some notes on the app? I've now run out of, uh, words, please go ahead.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Uh, what open source was and is and got into it? It was a very emotional and philosophical way to view the world as sharing and not having.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Yeah.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Yes, correct.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Roof that has the code internally AKA proprietary code or closed Source. So I got into it in about. I want to say.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Yes.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 I.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Yep.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 15, I believe, and I just fell in love. What?
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Uh, 84. I'll be 42 in a few weeks.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 What, how old are you? What year were you born?
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Oh, I will make a note of that.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Oh, but I will.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Okay, congratulations. Oh, that's oh, I forgot, you're also October. I will be 47 on Friday.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Yeah, f*** you?
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Uh, I.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Oh, you don't have to! Cuz birthdays are f****** arbitrary, and uh.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 I sent it by pigeons, so it might take a bit.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Oh, okay, go ahead. Great. Uh, hi, I, I absolutely am expecting a singing telegram. Go ahead.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 I, I am, uh, please.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 Good.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Okay, so um.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 You know?
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 I really want to kind of.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Get ahead on this.
 
-[SPEAKER: DANIEL_BASS_SHERIZEN]
+You
 That's fine. Um, I am going to put you on mute because I have to attend to some biology, but you keep talking because it's now your turn you're off the floor.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Nand parametric.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Modeling, which isn't officially published in the official Nam repo. So, like the standard plug-in?
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 That you find on GitHub, the training, uh, part.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 Uh, is just set for a single static capture, which those are great. And if you don't know, a static capture is basically you put your knobs in a single set position.
 
-[SPEAKER: JUSTIN_MUIR]
+The speaker
 You run the sweep through it, and then you run the training, and then that gives you that.
+
+
+
+0:00
+
+13:29
+

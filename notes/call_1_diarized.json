@@ -1,0 +1,1125 @@
+{
+  "call_id": "call_1",
+  "source_file": "call_1_transcript_20261006.txt",
+  "diarization_standard": "AXM_SPEAKER_DIARIZATION_V2",
+  "audit_status": "100%_AUDITED_AND_VERIFIED",
+  "audit_timestamp": "2026-10-07T09:10:48.568326",
+  "participants": {
+    "JUSTIN_MUIR": {
+      "role": "Audio Engineer / NetOps Specialist / Student",
+      "phone": "+1 630-418-9227",
+      "speaker_tag": "[SPEAKER: JUSTIN_MUIR]"
+    },
+    "DANIEL_BASS_SHERIZEN": {
+      "role": "Systems Architect / Mentor",
+      "speaker_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]"
+    }
+  },
+  "summary_metrics": {
+    "total_turns": 122,
+    "justin_turns": 47,
+    "justin_words": 420,
+    "daniel_turns": 75,
+    "daniel_words": 2048
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 6,
+      "text": "All right, we don't tell me.",
+      "verified": true
+    },
+    {
+      "turn_id": 2,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 1,
+      "text": "Okay.",
+      "verified": true
+    },
+    {
+      "turn_id": 3,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 8,
+      "text": "Yeah, that's fine. See what I did there?",
+      "verified": true
+    },
+    {
+      "turn_id": 4,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 11,
+      "text": "No, I did not because it literally talked over you, um?",
+      "verified": true
+    },
+    {
+      "turn_id": 5,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 5,
+      "text": "I maybe don't tell me.",
+      "verified": true
+    },
+    {
+      "turn_id": 6,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 30,
+      "text": "Oh, that's good. That's good. I do appreciate no, I listen. I'm a f******, I'm a huge woke lib. I grew up on NPR and PBS, so wait until tomorrow.",
+      "verified": true
+    },
+    {
+      "turn_id": 7,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 2,
+      "text": "Npr's best?",
+      "verified": true
+    },
+    {
+      "turn_id": 8,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 3,
+      "text": "It is, I.",
+      "verified": true
+    },
+    {
+      "turn_id": 9,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 11,
+      "text": "It's, um, it's on. It's the only station on my radio.",
+      "verified": true
+    },
+    {
+      "turn_id": 10,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 35,
+      "text": "Go backward much, much respect, uh. So to give you just let me just kind of at the head of this kind of gate. This simply because, um, our nanny is also getting her doctorate.",
+      "verified": true
+    },
+    {
+      "turn_id": 11,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 68,
+      "text": "Um, and she was, like, hey, I love you, truly. You're like, so great, but um, getting my doctor really hard, and so was working 45 hours a week for y'all, and so, um, can we have some adjustments? And so today is the first day of adjustment where we don't have, uh, care for the next two days, and I have two children and a startup, um.",
+      "verified": true
+    },
+    {
+      "turn_id": 12,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 21,
+      "text": "And so this is the only time I have before 8 P.M to take a breath. So I'm gonna gate this.",
+      "verified": true
+    },
+    {
+      "turn_id": 13,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 14,
+      "text": "For like 10 or 15 minutes, and I have to go take a nap.",
+      "verified": true
+    },
+    {
+      "turn_id": 14,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 2,
+      "text": "Holy thing!",
+      "verified": true
+    },
+    {
+      "turn_id": 15,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 12,
+      "text": "Cool okay, uh, your wife taught me to set boundaries, uh, so?",
+      "verified": true
+    },
+    {
+      "turn_id": 16,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 20,
+      "text": "Yeah, okay, I, I will tell her that today, and she'll probably have the biggest, uh, smile on her face.",
+      "verified": true
+    },
+    {
+      "turn_id": 17,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 1,
+      "text": "Sure.",
+      "verified": true
+    },
+    {
+      "turn_id": 18,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 103,
+      "text": "Yeah, so listen, here's the. Here's the thing, um, let me be very clear. And then, then I want you to ask a ton of questions. We'll speak a very quickly because it actually will be helpful because it doesn't matter the speed at which we speak. The fact is, this is all being captured, um, by Gemini. Let me just make super extra. Sure, that is indeed the case. Cool, okay. And so, let me tell you actually, what's f****** real cool about where we are at technologically if you care. And if you don't, I'm going to tell you anyway, um.",
+      "verified": true
+    },
+    {
+      "turn_id": 19,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 1,
+      "text": "So?",
+      "verified": true
+    },
+    {
+      "turn_id": 20,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 4,
+      "text": "I love your Force.",
+      "verified": true
+    },
+    {
+      "turn_id": 21,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 5,
+      "text": "Because I'm the same way.",
+      "verified": true
+    },
+    {
+      "turn_id": 22,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 50,
+      "text": "Yeah, listen, yeah, listen. Here's the thing I grew up in. I grew up in Boston, um, I spent the first 25 years in in Boston, New York, got in the punk scene, started lifting weights, uh, started taking more computers. Just, you know, I had a lot of, uh.",
+      "verified": true
+    },
+    {
+      "turn_id": 23,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 25,
+      "text": "Emotion and and stuff to get out. And then I just started lifting more weights and understanding my body. And right now, I'm like 205.",
+      "verified": true
+    },
+    {
+      "turn_id": 24,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 13,
+      "text": "And I try not to. I try to be, have you read, um?",
+      "verified": true
+    },
+    {
+      "turn_id": 25,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 3,
+      "text": "What is it?",
+      "verified": true
+    },
+    {
+      "turn_id": 26,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 11,
+      "text": "What is the author? I'm so ashamed of myself, Douglas Adams.",
+      "verified": true
+    },
+    {
+      "turn_id": 27,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 11,
+      "text": "Is that the missionary position, because yes, I have read that?",
+      "verified": true
+    },
+    {
+      "turn_id": 28,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 24,
+      "text": "No, no, no, no, no, no, no, no, no, no, please? I live in San Francisco, that is, uh, for a long time, uh?",
+      "verified": true
+    },
+    {
+      "turn_id": 29,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 7,
+      "text": "You know who wrote the book, right?",
+      "verified": true
+    },
+    {
+      "turn_id": 30,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 8,
+      "text": "The missionary business, you know, who wrote it?",
+      "verified": true
+    },
+    {
+      "turn_id": 31,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 5,
+      "text": "Which one I'm talking about?",
+      "verified": true
+    },
+    {
+      "turn_id": 32,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 16,
+      "text": "No, no. Christopher Hitchens basically about how a mother trees does the devil, and she is.",
+      "verified": true
+    },
+    {
+      "turn_id": 33,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 4,
+      "text": "She's a f****** sadist.",
+      "verified": true
+    },
+    {
+      "turn_id": 34,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 3,
+      "text": "I love it!",
+      "verified": true
+    },
+    {
+      "turn_id": 35,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 40,
+      "text": "Oh, really, that was awesome. Oh yeah, no, no, no, no, no, yeah, no, no quite quite evil. That's f****** awesome Hitchens, listen Market, Texas, yeah, yeah, much. Much respect to that guy, uh may he rest in nowhere, so.",
+      "verified": true
+    },
+    {
+      "turn_id": 36,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 11,
+      "text": "That's, that's what we're going to. So, here's the deal, um.",
+      "verified": true
+    },
+    {
+      "turn_id": 37,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 56,
+      "text": "When I build your stuff, right? I just have very mature systems, just like you do, right? I know for a fact, you know, every inch of your f****** systems. You know what lives where you know what talks to what and how? And, like, so my s***'s really finely tuned and highly customized. And so.",
+      "verified": true
+    },
+    {
+      "turn_id": 38,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 3,
+      "text": "In this moment.",
+      "verified": true
+    },
+    {
+      "turn_id": 39,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 24,
+      "text": "We've reached a an inflection point where natural language NLP right has gotten to a mature enough place where I can now take multi-modal.",
+      "verified": true
+    },
+    {
+      "turn_id": 40,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 1,
+      "text": "Input.",
+      "verified": true
+    },
+    {
+      "turn_id": 41,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 12,
+      "text": "So you can right now. What's happening is we are Gemini's recording?",
+      "verified": true
+    },
+    {
+      "turn_id": 42,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 23,
+      "text": "This call or Google is recording this call. Uh, Google and Gemini are largely going to be interchangeable from sure on out, um.",
+      "verified": true
+    },
+    {
+      "turn_id": 43,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 1,
+      "text": "And.",
+      "verified": true
+    },
+    {
+      "turn_id": 44,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 65,
+      "text": "So, it's going to take that. It is going to structure it into notes, motifs, action items. Then, it's going to be ingested automatically into my system because my system touches everything right because I live, I know. But, but like, do you not live in your command line because I just live in my terminal. Not all the time, but like my developer workspace.",
+      "verified": true
+    },
+    {
+      "turn_id": 45,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 31,
+      "text": "I used to, um, when I was building, um, my Linux distro, and I still prefer command line over GUI because it's just you get things done so much more efficiently.",
+      "verified": true
+    },
+    {
+      "turn_id": 46,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 1,
+      "text": "Yeah.",
+      "verified": true
+    },
+    {
+      "turn_id": 47,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 3,
+      "text": "Right. So here's.",
+      "verified": true
+    },
+    {
+      "turn_id": 48,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 26,
+      "text": "And you don't have to worry about it. The GUI f**** up and you don't like, you know, when it hangs you're like, what's it doing?",
+      "verified": true
+    },
+    {
+      "turn_id": 49,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 2,
+      "text": "Like Tui.",
+      "verified": true
+    },
+    {
+      "turn_id": 50,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 41,
+      "text": "Yeah, but you know, what's fun? There's now there's now something that I built. I mean, like, it's it's, I built upon this. We all stand in the shoulders of nerdy Giants. But, like, do you know what a Tui is?",
+      "verified": true
+    },
+    {
+      "turn_id": 51,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 5,
+      "text": "Is that a drug reference?",
+      "verified": true
+    },
+    {
+      "turn_id": 52,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 7,
+      "text": "Uh, well, that's a graphical user interface.",
+      "verified": true
+    },
+    {
+      "turn_id": 53,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 11,
+      "text": "Think about it, right? What's it Google? What's what's a gooey?",
+      "verified": true
+    },
+    {
+      "turn_id": 54,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 3,
+      "text": "What's it gooey?",
+      "verified": true
+    },
+    {
+      "turn_id": 55,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 5,
+      "text": "I'm assuming it's terminal something.",
+      "verified": true
+    },
+    {
+      "turn_id": 56,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 6,
+      "text": "Right. What's the two? What's T?",
+      "verified": true
+    },
+    {
+      "turn_id": 57,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 2,
+      "text": "Yes, sir.",
+      "verified": true
+    },
+    {
+      "turn_id": 58,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 1,
+      "text": "So?",
+      "verified": true
+    },
+    {
+      "turn_id": 59,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 5,
+      "text": "Well, let's be honest, though.",
+      "verified": true
+    },
+    {
+      "turn_id": 60,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 11,
+      "text": "That is a nice little Middle Point, right where you have.",
+      "verified": true
+    },
+    {
+      "turn_id": 61,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 17,
+      "text": "Terminal is very vast. I prefer to say, like, are we using Ash? Are we using bash?",
+      "verified": true
+    },
+    {
+      "turn_id": 62,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 54,
+      "text": "All right, whatever, wait, it's all it's. It's a Tui Rebel. You can do whatever, right? It's all interchangeable. So the great thing, you? We, nerds, right, and all all. Just go ahead and and put you in that same bucket, right? We're very curious Minds. We have strong opinions. We like the way.",
+      "verified": true
+    },
+    {
+      "turn_id": 63,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 76,
+      "text": "We like our things right. I like my systems the way you like them. You do not like Docker. You like the things you like, I get it, right? I boy, do I get it right, and so you can set this however you want, right? You want it through bass, you want it through whatever. Go ahead like, I can. What I'm trying to say to you, I suppose, is my systems are finely tuned.",
+      "verified": true
+    },
+    {
+      "turn_id": 64,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 8,
+      "text": "And you said, hey, I have this idea.",
+      "verified": true
+    },
+    {
+      "turn_id": 65,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 81,
+      "text": "And I had my sisters just ingest a transcript, right? And then it's, it puts it. It my systems are mature enough where it can take that. That messy, raw data structure it largely understand it. Then it passes it to me. We then have a natural language conversation about it. I take some notes, I do a little bit of research do like a little bit of tweaking largely natural language, right? Like, I'm not handwriting code at this point.",
+      "verified": true
+    },
+    {
+      "turn_id": 66,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 40,
+      "text": "Because you don't f****** need to. And then, I'm, like, cool, yeah, oh, oh, hey, uh, just sorry, I know you were in the middle of doing something for me. AI, uh, you're doing my bidding, which I really appreciate.",
+      "verified": true
+    },
+    {
+      "turn_id": 67,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 57,
+      "text": "But, like, I just got a text message from Justin so, uh, hey, oh, we sent this repo cool, could we just, uh, dig into that for a second. Like, I'm I'm not exaggerating what I'm saying. This is largely what I'm doing, and and what I'm also saying is the ease at which I did this.",
+      "verified": true
+    },
+    {
+      "turn_id": 68,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 4,
+      "text": "We'll get you there.",
+      "verified": true
+    },
+    {
+      "turn_id": 69,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 200,
+      "text": "I mean, let me ask you a question. Here's the thing I would be. F****** shocked if the thing that I have given you the iterations that I've given you is anywhere close to what you want. And that's fine because I don't actually know any. Largely anything about audio engineering. I love music. I'm a self-taught musician. I suspect you are as well, right? Like, I love systems, I love, I'm I. I am an engineer at heart eyes, are you? But like, when it comes to Gearhead stuff, I know f*** all about that. I've never been that, like, I would just get like s***, guitars, and s*** amps, and just I moved a lot, and I just you know. And so whatever, and so I never, not whatever. But like I, that was never a thing that that I had the I think capacity or did not draw me in. And so, and I say that to say, that's what makes this more interesting in my mind, because you can tell me what's that? Yeah, no, no, and totally. I'm quite amenable, right? Like, I am very excited. I just was at my new house, um, and.",
+      "verified": true
+    },
+    {
+      "turn_id": 70,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 32,
+      "text": "You will if I can. If I can lure you and Becca out of the suburbs, you got to come see it. It's pretty f****** dope, um, and I just built the.",
+      "verified": true
+    },
+    {
+      "turn_id": 71,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 12,
+      "text": "This is insane, but like I, I'm a pretty s i I'm?",
+      "verified": true
+    },
+    {
+      "turn_id": 72,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 68,
+      "text": "I don't want anything other than people just to be kind to one another. And you know, people not to hurt animals and be nice to the Earth and like, and just be curious, right, that really every, every single day. My kid gets out of the car, right? I drop them off at school. He's been to five schools. He's five. He's been to five schools in.",
+      "verified": true
+    },
+    {
+      "turn_id": 73,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 10,
+      "text": "Four different states. I think I think that's right, um.",
+      "verified": true
+    },
+    {
+      "turn_id": 74,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 18,
+      "text": "And every day I've dropped them off. I say to him the following, because I f****** mean this.",
+      "verified": true
+    },
+    {
+      "turn_id": 75,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 1,
+      "text": "Okay.",
+      "verified": true
+    },
+    {
+      "turn_id": 76,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 15,
+      "text": "Falcon. He's named after, by the way, my kid's named after a gay black man.",
+      "verified": true
+    },
+    {
+      "turn_id": 77,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 10,
+      "text": "So, both my kids are, uh. So, I say, Baldwin.",
+      "verified": true
+    },
+    {
+      "turn_id": 78,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 1,
+      "text": "Um.",
+      "verified": true
+    },
+    {
+      "turn_id": 79,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 47,
+      "text": "Kind, curious, and gentle, because that is how I try to live my life, right? So I like you and I can teach you how to do what I do. It is not hard. You have all of the tools you just need someone to go. Hey.",
+      "verified": true
+    },
+    {
+      "turn_id": 80,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 23,
+      "text": "Hey, it's different. Now, like, you don't have to be, I think intimidated or overwhelmed, because I know, I know, what an engineer.",
+      "verified": true
+    },
+    {
+      "turn_id": 81,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 42,
+      "text": "Is, I know what an engineer looks like. Sounds like I know what they smell like, I, I like, I can. I can sniff them out, right? I can sniff out somebody who is highly capable and highly curious and and highly.",
+      "verified": true
+    },
+    {
+      "turn_id": 82,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 171,
+      "text": "Um, adoptable, I suppose, and so you intelligence responsible. You can do this, and so if you want to build the thing of your dreams. You don't have to keep calling a stranger on the telephone whose face you've never. F****** seen, we can do that. Like, I don't care. I'll happily do it. I like you, I like your wife like, I. I like helping people. It was, listen you. I don't know how much you know about me, so I'm just gonna ramble a little bit. Um, and then I want to have, I will. I will give you the floor, but like, you know, I'm, I'm like a weird. I'm a curious, weird man. Um, I was an only child to, uh, grew up in Boston, taught myself a bunch of stuff didn't do particularly well in school started. School early shouldn't have bounce around a lot, but like man, I've been a vegan since the 90s. I was part of the gay straight Alliance in the 90s.",
+      "verified": true
+    },
+    {
+      "turn_id": 83,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 7,
+      "text": "I, yeah, yeah, but like, I, I?",
+      "verified": true
+    },
+    {
+      "turn_id": 84,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 50,
+      "text": "I don't know. I worked in Haiti, I've just I'm trying to the world. Is f****** hard man, and so I'm just trying to do my part to make it less s*****, and so that brings me to the point of this conversation, perhaps one of the points, which is.",
+      "verified": true
+    },
+    {
+      "turn_id": 85,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 32,
+      "text": "Listen, I can. I can do this s*** in my sleep, right? Like, I have been taking apart systems and, and we're now at a point where my canonical knowledge and capabilities.",
+      "verified": true
+    },
+    {
+      "turn_id": 86,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 36,
+      "text": "Have met a maturation of where we are Hardware, wise price points, and open source AI, model wise, and algorithm and algorithm-wise. Where, like there is some holy f****** s*** stuff that I can teach you?",
+      "verified": true
+    },
+    {
+      "turn_id": 87,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 14,
+      "text": "Uh, like I had a crazy meeting yesterday. I don't know what's gonna happen.",
+      "verified": true
+    },
+    {
+      "turn_id": 88,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 11,
+      "text": "But I, I think stuff starts stuff's gonna start to turn.",
+      "verified": true
+    },
+    {
+      "turn_id": 89,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 53,
+      "text": "We'll see, right? I don't know. Timeline, I make zero promises, because I don't know what the f***** about to happen. That's not how I lived my life. I'm not a planner, um, I, and, and so, you know, I will let you know opportunities as they come. I guess the question is?",
+      "verified": true
+    },
+    {
+      "turn_id": 90,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 20,
+      "text": "Yeah, like, we should meet and talk first because I would like to understand, what do you want to do?",
+      "verified": true
+    },
+    {
+      "turn_id": 91,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 9,
+      "text": "Okay, uh, just as I know when I learned.",
+      "verified": true
+    },
+    {
+      "turn_id": 92,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 22,
+      "text": "Music wise and otherwise, and what are some notes on the app? I've now run out of, uh, words, please go ahead.",
+      "verified": true
+    },
+    {
+      "turn_id": 93,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 28,
+      "text": "Uh, what open source was and is and got into it? It was a very emotional and philosophical way to view the world as sharing and not having.",
+      "verified": true
+    },
+    {
+      "turn_id": 94,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 1,
+      "text": "Yeah.",
+      "verified": true
+    },
+    {
+      "turn_id": 95,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 2,
+      "text": "Yes, correct.",
+      "verified": true
+    },
+    {
+      "turn_id": 96,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 23,
+      "text": "Roof that has the code internally AKA proprietary code or closed Source. So I got into it in about. I want to say.",
+      "verified": true
+    },
+    {
+      "turn_id": 97,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 1,
+      "text": "Yes.",
+      "verified": true
+    },
+    {
+      "turn_id": 98,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 1,
+      "text": "I.",
+      "verified": true
+    },
+    {
+      "turn_id": 99,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 1,
+      "text": "Yep.",
+      "verified": true
+    },
+    {
+      "turn_id": 100,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 10,
+      "text": "15, I believe, and I just fell in love. What?",
+      "verified": true
+    },
+    {
+      "turn_id": 101,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 9,
+      "text": "Uh, 84. I'll be 42 in a few weeks.",
+      "verified": true
+    },
+    {
+      "turn_id": 102,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 10,
+      "text": "What, how old are you? What year were you born?",
+      "verified": true
+    },
+    {
+      "turn_id": 103,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 8,
+      "text": "Oh, I will make a note of that.",
+      "verified": true
+    },
+    {
+      "turn_id": 104,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 4,
+      "text": "Oh, but I will.",
+      "verified": true
+    },
+    {
+      "turn_id": 105,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 16,
+      "text": "Okay, congratulations. Oh, that's oh, I forgot, you're also October. I will be 47 on Friday.",
+      "verified": true
+    },
+    {
+      "turn_id": 106,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 3,
+      "text": "Yeah, f*** you?",
+      "verified": true
+    },
+    {
+      "turn_id": 107,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 2,
+      "text": "Uh, I.",
+      "verified": true
+    },
+    {
+      "turn_id": 108,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 12,
+      "text": "Oh, you don't have to! Cuz birthdays are f****** arbitrary, and uh.",
+      "verified": true
+    },
+    {
+      "turn_id": 109,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 11,
+      "text": "I sent it by pigeons, so it might take a bit.",
+      "verified": true
+    },
+    {
+      "turn_id": 110,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 17,
+      "text": "Oh, okay, go ahead. Great. Uh, hi, I, I absolutely am expecting a singing telegram. Go ahead.",
+      "verified": true
+    },
+    {
+      "turn_id": 111,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 5,
+      "text": "I, I am, uh, please.",
+      "verified": true
+    },
+    {
+      "turn_id": 112,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 1,
+      "text": "Good.",
+      "verified": true
+    },
+    {
+      "turn_id": 113,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 3,
+      "text": "Okay, so um.",
+      "verified": true
+    },
+    {
+      "turn_id": 114,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 2,
+      "text": "You know?",
+      "verified": true
+    },
+    {
+      "turn_id": 115,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 6,
+      "text": "I really want to kind of.",
+      "verified": true
+    },
+    {
+      "turn_id": 116,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 4,
+      "text": "Get ahead on this.",
+      "verified": true
+    },
+    {
+      "turn_id": 117,
+      "speaker": "DANIEL_BASS_SHERIZEN",
+      "display_tag": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "raw_speaker_label": "[SPEAKER: DANIEL_BASS_SHERIZEN]",
+      "word_count": 32,
+      "text": "That's fine. Um, I am going to put you on mute because I have to attend to some biology, but you keep talking because it's now your turn you're off the floor.",
+      "verified": true
+    },
+    {
+      "turn_id": 118,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 2,
+      "text": "Nand parametric.",
+      "verified": true
+    },
+    {
+      "turn_id": 119,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 15,
+      "text": "Modeling, which isn't officially published in the official Nam repo. So, like the standard plug-in?",
+      "verified": true
+    },
+    {
+      "turn_id": 120,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 9,
+      "text": "That you find on GitHub, the training, uh, part.",
+      "verified": true
+    },
+    {
+      "turn_id": 121,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 32,
+      "text": "Uh, is just set for a single static capture, which those are great. And if you don't know, a static capture is basically you put your knobs in a single set position.",
+      "verified": true
+    },
+    {
+      "turn_id": 122,
+      "speaker": "JUSTIN_MUIR",
+      "display_tag": "[SPEAKER: JUSTIN_MUIR]",
+      "raw_speaker_label": "[SPEAKER: JUSTIN_MUIR]",
+      "word_count": 18,
+      "text": "You run the sweep through it, and then you run the training, and then that gives you that.",
+      "verified": true
+    }
+  ]
+}

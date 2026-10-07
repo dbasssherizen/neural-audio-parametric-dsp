@@ -497,5 +497,15 @@
       "path": "./takes/take_44_extreme_edge_G8.5_B9.5_M1.0_T4.0_M6.0.wav",
       "is_validation": false
     }
-  ]
+  ],
+  "academy": {
+    "current_stage": 3,
+    "current_stage_name": "Structured Schemas (JSON, YAML, BAML)",
+    "last_unlocked_at": "2026-10-07T09:10:16.598904",
+    "unlocked_stages": [
+      1,
+      2,
+      3
+    ]
+  }
 }

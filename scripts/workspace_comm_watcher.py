@@ -506,12 +506,12 @@ def parse_transcript_text(content: str) -> List[Dict[str, str]]:
         # Detect speaker headers in transcripts
         # Formats: "The speaker", "You", "Justin Muir", "Justin Muir • Call 2", "Daniel Bass Sherizen:"
         lower_line = line_s.lower()
-        if lower_line in ["the speaker", "speaker", "justin muir", "justin"]:
+        if lower_line in ["the speaker", "speaker", "justin muir", "justin", "[speaker: justin_muir]", "[speaker: justin]"]:
             if current_buffer:
                 turns.append({"speaker": current_speaker, "text": " ".join(current_buffer)})
                 current_buffer = []
             current_speaker = "Justin Muir"
-        elif lower_line in ["you", "daniel", "daniel bass sherizen"]:
+        elif lower_line in ["you", "daniel", "daniel bass sherizen", "[speaker: daniel_bass_sherizen]", "[speaker: daniel]"]:
             if current_buffer:
                 turns.append({"speaker": current_speaker, "text": " ".join(current_buffer)})
                 current_buffer = []

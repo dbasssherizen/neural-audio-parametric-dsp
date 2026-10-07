@@ -15,19 +15,22 @@ NOTES_DIR = "/Users/danielbasssherizen/Developer/neural-audio-parametric-dsp/not
 
 def extract_justin_dialogue():
     files = sorted(glob.glob(os.path.join(NOTES_DIR, "call_*_transcript_*.txt")))
+    files = [f for f in files if not f.endswith(".raw.txt")]
     utterances = []
     
     for f in files:
         with open(f, "r", encoding="utf-8") as fh:
             content = fh.read()
         
-        # Split turns
-        turns = re.split(r'\n(?=The speaker\n|You\n)', content)
+        # Split turns (supports both legacy and standardized diarization tags)
+        turns = re.split(r'\n(?=The speaker\n|You\n|\[SPEAKER:\s*JUSTIN_MUIR\]\n|\[SPEAKER:\s*DANIEL_BASS_SHERIZEN\]\n)', content)
         for t in turns:
             t = t.strip()
-            if t.startswith("The speaker"):
+            if t.startswith("The speaker") or t.startswith("[SPEAKER: JUSTIN_MUIR]"):
                 lines = t.split("\n")[1:]
                 text = " ".join(lines).strip()
+                # Purge any scrubber artifacts
+                text = re.sub(r"\b0:00\s+13:29\b", "", text).strip()
                 if text:
                     utterances.append(text)
     return utterances

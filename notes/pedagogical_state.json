@@ -4,7 +4,7 @@
     "phone": "+1 630-418-9227",
     "email": "nightmareglove@gmail.com"
   },
-  "current_stage": 1,
+  "current_stage": 3,
   "stages": {
     "1": {
       "id": 1,
@@ -17,9 +17,9 @@
     "2": {
       "id": 2,
       "name": "Markdown & The Karpathy Minimal Wiki",
-      "status": "LOCKED",
-      "readiness_score": 50,
-      "unlocked_at": null,
+      "status": "UNLOCKED",
+      "readiness_score": 75,
+      "unlocked_at": "2026-10-07T09:10:16.477331",
       "triggers_matched": [
         {
           "timestamp": "2026-10-06T22:33:55.393060",
@@ -38,32 +38,98 @@
           "weight": 25,
           "source": "file:call_2_transcript_20261006.txt",
           "snippet": "And you used used a kind of a more traditional open notepad and taking notes."
+        },
+        {
+          "timestamp": "2026-10-07T09:10:16.477187",
+          "stage_id": 2,
+          "stage_name": "Markdown & The Karpathy Minimal Wiki",
+          "keyword": "notes",
+          "weight": 25,
+          "source": "file:call_1_transcript_20261006.raw.txt",
+          "snippet": "\u202a+1 630-418-9227\u202c \u2022 October 6 at 11:30\u202fAM Call Notes Summary You called to discuss AI and open source. \u2022 The conversation focused on the advancements "
         }
       ]
     },
     "3": {
       "id": 3,
       "name": "Structured Schemas (JSON, YAML, BAML)",
-      "status": "LOCKED",
-      "readiness_score": 0,
-      "unlocked_at": null,
-      "triggers_matched": []
+      "status": "UNLOCKED",
+      "readiness_score": 90,
+      "unlocked_at": "2026-10-07T09:10:16.596708",
+      "triggers_matched": [
+        {
+          "timestamp": "2026-10-07T09:10:16.510602",
+          "stage_id": 3,
+          "stage_name": "Structured Schemas (JSON, YAML, BAML)",
+          "keyword": "table",
+          "weight": 30,
+          "source": "file:call_1_transcript_20261006.txt",
+          "snippet": "\u202a+1 630-418-9227\u202c \u2022 October 6 at 11:30\u202fAM Call Notes Summary You called to discuss AI and open source. \u2022 The conversation focused on the advancements "
+        },
+        {
+          "timestamp": "2026-10-07T09:10:16.552040",
+          "stage_id": 3,
+          "stage_name": "Structured Schemas (JSON, YAML, BAML)",
+          "keyword": "table",
+          "weight": 30,
+          "source": "file:call_2_transcript_20261006.txt",
+          "snippet": "Justin Muir \u2022 Call 2\nOctober 6 at 11:48 AM \u2022 Duration: 40m 34s\n\n=== SUMMARY ===\nYou called to discuss a Python script for audio automation. \n\u2022 The scr"
+        },
+        {
+          "timestamp": "2026-10-07T09:10:16.596516",
+          "stage_id": 3,
+          "stage_name": "Structured Schemas (JSON, YAML, BAML)",
+          "keyword": "table",
+          "weight": 30,
+          "source": "file:call_3_transcript_20261006.txt",
+          "snippet": "Justin Muir \u2022 Call 3\nOctober 6 at 3:46 PM \u2022 Duration: 20m 44s (20:44)\n\n=== SUMMARY ===\nYou called to discuss coding, Google Colab, and the importance "
+        }
+      ]
     },
     "4": {
       "id": 4,
       "name": "TurboQuant Vector Memory & Autonomous AutoResearch",
       "status": "LOCKED",
-      "readiness_score": 0,
+      "readiness_score": 35,
       "unlocked_at": null,
-      "triggers_matched": []
+      "triggers_matched": [
+        {
+          "timestamp": "2026-10-07T09:10:16.552333",
+          "stage_id": 4,
+          "stage_name": "TurboQuant Vector Memory & Autonomous AutoResearch",
+          "keyword": "embedding",
+          "weight": 35,
+          "source": "file:call_2_transcript_20261006.txt",
+          "snippet": "Justin Muir \u2022 Call 2\nOctober 6 at 11:48 AM \u2022 Duration: 40m 34s\n\n=== SUMMARY ===\nYou called to discuss a Python script for audio automation. \n\u2022 The scr"
+        }
+      ]
     },
     "5": {
       "id": 5,
       "name": "Studio Edge Appliance (Gemma 4 E2B/E4B in the Amp Rack)",
       "status": "LOCKED",
-      "readiness_score": 0,
+      "readiness_score": 70,
       "unlocked_at": null,
-      "triggers_matched": []
+      "triggers_matched": [
+        {
+          "timestamp": "2026-10-07T09:10:16.552497",
+          "stage_id": 5,
+          "stage_name": "Studio Edge Appliance (Gemma 4 E2B/E4B in the Amp Rack)",
+          "keyword": "osc",
+          "weight": 35,
+          "source": "file:call_2_transcript_20261006.txt",
+          "snippet": "Justin Muir \u2022 Call 2\nOctober 6 at 11:48 AM \u2022 Duration: 40m 34s\n\n=== SUMMARY ===\nYou called to discuss a Python script for audio automation. \n\u2022 The scr"
+        },
+        {
+          "timestamp": "2026-10-07T09:10:16.599600",
+          "stage_id": 5,
+          "stage_name": "Studio Edge Appliance (Gemma 4 E2B/E4B in the Amp Rack)",
+          "keyword": "osc",
+          "weight": 35,
+          "source": "file:call_3_transcript_20261006.txt",
+          "snippet": "Justin Muir \u2022 Call 3\nOctober 6 at 3:46 PM \u2022 Duration: 20m 44s (20:44)\n\n=== SUMMARY ===\nYou called to discuss coding, Google Colab, and the importance "
+        }
+      ]
     },
     "6": {
       "id": 6,
@@ -100,6 +166,42 @@
       "source_type": "transcript_file",
       "file_name": "call_3_transcript_20261006.txt",
       "justin_utterances": 59
+    },
+    {
+      "timestamp": "2026-10-07T09:10:16.507186",
+      "source_type": "transcript_file",
+      "file_name": "call_1_transcript_20261006.raw.txt",
+      "justin_utterances": 48
+    },
+    {
+      "timestamp": "2026-10-07T09:10:16.512016",
+      "source_type": "transcript_file",
+      "file_name": "call_1_transcript_20261006.txt",
+      "justin_utterances": 1
+    },
+    {
+      "timestamp": "2026-10-07T09:10:16.547868",
+      "source_type": "transcript_file",
+      "file_name": "call_2_transcript_20261006.raw.txt",
+      "justin_utterances": 43
+    },
+    {
+      "timestamp": "2026-10-07T09:10:16.553663",
+      "source_type": "transcript_file",
+      "file_name": "call_2_transcript_20261006.txt",
+      "justin_utterances": 0
+    },
+    {
+      "timestamp": "2026-10-07T09:10:16.592898",
+      "source_type": "transcript_file",
+      "file_name": "call_3_transcript_20261006.raw.txt",
+      "justin_utterances": 59
+    },
+    {
+      "timestamp": "2026-10-07T09:10:16.600981",
+      "source_type": "transcript_file",
+      "file_name": "call_3_transcript_20261006.txt",
+      "justin_utterances": 0
     }
   ],
   "readiness_signals_history": [
@@ -120,7 +222,70 @@
       "weight": 25,
       "source": "file:call_2_transcript_20261006.txt",
       "snippet": "And you used used a kind of a more traditional open notepad and taking notes."
+    },
+    {
+      "timestamp": "2026-10-07T09:10:16.477187",
+      "stage_id": 2,
+      "stage_name": "Markdown & The Karpathy Minimal Wiki",
+      "keyword": "notes",
+      "weight": 25,
+      "source": "file:call_1_transcript_20261006.raw.txt",
+      "snippet": "\u202a+1 630-418-9227\u202c \u2022 October 6 at 11:30\u202fAM Call Notes Summary You called to discuss AI and open source. \u2022 The conversation focused on the advancements "
+    },
+    {
+      "timestamp": "2026-10-07T09:10:16.510602",
+      "stage_id": 3,
+      "stage_name": "Structured Schemas (JSON, YAML, BAML)",
+      "keyword": "table",
+      "weight": 30,
+      "source": "file:call_1_transcript_20261006.txt",
+      "snippet": "\u202a+1 630-418-9227\u202c \u2022 October 6 at 11:30\u202fAM Call Notes Summary You called to discuss AI and open source. \u2022 The conversation focused on the advancements "
+    },
+    {
+      "timestamp": "2026-10-07T09:10:16.552040",
+      "stage_id": 3,
+      "stage_name": "Structured Schemas (JSON, YAML, BAML)",
+      "keyword": "table",
+      "weight": 30,
+      "source": "file:call_2_transcript_20261006.txt",
+      "snippet": "Justin Muir \u2022 Call 2\nOctober 6 at 11:48 AM \u2022 Duration: 40m 34s\n\n=== SUMMARY ===\nYou called to discuss a Python script for audio automation. \n\u2022 The scr"
+    },
+    {
+      "timestamp": "2026-10-07T09:10:16.552333",
+      "stage_id": 4,
+      "stage_name": "TurboQuant Vector Memory & Autonomous AutoResearch",
+      "keyword": "embedding",
+      "weight": 35,
+      "source": "file:call_2_transcript_20261006.txt",
+      "snippet": "Justin Muir \u2022 Call 2\nOctober 6 at 11:48 AM \u2022 Duration: 40m 34s\n\n=== SUMMARY ===\nYou called to discuss a Python script for audio automation. \n\u2022 The scr"
+    },
+    {
+      "timestamp": "2026-10-07T09:10:16.552497",
+      "stage_id": 5,
+      "stage_name": "Studio Edge Appliance (Gemma 4 E2B/E4B in the Amp Rack)",
+      "keyword": "osc",
+      "weight": 35,
+      "source": "file:call_2_transcript_20261006.txt",
+      "snippet": "Justin Muir \u2022 Call 2\nOctober 6 at 11:48 AM \u2022 Duration: 40m 34s\n\n=== SUMMARY ===\nYou called to discuss a Python script for audio automation. \n\u2022 The scr"
+    },
+    {
+      "timestamp": "2026-10-07T09:10:16.596516",
+      "stage_id": 3,
+      "stage_name": "Structured Schemas (JSON, YAML, BAML)",
+      "keyword": "table",
+      "weight": 30,
+      "source": "file:call_3_transcript_20261006.txt",
+      "snippet": "Justin Muir \u2022 Call 3\nOctober 6 at 3:46 PM \u2022 Duration: 20m 44s (20:44)\n\n=== SUMMARY ===\nYou called to discuss coding, Google Colab, and the importance "
+    },
+    {
+      "timestamp": "2026-10-07T09:10:16.599600",
+      "stage_id": 5,
+      "stage_name": "Studio Edge Appliance (Gemma 4 E2B/E4B in the Amp Rack)",
+      "keyword": "osc",
+      "weight": 35,
+      "source": "file:call_3_transcript_20261006.txt",
+      "snippet": "Justin Muir \u2022 Call 3\nOctober 6 at 3:46 PM \u2022 Duration: 20m 44s (20:44)\n\n=== SUMMARY ===\nYou called to discuss coding, Google Colab, and the importance "
     }
   ],
-  "last_updated": "2026-10-07T06:10:42.181969"
+  "last_updated": "2026-10-07T09:10:16.600985"
 }
