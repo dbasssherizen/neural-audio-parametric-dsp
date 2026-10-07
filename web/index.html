@@ -2444,7 +2444,12 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
               <span class="text-sm font-bold text-sky-400">1. Physical Studio Re-Amp Signal Flowchart</span>
               <p class="text-xs text-slate-400">Hardware loop through Focusrite/Apollo, Radial Re-Amp Box, 50W Tube Head, and Reactive Load.</p>
             </div>
-            <button onclick="copyDiagramCode('flowchart-code')" class="text-[10px] font-mono text-sky-300 hover:text-white bg-slate-900 border border-slate-800 px-2.5 py-1.5 rounded-lg">Copy Mermaid</button>
+            <div class="flex items-center gap-2">
+              <button onclick="loadDiagramIntoMermaidStudio('flowchart')" class="text-[10px] font-mono text-emerald-300 hover:text-white bg-emerald-950/60 border border-emerald-500/30 px-2.5 py-1.5 rounded-lg transition flex items-center gap-1 cursor-pointer">
+                <span>🎨 Open in Live Studio ↗</span>
+              </button>
+              <button onclick="copyDiagramCode('flowchart-code')" class="text-[10px] font-mono text-sky-300 hover:text-white bg-slate-900 border border-slate-800 px-2.5 py-1.5 rounded-lg cursor-pointer">Copy Mermaid</button>
+            </div>
           </div>
           <div class="mermaid-code-container overflow-x-auto p-3 bg-slate-900/60 rounded-xl" id="mermaid-flowchart" data-mermaid-src="flowchart TD
     subgraph LocalStudio[&quot;Local Studio Audio Hardware (48kHz 24-bit)&quot;]
@@ -2525,7 +2530,12 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
               <span class="text-sm font-bold text-purple-400">2. Cockos REAPER Auto-Reamp Sequence Diagram</span>
               <p class="text-xs text-slate-400">ReaScript 120Hz GUI loop, F1 hotkey trigger, 38.0s calibration sweep, zero clock drift, region marker bounding, 10s batch export.</p>
             </div>
-            <button onclick="copyDiagramCode('sequence-code')" class="text-[10px] font-mono text-purple-300 hover:text-white bg-slate-900 border border-slate-800 px-2.5 py-1.5 rounded-lg">Copy Mermaid</button>
+            <div class="flex items-center gap-2">
+              <button onclick="loadDiagramIntoMermaidStudio('sequence')" class="text-[10px] font-mono text-emerald-300 hover:text-white bg-emerald-950/60 border border-emerald-500/30 px-2.5 py-1.5 rounded-lg transition flex items-center gap-1 cursor-pointer">
+                <span>🎨 Open in Live Studio ↗</span>
+              </button>
+              <button onclick="copyDiagramCode('sequence-code')" class="text-[10px] font-mono text-purple-300 hover:text-white bg-slate-900 border border-slate-800 px-2.5 py-1.5 rounded-lg cursor-pointer">Copy Mermaid</button>
+            </div>
           </div>
           <div class="mermaid-code-container overflow-x-auto p-3 bg-slate-900/60 rounded-xl" id="mermaid-sequence" data-mermaid-src="sequenceDiagram
     autonumber
@@ -2584,7 +2594,12 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
               <span class="text-sm font-bold text-emerald-400">3. Parametric WaveNet &amp; CatMLP DSP Class Architecture</span>
               <p class="text-xs text-slate-400">5-dimensional continuous knob projection concatenated with causal dilated Conv1D channels.</p>
             </div>
-            <button onclick="copyDiagramCode('class-code')" class="text-[10px] font-mono text-emerald-300 hover:text-white bg-slate-900 border border-slate-800 px-2.5 py-1.5 rounded-lg">Copy Mermaid</button>
+            <div class="flex items-center gap-2">
+              <button onclick="loadDiagramIntoMermaidStudio('class')" class="text-[10px] font-mono text-emerald-300 hover:text-white bg-emerald-950/60 border border-emerald-500/30 px-2.5 py-1.5 rounded-lg transition flex items-center gap-1 cursor-pointer">
+                <span>🎨 Open in Live Studio ↗</span>
+              </button>
+              <button onclick="copyDiagramCode('class-code')" class="text-[10px] font-mono text-emerald-300 hover:text-white bg-slate-900 border border-slate-800 px-2.5 py-1.5 rounded-lg cursor-pointer">Copy Mermaid</button>
+            </div>
           </div>
           <div class="mermaid-code-container overflow-x-auto p-3 bg-slate-900/60 rounded-xl" id="mermaid-class" data-mermaid-src="classDiagram
     class ContinuousKnobVector {
@@ -3186,6 +3201,9 @@ files.download("./marshall_origin50.param.nam")</code></pre>
             </a>
             <a href="./nl_daemon_bridge.py" download class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-indigo-300 font-mono text-[11px] border border-slate-700 flex items-center gap-1.5">
               <span>🛰️</span> nl_daemon_bridge.py
+            </a>
+            <a href="#lab-mermaid-studio" onclick="switchStudioWorkspace('workspace-academy')" class="px-3 py-1.5 rounded-lg bg-emerald-950/60 hover:bg-emerald-900/80 text-emerald-300 font-mono text-[11px] border border-emerald-500/40 flex items-center gap-1.5">
+              <span>📐</span> Lab 8: Mermaid Studio
             </a>
           </div>
         </div>
@@ -3948,6 +3966,210 @@ files.download("./marshall_origin50.param.nam")</code></pre>
         </div>
       </div>
 
+      <!-- LAB 8: VISUAL ARCHITECTURE & INTERACTIVE MERMAID STUDIO ("DIAGRAMS IN CODE") -->
+      <div id="lab-mermaid-studio" class="bg-slate-900/90 border border-emerald-500/30 rounded-3xl p-6 sm:p-8 space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-lg font-bold">8</div>
+            <div>
+              <h3 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+                <span>Visual Architecture &amp; Interactive Mermaid Studio</span>
+                <span class="text-[10px] font-mono uppercase bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 px-2 py-0.5 rounded-full">Interactive Visuals Hub</span>
+              </h3>
+              <p class="text-xs text-slate-400">Justin's native flowcharts in code: dual-pane live diagram editor, studio presets, netops topology, and instant SVG/Markdown export.</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <button type="button" onclick="copyMermaidSVG()" class="px-3 py-1.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-mono text-xs font-bold transition flex items-center gap-1.5 shrink-0 cursor-pointer">
+              <span>🖼️</span> Copy SVG
+            </button>
+            <button type="button" onclick="downloadMermaidSVG()" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 font-mono text-xs font-bold transition flex items-center gap-1.5 shrink-0 cursor-pointer">
+              <span>⬇️</span> Download SVG
+            </button>
+          </div>
+        </div>
+
+        <!-- Presets Selection Bar -->
+        <div class="space-y-3">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <span class="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
+              <span>📐</span> Select Studio &amp; Architecture Blueprint:
+            </span>
+            <span class="text-[11px] text-slate-500 font-mono hidden sm:inline" id="mermaidActivePresetBadge">Preset: Re-Amp Signal Chain</span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 text-xs font-mono">
+            <button type="button" onclick="loadMermaidPreset('reamp')" id="btn-preset-reamp" class="px-3 py-2 rounded-xl font-bold bg-emerald-600 text-white shadow-lg shadow-emerald-950 transition cursor-pointer text-left flex flex-col gap-0.5">
+              <span class="text-sm">🎛️ Re-Amp Chain</span>
+              <span class="text-[10px] text-emerald-200 font-sans font-normal">AXE I/O &bull; Redeye &bull; Loadbox</span>
+            </button>
+            <button type="button" onclick="loadMermaidPreset('netops')" id="btn-preset-netops" class="px-3 py-2 rounded-xl text-slate-400 hover:text-white bg-slate-950 border border-slate-800 transition cursor-pointer text-left flex flex-col gap-0.5">
+              <span class="text-sm">🛡️ NetOps pfSense</span>
+              <span class="text-[10px] text-slate-500 font-sans font-normal">VLAN 10 Audio &bull; Proxmox</span>
+            </button>
+            <button type="button" onclick="loadMermaidPreset('reaper')" id="btn-preset-reaper" class="px-3 py-2 rounded-xl text-slate-400 hover:text-white bg-slate-950 border border-slate-800 transition cursor-pointer text-left flex flex-col gap-0.5">
+              <span class="text-sm">⚡ REAPER Sequence</span>
+              <span class="text-[10px] text-slate-500 font-sans font-normal">Lua &bull; ASIO &bull; nl_daemon</span>
+            </button>
+            <button type="button" onclick="loadMermaidPreset('catmlp')" id="btn-preset-catmlp" class="px-3 py-2 rounded-xl text-slate-400 hover:text-white bg-slate-950 border border-slate-800 transition cursor-pointer text-left flex flex-col gap-0.5">
+              <span class="text-sm">🧠 CatMLP DSP</span>
+              <span class="text-[10px] text-slate-500 font-sans font-normal">Knobs &bull; FiLM &bull; DilatedConv</span>
+            </button>
+            <button type="button" onclick="loadMermaidPreset('learnlm')" id="btn-preset-learnlm" class="px-3 py-2 rounded-xl text-slate-400 hover:text-white bg-slate-950 border border-slate-800 transition cursor-pointer text-left flex flex-col gap-0.5 col-span-2 sm:col-span-1">
+              <span class="text-sm">📈 LearnLM Stages</span>
+              <span class="text-[10px] text-slate-500 font-sans font-normal">Stage 1 to 7 Progression</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- DUAL-PANE LIVE MERMAID STUDIO -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          
+          <!-- LEFT PANE: Live Markdown / Mermaid Editor (5 cols on lg) -->
+          <div class="lg:col-span-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-300 flex items-center gap-1.5">
+                <span>📝</span> Mermaid Code Editor
+              </span>
+              <div class="flex items-center gap-1 text-[10px] font-mono text-slate-400">
+                <span id="mermaidLineCount">0 lines</span>
+                <span>&bull;</span>
+                <span id="mermaidStatusBadge" class="text-emerald-400">Valid</span>
+              </div>
+            </div>
+
+            <!-- Quick Snippet Inserters -->
+            <div class="flex items-center gap-1.5 flex-wrap text-[10px] font-mono">
+              <span class="text-slate-500">Insert:</span>
+              <button type="button" onclick="insertMermaidSnippet('node')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition cursor-pointer">+ Node</button>
+              <button type="button" onclick="insertMermaidSnippet('subgraph')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition cursor-pointer">+ Subgraph</button>
+              <button type="button" onclick="insertMermaidSnippet('arrow')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition cursor-pointer">+ Arrow</button>
+              <button type="button" onclick="insertMermaidSnippet('decision')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition cursor-pointer">+ Choice</button>
+              <button type="button" onclick="resetActiveMermaidPreset()" class="ml-auto px-2 py-0.5 rounded bg-rose-950/60 hover:bg-rose-900 text-rose-300 border border-rose-500/30 transition cursor-pointer">↺ Reset</button>
+            </div>
+
+            <div class="relative rounded-2xl border border-slate-800 bg-slate-950 overflow-hidden shadow-inner">
+              <textarea id="mermaidEditorTextarea" oninput="handleMermaidEditorInput()" spellcheck="false" class="w-full h-80 sm:h-96 p-4 bg-slate-950 text-cyan-300 font-mono text-xs leading-relaxed focus:outline-none focus:ring-1 focus:ring-emerald-500/50 resize-y" placeholder="Type or paste Mermaid diagram syntax here..."></textarea>
+            </div>
+
+            <div class="flex items-center justify-between text-[11px] text-slate-400 pt-1">
+              <button type="button" onclick="copyMermaidEditorCode()" class="text-emerald-400 hover:underline flex items-center gap-1 cursor-pointer">
+                <span>📋 Copy Diagram Markdown</span>
+              </button>
+              <span class="text-slate-500">Autosaves in live memory</span>
+            </div>
+
+            <div id="mermaidEditorError" class="hidden p-3 rounded-xl bg-rose-950/80 border border-rose-500/50 text-[11px] font-mono text-rose-200">
+              <span class="font-bold text-rose-300 block mb-0.5">⚠️ Syntax Warning:</span>
+              <span id="mermaidErrorMessage">Parse error</span>
+            </div>
+          </div>
+
+          <!-- RIGHT PANE: Live Rendered SVG Viewport (7 cols on lg) -->
+          <div class="lg:col-span-7 space-y-3">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-slate-300 flex items-center gap-1.5">
+                  <span>📺</span> Live Diagram SVG Viewport
+                </span>
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              </div>
+              <div class="flex items-center gap-1 text-[11px] font-mono">
+                <button type="button" onclick="zoomMermaidPreview(-0.15)" title="Zoom Out" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center border border-slate-700 cursor-pointer font-bold">−</button>
+                <span id="mermaidZoomLevel" class="px-2 text-slate-400 text-[10px]">100%</span>
+                <button type="button" onclick="zoomMermaidPreview(0.15)" title="Zoom In" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center border border-slate-700 cursor-pointer font-bold">+</button>
+                <button type="button" onclick="resetMermaidZoom()" title="Reset Zoom" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[10px] border border-slate-700 cursor-pointer ml-1">Reset</button>
+              </div>
+            </div>
+
+            <!-- Viewport Container -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-950/90 p-4 sm:p-6 overflow-hidden shadow-2xl relative min-h-[360px] sm:min-h-[420px] flex items-center justify-center" id="mermaidViewportOuter">
+              <div id="mermaidLiveStudioPreview" class="w-full flex items-center justify-center transition-transform duration-150 origin-center overflow-x-auto">
+                <div class="text-slate-500 font-mono text-xs animate-pulse">Rendering diagram...</div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between text-[11px] text-slate-500 font-mono px-1">
+              <span>Engine: Mermaid.js 10.x &bull; Theme: Sovereign Dark</span>
+              <span>Vector Scalable (SVG)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- JUSTIN'S AI VOICE MIRROR & COGNITIVE TRANSPILER CARD -->
+        <div id="lab-justin-mirror" class="mt-8 bg-slate-950 p-6 sm:p-7 rounded-2xl border border-indigo-500/40 space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-lg font-bold">🎙️</div>
+              <div>
+                <h4 class="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+                  <span>Justin's AI Stylometric Voice Mirror</span>
+                  <span class="text-[10px] font-mono uppercase bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 px-2 py-0.5 rounded-full">Call Corpus Clone</span>
+                </h4>
+                <p class="text-xs text-slate-400">Extracted from 149 call utterances (1,397 words): Justin's twin brother in the control room teaching AI in his own cadence, humor, and hardware mental models.</p>
+              </div>
+            </div>
+
+            <!-- Voice Persona Switcher -->
+            <div class="flex items-center gap-1.5 bg-slate-900 p-1 rounded-xl border border-slate-800 font-mono text-xs shrink-0">
+              <button type="button" onclick="switchVoicePersona('justin')" id="btn-voice-justin" class="px-3 py-1.5 rounded-lg font-bold bg-indigo-600 text-white shadow transition cursor-pointer flex items-center gap-1.5">
+                <span>🎙️</span> Justin's Voice Mirror
+              </button>
+              <button type="button" onclick="switchVoicePersona('conductor')" id="btn-voice-conductor" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition cursor-pointer flex items-center gap-1.5">
+                <span>🎓</span> Conductor (Academic)
+              </button>
+            </div>
+          </div>
+
+          <!-- Suggested Prompt Chips in Justin's Domain -->
+          <div class="space-y-2">
+            <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+              <span>💡</span> Click a question to test Justin's AI Mirror:
+            </div>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <button type="button" onclick="askJustinVoiceMirror('baml_patchbay')" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-cyan-500/30 transition text-left cursor-pointer flex items-center gap-1.5">
+                <span>🎸</span> Explain BAML like wiring a patchbay
+              </button>
+              <button type="button" onclick="askJustinVoiceMirror('catmlp_nam')" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-indigo-300 border border-indigo-500/30 transition text-left cursor-pointer flex items-center gap-1.5">
+                <span>🎛️</span> Why CatMLP instead of 50 separate NAMs?
+              </button>
+              <button type="button" onclick="askJustinVoiceMirror('asio_underrun')" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-300 border border-amber-500/30 transition text-left cursor-pointer flex items-center gap-1.5">
+                <span>⚡</span> ASIO underrun vs LLM context overflow
+              </button>
+              <button type="button" onclick="askJustinVoiceMirror('pfsense_vlan')" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-emerald-500/30 transition text-left cursor-pointer flex items-center gap-1.5">
+                <span>🛡️</span> pfSense VLANs as studio audio buses
+              </button>
+              <button type="button" onclick="askJustinVoiceMirror('python_vs_reaper')" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-rose-300 border border-rose-500/30 transition text-left cursor-pointer flex items-center gap-1.5">
+                <span>🐍</span> Why Python scripts beat REAPER plugins
+              </button>
+            </div>
+          </div>
+
+          <!-- Freeform Question Input -->
+          <div class="flex gap-2">
+            <input type="text" id="justinMirrorInput" onkeydown="if(event.key==='Enter') submitJustinMirrorQuestion()" placeholder="Ask Justin's clone anything about AI, GPUs, tube heads, or networking..." class="flex-1 bg-slate-900 border border-slate-800 focus:border-indigo-500 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none transition">
+            <button type="button" onclick="submitJustinMirrorQuestion()" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs shadow-lg transition active:scale-95 cursor-pointer flex items-center gap-1.5 shrink-0">
+              <span>Ask Justin's Clone</span> <span>↗</span>
+            </button>
+          </div>
+
+          <!-- Response Container -->
+          <div id="justinMirrorResponseCard" class="p-4 sm:p-5 rounded-xl bg-slate-900/90 border border-indigo-500/30 space-y-3">
+            <div class="flex items-center justify-between text-xs">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="font-bold text-indigo-300" id="mirrorSpeakerLabel">Justin Muir (AI Voice Clone)</span>
+                <span class="text-[10px] text-slate-500 font-mono" id="mirrorCadenceLabel">Cadence: 9.38 w/turn &bull; Dry Midwestern Realism</span>
+              </div>
+              <button type="button" onclick="copyMirrorResponse()" class="text-[10px] font-mono text-indigo-400 hover:text-white transition cursor-pointer">Copy Answer</button>
+            </div>
+            <div class="text-xs text-slate-200 leading-relaxed font-sans space-y-2" id="justinMirrorResponseText">
+              All right, so look. You know how when you patch an AXE I/O line out into a Little Labs Redeye, the whole point of that box is transformer isolation and impedance matching so you don't send phantom power back into an input and fry your converters? BAML is literally the Redeye 3D box for Chatty GPT. It compiles a native Rust boundary that guarantees your LLM outputs exact enums with zero syntax crashes.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </div>
     <!-- /workspace-academy -->
 
@@ -4094,6 +4316,21 @@ files.download("./marshall_origin50.param.nam")</code></pre>
           </div>
         </div>
         <button onclick="closeAIDrawer()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-400 flex items-center justify-center transition cursor-pointer">✕</button>
+      </div>
+
+      <!-- Tutor Voice Persona Switcher -->
+      <div class="flex items-center justify-between bg-slate-950 px-3.5 py-2 rounded-xl border border-slate-800 text-xs">
+        <span class="text-slate-400 font-mono text-[11px] flex items-center gap-1.5">
+          <span>🎙️ Tutor Voice Mode:</span>
+        </span>
+        <div class="flex items-center gap-1 font-mono text-[11px]">
+          <button type="button" onclick="switchVoicePersona('justin')" id="drawer-btn-voice-justin" class="px-2.5 py-1 rounded-lg font-bold bg-indigo-600 text-white shadow transition cursor-pointer flex items-center gap-1">
+            <span>🎙️</span> Justin's Mirror
+          </button>
+          <button type="button" onclick="switchVoicePersona('conductor')" id="drawer-btn-voice-conductor" class="px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition cursor-pointer flex items-center gap-1">
+            <span>🎓</span> Conductor
+          </button>
+        </div>
       </div>
 
       <!-- Quick Action Prompt Pills -->
@@ -6652,6 +6889,7 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
 
     function switchStudioWorkspace(workspaceId) {
       if (workspaceId === 'workspace-codewiki') setTimeout(renderMermaidDiagrams, 80);
+      if (workspaceId === 'workspace-academy') setTimeout(initMermaidStudio, 80);
       activeStudioWorkspace = workspaceId;
 
       if (currentViewMode === 'tabs') {
@@ -7660,6 +7898,10 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
           '#lab-gemma4': 'workspace-academy',
           '#lab-daemons': 'workspace-academy',
           '#lab-structured-schemas': 'workspace-academy',
+          '#lab-schemas': 'workspace-academy',
+          '#lab-mermaid-studio': 'workspace-academy',
+          '#lab-visual-tools': 'workspace-academy',
+          '#lab-justin-mirror': 'workspace-academy',
           '#lab-markdown-wiki': 'workspace-academy',
           '#lab-learnlm': 'workspace-academy',
           '#workspace-academy': 'workspace-academy',
@@ -7994,6 +8236,511 @@ function showAudioToast(msg, icon) {
           status.innerHTML = `<span class="text-emerald-400 font-mono font-bold">✔ Schema 100% Validated (0 Syntax / Bounds Errors)</span>`;
         }
       }, 250);
+    }
+
+    // -------------------------------------------------------------
+    // LAB 8: INTERACTIVE MERMAID.JS STUDIO & VISUAL TOOLING ENGINE
+    // -------------------------------------------------------------
+    const MERMAID_STUDIO_PRESETS = {
+      reamp: {
+        label: "Re-Amp Signal Chain",
+        code: `graph TD
+    classDef hw fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#f8fafc;
+    classDef amp fill:#1e1b4b,stroke:#a855f7,stroke-width:2px,color:#f8fafc;
+    classDef safety fill:#1c1917,stroke:#f59e0b,stroke-width:2px,color:#f8fafc;
+    classDef dsp fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#f8fafc;
+
+    subgraph StudioRig ["🎛️ Justin's Physical Audio Rig (48kHz 24-bit)"]
+        AXE["IK AXE I/O Line Out 5<br/>(48kHz 24-bit Clean DI)"]:::hw
+        REDEYE["Little Labs Redeye 3D<br/>(Transformer Isolated Re-Amp)"]:::hw
+        M50["Marshall Origin 50 Head<br/>(Modded Master / EL34 Tubes)"]:::amp
+        CAPTOR["Two Notes Torpedo Captor X<br/>(8Ω Reactive Loadbox)"]:::safety
+        RETURN["AXE I/O Rear XLR Line In 1<br/>(-3.5 dBFS Headroom)"]:::hw
+    end
+
+    subgraph Workstation ["💻 DAW & DSP Automation"]
+        REAPER["Cockos REAPER ReaScript<br/>(Lua 120Hz Loop)"]:::dsp
+        PYTHON["Python Engine<br/>(nl_daemon_bridge.py)"]:::dsp
+        NAM["Parametric CatMLP Model<br/>(Continuous Potentiometer Sweep)"]:::dsp
+    end
+
+    AXE -->|Balanced Line| REDEYE
+    REDEYE -->|Hi-Z Instrument| M50
+    M50 -->|50W Speaker Level| CAPTOR
+    CAPTOR -->|Attenuated XLR| RETURN
+    RETURN -->|ASIO Stream| REAPER
+    REAPER <-->|HTTP Socket 5042| PYTHON
+    PYTHON -->|Torch Tensors| NAM`
+      },
+      netops: {
+        label: "NetOps pfSense Topology",
+        code: `graph TD
+    classDef net fill:#0c4a6e,stroke:#0284c7,stroke-width:2px,color:#f8fafc;
+    classDef srv fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#f8fafc;
+    classDef audio fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#f8fafc;
+
+    WAN["🌐 CenturyLink / Comcast Fiber<br/>(Static IP / WireGuard VPN)"]:::net --> PFSENSE["🛡️ Netgate / pfSense Firewall<br/>(Snort IDS • GeoIP • DNSBL)"]:::net
+    
+    PFSENSE --> SWITCH["🔀 Managed L2/L3 Gigabit Switch<br/>(802.1Q VLAN Trunking)"]:::net
+
+    subgraph VLAN10 ["VLAN 10: Low-Latency Audio Subnet (192.168.10.0/24)"]
+        SWITCH -->|Access Port 1-8| AXENET["DAW Workstation<br/>(ASIO Driver • REAPER)"]:::audio
+        SWITCH -->|Access Port 9-12| PI_EDGE["Edge Raspberry Pi<br/>(MIDI • ALSA RT Kernel)"]:::audio
+    end
+
+    subgraph VLAN20 ["VLAN 20: Compute & Storage Farm (192.168.20.0/24)"]
+        SWITCH -->|10GbE SFP+| PVE["Proxmox VE Cluster Node<br/>(Debian 12 • KVM Kernel)"]:::srv
+        PVE --> VM_GPU["Ubuntu 24.04 AI VM<br/>(RTX 4090 PCIe Passthrough • CUDA 12.6)"]:::srv
+        PVE --> VM_DOCKER["Docker Engine<br/>(Ollama Gemma 4 • SearXNG)"]:::srv
+        SWITCH -->|10GbE SFP+| TRUENAS["TrueNAS SCALE Storage<br/>(ZFS Pool: 8x NVMe RAID-Z2 • Audio Stems)"]:::srv
+    end`
+      },
+      reaper: {
+        label: "REAPER ReaScript Sequence",
+        code: `sequenceDiagram
+    autonumber
+    actor Justin as 🎸 Justin Muir
+    participant REAPER as 🎚️ REAPER DAW (Lua)
+    participant ASIO as ⚡ AXE I/O ASIO Driver
+    participant Daemon as 🐍 nl_daemon_bridge.py
+    participant CUDA as 🚀 PyTorch / CUDA (RTX 4090)
+    participant Capture as 🎙️ Torpedo Captor X
+
+    Justin->>REAPER: Press F1 (Trigger 45-Take Re-Amp Sweep)
+    REAPER->>ASIO: Allocate 512-Sample Fixed Audio Buffer
+    REAPER->>Daemon: HTTP POST /reamp/start {take_id: 1, gain: 7.5, presence: 6.0}
+    Daemon-->>REAPER: Ack {status: "ARMED", loadbox_safe: true}
+    REAPER->>ASIO: Stream Dry DI Audio to Line Out 5
+    ASIO->>Capture: Send to Marshall -> Captor X reactive load
+    Capture->>ASIO: Capture Re-Amped Tube Output
+    ASIO-->>REAPER: Record 48kHz 24-bit Take to Track 2
+    REAPER->>Daemon: POST /reamp/complete {wav_path: "take_01.wav"}
+    Daemon->>CUDA: Compute Multi-Scale Spectral Loss & ESR
+    CUDA-->>Daemon: Metrics {ESR: 0.0084, clipping: false}
+    Daemon-->>Justin: Display Toast: "Take 1 Validated (ESR < 0.01)"`
+      },
+      catmlp: {
+        label: "CatMLP DSP Pipeline",
+        code: `graph LR
+    classDef input fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#f8fafc;
+    classDef mlp fill:#312e81,stroke:#a78bfa,stroke-width:2px,color:#f8fafc;
+    classDef conv fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#f8fafc;
+    classDef out fill:#831843,stroke:#f43f5e,stroke-width:2px,color:#f8fafc;
+
+    AUDIO_IN["Dry Guitar DI Audio<br/>(Batch, 1, 48000)"]:::input --> DILATED_CONV["Dilated Conv1D Blocks<br/>(Receptive Field: 120ms)"]:::conv
+    
+    KNOBS["Potentiometer Knobs<br/>[Gain, Boost, Tilt, Bass, Mid, Treb, Pres]"]:::input --> NORM["StandardScaler Normalizer<br/>(Min-Max [0.0, 1.0])"]:::input
+    NORM --> CAT_MLP["CatMLP Conditioning Net<br/>(3x Linear 64-dim + LeakyReLU)"]:::mlp
+    
+    CAT_MLP -->|FiLM Scale (gamma)| MOD_LAYER["Feature-wise Linear Modulation<br/>(FiLM Layer)"]:::mlp
+    CAT_MLP -->|FiLM Shift (beta)| MOD_LAYER
+    
+    DILATED_CONV --> MOD_LAYER
+    MOD_LAYER --> RESIDUAL["Residual Add & Post-Conv"]:::conv
+    RESIDUAL --> FIR_HEAD["FIR Head Filter<br/>(Cabinet / Impedance Simulation)"]:::conv
+    FIR_HEAD --> AUDIO_OUT["Modeled Tube Amp Output<br/>(Continuous Parametric WAV)"]:::out`
+      },
+      learnlm: {
+        label: "LearnLM 7-Stage State Machine",
+        code: `stateDiagram-v2
+    [*] --> Stage1_Colab : Dialing in first WaveNet
+    Stage1_Colab --> Stage2_Wiki : 70% Readiness (Markdown fluency)
+    Stage2_Wiki --> Stage3_Schemas : Tube Bias & Session Wiki complete
+    Stage3_Schemas --> Stage4_TurboQuant : BAML Type-Safe Prompting mastered
+    Stage4_TurboQuant --> Stage5_EdgeAppliance : Autonomous Overnight Training running
+    Stage5_EdgeAppliance --> Stage6_SpecDSP : Rackmount Pi running Gemma 4 E2B
+    Stage6_SpecDSP --> Stage7_MultiAgent : Natural language amp design verified
+    Stage7_MultiAgent --> SovereignMastery : Autonomous Trio (@ear, @netops, @scribe)`
+      }
+    };
+
+    let activeMermaidPresetKey = 'reamp';
+    let currentMermaidZoom = 1.0;
+    let mermaidDebounceTimer = null;
+    let isMermaidStudioInitialized = false;
+
+    function initMermaidStudio() {
+      if (isMermaidStudioInitialized) return;
+      const textarea = document.getElementById('mermaidEditorTextarea');
+      if (!textarea) return;
+      if (!textarea.value.trim()) {
+        textarea.value = MERMAID_STUDIO_PRESETS.reamp.code;
+      }
+      isMermaidStudioInitialized = true;
+      renderMermaidStudioDiagram();
+    }
+
+    function loadMermaidPreset(presetKey) {
+      if (!MERMAID_STUDIO_PRESETS[presetKey]) return;
+      activeMermaidPresetKey = presetKey;
+      const preset = MERMAID_STUDIO_PRESETS[presetKey];
+      const textarea = document.getElementById('mermaidEditorTextarea');
+      const badge = document.getElementById('mermaidActivePresetBadge');
+
+      if (textarea) textarea.value = preset.code;
+      if (badge) badge.textContent = `Preset: ${preset.label}`;
+
+      ['reamp', 'netops', 'reaper', 'catmlp', 'learnlm'].forEach(k => {
+        const btn = document.getElementById('btn-preset-' + k);
+        if (btn) {
+          if (k === presetKey) {
+            btn.className = "px-3 py-2 rounded-xl font-bold bg-emerald-600 text-white shadow-lg shadow-emerald-950 transition cursor-pointer text-left flex flex-col gap-0.5";
+          } else {
+            btn.className = "px-3 py-2 rounded-xl text-slate-400 hover:text-white bg-slate-950 border border-slate-800 transition cursor-pointer text-left flex flex-col gap-0.5";
+          }
+        }
+      });
+
+      resetMermaidZoom();
+      renderMermaidStudioDiagram();
+    }
+
+    function resetActiveMermaidPreset() {
+      loadMermaidPreset(activeMermaidPresetKey);
+      showAudioToast("↺ Preset reset to original architecture blueprint!", "📐");
+    }
+
+    function handleMermaidEditorInput() {
+      clearTimeout(mermaidDebounceTimer);
+      mermaidDebounceTimer = setTimeout(renderMermaidStudioDiagram, 250);
+    }
+
+    async function renderMermaidStudioDiagram() {
+      const textarea = document.getElementById('mermaidEditorTextarea');
+      const preview = document.getElementById('mermaidLiveStudioPreview');
+      const errorBox = document.getElementById('mermaidEditorError');
+      const errorMsg = document.getElementById('mermaidErrorMessage');
+      const statusBadge = document.getElementById('mermaidStatusBadge');
+      const lineCount = document.getElementById('mermaidLineCount');
+
+      if (!textarea || !preview) return;
+      const raw = textarea.value.trim();
+      const lines = raw ? raw.split('\n').length : 0;
+      if (lineCount) lineCount.textContent = `${lines} lines`;
+
+      if (!raw) {
+        preview.innerHTML = `<div class="text-slate-500 font-mono text-xs">Enter Mermaid syntax to preview diagram...</div>`;
+        if (errorBox) errorBox.classList.add('hidden');
+        if (statusBadge) { statusBadge.textContent = "Empty"; statusBadge.className = "text-slate-400"; }
+        return;
+      }
+
+      if (typeof mermaid === 'undefined') {
+        preview.innerHTML = `<div class="text-amber-400 font-mono text-xs">Mermaid.js library loading...</div>`;
+        return;
+      }
+
+      const uid = 'mermaid-live-' + Math.floor(Math.random() * 1000000);
+      try {
+        const { svg } = await mermaid.render(uid, raw);
+        preview.innerHTML = svg;
+        const svgEl = preview.querySelector('svg');
+        if (svgEl) {
+          svgEl.style.maxWidth = '100%';
+          svgEl.style.height = 'auto';
+          svgEl.style.transform = `scale(${currentMermaidZoom})`;
+          svgEl.style.transformOrigin = 'center top';
+        }
+        if (errorBox) errorBox.classList.add('hidden');
+        if (statusBadge) { statusBadge.textContent = "Valid SVG"; statusBadge.className = "text-emerald-400"; }
+      } catch (err) {
+        console.warn('Mermaid live parse error:', err);
+        if (errorBox && errorMsg) {
+          errorMsg.textContent = err.message ? err.message.split('\n')[0] : 'Syntax error in Mermaid diagram definition.';
+          errorBox.classList.remove('hidden');
+        }
+        if (statusBadge) { statusBadge.textContent = "Syntax Warning"; statusBadge.className = "text-rose-400"; }
+      }
+    }
+
+    function zoomMermaidPreview(delta) {
+      currentMermaidZoom = Math.max(0.4, Math.min(2.5, currentMermaidZoom + delta));
+      const preview = document.getElementById('mermaidLiveStudioPreview');
+      const levelEl = document.getElementById('mermaidZoomLevel');
+      if (preview) {
+        const svgEl = preview.querySelector('svg');
+        if (svgEl) {
+          svgEl.style.transform = `scale(${currentMermaidZoom})`;
+          svgEl.style.transformOrigin = 'center top';
+          svgEl.style.transition = 'transform 0.15s ease-out';
+        }
+      }
+      if (levelEl) levelEl.textContent = `${Math.round(currentMermaidZoom * 100)}%`;
+    }
+
+    function resetMermaidZoom() {
+      currentMermaidZoom = 1.0;
+      const preview = document.getElementById('mermaidLiveStudioPreview');
+      const levelEl = document.getElementById('mermaidZoomLevel');
+      if (preview) {
+        const svgEl = preview.querySelector('svg');
+        if (svgEl) {
+          svgEl.style.transform = 'scale(1.0)';
+        }
+      }
+      if (levelEl) levelEl.textContent = '100%';
+    }
+
+    function copyMermaidEditorCode() {
+      const textarea = document.getElementById('mermaidEditorTextarea');
+      if (!textarea) return;
+      navigator.clipboard.writeText(textarea.value).then(() => {
+        showAudioToast("✅ Copied Mermaid diagram Markdown to clipboard!", "📋");
+      });
+    }
+
+    function copyMermaidSVG() {
+      const preview = document.getElementById('mermaidLiveStudioPreview');
+      if (!preview) return;
+      const svgEl = preview.querySelector('svg');
+      if (!svgEl) {
+        showAudioToast("⚠️ No rendered SVG available yet.", "⚠️");
+        return;
+      }
+      navigator.clipboard.writeText(svgEl.outerHTML).then(() => {
+        showAudioToast("✅ Copied SVG vector markup to clipboard!", "🖼️");
+      });
+    }
+
+    function downloadMermaidSVG() {
+      const preview = document.getElementById('mermaidLiveStudioPreview');
+      if (!preview) return;
+      const svgEl = preview.querySelector('svg');
+      if (!svgEl) {
+        showAudioToast("⚠️ No rendered SVG available to download.", "⚠️");
+        return;
+      }
+      const svgData = svgEl.outerHTML;
+      const blob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `justin_muir_studio_diagram_${Date.now()}.svg`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showAudioToast("⬇️ Downloaded studio diagram SVG!", "💾");
+    }
+
+    function insertMermaidSnippet(type) {
+      const textarea = document.getElementById('mermaidEditorTextarea');
+      if (!textarea) return;
+      let snippet = "";
+      if (type === 'node') snippet = '\n    DeviceX["Hardware Device Name"]\n';
+      else if (type === 'subgraph') snippet = '\n    subgraph RackBay ["Rack Bay Title"]\n        DeviceA["Device"]\n    end\n';
+      else if (type === 'arrow') snippet = '\n    NodeA -->|Balanced 48kHz| NodeB\n';
+      else if (type === 'decision') snippet = '\n    CheckLoad{"Is Captor Loadbox Engaged?"} -->|Yes| AmpRun\n    CheckLoad -->|No (Danger)| HaltSafety\n';
+
+      textarea.value += snippet;
+      handleMermaidEditorInput();
+      showAudioToast("➕ Inserted Mermaid snippet!", "✏️");
+    }
+
+    function loadDiagramIntoMermaidStudio(diagramType) {
+      const codeMap = {
+        flowchart: { id: 'flowchart-code', name: 'Physical Studio Re-Amp Flowchart' },
+        sequence: { id: 'sequence-code', name: 'Cockos REAPER ReaScript Sequence' },
+        class: { id: 'class-code', name: 'Parametric WaveNet & CatMLP Class Architecture' }
+      };
+
+      const target = codeMap[diagramType];
+      if (!target) return;
+      const codeEl = document.getElementById(target.id);
+      if (!codeEl) return;
+
+      const raw = codeEl.innerText.trim();
+      const textarea = document.getElementById('mermaidEditorTextarea');
+      const badge = document.getElementById('mermaidActivePresetBadge');
+
+      switchStudioWorkspace('workspace-academy');
+
+      setTimeout(() => {
+        if (textarea) textarea.value = raw;
+        if (badge) badge.textContent = `Custom: ${target.name}`;
+        resetMermaidZoom();
+        renderMermaidStudioDiagram();
+
+        const studioEl = document.getElementById('lab-mermaid-studio');
+        if (studioEl) studioEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        showAudioToast(`🎨 Loaded ${target.name} into Live Mermaid Studio!`, "📐");
+      }, 120);
+    }
+
+    // -------------------------------------------------------------
+    // JUSTIN MUIR STYLOMETRIC VOICE MIRROR & PERSONA ENGINE
+    // -------------------------------------------------------------
+    let activeVoicePersona = 'justin'; // 'justin' or 'conductor'
+
+    const JUSTIN_MIRROR_KNOWLEDGE = {
+      baml_patchbay: {
+        title: "Explain BAML like wiring a patchbay",
+        justin: `All right, so look. You know how when you patch an AXE I/O line out into a Little Labs Redeye, the whole point of that box is transformer isolation and impedance matching so you don't send phantom power back into an input and fry your converters?
+
+BAML is literally the Redeye 3D box for Chatty GPT.
+
+When you ask a raw LLM to write JSON, it's like sending raw high-impedance guitar signal down 50 feet of cheap unshielded copper — half the time a missing curly bracket grounds out and crashes your Python script. BAML compiles a native Rust boundary that says: 'No, you WILL give me an enum of PlexiClean or JCM800Crunch, and if you hallucinate some corporate nonsense, the compiler rejects it before it even touches REAPER.' Zero smoke, zero runtime crashes.`,
+        conductor: `Under formal systems engineering, BAML (Boundary Abstract Modeling Language) replaces probabilistic schema deduction with deterministic algebraic type boundaries. By compiling target types into an embedded Rust verification AST, BAML guarantees strict isomorphism between LLM generation streams and your DAW control runtime.`
+      },
+      catmlp_nam: {
+        title: "Why CatMLP instead of 50 separate NAMs?",
+        justin: `So here's the thing. If I capture 45 takes on the Origin 50 — Gain at 2, 4, 6, 8, Tilt swept, Master cranked — the old-school way means training 45 separate static .nam snapshot files. That's a pain in the ass. You're constantly reloading plugins, your hard drive fills up with gigs of redundant weights, and what happens when you want Gain at 5.5? You're screwed.
+
+CatMLP basically solders a continuous potentiometer wire directly onto the neural network. We feed the 7 knob positions right into a conditioning MLP alongside the audio tensor. Now, one single 12MB model interpolates every millimeter of the sweep between clean and saturated lead. It's like having the physical Marshall head right in your DAW track instead of 45 frozen Polaroid photos.`,
+        conductor: `Rather than partitioning parametric manifold hyperspace into discrete disconnected checkpoints, CatMLP projects continuous conditioning parameters into low-dimensional latent vectors via a Feature-wise Linear Modulation (FiLM) layer, enabling continuous interpolation over arbitrary potentiometer permutations.`
+      },
+      asio_underrun: {
+        title: "ASIO underrun vs LLM context overflow",
+        justin: `All right, you know that lovely loud digital click and pop when Windows WDM interrupts your ASIO buffer at 64 samples because your CPU choked? That's an audio underrun. Your buffer starved for data before the DAC could clock out the next cycle.
+
+LLM context window overflow is the exact same problem in reverse. The model has a fixed ring buffer — say 8k or 32k tokens. The second your prompt and chat history push past that limit, the earliest tokens fall off the cliff. Suddenly the model forgets your AXE I/O input routing from three messages ago and recommends something stupid. That's why Karpathy's minimal wiki rule matters: you keep your context clean, lean, and cache-aligned so you never blow your buffer headroom.`,
+        conductor: `Buffer starvation in low-latency ASIO drivers mirrors transformer context window degradation: when prompt token sequences exceed the bounded attention matrix dimension, early positional embeddings are evicted, causing catastrophic attention attenuation.`
+      },
+      pfsense_vlan: {
+        title: "pfSense VLANs as studio audio buses",
+        justin: `Think of your network like a 32-channel analog console. If you put all your mics, line-outs, guitar feeds, and dirty stage returns into one single un-isolated mono bus, you get crosstalk, feedback loops, and garbage noise bleeding into your vocal track.
+
+pfSense VLANs are just dedicated audio subgroups with Mute and Solo switches:
+- VLAN 10 is the Soloed Control Room bus — zero traffic except ASIO streams and REAPER OSC control. Ultra-low latency, no chatter.
+- VLAN 20 is the machine room where the Proxmox cluster and RTX 4090 live, churning away on CUDA training runs without flooding the audio subnet.
+
+If some smart TV or IoT bulb on the home network gets hacked, pfSense firewall rules drop the packets like a hard brickwall noise gate. Nothing bleeds into the studio.`,
+        conductor: `Layer 2/3 802.1Q VLAN network segmentation on pfSense enforces topological packet isolation, mitigating broadcast storm latency jitter and preventing cross-domain telemetry contention between real-time DAW endpoints and distributed CUDA training nodes.`
+      },
+      python_vs_reaper: {
+        title: "Why Python scripts beat REAPER plugins",
+        justin: `Look, I love REAPER, but writing complex logic in ReaScript Lua feels like trying to rewire a tube amp through the headphone jack. Lua is fine for 'arm track 2 and hit record,' but the second you want to do Latin Hypercube sweep generation, calculate true spectral loss, or talk to an Ollama daemon over HTTP sockets, Lua turns into a spaghetti nightmare.
+
+With Python, you've got NumPy, PyTorch, Librosa, and standard sockets. You run one clean background daemon in your terminal, and all REAPER has to do is fire a single HTTP ping when you press F1. Let Python do the heavy lifting while REAPER just plays the audio.`,
+        conductor: `Decoupling real-time DAW transport control (Lua ReaScript execution within REAPER's GUI event loop) from asynchronous computational heuristics (PyTorch CUDA execution in standalone Python daemons) guarantees zero transport jitter and maximizes compute throughput.`
+      }
+    };
+
+    let lastMirrorTopicKey = 'baml_patchbay';
+
+    function switchVoicePersona(persona) {
+      activeVoicePersona = persona;
+
+      // Update Academy Lab 8 Buttons
+      const btnJustin = document.getElementById('btn-voice-justin');
+      const btnCond = document.getElementById('btn-voice-conductor');
+      if (btnJustin && btnCond) {
+        if (persona === 'justin') {
+          btnJustin.className = "px-3 py-1.5 rounded-lg font-bold bg-indigo-600 text-white shadow transition cursor-pointer flex items-center gap-1.5";
+          btnCond.className = "px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition cursor-pointer flex items-center gap-1.5";
+        } else {
+          btnJustin.className = "px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition cursor-pointer flex items-center gap-1.5";
+          btnCond.className = "px-3 py-1.5 rounded-lg font-bold bg-indigo-600 text-white shadow transition cursor-pointer flex items-center gap-1.5";
+        }
+      }
+
+      // Update AI Drawer Buttons
+      const dBtnJustin = document.getElementById('drawer-btn-voice-justin');
+      const dBtnCond = document.getElementById('drawer-btn-voice-conductor');
+      if (dBtnJustin && dBtnCond) {
+        if (persona === 'justin') {
+          dBtnJustin.className = "px-2.5 py-1 rounded-lg font-bold bg-indigo-600 text-white shadow transition cursor-pointer flex items-center gap-1";
+          dBtnCond.className = "px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition cursor-pointer flex items-center gap-1";
+        } else {
+          dBtnJustin.className = "px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition cursor-pointer flex items-center gap-1";
+          dBtnCond.className = "px-2.5 py-1 rounded-lg font-bold bg-indigo-600 text-white shadow transition cursor-pointer flex items-center gap-1";
+        }
+      }
+
+      // Update Mirror Card Metadata
+      const speaker = document.getElementById('mirrorSpeakerLabel');
+      const cadence = document.getElementById('mirrorCadenceLabel');
+      if (speaker && cadence) {
+        if (persona === 'justin') {
+          speaker.textContent = "Justin Muir (AI Voice Clone)";
+          cadence.textContent = "Cadence: 9.38 w/turn • Dry Midwestern Realism";
+        } else {
+          speaker.textContent = "The Conductor (Academic Architect)";
+          cadence.textContent = "Formal Systems Rigor • Mathematical Schemas";
+        }
+      }
+
+      // Re-render active topic in chosen voice
+      if (JUSTIN_MIRROR_KNOWLEDGE[lastMirrorTopicKey]) {
+        const item = JUSTIN_MIRROR_KNOWLEDGE[lastMirrorTopicKey];
+        const textEl = document.getElementById('justinMirrorResponseText');
+        if (textEl) textEl.textContent = (persona === 'justin') ? item.justin : item.conductor;
+      }
+
+      showAudioToast(`🎙️ Tutor Voice switched to: ${persona === 'justin' ? "Justin's Studio Mirror" : "Conductor Academic"}`, "✨");
+    }
+
+    function askJustinVoiceMirror(topicKey) {
+      if (!JUSTIN_MIRROR_KNOWLEDGE[topicKey]) return;
+      lastMirrorTopicKey = topicKey;
+      const item = JUSTIN_MIRROR_KNOWLEDGE[topicKey];
+      const textEl = document.getElementById('justinMirrorResponseText');
+      const card = document.getElementById('justinMirrorResponseCard');
+
+      if (textEl) {
+        textEl.textContent = (activeVoicePersona === 'justin') ? item.justin : item.conductor;
+      }
+      if (card) {
+        card.classList.add('ring-2', 'ring-indigo-500/60');
+        setTimeout(() => card.classList.remove('ring-2', 'ring-indigo-500/60'), 400);
+      }
+    }
+
+    function submitJustinMirrorQuestion() {
+      const input = document.getElementById('justinMirrorInput');
+      if (!input) return;
+      const q = input.value.trim();
+      if (!q) return;
+
+      const textEl = document.getElementById('justinMirrorResponseText');
+      const card = document.getElementById('justinMirrorResponseCard');
+      if (textEl) {
+        textEl.innerHTML = `<span class="text-amber-400 font-mono animate-pulse">Thinking in Justin's voice...</span>`;
+      }
+
+      setTimeout(() => {
+        let answer = "";
+        const lower = q.toLowerCase();
+        if (lower.includes('baml') || lower.includes('schema') || lower.includes('json')) {
+          answer = JUSTIN_MIRROR_KNOWLEDGE.baml_patchbay.justin;
+        } else if (lower.includes('catmlp') || lower.includes('sweep') || lower.includes('knob') || lower.includes('nam')) {
+          answer = JUSTIN_MIRROR_KNOWLEDGE.catmlp_nam.justin;
+        } else if (lower.includes('asio') || lower.includes('buffer') || lower.includes('latency') || lower.includes('context')) {
+          answer = JUSTIN_MIRROR_KNOWLEDGE.asio_underrun.justin;
+        } else if (lower.includes('pfsense') || lower.includes('vlan') || lower.includes('network') || lower.includes('firewall')) {
+          answer = JUSTIN_MIRROR_KNOWLEDGE.pfsense_vlan.justin;
+        } else if (lower.includes('python') || lower.includes('reaper') || lower.includes('script') || lower.includes('lua')) {
+          answer = JUSTIN_MIRROR_KNOWLEDGE.python_vs_reaper.justin;
+        } else {
+          answer = `All right, so look. Regarding "${q}": think of it like dialing in bias on the Origin 50 without an oscilloscope. If you just jump into Chatty GPT and ask it to guess, you're gonna clip the input and get muddy noise. What we do instead is write a tiny, reproducible Python script with exact boundaries, run it locally on your machine or Colab GPU, and verify the output waveform before touching the DAW timeline. Keep it simple, match your impedances, and don't overcomplicate it.`;
+        }
+
+        if (activeVoicePersona === 'conductor') {
+          answer = `Addressing inquiry regarding "${q}": The recommended architectural paradigm isolates compute workloads behind verifiable API contracts, ensuring deterministic validation metrics before committing runtime state transitions.`;
+        }
+
+        if (textEl) textEl.textContent = answer;
+        if (card) {
+          card.classList.add('ring-2', 'ring-indigo-500/60');
+          setTimeout(() => card.classList.remove('ring-2', 'ring-indigo-500/60'), 400);
+        }
+      }, 300);
+    }
+
+    function copyMirrorResponse() {
+      const textEl = document.getElementById('justinMirrorResponseText');
+      if (!textEl) return;
+      navigator.clipboard.writeText(textEl.textContent.trim()).then(() => {
+        showAudioToast("✅ Copied tutor response to clipboard!", "📋");
+      });
+    }
+
+    // Auto-init Mermaid Studio when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => setTimeout(initMermaidStudio, 300));
+    } else {
+      setTimeout(initMermaidStudio, 300);
     }
 
   </script>
