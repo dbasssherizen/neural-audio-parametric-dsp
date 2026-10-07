@@ -254,13 +254,13 @@
     <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[250px] bg-orange-600/10 blur-[130px] pointer-events-none"></div>
 
     <!-- FLAGSHIP CINEMATIC STUDIO HERO BANNER -->
-    <div class="relative w-full h-56 sm:h-64 md:h-72 rounded-3xl overflow-hidden shadow-2xl border border-stone-800/80 group">
-      <img src="/assets/images/tube_amp_dsp_hero.jpg" alt="Justin Muir Parametric Tube Amp & Neural DSP Studio" class="w-full h-full object-cover object-center filter brightness-95 contrast-105 group-hover:scale-102 transition duration-700 ease-out" onerror="this.src='./assets/images/tube_amp_dsp_hero.jpg'">
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/40 to-slate-950/90"></div>
+    <div class="relative w-full rounded-3xl overflow-hidden shadow-2xl border border-stone-800/80 group p-5 sm:p-6 lg:p-7 flex flex-col justify-end min-h-[19rem] sm:min-h-[17rem] lg:min-h-[18rem]">
+      <img src="/assets/images/tube_amp_dsp_hero.jpg" alt="Justin Muir Parametric Tube Amp & Neural DSP Studio" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-95 contrast-105 group-hover:scale-102 transition duration-700 ease-out" onerror="this.src='./assets/images/tube_amp_dsp_hero.jpg'">
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-950/40"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/60 to-slate-950/90"></div>
 
-      <div class="absolute bottom-5 left-5 right-5 md:left-6 md:right-6 flex flex-col lg:flex-row lg:items-end justify-between gap-4">
-        <div class="space-y-1">
+      <div class="relative z-10 flex flex-col lg:flex-row lg:items-end justify-between gap-5">
+        <div class="space-y-1.5">
           <div class="flex items-center gap-2 mb-1.5 flex-wrap">
             <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center gap-1.5 shadow-sm">
               <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -273,7 +273,7 @@
               🎛️ MRGENEKO &amp; NAMIX ARMED
             </span>
           </div>
-          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight drop-shadow-lg flex items-center gap-2.5">
+          <h1 class="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight drop-shadow-lg flex items-center gap-2.5">
             <span>🎸 Justin Muir • Parametric NAM &amp; Hardware Studio</span>
           </h1>
           <p class="text-xs sm:text-sm text-slate-300 drop-shadow mt-1 max-w-2xl leading-relaxed">
@@ -282,28 +282,28 @@
         </div>
 
         <!-- Quick Launch Action Tools inside Hero -->
-        <div class="flex flex-wrap items-center gap-2 shrink-0">
-          <button id="btnOpenAI" class="px-4 py-2.5 rounded-2xl font-bold text-xs bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-indigo-500 hover:to-purple-500 text-white flex items-center gap-2 shadow-lg shadow-indigo-600/30 transition active:scale-95 border border-indigo-400/40 cursor-pointer">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:flex lg:flex-wrap items-center gap-2 shrink-0 w-full lg:w-auto">
+          <button id="btnOpenAI" class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl font-bold text-xs bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-indigo-500 hover:to-purple-500 text-white flex items-center justify-center gap-2 shadow-lg shadow-indigo-600/30 transition active:scale-95 border border-indigo-400/40 cursor-pointer">
             <span class="text-sm">🤖</span>
             <span>Audio AI Co-Pilot</span>
           </button>
-          <a href="/Justin_Muir_Parametric_NAM_Studio_Kit.zip" download class="px-4 py-2.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs flex items-center gap-1.5 shadow-lg shadow-amber-500/20 transition active:scale-95">
+          <a href="/Justin_Muir_Parametric_NAM_Studio_Kit.zip" download class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-amber-500/20 transition active:scale-95 text-center">
             <span>📦</span>
             <span>Studio Kit (.zip)</span>
           </a>
-          <a href="/marshall_origin50_params.csv" download class="px-3.5 py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-sky-300 border border-sky-500/40 text-xs font-bold flex items-center gap-1.5 backdrop-blur-md transition shadow">
+          <a href="/marshall_origin50_params.csv" download class="px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-sky-300 border border-sky-500/40 text-xs font-bold flex items-center justify-center gap-1.5 backdrop-blur-md transition shadow text-center">
             <span>📊</span>
             <span>Marshall 8-Knob CSV</span>
           </a>
-          <a href="/README_MRGENEKO_WORKFLOW.md" target="_blank" class="px-3.5 py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-purple-300 border border-purple-500/40 text-xs font-bold flex items-center gap-1.5 backdrop-blur-md transition shadow">
+          <a href="/README_MRGENEKO_WORKFLOW.md" target="_blank" class="px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-purple-300 border border-purple-500/40 text-xs font-bold flex items-center justify-center gap-1.5 backdrop-blur-md transition shadow text-center">
             <span>⚡</span>
             <span>mrgeneko &amp; NAMix ↗</span>
           </a>
-          <a href="/printable_studio_run_sheet.html" target="_blank" class="px-3.5 py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-amber-300 border border-amber-500/40 text-xs font-bold flex items-center gap-1.5 backdrop-blur-md transition">
+          <a href="/printable_studio_run_sheet.html" target="_blank" class="px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-amber-300 border border-amber-500/40 text-xs font-bold flex items-center justify-center gap-1.5 backdrop-blur-md transition text-center">
             <span>📋</span>
             <span>Run Sheet ↗</span>
           </a>
-          <a href="/apps/neural-dsp/index.html" target="_blank" class="px-3.5 py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-emerald-300 border border-emerald-500/40 text-xs font-bold flex items-center gap-1.5 backdrop-blur-md transition">
+          <a href="/apps/neural-dsp/index.html" target="_blank" class="px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-emerald-300 border border-emerald-500/40 text-xs font-bold flex items-center justify-center gap-1.5 backdrop-blur-md transition text-center">
             <span>🚀</span>
             <span>Standalone ↗</span>
           </a>
@@ -377,25 +377,25 @@
     </header>
 
     <!-- STUDIO SEGMENTED WORKSPACE CONTROLLER (STICKY RAIL) -->
-    <nav id="studioWorkspaceNav" class="sticky top-2 z-30 bg-slate-950/95 backdrop-blur-md border border-slate-800 rounded-2xl p-2 shadow-2xl flex items-center justify-between gap-2 overflow-x-auto">
-      <div class="flex items-center gap-1.5 shrink-0">
-        <button onclick="switchStudioWorkspace('workspace-amp')" id="tab-btn-amp" class="studio-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/30">
+    <nav id="studioWorkspaceNav" class="sticky top-2 z-30 bg-slate-950/95 backdrop-blur-md border border-slate-800 rounded-2xl p-1.5 sm:p-2 shadow-2xl flex items-center justify-between gap-2 overflow-x-auto">
+      <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+        <button onclick="switchStudioWorkspace('workspace-amp')" id="tab-btn-amp" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/30">
           <span>🎸</span> <span>1. Amp Studio</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-rig')" id="tab-btn-rig" class="studio-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800">
+        <button onclick="switchStudioWorkspace('workspace-rig')" id="tab-btn-rig" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800">
           <span>🎛️</span> <span>2. Physical Rig</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-tracking')" id="tab-btn-tracking" class="studio-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800">
+        <button onclick="switchStudioWorkspace('workspace-tracking')" id="tab-btn-tracking" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800">
           <span>⚡</span> <span>3. Tracking &amp; Re-Amp</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-cloud')" id="tab-btn-cloud" class="studio-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800">
+        <button onclick="switchStudioWorkspace('workspace-cloud')" id="tab-btn-cloud" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800">
           <span>☁️</span> <span>4. Cloud GPU</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-academy')" id="tab-btn-academy" class="studio-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-emerald-400 hover:text-emerald-200 border border-emerald-500/40">
-          <span>🎣</span> <span>6. Sovereign AI Academy</span>
-        </button>
-        <button onclick="switchStudioWorkspace('workspace-codewiki')" id="tab-btn-codewiki" class="studio-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800">
+        <button onclick="switchStudioWorkspace('workspace-codewiki')" id="tab-btn-codewiki" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800">
           <span>📖</span> <span>5. Automation &amp; Code Guide</span>
+        </button>
+        <button onclick="switchStudioWorkspace('workspace-academy')" id="tab-btn-academy" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-emerald-400 hover:text-emerald-200 border border-emerald-500/40">
+          <span>🎣</span> <span>6. Sovereign AI Academy</span>
         </button>
       </div>
 
@@ -2885,28 +2885,28 @@ files.download("./marshall_origin50.param.nam")</code></pre>
       <!-- LEARNLM PEDAGOGICAL MASTERY & ROADMAP HUD -->
       <div class="bg-gradient-to-br from-slate-900 via-slate-950 to-indigo-950/40 border-2 border-indigo-500/40 rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl relative overflow-hidden">
         <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-indigo-500/20 pb-5">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-indigo-500/20 pb-5">
           <div class="space-y-1">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-mono font-bold uppercase tracking-wider">
               <span>🎯</span> <span>LearnLM Grounded Scaffolding</span>
               <span class="text-slate-500">|</span>
               <span class="text-emerald-400">Pedagogical Readiness Engine</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center gap-2">
-              <span>Justin's 7-Stage Sovereign Journey</span>
+            <div class="flex flex-wrap items-center gap-2">
+              <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight">Justin's 7-Stage Sovereign Journey</h3>
               <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-mono">Stage 1 Active</span>
-            </h3>
-            <p class="text-xs text-slate-300 max-w-2xl">
+            </div>
+            <p class="text-xs text-slate-300 max-w-2xl leading-relaxed">
               Grounded in the physics of tube preamps, console routing matrices, and pfSense NetOps. 
               As you interact with your rig, models, and call notes, our zero-ADB watcher evaluates readiness signals to unlock progressive stages.
             </p>
           </div>
-          <div class="flex items-center gap-2 shrink-0">
+          <div class="flex flex-wrap items-center gap-2 shrink-0">
             <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">
-              Active Stage: <strong class="text-emerald-400">1. Foundations</strong>
+              Active: <strong class="text-emerald-400">1. Foundations</strong>
             </span>
             <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">
-              Next Stage: <strong class="text-amber-400">2. Markdown (50%)</strong>
+              Next: <strong class="text-amber-400">2. Markdown (50%)</strong>
             </span>
           </div>
         </div>
@@ -2972,52 +2972,123 @@ files.download("./marshall_origin50.param.nam")</code></pre>
         </div>
 
         <!-- LEARNLM VOCABULARY MATRIX ACCORDION / CARD -->
-        <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-3">
-          <div class="flex items-center justify-between">
-            <div class="font-bold text-white text-xs flex items-center gap-2">
+        <div class="bg-slate-950 p-4 sm:p-5 rounded-2xl border border-slate-800 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="font-bold text-white text-xs sm:text-sm flex items-center gap-2">
               <span>📖</span> <span>LearnLM Audio &amp; NetOps Rosetta Stone (Vocabulary Matrix)</span>
             </div>
-            <span class="text-[10px] font-mono text-slate-400">Grounded Mental Models</span>
+            <span class="text-[10px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded-full border border-slate-800 self-start sm:self-auto">Grounded Mental Models</span>
           </div>
-          <div class="overflow-x-auto">
+
+          <!-- Mobile Card Stack View (< 640px) -->
+          <div class="block sm:hidden space-y-3">
+            <div class="bg-slate-900/90 border border-slate-800/80 rounded-xl p-3.5 space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-white text-xs font-mono">Neural Network Hidden Layers</span>
+                <span class="text-[10px] text-emerald-400 font-mono">🎛️ Audio Anchor</span>
+              </div>
+              <div class="text-xs text-emerald-400 font-semibold font-mono">Multi-Stage 12AX7 Tube Preamp</div>
+              <p class="text-[11px] text-slate-400 leading-relaxed font-sans pt-0.5">
+                Cascaded gain stages shaping harmonic saturation and non-linear compression.
+              </p>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-800/80 rounded-xl p-3.5 space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-white text-xs font-mono">Activation Function (ReLU, Tanh)</span>
+                <span class="text-[10px] text-emerald-400 font-mono">⚡ Dynamic Curve</span>
+              </div>
+              <div class="text-xs text-emerald-400 font-semibold font-mono">Tube Grid Sag &amp; Diode Clipping</div>
+              <p class="text-[11px] text-slate-400 leading-relaxed font-sans pt-0.5">
+                Tanh is literally the mathematical curve of an overdriven valve cathode.
+              </p>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-800/80 rounded-xl p-3.5 space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-white text-xs font-mono">Self-Attention Mechanism</span>
+                <span class="text-[10px] text-emerald-400 font-mono">🎚️ Routing Matrix</span>
+              </div>
+              <div class="text-xs text-emerald-400 font-semibold font-mono">Console Aux Send &amp; Sidechain Matrix</div>
+              <p class="text-[11px] text-slate-400 leading-relaxed font-sans pt-0.5">
+                Routing focus dynamically to specific tokens, like ducking a bassline behind a kick drum.
+              </p>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-800/80 rounded-xl p-3.5 space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-white text-xs font-mono">Loss Function &amp; ESR</span>
+                <span class="text-[10px] text-emerald-400 font-mono">🎯 Accuracy Gate</span>
+              </div>
+              <div class="text-xs text-emerald-400 font-semibold font-mono">Phase Inversion Null Test &amp; THD</div>
+              <p class="text-[11px] text-slate-400 leading-relaxed font-sans pt-0.5">
+                Measures what doesn't cancel when flipping phase against the source DI track.
+              </p>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-800/80 rounded-xl p-3.5 space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-white text-xs font-mono">Quantization (QAT / 4-bit)</span>
+                <span class="text-[10px] text-emerald-400 font-mono">📦 Word-Length</span>
+              </div>
+              <div class="text-xs text-emerald-400 font-semibold font-mono">Bit-Depth Dither (24-bit to 16/8-bit)</div>
+              <p class="text-[11px] text-slate-400 leading-relaxed font-sans pt-0.5">
+                Squeezing dynamic precision without introducing harsh quantization distortion.
+              </p>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-800/80 rounded-xl p-3.5 space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-white text-xs font-mono">Context Window (8K to 256K)</span>
+                <span class="text-[10px] text-emerald-400 font-mono">⏱️ Buffer Sizing</span>
+              </div>
+              <div class="text-xs text-emerald-400 font-semibold font-mono">Hardware Ring Buffer &amp; Delay Line</div>
+              <p class="text-[11px] text-slate-400 leading-relaxed font-sans pt-0.5">
+                How many audio samples fit in memory before buffer underruns (xruns) happen.
+              </p>
+            </div>
+          </div>
+
+          <!-- Desktop & Tablet Table (>= 640px) -->
+          <div class="hidden sm:block overflow-x-auto">
             <table class="w-full text-left text-xs font-mono border-collapse">
               <thead>
                 <tr class="border-b border-slate-800 text-slate-400 text-[11px]">
-                  <th class="py-2 pr-4">AI / Computer Science Concept</th>
-                  <th class="py-2 px-4 text-emerald-300">Your Native Audio &amp; NetOps Anchor</th>
-                  <th class="py-2 pl-4 text-slate-300">The Intuitive Physical Reality</th>
+                  <th class="py-2.5 pr-4">AI / Computer Science Concept</th>
+                  <th class="py-2.5 px-4 text-emerald-300">Your Native Audio &amp; NetOps Anchor</th>
+                  <th class="py-2.5 pl-4 text-slate-300">The Intuitive Physical Reality</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-800/60 text-[11px]">
                 <tr>
-                  <td class="py-2 pr-4 text-slate-300 font-bold">Neural Network Hidden Layers</td>
-                  <td class="py-2 px-4 text-emerald-400">Multi-Stage 12AX7 Tube Preamp</td>
-                  <td class="py-2 pl-4 text-slate-400 font-sans">Cascaded gain stages shaping harmonic saturation and non-linear compression.</td>
+                  <td class="py-2.5 pr-4 text-slate-300 font-bold">Neural Network Hidden Layers</td>
+                  <td class="py-2.5 px-4 text-emerald-400">Multi-Stage 12AX7 Tube Preamp</td>
+                  <td class="py-2.5 pl-4 text-slate-400 font-sans">Cascaded gain stages shaping harmonic saturation and non-linear compression.</td>
                 </tr>
                 <tr>
-                  <td class="py-2 pr-4 text-slate-300 font-bold">Activation Function (ReLU, Tanh)</td>
-                  <td class="py-2 px-4 text-emerald-400">Tube Grid Sag &amp; Diode Clipping</td>
-                  <td class="py-2 pl-4 text-slate-400 font-sans">Tanh is literally the mathematical curve of an overdriven valve cathode.</td>
+                  <td class="py-2.5 pr-4 text-slate-300 font-bold">Activation Function (ReLU, Tanh)</td>
+                  <td class="py-2.5 px-4 text-emerald-400">Tube Grid Sag &amp; Diode Clipping</td>
+                  <td class="py-2.5 pl-4 text-slate-400 font-sans">Tanh is literally the mathematical curve of an overdriven valve cathode.</td>
                 </tr>
                 <tr>
-                  <td class="py-2 pr-4 text-slate-300 font-bold">Self-Attention Mechanism</td>
-                  <td class="py-2 px-4 text-emerald-400">Console Aux Send &amp; Sidechain Matrix</td>
-                  <td class="py-2 pl-4 text-slate-400 font-sans">Routing focus dynamically to specific tokens, like ducking a bassline behind a kick drum.</td>
+                  <td class="py-2.5 pr-4 text-slate-300 font-bold">Self-Attention Mechanism</td>
+                  <td class="py-2.5 px-4 text-emerald-400">Console Aux Send &amp; Sidechain Matrix</td>
+                  <td class="py-2.5 pl-4 text-slate-400 font-sans">Routing focus dynamically to specific tokens, like ducking a bassline behind a kick drum.</td>
                 </tr>
                 <tr>
-                  <td class="py-2 pr-4 text-slate-300 font-bold">Loss Function &amp; ESR</td>
-                  <td class="py-2 px-4 text-emerald-400">Phase Inversion Null Test &amp; THD</td>
-                  <td class="py-2 pl-4 text-slate-400 font-sans">Measures what doesn't cancel when flipping phase against the source DI track.</td>
+                  <td class="py-2.5 pr-4 text-slate-300 font-bold">Loss Function &amp; ESR</td>
+                  <td class="py-2.5 px-4 text-emerald-400">Phase Inversion Null Test &amp; THD</td>
+                  <td class="py-2.5 pl-4 text-slate-400 font-sans">Measures what doesn't cancel when flipping phase against the source DI track.</td>
                 </tr>
                 <tr>
-                  <td class="py-2 pr-4 text-slate-300 font-bold">Quantization (QAT / 4-bit)</td>
-                  <td class="py-2 px-4 text-emerald-400">Bit-Depth Dither (24-bit to 16/8-bit)</td>
-                  <td class="py-2 pl-4 text-slate-400 font-sans">Squeezing dynamic precision without introducing harsh quantization distortion.</td>
+                  <td class="py-2.5 pr-4 text-slate-300 font-bold">Quantization (QAT / 4-bit)</td>
+                  <td class="py-2.5 px-4 text-emerald-400">Bit-Depth Dither (24-bit to 16/8-bit)</td>
+                  <td class="py-2.5 pl-4 text-slate-400 font-sans">Squeezing dynamic precision without introducing harsh quantization distortion.</td>
                 </tr>
                 <tr>
-                  <td class="py-2 pr-4 text-slate-300 font-bold">Context Window (8K to 256K)</td>
-                  <td class="py-2 px-4 text-emerald-400">Hardware Ring Buffer &amp; Delay Line</td>
-                  <td class="py-2 pl-4 text-slate-400 font-sans">How many audio samples fit in memory before buffer underruns (xruns) happen.</td>
+                  <td class="py-2.5 pr-4 text-slate-300 font-bold">Context Window (8K to 256K)</td>
+                  <td class="py-2.5 px-4 text-emerald-400">Hardware Ring Buffer &amp; Delay Line</td>
+                  <td class="py-2.5 pl-4 text-slate-400 font-sans">How many audio samples fit in memory before buffer underruns (xruns) happen.</td>
                 </tr>
               </tbody>
             </table>
@@ -6461,6 +6532,17 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
 
       // Save preference
       try { localStorage.setItem('justin_nam_workspace', workspaceId); } catch(e){}
+
+      // Smooth scroll to top of workspace on mobile if scrolled past nav
+      if (window.innerWidth < 768) {
+        const navEl = document.getElementById('studioWorkspaceNav');
+        if (navEl) {
+          const navTop = navEl.getBoundingClientRect().top + window.pageYOffset - 12;
+          if (window.pageYOffset > navTop) {
+            window.scrollTo({ top: navTop, behavior: 'smooth' });
+          }
+        }
+      }
     }
 
     function setViewMode(mode) {
