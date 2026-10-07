@@ -7647,18 +7647,70 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
       });
     }
 
-    // Initial setup
-    drawCurve(); drawOscilloscope(); updateAudioParams(); loadSavedRedlines(); initRunSheet();
+    // Deep Link & Hash Routing Engine
+    function handleDeepLinkRouting() {
+      try {
+        const hash = window.location.hash;
+        if (!hash) return false;
+
+        const labToWorkspace = {
+          '#lab-colab': 'workspace-academy',
+          '#lab-notebooklm': 'workspace-academy',
+          '#lab-antigravity': 'workspace-academy',
+          '#lab-gemma4': 'workspace-academy',
+          '#lab-daemons': 'workspace-academy',
+          '#lab-structured-schemas': 'workspace-academy',
+          '#lab-markdown-wiki': 'workspace-academy',
+          '#lab-learnlm': 'workspace-academy',
+          '#workspace-academy': 'workspace-academy',
+          '#workspace-codewiki': 'workspace-codewiki',
+          '#workspace-cloud': 'workspace-cloud',
+          '#workspace-tracking': 'workspace-tracking',
+          '#workspace-rig': 'workspace-rig',
+          '#workspace-amp': 'workspace-amp'
+        };
+
+        const targetWs = labToWorkspace[hash] || (document.querySelector(hash)?.closest('.studio-workspace')?.id);
+        if (targetWs) {
+          switchStudioWorkspace(targetWs);
+          setTimeout(() => {
+            const targetEl = document.querySelector(hash);
+            if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 150);
+          return true;
+        }
+      } catch(err) {
+        console.warn('Deep link routing error:', err);
+      }
+      return false;
+    }
+
+    window.addEventListener('hashchange', handleDeepLinkRouting);
+
+    // Initial setup with complete defensive guards
+    try { drawCurve(); } catch(e){ console.warn('drawCurve error:', e); }
+    try { drawOscilloscope(); } catch(e){ console.warn('drawOscilloscope error:', e); }
+    try { updateAudioParams(); } catch(e){ console.warn('updateAudioParams error:', e); }
+    try { loadSavedRedlines(); } catch(e){ console.warn('loadSavedRedlines error:', e); }
+    try { initRunSheet(); } catch(e){ console.warn('initRunSheet error:', e); }
+
     try {
       const savedTheme = localStorage.getItem('justin_nam_theme') || 'obsidian';
       applyThemePosture(savedTheme);
-      const savedWorkspace = localStorage.getItem('justin_nam_workspace') || 'workspace-amp';
       const savedViewMode = localStorage.getItem('justin_nam_view_mode') || 'tabs';
       currentViewMode = savedViewMode;
       setViewMode(savedViewMode);
-      if (savedViewMode === 'tabs') switchStudioWorkspace(savedWorkspace);
+
+      // Handle URL deep links first; fallback to saved workspace
+      const handled = handleDeepLinkRouting();
+      if (!handled && savedViewMode === 'tabs') {
+        const savedWorkspace = localStorage.getItem('justin_nam_workspace') || 'workspace-amp';
+        switchStudioWorkspace(savedWorkspace);
+      }
       populateVoiceList();
-    } catch(e){}
+    } catch(e){
+      console.warn('Initial session restore error:', e);
+    }
   </script>
 
 <script>
