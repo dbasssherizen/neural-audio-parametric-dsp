@@ -4419,7 +4419,7 @@ When you ask a raw LLM to write JSON, it's like sending raw high-impedance guita
         <span>📋 Copy Redline Report for Daniel</span>
       </button>
       <button onclick="emailRedlinesToDaniel()" class="w-full py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium border border-slate-700 flex items-center justify-center gap-2 cursor-pointer">
-        <span>✉️ Email Full Report (dbasssherizen@fwparker.org)</span>
+        <span>✉️ Email Feedback to Daniel (Personal Gmail)</span>
       </button>
       <button onclick="clearAllRedlines()" class="w-full py-1 text-slate-500 hover:text-rose-400 text-[11px] transition text-center cursor-pointer">
         Clear all redlines
@@ -6537,12 +6537,12 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
     }
 
     function emailRedlinesToDaniel() {
-      const recipient = "dbasssherizen@fwparker.org";
+      const recipient = "daniel.bass.sherizen@gmail.com,awkwardwhitejew@gmail.com";
       if (state.redlines.length === 0) {
         const subject = encodeURIComponent("Justin Muir • Parametric NAM Blueprint Feedback");
         const body = encodeURIComponent("Hi Daniel,\n\nHere is my feedback on the Parametric NAM blueprint:\n\n");
         window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
-        showAudioToast("Opening email to Daniel (dbasssherizen@fwparker.org)...", "✉️");
+        showAudioToast("Opening email to Daniel (Personal Gmail)...", "✉️");
         return;
       }
       const reportText = generateReportMarkdown();
@@ -6555,7 +6555,7 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
 
     function sendQuickNoteEmail() {
       const note = document.getElementById('quickFeedbackText')?.value.trim();
-      const recipient = "dbasssherizen@fwparker.org";
+      const recipient = "daniel.bass.sherizen@gmail.com,awkwardwhitejew@gmail.com";
       const subject = encodeURIComponent("Justin Muir • Studio Quick Note");
       const bodyText = note ? `Hi Daniel,\n\n${note}\n\n` : "Hi Daniel,\n\n";
       const body = encodeURIComponent(bodyText);
