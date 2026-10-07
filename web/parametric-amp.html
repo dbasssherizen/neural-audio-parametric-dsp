@@ -312,10 +312,10 @@
     </div>
 
     <!-- STUDIO CONTROLS & TELEMETRY TOOLBAR -->
-    <header class="bg-slate-900/95 backdrop-blur-md border border-slate-800 rounded-2xl px-5 py-3 shadow-xl grid grid-cols-1 md:grid-cols-3 items-center gap-4">
+    <header class="bg-slate-900/95 backdrop-blur-md border border-slate-800 rounded-2xl px-4 sm:px-5 py-3 shadow-xl flex flex-wrap items-center justify-between gap-3 sm:gap-4">
       <!-- Zone 1: Audio Transport & Tone (Left) -->
-      <div class="flex items-center gap-3 justify-start">
-        <button id="btnPlayRiff" class="px-4 py-2 rounded-xl font-bold text-xs bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white shadow-lg shadow-orange-500/25 flex items-center gap-2 transition active:scale-95 cursor-pointer shrink-0">
+      <div class="flex items-center gap-2.5 sm:gap-3 flex-wrap">
+        <button id="btnPlayRiff" class="px-3.5 sm:px-4 py-2 rounded-xl font-bold text-xs bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white shadow-lg shadow-orange-500/25 flex items-center gap-2 transition active:scale-95 cursor-pointer shrink-0">
           <svg id="playIcon" class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           <span id="playText">Play Guitar Riff</span>
         </button>
@@ -327,7 +327,7 @@
       </div>
 
       <!-- Zone 2: Telemetry & Progress (Center) -->
-      <div class="flex items-center justify-center gap-3">
+      <div class="flex items-center gap-2.5 sm:gap-3 flex-wrap justify-center">
         <div class="flex items-center gap-2 bg-slate-950 px-3.5 py-1.5 rounded-xl border border-slate-800 text-xs shrink-0">
           <span class="text-slate-400 font-medium text-[11px]">Takes:</span>
           <span id="hudTakeCount" class="font-mono font-bold text-amber-300 text-[11px]">0 / 45</span>
@@ -344,7 +344,7 @@
       </div>
 
       <!-- Zone 3: Collaboration & Workspace Settings (Right) -->
-      <div class="flex items-center justify-end gap-2">
+      <div class="flex items-center gap-2 flex-wrap justify-end">
         <!-- Redlines Button -->
         <button id="btnToggleRedline" class="px-3 py-1.5 rounded-xl font-bold text-xs bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/30 flex items-center gap-1.5 transition active:scale-95 cursor-pointer shrink-0">
           <span class="w-2 h-2 rounded-full bg-rose-500" id="redlinePing"></span>
@@ -377,24 +377,24 @@
     </header>
 
     <!-- STUDIO SEGMENTED WORKSPACE CONTROLLER (STICKY RAIL) -->
-    <nav id="studioWorkspaceNav" class="sticky top-2 z-30 bg-slate-950/95 backdrop-blur-md border border-slate-800 rounded-2xl p-1.5 sm:p-2 shadow-2xl flex items-center justify-between gap-2 overflow-x-auto">
-      <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
-        <button onclick="switchStudioWorkspace('workspace-amp')" id="tab-btn-amp" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/30">
+    <nav id="studioWorkspaceNav" class="sticky top-2 z-30 bg-slate-950/95 backdrop-blur-md border border-slate-800 rounded-2xl p-1.5 sm:p-2 shadow-2xl flex items-center justify-between gap-2 overflow-x-auto scrollbar-none">
+      <div class="flex items-center gap-1 sm:gap-1.5 shrink-0 flex-nowrap">
+        <button onclick="switchStudioWorkspace('workspace-amp')" id="tab-btn-amp" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 whitespace-nowrap shrink-0">
           <span>🎸</span> <span>1. Amp Studio</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-rig')" id="tab-btn-rig" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800">
+        <button onclick="switchStudioWorkspace('workspace-rig')" id="tab-btn-rig" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0">
           <span>🎛️</span> <span>2. Physical Rig</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-tracking')" id="tab-btn-tracking" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800">
+        <button onclick="switchStudioWorkspace('workspace-tracking')" id="tab-btn-tracking" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0">
           <span>⚡</span> <span>3. Tracking &amp; Re-Amp</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-cloud')" id="tab-btn-cloud" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800">
+        <button onclick="switchStudioWorkspace('workspace-cloud')" id="tab-btn-cloud" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0">
           <span>☁️</span> <span>4. Cloud GPU</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-codewiki')" id="tab-btn-codewiki" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800">
+        <button onclick="switchStudioWorkspace('workspace-codewiki')" id="tab-btn-codewiki" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0">
           <span>📖</span> <span>5. Automation &amp; Code Guide</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-academy')" id="tab-btn-academy" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-emerald-400 hover:text-emerald-200 border border-emerald-500/40">
+        <button onclick="switchStudioWorkspace('workspace-academy')" id="tab-btn-academy" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-emerald-400 hover:text-emerald-200 border border-emerald-500/40 whitespace-nowrap shrink-0">
           <span>🎣</span> <span>6. Sovereign AI Academy</span>
         </button>
       </div>
