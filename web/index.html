@@ -254,68 +254,83 @@
     <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[250px] bg-orange-600/10 blur-[130px] pointer-events-none"></div>
 
     <!-- FLAGSHIP CINEMATIC STUDIO HERO BANNER -->
-    <div class="relative w-full rounded-3xl overflow-hidden shadow-2xl border border-stone-800/80 group p-5 sm:p-6 lg:p-7 flex flex-col justify-end min-h-[19rem] sm:min-h-[17rem] lg:min-h-[18rem]">
-      <img src="/assets/images/tube_amp_dsp_hero.jpg" alt="Justin Muir Parametric Tube Amp & Neural DSP Studio" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-95 contrast-105 group-hover:scale-102 transition duration-700 ease-out" onerror="this.src='./assets/images/tube_amp_dsp_hero.jpg'">
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-950/40"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/60 to-slate-950/90"></div>
+    <div class="relative w-full rounded-3xl overflow-hidden shadow-2xl border border-stone-800/80 group p-6 sm:p-8 lg:p-9 flex flex-col justify-between min-h-[22rem] sm:min-h-[20rem] lg:min-h-[21rem]">
+      <img src="/assets/images/tube_amp_dsp_hero.jpg" alt="Justin Muir Parametric Tube Amp & Neural DSP Studio" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.88] contrast-105 group-hover:scale-101 transition duration-700 ease-out" onerror="this.src='./assets/images/tube_amp_dsp_hero.jpg'">
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-slate-950/40"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/50 to-slate-950/70"></div>
 
-      <div class="relative z-10 flex flex-col lg:flex-row lg:items-end justify-between gap-5">
-        <div class="space-y-1.5">
-          <div class="flex items-center gap-2 mb-1.5 flex-wrap">
-            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center gap-1.5 shadow-sm">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              LIVE PRODUCTION • v3.3
-            </span>
-            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/40 font-mono">
-              ⚡ MARSHALL ORIGIN 50 &amp; AXE I/O
-            </span>
-            <span class="text-[11px] text-purple-300 font-medium flex items-center gap-1 bg-purple-500/20 px-2.5 py-0.5 rounded-full border border-purple-500/40">
-              🎛️ MRGENEKO &amp; NAMIX ARMED
-            </span>
-          </div>
-          <h1 class="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight drop-shadow-lg flex items-center gap-2.5">
+      <!-- Top Row: Status Badges & Hardware Telemetry Tag -->
+      <div class="relative z-10 flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center gap-1.5 shadow-sm backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            LIVE PRODUCTION • v3.3
+          </span>
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/40 font-mono backdrop-blur-md">
+            ⚡ MARSHALL ORIGIN 50 &amp; AXE I/O
+          </span>
+          <span class="text-xs text-purple-300 font-medium flex items-center gap-1 bg-purple-500/20 px-3 py-1 rounded-full border border-purple-500/40 backdrop-blur-md">
+            🎛️ MRGENEKO &amp; NAMIX ARMED
+          </span>
+        </div>
+        <div class="hidden sm:flex items-center gap-2 text-xs font-mono text-slate-400/90 bg-slate-900/70 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-slate-800 shadow">
+          <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-ping"></span>
+          <span>48kHz / 24-bit Non-Linear Potentiometer Conditioning</span>
+        </div>
+      </div>
+
+      <!-- Middle & Bottom Content Area -->
+      <div class="relative z-10 space-y-4 pt-6">
+        <!-- Title & Subtitle across full breathing width -->
+        <div class="max-w-4xl space-y-2">
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight drop-shadow-xl flex items-center gap-3">
             <span>🎸 Justin Muir • Parametric NAM &amp; Hardware Studio</span>
           </h1>
-          <p class="text-xs sm:text-sm text-slate-300 drop-shadow mt-1 max-w-2xl leading-relaxed">
+          <p class="text-sm sm:text-base text-slate-200/90 drop-shadow leading-relaxed max-w-3xl font-normal">
             Continuous non-linear potentiometer conditioning, modded Marshall Origin 50 (8-knob) re-amping, IK Multimedia AXE I/O Linux 2-out routing &amp; mrgeneko/parametric-nam training for NAMix.
           </p>
         </div>
 
         <!-- Quick Launch Action Tools inside Hero -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:flex lg:flex-wrap items-center gap-2 shrink-0 w-full lg:w-auto">
-          <button onclick="switchStudioWorkspace('workspace-mermaid')" class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-600/30 transition active:scale-95 text-center cursor-pointer border border-emerald-400/40">
+        <div class="flex flex-wrap items-center gap-2.5 pt-3.5 border-t border-slate-800/60">
+          <!-- Featured Flagship Workspaces -->
+          <button onclick="switchStudioWorkspace('workspace-mermaid')" class="px-4 py-2.5 rounded-2xl bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/30 transition active:scale-95 cursor-pointer border border-emerald-400/50">
             <span>📐</span>
             <span>Mermaid Studio ↗</span>
           </button>
-          <button onclick="switchStudioWorkspace('workspace-academy')" class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl bg-gradient-to-r from-emerald-600 via-indigo-600 to-purple-600 hover:from-emerald-500 hover:to-purple-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-indigo-600/30 transition active:scale-95 text-center cursor-pointer border border-indigo-400/40">
+          <button onclick="switchStudioWorkspace('workspace-academy')" class="px-4 py-2.5 rounded-2xl bg-gradient-to-r from-emerald-600 via-indigo-600 to-purple-600 hover:from-emerald-500 hover:to-purple-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-indigo-600/30 transition active:scale-95 cursor-pointer border border-indigo-400/50">
             <span>🎣</span>
             <span>AI Academy ↗</span>
           </button>
-          <button onclick="openJustinVoiceMirror()" class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl bg-gradient-to-r from-purple-700 via-indigo-700 to-blue-700 hover:from-purple-600 hover:to-blue-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-purple-600/30 transition active:scale-95 text-center cursor-pointer border border-purple-400/40">
+          <button onclick="openJustinVoiceMirror()" class="px-4 py-2.5 rounded-2xl bg-gradient-to-r from-purple-700 via-indigo-700 to-blue-700 hover:from-purple-600 hover:to-blue-600 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-purple-600/30 transition active:scale-95 cursor-pointer border border-purple-400/50">
             <span>🎙️</span>
             <span>Voice Mirror &amp; ELI5 ↗</span>
           </button>
-          <button id="btnOpenAI" class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl font-bold text-xs bg-slate-900/90 hover:bg-slate-800 text-indigo-300 border border-indigo-500/40 flex items-center justify-center gap-1.5 shadow backdrop-blur-md transition active:scale-95 cursor-pointer">
+
+          <!-- Studio Utilities & Assets Divider -->
+          <div class="h-6 w-px bg-slate-800 hidden sm:block mx-1"></div>
+
+          <button id="btnOpenAI" class="px-3.5 py-2.5 rounded-2xl font-bold text-xs bg-slate-900/90 hover:bg-slate-800 text-indigo-300 border border-indigo-500/40 flex items-center justify-center gap-1.5 shadow backdrop-blur-md transition active:scale-95 cursor-pointer">
             <span class="text-sm">🤖</span>
             <span>Audio AI Co-Pilot</span>
           </button>
-          <a href="/Justin_Muir_Parametric_NAM_Studio_Kit.zip" download class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-amber-500/20 transition active:scale-95 text-center">
+          <a href="/Justin_Muir_Parametric_NAM_Studio_Kit.zip" download class="px-3.5 py-2.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-amber-500/20 transition active:scale-95 text-center">
             <span>📦</span>
             <span>Studio Kit (.zip)</span>
           </a>
-          <a href="/marshall_origin50_params.csv" download class="px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-sky-300 border border-sky-500/40 text-xs font-bold flex items-center justify-center gap-1.5 backdrop-blur-md transition shadow text-center">
+          <a href="/marshall_origin50_params.csv" download class="px-3 py-2.5 sm:px-3.5 sm:py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-sky-300 border border-sky-500/40 text-xs font-bold flex items-center justify-center gap-1.5 backdrop-blur-md transition shadow text-center">
             <span>📊</span>
             <span>Marshall 8-Knob CSV</span>
           </a>
-          <a href="/README_MRGENEKO_WORKFLOW.md" target="_blank" class="px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-purple-300 border border-purple-500/40 text-xs font-bold flex items-center justify-center gap-1.5 backdrop-blur-md transition shadow text-center">
+          <a href="/README_MRGENEKO_WORKFLOW.md" target="_blank" class="px-3 py-2.5 sm:px-3.5 sm:py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-purple-300 border border-purple-500/40 text-xs font-bold flex items-center justify-center gap-1.5 backdrop-blur-md transition shadow text-center">
             <span>⚡</span>
             <span>mrgeneko &amp; NAMix ↗</span>
           </a>
-          <a href="/printable_studio_run_sheet.html" target="_blank" class="px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-amber-300 border border-amber-500/40 text-xs font-bold flex items-center justify-center gap-1.5 backdrop-blur-md transition text-center">
+          <a href="/printable_studio_run_sheet.html" target="_blank" class="px-3 py-2.5 sm:px-3.5 sm:py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-amber-300 border border-amber-500/40 text-xs font-bold flex items-center justify-center gap-1.5 backdrop-blur-md transition text-center">
             <span>📋</span>
             <span>Run Sheet ↗</span>
           </a>
-          <a href="/apps/neural-dsp/index.html" target="_blank" class="px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-emerald-300 border border-emerald-500/40 text-xs font-bold flex items-center justify-center gap-1.5 backdrop-blur-md transition text-center">
+          <a href="/apps/neural-dsp/index.html" target="_blank" class="px-3 py-2.5 sm:px-3.5 sm:py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-emerald-300 border border-emerald-500/40 text-xs font-bold flex items-center justify-center gap-1.5 backdrop-blur-md transition text-center">
             <span>🚀</span>
             <span>Standalone ↗</span>
           </a>
