@@ -45,6 +45,7 @@ Thumbs.db
 # Internal indexes
 openwiki/
 .graphify/
+graphify-out/
 
 # Logs
 *.log
