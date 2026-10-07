@@ -1,0 +1,126 @@
+{
+  "student": "Justin Muir",
+  "contact": {
+    "phone": "+1 630-418-9227",
+    "email": "nightmareglove@gmail.com"
+  },
+  "current_stage": 1,
+  "stages": {
+    "1": {
+      "id": 1,
+      "name": "Tactical Foundations",
+      "status": "ACTIVE",
+      "readiness_score": 100,
+      "unlocked_at": "2026-10-06T22:33:55.391206",
+      "triggers_matched": []
+    },
+    "2": {
+      "id": 2,
+      "name": "Markdown & The Karpathy Minimal Wiki",
+      "status": "LOCKED",
+      "readiness_score": 50,
+      "unlocked_at": null,
+      "triggers_matched": [
+        {
+          "timestamp": "2026-10-06T22:33:55.393060",
+          "stage_id": 2,
+          "stage_name": "Markdown & The Karpathy Minimal Wiki",
+          "keyword": "notes",
+          "weight": 25,
+          "source": "file:call_1_transcript_20261006.txt",
+          "snippet": "\u202a+1 630-418-9227\u202c \u2022 October 6 at 11:30\u202fAM Call Notes Summary You called to discuss AI and open source. \u2022 The conversation focused on the advancements "
+        },
+        {
+          "timestamp": "2026-10-06T22:33:55.524585",
+          "stage_id": 2,
+          "stage_name": "Markdown & The Karpathy Minimal Wiki",
+          "keyword": "notes",
+          "weight": 25,
+          "source": "file:call_2_transcript_20261006.txt",
+          "snippet": "And you used used a kind of a more traditional open notepad and taking notes."
+        }
+      ]
+    },
+    "3": {
+      "id": 3,
+      "name": "Structured Schemas (JSON, YAML, BAML)",
+      "status": "LOCKED",
+      "readiness_score": 0,
+      "unlocked_at": null,
+      "triggers_matched": []
+    },
+    "4": {
+      "id": 4,
+      "name": "TurboQuant Vector Memory & Autonomous AutoResearch",
+      "status": "LOCKED",
+      "readiness_score": 0,
+      "unlocked_at": null,
+      "triggers_matched": []
+    },
+    "5": {
+      "id": 5,
+      "name": "Studio Edge Appliance (Gemma 4 E2B/E4B in the Amp Rack)",
+      "status": "LOCKED",
+      "readiness_score": 0,
+      "unlocked_at": null,
+      "triggers_matched": []
+    },
+    "6": {
+      "id": 6,
+      "name": "Spec-Driven DSP Synthesis (Natural Language Amp Design)",
+      "status": "LOCKED",
+      "readiness_score": 0,
+      "unlocked_at": null,
+      "triggers_matched": []
+    },
+    "7": {
+      "id": 7,
+      "name": "Sovereign Multi-Agent Studio Collective",
+      "status": "LOCKED",
+      "readiness_score": 0,
+      "unlocked_at": null,
+      "triggers_matched": []
+    }
+  },
+  "ingested_communications": [
+    {
+      "timestamp": "2026-10-06T22:33:55.465739",
+      "source_type": "transcript_file",
+      "file_name": "call_1_transcript_20261006.txt",
+      "justin_utterances": 48
+    },
+    {
+      "timestamp": "2026-10-06T22:33:55.534820",
+      "source_type": "transcript_file",
+      "file_name": "call_2_transcript_20261006.txt",
+      "justin_utterances": 43
+    },
+    {
+      "timestamp": "2026-10-06T22:33:55.616667",
+      "source_type": "transcript_file",
+      "file_name": "call_3_transcript_20261006.txt",
+      "justin_utterances": 59
+    }
+  ],
+  "readiness_signals_history": [
+    {
+      "timestamp": "2026-10-06T22:33:55.393060",
+      "stage_id": 2,
+      "stage_name": "Markdown & The Karpathy Minimal Wiki",
+      "keyword": "notes",
+      "weight": 25,
+      "source": "file:call_1_transcript_20261006.txt",
+      "snippet": "\u202a+1 630-418-9227\u202c \u2022 October 6 at 11:30\u202fAM Call Notes Summary You called to discuss AI and open source. \u2022 The conversation focused on the advancements "
+    },
+    {
+      "timestamp": "2026-10-06T22:33:55.524585",
+      "stage_id": 2,
+      "stage_name": "Markdown & The Karpathy Minimal Wiki",
+      "keyword": "notes",
+      "weight": 25,
+      "source": "file:call_2_transcript_20261006.txt",
+      "snippet": "And you used used a kind of a more traditional open notepad and taking notes."
+    }
+  ],
+  "last_updated": "2026-10-06T22:33:55.616672"
+}

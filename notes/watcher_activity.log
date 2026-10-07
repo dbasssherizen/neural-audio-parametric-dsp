@@ -1,0 +1,24 @@
+2026-10-06 21:59:16 [INFO] [COMM-WATCHER] Single check complete. New triggers detected: 0
+2026-10-06 21:59:20 [INFO] [COMM-WATCHER] Starting Justin Muir Communication Watcher Daemon...
+2026-10-06 21:59:20 [INFO] [COMM-WATCHER] Polling ADB communication channels every 8s. Press Ctrl+C to stop.
+2026-10-06 22:32:39 [INFO] [COMM-WATCHER] 📥 INGESTING TRANSCRIPT: call_1_transcript_20261006.txt (14355 bytes)
+2026-10-06 22:32:39 [INFO] [COMM-WATCHER] 📈 READINESS UPDATE: Stage 2 (Markdown & The Karpathy Minimal Wiki) +25 pts -> Total Score: 25% (Threshold: 70%)
+2026-10-06 22:32:39 [INFO] [COMM-WATCHER] 📥 INGESTING TRANSCRIPT: call_2_transcript_20261006.txt (20950 bytes)
+2026-10-06 22:32:39 [INFO] [COMM-WATCHER] 📈 READINESS UPDATE: Stage 2 (Markdown & The Karpathy Minimal Wiki) +25 pts -> Total Score: 50% (Threshold: 70%)
+2026-10-06 22:32:39 [INFO] [COMM-WATCHER] 📥 INGESTING TRANSCRIPT: call_3_transcript_20261006.txt (14180 bytes)
+2026-10-06 22:32:43 [INFO] [COMM-WATCHER] 📈 READINESS UPDATE: Stage 2 (Markdown & The Karpathy Minimal Wiki) +70 pts -> Total Score: 100% (Threshold: 70%)
+2026-10-06 22:32:43 [INFO] [COMM-WATCHER] 🎉 STAGE 2 UNLOCK TRIGGERED! (Markdown & The Karpathy Minimal Wiki)
+2026-10-06 22:32:43 [INFO] [COMM-WATCHER] 📦 Staged Outbox Payload: /Users/danielbasssherizen/Developer/neural-audio-parametric-dsp/notes/outbox/dispatch_stage_2_20261006_223243.json
+2026-10-06 22:32:43 [INFO] [COMM-WATCHER] Ingestion complete for text. New unlocks triggered: 1
+2026-10-06 22:32:52 [INFO] [COMM-WATCHER] 📈 READINESS UPDATE: Stage 3 (Structured Schemas (JSON, YAML, BAML)) +90 pts -> Total Score: 90% (Threshold: 75%)
+2026-10-06 22:32:52 [INFO] [COMM-WATCHER] 🎉 STAGE 3 UNLOCK TRIGGERED! (Structured Schemas (JSON, YAML, BAML))
+2026-10-06 22:32:52 [INFO] [COMM-WATCHER] 📦 Staged Outbox Payload: /Users/danielbasssherizen/Developer/neural-audio-parametric-dsp/notes/outbox/dispatch_stage_3_20261006_223252.json
+2026-10-06 22:32:52 [INFO] [COMM-WATCHER] Ingestion complete for text. New unlocks triggered: 1
+2026-10-06 22:33:55 [INFO] [COMM-WATCHER] 📥 INGESTING TRANSCRIPT: call_1_transcript_20261006.txt (14355 bytes)
+2026-10-06 22:33:55 [INFO] [COMM-WATCHER] 📈 READINESS UPDATE: Stage 2 (Markdown & The Karpathy Minimal Wiki) +25 pts -> Total Score: 25% (Threshold: 70%)
+2026-10-06 22:33:55 [INFO] [COMM-WATCHER] 📥 INGESTING TRANSCRIPT: call_2_transcript_20261006.txt (20950 bytes)
+2026-10-06 22:33:55 [INFO] [COMM-WATCHER] 📈 READINESS UPDATE: Stage 2 (Markdown & The Karpathy Minimal Wiki) +25 pts -> Total Score: 50% (Threshold: 70%)
+2026-10-06 22:33:55 [INFO] [COMM-WATCHER] 📥 INGESTING TRANSCRIPT: call_3_transcript_20261006.txt (14180 bytes)
+2026-10-06 22:34:05 [INFO] [COMM-WATCHER] 🚀 Starting Multi-Channel Pedagogical Watcher Daemon...
+2026-10-06 22:34:05 [INFO] [COMM-WATCHER] Decoupled from physical ADB. Ingesting from notes/, REST API (port 5042), and opportunistic ADB.
+2026-10-06 22:34:05 [INFO] [COMM-WATCHER] 🌐 Ingestion REST API listening on http://0.0.0.0:5042/api/comm/ingest
