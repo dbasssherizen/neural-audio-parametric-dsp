@@ -1269,11 +1269,11 @@
             Play back your rendered <code class="text-purple-300">.nam</code> model:
           </p>
           <div class="space-y-1.5 pt-1">
-            <a href="https://drive.google.com/drive/folders/19DMWIK-txpKhjY70ByS02G-MdNpmWyWJ" target="_blank" class="block text-indigo-400 hover:text-indigo-300 font-mono text-[11px] underline">
-              • Tone3000 Parametric Fork (MrsmPeek) ↗
+            <a href="https://github.com/mrgeneko/parametric-nam" target="_blank" class="block text-indigo-400 hover:text-indigo-300 font-mono text-[11px] underline">
+              • mrgeneko/parametric-nam (Official Parametric Engine) ↗
             </a>
-            <a href="https://github.com/phillipmself/neural-amp-modeler-parametric" target="_blank" class="block text-purple-400 hover:text-purple-300 font-mono text-[11px] underline">
-              • NamParametricPlugin (VST3/CLAP) ↗
+            <a href="https://github.com/mrgeneko/NAMix" target="_blank" class="block text-purple-400 hover:text-purple-300 font-mono text-[11px] underline">
+              • NAMix (VST3/AU Standalone Player) ↗
             </a>
           </div>
         </div>
@@ -7983,14 +7983,29 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
       let csv = "";
       const isMarshall = runSheetData.length > 0 && runSheetData[0].depth !== undefined;
       if (isMarshall) {
-        csv = "take_id,split,Depth,Presence,Master,Treble,Middle,Bass,Gain1,Gain2,recorded\n";
+        csv = "filename,Depth,Presence,Master,Treble,Middle,Bass,Gain1,Gain2\n";
         runSheetData.forEach(t => {
-          csv += `${t.id},${t.split},${t.depth},${t.presence},${t.master},${t.treble},${t.mid},${t.bass},${t.gain1},${t.gain2},${t.done ? 1 : 0}\n`;
+          const fn = t.filename ? (t.filename.endsWith('.wav') ? t.filename : t.filename + '.wav') : `${t.id}.wav`;
+          const d = (t.depth / 10).toFixed(3);
+          const p = (t.presence / 10).toFixed(3);
+          const m = (t.master / 10).toFixed(3);
+          const tr = (t.treble / 10).toFixed(3);
+          const mid = (t.mid / 10).toFixed(3);
+          const b = (t.bass / 10).toFixed(3);
+          const g1 = (t.gain1 / 10).toFixed(3);
+          const g2 = (t.gain2 / 10).toFixed(3);
+          csv += `${fn},${d},${p},${m},${tr},${mid},${b},${g1},${g2}\n`;
         });
       } else {
-        csv = "take_id,type,gain,bass,mid,treble,master,output_filename,recorded\n";
+        csv = "filename,Gain,Bass,Middle,Treble,Master\n";
         runSheetData.forEach(t => {
-          csv += `${t.id},${t.type},${t.gain},${t.bass},${t.mid},${t.treble},${t.master},${t.filename},${t.done ? 1 : 0}\n`;
+          const fn = t.filename ? (t.filename.endsWith('.wav') ? t.filename : t.filename + '.wav') : `${t.id}.wav`;
+          const g = (t.gain / 10).toFixed(3);
+          const b = (t.bass / 10).toFixed(3);
+          const m = (t.mid / 10).toFixed(3);
+          const tr = (t.treble / 10).toFixed(3);
+          const mast = (t.master / 10).toFixed(3);
+          csv += `${fn},${g},${b},${m},${tr},${mast}\n`;
         });
       }
       const blob = new Blob([csv], { type: 'text/csv' });
@@ -8002,14 +8017,14 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
     function copyCudaCommand(os) {
       let cmd = "";
       if (os === "linux") {
-        cmd = `git clone https://github.com/phillipmself/neural-amp-modeler-parametric.git && cd neural-amp-modeler-parametric\nconda env create -f environments/environment_gpu.yml\nconda activate nam_parametric\nnam-full-parametric data.json configs/model_concat.json configs/learning_concat.json ./output_parametric/`;
+        cmd = `git clone https://github.com/mrgeneko/parametric-nam.git && cd parametric-nam\npip install -r requirements.txt neural-amp-modeler\npython gen_dataset_from_captures.py --captures "captures/*.wav" --mapping-csv "marshall_origin50_params.csv" --output ./dataset --gear-make "Marshall" --gear-model "Origin 50 Modded"\npython gen_dataset_from_captures.py --combine ./dataset\npython param_train.py --dataset ./dataset --output marshall_origin50.param.nam --checkpoint-dir ./checkpoints --widths 4,8 --crop-len 24000 --batch-size 64 --repeats 8 --lr 3e-4 --epochs 200`;
       } else if (os === "windows") {
-        cmd = `REM Run in Windows Anaconda Prompt / PowerShell with NVIDIA GPU:\nconda activate nam_parametric\nnam-full-parametric.exe data.json configs/model_concat.json configs/learning_concat.json .\\output_parametric\\`;
+        cmd = `REM Windows CMD / PowerShell (NVIDIA GPU):\ngit clone https://github.com/mrgeneko/parametric-nam.git\ncd parametric-nam\npip install -r requirements.txt neural-amp-modeler\npython gen_dataset_from_captures.py --captures "captures\\*.wav" --mapping-csv "marshall_origin50_params.csv" --output .\\dataset --gear-make "Marshall" --gear-model "Origin 50 Modded"\npython gen_dataset_from_captures.py --combine .\\dataset\npython param_train.py --dataset .\\dataset --output marshall_origin50.param.nam --checkpoint-dir .\\checkpoints --widths 4,8 --crop-len 24000 --batch-size 64 --repeats 8 --lr 3e-4 --epochs 200`;
       } else if (os === "colab") {
-        cmd = `!git clone https://github.com/phillipmself/neural-amp-modeler-parametric.git && cd neural-amp-modeler-parametric\n!pip install -q lightning torch torchaudio soundfile scipy pandas\n!python -m nam.train.colab ./data/data.json configs/model_concat.json configs/learning_concat.json ./output/`;
+        cmd = `!git clone https://github.com/mrgeneko/parametric-nam.git && cd parametric-nam\n!pip install -q lightning torch torchaudio soundfile scipy pandas numpy neural-amp-modeler\n# Open Colab Notebook: notebooks/colab_train_parametric_nam.ipynb`;
       }
       navigator.clipboard.writeText(cmd).then(() => {
-        showAudioToast(`✅ Copied ${os.toUpperCase()} Command to Clipboard!`, "✨");
+        showAudioToast(`✅ Copied mrgeneko ${os.toUpperCase()} Command to Clipboard!`, "✨");
       });
     }
 
