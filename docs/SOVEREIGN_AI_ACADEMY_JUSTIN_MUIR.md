@@ -82,23 +82,56 @@ You are presented with a rich, interactive Terminal User Interface (TUI).
 
 ---
 
-## Pillar 4: Gemma 4 QAT Models & Edge AI (100% Private, Zero Cloud Cost)
-### 1. What is Gemma 4 & Quantization-Aware Training (QAT)?
-Gemma is Google's premier family of lightweight, state-of-the-art open-weight models.
-**QAT (Quantization-Aware Training)** models are specifically trained to simulate 4-bit and 8-bit precision during training:
-- **Zero Quality Loss**: Unlike standard post-training quantization which degrades reasoning, QAT retains full fp16 cognitive acuity.
-- **Runs on Consumer Hardware**: A 4-bit QAT model runs smoothly on an M-series Mac, an Intel/AMD mini PC, or an older gaming GPU with under 4GB of RAM.
-- **Zero API Bills**: No OpenAI tokens, no monthly subscription fees. Runs 100% offline.
+## Pillar 4: The Gemma 4 & QAT Checkpoint Matrix (100% Private, Zero Cloud Cost)
+### 1. What is Quantization-Aware Training (QAT)?
+Standard 16-bit AI models require massive enterprise GPUs with 24GB–80GB of VRAM. 
+**Quantization-Aware Training (QAT)** trains neural weights while actively simulating 4-bit integer (INT4) mathematics.
+- **Zero Cognitive Loss**: Unlike crude post-training quantization which degrades reasoning, QAT retains full fp16 cognitive acuity.
+- **Slashing VRAM by 75%**: A 9B model that once required 18GB of VRAM runs smoothly in **~5.8GB of RAM** on consumer GPUs, Apple Silicon, or Linux mini PCs.
+- **Zero API Bills**: No OpenAI tokens, no monthly subscription fees. Runs 100% air-gapped on your LAN.
 
-### 2. Quickstart with Ollama
-1. Install Ollama: `brew install ollama` or download from `ollama.ai`.
-2. Pull and run Gemma:
+### 2. The Complete Gemma 4 & Specialized Checkpoint Catalog
+
+| Model Tier | Ollama Tag | Parameter Count | Quantization (QAT) | Min VRAM / RAM | Primary Studio / NetOps Use Case |
+| :--- | :--- | :---: | :---: | :---: | :--- |
+| **Gemma 4 Edge** | `gemma:2b` | 2.6B | 4-bit QAT (`Q4_K_M`) | ~1.6 GB | Low-latency daemon telemetry, edge Pi / pfSense bridge, background jitter monitoring |
+| **Gemma 4 Studio Pro** *(Sweet Spot)* | `gemma:9b` | 9.2B | 4-bit QAT (`Q4_K_M`) | ~5.8 GB | Deep technical NetOps reasoning, multi-turn troubleshooting, audio DSP theory, sweep planning |
+| **Gemma 4 Studio High-Res** | `gemma:9b-instruct-q8_0` | 9.2B | 8-bit QAT (`Q8_0`) | ~10.2 GB | Near-FP16 mathematical fidelity for complex filter calculations, transfer curves, and impedance math |
+| **Gemma 4 Sovereign Master** | `gemma:27b` | 27.2B | 4-bit QAT (`Q4_K_M`) | ~16.5 GB | Frontier-grade coding and circuit analysis; complete system refactoring across large repos |
+| **CodeGemma Inline** | `codegemma:2b` | 2.5B | 4-bit / FP16 | ~2.0 GB | Ultra-fast inline code completion and syntax checking for Lua ReaScripts & C++ RTNeural |
+| **CodeGemma Engineer** | `codegemma:7b` | 8.5B | 4-bit QAT (`Q4_K_M`) | ~5.2 GB | Full autonomous script synthesis, Python daemon authoring, automated REAPER ReaScript generation |
+| **PaliGemma Visual Scope** | `paligemma:3b` | 2.9B | 4-bit / FP16 | ~3.4 GB | Multimodal vision: analyzing amp schematic PDFs, oscilloscope photos, front-panel knob positions |
+
+### 3. Understanding the Quantization Levels
+- **Q4_K_M (4-bit QAT)**: Recommended default. Runs on almost any modern laptop or gaming PC with 6GB–8GB VRAM.
+- **Q5_K_M (5-bit QAT)**: Enhanced precision for subtle numerical nuances in DSP equations with only ~15% more RAM.
+- **Q8_0 (8-bit QAT)**: Ideal if you have 12GB+ VRAM on an NVIDIA card or 16GB+ on Mac. Bit-for-bit indistinguishable from uncompressed models.
+
+### 4. Running Any Gemma Checkpoint Locally
+1. Install Ollama:
    ```bash
-   ollama run gemma:2b
-   # or the larger coding model:
-   ollama run codegemma
+   curl -fsSL https://ollama.ai/install.sh | sh
    ```
-3. Use it in scripts or through local web UIs (Open WebUI, Enchanted, AnythingLLM).
+2. Pull the model matching your hardware:
+   ```bash
+   # Edge / Pi:
+   ollama run gemma:2b
+
+   # Studio Workstation (Recommended):
+   ollama run gemma:9b
+
+   # High-Accuracy Audio DSP Math:
+   ollama run gemma:9b-instruct-q8_0
+
+   # Heavyweight Autonomous Architect:
+   ollama run gemma:27b
+
+   # Studio ReaScript & Python Coder:
+   ollama run codegemma:7b
+
+   # Multimodal Hardware & Scope Vision:
+   ollama run paligemma:3b
+   ```
 
 ---
 
@@ -107,7 +140,7 @@ Gemma is Google's premier family of lightweight, state-of-the-art open-weight mo
 Your pfSense router, Proxmox hypervisor, and audio capture daemons produce thousands of lines of logs every day. Right now, you only read them when something breaks.
 By attaching a lightweight **Natural Language Daemon Bridge**, your infrastructure becomes conversational.
 
-### 2. The Architecture
+### 2. The Multi-Model Daemon Architecture
 ```
 [pfSense / REAPER / Hardware Rig]
              │ (syslog, pings, audio xruns)
@@ -115,31 +148,38 @@ By attaching a lightweight **Natural Language Daemon Bridge**, your infrastructu
 [Telemetry Collector & Ring Buffer]
              │ (JSON snapshot)
              ▼
-[Local Gemma 4 LLM via Ollama / llama.cpp]
+[Local Gemma Model: 2B / 9B / 27B / CodeGemma / PaliGemma]
              ▲
              │ ("How did jitter behave during the 42 takes?")
              ▼
-[Justin's Terminal / Web Interface]
+[Justin's Terminal / Web Interface / curl]
 ```
 
-### 3. Running the Included Starter Daemon
-We have built and committed a production-ready starter script directly into your repository:
+### 3. Running the Included Multi-Model Starter Daemon
+The included script [`scripts/nl_daemon_bridge.py`](scripts/nl_daemon_bridge.py) supports dynamic model switching right from the CLI or REST API:
+
 ```bash
-python3 scripts/nl_daemon_bridge.py --cli
+# 1. Interactive Terminal REPL with 9B Studio Pro (Recommended):
+python3 scripts/nl_daemon_bridge.py --cli --model gemma:9b
+
+# 2. Or Run with CodeGemma for ReaScript coding:
+python3 scripts/nl_daemon_bridge.py --cli --model codegemma:7b
+
+# 3. Or Run with Ultra-Lightweight 2B on an Edge device:
+python3 scripts/nl_daemon_bridge.py --cli --model gemma:2b
+
+# 4. In the REPL, type :models to see the full catalog or :use <model> to switch on the fly!
 ```
-Ask it:
-- *"How is network jitter looking right now?"*
-- *"Is the audio buffer dropping samples?"*
-- *"Give me a complete studio health summary."*
 
 To run it as a continuous background daemon with a REST API:
 ```bash
-python3 scripts/nl_daemon_bridge.py --server --port 5040
+python3 scripts/nl_daemon_bridge.py --server --port 5040 --model gemma:9b
 ```
-Query it from anywhere on your LAN:
-```bash
-curl "http://localhost:5040/ask?q=Is+the+network+ready+for+tracking?"
-```
+Endpoints:
+- Query: `curl "http://localhost:5040/ask?q=Is+network+jitter+clean?"`
+- Query with specific model: `curl "http://localhost:5040/ask?q=Write+a+REAPER+script&model=codegemma:7b"`
+- Model Catalog: `curl "http://localhost:5040/models"`
+- System Status: `curl "http://localhost:5040/status"`
 
 ---
 
@@ -161,7 +201,8 @@ Here is your cheat sheet of battle-tested open-source repositories to explore an
 ## Your First Weekend Mission
 1. Launch **Google Colab** and run the Marshall Origin 50 notebook to train one parametric model.
 2. Go to **NotebookLM**, upload your Marshall Origin 50 schematic and AXE I/O manual, and generate a 10-minute Audio Overview.
-3. Open your terminal, run `python3 scripts/nl_daemon_bridge.py --cli`, and ask your daemon about your network latency.
+3. Open your terminal, run `ollama run gemma:9b`, and test asking technical questions about your rig.
+4. Launch `python3 scripts/nl_daemon_bridge.py --cli --model gemma:9b` and chat with your live network telemetry.
 
 You've got the rig. You've got the ears. Now you've got the keys to the engine room.
 🎣 **Tight lines, Justin.**
