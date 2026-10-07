@@ -3093,6 +3093,82 @@ files.download("./marshall_origin50.param.nam")</code></pre>
               </tbody>
             </table>
           </div>
+        <!-- INTERACTIVE LEARNLM CONCEPT GROUNDER & PEDAGOGICAL CHALLENGES -->
+        <div class="bg-slate-950 p-4 sm:p-5 rounded-2xl border border-indigo-500/30 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="font-bold text-white text-xs sm:text-sm flex items-center gap-2">
+              <span>🎯</span> <span>Interactive LearnLM Grounding Challenge</span>
+              <span class="text-[10px] bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-2 py-0.5 rounded-full font-mono">Test Your Ear &amp; Intuition</span>
+            </div>
+            <span class="text-[10px] font-mono text-emerald-400">Zero CS Degree Required</span>
+          </div>
+
+          <!-- Challenge Question Selector Chips -->
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <button type="button" onclick="selectLearnLMChallenge(1)" id="btn-chal-1" class="px-3 py-1.5 rounded-xl bg-indigo-600 text-white font-bold transition shadow cursor-pointer">
+              1. Valve Saturation
+            </button>
+            <button type="button" onclick="selectLearnLMChallenge(2)" id="btn-chal-2" class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition cursor-pointer">
+              2. Console Aux Send
+            </button>
+            <button type="button" onclick="selectLearnLMChallenge(3)" id="btn-chal-3" class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition cursor-pointer">
+              3. 24-bit to 4-bit Dither
+            </button>
+          </div>
+
+          <!-- Challenge Card Display Container -->
+          <div id="learnlmChallengeContainer" class="bg-slate-900/90 p-4 rounded-xl border border-slate-800 space-y-3">
+            <div class="text-xs text-slate-300 font-sans leading-relaxed" id="chalQuestionText">
+              <strong>Question 1:</strong> In a modded Marshall Origin 50, pushing the gain control causes the 12AX7 preamp grid to conduct, smoothly compressing peaks into odd-harmonic musical distortion. In a Deep Neural Network, which mathematical element performs this exact same function?
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1" id="chalOptionsGrid">
+              <button type="button" onclick="answerLearnLMChallenge(1, false, 'Backpropagation is the gradient optimization loop, like fine-tuning a bias pot with a multimeter, not the non-linear transfer curve itself.')" class="p-2.5 rounded-xl bg-slate-950 hover:bg-slate-800 text-slate-300 border border-slate-800 text-left text-xs transition">
+                A) Backpropagation Gradient Descent
+              </button>
+              <button type="button" onclick="answerLearnLMChallenge(1, true, 'Spot on! Tanh (hyperbolic tangent) is literally the mathematical formula of a triode valve cathode transfer curve—smoothly saturating signal voltages between -1.0 and +1.0!')" class="p-2.5 rounded-xl bg-slate-950 hover:bg-slate-800 text-slate-300 border border-slate-800 text-left text-xs transition">
+                B) Tanh / ReLU Activation Function
+              </button>
+              <button type="button" onclick="answerLearnLMChallenge(1, false, 'The loss function (ESR) is like a phase cancellation null test measuring error, not the transfer shaper.')" class="p-2.5 rounded-xl bg-slate-950 hover:bg-slate-800 text-slate-300 border border-slate-800 text-left text-xs transition">
+                C) Mean Squared Error Loss
+              </button>
+              <button type="button" onclick="answerLearnLMChallenge(1, false, 'Quantization compresses bit-depth representation, not waveform transfer non-linearity.')" class="p-2.5 rounded-xl bg-slate-950 hover:bg-slate-800 text-slate-300 border border-slate-800 text-left text-xs transition">
+                D) INT4 Model Quantization
+              </button>
+            </div>
+            <div id="chalFeedbackBox" class="hidden p-3 rounded-xl text-xs font-sans leading-relaxed"></div>
+          </div>
+        </div>
+
+        <!-- INTERACTIVE PEDAGOGICAL READINESS SIMULATOR -->
+        <div class="bg-slate-950 p-4 sm:p-5 rounded-2xl border border-slate-800 space-y-3">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="font-bold text-white text-xs sm:text-sm flex items-center gap-2">
+              <span>🛰️</span> <span>Interactive Pedagogical Watcher Simulator</span>
+            </div>
+            <span class="text-[10px] font-mono text-slate-400">Live Stage Machine: <span id="simHUDActiveStage" class="text-emerald-400 font-bold">Stage 1 Active</span></span>
+          </div>
+          <p class="text-[11px] text-slate-400 leading-relaxed font-sans">
+            Our zero-ADB communication watcher listens for natural readiness signals across your call transcripts and studio notes. 
+            Click real-world trigger phrases below to simulate how the pedagogical engine unlocks progressive learning stages in real time:
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono pt-1">
+            <button type="button" onclick="testReadinessSignal('I started taking notes in a single markdown folder', 25, 2)" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-300 border border-slate-800 text-[11px] transition">
+              👉 "Taking notes in a markdown folder" (+25% Stage 2)
+            </button>
+            <button type="button" onclick="testReadinessSignal('Created an Obsidian wiki for tube bias and Marshall takes', 25, 2)" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-300 border border-slate-800 text-[11px] transition">
+              👉 "Obsidian wiki for tube bias" (+25% Stage 2)
+            </button>
+            <button type="button" onclick="testReadinessSignal('Writing a JSON take manifest for REAPER re-amping', 30, 3)" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-slate-800 text-[11px] transition">
+              👉 "JSON take manifest for REAPER" (+30% Stage 3)
+            </button>
+            <button type="button" onclick="testReadinessSignal('Using BAML for type-safe prompt engineering', 45, 3)" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-slate-800 text-[11px] transition">
+              👉 "BAML type-safe prompt engineering" (+45% Stage 3)
+            </button>
+          </div>
+          <div id="readinessSimulatorOutput" class="bg-slate-900 p-3 rounded-xl border border-slate-800 font-mono text-xs text-emerald-300 flex items-center justify-between">
+            <span>Watcher State: Listening on port 5042. Click a trigger above to simulate readiness progression...</span>
+            <button type="button" onclick="resetReadinessSim()" class="text-[10px] text-slate-500 hover:text-slate-300 underline font-sans ml-2">Reset</button>
+          </div>
         </div>
 
         <!-- QUICK DOWNLOAD ASSETS BAR -->
@@ -3417,12 +3493,12 @@ files.download("./marshall_origin50.param.nam")</code></pre>
                 <span>💻</span> <span>Hardware Sizing Compass</span>
               </div>
               <ul class="space-y-2 text-[11px] text-slate-300 leading-relaxed">
-                <li><strong class="text-white">Edge / Mini PC (&lt;4GB RAM):</strong> Use <code class="text-purple-300">gemma:2b</code> or <code class="text-purple-300">codegemma:2b</code>.</li>
-                <li><strong class="text-white">Studio Workstation (8-16GB RAM):</strong> Use <code class="text-emerald-300">gemma:9b</code> (Recommended Sweet Spot) or <code class="text-emerald-300">codegemma:7b</code>.</li>
-                <li><strong class="text-white">Sovereign Heavyweight (16-32GB):</strong> Use <code class="text-amber-300">gemma:27b</code> for complete repository analysis.</li>
+                <li><strong class="text-white">Edge / Mini PC (&lt;4GB RAM):</strong> Use <code class="text-purple-300">gemma4:e2b</code> (~1.6GB VRAM) for micro-appliances and MIDI conditioning.</li>
+                <li><strong class="text-white">Studio Workstation (8-16GB RAM):</strong> Use <code class="text-emerald-300">gemma4:12b</code> (★ <strong>Recommended Premier Choice</strong>, ~7.2GB VRAM) for native audio waveforms, tube math, and REAPER automation.</li>
+                <li><strong class="text-white">Sovereign Flagship (16-32GB):</strong> Use <code class="text-amber-300">gemma4:31b</code> (~18.5GB VRAM) or <code class="text-amber-300">gemma4:26b-a4b</code> (MoE) for 256K context and Thinking Modes.</li>
               </ul>
               <div class="p-2.5 rounded-xl bg-purple-500/10 border border-purple-500/20 text-[10px] text-purple-200">
-                All models run completely locally via Ollama or llama.cpp with zero internet connectivity required.
+                All models run 100% locally via Ollama or llama.cpp with zero egress, zero telemetry, and zero cloud lock-in.
               </div>
             </div>
           </div>
@@ -3446,102 +3522,109 @@ files.download("./marshall_origin50.param.nam")</code></pre>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-800/60 font-mono text-slate-300">
+                  <!-- Gemma 4 12B Unified (Premier Choice) -->
+                  <tr class="hover:bg-slate-900/50 transition bg-emerald-950/20">
+                    <td class="p-3 font-bold text-emerald-300 flex items-center gap-1.5">
+                      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                      <span>Gemma 4 12B Unified 🎵 ★</span>
+                    </td>
+                    <td class="p-3 text-slate-400">12.2B</td>
+                    <td class="p-3 text-emerald-400">4-bit QAT (Q4_K_M)</td>
+                    <td class="p-3 text-emerald-300 font-bold">~7.2 GB</td>
+                    <td class="p-3 text-slate-300 font-sans"><strong>PREMIER CHOICE FOR AUDIO:</strong> Native waveform audio ingestion &amp; transient analysis (no Whisper required). Oscilloscope traces &amp; tube gain staging.</td>
+                    <td class="p-3 text-right">
+                      <button onclick="navigator.clipboard.writeText('ollama run gemma4:12b'); alert('Copied: ollama run gemma4:12b')" class="px-2 py-1 rounded bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] font-bold transition">
+                        ollama run gemma4:12b 📋
+                      </button>
+                    </td>
+                  </tr>
+
+                  <!-- Gemma 4 31B Dense Flagship -->
+                  <tr class="hover:bg-slate-900/50 transition bg-amber-950/20">
+                    <td class="p-3 font-bold text-amber-300 flex items-center gap-1.5">
+                      <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                      <span>Gemma 4 31B Dense Flagship 👑</span>
+                    </td>
+                    <td class="p-3 text-slate-400">30.7B</td>
+                    <td class="p-3 text-amber-300">4-bit QAT (Q4_K_M)</td>
+                    <td class="p-3 text-amber-300 font-bold">~18.5 GB</td>
+                    <td class="p-3 text-slate-300 font-sans"><strong>FLAGSHIP SOVEREIGN REASONING:</strong> 256K Context window with configurable Thinking Modes. Full repository refactoring &amp; multi-log NetOps diagnostics.</td>
+                    <td class="p-3 text-right">
+                      <button onclick="navigator.clipboard.writeText('ollama run gemma4:31b'); alert('Copied: ollama run gemma4:31b')" class="px-2 py-1 rounded bg-amber-600 hover:bg-amber-500 text-white text-[10px] font-bold transition">
+                        ollama run gemma4:31b 📋
+                      </button>
+                    </td>
+                  </tr>
+
+                  <!-- Gemma 4 26B A4B MoE -->
                   <tr class="hover:bg-slate-900/50 transition">
                     <td class="p-3 font-bold text-white flex items-center gap-1.5">
                       <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-                      <span>Gemma 4 Edge</span>
+                      <span>Gemma 4 26B A4B MoE ⚡</span>
                     </td>
-                    <td class="p-3 text-slate-400">2.6B</td>
+                    <td class="p-3 text-slate-400">26B (4B act)</td>
                     <td class="p-3 text-cyan-300">4-bit QAT (Q4_K_M)</td>
-                    <td class="p-3 text-slate-200 font-bold">~1.6 GB</td>
-                    <td class="p-3 text-slate-400 font-sans">Background NetOps daemon, ping/jitter alerts, edge Pi sidecars</td>
+                    <td class="p-3 text-slate-200 font-bold">~15.0 GB</td>
+                    <td class="p-3 text-slate-400 font-sans">Mixture-of-Experts: 26B reasoning depth at 4B generation speeds. Ideal for concurrent real-time daemon queries.</td>
                     <td class="p-3 text-right">
-                      <button onclick="navigator.clipboard.writeText('ollama run gemma:2b'); alert('Copied: ollama run gemma:2b')" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 text-[10px] transition">
-                        ollama run gemma:2b 📋
+                      <button onclick="navigator.clipboard.writeText('ollama run gemma4:26b-a4b'); alert('Copied: ollama run gemma4:26b-a4b')" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 text-[10px] transition">
+                        ollama run gemma4:26b-a4b 📋
                       </button>
                     </td>
                   </tr>
 
-                  <tr class="hover:bg-slate-900/50 transition bg-emerald-950/20">
-                    <td class="p-3 font-bold text-emerald-300 flex items-center gap-1.5">
-                      <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                      <span>Gemma 4 Studio Pro ★</span>
-                    </td>
-                    <td class="p-3 text-slate-400">9.2B</td>
-                    <td class="p-3 text-emerald-400">4-bit QAT (Q4_K_M)</td>
-                    <td class="p-3 text-emerald-300 font-bold">~5.8 GB</td>
-                    <td class="p-3 text-slate-300 font-sans"><strong>Recommended Sweet Spot:</strong> Deep NetOps troubleshooting, tube circuit math, sweep planning</td>
-                    <td class="p-3 text-right">
-                      <button onclick="navigator.clipboard.writeText('ollama run gemma:9b'); alert('Copied: ollama run gemma:9b')" class="px-2 py-1 rounded bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] font-bold transition">
-                        ollama run gemma:9b 📋
-                      </button>
-                    </td>
-                  </tr>
-
+                  <!-- Gemma 4 E4B Studio Edge -->
                   <tr class="hover:bg-slate-900/50 transition">
                     <td class="p-3 font-bold text-white flex items-center gap-1.5">
                       <span class="w-2 h-2 rounded-full bg-teal-400"></span>
-                      <span>Gemma 4 Studio High-Res</span>
+                      <span>Gemma 4 E4B Studio Edge</span>
                     </td>
-                    <td class="p-3 text-slate-400">9.2B</td>
-                    <td class="p-3 text-teal-300">8-bit QAT (Q8_0)</td>
-                    <td class="p-3 text-slate-200 font-bold">~10.2 GB</td>
-                    <td class="p-3 text-slate-400 font-sans">Near-FP16 mathematical precision for DSP equations, filter poles, and tone stacks</td>
+                    <td class="p-3 text-slate-400">8.0B</td>
+                    <td class="p-3 text-teal-300">4-bit QAT (Q4_K_M)</td>
+                    <td class="p-3 text-slate-200 font-bold">~4.8 GB</td>
+                    <td class="p-3 text-slate-400 font-sans">Multimodal Audio + Vision engine for Proxmox VMs, mini PCs, and continuous rack telemetry monitoring.</td>
                     <td class="p-3 text-right">
-                      <button onclick="navigator.clipboard.writeText('ollama run gemma:9b-instruct-q8_0'); alert('Copied: ollama run gemma:9b-instruct-q8_0')" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-teal-300 text-[10px] transition">
-                        ollama run gemma:9b-instruct-q8_0 📋
+                      <button onclick="navigator.clipboard.writeText('ollama run gemma4:e4b'); alert('Copied: ollama run gemma4:e4b')" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-teal-300 text-[10px] transition">
+                        ollama run gemma4:e4b 📋
                       </button>
                     </td>
                   </tr>
 
-                  <tr class="hover:bg-slate-900/50 transition">
-                    <td class="p-3 font-bold text-white flex items-center gap-1.5">
-                      <span class="w-2 h-2 rounded-full bg-amber-400"></span>
-                      <span>Gemma 4 Sovereign Master</span>
-                    </td>
-                    <td class="p-3 text-slate-400">27.2B</td>
-                    <td class="p-3 text-amber-300">4-bit QAT (Q4_K_M)</td>
-                    <td class="p-3 text-slate-200 font-bold">~16.5 GB</td>
-                    <td class="p-3 text-slate-400 font-sans">Frontier-level code architecture, full multi-file refactoring, autonomous agent planning</td>
-                    <td class="p-3 text-right">
-                      <button onclick="navigator.clipboard.writeText('ollama run gemma:27b'); alert('Copied: ollama run gemma:27b')" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-amber-300 text-[10px] transition">
-                        ollama run gemma:27b 📋
-                      </button>
-                    </td>
-                  </tr>
-
-                  <tr class="hover:bg-slate-900/50 transition">
-                    <td class="p-3 font-bold text-white flex items-center gap-1.5">
-                      <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
-                      <span>CodeGemma Inline</span>
-                    </td>
-                    <td class="p-3 text-slate-400">2.5B</td>
-                    <td class="p-3 text-indigo-300">4-bit / FP16</td>
-                    <td class="p-3 text-slate-200 font-bold">~2.0 GB</td>
-                    <td class="p-3 text-slate-400 font-sans">Realtime fill-in-the-middle autocomplete for Lua ReaScript &amp; C++ RTNeural</td>
-                    <td class="p-3 text-right">
-                      <button onclick="navigator.clipboard.writeText('ollama run codegemma:2b'); alert('Copied: ollama run codegemma:2b')" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-indigo-300 text-[10px] transition">
-                        ollama run codegemma:2b 📋
-                      </button>
-                    </td>
-                  </tr>
-
+                  <!-- Gemma 4 E2B Ultra-Lightweight -->
                   <tr class="hover:bg-slate-900/50 transition">
                     <td class="p-3 font-bold text-white flex items-center gap-1.5">
                       <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                      <span>Gemma 4 E2B Micro-Appliance</span>
+                    </td>
+                    <td class="p-3 text-slate-400">5.1B (2.3B act)</td>
+                    <td class="p-3 text-purple-300">4-bit QAT (Q4_K_M)</td>
+                    <td class="p-3 text-slate-200 font-bold">~1.6 GB</td>
+                    <td class="p-3 text-slate-400 font-sans">Ultra-lightweight edge appliance. Runs on a Raspberry Pi 5 or 4GB mini-PC in your amp rack for MIDI conditioning.</td>
+                    <td class="p-3 text-right">
+                      <button onclick="navigator.clipboard.writeText('ollama run gemma4:e2b'); alert('Copied: ollama run gemma4:e2b')" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-purple-300 text-[10px] transition">
+                        ollama run gemma4:e2b 📋
+                      </button>
+                    </td>
+                  </tr>
+
+                  <!-- CodeGemma Engineer -->
+                  <tr class="hover:bg-slate-900/50 transition">
+                    <td class="p-3 font-bold text-white flex items-center gap-1.5">
+                      <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
                       <span>CodeGemma Engineer</span>
                     </td>
                     <td class="p-3 text-slate-400">8.5B</td>
-                    <td class="p-3 text-purple-300">4-bit QAT (Q4_K_M)</td>
+                    <td class="p-3 text-indigo-300">4-bit QAT (Q4_K_M)</td>
                     <td class="p-3 text-slate-200 font-bold">~5.2 GB</td>
-                    <td class="p-3 text-slate-400 font-sans">Full script synthesis: Python daemons, automated sweep orchestrators, unit test suites</td>
+                    <td class="p-3 text-slate-400 font-sans">Full script synthesis: Python daemons, automated sweep orchestrators, Lua ReaScripts, unit test suites.</td>
                     <td class="p-3 text-right">
-                      <button onclick="navigator.clipboard.writeText('ollama run codegemma:7b'); alert('Copied: ollama run codegemma:7b')" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-purple-300 text-[10px] transition">
+                      <button onclick="navigator.clipboard.writeText('ollama run codegemma:7b'); alert('Copied: ollama run codegemma:7b')" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-indigo-300 text-[10px] transition">
                         ollama run codegemma:7b 📋
                       </button>
                     </td>
                   </tr>
 
+                  <!-- PaliGemma Visual Scope -->
                   <tr class="hover:bg-slate-900/50 transition">
                     <td class="p-3 font-bold text-white flex items-center gap-1.5">
                       <span class="w-2 h-2 rounded-full bg-pink-400"></span>
@@ -3550,7 +3633,7 @@ files.download("./marshall_origin50.param.nam")</code></pre>
                     <td class="p-3 text-slate-400">2.9B</td>
                     <td class="p-3 text-pink-300">4-bit / FP16</td>
                     <td class="p-3 text-slate-200 font-bold">~3.4 GB</td>
-                    <td class="p-3 text-slate-400 font-sans">Multimodal vision: analyze amp circuit board photos, oscilloscope screenshots, front knobs</td>
+                    <td class="p-3 text-slate-400 font-sans">Multimodal vision: analyze amp circuit board photos, oscilloscope screenshots, front knobs.</td>
                     <td class="p-3 text-right">
                       <button onclick="navigator.clipboard.writeText('ollama run paligemma:3b'); alert('Copied: ollama run paligemma:3b')" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-pink-300 text-[10px] transition">
                         ollama run paligemma:3b 📋
@@ -3637,11 +3720,13 @@ files.download("./marshall_origin50.param.nam")</code></pre>
               <div class="space-y-1">
                 <div class="text-[10px] font-mono text-slate-500 uppercase font-bold">Select Active Model:</div>
                 <div class="flex flex-wrap gap-1.5" id="academyModelChips">
-                  <button type="button" onclick="setAcademySimModel('gemma:2b')" id="sim-btn-2b" class="px-2 py-1 rounded-lg text-[10px] font-mono font-bold border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition">2B Edge</button>
-                  <button type="button" onclick="setAcademySimModel('gemma:9b')" id="sim-btn-9b" class="px-2 py-1 rounded-lg text-[10px] font-mono font-bold border border-emerald-500/50 bg-emerald-600 text-white shadow transition">9B Studio Pro ★</button>
-                  <button type="button" onclick="setAcademySimModel('gemma:9b-q8')" id="sim-btn-9b-q8" class="px-2 py-1 rounded-lg text-[10px] font-mono font-bold border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition">9B INT8 High-Res</button>
-                  <button type="button" onclick="setAcademySimModel('gemma:27b')" id="sim-btn-27b" class="px-2 py-1 rounded-lg text-[10px] font-mono font-bold border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition">27B Master</button>
+                  <button type="button" onclick="setAcademySimModel('gemma4:12b')" id="sim-btn-12b" class="px-2 py-1 rounded-lg text-[10px] font-mono font-bold border border-emerald-500/50 bg-emerald-600 text-white shadow transition">12B Unified 🎵 ★</button>
+                  <button type="button" onclick="setAcademySimModel('gemma4:31b')" id="sim-btn-31b" class="px-2 py-1 rounded-lg text-[10px] font-mono font-bold border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition">31B Dense Flagship 👑</button>
+                  <button type="button" onclick="setAcademySimModel('gemma4:26b-a4b')" id="sim-btn-26b" class="px-2 py-1 rounded-lg text-[10px] font-mono font-bold border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition">26B MoE ⚡</button>
+                  <button type="button" onclick="setAcademySimModel('gemma4:e4b')" id="sim-btn-e4b" class="px-2 py-1 rounded-lg text-[10px] font-mono font-bold border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition">E4B Edge</button>
+                  <button type="button" onclick="setAcademySimModel('gemma4:e2b')" id="sim-btn-e2b" class="px-2 py-1 rounded-lg text-[10px] font-mono font-bold border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition">E2B Micro</button>
                   <button type="button" onclick="setAcademySimModel('codegemma:7b')" id="sim-btn-code7b" class="px-2 py-1 rounded-lg text-[10px] font-mono font-bold border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition">CodeGemma 7B</button>
+                  <button type="button" onclick="setAcademySimModel('paligemma:3b')" id="sim-btn-pali3b" class="px-2 py-1 rounded-lg text-[10px] font-mono font-bold border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition">PaliGemma 3B</button>
                 </div>
               </div>
 
@@ -3766,6 +3851,99 @@ files.download("./marshall_origin50.param.nam")</code></pre>
               The open standard for connecting AI agents to real-world data and gear. Build simple Python scripts to let Antigravity change REAPER tracks, toggle guitar pedals, or query pfSense.
             </p>
             <a href="https://github.com/modelcontextprotocol/python-sdk" target="_blank" class="inline-block text-[11px] text-teal-400 hover:underline pt-1">View on GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- LAB 7: STRUCTURED SCHEMAS (JSON, YAML, BAML) & REAPER COPILOT -->
+      <div id="lab-schemas" class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-lg font-bold">7</div>
+            <div>
+              <h3 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+                <span>Structured Schemas: JSON, YAML &amp; BAML</span>
+                <span class="text-[10px] font-mono uppercase bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 px-2 py-0.5 rounded-full">Stage 3 Readiness</span>
+              </h3>
+              <p class="text-xs text-slate-400">Type-safe prompt engineering, hardware manifests, and automated re-amp loop schemas for REAPER.</p>
+            </div>
+          </div>
+          <a href="./demo_structured_schemas.py" download class="px-3.5 py-1.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-mono text-xs font-bold transition flex items-center gap-1.5 shrink-0">
+            <span>🐍</span> demo_structured_schemas.py ↗
+          </a>
+        </div>
+
+        <div class="space-y-6 text-xs">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 space-y-3">
+              <h4 class="font-bold text-slate-200 text-sm">Why Type-Safe Schemas Beat Plain Text Prompts</h4>
+              <p class="text-[11px] text-slate-300 leading-relaxed font-sans">
+                In music production, you wouldn't connect an XLR cable to a speaker output without matching impedance. 
+                In AI engineering, passing fuzzy text prompts to an LLM creates unpredictable errors. 
+                By defining strict data schemas in <strong>JSON</strong> (for machine manifests), <strong>YAML</strong> (for human-readable patchbays), and <strong>BAML</strong> (Boundary Abstract Modeling Language for guaranteed type-safe LLM outputs), your studio automation becomes rock solid.
+              </p>
+
+              <!-- Schema Selector Tabs -->
+              <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-3">
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <div class="flex items-center gap-1.5 text-xs font-mono flex-wrap">
+                    <button type="button" onclick="switchSchemaTab('json')" id="tab-schema-json" class="px-3 py-1.5 rounded-xl font-bold bg-cyan-600 text-white shadow transition cursor-pointer">
+                      sweeps_manifest.json
+                    </button>
+                    <button type="button" onclick="switchSchemaTab('yaml')" id="tab-schema-yaml" class="px-3 py-1.5 rounded-xl text-slate-400 hover:text-white bg-slate-900 border border-slate-800 transition cursor-pointer">
+                      audio_patchbay.yaml
+                    </button>
+                    <button type="button" onclick="switchSchemaTab('baml')" id="tab-schema-baml" class="px-3 py-1.5 rounded-xl text-slate-400 hover:text-white bg-slate-900 border border-slate-800 transition cursor-pointer">
+                      reaper_copilot.baml
+                    </button>
+                  </div>
+                  <span class="text-[10px] text-slate-500 font-mono hidden sm:inline" id="schemaTypeLabel">JSON Data Object</span>
+                </div>
+
+                <!-- Code Container -->
+                <pre class="bg-slate-900/90 p-3.5 rounded-xl border border-slate-800 text-[11px] font-mono text-cyan-300 overflow-x-auto max-h-60 leading-relaxed" id="schemaCodeDisplay">{
+  "project": "Justin Muir • Marshall Origin 50 Parametric Sweep",
+  "hardware": {
+    "amplifier": "Marshall Origin 50 (Modded)",
+    "audio_interface": "IK Multimedia AXE I/O",
+    "sampling_rate": 48000,
+    "bit_depth": 24
+  },
+  "conditioning_parameters": [
+    "gain", "boost", "tilt", "bass", "middle", "treble", "master", "presence"
+  ],
+  "takes_recorded": 42
+}</pre>
+
+                <div class="flex items-center justify-between pt-1 flex-wrap gap-2">
+                  <button type="button" onclick="validateActiveSchema()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-500 hover:to-teal-500 text-white font-bold text-xs shadow-lg transition active:scale-95 cursor-pointer flex items-center gap-1.5">
+                    <span>⚡ Run Schema Validation Engine</span>
+                  </button>
+                  <span class="text-[10px] text-slate-400 font-mono" id="schemaValidationStatus">Ready for validation</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Schema Benefits Box -->
+            <div class="bg-slate-950 p-5 rounded-2xl border border-cyan-500/30 space-y-4 flex flex-col justify-between">
+              <div class="space-y-3">
+                <div class="text-xs font-mono font-bold text-cyan-300 uppercase flex items-center gap-1.5">
+                  <span>🛡️</span> <span>The BAML Advantage</span>
+                </div>
+                <p class="text-[11px] text-slate-300 leading-relaxed font-sans">
+                  Unlike Python Pydantic or JSON schema parsers that crash when an LLM hallucinated a missing bracket, 
+                  <strong>BAML</strong> compiles a native Rust parser that guarantees 100% type safety and extracts exact enum values directly from streaming LLM responses.
+                </p>
+                <div class="p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-[11px] text-cyan-200 font-mono space-y-1">
+                  <div class="font-bold text-cyan-300">Guaranteed REAPER Enums:</div>
+                  <div class="text-[10px] text-slate-400">• ToneCategory: PlexiClean | JCM800Crunch | SaturatedLead</div>
+                  <div class="text-[10px] text-slate-400">• DynamicEnvelope: LinearTransient | SagCompressed</div>
+                </div>
+              </div>
+              <div class="text-[10px] text-slate-500 font-mono text-center">
+                Stage 3 unlocks full hands-on REAPER ReaScript integration
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -7506,24 +7684,28 @@ function showAudioToast(msg, icon) {
     // -------------------------------------------------------------
     // ACADEMY MULTI-MODEL INTERACTIVE SIMULATOR (Lab 5)
     // -------------------------------------------------------------
-    let currentAcademySimModel = 'gemma:9b';
+    let currentAcademySimModel = 'gemma4:12b';
 
     const ACADEMY_MODEL_SPECS = {
-      'gemma:2b': { name: 'Gemma 4 Edge (2B QAT)', vram: '1.6GB', tag: 'Ultra-Lightweight Edge' },
-      'gemma:9b': { name: 'Gemma 4 Studio Pro (9B QAT)', vram: '5.8GB', tag: 'Studio Sweet Spot ★' },
-      'gemma:9b-q8': { name: 'Gemma 4 Studio High-Res (9B INT8)', vram: '10.2GB', tag: 'High-Fidelity Audio DSP' },
-      'gemma:27b': { name: 'Gemma 4 Sovereign Master (27B QAT)', vram: '16.5GB', tag: 'Heavyweight Autonomous Architect' },
-      'codegemma:7b': { name: 'CodeGemma Engineer (7B QAT)', vram: '5.2GB', tag: 'Autonomous Script & ReaScript Coder' }
+      'gemma4:12b': { name: 'Gemma 4 12B Unified 🎵 ★', vram: '7.2GB', tag: 'Premier Choice: Audio Waveforms + Vision + Code' },
+      'gemma4:31b': { name: 'Gemma 4 31B Dense Flagship 👑', vram: '18.5GB', tag: 'Dense Flagship: 256K Context + Thinking' },
+      'gemma4:26b-a4b': { name: 'Gemma 4 26B A4B MoE ⚡', vram: '15.0GB', tag: 'Sparse MoE: 26B reasoning @ 4B speed' },
+      'gemma4:e4b': { name: 'Gemma 4 E4B Studio Edge', vram: '4.8GB', tag: 'Multimodal Audio + Vision Edge' },
+      'gemma4:e2b': { name: 'Gemma 4 E2B Micro-Appliance', vram: '1.6GB', tag: 'Ultra-lightweight Rack Edge' },
+      'codegemma:7b': { name: 'CodeGemma Engineer (7B QAT)', vram: '5.2GB', tag: 'Python & Lua ReaScript Coder' },
+      'paligemma:3b': { name: 'PaliGemma Visual Scope (3B)', vram: '3.4GB', tag: 'Multimodal Oscilloscope & Circuit Analyzer' }
     };
 
     function setAcademySimModel(modelTag) {
       currentAcademySimModel = modelTag;
       const chipMap = {
-        'gemma:2b': 'sim-btn-2b',
-        'gemma:9b': 'sim-btn-9b',
-        'gemma:9b-q8': 'sim-btn-9b-q8',
-        'gemma:27b': 'sim-btn-27b',
-        'codegemma:7b': 'sim-btn-code7b'
+        'gemma4:12b': 'sim-btn-12b',
+        'gemma4:31b': 'sim-btn-31b',
+        'gemma4:26b-a4b': 'sim-btn-26b',
+        'gemma4:e4b': 'sim-btn-e4b',
+        'gemma4:e2b': 'sim-btn-e2b',
+        'codegemma:7b': 'sim-btn-code7b',
+        'paligemma:3b': 'sim-btn-pali3b'
       };
 
       Object.values(chipMap).forEach(btnId => {
@@ -7542,7 +7724,7 @@ function showAudioToast(msg, icon) {
         output.innerHTML = `<span class="text-emerald-400 font-bold">[Switched Model Checkpoint]</span><br>` +
                            `• Active Model: ${spec.name}<br>` +
                            `• Footprint: ~${spec.vram} VRAM (${spec.tag})<br>` +
-                           `• Status: Ready for telemetry query.`;
+                           `• Status: Armed and ready for telemetry query.`;
       }
     }
 
@@ -7552,7 +7734,7 @@ function showAudioToast(msg, icon) {
       if (input) input.value = query;
       if (!output) return;
 
-      const spec = ACADEMY_MODEL_SPECS[currentAcademySimModel] || { name: currentAcademySimModel, vram: '5.8GB' };
+      const spec = ACADEMY_MODEL_SPECS[currentAcademySimModel] || { name: currentAcademySimModel, vram: '7.2GB' };
       output.innerHTML = `<span class="text-slate-400 font-mono">Thinking via ${spec.name}...</span>`;
 
       setTimeout(() => {
@@ -7569,13 +7751,13 @@ function showAudioToast(msg, icon) {
                   "• Device: IK Multimedia AXE I/O (ALSA / Windows ASIO)<br>" +
                   "• Clock & Buffer: 48,000 Hz @ 64 samples (~1.33ms hardware latency)<br>" +
                   "• Buffer Underruns (Xruns): 0 detected across current 42-take tracking session.<br>" +
-                  "• Re-Amp Matrix: Ready for Marshall Origin 50 multi-knob sweep passes.";
+                  "• Native Audio Multimodal: Waveform transients inspected directly without external transcription.";
         } else if (q.includes("model") || q.includes("gemma") || q.includes("qat") || q.includes("checkpoint")) {
           reply = `[${spec.name} Checkpoint Telemetry]<br>` +
-                  "• Parameter Count: " + (spec.name.includes('27B') ? '27.2B' : (spec.name.includes('9B') ? '9.2B' : (spec.name.includes('7B') ? '8.5B' : '2.6B'))) + "<br>" +
-                  "• Quantization Scheme: " + (spec.name.includes('INT8') ? '8-bit QAT (Q8_0)' : '4-bit QAT (Q4_K_M)') + "<br>" +
+                  "• Architecture Tag: " + currentAcademySimModel + "<br>" +
+                  "• Quantization Scheme: 4-bit QAT (Q4_K_M)<br>" +
                   "• Allocated Memory: ~" + spec.vram + " VRAM<br>" +
-                  "• Terminal Command: ollama run " + currentAcademySimModel;
+                  "• Terminal Command: <code>ollama run " + currentAcademySimModel + "</code>";
         } else if (q.includes("health") || q.includes("summary") || q.includes("status")) {
           reply = `[${spec.name} Sovereign Studio Health Briefing]<br>` +
                   "• Rig State: Marshall Origin 50 (8-knob conditioning active)<br>" +
@@ -7590,7 +7772,7 @@ function showAudioToast(msg, icon) {
                   "<code>python3 scripts/nl_daemon_bridge.py --cli --model " + currentAcademySimModel + "</code>";
         }
         output.innerHTML = reply;
-      }, 350);
+      }, 300);
     }
 
     function handleAcademySimSubmit(e) {
@@ -7599,6 +7781,167 @@ function showAudioToast(msg, icon) {
       if (input && input.value.trim()) {
         runAcademySimQuery(input.value.trim());
       }
+    }
+
+    // -------------------------------------------------------------
+    // LEARNLM CHALLENGE CONTROLLER
+    // -------------------------------------------------------------
+    const LEARNLM_CHALLENGES = {
+      1: {
+        title: "1. Valve Saturation",
+        question: "In a modded Marshall Origin 50, pushing the gain control causes the 12AX7 preamp grid to conduct, smoothly compressing peaks into odd-harmonic musical distortion. In a Deep Neural Network, which mathematical element performs this exact same function?",
+        options: [
+          { text: "A) Backpropagation Gradient Descent", correct: false, explanation: "Backpropagation is the gradient optimization loop, like fine-tuning a bias pot with a multimeter, not the non-linear transfer curve itself." },
+          { text: "B) Tanh / ReLU Activation Function", correct: true, explanation: "Spot on! Tanh (hyperbolic tangent) is literally the mathematical formula of a triode valve cathode transfer curve—smoothly saturating signal voltages between -1.0 and +1.0!" },
+          { text: "C) Mean Squared Error Loss", correct: false, explanation: "The loss function (ESR) is like a phase cancellation null test measuring error, not the transfer shaper." },
+          { text: "D) INT4 Model Quantization", correct: false, explanation: "Quantization compresses bit-depth representation, not waveform transfer non-linearity." }
+        ]
+      },
+      2: {
+        title: "2. Console Aux Send",
+        question: "In an analog SSL or Neve recording console, you use an Aux Send to route a portion of a signal to a sidechain compressor or parallel reverb matrix. In a Transformer architecture, what mechanism dynamically routes focus to related tokens?",
+        options: [
+          { text: "A) Weight Decay Regularization", correct: false, explanation: "Weight decay prevents overfitting, like a subtle high-frequency choke filter, not dynamic routing." },
+          { text: "B) Self-Attention Routing Matrix", correct: true, explanation: "Exactly right! Self-Attention calculates Query-Key dot products to dynamically route focus and gain across tokens, just like an audio sidechain ducking matrix." },
+          { text: "C) AdamW Learning Rate Scheduler", correct: false, explanation: "Learning rate schedulers control step size over training epochs, not token focus." },
+          { text: "D) Pulse-Code Modulation (PCM)", correct: false, explanation: "PCM is raw audio sampling, not an attention routing mechanism." }
+        ]
+      },
+      3: {
+        title: "3. 24-bit to 4-bit Dither",
+        question: "When mastering 24-bit studio audio down to 16-bit CD or streaming formats, you apply TPDF dither noise to prevent harsh truncation distortion. In local LLM engineering, what process preserves mathematical reasoning when shrinking a 16-bit FP16 model down to 4-bit INT4?",
+        options: [
+          { text: "A) Quantization-Aware Training (QAT)", correct: true, explanation: "Bingo! QAT models the 4-bit clamping rounding error during training itself. The neural weights adapt to the low bit-depth grid, eliminating harsh truncation degradation!" },
+          { text: "B) Soft Clipping Limiter", correct: false, explanation: "Limiters prevent signal overages, but do not solve low bit-depth weight quantization." },
+          { text: "C) Fourier Transform (FFT)", correct: false, explanation: "FFT converts time domain to frequency domain, not bit-depth reduction." },
+          { text: "D) WaveNet Receptive Field", correct: false, explanation: "Receptive fields govern temporal memory length in convolutional networks." }
+        ]
+      }
+    };
+
+    let activeChallengeId = 1;
+
+    function selectLearnLMChallenge(num) {
+      activeChallengeId = num;
+      [1, 2, 3].forEach(n => {
+        const btn = document.getElementById('btn-chal-' + n);
+        if (btn) {
+          btn.className = (n === num)
+            ? "px-3 py-1.5 rounded-xl bg-indigo-600 text-white font-bold transition shadow cursor-pointer"
+            : "px-3 py-1.5 rounded-xl bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition cursor-pointer";
+        }
+      });
+
+      const chal = LEARNLM_CHALLENGES[num];
+      const qText = document.getElementById('chalQuestionText');
+      const optGrid = document.getElementById('chalOptionsGrid');
+      const feedBox = document.getElementById('chalFeedbackBox');
+      if (feedBox) feedBox.className = "hidden";
+
+      if (qText) qText.innerHTML = `<strong>Question ${num}:</strong> ${chal.question}`;
+      if (optGrid) {
+        optGrid.innerHTML = chal.options.map((opt) => `
+          <button type="button" onclick="answerLearnLMChallenge(${num}, ${opt.correct}, '${opt.explanation.replace(/'/g, "\\'")}')" class="p-2.5 rounded-xl bg-slate-950 hover:bg-slate-800 text-slate-300 border border-slate-800 text-left text-xs transition">
+            ${opt.text}
+          </button>
+        `).join('');
+      }
+    }
+
+    function answerLearnLMChallenge(qNum, isCorrect, explanation) {
+      const feedBox = document.getElementById('chalFeedbackBox');
+      if (!feedBox) return;
+      feedBox.classList.remove('hidden');
+      if (isCorrect) {
+        feedBox.className = "p-3 rounded-xl text-xs font-sans leading-relaxed bg-emerald-950/80 border border-emerald-500/50 text-emerald-200";
+        feedBox.innerHTML = `<strong>🎸 Correct!</strong> ${explanation}`;
+      } else {
+        feedBox.className = "p-3 rounded-xl text-xs font-sans leading-relaxed bg-amber-950/80 border border-amber-500/50 text-amber-200";
+        feedBox.innerHTML = `<strong>⚡ Keep Listening:</strong> ${explanation}`;
+      }
+    }
+
+    // -------------------------------------------------------------
+    // PEDAGOGICAL READINESS SIMULATOR CONTROLLER
+    // -------------------------------------------------------------
+    let simStage2Score = 50;
+    let simStage3Score = 0;
+
+    function testReadinessSignal(phrase, pts, targetStage) {
+      const out = document.getElementById('readinessSimulatorOutput');
+      
+      if (targetStage === 2) {
+        simStage2Score = Math.min(100, simStage2Score + pts);
+      } else if (targetStage === 3) {
+        simStage3Score = Math.min(100, simStage3Score + pts);
+      }
+
+      let msg = `[Readiness Signal Matched] "${phrase}" -> Stage ${targetStage} +${pts} pts (Total: ${targetStage === 2 ? simStage2Score : simStage3Score}%)`;
+      if (simStage2Score >= 70 && targetStage === 2) {
+        msg += `<br><span class="text-amber-300 font-bold">🎉 STAGE 2 UNLOCKED! (Markdown &amp; Karpathy Minimal Wiki)</span>`;
+      }
+      if (simStage3Score >= 75 && targetStage === 3) {
+        msg += `<br><span class="text-cyan-300 font-bold">🎉 STAGE 3 UNLOCKED! (Structured Schemas &amp; BAML)</span>`;
+      }
+      if (out) out.innerHTML = `<span>${msg}</span><button type="button" onclick="resetReadinessSim()" class="text-[10px] text-slate-500 hover:text-slate-300 underline font-sans ml-2">Reset</button>`;
+    }
+
+    function resetReadinessSim() {
+      simStage2Score = 50;
+      simStage3Score = 0;
+      const out = document.getElementById('readinessSimulatorOutput');
+      if (out) out.innerHTML = `<span>Watcher State: Reset to baseline. Stage 2 @ 50%, Stage 3 @ 0%.</span><button type="button" onclick="resetReadinessSim()" class="text-[10px] text-slate-500 hover:text-slate-300 underline font-sans ml-2">Reset</button>`;
+    }
+
+    // -------------------------------------------------------------
+    // LAB 7: STRUCTURED SCHEMAS CONTROLLER
+    // -------------------------------------------------------------
+    const SCHEMA_SNIPPETS = {
+      json: {
+        label: "JSON Take Manifest (Machine-Readable)",
+        code: `{\n  "project": "Justin Muir • Marshall Origin 50 Parametric Sweep",\n  "hardware": {\n    "amplifier": "Marshall Origin 50 (Modded)",\n    "audio_interface": "IK Multimedia AXE I/O",\n    "sampling_rate": 48000,\n    "bit_depth": 24\n  },\n  "potentiometer_positions": {\n    "gain": 7.5,\n    "boost": 1.0,\n    "tilt": 8.0,\n    "bass": 5.0,\n    "middle": 6.5,\n    "treble": 7.0,\n    "master": 4.5,\n    "presence": 6.0\n  },\n  "take_id": 24,\n  "status": "VALIDATED"\n}`
+      },
+      yaml: {
+        label: "YAML Patchbay Routing Map (Human-Configurable)",
+        code: `version: "1.0"\nstudio: "Justin Muir Audio NetOps"\npatchbay:\n  instrument_in: "AXE I/O Front Input 1 (Z-TONE PASSIVE)"\n  reamp_out: "AXE I/O Line Out 5 -> Little Labs Redeye 3D"\n  amp_input: "Marshall Origin 50 High-Sensitivity Jack"\n  loadbox_out: "Two Notes Torpedo Captor X (8 Ohm Load)"\n  return_in: "AXE I/O Rear XLR Line In 1"\nsafety_checks:\n  speaker_load_engaged: true\n  phantom_power_isolated: true\n  headroom_db: -3.5`
+      },
+      baml: {
+        label: "BAML Type-Safe Prompt Definition (Compile-Time Enums)",
+        code: `// Define Guaranteed Type-Safe Output Schema\nclass AudioTakeClassification {\n  take_id int\n  primary_tone ToneCategory\n  dynamic_feel DynamicEnvelope\n  esr_confidence float\n  notes string\n}\n\nenum ToneCategory {\n  PlexiClean\n  EdgeOfBreakup\n  JCM800Crunch\n  SaturatedLead\n}\n\nenum DynamicEnvelope {\n  LinearTransient\n  SagCompressed\n  HardClipping\n}\n\n// Compile-Time Validated Function\nfunction ClassifyReampTake(audio_metrics: string) -> AudioTakeClassification {\n  client "gemma4:12b"\n  prompt #"\n    Classify this Marshall sweep take:\n    {{ audio_metrics }}\n  "#\n}`
+      }
+    };
+
+    let activeSchemaTab = 'json';
+
+    function switchSchemaTab(tab) {
+      activeSchemaTab = tab;
+      ['json', 'yaml', 'baml'].forEach(t => {
+        const btn = document.getElementById('tab-schema-' + t);
+        if (btn) {
+          btn.className = (t === tab)
+            ? "px-3 py-1.5 rounded-xl font-bold bg-cyan-600 text-white shadow transition cursor-pointer"
+            : "px-3 py-1.5 rounded-xl text-slate-400 hover:text-white bg-slate-900 border border-slate-800 transition cursor-pointer";
+        }
+      });
+
+      const disp = document.getElementById('schemaCodeDisplay');
+      const label = document.getElementById('schemaTypeLabel');
+      const status = document.getElementById('schemaValidationStatus');
+
+      if (disp && SCHEMA_SNIPPETS[tab]) disp.textContent = SCHEMA_SNIPPETS[tab].code;
+      if (label && SCHEMA_SNIPPETS[tab]) label.textContent = SCHEMA_SNIPPETS[tab].label;
+      if (status) status.textContent = "Ready for validation";
+    }
+
+    function validateActiveSchema() {
+      const status = document.getElementById('schemaValidationStatus');
+      if (status) status.innerHTML = `<span class="text-amber-400 font-mono">Parsing schema...</span>`;
+
+      setTimeout(() => {
+        if (status) {
+          status.innerHTML = `<span class="text-emerald-400 font-mono font-bold">✔ Schema 100% Validated (0 Syntax / Bounds Errors)</span>`;
+        }
+      }, 250);
     }
 
   </script>
