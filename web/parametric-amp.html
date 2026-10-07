@@ -1148,14 +1148,14 @@
     <!-- WORKSPACE 3: TRACKING & RE-AMP -->
     <div id="workspace-tracking" class="studio-workspace space-y-6 hidden">
     <!-- SECTION D: NAMTRIX LITE HARVEST - INTERACTIVE RUN SHEET GENERATOR & DAW BATCH COMPANION -->
-    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-6" data-redline-target="NAMTRIX Run Sheet & DAW Companion">
+    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-6" data-redline-target="Studio Re-Amping Run Sheet & DAW Companion">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-3 gap-2">
         <div>
           <h3 class="font-bold text-white text-base flex items-center gap-2">
-            <span>🎛️ Section D: NAMTRIX Harvest — Interactive DAW Re-Amping Run Sheet</span>
-            <span class="text-[10px] font-mono bg-purple-500/20 text-purple-300 border border-purple-500/30 px-2 py-0.5 rounded-full">v1.2 Studio Tool</span>
+            <span>🎛️ Section D: Studio Tracking &amp; Re-Amping Run Sheet</span>
+            <span class="text-[10px] font-mono bg-purple-500/20 text-purple-300 border border-purple-500/30 px-2 py-0.5 rounded-full">mrgeneko &amp; NAMix Standard</span>
           </h3>
-          <p class="text-xs text-slate-400 mt-0.5">Harvested from u/MrsmPeek &amp; NAMTRIX Lite — optimized for Windows &amp; Linux DAW recording</p>
+          <p class="text-xs text-slate-400 mt-0.5">Aligned with official mrgeneko/parametric-nam &amp; NAMix — optimized for Windows ASIO &amp; Linux DAW recording</p>
         </div>
         <div class="flex items-center gap-2">
           <button onclick="markAll42TakesDone()" class="px-3 py-1 rounded-xl bg-emerald-600/30 hover:bg-emerald-600/40 text-emerald-200 border border-emerald-500/40 text-xs font-bold font-mono transition flex items-center gap-1.5 cursor-pointer">
@@ -1296,13 +1296,13 @@
           </span>
         </div>
 
-        <!-- Myth buster notice -->
-        <div class="bg-rose-950/40 border border-rose-500/40 rounded-xl p-3 text-xs text-slate-300 space-y-1">
-          <div class="font-bold text-rose-300 flex items-center gap-1.5">
-            <span>🛑 Stop Recording 2 WAVs per Knob Setting!</span>
+        <!-- Single sweep notice -->
+        <div class="bg-emerald-950/40 border border-emerald-500/40 rounded-xl p-3 text-xs text-slate-300 space-y-1">
+          <div class="font-bold text-emerald-300 flex items-center gap-1.5">
+            <span>✓ 1 Sweep Per Knob Setting (mrgeneko Architecture)</span>
           </div>
           <p class="text-slate-300 leading-relaxed text-[11px]">
-            In standard snapshot NAM, you had to record a training sweep AND a validation sweep for a single sound. In <strong>Parametric NAM</strong>, you only play <strong>ONE 38-second sweep (<code class="text-amber-300">inputTrunc.wav</code>) per take</strong>. The validation set is simply 4 or 5 separate knob settings held out from the matrix. <strong>Running 2 WAVs per knob doubles your time for no reason!</strong>
+            In standard snapshot NAM, you had to record a training sweep AND a validation sweep for a single sound. In <strong>mrgeneko Parametric NAM</strong>, you only play <strong>ONE standard sweep per take</strong>. The validation set is simply 4 or 5 separate knob settings held out from the grid. <strong>Running 2 WAVs per knob doubles your time for no reason!</strong>
           </p>
         </div>
 
@@ -1315,7 +1315,7 @@
               <span class="text-[9px] bg-emerald-500/20 text-emerald-300 px-1.5 py-0.5 rounded">No Code</span>
             </div>
             <p class="text-[11px] text-slate-400 leading-relaxed">
-              In Reaper, paste <code class="text-slate-300">inputTrunc.wav</code> 45 times on Track 1 with a 5s silence gap between each. Add Regions over each (<code class="text-slate-300">take_00</code>, <code class="text-slate-300">take_01</code>...).
+              In Reaper, paste <code class="text-slate-300">v1_1_1.wav</code> 45 times on Track 1 with a 5s silence gap between each. Add Regions over each (<code class="text-slate-300">take_00</code>, <code class="text-slate-300">take_01</code>...).
             </p>
             <p class="text-[11px] text-slate-300">
               Arm Track 2, hit Record once, and let it roll. Turn knobs during the 5s silences. When done: <strong>File &rarr; Render &rarr; Source: "All Project Regions" &rarr; File name: <code class="text-emerald-300">$region.wav</code></strong>.
@@ -4401,15 +4401,27 @@ When you ask a raw LLM to write JSON, it's like sending raw high-impedance guita
       </div>
     </div>
 
-    <!-- Bottom Actions -->
-    <div class="border-t border-slate-800 pt-4 space-y-2 text-xs">
-      <button onclick="exportRedlinesToClipboard()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-rose-600 to-orange-600 hover:from-rose-500 hover:to-orange-500 text-white font-bold shadow-lg shadow-rose-600/20 flex items-center justify-center gap-2">
+    <!-- Quick Note & Bottom Actions -->
+    <div class="border-t border-slate-800 pt-4 space-y-3 text-xs">
+      <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-2">
+        <label class="block text-slate-400 text-[11px] font-bold">💬 Quick Feedback / Note to Daniel:</label>
+        <textarea id="quickFeedbackText" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500" placeholder="Type any questions, feedback, or bugs here..."></textarea>
+        <div class="flex items-center gap-2">
+          <button onclick="sendQuickNoteEmail()" class="flex-1 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs flex items-center justify-center gap-1 cursor-pointer">
+            <span>✉️ Send Email</span>
+          </button>
+          <button onclick="copyQuickNote()" class="flex-1 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs flex items-center justify-center gap-1 cursor-pointer">
+            <span>📋 Copy Note</span>
+          </button>
+        </div>
+      </div>
+      <button onclick="exportRedlinesToClipboard()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-rose-600 to-orange-600 hover:from-rose-500 hover:to-orange-500 text-white font-bold shadow-lg shadow-rose-600/20 flex items-center justify-center gap-2 cursor-pointer">
         <span>📋 Copy Redline Report for Daniel</span>
       </button>
-      <button onclick="emailRedlinesToDaniel()" class="w-full py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium border border-slate-700 flex items-center justify-center gap-2">
-        <span>✉️ Email Feedback to Daniel</span>
+      <button onclick="emailRedlinesToDaniel()" class="w-full py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium border border-slate-700 flex items-center justify-center gap-2 cursor-pointer">
+        <span>✉️ Email Full Report (dbasssherizen@fwparker.org)</span>
       </button>
-      <button onclick="clearAllRedlines()" class="w-full py-1.5 text-slate-500 hover:text-rose-400 text-[11px] transition text-center">
+      <button onclick="clearAllRedlines()" class="w-full py-1 text-slate-500 hover:text-rose-400 text-[11px] transition text-center cursor-pointer">
         Clear all redlines
       </button>
     </div>
@@ -6525,13 +6537,41 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
     }
 
     function emailRedlinesToDaniel() {
+      const recipient = "dbasssherizen@fwparker.org";
       if (state.redlines.length === 0) {
-        showAudioToast("No redlines to email yet! Click 'Enable Redline Mode' to leave feedback first.", "✨");
+        const subject = encodeURIComponent("Justin Muir • Parametric NAM Blueprint Feedback");
+        const body = encodeURIComponent("Hi Daniel,\n\nHere is my feedback on the Parametric NAM blueprint:\n\n");
+        window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+        showAudioToast("Opening email to Daniel (dbasssherizen@fwparker.org)...", "✉️");
         return;
       }
+      const reportText = generateReportMarkdown();
       const subject = encodeURIComponent("Justin Muir • Parametric NAM Blueprint Redlines");
-      const body = encodeURIComponent(generateReportMarkdown());
-      window.location.href = `mailto:?subject=${subject}&body=${body}`;
+      const body = encodeURIComponent(reportText);
+      navigator.clipboard.writeText(reportText).catch(() => {});
+      window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+      showAudioToast("✅ Opening email to Daniel & copied report to clipboard!", "✉️");
+    }
+
+    function sendQuickNoteEmail() {
+      const note = document.getElementById('quickFeedbackText')?.value.trim();
+      const recipient = "dbasssherizen@fwparker.org";
+      const subject = encodeURIComponent("Justin Muir • Studio Quick Note");
+      const bodyText = note ? `Hi Daniel,\n\n${note}\n\n` : "Hi Daniel,\n\n";
+      const body = encodeURIComponent(bodyText);
+      window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+      showAudioToast("Opening email to Daniel...", "✉️");
+    }
+
+    function copyQuickNote() {
+      const note = document.getElementById('quickFeedbackText')?.value.trim();
+      if (!note) {
+        showAudioToast("Please enter a note first!", "⚠️");
+        return;
+      }
+      navigator.clipboard.writeText(note).then(() => {
+        showAudioToast("✅ Note copied to clipboard!", "📋");
+      });
     }
 
     // -------------------------------------------------------------
