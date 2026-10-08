@@ -1369,15 +1369,26 @@
             <div>
               <label class="text-slate-400 block text-[10px] uppercase font-mono mb-1">Rig / Sampling Profile:</label>
               <select id="runsheetProfileSelect" onchange="changeRunSheetProfile()" class="bg-slate-900 border border-amber-500/50 rounded-xl px-3 py-1.5 text-amber-300 font-bold text-xs">
-                <option value="marshall" selected>🎸 Marshall Origin 50 (8 Knobs • 40 Train + 5 Val Holdout)</option>
-                <option value="classic">🎛️ Classic 5-Knob Amp (40 Train + 4 Holdout)</option>
+                <option value="marshall_actual" selected>🎸 Marshall Origin 50 (Captured 20 Takes • Oct 8)</option>
+                <option value="marshall_lhs">🎲 Marshall Origin 50 (Dynamic Latin Hypercube Matrix)</option>
+                <option value="classic">🎛️ Classic 5-Knob Amp (Gain, Bass, Mid, Treble, Master)</option>
+                <option value="custom">✨ Custom Gear (Dynamic Knob Variables)</option>
               </select>
+            </div>
+            <div id="runsheetCustomKnobsWrap" class="hidden">
+              <label class="text-slate-400 block text-[10px] uppercase font-mono mb-1">Custom Knob Names (comma-separated):</label>
+              <input type="text" id="runsheetCustomKnobsInput" value="Gain, Bass, Middle, Treble, Master, Presence, Depth" class="w-64 bg-slate-900 border border-indigo-500/50 rounded-xl px-2.5 py-1.5 text-indigo-200 text-xs font-mono" placeholder="Gain, Tone, Volume" oninput="debounceCustomKnobRegen()">
+            </div>
+            <div id="runsheetTakesWrap">
+              <label class="text-slate-400 block text-[10px] uppercase font-mono mb-1">Takes Count:</label>
+              <input type="number" id="runsheetTakesInput" value="20" min="5" max="100" class="w-16 bg-slate-900 border border-slate-800 rounded-xl px-2.5 py-1.5 text-slate-200 text-xs">
             </div>
             <div>
               <label class="text-slate-400 block text-[10px] uppercase font-mono mb-1">Knob Dial Step:</label>
               <select id="runsheetStepSelect" class="bg-slate-900 border border-slate-800 rounded-xl px-3 py-1.5 text-slate-200 text-xs">
                 <option value="0.5" selected>0.5 Increments (Fine)</option>
                 <option value="1.0">1.0 Increments (Coarse)</option>
+                <option value="0.25">0.25 Increments (Ultra-Fine)</option>
               </select>
             </div>
             <div>
@@ -1385,12 +1396,12 @@
               <input type="number" id="runsheetSeedInput" value="42" class="w-16 bg-slate-900 border border-slate-800 rounded-xl px-2.5 py-1.5 text-slate-200 text-xs">
             </div>
             <div class="pt-4 flex items-center gap-2">
-              <button onclick="regenerateRunSheetMatrix()" class="px-3.5 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-lg shadow-purple-600/30 transition">
-                🎲 Regenerate
+              <button type="button" onclick="regenerateRunSheetMatrix(true)" class="px-3.5 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-lg shadow-purple-600/30 transition cursor-pointer flex items-center gap-1.5">
+                <span>🎲</span> <span>Regenerate</span>
               </button>
-              <a href="/marshall_origin50_params.csv" download class="px-3.5 py-1.5 rounded-xl bg-sky-600/30 hover:bg-sky-600/40 text-sky-200 border border-sky-500/40 font-mono text-xs font-bold transition">
-                ⬇️ CSV
-              </a>
+              <button type="button" onclick="exportRunSheetCsv()" class="px-3.5 py-1.5 rounded-xl bg-sky-600/30 hover:bg-sky-600/40 text-sky-200 border border-sky-500/40 font-mono text-xs font-bold transition cursor-pointer flex items-center gap-1.5">
+                <span>⬇️</span> <span>Export CSV</span>
+              </button>
             </div>
           </div>
 
@@ -7733,65 +7744,113 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
       { id: "amp_run_020", split: "train", depth: 8.0, presence: 2.0, master: 5.0, treble: 6.0, mid: 7.0, bass: 6.0, gain1: 5.0, gain2: 5.5, filename: "amp_run_020.wav", done: true }
     ];
 
+    function getActiveKnobNames() {
+      const prof = document.getElementById('runsheetProfileSelect')?.value || 'marshall_actual';
+      if (prof === 'marshall_actual' || prof === 'marshall_lhs') {
+        return ["Depth", "Presence", "Master", "Treble", "Middle", "Bass", "Gain1", "Gain2"];
+      } else if (prof === 'classic') {
+        return ["Gain", "Bass", "Middle", "Treble", "Master"];
+      } else if (prof === 'custom') {
+        const raw = document.getElementById('runsheetCustomKnobsInput')?.value || "Gain, Bass, Middle, Treble, Master";
+        const parsed = raw.split(',').map(s => s.trim()).filter(s => s.length > 0);
+        return parsed.length > 0 ? parsed : ["Gain", "Tone", "Volume"];
+      }
+      return ["Gain", "Tone", "Volume"];
+    }
+
+    let customKnobDebounceTimer = null;
+    function debounceCustomKnobRegen() {
+      clearTimeout(customKnobDebounceTimer);
+      customKnobDebounceTimer = setTimeout(() => {
+        regenerateRunSheetMatrix(true);
+      }, 500);
+    }
+    window.debounceCustomKnobRegen = debounceCustomKnobRegen;
+
     function changeRunSheetProfile() {
-      const prof = document.getElementById('runsheetProfileSelect')?.value || 'marshall';
+      const prof = document.getElementById('runsheetProfileSelect')?.value || 'marshall_actual';
+      const customWrap = document.getElementById('runsheetCustomKnobsWrap');
+      if (customWrap) {
+        if (prof === 'custom') {
+          customWrap.classList.remove('hidden');
+        } else {
+          customWrap.classList.add('hidden');
+        }
+      }
       regenerateRunSheetMatrix(true);
     }
     window.changeRunSheetProfile = changeRunSheetProfile;
 
-    function generateRunSheetMatrix(knobStep = 0.5, numTrain = 40, seed = 42) {
+    function generateDynamicLHSMatrix(knobNames, knobStep = 0.5, numTakes = 20, seed = 42) {
       const rng = mulberry32(seed);
       const takes = [];
+      const numTrain = Math.max(1, Math.round(numTakes * 0.85));
+      const numVal = Math.max(1, numTakes - numTrain);
 
-      // 1. Center Anchor (All at Noon = 5.0, Master 7.0)
+      // 1. Center Anchor (all knobs at noon = 5.0, master clamped >= 3.0 if present)
+      const anchorKnobs = {};
+      knobNames.forEach(k => {
+        if (k.toLowerCase().includes('master')) {
+          anchorKnobs[k] = 7.0;
+        } else {
+          anchorKnobs[k] = 5.0;
+        }
+      });
       takes.push({
-        id: "take_00",
-        type: "Anchor",
-        gain: 5.0, bass: 5.0, mid: 5.0, treble: 5.0, master: 7.0,
-        filename: "take_00_anchor_G5.0_B5.0_M5.0_T5.0_M7.0.wav",
+        id: "take_001",
+        split: "train",
+        type: "Center Anchor",
+        knobs: anchorKnobs,
+        filename: "take_001.wav",
         done: false
       });
 
-      // 2. Latin Hypercube Training Takes
-      for (let i = 1; i <= numTrain; i++) {
-        const g = snapVal(1.0 + rng() * 9.0, knobStep);
-        const b = snapVal(1.0 + rng() * 9.0, knobStep);
-        const m = snapVal(1.0 + rng() * 9.0, knobStep);
-        const t = snapVal(1.0 + rng() * 9.0, knobStep);
-        const v = snapVal(2.0 + rng() * 8.0, knobStep);
-        const padId = String(i).padStart(2, '0');
+      // 2. Training Takes via Latin Hypercube
+      for (let i = 2; i <= numTrain; i++) {
+        const rowKnobs = {};
+        knobNames.forEach(k => {
+          let minVal = 1.0;
+          let maxVal = 9.5;
+          if (k.toLowerCase().includes('master')) {
+            minVal = 3.0; // clamp master to prevent silent captures
+          }
+          const raw = minVal + rng() * (maxVal - minVal);
+          rowKnobs[k] = Number(snapVal(raw, knobStep).toFixed(1));
+        });
+        const padId = String(i).padStart(3, '0');
         takes.push({
           id: `take_${padId}`,
+          split: "train",
           type: "LHS Train",
-          gain: Number(g.toFixed(1)),
-          bass: Number(b.toFixed(1)),
-          mid: Number(m.toFixed(1)),
-          treble: Number(t.toFixed(1)),
-          master: Number(v.toFixed(1)),
-          filename: `take_${padId}_G${g.toFixed(1)}_B${b.toFixed(1)}_M${m.toFixed(1)}_T${t.toFixed(1)}_M${v.toFixed(1)}.wav`,
+          knobs: rowKnobs,
+          filename: `take_${padId}.wav`,
           done: false
         });
       }
 
-      // 3. Dynamic Edge Cases & Holdouts
-      const edges = [
-        { type: "Holdout Val", g: 2.0, b: 6.0, m: 4.0, t: 8.0, v: 6.0 },
-        { type: "Holdout Val", g: 7.5, b: 3.0, m: 7.0, t: 5.5, v: 7.0 },
-        { type: "Extreme Edge", g: 10.0, b: 2.0, m: 8.0, t: 9.0, v: 5.0 },
-        { type: "Extreme Edge", g: 8.5, b: 9.5, m: 1.0, t: 4.0, v: 6.0 }
-      ];
-
-      edges.forEach((edge) => {
-        const takeNum = takes.length;
-        const padId = String(takeNum).padStart(2, '0');
+      // 3. Validation Holdouts
+      for (let j = 1; j <= numVal; j++) {
+        const takeIdx = takes.length + 1;
+        const padId = String(takeIdx).padStart(3, '0');
+        const rowKnobs = {};
+        knobNames.forEach(k => {
+          let minVal = 1.5;
+          let maxVal = 9.0;
+          if (k.toLowerCase().includes('master')) {
+            minVal = 4.0;
+          }
+          const raw = minVal + rng() * (maxVal - minVal);
+          rowKnobs[k] = Number(snapVal(raw, knobStep).toFixed(1));
+        });
         takes.push({
           id: `take_${padId}`,
-          type: edge.type,
-          gain: edge.g, bass: edge.b, mid: edge.m, treble: edge.t, master: edge.v,
-          filename: `take_${padId}_${edge.type.toLowerCase().replace(' ', '_')}_G${edge.g}_B${edge.b}_M${edge.m}_T${edge.t}_M${edge.v}.wav`,
+          split: "val",
+          type: "Holdout Val",
+          knobs: rowKnobs,
+          filename: `take_${padId}.wav`,
           done: false
         });
-      });
+      }
 
       return takes;
     }
@@ -7810,22 +7869,50 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
       renderRunSheetTable();
     }
 
+    function getTakeKnobValue(take, knobName) {
+      if (take.knobs && take.knobs[knobName] !== undefined) return take.knobs[knobName];
+      const lower = knobName.toLowerCase();
+      if (take[lower] !== undefined) return take[lower];
+      if (lower === 'mid' && take.middle !== undefined) return take.middle;
+      if (lower === 'middle' && take.mid !== undefined) return take.mid;
+      if (lower === 'gain' && take.gain1 !== undefined) return take.gain1;
+      return 5.0;
+    }
+
     function regenerateRunSheetMatrix(resetStorage = true) {
-      const profile = document.getElementById('runsheetProfileSelect')?.value || 'marshall';
-      if (profile === 'marshall') {
-        // Clone the Marshall Origin 50 matrix
-        runSheetData = JSON.parse(JSON.stringify(MARSHALL_ORIGIN50_MATRIX));
+      const profile = document.getElementById('runsheetProfileSelect')?.value || 'marshall_actual';
+      const knobNames = getActiveKnobNames();
+      const step = parseFloat(document.getElementById('runsheetStepSelect')?.value || 0.5);
+      const seed = parseInt(document.getElementById('runsheetSeedInput')?.value || 42);
+      const takesCount = parseInt(document.getElementById('runsheetTakesInput')?.value || 20);
+
+      if (profile === 'marshall_actual') {
+        // Load Justin's actual recorded 20 takes
+        runSheetData = MARSHALL_ORIGIN50_MATRIX.map(t => {
+          const kObj = {
+            Depth: t.depth, Presence: t.presence, Master: t.master,
+            Treble: t.treble, Middle: t.mid, Bass: t.bass,
+            Gain1: t.gain1, Gain2: t.gain2
+          };
+          return {
+            id: t.id,
+            split: t.split || 'train',
+            type: t.split === 'val' ? 'Holdout Val' : 'Train Capture',
+            knobs: kObj,
+            filename: t.filename || `${t.id}.wav`,
+            done: t.done !== undefined ? t.done : true
+          };
+        });
       } else {
-        const step = parseFloat(document.getElementById('runsheetStepSelect')?.value || 0.5);
-        const takes = 40;
-        const seed = parseInt(document.getElementById('runsheetSeedInput')?.value || 42);
-        runSheetData = generateRunSheetMatrix(step, takes, seed);
+        runSheetData = generateDynamicLHSMatrix(knobNames, step, takesCount, seed);
       }
+
       if (resetStorage) {
         saveRunSheetProgress();
       }
       renderRunSheetTable();
     }
+    window.regenerateRunSheetMatrix = regenerateRunSheetMatrix;
 
     function saveRunSheetProgress() {
       try {
@@ -7848,15 +7935,19 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
         renderRunSheetTable();
       }
     }
+    window.resetRunSheetProgress = resetRunSheetProgress;
 
-    function markAll20TakesDone() {
-      runSheetData.forEach((t, i) => {
-        if (i < 42) t.done = true;
+    function markAllTakesDone() {
+      runSheetData.forEach((t) => {
+        t.done = true;
       });
       saveRunSheetProgress();
       renderRunSheetTable();
     }
-    window.markAll42TakesDone = markAll42TakesDone;
+    const markAll42TakesDone = markAllTakesDone;
+    const markAll20TakesDone = markAllTakesDone;
+    window.markAll42TakesDone = markAllTakesDone;
+    window.markAll20TakesDone = markAllTakesDone;
 
     function filterRunSheet(filterType) {
       runSheetTableFilter = filterType;
@@ -7869,10 +7960,29 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
       }
       renderRunSheetTable();
     }
+    window.filterRunSheet = filterRunSheet;
 
     function toggleRunSheetExpansion() {
       isRunSheetExpanded = !isRunSheetExpanded;
       renderRunSheetTable();
+    }
+    window.toggleRunSheetExpansion = toggleRunSheetExpansion;
+
+    function updateRunSheetTableHeaders(knobNames) {
+      const headerRow = document.getElementById('runsheetTableHeaderRow');
+      if (!headerRow) return;
+      let html = `
+        <th class="py-2.5 px-3">Status</th>
+        <th class="py-2.5 px-3">Take ID</th>
+        <th class="py-2.5 px-3">Split</th>
+      `;
+      const colors = ['text-amber-300', 'text-orange-300', 'text-rose-400', 'text-emerald-300', 'text-purple-300', 'text-sky-300', 'text-yellow-400', 'text-pink-400', 'text-cyan-300', 'text-lime-300'];
+      knobNames.forEach((k, idx) => {
+        const c = colors[idx % colors.length];
+        html += `<th class="py-2.5 px-3 ${c}">${k}</th>`;
+      });
+      html += `<th class="py-2.5 px-3">Output WAV Filename</th>`;
+      headerRow.innerHTML = html;
     }
 
     function renderRunSheetTable() {
@@ -7880,15 +7990,21 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
       if (!tbody) return;
       tbody.innerHTML = '';
 
+      const knobNames = getActiveKnobNames();
+      updateRunSheetTableHeaders(knobNames);
+
       let doneCount = 0;
+      runSheetData.forEach(t => { if (t.done) doneCount++; });
       updateStudioHUD();
 
-      // Filter rows
+      // Filter rows safely
       let visibleTakes = runSheetData.filter((take) => {
-        if (take.done) doneCount++;
         if (runSheetTableFilter === 'pending') return !take.done;
         if (runSheetTableFilter === 'done') return take.done;
-        if (runSheetTableFilter === 'holdout') return take.type.toLowerCase().includes('holdout') || take.type.toLowerCase().includes('edge');
+        if (runSheetTableFilter === 'holdout') {
+          const tType = (take.type || '').toLowerCase();
+          return tType.includes('holdout') || tType.includes('val') || tType.includes('edge') || take.split === 'val';
+        }
         return true;
       });
 
@@ -7896,62 +8012,45 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
       const maxRows = isRunSheetExpanded ? visibleTakes.length : Math.min(10, visibleTakes.length);
       const displayTakes = visibleTakes.slice(0, maxRows);
 
+      const colors = ['text-amber-300', 'text-orange-300', 'text-rose-400', 'text-emerald-300', 'text-purple-300', 'text-sky-300', 'text-yellow-400', 'text-pink-400', 'text-cyan-300', 'text-lime-300'];
+
       displayTakes.forEach((take) => {
         const idx = runSheetData.findIndex(t => t.id === take.id);
-        if (take.done) doneCount++;
         const tr = document.createElement('tr');
         tr.className = take.done ? "bg-emerald-950/20 text-slate-500 line-through transition" : "hover:bg-slate-800/50 transition";
         
-        const isMarshall = (take.depth !== undefined);
-        const splitTag = isMarshall ? (take.split === 'train' ? 'TRAIN' : 'VAL HOLDOUT') : (take.type || 'LHS Train');
-        const badgeColor = (take.split === 'val' || (take.type && take.type.includes('Holdout'))) ? "bg-sky-500/20 text-sky-300 border-sky-500/30" :
-          (take.type === "Anchor") ? "bg-amber-500/20 text-amber-300 border-amber-500/30" :
+        const isVal = take.split === 'val' || (take.type && (take.type.includes('Holdout') || take.type.includes('Val')));
+        const splitTag = isVal ? 'VAL HOLDOUT' : (take.type || 'TRAIN');
+        const badgeColor = isVal ? "bg-sky-500/20 text-sky-300 border-sky-500/30" :
+          (take.type && take.type.includes("Anchor")) ? "bg-amber-500/20 text-amber-300 border-amber-500/30" :
           "bg-emerald-500/20 text-emerald-300 border-emerald-500/30";
 
-        if (isMarshall) {
-          tr.innerHTML = `
-            <td class="py-2 px-3">
-              <input type="checkbox" ${take.done ? "checked" : ""} onchange="toggleTakeComplete(${idx})" class="w-4 h-4 rounded text-emerald-500 focus:ring-emerald-400 bg-slate-900 border-slate-700 cursor-pointer">
-            </td>
-            <td class="py-2 px-3 font-bold ${take.done ? 'text-slate-500' : 'text-slate-200'}">${take.id}</td>
-            <td class="py-2 px-3">
-              <span class="text-[9px] uppercase px-1.5 py-0.5 rounded border ${badgeColor} font-bold">${splitTag}</span>
-            </td>
-            <td class="py-2 px-3 text-amber-300">${take.depth.toFixed(1)}</td>
-            <td class="py-2 px-3 text-orange-300">${take.presence.toFixed(1)}</td>
-            <td class="py-2 px-3 text-rose-400 font-bold">${take.master.toFixed(1)}</td>
-            <td class="py-2 px-3 text-emerald-300">${take.treble.toFixed(1)}</td>
-            <td class="py-2 px-3 text-purple-300">${take.mid.toFixed(1)}</td>
-            <td class="py-2 px-3 text-sky-300">${take.bass.toFixed(1)}</td>
-            <td class="py-2 px-3 text-amber-400 font-bold">${take.gain1.toFixed(1)}</td>
-            <td class="py-2 px-3 text-pink-400 font-bold">${take.gain2.toFixed(1)}</td>
-            <td class="py-2 px-3 font-mono text-[10px] ${take.done ? 'text-slate-600' : 'text-slate-400'}">${take.filename}</td>
-          `;
-        } else {
-          tr.innerHTML = `
-            <td class="py-2 px-3">
-              <input type="checkbox" ${take.done ? "checked" : ""} onchange="toggleTakeComplete(${idx})" class="w-4 h-4 rounded text-emerald-500 focus:ring-emerald-400 bg-slate-900 border-slate-700 cursor-pointer">
-            </td>
-            <td class="py-2 px-3 font-bold ${take.done ? 'text-slate-500' : 'text-slate-200'}">${take.id}</td>
-            <td class="py-2 px-3">
-              <span class="text-[9px] uppercase px-1.5 py-0.5 rounded border ${badgeColor} font-bold">${splitTag}</span>
-            </td>
-            <td class="py-2 px-3 text-amber-300 font-bold" colspan="2">Gain: ${take.gain ? take.gain.toFixed(1) : '-'}</td>
-            <td class="py-2 px-3 text-rose-300">Master: ${take.master ? take.master.toFixed(1) : '-'}</td>
-            <td class="py-2 px-3 text-emerald-300">Treble: ${take.treble ? take.treble.toFixed(1) : '-'}</td>
-            <td class="py-2 px-3 text-purple-300">Mid: ${take.mid ? take.mid.toFixed(1) : '-'}</td>
-            <td class="py-2 px-3 text-sky-300">Bass: ${take.bass ? take.bass.toFixed(1) : '-'}</td>
-            <td class="py-2 px-3 text-slate-500" colspan="2">-</td>
-            <td class="py-2 px-3 font-mono text-[10px] ${take.done ? 'text-slate-600' : 'text-slate-400'}">${take.filename}</td>
-          `;
-        }
+        let rowHtml = `
+          <td class="py-2 px-3">
+            <input type="checkbox" ${take.done ? "checked" : ""} onchange="toggleTakeComplete(${idx})" class="w-4 h-4 rounded text-emerald-500 focus:ring-emerald-400 bg-slate-900 border-slate-700 cursor-pointer">
+          </td>
+          <td class="py-2 px-3 font-bold ${take.done ? 'text-slate-500' : 'text-slate-200'}">${take.id}</td>
+          <td class="py-2 px-3">
+            <span class="text-[9px] uppercase px-1.5 py-0.5 rounded border ${badgeColor} font-bold">${splitTag}</span>
+          </td>
+        `;
+
+        knobNames.forEach((k, kIdx) => {
+          const c = colors[kIdx % colors.length];
+          const val = getTakeKnobValue(take, k);
+          rowHtml += `<td class="py-2 px-3 ${c}">${typeof val === 'number' ? val.toFixed(1) : val}</td>`;
+        });
+
+        const fn = take.filename || `${take.id}.wav`;
+        rowHtml += `<td class="py-2 px-3 font-mono text-[10px] ${take.done ? 'text-slate-600' : 'text-slate-400'}">${fn}</td>`;
+        tr.innerHTML = rowHtml;
         tbody.appendChild(tr);
       });
 
       const total = runSheetData.length;
       const pct = total > 0 ? Math.round((doneCount / total) * 100) : 0;
       const badge = document.getElementById('runsheetProgressBadge');
-      if (badge) badge.innerText = `${doneCount} / ${total} Takes Recorded`;
+      if (badge) badge.innerText = `${doneCount} / ${total} Takes Recorded (${pct}%)`;
       const pctEl = document.getElementById('runsheetPercent');
       if (pctEl) pctEl.innerText = `${pct}%`;
       const bar = document.getElementById('runsheetProgressBar');
@@ -7959,76 +8058,58 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
     }
 
     function exportDataJson() {
-      const isMarshall = runSheetData.length > 0 && runSheetData[0].depth !== undefined;
+      const knobNames = getActiveKnobNames();
+      const prof = document.getElementById('runsheetProfileSelect')?.value || 'marshall_actual';
+      const isMarshall = prof.includes('marshall');
       const manifest = {
         "x": "inputTrunc.wav",
         "sample_rate": 48000,
-        "gear_make": isMarshall ? "Marshall" : "Parametric Tube",
-        "gear_model": isMarshall ? "Origin 50 (Modded Head)" : "Boutique 50W",
-        "parameters": isMarshall ? ["depth", "presence", "master", "treble", "mid", "bass", "gain1", "gain2"] : ["gain", "bass", "mid", "treble", "master"],
-        "y": runSheetData.map(t => ({
-          "val": isMarshall ? [
-            Number((t.depth / 10).toFixed(3)),
-            Number((t.presence / 10).toFixed(3)),
-            Number((t.master / 10).toFixed(3)),
-            Number((t.treble / 10).toFixed(3)),
-            Number((t.mid / 10).toFixed(3)),
-            Number((t.bass / 10).toFixed(3)),
-            Number((t.gain1 / 10).toFixed(3)),
-            Number((t.gain2 / 10).toFixed(3))
-          ] : [
-            Number((t.gain / 10).toFixed(3)),
-            Number((t.bass / 10).toFixed(3)),
-            Number((t.mid / 10).toFixed(3)),
-            Number((t.treble / 10).toFixed(3)),
-            Number((t.master / 10).toFixed(3))
-          ],
-          "path": t.filename,
-          "is_validation": isMarshall ? (t.split === 'val') : (t.type && t.type.includes("Holdout"))
-        }))
+        "gear_make": isMarshall ? "Marshall" : "Parametric Custom Rig",
+        "gear_model": isMarshall ? "Origin 50 (Modded Head)" : "Boutique Neural Rig",
+        "parameters": knobNames.map(k => k.toLowerCase()),
+        "y": runSheetData.map(t => {
+          const vals = knobNames.map(k => {
+            const v = getTakeKnobValue(t, k);
+            return Number((v / 10.0).toFixed(3));
+          });
+          const fn = t.filename ? (t.filename.endsWith('.wav') ? t.filename : t.filename + '.wav') : `${t.id}.wav`;
+          return {
+            "val": vals,
+            "path": `./takes/${fn}`,
+            "is_validation": (t.split === 'val' || (t.type && t.type.toLowerCase().includes('val')))
+          };
+        })
       };
       const blob = new Blob([JSON.stringify(manifest, null, 2)], { type: 'application/json' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a'); a.href = url; a.download = "data.json"; a.click();
       URL.revokeObjectURL(url);
     }
+    window.exportDataJson = exportDataJson;
 
     function exportRunSheetCsv() {
-      let csv = "";
-      const isMarshall = runSheetData.length > 0 && runSheetData[0].depth !== undefined;
-      if (isMarshall) {
-        csv = "filename,Depth,Presence,Master,Treble,Middle,Bass,Gain1,Gain2\n";
-        runSheetData.forEach(t => {
-          const fn = t.filename ? (t.filename.endsWith('.wav') ? t.filename : t.filename + '.wav') : `${t.id}.wav`;
-          const d = (t.depth / 10).toFixed(3);
-          const p = (t.presence / 10).toFixed(3);
-          const m = (t.master / 10).toFixed(3);
-          const tr = (t.treble / 10).toFixed(3);
-          const mid = (t.mid / 10).toFixed(3);
-          const b = (t.bass / 10).toFixed(3);
-          const g1 = (t.gain1 / 10).toFixed(3);
-          const g2 = (t.gain2 / 10).toFixed(3);
-          csv += `${fn},${d},${p},${m},${tr},${mid},${b},${g1},${g2}\n`;
+      if (!runSheetData || runSheetData.length === 0) return;
+      const knobNames = getActiveKnobNames();
+      let csv = "filename," + knobNames.join(",") + "\n";
+      runSheetData.forEach(t => {
+        const fn = t.filename ? (t.filename.endsWith('.wav') ? t.filename : t.filename + '.wav') : `${t.id}.wav`;
+        const vals = knobNames.map(k => {
+          const v = getTakeKnobValue(t, k);
+          return typeof v === 'number' ? v.toFixed(1) : v;
         });
-      } else {
-        csv = "filename,Gain,Bass,Middle,Treble,Master\n";
-        runSheetData.forEach(t => {
-          const fn = t.filename ? (t.filename.endsWith('.wav') ? t.filename : t.filename + '.wav') : `${t.id}.wav`;
-          const g = (t.gain / 10).toFixed(3);
-          const b = (t.bass / 10).toFixed(3);
-          const m = (t.mid / 10).toFixed(3);
-          const tr = (t.treble / 10).toFixed(3);
-          const mast = (t.master / 10).toFixed(3);
-          csv += `${fn},${g},${b},${m},${tr},${mast}\n`;
-        });
-      }
-      const blob = new Blob([csv], { type: 'text/csv' });
+        csv += `${fn},${vals.join(",")}\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
       const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href = url; a.download = isMarshall ? "marshall_origin50_params.csv" : "justin_nam_run_sheet.csv"; a.click();
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = "parametric_run_sheet.csv";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
       URL.revokeObjectURL(url);
     }
-
-    function copyCudaCommand(os) {
+    window.exportRunSheetCsv = exportRunSheetCsv;    function copyCudaCommand(os) {
       let cmd = "";
       if (os === "linux") {
         cmd = `git clone https://github.com/mrgeneko/parametric-nam.git && cd parametric-nam\npip install -r requirements.txt neural-amp-modeler\npython gen_dataset_from_captures.py --captures "captures/*.wav" --mapping-csv "marshall_origin50_params.csv" --output ./dataset --gear-make "Marshall" --gear-model "Origin 50 Modded"\npython gen_dataset_from_captures.py --combine ./dataset\npython param_train.py --dataset ./dataset --output marshall_origin50.param.nam --checkpoint-dir ./checkpoints --widths 4,8 --crop-len 24000 --batch-size 64 --repeats 8 --lr 3e-4 --epochs 200`;
