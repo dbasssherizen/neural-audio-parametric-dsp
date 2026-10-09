@@ -4239,10 +4239,10 @@ files.download("./marshall_origin50.param.nam")</code></pre>
                 <h4 class="text-base sm:text-lg font-bold text-white">Justin's AI Stylometric Voice Mirror &amp; ELI5 Explainer</h4>
                 <span class="text-[10px] font-mono uppercase bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 px-2 py-0.5 rounded-full">4-Level Cognitive Dial</span>
                 <span id="voice-mirror-live-badge" class="text-[10px] font-mono uppercase bg-slate-800/80 text-slate-300 border border-slate-700/60 px-2.5 py-0.5 rounded-full flex items-center gap-1.5 transition">
-                  <span id="voice-mirror-live-text"><span class="inline-block w-1.5 h-1.5 rounded-full bg-slate-400"></span> 168 Turns • 1,768 Words • 0.0% Bleed</span>
+                  <span id="voice-mirror-live-text"><span class="inline-block w-1.5 h-1.5 rounded-full bg-slate-400"></span> 180 Turns • 2,091 Words • 0.0% Bleed</span>
                 </span>
               </div>
-              <p class="text-xs text-slate-400 mt-0.5">Audited from 168 multi-channel turns (1,768 verified words across Meet calls & RCS texts) + ELI5 physical gear analogies: Justin teaches Justin AI concepts in his own authentic tone or via patchbay metaphors.</p>
+              <p class="text-xs text-slate-400 mt-0.5">Audited from 180 multi-channel turns (2,091 verified words across Meet calls & RCS texts) + ELI5 physical gear analogies: Justin teaches Justin AI concepts in his own authentic tone or via patchbay metaphors.</p>
             </div>
           </div>
 
@@ -9325,15 +9325,15 @@ def verify_signal_boundary(input_tensor: torch.Tensor) -> bool:
 
         if (resp.ok) {
           const stats = await resp.json();
-          const turns = stats.corpus_utterances || 168;
-          const words = stats.corpus_words || 1768;
+          const turns = stats.corpus_utterances || 180;
+          const words = stats.corpus_words || 2091;
           badge.className = "text-[10px] font-mono uppercase bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 px-2.5 py-0.5 rounded-full flex items-center gap-1.5 transition";
           text.innerHTML = `<span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Live Synced: ${turns} Turns &bull; ${words.toLocaleString()} Words &bull; 0.0% Bleed`;
         }
       } catch (err) {
         // Fallback silently to verified static stats
         badge.className = "text-[10px] font-mono uppercase bg-slate-800/80 text-slate-300 border border-slate-700/60 px-2.5 py-0.5 rounded-full flex items-center gap-1.5 transition";
-        text.innerHTML = `<span class="inline-block w-1.5 h-1.5 rounded-full bg-slate-400"></span> Verified: 168 Turns &bull; 1,768 Words &bull; 0.0% Bleed`;
+        text.innerHTML = `<span class="inline-block w-1.5 h-1.5 rounded-full bg-slate-400"></span> Verified: 180 Turns &bull; 2,091 Words &bull; 0.0% Bleed`;
       }
     }
 

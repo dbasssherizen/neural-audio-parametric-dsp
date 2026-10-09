@@ -48,3 +48,118 @@
 2026-10-08 17:44:16 [INFO] [COMM-WATCHER] Decoupled from physical ADB. Ingesting from notes/, REST API (port 5042), and opportunistic ADB.
 2026-10-08 17:44:16 [INFO] [COMM-WATCHER] 🌐 Ingestion REST API listening on http://0.0.0.0:5042/api/comm/ingest
 2026-10-08 17:51:01 [INFO] [COMM-WATCHER] 📥 INGESTED VIA SYSTEM_PROBE: 'heartbeat verify...'
+2026-10-08 19:08:46 [INFO] [COMM-WATCHER] [DISPATCH_CONFIRMED] Transmitted mrgeneko source clarification, Colab public access resolution, and --mapping-csv guidance to Justin Muir (+1 630-418-9227) via RCS over Wireless ADB.
+2026-10-08 21:46:34 [INFO] [COMM-WATCHER] 🚀 Starting Multi-Channel Pedagogical Watcher Daemon...
+2026-10-08 21:46:34 [INFO] [COMM-WATCHER] Decoupled from physical ADB. Ingesting from notes/, REST API (port 5042), and opportunistic ADB.
+2026-10-08 21:46:34 [INFO] [COMM-WATCHER] 🌐 Ingestion REST API listening on http://0.0.0.0:5042/api/comm/ingest
+2026-10-08 21:47:08 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'Pipeline verification sweep: testing impedance matching and ...' (15 words)
+2026-10-08 21:47:08 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-08 21:47:08 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 169 turns, 1783 words (0.0% cross-contamination).
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'In theory, this should now be resolved, and you should be able to send...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'In theory, this should now be resolved, and you should be ab...' (25 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'Ubuntu is cranking! In at 98% running 250 epochs total over 20 trainin...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'Ubuntu is cranking! In at 98% running 250 epochs total over ...' (15 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'I was able to get everything going pretty easily. More or less used my...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'I was able to get everything going pretty easily. More or le...' (27 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'I’m at my kiddos practice. I’m done for the day heh. We shall resume t...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'I’m at my kiddos practice. I’m done for the day heh. We shal...' (18 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'Ty as always for everything...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'Ty as always for everything...' (5 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'Last thing now that I got my Ubuntu server setup I’ll start checking o...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'Last thing now that I got my Ubuntu server setup I’ll start ...' (19 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'I realize how wild this potentially is, but I do think there's a decen...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'I realize how wild this potentially is, but I do think there...' (43 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'Which is to say, it could teach you about itself using a written style...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'Which is to say, it could teach you about itself using a wri...' (21 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'I’ll have to check this out too. I sent some screenshots not sure if t...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'I’ll have to check this out too. I sent some screenshots not...' (51 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'We'll get it working, don't worry...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'We'll get it working, don't worry...' (6 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'Whenever we get this code locked down I’m going to pull it over locall...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'Whenever we get this code locked down I’m going to pull it o...' (42 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'These are not insurmountable errors. We can get this working sooner an...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'These are not insurmountable errors. We can get this working...' (16 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'Sounds awesome. Can't wait. Hope you don't mind. I've been stealing co...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'Sounds awesome. Can't wait. Hope you don't mind. I've been s...' (23 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'Fixed my comm watcher so Max is able to ingest messages async...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'Fixed my comm watcher so Max is able to ingest messages asyn...' (12 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'Why would I mind? I built it for you; do with it whatever you wish...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'Why would I mind? I built it for you; do with it whatever yo...' (15 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'Oh I’m just being semi thankful  ;) I’m a jerk....'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'Oh I’m just being semi thankful  ;) I’m a jerk....' (10 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'It wasn’t meant literally...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'It wasn’t meant literally...' (4 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'I did notice you modded the GitHub cuz before I was manually uploading...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'I did notice you modded the GitHub cuz before I was manually...' (30 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'I know. l wouldn't have it any other way...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'I know. l wouldn't have it any other way...' (9 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'Hacking away. I got a shit ton of notes that I’ll send.
+
+I better unde...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'Hacking away. I got a shit ton of notes that I’ll send.
+
+I b...' (54 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'Dope. I'll be back home later and can take a look. Send notes, etc, an...'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'Dope. I'll be back home later and can take a look. Send note...' (26 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'Will do....'
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'Will do....' (2 words)
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:32 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:33 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:33 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:33 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:33 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:34 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:34 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:34 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:34 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:35 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:35 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:35 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:35 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:36 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:36 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:36 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:36 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:37 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:37 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:37 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:37 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:38 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:38 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:38 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:38 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:39 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:39 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:39 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:39 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:40 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:40 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:41 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:41 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:41 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:41 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:42 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:42 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:42 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:42 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:43 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:43 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:38:44 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:38:44 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 202 turns, 2564 words (0.0% cross-contamination).
+2026-10-09 12:40:56 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'Doing some work from my phone...'
+2026-10-09 12:40:56 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'Doing some work from my phone...' (6 words)
+2026-10-09 12:40:57 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:40:57 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 203 turns, 2570 words (0.0% cross-contamination).
+2026-10-09 12:41:08 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'Eventually got colab to run training after several code fixes. EST tim...'
+2026-10-09 12:41:08 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'Eventually got colab to run training after several code fixe...' (25 words)
+2026-10-09 12:41:08 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:41:09 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 204 turns, 2595 words (0.0% cross-contamination).
+2026-10-09 12:41:20 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'So, let me know updates if you wish...'
+2026-10-09 12:41:20 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'So, let me know updates if you wish...' (8 words)
+2026-10-09 12:41:20 [INFO] [COMM-WATCHER] 📥 INGESTED VIA GOOGLE_MESSAGES_WEB: 'Oh, great. Good timing...'
+2026-10-09 12:41:20 [INFO] [COMM-WATCHER] 🎙️ APPENDED TO JUSTIN'S CORPUS: 'Oh, great. Good timing...' (4 words)
+2026-10-09 12:41:20 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:41:20 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 206 turns, 2607 words (0.0% cross-contamination).
+2026-10-09 12:41:21 [INFO] [COMM-WATCHER] 🔄 Auto-updating Justin's stylometric profile in background...
+2026-10-09 12:41:21 [INFO] [COMM-WATCHER] ✅ Voice profile refreshed: 206 turns, 2607 words (0.0% cross-contamination).

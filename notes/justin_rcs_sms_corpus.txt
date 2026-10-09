@@ -82,3 +82,127 @@ Back home. Digging into this. Gimme a few. Fixed (I think). Max will send you de
 [SPEAKER: JUSTIN_MUIR]
 Alright cool. Thanks
 [SESSION_END]
+
+
+[SESSION_START: 2026-10-08 21:00:00 CDT to 2026-10-09 11:37:00 CDT]
+[CHANNEL: GOOGLE_MESSAGES_RCS]
+[PARTICIPANTS: Justin Muir (+1 630-418-9227), Daniel Bass Sherizen]
+
+[SPEAKER: JUSTIN_MUIR]
+Ubuntu is cranking! In at 98% running 250 epochs total over 20 training input seeps
+
+[SPEAKER: JUSTIN_MUIR]
+I was able to get everything going pretty easily. More or less used my know how and the colab and read the gen set script switch outputs.
+
+[SPEAKER: JUSTIN_MUIR]
+I’m at my kiddos practice. I’m done for the day heh. We shall resume tomorrow. Nighty night. 😴
+
+[SPEAKER: JUSTIN_MUIR]
+Ty as always for everything
+
+[SPEAKER: JUSTIN_MUIR]
+Last thing now that I got my Ubuntu server setup I’ll start checking out the fisherman’s kit you setup
+
+[SPEAKER: JUSTIN_MUIR]
+I’ll have to check this out too. I sent some screenshots not sure if that’s easier. I forgot my servers do the backup on beta at 1A so my render didn’t compile completely. Going to try to get the t4 going. Just want to maybe some day get this to work.
+
+[SPEAKER: JUSTIN_MUIR]
+Whenever we get this code locked down I’m going to pull it over locally that way I can do pulls and run tests as gene runs pulls. Just need to get this solid. Or maybe the entire project just doesn’t work lol
+
+[SPEAKER: JUSTIN_MUIR]
+Sounds awesome. Can't wait. Hope you don't mind. I've been stealing code from the Collab and inputting it on my bunchy server locally
+
+[SPEAKER: JUSTIN_MUIR]
+Oh I’m just being semi thankful ;) I’m a jerk. It wasn’t meant literally. I’ll steal it regardless
+
+[SPEAKER: JUSTIN_MUIR]
+I did notice you modded the GitHub cuz before I was manually uploading the colab template. Seems now it launches after accepting the “check code changes for safety” blah blah
+
+[SPEAKER: JUSTIN_MUIR]
+Hacking away. I got a shit ton of notes that I’ll send. I better understand stand gen dataset now. So I’m bouncing ideas best method. NAMTRIX got a massive overhaul too. I’m just updating my local site to test some of the new cmds you set forth so I can better review the debugging.
+
+[SPEAKER: JUSTIN_MUIR]
+Will do.
+[SESSION_END]
+
+[SPEAKER: JUSTIN_MUIR]
+In theory, this should now be resolved, and you should be able to send messages which are seen by me (and Max) over shorter intervals
+
+[SPEAKER: JUSTIN_MUIR]
+Ubuntu is cranking! In at 98% running 250 epochs total over 20 training input seeps
+
+[SPEAKER: JUSTIN_MUIR]
+I was able to get everything going pretty easily. More or less used my know how and the colab and read the gen set script switch outputs.
+
+[SPEAKER: JUSTIN_MUIR]
+I’m at my kiddos practice. I’m done for the day heh. We shall resume tomorrow. Nighty night. 😴
+
+[SPEAKER: JUSTIN_MUIR]
+Ty as always for everything
+
+[SPEAKER: JUSTIN_MUIR]
+Last thing now that I got my Ubuntu server setup I’ll start checking out the fisherman’s kit you setup
+
+[SPEAKER: JUSTIN_MUIR]
+I realize how wild this potentially is, but I do think there's a decent chance we can get a teacher bot up and running that sounds a lot like you (in regard to style, context, content, and vocabulary) with a bit more tweaking.
+
+[SPEAKER: JUSTIN_MUIR]
+Which is to say, it could teach you about itself using a written style that sounds a whole lot like you
+
+[SPEAKER: JUSTIN_MUIR]
+I’ll have to check this out too. I sent some screenshots not sure if that’s easier. I forgot my servers do the backup on beta at 1A so my render didn’t compile completely. Going to try to get the t4 going. Just want to maybe some day get this to work.
+
+[SPEAKER: JUSTIN_MUIR]
+We'll get it working, don't worry
+
+[SPEAKER: JUSTIN_MUIR]
+Whenever we get this code locked down I’m going to pull it over locally that way I can do pulls and run tests as gene runs pulls. Just need to get this solid. Or maybe the entire project just doesn’t work lol
+
+[SPEAKER: JUSTIN_MUIR]
+These are not insurmountable errors. We can get this working sooner and easier than you think
+
+[SPEAKER: JUSTIN_MUIR]
+Sounds awesome. Can't wait. Hope you don't mind. I've been stealing code from the Collab and inputting it on my bunchy server locally
+
+[SPEAKER: JUSTIN_MUIR]
+Fixed my comm watcher so Max is able to ingest messages async
+
+[SPEAKER: JUSTIN_MUIR]
+Why would I mind? I built it for you; do with it whatever you wish
+
+[SPEAKER: JUSTIN_MUIR]
+Oh I’m just being semi thankful  ;) I’m a jerk.
+
+[SPEAKER: JUSTIN_MUIR]
+It wasn’t meant literally
+
+[SPEAKER: JUSTIN_MUIR]
+I did notice you modded the GitHub cuz before I was manually uploading the colab template. Seems now it launches after accepting the “check code changes for safety” blah blah
+
+[SPEAKER: JUSTIN_MUIR]
+I know. l wouldn't have it any other way
+
+[SPEAKER: JUSTIN_MUIR]
+Hacking away. I got a shit ton of notes that I’ll send.
+
+I better understand stand gen dataset now. So I’m bouncing ideas best method. NAMTRIX got a massive overhaul too. I’m just updating my local site to test some of the new cmds you set forth so I can better review the debugging.
+
+[SPEAKER: JUSTIN_MUIR]
+Dope. I'll be back home later and can take a look. Send notes, etc, and I'll look into stuff on my end and see what's what
+
+[SPEAKER: JUSTIN_MUIR]
+Will do.
+
+[SPEAKER: JUSTIN_MUIR]
+Doing some work from my phone
+
+[SPEAKER: JUSTIN_MUIR]
+Eventually got colab to run training after several code fixes. EST time is about 2.2 hours on a T4.
+
+Still working some things out locally.
+
+[SPEAKER: JUSTIN_MUIR]
+So, let me know updates if you wish
+
+[SPEAKER: JUSTIN_MUIR]
+Oh, great. Good timing

@@ -132,12 +132,12 @@ async function main() {
 
   // Wait for Google Messages Web SPA to render
   try {
-    await page.waitForSelector('mw-qr-code, canvas, div[class*="qr-code"], mws-conversations-list, a.conversation, button:has-text("Sign in"), button:has-text("Sign In")', { timeout: 15000 });
+    await page.waitForSelector('mws-conversations-list, a.conversation, div[role="listitem"], mws-conversation-list-item, mw-qr-code', { timeout: 20000 });
   } catch (e) {
     await page.waitForTimeout(4000);
   }
 
-  const isPaired = !!(await page.$('mws-conversations-list, a.conversation, div[role="list"]'));
+  const isPaired = !!(await page.$('mws-conversations-list, a.conversation, div[role="listitem"], mws-conversation-list-item'));
 
   if (!isPaired) {
     try {
@@ -213,7 +213,7 @@ async function main() {
   async function syncActiveMessages() {
     try {
       // Find conversation with Justin Muir
-      const convItems = await page.$$('a.conversation, mws-conversation-list-item, div[role="listitem"]');
+      const convItems = await page.$$('mws-conversation-list-item, a.conversation, div[role="listitem"]');
       let targetConv = null;
 
       for (const item of convItems) {
