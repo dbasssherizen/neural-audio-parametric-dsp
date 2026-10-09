@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Justin Muir NetOps Studio Infrastructure — pfSense &amp; VLAN 10/20 Topology — Archify Interactive Diagram</title>
+  <meta name="description" content="Interactive, animated, verifiable network topology for Justin Muir's studio: pfSense firewall, 802.1Q switch, isolated VLAN 10 Audio and VLAN 20 Compute Proxmox RTX 4090 clusters.">
+  <style>
+    :root {
+      --astryx-surface: #0b0f19;
+      --astryx-surface-card: #131b2e;
+      --astryx-surface-panel: #162036;
+      --astryx-surface-hover: #1e2c4a;
+      --astryx-border: #1e293b;
+      --astryx-border-accent: #38bdf8;
+      --astryx-text: #f1f5f9;
+      --astryx-text-muted: #94a3b8;
+      --astryx-text-dim: #64748b;
+      --astryx-brand: #0ea5e9;
+      --astryx-brand-glow: rgba(14, 165, 233, 0.25);
+      --astryx-accent: #10b981;
+      --astryx-warning: #f59e0b;
+      --astryx-purple: #a855f7;
+      --astryx-red: #ef4444;
+      --astryx-grid: rgba(255, 255, 255, 0.04);
+      --astryx-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --astryx-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    [data-theme="light"] {
+      --astryx-surface: #f8f9ff;
+      --astryx-surface-card: #ffffff;
+      --astryx-surface-panel: #edf2f9;
+      --astryx-surface-hover: #e2e8f0;
+      --astryx-border: #cbd5e1;
+      --astryx-border-accent: #00437b;
+      --astryx-text: #0b1c30;
+      --astryx-text-muted: #475569;
+      --astryx-text-dim: #64748b;
+      --astryx-brand: #00437b;
+      --astryx-brand-glow: rgba(0, 67, 123, 0.15);
+      --astryx-accent: #059669;
+      --astryx-warning: #d97706;
+      --astryx-purple: #7c3aed;
+      --astryx-red: #dc2626;
+      --astryx-grid: rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    body {
+      background-color: var(--astryx-surface);
+      color: var(--astryx-text);
+      font-family: var(--astryx-font-sans);
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Bar Header */
+    header {
+      height: 64px;
+      background: var(--astryx-surface-card);
+      border-bottom: 1px solid var(--astryx-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 20;
+      flex-shrink: 0;
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .badge-archify {
+      font-family: var(--astryx-font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #10b981, #0ea5e9);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+    }
+
+    .title-group h1 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--astryx-text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .title-group p {
+      font-size: 11px;
+      color: var(--astryx-text-muted);
+      font-family: var(--astryx-font-mono);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--astryx-surface-panel);
+      border: 1px solid var(--astryx-border);
+      color: var(--astryx-text);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-family: var(--astryx-font-sans);
+    }
+
+    .btn:hover {
+      background: var(--astryx-surface-hover);
+      border-color: var(--astryx-border-accent);
+    }
+
+    .btn-primary {
+      background: var(--astryx-brand);
+      color: #ffffff;
+      border-color: transparent;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.1);
+    }
+
+    /* Subnet Filter Selector Bar */
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--astryx-surface-panel);
+      padding: 4px;
+      border-radius: 8px;
+      border: 1px solid var(--astryx-border);
+    }
+
+    .filter-chip {
+      background: transparent;
+      border: none;
+      color: var(--astryx-text-muted);
+      font-size: 11px;
+      font-family: var(--astryx-font-mono);
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .filter-chip.active {
+      background: var(--astryx-brand);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    /* Main Diagram Workspace */
+    #workspace-container {
+      position: relative;
+      flex: 1;
+      width: 100%;
+      height: calc(100vh - 64px);
+      overflow: hidden;
+    }
+
+    canvas#diagram-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: grab;
+    }
+
+    canvas#diagram-canvas.panning {
+      cursor: grabbing;
+    }
+
+    /* Floating Canvas Controls HUD */
+    .controls-overlay {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .controls-group {
+      pointer-events: auto;
+      background: var(--astryx-surface-card);
+      border: 1px solid var(--astryx-border);
+      border-radius: 10px;
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .ctrl-btn {
+      background: transparent;
+      border: none;
+      color: var(--astryx-text-muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      background: var(--astryx-surface-hover);
+      color: var(--astryx-text);
+    }
+
+    .legend-box {
+      pointer-events: auto;
+      background: var(--astryx-surface-card);
+      border: 1px solid var(--astryx-border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      font-size: 11px;
+      font-family: var(--astryx-font-mono);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-width: 270px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--astryx-text-muted);
+    }
+
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Inspector Side Drawer */
+    #inspector-drawer {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      bottom: 16px;
+      width: 370px;
+      background: var(--astryx-surface-card);
+      border: 1px solid var(--astryx-border);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      z-index: 15;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(400px);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+    }
+
+    #inspector-drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--astryx-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--astryx-surface-panel);
+    }
+
+    .drawer-header h3 {
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .drawer-close {
+      background: transparent;
+      border: none;
+      color: var(--astryx-text-muted);
+      cursor: pointer;
+      font-size: 16px;
+      padding: 4px;
+      border-radius: 6px;
+    }
+
+    .drawer-close:hover {
+      color: var(--astryx-text);
+      background: var(--astryx-surface-hover);
+    }
+
+    .drawer-content {
+      padding: 20px;
+      overflow-y: auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      font-size: 12px;
+    }
+
+    .spec-card {
+      background: var(--astryx-surface-panel);
+      border: 1px solid var(--astryx-border);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--astryx-font-mono);
+      font-size: 11px;
+    }
+
+    .spec-label {
+      color: var(--astryx-text-dim);
+    }
+
+    .spec-value {
+      color: var(--astryx-text);
+      font-weight: 600;
+    }
+
+    .code-anchor {
+      font-family: var(--astryx-font-mono);
+      font-size: 10px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid var(--astryx-border);
+      color: #38bdf8;
+      word-break: break-all;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      font-size: 10px;
+      font-family: var(--astryx-font-mono);
+      font-weight: 700;
+    }
+
+    .status-online {
+      background: rgba(16, 185, 129, 0.15);
+      color: #10b981;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .status-routed {
+      background: rgba(168, 85, 247, 0.15);
+      color: #a855f7;
+      border: 1px solid rgba(168, 85, 247, 0.3);
+    }
+
+    /* Bottom Status Telemetry Footer */
+    footer {
+      height: 32px;
+      background: var(--astryx-surface-card);
+      border-top: 1px solid var(--astryx-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      font-family: var(--astryx-font-mono);
+      font-size: 11px;
+      color: var(--astryx-text-dim);
+      z-index: 20;
+    }
+
+    .telemetry-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dot-live {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 6px #10b981;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+  </style>
+</head>
+<body data-theme="dark">
+
+  <!-- Header -->
+  <header>
+    <div class="brand-section">
+      <span class="badge-archify">ARCHIFY 2.0</span>
+      <div class="title-group">
+        <h1>🛡️ Justin Muir • NetOps pfSense &amp; VLAN 10/20 Topology</h1>
+        <p>Zero-Trust Studio Network • Realtime Audio QoS + 10GbE AI Compute</p>
+      </div>
+    </div>
+
+    <!-- Filter Subnet Pills -->
+    <div class="filter-bar">
+      <button class="filter-chip active" onclick="setSubnetFilter('all', this)">All Nodes</button>
+      <button class="filter-chip" onclick="setSubnetFilter('vlan10', this)">VLAN 10 Audio</button>
+      <button class="filter-chip" onclick="setSubnetFilter('vlan20', this)">VLAN 20 Compute</button>
+      <button class="filter-chip" onclick="setSubnetFilter('cross', this)">Inter-VLAN Route</button>
+    </div>
+
+    <div class="nav-actions">
+      <button class="btn" id="themeToggleBtn" onclick="toggleTheme()">🌓 Theme</button>
+      <button class="btn" id="animToggleBtn" onclick="toggleParticles()">⏸️ Pause Motion</button>
+      <button class="btn" onclick="fitView()">🎯 Fit View</button>
+      <button class="btn btn-primary" onclick="exportPNG()">📸 Export PNG</button>
+      <a href="index.html#workspace-mermaid" class="btn">↗ Studio Portal</a>
+    </div>
+  </header>
+
+  <!-- Canvas Workspace -->
+  <div id="workspace-container">
+    <canvas id="diagram-canvas"></canvas>
+
+    <!-- Overlay HUD Controls -->
+    <div class="controls-overlay">
+      <div class="controls-group">
+        <button class="ctrl-btn" onclick="zoomIn()" title="Zoom In">+</button>
+        <button class="ctrl-btn" onclick="zoomOut()" title="Zoom Out">−</button>
+        <button class="ctrl-btn" onclick="resetZoom()" title="Reset Zoom">1:1</button>
+      </div>
+
+      <div class="legend-box">
+        <div style="font-weight: 700; color: var(--astryx-text); margin-bottom: 2px;">NETWORK &amp; VLAN LEGEND</div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: #38bdf8;"></span>
+          <span>WAN / 802.1Q Core Trunk</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: #0ea5e9;"></span>
+          <span>VLAN 10 Audio &amp; MIDI (192.168.10.0/24)</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: #10b981;"></span>
+          <span>VLAN 20 Compute &amp; TrueNAS (192.168.20.0/24)</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: #a855f7;"></span>
+          <span>Cross-VLAN Restricted Route (TCP 5042)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inspector Side Drawer -->
+    <div id="inspector-drawer">
+      <div class="drawer-header">
+        <h3 id="drawerNodeTitle"><span>📦</span> Node Details</h3>
+        <button class="drawer-close" onclick="closeInspector()">✕</button>
+      </div>
+      <div class="drawer-content">
+        <div>
+          <span id="drawerNodeStatus" class="status-badge status-online">ONLINE</span>
+          <h2 id="drawerNodeName" style="font-size: 16px; font-weight: 700; margin-top: 6px; color: var(--astryx-text);">Component Name</h2>
+          <p id="drawerNodeDesc" style="color: var(--astryx-text-muted); margin-top: 4px; line-height: 1.4;">Component description goes here.</p>
+        </div>
+
+        <div class="spec-card">
+          <div style="font-weight: 700; font-size: 11px; text-transform: uppercase; color: var(--astryx-brand); margin-bottom: 4px;">Network &amp; Subnet Specs</div>
+          <div class="spec-row"><span class="spec-label">Subnet / VLAN:</span><span class="spec-value" id="drawerSpecSubnet">-</span></div>
+          <div class="spec-row"><span class="spec-label">Static IP / CIDR:</span><span class="spec-value" id="drawerSpecIP">-</span></div>
+          <div class="spec-row"><span class="spec-label">Throughput / PHY:</span><span class="spec-value" id="drawerSpecSpeed">-</span></div>
+          <div class="spec-row"><span class="spec-label">Firewall Rule / ACL:</span><span class="spec-value" id="drawerSpecACL">-</span></div>
+        </div>
+
+        <div class="spec-card">
+          <div style="font-weight: 700; font-size: 11px; text-transform: uppercase; color: var(--astryx-accent); margin-bottom: 4px;">Hardware &amp; Verifiable Anchor</div>
+          <div class="spec-row"><span class="spec-label">Hardware Device:</span><span class="spec-value" id="drawerSpecHW">-</span></div>
+          <div class="spec-row"><span class="spec-label">OS / Firmware:</span><span class="spec-value" id="drawerSpecOS">-</span></div>
+          <div style="margin-top: 6px; font-size: 10px; color: var(--astryx-text-dim);">Configuration Anchor:</div>
+          <div class="code-anchor" id="drawerCodeAnchor">/etc/pfSense/config.xml</div>
+        </div>
+
+        <div style="margin-top: auto; padding-top: 10px; border-top: 1px solid var(--astryx-border); display: flex; gap: 8px;">
+          <button class="btn btn-primary" style="flex: 1;" onclick="highlightConnectedNodes()">Highlight Links</button>
+          <button class="btn" onclick="closeInspector()">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Telemetry Footer -->
+  <footer>
+    <div class="telemetry-item">
+      <span class="dot-live"></span>
+      <span>PFSENSE FIREWALL: ACTIVE (SNORT IDS: RUNNING • CODEL SQM: 0 DROPS)</span>
+    </div>
+    <div class="telemetry-item">
+      <span>VLAN 10: 192.168.10.0/24 (LOW-LATENCY AUDIO)</span>
+      <span style="margin: 0 8px;">|</span>
+      <span>VLAN 20: 192.168.20.0/24 (10GbE PROXMOX / TRUENAS)</span>
+    </div>
+  </footer>
+
+  <script>
+    // --- Node and Edge Data Definitions ---
+    const NODES = [
+      {
+        id: "WAN_FIBER",
+        title: "CenturyLink / Comcast Fiber",
+        subtitle: "1 Gbps Symmetric WAN",
+        category: "Uplink Gateway",
+        subnetTag: "wan",
+        x: 120,
+        y: 80,
+        w: 220,
+        h: 90,
+        color: "#38bdf8",
+        status: "ONLINE",
+        statusType: "online",
+        desc: "Symmetric gigabit fiber optical termination unit (ONT). Delivers sub-3ms latency to regional Chicago IXPs with static IPv4 gateway and IPv6 /56 prefix delegation.",
+        specs: {
+          subnet: "WAN (External)",
+          ip: "Dynamic / Static WAN IP",
+          speed: "1,000 Mbps Down / 1,000 Mbps Up",
+          acl: "Default Deny All Inbound WAN"
+        },
+        hardware: {
+          device: "Calix Gigapoint ONT SFP+",
+          os: "Carrier Fiber Firmware v4.2",
+          anchor: "netops/wan_gateway.conf#L12"
+        }
+      },
+      {
+        id: "PFSENSE",
+        title: "pfSense Security Gateway",
+        subtitle: "Netgate / Protectli Vault FW",
+        category: "Core Firewall",
+        subnetTag: "core",
+        x: 440,
+        y: 80,
+        w: 240,
+        h: 90,
+        color: "#10b981",
+        status: "ONLINE",
+        statusType: "online",
+        desc: "Enterprise FreeBSD packet filter firewall. Implements stateful NAT, Snort IDS/IPS deep packet inspection, FQ-CoDel SQM bufferbloat eradication, and strict inter-VLAN isolation rules.",
+        specs: {
+          subnet: "Core Router / Gateway",
+          ip: "192.168.10.1 / 192.168.20.1",
+          speed: "Multi-Gigabit Line Rate",
+          acl: "Allow VLAN 10 -> Port 5042 VLAN 20 Only"
+        },
+        hardware: {
+          device: "Protectli Vault 6-Port Intel i225-V",
+          os: "pfSense Plus / CE 2.7.2",
+          anchor: "netops/pfsense_rules.xml#L140-L195"
+        }
+      },
+      {
+        id: "MANAGED_SWITCH",
+        title: "802.1Q Managed Switch",
+        subtitle: "24-Port GbE + Dual 10G SFP+",
+        category: "Distribution Switch",
+        subnetTag: "core",
+        x: 780,
+        y: 80,
+        w: 240,
+        h: 90,
+        color: "#0ea5e9",
+        status: "ONLINE",
+        statusType: "online",
+        desc: "Layer 2+ managed switch providing 802.1Q VLAN trunking. Isolates sensitive studio audio broadcast traffic from multi-gigabit AI tensor weights and ZFS NFS storage replication.",
+        specs: {
+          subnet: "Trunk (VLAN 10, VLAN 20)",
+          ip: "192.168.10.2 (Management)",
+          speed: "128 Gbps Switching Fabric",
+          acl: "Port Isolation & IGMP Snooping v3"
+        },
+        hardware: {
+          device: "UniFi USW-Pro-24-POE / EdgeSwitch",
+          os: "Managed Switch OS v6.5",
+          anchor: "netops/switch_8021q_trunk.cfg#L40"
+        }
+      },
+      {
+        id: "VLAN10_DAW",
+        title: "Studio DAW Workstation",
+        subtitle: "REAPER 7 • Dante Virtual ASIO",
+        category: "VLAN 10 Audio",
+        subnetTag: "vlan10",
+        x: 180,
+        y: 280,
+        w: 240,
+        h: 95,
+        color: "#0ea5e9",
+        status: "ONLINE",
+        statusType: "online",
+        desc: "Primary studio workstation running Cockos REAPER, IK AXE I/O audio interface, and automated re-amp scripts. Prioritized via DSCP EF (Expedited Forwarding) for zero buffer overruns.",
+        specs: {
+          subnet: "VLAN 10 (Audio Studio)",
+          ip: "192.168.10.50 /24",
+          speed: "1 Gbps Full-Duplex (QoS EF)",
+          acl: "Inbound: Drop VLAN 20 / Out: REST 5042"
+        },
+        hardware: {
+          device: "Custom Audio PC (Intel i9 / 64GB RAM)",
+          os: "Windows 11 Pro / Audio-Tuned",
+          anchor: "web/Reaper_AutoReamp_NAM.lua#L110"
+        }
+      },
+      {
+        id: "VLAN10_PI",
+        title: "Raspberry Pi RT-Linux",
+        subtitle: "USB-MIDI Router & OSC Bridge",
+        category: "VLAN 10 Audio",
+        subnetTag: "vlan10",
+        x: 180,
+        y: 440,
+        w: 240,
+        h: 95,
+        color: "#06b6d4",
+        status: "ONLINE",
+        statusType: "online",
+        desc: "Dedicated hardware Raspberry Pi 4 running Realtime PREEMPT_RT Linux kernel. Acts as hardware MIDI patchbay router, OSC client, and hardware foot-switch automation trigger.",
+        specs: {
+          subnet: "VLAN 10 (Audio Studio)",
+          ip: "192.168.10.88 /24",
+          speed: "1 Gbps RJ45 Ethernet",
+          acl: "Allow PTPv2 Time Sync & OSC UDP"
+        },
+        hardware: {
+          device: "Raspberry Pi 4 Model B (4GB RAM)",
+          os: "Debian 12 + PREEMPT_RT Kernel 6.6",
+          anchor: "scripts/midi_router_daemon.py#L30"
+        }
+      },
+      {
+        id: "VLAN20_PROXMOX",
+        title: "Proxmox VE Hypervisor",
+        subtitle: "Dual 10GbE SFP+ Compute Node",
+        category: "VLAN 20 Compute",
+        subnetTag: "vlan20",
+        x: 620,
+        y: 280,
+        w: 250,
+        h: 95,
+        color: "#10b981",
+        status: "ONLINE",
+        statusType: "online",
+        desc: "Enterprise virtualization host powered by AMD Ryzen 9 / EPYC with 128GB ECC RAM. Host virtual bridge (vmbr20) connects virtual machines and container microservices over 10GbE trunk.",
+        specs: {
+          subnet: "VLAN 20 (AI & Storage)",
+          ip: "192.168.20.10 /24",
+          speed: "Dual 10GbE SFP+ Bonded (LACP)",
+          acl: "Strict Zero-Egress Airgap Policy"
+        },
+        hardware: {
+          device: "AMD Ryzen 9 7950X / 128GB ECC DDR5",
+          os: "Proxmox VE 8.2 (Linux 6.8 KVM)",
+          anchor: "/etc/pve/qemu-server/100.conf"
+        }
+      },
+      {
+        id: "VLAN20_VM_GPU",
+        title: "PyTorch ML Training VM",
+        subtitle: "Dual NVIDIA RTX 4090 (48GB VRAM)",
+        category: "VLAN 20 Compute",
+        subnetTag: "vlan20",
+        x: 960,
+        y: 280,
+        w: 260,
+        h: 95,
+        color: "#eab308",
+        status: "ONLINE",
+        statusType: "online",
+        desc: "High-performance GPU compute VM with full PCIe passthrough of dual RTX 4090s. Executes CatMLP / WaveNet neural audio backprop and Gemma 4 fine-tuning.",
+        specs: {
+          subnet: "VLAN 20 (AI & Storage)",
+          ip: "192.168.20.100 /24",
+          speed: "VirtIO 10 Gbps Virtual NIC",
+          acl: "No Direct Internet Access (Airgapped)"
+        },
+        hardware: {
+          device: "2x NVIDIA GeForce RTX 4090 24GB",
+          os: "Ubuntu 24.04 LTS (CUDA 12.4)",
+          anchor: "web/colab_train_parametric_nam.ipynb"
+        }
+      },
+      {
+        id: "VLAN20_DOCKER",
+        title: "Docker Microservices VM",
+        subtitle: "FastAPI 5042 • Gemma 4 • Redis",
+        category: "VLAN 20 Compute",
+        subnetTag: "vlan20",
+        x: 620,
+        y: 450,
+        w: 250,
+        h: 95,
+        color: "#a855f7",
+        status: "ROUTED",
+        statusType: "routed",
+        desc: "Container host running `nl_daemon_bridge.py` on port 5042, local Ollama with Gemma 4, and stylometric speech pipeline. Only node permitted to receive cross-VLAN calls from Studio DAW.",
+        specs: {
+          subnet: "VLAN 20 (AI & Storage)",
+          ip: "192.168.20.105 /24",
+          speed: "VirtIO 10 Gbps Virtual NIC",
+          acl: "Permit TCP 5042 from 192.168.10.50"
+        },
+        hardware: {
+          device: "KVM VM (16 vCPUs / 32GB RAM)",
+          os: "Alpine Linux / Docker Compose v2",
+          anchor: "scripts/nl_daemon_bridge.py#L45"
+        }
+      },
+      {
+        id: "VLAN20_TRUENAS",
+        title: "TrueNAS Core / Scale",
+        subtitle: "ZFS NVMe Pool (16TB RAID-Z2)",
+        category: "VLAN 20 Storage",
+        subnetTag: "vlan20",
+        x: 960,
+        y: 450,
+        w: 260,
+        h: 95,
+        color: "#14b8a6",
+        status: "ONLINE",
+        statusType: "online",
+        desc: "Dedicated high-bandwidth network storage array. Serves multi-gigabyte 48kHz audio sweep dataset chunks over NFSv4 directly into the PyTorch data loaders at 1,100 MB/s.",
+        specs: {
+          subnet: "VLAN 20 (AI & Storage)",
+          ip: "192.168.20.200 /24",
+          speed: "10GbE SFP+ DAC Direct Attach",
+          acl: "NFSv4 Export Restricted to VLAN 20"
+        },
+        hardware: {
+          device: "4x 4TB Samsung 990 Pro NVMe in ZFS",
+          os: "TrueNAS SCALE 24.04 (OpenZFS)",
+          anchor: "netops/truenas_nfs_exports.conf#L15"
+        }
+      }
+    ];
+
+    const EDGES = [
+      {
+        from: "WAN_FIBER",
+        to: "PFSENSE",
+        label: "WAN Uplink",
+        sublabel: "1 Gbps Optical",
+        type: "wan",
+        color: "#38bdf8"
+      },
+      {
+        from: "PFSENSE",
+        to: "MANAGED_SWITCH",
+        label: "802.1Q Trunk",
+        sublabel: "VLAN 10 + 20 Tagged",
+        type: "core",
+        color: "#10b981"
+      },
+      {
+        from: "MANAGED_SWITCH",
+        to: "VLAN10_DAW",
+        label: "VLAN 10 Untagged",
+        sublabel: "Dante / ASIO Audio",
+        type: "vlan10",
+        color: "#0ea5e9"
+      },
+      {
+        from: "MANAGED_SWITCH",
+        to: "VLAN10_PI",
+        label: "VLAN 10 Untagged",
+        sublabel: "RT MIDI / OSC",
+        type: "vlan10",
+        color: "#06b6d4"
+      },
+      {
+        from: "MANAGED_SWITCH",
+        to: "VLAN20_PROXMOX",
+        label: "VLAN 20 10GbE Bond",
+        sublabel: "Dual SFP+ Trunk",
+        type: "vlan20",
+        color: "#10b981"
+      },
+      {
+        from: "VLAN20_PROXMOX",
+        to: "VLAN20_VM_GPU",
+        label: "vSwitch vmbr20",
+        sublabel: "PCIe Passthrough",
+        type: "vlan20",
+        color: "#eab308"
+      },
+      {
+        from: "VLAN20_PROXMOX",
+        to: "VLAN20_DOCKER",
+        label: "vSwitch vmbr20",
+        sublabel: "Bridge VirtIO",
+        type: "vlan20",
+        color: "#a855f7"
+      },
+      {
+        from: "MANAGED_SWITCH",
+        to: "VLAN20_TRUENAS",
+        label: "VLAN 20 10GbE SFP+",
+        sublabel: "ZFS Storage Trunk",
+        type: "vlan20",
+        color: "#14b8a6"
+      },
+      {
+        from: "VLAN20_TRUENAS",
+        to: "VLAN20_VM_GPU",
+        label: "NFSv4 Direct Mount",
+        sublabel: "1.1 GB/s Audio Streams",
+        type: "vlan20",
+        color: "#10b981"
+      },
+      {
+        from: "VLAN10_DAW",
+        to: "VLAN20_DOCKER",
+        label: "Cross-VLAN Route",
+        sublabel: "REST API :5042",
+        type: "cross",
+        color: "#a855f7"
+      }
+    ];
+
+    // --- State & Canvas Setup ---
+    const canvas = document.getElementById("diagram-canvas");
+    const ctx = canvas.getContext("2d");
+    let animationActive = true;
+    let particles = [];
+    let selectedNode = null;
+    let hoveredNode = null;
+    let highlightedEdgeIds = new Set();
+    let currentSubnetFilter = "all";
+
+    // Viewport transform state (Pan & Zoom)
+    let view = {
+      x: 60,
+      y: 40,
+      scale: 0.95,
+      isPanning: false,
+      startX: 0,
+      startY: 0
+    };
+
+    function resizeCanvas() {
+      const container = document.getElementById("workspace-container");
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = container.clientWidth * dpr;
+      canvas.height = container.clientHeight * dpr;
+      ctx.scale(dpr, dpr);
+      render();
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+
+    // --- Particle System ---
+    class Particle {
+      constructor(edge) {
+        this.edge = edge;
+        this.t = Math.random();
+        this.speed = 0.003 + Math.random() * 0.003;
+        this.size = 3.5;
+      }
+
+      update() {
+        this.t += this.speed;
+        if (this.t > 1) {
+          this.t = 0;
+        }
+      }
+
+      getPosition() {
+        const fromNode = NODES.find(n => n.id === this.edge.from);
+        const toNode = NODES.find(n => n.id === this.edge.to);
+        if (!fromNode || !toNode) return { x: 0, y: 0 };
+
+        const p1 = getNodeAnchor(fromNode, toNode);
+        const p2 = getNodeAnchor(toNode, fromNode);
+
+        const dx = p2.x - p1.x;
+        const dy = p2.y - p1.y;
+        const cx1 = p1.x + dx * 0.5;
+        const cy1 = p1.y;
+        const cx2 = p1.x + dx * 0.5;
+        const cy2 = p2.y;
+
+        const u = 1 - this.t;
+        const tt = this.t * this.t;
+        const uu = u * u;
+        const uuu = uu * u;
+        const ttt = tt * this.t;
+
+        const x = uuu * p1.x + 3 * uu * this.t * cx1 + 3 * u * tt * cx2 + ttt * p2.x;
+        const y = uuu * p1.y + 3 * uu * this.t * cy1 + 3 * u * tt * cy2 + ttt * p2.y;
+
+        return { x, y };
+      }
+    }
+
+    function initParticles() {
+      particles = [];
+      EDGES.forEach(edge => {
+        const count = 3;
+        for (let i = 0; i < count; i++) {
+          particles.push(new Particle(edge));
+        }
+      });
+    }
+
+    function getNodeAnchor(source, target) {
+      const srcCenter = { x: source.x + source.w / 2, y: source.y + source.h / 2 };
+      const tgtCenter = { x: target.x + target.w / 2, y: target.y + target.h / 2 };
+
+      const dx = tgtCenter.x - srcCenter.x;
+      const dy = tgtCenter.y - srcCenter.y;
+
+      if (Math.abs(dx) > Math.abs(dy)) {
+        if (dx > 0) {
+          return { x: source.x + source.w, y: srcCenter.y };
+        } else {
+          return { x: source.x, y: srcCenter.y };
+        }
+      } else {
+        if (dy > 0) {
+          return { x: srcCenter.x, y: source.y + source.h };
+        } else {
+          return { x: srcCenter.x, y: source.y };
+        }
+      }
+    }
+
+    // --- Rendering Loop ---
+    function render() {
+      const dpr = window.devicePixelRatio || 1;
+      const w = canvas.width / dpr;
+      const h = canvas.height / dpr;
+
+      ctx.save();
+      ctx.clearRect(0, 0, w, h);
+
+      ctx.translate(view.x, view.y);
+      ctx.scale(view.scale, view.scale);
+
+      drawGrid(w, h);
+
+      // Draw Edges
+      EDGES.forEach(edge => {
+        if (isEdgeVisibleInFilter(edge)) {
+          drawEdge(edge);
+        }
+      });
+
+      // Draw Particles
+      if (animationActive) {
+        particles.forEach(p => {
+          if (isEdgeVisibleInFilter(p.edge)) {
+            p.update();
+            const pos = p.getPosition();
+            ctx.beginPath();
+            ctx.arc(pos.x, pos.y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = p.edge.color;
+            ctx.shadowColor = p.edge.color;
+            ctx.shadowBlur = 8;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+          }
+        });
+      }
+
+      // Draw Nodes
+      NODES.forEach(node => {
+        const isDimmed = !isNodeVisibleInFilter(node);
+        drawNode(node, isDimmed);
+      });
+
+      ctx.restore();
+
+      if (animationActive) {
+        requestAnimationFrame(render);
+      }
+    }
+
+    function isNodeVisibleInFilter(node) {
+      if (currentSubnetFilter === "all") return true;
+      if (currentSubnetFilter === "vlan10") return node.subnetTag === "vlan10" || node.subnetTag === "core";
+      if (currentSubnetFilter === "vlan20") return node.subnetTag === "vlan20" || node.subnetTag === "core";
+      if (currentSubnetFilter === "cross") return node.id === "VLAN10_DAW" || node.id === "VLAN20_DOCKER" || node.id === "PFSENSE";
+      return true;
+    }
+
+    function isEdgeVisibleInFilter(edge) {
+      if (currentSubnetFilter === "all") return true;
+      if (currentSubnetFilter === "vlan10") return edge.type === "vlan10" || edge.type === "core" || edge.type === "wan";
+      if (currentSubnetFilter === "vlan20") return edge.type === "vlan20" || edge.type === "core" || edge.type === "wan";
+      if (currentSubnetFilter === "cross") return edge.type === "cross";
+      return true;
+    }
+
+    function drawGrid(w, h) {
+      const isLight = document.body.getAttribute("data-theme") === "light";
+      const gridColor = isLight ? "rgba(0, 0, 0, 0.05)" : "rgba(255, 255, 255, 0.04)";
+      const gridSize = 40;
+
+      const left = -view.x / view.scale - 200;
+      const top = -view.y / view.scale - 200;
+      const right = (w - view.x) / view.scale + 200;
+      const bottom = (h - view.y) / view.scale + 200;
+
+      ctx.strokeStyle = gridColor;
+      ctx.lineWidth = 1;
+
+      ctx.beginPath();
+      for (let x = Math.floor(left / gridSize) * gridSize; x < right; x += gridSize) {
+        ctx.moveTo(x, top);
+        ctx.lineTo(x, bottom);
+      }
+      for (let y = Math.floor(top / gridSize) * gridSize; y < bottom; y += gridSize) {
+        ctx.moveTo(left, y);
+        ctx.lineTo(right, y);
+      }
+      ctx.stroke();
+    }
+
+    function drawEdge(edge) {
+      const fromNode = NODES.find(n => n.id === edge.from);
+      const toNode = NODES.find(n => n.id === edge.to);
+      if (!fromNode || !toNode) return;
+
+      const p1 = getNodeAnchor(fromNode, toNode);
+      const p2 = getNodeAnchor(toNode, fromNode);
+
+      const dx = p2.x - p1.x;
+      const dy = p2.y - p1.y;
+      const cx1 = p1.x + dx * 0.5;
+      const cy1 = p1.y;
+      const cx2 = p1.x + dx * 0.5;
+      const cy2 = p2.y;
+
+      const isHighlighted = highlightedEdgeIds.has(`${edge.from}->${edge.to}`);
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(p1.x, p1.y);
+      ctx.bezierCurveTo(cx1, cy1, cx2, cy2, p2.x, p2.y);
+
+      ctx.strokeStyle = isHighlighted ? "#ffffff" : edge.color;
+      ctx.lineWidth = isHighlighted ? 3.5 : 2;
+      ctx.globalAlpha = isHighlighted ? 1.0 : 0.65;
+      ctx.stroke();
+
+      // Midpoint edge badge
+      const midT = 0.5;
+      const u = 1 - midT;
+      const mx = u*u*u*p1.x + 3*u*u*midT*cx1 + 3*u*midT*midT*cx2 + midT*midT*midT*p2.x;
+      const my = u*u*u*p1.y + 3*u*u*midT*cy1 + 3*u*midT*midT*cy2 + midT*midT*midT*p2.y;
+
+      ctx.font = "9px ui-monospace, SFMono-Regular, monospace";
+      const textWidth = ctx.measureText(edge.label).width;
+
+      const isLight = document.body.getAttribute("data-theme") === "light";
+      ctx.fillStyle = isLight ? "rgba(255, 255, 255, 0.85)" : "rgba(11, 15, 25, 0.85)";
+      ctx.fillRect(mx - textWidth / 2 - 4, my - 8, textWidth + 8, 16);
+      ctx.strokeStyle = edge.color;
+      ctx.lineWidth = 1;
+      ctx.strokeRect(mx - textWidth / 2 - 4, my - 8, textWidth + 8, 16);
+
+      ctx.fillStyle = isLight ? "#0b1c30" : "#f1f5f9";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(edge.label, mx, my);
+
+      ctx.restore();
+    }
+
+    function drawNode(node, isDimmed) {
+      const isSelected = selectedNode && selectedNode.id === node.id;
+      const isHovered = hoveredNode && hoveredNode.id === node.id;
+      const isLight = document.body.getAttribute("data-theme") === "light";
+
+      ctx.save();
+      if (isDimmed) {
+        ctx.globalAlpha = 0.25;
+      }
+
+      if (isSelected || isHovered) {
+        ctx.shadowColor = node.color;
+        ctx.shadowBlur = 16;
+      } else {
+        ctx.shadowColor = "rgba(0, 0, 0, 0.3)";
+        ctx.shadowBlur = 8;
+      }
+
+      const radius = 12;
+      ctx.beginPath();
+      ctx.roundRect(node.x, node.y, node.w, node.h, radius);
+      ctx.fillStyle = isLight ? "#ffffff" : "#131b2e";
+      ctx.fill();
+
+      ctx.lineWidth = isSelected ? 2.5 : (isHovered ? 2 : 1);
+      ctx.strokeStyle = isSelected ? "#38bdf8" : (isHovered ? node.color : (isLight ? "#cbd5e1" : "#1e293b"));
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+
+      // Header Bar
+      ctx.beginPath();
+      ctx.roundRect(node.x, node.y, node.w, 4, [radius, radius, 0, 0]);
+      ctx.fillStyle = node.color;
+      ctx.fill();
+
+      // Category Pill
+      ctx.font = "9px ui-monospace, SFMono-Regular, monospace";
+      ctx.fillStyle = node.color;
+      ctx.textAlign = "left";
+      ctx.fillText(node.category.toUpperCase(), node.x + 14, node.y + 20);
+
+      // Title
+      ctx.font = "bold 13px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+      ctx.fillStyle = isLight ? "#0b1c30" : "#f1f5f9";
+      ctx.fillText(node.title, node.x + 14, node.y + 40);
+
+      // Subtitle
+      ctx.font = "11px ui-monospace, SFMono-Regular, monospace";
+      ctx.fillStyle = isLight ? "#475569" : "#94a3b8";
+      ctx.fillText(node.subtitle, node.x + 14, node.y + 58);
+
+      // Status indicator dot & label
+      const statusX = node.x + node.w - 74;
+      const statusY = node.y + 16;
+      ctx.beginPath();
+      ctx.arc(statusX, statusY, 3.5, 0, Math.PI * 2);
+      ctx.fillStyle = node.statusType === "online" ? "#10b981" : "#a855f7";
+      ctx.fill();
+
+      ctx.font = "9px ui-monospace, SFMono-Regular, monospace";
+      ctx.fillStyle = node.statusType === "online" ? "#10b981" : "#a855f7";
+      ctx.textAlign = "left";
+      ctx.fillText(node.status, statusX + 6, statusY + 3);
+
+      // Bottom IP address badge
+      ctx.font = "10px ui-monospace, SFMono-Regular, monospace";
+      ctx.fillStyle = isLight ? "#0284c7" : "#38bdf8";
+      ctx.fillText(node.specs.ip, node.x + 14, node.y + 78);
+
+      ctx.restore();
+    }
+
+    // --- Interactive Mouse & Touch Handlers ---
+    canvas.addEventListener("mousedown", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = (e.clientX - rect.left - view.x) / view.scale;
+      const mouseY = (e.clientY - rect.top - view.y) / view.scale;
+
+      const clicked = NODES.slice().reverse().find(n => (
+        mouseX >= n.x && mouseX <= n.x + n.w &&
+        mouseY >= n.y && mouseY <= n.y + n.h
+      ));
+
+      if (clicked) {
+        selectNode(clicked);
+      } else {
+        view.isPanning = true;
+        view.startX = e.clientX - view.x;
+        view.startY = e.clientY - view.y;
+        canvas.classList.add("panning");
+      }
+    });
+
+    window.addEventListener("mousemove", (e) => {
+      if (view.isPanning) {
+        view.x = e.clientX - view.startX;
+        view.y = e.clientY - view.startY;
+        if (!animationActive) render();
+        return;
+      }
+
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = (e.clientX - rect.left - view.x) / view.scale;
+      const mouseY = (e.clientY - rect.top - view.y) / view.scale;
+
+      const hovered = NODES.slice().reverse().find(n => (
+        mouseX >= n.x && mouseX <= n.x + n.w &&
+        mouseY >= n.y && mouseY <= n.y + n.h
+      ));
+
+      if (hovered !== hoveredNode) {
+        hoveredNode = hovered;
+        canvas.style.cursor = hovered ? "pointer" : "grab";
+        if (!animationActive) render();
+      }
+    });
+
+    window.addEventListener("mouseup", () => {
+      view.isPanning = false;
+      canvas.classList.remove("panning");
+    });
+
+    canvas.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+
+      const zoomFactor = e.deltaY < 0 ? 1.08 : 0.92;
+      const newScale = Math.min(Math.max(view.scale * zoomFactor, 0.4), 2.5);
+
+      view.x = mouseX - (mouseX - view.x) * (newScale / view.scale);
+      view.y = mouseY - (mouseY - view.y) * (newScale / view.scale);
+      view.scale = newScale;
+
+      if (!animationActive) render();
+    }, { passive: false });
+
+    // --- Subnet Filter Control ---
+    function setSubnetFilter(filterType, element) {
+      currentSubnetFilter = filterType;
+      document.querySelectorAll(".filter-chip").forEach(el => el.classList.remove("active"));
+      element.classList.add("active");
+      if (!animationActive) render();
+    }
+
+    // --- Node Inspection & Controls ---
+    function selectNode(node) {
+      selectedNode = node;
+      highlightConnectedNodes();
+
+      document.getElementById("drawerNodeTitle").innerHTML = `<span>📦</span> ${node.category}`;
+      document.getElementById("drawerNodeName").innerText = node.title;
+      document.getElementById("drawerNodeDesc").innerText = node.desc;
+      document.getElementById("drawerSpecSubnet").innerText = node.specs.subnet;
+      document.getElementById("drawerSpecIP").innerText = node.specs.ip;
+      document.getElementById("drawerSpecSpeed").innerText = node.specs.speed;
+      document.getElementById("drawerSpecACL").innerText = node.specs.acl;
+      document.getElementById("drawerSpecHW").innerText = node.hardware.device;
+      document.getElementById("drawerSpecOS").innerText = node.hardware.os;
+      document.getElementById("drawerCodeAnchor").innerText = node.hardware.anchor;
+
+      const statusBadge = document.getElementById("drawerNodeStatus");
+      statusBadge.innerText = node.status;
+      statusBadge.className = `status-badge status-${node.statusType}`;
+
+      document.getElementById("inspector-drawer").classList.add("open");
+      fitView();
+    }
+
+    function closeInspector() {
+      document.getElementById("inspector-drawer").classList.remove("open");
+      selectedNode = null;
+      highlightedEdgeIds.clear();
+      fitView();
+    }
+
+    function highlightConnectedNodes() {
+      highlightedEdgeIds.clear();
+      if (!selectedNode) return;
+
+      EDGES.forEach(e => {
+        if (e.from === selectedNode.id || e.to === selectedNode.id) {
+          highlightedEdgeIds.add(`${e.from}->${e.to}`);
+        }
+      });
+      if (!animationActive) render();
+    }
+
+    // --- Toolbar Actions ---
+    function toggleTheme() {
+      const current = document.body.getAttribute("data-theme");
+      const next = current === "light" ? "dark" : "light";
+      document.body.setAttribute("data-theme", next);
+      if (!animationActive) render();
+    }
+
+    function toggleParticles() {
+      animationActive = !animationActive;
+      const btn = document.getElementById("animToggleBtn");
+      btn.innerText = animationActive ? "⏸️ Pause Motion" : "▶️ Resume Motion";
+      if (animationActive) {
+        requestAnimationFrame(render);
+      }
+    }
+
+    function zoomIn() {
+      view.scale = Math.min(view.scale * 1.2, 2.5);
+      if (!animationActive) render();
+    }
+
+    function zoomOut() {
+      view.scale = Math.max(view.scale / 1.2, 0.4);
+      if (!animationActive) render();
+    }
+
+    function resetZoom() {
+      view.scale = 1.0;
+      if (!animationActive) render();
+    }
+
+    function fitView() {
+      const container = document.getElementById("workspace-container");
+      const drawerOpen = document.getElementById("inspector-drawer").classList.contains("open");
+      const availableWidth = container.clientWidth - (drawerOpen ? 390 : 0);
+      const availableHeight = container.clientHeight;
+
+      let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+      NODES.forEach(n => {
+        minX = Math.min(minX, n.x);
+        minY = Math.min(minY, n.y);
+        maxX = Math.max(maxX, n.x + n.w);
+        maxY = Math.max(maxY, n.y + n.h);
+      });
+
+      const graphWidth = maxX - minX;
+      const graphHeight = maxY - minY;
+      const padding = 60;
+
+      const scaleX = (availableWidth - padding * 2) / graphWidth;
+      const scaleY = (availableHeight - padding * 2) / graphHeight;
+      const targetScale = Math.min(Math.max(Math.min(scaleX, scaleY), 0.5), 1.1);
+
+      view.scale = targetScale;
+      view.x = (availableWidth - graphWidth * targetScale) / 2 - minX * targetScale;
+      view.y = (availableHeight - graphHeight * targetScale) / 2 - minY * targetScale;
+
+      if (!animationActive) render();
+    }
+
+    function exportPNG() {
+      const exportCanvas = document.createElement("canvas");
+      exportCanvas.width = canvas.width;
+      exportCanvas.height = canvas.height;
+      const expCtx = exportCanvas.getContext("2d");
+      expCtx.drawImage(canvas, 0, 0);
+
+      const link = document.createElement("a");
+      link.download = "Justin_Muir_NetOps_Archify_Topology.png";
+      link.href = exportCanvas.toDataURL("image/png");
+      link.click();
+    }
+
+    // --- Initialization ---
+    initParticles();
+    resizeCanvas();
+    fitView();
+  </script>
+</body>
+</html>

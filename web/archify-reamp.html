@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Justin Muir Re-Amp Signal Chain & Loss Engine — Archify Interactive Diagram</title>
+  <meta name="description" content="Interactive, animated, verifiable hardware-software signal chain and loss engine for Justin Muir's Marshall Origin 50 re-amp automation and neural modeling.">
+  <style>
+    :root {
+      --astryx-surface: #0b0f19;
+      --astryx-surface-card: #131b2e;
+      --astryx-surface-panel: #162036;
+      --astryx-surface-hover: #1e2c4a;
+      --astryx-border: #1e293b;
+      --astryx-border-accent: #38bdf8;
+      --astryx-text: #f1f5f9;
+      --astryx-text-muted: #94a3b8;
+      --astryx-text-dim: #64748b;
+      --astryx-brand: #0ea5e9;
+      --astryx-brand-glow: rgba(14, 165, 233, 0.25);
+      --astryx-accent: #10b981;
+      --astryx-warning: #f59e0b;
+      --astryx-purple: #a855f7;
+      --astryx-red: #ef4444;
+      --astryx-grid: rgba(255, 255, 255, 0.04);
+      --astryx-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --astryx-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    [data-theme="light"] {
+      --astryx-surface: #f8f9ff;
+      --astryx-surface-card: #ffffff;
+      --astryx-surface-panel: #edf2f9;
+      --astryx-surface-hover: #e2e8f0;
+      --astryx-border: #cbd5e1;
+      --astryx-border-accent: #00437b;
+      --astryx-text: #0b1c30;
+      --astryx-text-muted: #475569;
+      --astryx-text-dim: #64748b;
+      --astryx-brand: #00437b;
+      --astryx-brand-glow: rgba(0, 67, 123, 0.15);
+      --astryx-accent: #059669;
+      --astryx-warning: #d97706;
+      --astryx-purple: #7c3aed;
+      --astryx-red: #dc2626;
+      --astryx-grid: rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    body {
+      background-color: var(--astryx-surface);
+      color: var(--astryx-text);
+      font-family: var(--astryx-font-sans);
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Bar Header */
+    header {
+      height: 64px;
+      background: var(--astryx-surface-card);
+      border-bottom: 1px solid var(--astryx-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 20;
+      flex-shrink: 0;
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .badge-archify {
+      font-family: var(--astryx-font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #0ea5e9, #6366f1);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(14, 165, 233, 0.3);
+    }
+
+    .title-group h1 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--astryx-text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .title-group p {
+      font-size: 11px;
+      color: var(--astryx-text-muted);
+      font-family: var(--astryx-font-mono);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--astryx-surface-panel);
+      border: 1px solid var(--astryx-border);
+      color: var(--astryx-text);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-family: var(--astryx-font-sans);
+    }
+
+    .btn:hover {
+      background: var(--astryx-surface-hover);
+      border-color: var(--astryx-border-accent);
+    }
+
+    .btn-primary {
+      background: var(--astryx-brand);
+      color: #ffffff;
+      border-color: transparent;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.1);
+    }
+
+    /* Main Diagram Workspace */
+    #workspace-container {
+      position: relative;
+      flex: 1;
+      width: 100%;
+      height: calc(100vh - 64px);
+      overflow: hidden;
+    }
+
+    canvas#diagram-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: grab;
+    }
+
+    canvas#diagram-canvas.panning {
+      cursor: grabbing;
+    }
+
+    /* Floating Canvas Controls HUD */
+    .controls-overlay {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .controls-group {
+      pointer-events: auto;
+      background: var(--astryx-surface-card);
+      border: 1px solid var(--astryx-border);
+      border-radius: 10px;
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .ctrl-btn {
+      background: transparent;
+      border: none;
+      color: var(--astryx-text-muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      background: var(--astryx-surface-hover);
+      color: var(--astryx-text);
+    }
+
+    .legend-box {
+      pointer-events: auto;
+      background: var(--astryx-surface-card);
+      border: 1px solid var(--astryx-border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      font-size: 11px;
+      font-family: var(--astryx-font-mono);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-width: 260px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--astryx-text-muted);
+    }
+
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Inspector Side Drawer */
+    #inspector-drawer {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      bottom: 16px;
+      width: 360px;
+      background: var(--astryx-surface-card);
+      border: 1px solid var(--astryx-border);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      z-index: 15;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(390px);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+    }
+
+    #inspector-drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--astryx-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--astryx-surface-panel);
+    }
+
+    .drawer-header h3 {
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .drawer-close {
+      background: transparent;
+      border: none;
+      color: var(--astryx-text-muted);
+      cursor: pointer;
+      font-size: 16px;
+      padding: 4px;
+      border-radius: 6px;
+    }
+
+    .drawer-close:hover {
+      color: var(--astryx-text);
+      background: var(--astryx-surface-hover);
+    }
+
+    .drawer-content {
+      padding: 20px;
+      overflow-y: auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      font-size: 12px;
+    }
+
+    .spec-card {
+      background: var(--astryx-surface-panel);
+      border: 1px solid var(--astryx-border);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--astryx-font-mono);
+      font-size: 11px;
+    }
+
+    .spec-label {
+      color: var(--astryx-text-dim);
+    }
+
+    .spec-value {
+      color: var(--astryx-text);
+      font-weight: 600;
+    }
+
+    .code-anchor {
+      font-family: var(--astryx-font-mono);
+      font-size: 10px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid var(--astryx-border);
+      color: #38bdf8;
+      word-break: break-all;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      font-size: 10px;
+      font-family: var(--astryx-font-mono);
+      font-weight: 700;
+    }
+
+    .status-online {
+      background: rgba(16, 185, 129, 0.15);
+      color: #10b981;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .status-calibrated {
+      background: rgba(14, 165, 233, 0.15);
+      color: #0ea5e9;
+      border: 1px solid rgba(14, 165, 233, 0.3);
+    }
+
+    /* Bottom Status Telemetry Footer */
+    footer {
+      height: 32px;
+      background: var(--astryx-surface-card);
+      border-top: 1px solid var(--astryx-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      font-family: var(--astryx-font-mono);
+      font-size: 11px;
+      color: var(--astryx-text-dim);
+      z-index: 20;
+    }
+
+    .telemetry-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dot-live {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 6px #10b981;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+  </style>
+</head>
+<body data-theme="dark">
+
+  <!-- Header -->
+  <header>
+    <div class="brand-section">
+      <span class="badge-archify">ARCHIFY 2.0</span>
+      <div class="title-group">
+        <h1>🎛️ Justin Muir • Re-Amp Signal Chain & Loss Engine</h1>
+        <p>Interactive Verifiable Architecture • 48kHz / 24-bit Continuous Loop</p>
+      </div>
+    </div>
+
+    <div class="nav-actions">
+      <button class="btn" id="themeToggleBtn" onclick="toggleTheme()">🌓 Theme</button>
+      <button class="btn" id="animToggleBtn" onclick="toggleParticles()">⏸️ Pause Motion</button>
+      <button class="btn" onclick="fitView()">🎯 Fit View</button>
+      <button class="btn btn-primary" onclick="exportPNG()">📸 Export PNG</button>
+      <a href="index.html#workspace-mermaid" class="btn">↗ Studio Portal</a>
+    </div>
+  </header>
+
+  <!-- Canvas Workspace -->
+  <div id="workspace-container">
+    <canvas id="diagram-canvas"></canvas>
+
+    <!-- Overlay HUD Controls -->
+    <div class="controls-overlay">
+      <div class="controls-group">
+        <button class="ctrl-btn" onclick="zoomIn()" title="Zoom In">+</button>
+        <button class="ctrl-btn" onclick="zoomOut()" title="Zoom Out">−</button>
+        <button class="ctrl-btn" onclick="resetZoom()" title="Reset Zoom">1:1</button>
+      </div>
+
+      <div class="legend-box">
+        <div style="font-weight: 700; color: var(--astryx-text); margin-bottom: 2px;">SIGNAL FLOW LEGEND</div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: #f59e0b;"></span>
+          <span>Analog Audio (Instrument / Speaker)</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: #0ea5e9;"></span>
+          <span>Digital Audio / ASIO 48kHz 24-bit</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: #a855f7;"></span>
+          <span>ReaScript / REST API Control</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: #10b981;"></span>
+          <span>PyTorch STFT Loss & Gradients</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inspector Side Drawer -->
+    <div id="inspector-drawer">
+      <div class="drawer-header">
+        <h3 id="drawerNodeTitle"><span>📦</span> Node Details</h3>
+        <button class="drawer-close" onclick="closeInspector()">✕</button>
+      </div>
+      <div class="drawer-content">
+        <div>
+          <span id="drawerNodeStatus" class="status-badge status-online">ONLINE</span>
+          <h2 id="drawerNodeName" style="font-size: 16px; font-weight: 700; margin-top: 6px; color: var(--astryx-text);">Component Name</h2>
+          <p id="drawerNodeDesc" style="color: var(--astryx-text-muted); margin-top: 4px; line-height: 1.4;">Component description goes here.</p>
+        </div>
+
+        <div class="spec-card">
+          <div style="font-weight: 700; font-size: 11px; text-transform: uppercase; color: var(--astryx-brand); margin-bottom: 4px;">Hardware & Signal Specs</div>
+          <div class="spec-row"><span class="spec-label">Level / Impedance:</span><span class="spec-value" id="drawerSpecLevel">-</span></div>
+          <div class="spec-row"><span class="spec-label">I/O Ports:</span><span class="spec-value" id="drawerSpecPorts">-</span></div>
+          <div class="spec-row"><span class="spec-label">Sample Rate:</span><span class="spec-value" id="drawerSpecRate">-</span></div>
+          <div class="spec-row"><span class="spec-label">Latency / Buffer:</span><span class="spec-value" id="drawerSpecLatency">-</span></div>
+        </div>
+
+        <div class="spec-card">
+          <div style="font-weight: 700; font-size: 11px; text-transform: uppercase; color: var(--astryx-accent); margin-bottom: 4px;">Verification & Code Anchor</div>
+          <div class="spec-row"><span class="spec-label">Metric Target:</span><span class="spec-value" id="drawerSpecMetric">-</span></div>
+          <div class="spec-row"><span class="spec-label">Axiom Link:</span><span class="spec-value" id="drawerSpecAxiom">-</span></div>
+          <div style="margin-top: 6px; font-size: 10px; color: var(--astryx-text-dim);">Source File Anchor:</div>
+          <div class="code-anchor" id="drawerCodeAnchor">scripts/nl_daemon_bridge.py</div>
+        </div>
+
+        <div style="margin-top: auto; padding-top: 10px; border-top: 1px solid var(--astryx-border); display: flex; gap: 8px;">
+          <button class="btn btn-primary" style="flex: 1;" onclick="highlightConnectedNodes()">Highlight Routes</button>
+          <button class="btn" onclick="closeInspector()">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Telemetry Footer -->
+  <footer>
+    <div class="telemetry-item">
+      <span class="dot-live"></span>
+      <span>RE-AMP HARDWARE LOOP: LOCKED (IK AXE I/O + REDEYE + ORIGIN 50 + CAPTOR X)</span>
+    </div>
+    <div class="telemetry-item">
+      <span>DAW: COCKOS REAPER 7.x (ASIO 64-SMP • 1.33ms)</span>
+      <span style="margin: 0 8px;">|</span>
+      <span>LOSS: ESR &lt; 0.008 (WAVENET / CATMLP)</span>
+    </div>
+  </footer>
+
+  <script>
+    // --- Node and Edge Data Definitions ---
+    const NODES = [
+      {
+        id: "REAPER",
+        title: "Cockos REAPER DAW",
+        subtitle: "ReaScript v7.x Master Host",
+        category: "DAW Engine",
+        x: 140,
+        y: 180,
+        w: 200,
+        h: 90,
+        color: "#0ea5e9",
+        status: "ONLINE",
+        statusType: "online",
+        desc: "Master digital audio workstation executing automated batch sweep ReaScript. Dispatches dry stimulus audio, logs timecode markers, and captures roundtrip re-amped return tracks.",
+        specs: {
+          level: "Float32 Internal / 24-bit ASIO",
+          ports: "Channels 1-6 ASIO",
+          rate: "48,000 Hz 24-bit",
+          latency: "64 samples (1.33ms RT)"
+        },
+        evidence: {
+          metric: "Zero dropped frames / 0 sample drift",
+          axiom: "[Timecode Sync: Sample-Accurate]",
+          code: "web/Reaper_AutoReamp_NAM.lua#L80-L150"
+        }
+      },
+      {
+        id: "AXE_OUT",
+        title: "IK AXE I/O Line Out 5",
+        subtitle: "Balanced TRS D/A Line Out",
+        category: "Interface Output",
+        x: 420,
+        y: 180,
+        w: 210,
+        h: 90,
+        color: "#38bdf8",
+        status: "CALIBRATED",
+        statusType: "calibrated",
+        desc: "Low-impedance balanced TRS analog output from IK AXE I/O dedicated re-amp routing channel. Converts 48kHz digital sweep into analog line level with minimal jitter.",
+        specs: {
+          level: "+4 dBu (Line Level, 100Ω)",
+          ports: "Output Jack 5 (Balanced TRS)",
+          rate: "48,000 Hz D/A Conversion",
+          latency: "< 0.45ms D/A Filter"
+        },
+        evidence: {
+          metric: "THD+N < 0.001%, SNR 117 dB",
+          axiom: "[IK D/A Hardware Spec Page 12]",
+          code: "scripts/reamp_automation.py#L95"
+        }
+      },
+      {
+        id: "REDEYE",
+        title: "Little Labs Redeye 3D",
+        subtitle: "Passive Impedance Transformer",
+        category: "Re-Amp Box",
+        x: 710,
+        y: 180,
+        w: 220,
+        h: 90,
+        color: "#f59e0b",
+        status: "CALIBRATED",
+        statusType: "calibrated",
+        desc: "Passive transformer-isolated re-amping direct box. Steps down +4dBu balanced line level to instrument level guitar signal with 1MΩ output impedance to drive tube amp front-end naturally.",
+        specs: {
+          level: "Instrument Level (~ -20dBu)",
+          ports: "XLR In -> 1/4\" TS Instrument Out",
+          rate: "Analog Pure (DC - 100kHz)",
+          latency: "0.00 ms (Zero Latency Passive)"
+        },
+        evidence: {
+          metric: "Transformer Flatness: +/- 0.1dB (20Hz-20kHz)",
+          axiom: "[Little Labs Transformer Core Spec]",
+          code: "web/studio_run_sheet.html#L140"
+        }
+      },
+      {
+        id: "MARSHALL_50",
+        title: "Marshall Origin 50H",
+        subtitle: "50W All-Tube Guitar Amplifier",
+        category: "Vacuum Tube Amp",
+        x: 1010,
+        y: 180,
+        w: 230,
+        h: 90,
+        color: "#eab308",
+        status: "ONLINE",
+        statusType: "online",
+        desc: "Full vacuum tube head featuring 3x ECC83 preamp valves and 2x EL34 power valves. Driven into power stage saturation across 6 discrete knob sweeps: Gain, Boost, Tilt, Bass, Middle, Treble, Master.",
+        specs: {
+          level: "Speaker Level (50W RMS @ 8Ω)",
+          ports: "1/4\" Input -> 1/4\" Speaker Out",
+          rate: "Analog Non-Linear Compression",
+          latency: "0.00 ms (Acoustic / Analog)"
+        },
+        evidence: {
+          metric: "Bias Plate Voltage: 460V DC, EL34 Matched Pair",
+          axiom: "[Marshall Origin 50 Schematic Rev 3]",
+          code: "marshall_origin50_params.csv#L1-L25"
+        }
+      },
+      {
+        id: "CAPTOR_X",
+        title: "Torpedo Captor X",
+        subtitle: "8Ω Reactive Load & Attenuator",
+        category: "Reactive Loadbox",
+        x: 1010,
+        y: 380,
+        w: 230,
+        h: 90,
+        color: "#f97316",
+        status: "ONLINE",
+        statusType: "online",
+        desc: "8-Ohm reactive loadbox that safely absorbs 50W RMS tube amp output without acoustic cabinet noise. Tap analog direct output with -20dB pad, bypassing cabinet simulation for pure raw power-amp capture.",
+        specs: {
+          level: "Line Level Balanced (-20dB Pad)",
+          ports: "Speaker In -> Dual XLR Balanced Out",
+          rate: "Analog Reactive Network",
+          latency: "0.00 ms (Analog Circuit)"
+        },
+        evidence: {
+          metric: "Safe Continuous Load: 100W RMS @ 8Ω",
+          axiom: "[Two Notes Captor X Lab Measurement]",
+          code: "web/parametric-amp.html#L210"
+        }
+      },
+      {
+        id: "AXE_IN",
+        title: "IK AXE I/O Line In 1",
+        subtitle: "Balanced XLR/TRS A/D Input",
+        category: "Interface Input",
+        x: 710,
+        y: 380,
+        w: 220,
+        h: 90,
+        color: "#38bdf8",
+        status: "CALIBRATED",
+        statusType: "calibrated",
+        desc: "Class-A PURE discrete input preamp converting attenuated reactive load signal back into digital domain with 117dB dynamic range and ultra-flat frequency response.",
+        specs: {
+          level: "+4 dBu Balanced Line",
+          ports: "Combo XLR/TRS Input 1",
+          rate: "48,000 Hz A/D Conversion",
+          latency: "< 0.42ms A/D Conversion"
+        },
+        evidence: {
+          metric: "Input Headroom: +24 dBu before clip",
+          axiom: "[IK A/D Calibration Profile]",
+          code: "scripts/reamp_automation.py#L125"
+        }
+      },
+      {
+        id: "NL_DAEMON",
+        title: "NL Daemon Bridge",
+        subtitle: "FastAPI Automation Server (5042)",
+        category: "Control Plane",
+        x: 140,
+        y: 380,
+        w: 200,
+        h: 90,
+        color: "#a855f7",
+        status: "ONLINE",
+        statusType: "online",
+        desc: "Python 3.12 FastAPI microservice serving on port 5042. Coordinates batch parameter sweep generation, listens to REAPER OSC cues, logs stylometric telemetry, and feeds PyTorch training workers.",
+        specs: {
+          level: "JSON over REST & WebSocket",
+          ports: "TCP Port 5042 (localhost / LAN)",
+          rate: "Event Loop (AsyncIO 1000 Hz)",
+          latency: "< 1.5ms REST Roundtrip"
+        },
+        evidence: {
+          metric: "P99 Response Latency < 4ms",
+          axiom: "[FastAPI ASGI Benchmark]",
+          code: "scripts/nl_daemon_bridge.py#L60-L115"
+        }
+      },
+      {
+        id: "CATMLP_DSP",
+        title: "PyTorch CatMLP & WaveNet",
+        subtitle: "Parametric Neural Audio Model",
+        category: "Neural DSP Engine",
+        x: 320,
+        y: 560,
+        w: 260,
+        h: 95,
+        color: "#10b981",
+        status: "ONLINE",
+        statusType: "online",
+        desc: "State-of-the-art neural parametric amp simulator combining 1D Dilated Convolutions (WaveNet architecture) conditioned via FiLM layers on the 6 continuous knob parameters of the Marshall Origin 50.",
+        specs: {
+          level: "PyTorch 2.5 CUDA 12.4 Tensors",
+          ports: "GPU Memory / Tensor Cores",
+          rate: "48kHz Continuous Inference",
+          latency: "< 0.8ms on RTX 4090"
+        },
+        evidence: {
+          metric: "ESR Loss < 0.008 across 20 validation sweeps",
+          axiom: "[CatMLP Research Architecture paper]",
+          code: "web/colab_train_parametric_nam.ipynb#L45"
+        }
+      },
+      {
+        id: "SPECTRAL_LOSS",
+        title: "Multi-Res STFT Loss",
+        subtitle: "Objective Error & Gradient Descent",
+        category: "Validation Engine",
+        x: 740,
+        y: 560,
+        w: 260,
+        h: 95,
+        color: "#ec4899",
+        status: "CALIBRATED",
+        statusType: "calibrated",
+        desc: "Multi-Resolution Short-Time Fourier Transform (STFT) spectral loss combined with Error-to-Signal Ratio (ESR) loss that backpropagates exact harmonic tube saturation errors into the CatMLP weights.",
+        specs: {
+          level: "Loss Loss Metric [0.0 - 1.0]",
+          ports: "GPU Backprop Autograd Engine",
+          rate: "FFT sizes: [512, 1024, 2048]",
+          latency: "Backprop Step: ~12ms / batch"
+        },
+        evidence: {
+          metric: "Spectral Convergence > 99.2%",
+          axiom: "[Audo-DSP STFT Loss Axiom]",
+          code: "web/colab_train_parametric_nam.ipynb#L120"
+        }
+      }
+    ];
+
+    const EDGES = [
+      {
+        from: "REAPER",
+        to: "AXE_OUT",
+        label: "48kHz Dry Audio",
+        sublabel: "D/A Line 5",
+        type: "digital",
+        color: "#0ea5e9"
+      },
+      {
+        from: "AXE_OUT",
+        to: "REDEYE",
+        label: "+4dBu Balanced TRS",
+        sublabel: "Line Level",
+        type: "analog",
+        color: "#f59e0b"
+      },
+      {
+        from: "REDEYE",
+        to: "MARSHALL_50",
+        label: "Instrument Hi-Z",
+        sublabel: "1MΩ Guitar Level",
+        type: "analog",
+        color: "#eab308"
+      },
+      {
+        from: "MARSHALL_50",
+        to: "CAPTOR_X",
+        label: "50W Speaker Level",
+        sublabel: "8Ω Reactive Load",
+        type: "speaker",
+        color: "#f97316"
+      },
+      {
+        from: "CAPTOR_X",
+        to: "AXE_IN",
+        label: "-20dB Attenuated",
+        sublabel: "Balanced XLR Line",
+        type: "analog",
+        color: "#38bdf8"
+      },
+      {
+        from: "AXE_IN",
+        to: "REAPER",
+        label: "Re-Amped Return Track",
+        sublabel: "A/D Channel 1",
+        type: "digital",
+        color: "#0ea5e9"
+      },
+      {
+        from: "REAPER",
+        to: "NL_DAEMON",
+        label: "ReaScript OSC / Timecode",
+        sublabel: "Sweep Protocol",
+        type: "control",
+        color: "#a855f7"
+      },
+      {
+        from: "NL_DAEMON",
+        to: "CATMLP_DSP",
+        label: "Knob Vectors & Batches",
+        sublabel: "Async IO (5042)",
+        type: "control",
+        color: "#a855f7"
+      },
+      {
+        from: "CATMLP_DSP",
+        to: "SPECTRAL_LOSS",
+        label: "Predicted Audio y_hat",
+        sublabel: "Neural Inference",
+        type: "tensor",
+        color: "#10b981"
+      },
+      {
+        from: "REAPER",
+        to: "SPECTRAL_LOSS",
+        label: "Ground Truth Wet WAV",
+        sublabel: "Target Audio y",
+        type: "tensor",
+        color: "#38bdf8"
+      },
+      {
+        from: "SPECTRAL_LOSS",
+        to: "CATMLP_DSP",
+        label: "Autograd Gradients ∇L",
+        sublabel: "AdamW Backprop",
+        type: "tensor",
+        color: "#ec4899"
+      }
+    ];
+
+    // --- State & Canvas Setup ---
+    const canvas = document.getElementById("diagram-canvas");
+    const ctx = canvas.getContext("2d");
+    let animationActive = true;
+    let particles = [];
+    let selectedNode = null;
+    let hoveredNode = null;
+    let highlightedEdgeIds = new Set();
+
+    // Viewport transform state (Pan & Zoom)
+    let view = {
+      x: 60,
+      y: 40,
+      scale: 0.95,
+      isPanning: false,
+      startX: 0,
+      startY: 0
+    };
+
+    function resizeCanvas() {
+      const container = document.getElementById("workspace-container");
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = container.clientWidth * dpr;
+      canvas.height = container.clientHeight * dpr;
+      ctx.scale(dpr, dpr);
+      render();
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+
+    // --- Particle System ---
+    class Particle {
+      constructor(edge) {
+        this.edge = edge;
+        this.t = Math.random();
+        this.speed = 0.003 + Math.random() * 0.003;
+        this.size = 3.5;
+      }
+
+      update() {
+        this.t += this.speed;
+        if (this.t > 1) {
+          this.t = 0;
+        }
+      }
+
+      getPosition() {
+        const fromNode = NODES.find(n => n.id === this.edge.from);
+        const toNode = NODES.find(n => n.id === this.edge.to);
+        if (!fromNode || !toNode) return { x: 0, y: 0 };
+
+        // Determine connection points
+        const p1 = getNodeAnchor(fromNode, toNode);
+        const p2 = getNodeAnchor(toNode, fromNode);
+
+        // Cubic Bézier calculation
+        const dx = p2.x - p1.x;
+        const dy = p2.y - p1.y;
+        const cx1 = p1.x + dx * 0.5;
+        const cy1 = p1.y;
+        const cx2 = p1.x + dx * 0.5;
+        const cy2 = p2.y;
+
+        const u = 1 - this.t;
+        const tt = this.t * this.t;
+        const uu = u * u;
+        const uuu = uu * u;
+        const ttt = tt * this.t;
+
+        const x = uuu * p1.x + 3 * uu * this.t * cx1 + 3 * u * tt * cx2 + ttt * p2.x;
+        const y = uuu * p1.y + 3 * uu * this.t * cy1 + 3 * u * tt * cy2 + ttt * p2.y;
+
+        return { x, y };
+      }
+    }
+
+    function initParticles() {
+      particles = [];
+      EDGES.forEach(edge => {
+        const count = 3;
+        for (let i = 0; i < count; i++) {
+          particles.push(new Particle(edge));
+        }
+      });
+    }
+
+    function getNodeAnchor(source, target) {
+      const srcCenter = { x: source.x + source.w / 2, y: source.y + source.h / 2 };
+      const tgtCenter = { x: target.x + target.w / 2, y: target.y + target.h / 2 };
+
+      const dx = tgtCenter.x - srcCenter.x;
+      const dy = tgtCenter.y - srcCenter.y;
+
+      // Connect from closest edge
+      if (Math.abs(dx) > Math.abs(dy)) {
+        if (dx > 0) {
+          return { x: source.x + source.w, y: srcCenter.y }; // Right
+        } else {
+          return { x: source.x, y: srcCenter.y }; // Left
+        }
+      } else {
+        if (dy > 0) {
+          return { x: srcCenter.x, y: source.y + source.h }; // Bottom
+        } else {
+          return { x: srcCenter.x, y: source.y }; // Top
+        }
+      }
+    }
+
+    // --- Rendering Loop ---
+    function render() {
+      const dpr = window.devicePixelRatio || 1;
+      const w = canvas.width / dpr;
+      const h = canvas.height / dpr;
+
+      ctx.save();
+      ctx.clearRect(0, 0, w, h);
+
+      // Apply Pan & Zoom Viewport
+      ctx.translate(view.x, view.y);
+      ctx.scale(view.scale, view.scale);
+
+      // Draw Grid Background
+      drawGrid(w, h);
+
+      // Draw Edges / Routes
+      EDGES.forEach(edge => drawEdge(edge));
+
+      // Draw Animated Particles
+      if (animationActive) {
+        particles.forEach(p => {
+          p.update();
+          const pos = p.getPosition();
+          ctx.beginPath();
+          ctx.arc(pos.x, pos.y, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = p.edge.color;
+          ctx.shadowColor = p.edge.color;
+          ctx.shadowBlur = 8;
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        });
+      }
+
+      // Draw Nodes
+      NODES.forEach(node => drawNode(node));
+
+      ctx.restore();
+
+      if (animationActive) {
+        requestAnimationFrame(render);
+      }
+    }
+
+    function drawGrid(w, h) {
+      const isLight = document.body.getAttribute("data-theme") === "light";
+      const gridColor = isLight ? "rgba(0, 0, 0, 0.05)" : "rgba(255, 255, 255, 0.04)";
+      const gridSize = 40;
+
+      // World bounds calculation
+      const left = -view.x / view.scale - 200;
+      const top = -view.y / view.scale - 200;
+      const right = (w - view.x) / view.scale + 200;
+      const bottom = (h - view.y) / view.scale + 200;
+
+      ctx.strokeStyle = gridColor;
+      ctx.lineWidth = 1;
+
+      ctx.beginPath();
+      for (let x = Math.floor(left / gridSize) * gridSize; x < right; x += gridSize) {
+        ctx.moveTo(x, top);
+        ctx.lineTo(x, bottom);
+      }
+      for (let y = Math.floor(top / gridSize) * gridSize; y < bottom; y += gridSize) {
+        ctx.moveTo(left, y);
+        ctx.lineTo(right, y);
+      }
+      ctx.stroke();
+    }
+
+    function drawEdge(edge) {
+      const fromNode = NODES.find(n => n.id === edge.from);
+      const toNode = NODES.find(n => n.id === edge.to);
+      if (!fromNode || !toNode) return;
+
+      const p1 = getNodeAnchor(fromNode, toNode);
+      const p2 = getNodeAnchor(toNode, fromNode);
+
+      const dx = p2.x - p1.x;
+      const dy = p2.y - p1.y;
+      const cx1 = p1.x + dx * 0.5;
+      const cy1 = p1.y;
+      const cx2 = p1.x + dx * 0.5;
+      const cy2 = p2.y;
+
+      const isHighlighted = highlightedEdgeIds.has(`${edge.from}->${edge.to}`);
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(p1.x, p1.y);
+      ctx.bezierCurveTo(cx1, cy1, cx2, cy2, p2.x, p2.y);
+
+      ctx.strokeStyle = isHighlighted ? "#ffffff" : edge.color;
+      ctx.lineWidth = isHighlighted ? 3 : 2;
+      ctx.globalAlpha = isHighlighted ? 1.0 : 0.65;
+      ctx.stroke();
+
+      // Draw Edge Label at midpoint
+      const midT = 0.5;
+      const u = 1 - midT;
+      const mx = u*u*u*p1.x + 3*u*u*midT*cx1 + 3*u*midT*midT*cx2 + midT*midT*midT*p2.x;
+      const my = u*u*u*p1.y + 3*u*u*midT*cy1 + 3*u*midT*midT*cy2 + midT*midT*midT*p2.y;
+
+      ctx.font = "9px ui-monospace, SFMono-Regular, monospace";
+      const textWidth = ctx.measureText(edge.label).width;
+
+      const isLight = document.body.getAttribute("data-theme") === "light";
+      ctx.fillStyle = isLight ? "rgba(255, 255, 255, 0.85)" : "rgba(11, 15, 25, 0.85)";
+      ctx.fillRect(mx - textWidth / 2 - 4, my - 8, textWidth + 8, 16);
+      ctx.strokeStyle = edge.color;
+      ctx.lineWidth = 1;
+      ctx.strokeRect(mx - textWidth / 2 - 4, my - 8, textWidth + 8, 16);
+
+      ctx.fillStyle = isLight ? "#0b1c30" : "#f1f5f9";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(edge.label, mx, my);
+
+      ctx.restore();
+    }
+
+    function drawNode(node) {
+      const isSelected = selectedNode && selectedNode.id === node.id;
+      const isHovered = hoveredNode && hoveredNode.id === node.id;
+      const isLight = document.body.getAttribute("data-theme") === "light";
+
+      ctx.save();
+
+      // Drop shadow / glow
+      if (isSelected || isHovered) {
+        ctx.shadowColor = node.color;
+        ctx.shadowBlur = 16;
+      } else {
+        ctx.shadowColor = "rgba(0, 0, 0, 0.3)";
+        ctx.shadowBlur = 8;
+      }
+
+      // Background rounded rect
+      const radius = 12;
+      ctx.beginPath();
+      ctx.roundRect(node.x, node.y, node.w, node.h, radius);
+      ctx.fillStyle = isLight ? "#ffffff" : "#131b2e";
+      ctx.fill();
+
+      // Border
+      ctx.lineWidth = isSelected ? 2.5 : (isHovered ? 2 : 1);
+      ctx.strokeStyle = isSelected ? "#38bdf8" : (isHovered ? node.color : (isLight ? "#cbd5e1" : "#1e293b"));
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+
+      // Color Header Bar
+      ctx.beginPath();
+      ctx.roundRect(node.x, node.y, node.w, 4, [radius, radius, 0, 0]);
+      ctx.fillStyle = node.color;
+      ctx.fill();
+
+      // Category Pill
+      ctx.font = "9px ui-monospace, SFMono-Regular, monospace";
+      ctx.fillStyle = node.color;
+      ctx.textAlign = "left";
+      ctx.fillText(node.category.toUpperCase(), node.x + 14, node.y + 20);
+
+      // Title
+      ctx.font = "bold 13px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+      ctx.fillStyle = isLight ? "#0b1c30" : "#f1f5f9";
+      ctx.fillText(node.title, node.x + 14, node.y + 40);
+
+      // Subtitle
+      ctx.font = "11px ui-monospace, SFMono-Regular, monospace";
+      ctx.fillStyle = isLight ? "#475569" : "#94a3b8";
+      ctx.fillText(node.subtitle, node.x + 14, node.y + 58);
+
+      // Status indicator dot & label
+      const statusX = node.x + node.w - 74;
+      const statusY = node.y + 16;
+      ctx.beginPath();
+      ctx.arc(statusX, statusY, 3.5, 0, Math.PI * 2);
+      ctx.fillStyle = node.statusType === "online" ? "#10b981" : "#0ea5e9";
+      ctx.fill();
+
+      ctx.font = "9px ui-monospace, SFMono-Regular, monospace";
+      ctx.fillStyle = node.statusType === "online" ? "#10b981" : "#0ea5e9";
+      ctx.textAlign = "left";
+      ctx.fillText(node.status, statusX + 6, statusY + 3);
+
+      // Bottom spec highlight badge
+      ctx.font = "10px ui-monospace, SFMono-Regular, monospace";
+      ctx.fillStyle = isLight ? "#64748b" : "#64748b";
+      ctx.fillText(node.specs.level, node.x + 14, node.y + 78);
+
+      ctx.restore();
+    }
+
+    // --- Interactive Mouse & Touch Handlers ---
+    canvas.addEventListener("mousedown", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = (e.clientX - rect.left - view.x) / view.scale;
+      const mouseY = (e.clientY - rect.top - view.y) / view.scale;
+
+      // Check if clicking a node
+      const clicked = NODES.slice().reverse().find(n => (
+        mouseX >= n.x && mouseX <= n.x + n.w &&
+        mouseY >= n.y && mouseY <= n.y + n.h
+      ));
+
+      if (clicked) {
+        selectNode(clicked);
+      } else {
+        view.isPanning = true;
+        view.startX = e.clientX - view.x;
+        view.startY = e.clientY - view.y;
+        canvas.classList.add("panning");
+      }
+    });
+
+    window.addEventListener("mousemove", (e) => {
+      if (view.isPanning) {
+        view.x = e.clientX - view.startX;
+        view.y = e.clientY - view.startY;
+        if (!animationActive) render();
+        return;
+      }
+
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = (e.clientX - rect.left - view.x) / view.scale;
+      const mouseY = (e.clientY - rect.top - view.y) / view.scale;
+
+      const hovered = NODES.slice().reverse().find(n => (
+        mouseX >= n.x && mouseX <= n.x + n.w &&
+        mouseY >= n.y && mouseY <= n.y + n.h
+      ));
+
+      if (hovered !== hoveredNode) {
+        hoveredNode = hovered;
+        canvas.style.cursor = hovered ? "pointer" : "grab";
+        if (!animationActive) render();
+      }
+    });
+
+    window.addEventListener("mouseup", () => {
+      view.isPanning = false;
+      canvas.classList.remove("panning");
+    });
+
+    canvas.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+
+      const zoomFactor = e.deltaY < 0 ? 1.08 : 0.92;
+      const newScale = Math.min(Math.max(view.scale * zoomFactor, 0.4), 2.5);
+
+      view.x = mouseX - (mouseX - view.x) * (newScale / view.scale);
+      view.y = mouseY - (mouseY - view.y) * (newScale / view.scale);
+      view.scale = newScale;
+
+      if (!animationActive) render();
+    }, { passive: false });
+
+    // --- Node Inspection & Controls ---
+    function selectNode(node) {
+      selectedNode = node;
+      highlightConnectedNodes();
+
+      document.getElementById("drawerNodeTitle").innerHTML = `<span>📦</span> ${node.category}`;
+      document.getElementById("drawerNodeName").innerText = node.title;
+      document.getElementById("drawerNodeDesc").innerText = node.desc;
+      document.getElementById("drawerSpecLevel").innerText = node.specs.level;
+      document.getElementById("drawerSpecPorts").innerText = node.specs.ports;
+      document.getElementById("drawerSpecRate").innerText = node.specs.rate;
+      document.getElementById("drawerSpecLatency").innerText = node.specs.latency;
+      document.getElementById("drawerSpecMetric").innerText = node.evidence.metric;
+      document.getElementById("drawerSpecAxiom").innerText = node.evidence.axiom;
+      document.getElementById("drawerCodeAnchor").innerText = node.evidence.code;
+
+      const statusBadge = document.getElementById("drawerNodeStatus");
+      statusBadge.innerText = node.status;
+      statusBadge.className = `status-badge status-${node.statusType}`;
+
+      document.getElementById("inspector-drawer").classList.add("open");
+      fitView();
+    }
+
+    function closeInspector() {
+      document.getElementById("inspector-drawer").classList.remove("open");
+      selectedNode = null;
+      highlightedEdgeIds.clear();
+      fitView();
+    }
+
+    function highlightConnectedNodes() {
+      highlightedEdgeIds.clear();
+      if (!selectedNode) return;
+
+      EDGES.forEach(e => {
+        if (e.from === selectedNode.id || e.to === selectedNode.id) {
+          highlightedEdgeIds.add(`${e.from}->${e.to}`);
+        }
+      });
+      if (!animationActive) render();
+    }
+
+    // --- Toolbar Actions ---
+    function toggleTheme() {
+      const current = document.body.getAttribute("data-theme");
+      const next = current === "light" ? "dark" : "light";
+      document.body.setAttribute("data-theme", next);
+      if (!animationActive) render();
+    }
+
+    function toggleParticles() {
+      animationActive = !animationActive;
+      const btn = document.getElementById("animToggleBtn");
+      btn.innerText = animationActive ? "⏸️ Pause Motion" : "▶️ Resume Motion";
+      if (animationActive) {
+        requestAnimationFrame(render);
+      }
+    }
+
+    function zoomIn() {
+      view.scale = Math.min(view.scale * 1.2, 2.5);
+      if (!animationActive) render();
+    }
+
+    function zoomOut() {
+      view.scale = Math.max(view.scale / 1.2, 0.4);
+      if (!animationActive) render();
+    }
+
+    function resetZoom() {
+      view.scale = 1.0;
+      if (!animationActive) render();
+    }
+
+    function fitView() {
+      const container = document.getElementById("workspace-container");
+      const drawerOpen = document.getElementById("inspector-drawer").classList.contains("open");
+      const availableWidth = container.clientWidth - (drawerOpen ? 390 : 0);
+      const availableHeight = container.clientHeight;
+
+      let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+      NODES.forEach(n => {
+        minX = Math.min(minX, n.x);
+        minY = Math.min(minY, n.y);
+        maxX = Math.max(maxX, n.x + n.w);
+        maxY = Math.max(maxY, n.y + n.h);
+      });
+
+      const graphWidth = maxX - minX;
+      const graphHeight = maxY - minY;
+      const padding = 60;
+
+      const scaleX = (availableWidth - padding * 2) / graphWidth;
+      const scaleY = (availableHeight - padding * 2) / graphHeight;
+      const targetScale = Math.min(Math.max(Math.min(scaleX, scaleY), 0.5), 1.1);
+
+      view.scale = targetScale;
+      view.x = (availableWidth - graphWidth * targetScale) / 2 - minX * targetScale;
+      view.y = (availableHeight - graphHeight * targetScale) / 2 - minY * targetScale;
+
+      if (!animationActive) render();
+    }
+
+    function exportPNG() {
+      const exportCanvas = document.createElement("canvas");
+      exportCanvas.width = canvas.width;
+      exportCanvas.height = canvas.height;
+      const expCtx = exportCanvas.getContext("2d");
+      expCtx.drawImage(canvas, 0, 0);
+
+      const link = document.createElement("a");
+      link.download = "Justin_Muir_ReAmp_Archify_Architecture.png";
+      link.href = exportCanvas.toDataURL("image/png");
+      link.click();
+    }
+
+    // --- Initialization ---
+    initParticles();
+    resizeCanvas();
+    fitView();
+  </script>
+</body>
+</html>

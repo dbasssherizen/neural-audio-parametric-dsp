@@ -164,6 +164,14 @@ async function main() {
     console.log('📲 GOOGLE MESSAGES LOGIN / PAIRING MODE:');
     console.log('A Google Chrome window is open. Please sign in with your Google Account or approve on your Pixel.');
     
+    // Bring Google Chrome to the front
+    try {
+      const { exec } = require('child_process');
+      exec('osascript -e \'tell application "Google Chrome" to activate\'');
+    } catch (e) {
+      // ignore
+    }
+
     // If there is a "Sign in" button on the landing page, click it to streamline the sign-in prompt
     try {
       const signInBtn = await page.$('button:has-text("Sign in"), button:has-text("Sign In"), a:has-text("Sign in"), a:has-text("Sign In")');
@@ -175,11 +183,11 @@ async function main() {
       // ignore
     }
 
-    console.log('Waiting for authentication to complete (up to 3 minutes)...');
+    console.log('Waiting for authentication to complete (up to 5 minutes)...');
 
     // Wait until conversations list appears
     try {
-      await page.waitForSelector('mws-conversations-list, a.conversation, div[role="list"]', { timeout: 180000 });
+      await page.waitForSelector('mws-conversations-list, a.conversation, div[role="list"]', { timeout: 300000 });
       console.log('🎉 GOOGLE MESSAGES AUTHENTICATED SUCCESSFULLY! Session saved in isolated profile.');
     } catch (e) {
       console.log('Timeout waiting for sign-in. Rerun --login when ready.');
