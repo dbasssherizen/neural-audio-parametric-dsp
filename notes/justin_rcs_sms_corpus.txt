@@ -1,0 +1,84 @@
+# JUSTIN MUIR VERBATIM RCS/SMS TEXT COMMUNICATIONS CORPUS
+# Audited and Diarized: 2026-10-08
+# Source Channels: Google Messages RCS (+1 630-418-9227) & Wireless Phone Bridge
+# Subject: Parametric NAM Pipeline, Sweep Alignment, CUDA Hardware, and Clean-Room Isolation
+
+[SESSION_START: 2026-10-07 16:23:00 CDT]
+[CHANNEL: GOOGLE_MESSAGES_RCS]
+[PARTICIPANTS: Justin Muir (+1 630-418-9227), Daniel Bass Sherizen]
+
+[SPEAKER: JUSTIN_MUIR]
+output loaded just fine along with all the pot values
+
+[SPEAKER: JUSTIN_MUIR]
+Render completed a bit ago. The profile is def off. I'll check the GitHub pulls if there is any thing mentioned. I need to also check few other options to isolate if it's the training or plugin/app. But hey, it's a step forward.
+
+[SPEAKER: JUSTIN_MUIR]
+Not sure what went wrong. I need to step back for a bit. I'd like try to handle the GitHub pulls from start to finish make sure their isn't anything "unclean" going on.
+
+[SPEAKER: JUSTIN_MUIR]
+I'm a purist so to speak. I'm not 100% if anything has been modified.
+
+[SPEAKER: JUSTIN_MUIR]
+The old me would say "give me shell access." But you've created a webUI to handle the GPU load. I feel like we may have some script issues bouncing between one git hub to another.
+
+[SPEAKER: DANIEL_BASS_SHERIZEN]
+It's possible. Truly dunno. Dump any logs or clues into our comm streams and my watcher script will pick it up sooner or later and investigate
+
+[SPEAKER: JUSTIN_MUIR]
+But this is all part of the process
+
+[SPEAKER: JUSTIN_MUIR]
+You know how this all goes
+
+[SPEAKER: DANIEL_BASS_SHERIZEN]
+Iterate. Observe. Repeat. Ad infinitum
+
+[SPEAKER: JUSTIN_MUIR]
+I indeed do. I'm currently installing some packages and getting latest GitHub pull as there was few changes already.
+
+[SPEAKER: JUSTIN_MUIR]
+I'll get this working one way or another. I'm usually hell bent on figuring out why something isn't working properly
+
+[SPEAKER: DANIEL_BASS_SHERIZEN]
+I know. It's why I structured your learnings as I did
+
+[SPEAKER: JUSTIN_MUIR]
+Is straight up 22 shell access an option?
+
+[SPEAKER: JUSTIN_MUIR]
+Ideally same CLI that's running on CUDA hardware.
+
+[SPEAKER: DANIEL_BASS_SHERIZEN]
+Hmm. Dunno. Will check. Almost home
+
+[SPEAKER: JUSTIN_MUIR]
+Ok. So I've been digging in what may perhaps be the issue. So I used the truncated.wav sweep as set forth by MATRIXnam. It would appear that mrgeneko is calling a much larger sweep file ie the public sweep that's used to capture a single snapshot
+
+[SPEAKER: JUSTIN_MUIR]
+That could explain why the data is what I'd say is incomplete currently
+
+[SPEAKER: JUSTIN_MUIR]
+We originally set the project scope using Matrix GitHub's specs then switched to gene repo. It feels like we sort of patch worked it. So I'd like to start fresh. I'm looking into seeing how I go about that.
+
+[SPEAKER: JUSTIN_MUIR]
+I hope that makes sense what I said
+
+[SPEAKER: DANIEL_BASS_SHERIZEN]
+Scraping this thread for detail. Will let you know what happens
+
+[SPEAKER: JUSTIN_MUIR]
+Ideally I'd like to purge anything from the prior repo and such. They clearly aren't interchangeable
+
+[SPEAKER: JUSTIN_MUIR]
+I give up at the moment. Been reading thru genes repo and trying to understand how the knob matrix aka csv is running out of options
+
+[SPEAKER: JUSTIN_MUIR]
+using the tone3k wav vs truncated and re run the colab script using same matrix/wav output format.
+
+[SPEAKER: DANIEL_BASS_SHERIZEN]
+Back home. Digging into this. Gimme a few. Fixed (I think). Max will send you details
+
+[SPEAKER: JUSTIN_MUIR]
+Alright cool. Thanks
+[SESSION_END]

@@ -4225,7 +4225,7 @@ files.download("./marshall_origin50.param.nam")</code></pre>
                 <h4 class="text-base sm:text-lg font-bold text-white">Justin's AI Stylometric Voice Mirror &amp; ELI5 Explainer</h4>
                 <span class="text-[10px] font-mono uppercase bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 px-2 py-0.5 rounded-full">4-Level Cognitive Dial</span>
               </div>
-              <p class="text-xs text-slate-400 mt-0.5">Audited from 149 call turns (1,395 verified words) + ELI5 physical gear analogies: Justin teaches Justin AI concepts in his own tone or via patchbay metaphors.</p>
+              <p class="text-xs text-slate-400 mt-0.5">Audited from 168 multi-channel turns (1,768 verified words across Meet calls & RCS texts) + ELI5 physical gear analogies: Justin teaches Justin AI concepts in his own authentic tone or via patchbay metaphors.</p>
             </div>
           </div>
 
@@ -4246,7 +4246,7 @@ files.download("./marshall_origin50.param.nam")</code></pre>
           </div>
         </div>
 
-        <!-- Topic Buttons Grid (8 Core Audio AI Concepts) -->
+        <!-- Topic Buttons Grid (12 Core Audio AI & Systems Concepts) -->
         <div class="space-y-2">
           <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
             <span>⚡</span> <span>Instant Cognitive Translations (Click to Switch Topic):</span>
@@ -4276,6 +4276,18 @@ files.download("./marshall_origin50.param.nam")</code></pre>
             <button type="button" onclick="askJustinVoiceMirror('python_vs_reaper')" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-teal-300 border border-teal-500/30 transition text-left cursor-pointer flex items-center gap-2">
               <span>🐍</span> <span>Python vs REAPER Lua</span>
             </button>
+            <button type="button" onclick="askJustinVoiceMirror('ssh_shell_vs_webui')" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-fuchsia-300 border border-fuchsia-500/30 transition text-left cursor-pointer flex items-center gap-2">
+              <span>💻</span> <span>Port 22 SSH vs WebUI</span>
+            </button>
+            <button type="button" onclick="askJustinVoiceMirror('sweep_alignment_loss')" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-orange-300 border border-orange-500/30 transition text-left cursor-pointer flex items-center gap-2">
+              <span>📏</span> <span>190s Sweep vs Truncated</span>
+            </button>
+            <button type="button" onclick="askJustinVoiceMirror('patchwork_vs_cleanroom')" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-lime-300 border border-lime-500/30 transition text-left cursor-pointer flex items-center gap-2">
+              <span>🧼</span> <span>Clean-Room vs Patchwork</span>
+            </button>
+            <button type="button" onclick="askJustinVoiceMirror('pot_mapping_csv')" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-yellow-300 border border-yellow-500/30 transition text-left cursor-pointer flex items-center gap-2">
+              <span>📊</span> <span>Potentiometer CSV Schema</span>
+            </button>
           </div>
         </div>
 
@@ -4293,7 +4305,7 @@ files.download("./marshall_origin50.param.nam")</code></pre>
             <div class="flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
               <span class="font-bold text-indigo-300" id="mirrorSpeakerLabel">Justin Muir (AI Voice Clone)</span>
-              <span class="text-[10px] text-slate-500 font-mono" id="mirrorCadenceLabel">Level 2 • 9.36 w/turn • Dry Midwestern Realism</span>
+              <span class="text-[10px] text-slate-500 font-mono" id="mirrorCadenceLabel">Level 2 • 10.5 w/turn • Midwestern Hacker & CLI Purist</span>
             </div>
             <button type="button" onclick="copyMirrorResponse()" class="text-[10px] font-mono text-indigo-400 hover:text-white transition cursor-pointer">Copy Answer</button>
           </div>
@@ -9025,6 +9037,92 @@ def listen_for_reaper_trigger(port=5042):
         print(f"Received REAPER OSC command: {msg['action']}")
         # Execute heavy PyTorch GPU sweep without blocking DAW transport`,
         conductor: `Decoupling synchronous DAW transport threads from asynchronous tensor execution prevents thread priority inversion and audio buffer starvation.`
+      },
+
+      ssh_shell_vs_webui: {
+        title: "Port 22 SSH Shell vs WebUI Cloud Abstractions",
+        eli5: `Imagine you want to repair your bicycle's chain. A shiny toy box with cartoon buttons claims: 'Press button to fix bike!' You press the button, but nothing happens and the box doesn't tell you why.
+Instead of trusting a mysterious toy box, you grab a real steel wrench and look directly at the metal chain links with your own eyes.
+Port 22 SSH is that real steel wrench: it lets you open the actual computer engine room directly without guessing what a website is doing behind your back.`,
+        justin: `The old me would say 'give me shell access.' But when people build a flashy webUI to handle GPU loads, you're constantly wondering what's happening under the hood when a job hangs.
+Is straight up 22 shell access an option? Hell yes, because as an engineer, I want the exact same CLI running on CUDA hardware. When you SSH directly into the machine, you can run nvidia-smi, strace, check /var/log, and inspect real memory without some browser spinner timing out or masking a missing .so library. Give me SSH keys, drop me into bash, and let me see the actual terminal stdout.`,
+        code: `# Secure Port 22 Key-Based SSH to Remote CUDA Training Box
+ssh -i ~/.ssh/id_ed25519 justin@192.168.20.50
+
+# Inspect real-time GPU VRAM and compute utilization
+watch -n 1 nvidia-smi --query-gpu=utilization.gpu,memory.used,memory.total,temperature.gpu --format=csv
+
+# Trace missing dynamic dependencies if PyTorch fails to link CUDA
+strace -e openat,access python3 param_train.py 2>&1 | grep -i "\.so"`,
+        conductor: `Direct POSIX TTY encapsulation over RFC 4253 SSH transport guarantees unmediated observability into kernel ring buffers, CUDA execution queues, and POSIX process lifecycles, eliminating transient state deserialization errors endemic to multi-tier web UI proxies.`
+      },
+
+      sweep_alignment_loss: {
+        title: "190s Reference Sweep vs Truncated Chirps & Latency Alignment",
+        eli5: `Imagine singing a duet with a friend. If they start singing 2 seconds after you, the song sounds like an echoey mess! To sing together perfectly, you both count down: '3, 2, 1, GO!'
+In neural amp modeling, the 190-second sweep file has that special countdown sound at the start. If you accidentally cut the countdown off (using a truncated file), the computer can't tell when the guitar sound starts, and your virtual amp sounds muffled or completely out of sync.`,
+        justin: `Ok, so I've been digging into what may perhaps be the issue. I used the truncated.wav sweep as set forth by MATRIXnam, but mrgeneko is calling a much larger sweep file — the full 190s public sweep that's used to capture a single snapshot.
+That explains why the data was incomplete! When you train a neural network on an amp take, the training script runs a cross-correlation between input.wav and your recorded output.wav to align them down to the exact sample. If your reference file is a 30s truncated chirp while the code expects the 190s standard sweep with calibration silence, the cross-correlation peak misses by 50,000 samples. The render completes, but the profile is def off. Use the full 190s dry sweep, and the phase alignment locks in dead center.`,
+        code: `import numpy as np
+import scipy.signal as signal
+
+def align_audio_lag(reference_sweep, recorded_amp_take):
+    # Cross-correlation to find exact sample latency delay
+    corr = signal.correlate(recorded_amp_take, reference_sweep, mode='full')
+    lag = np.argmax(np.abs(corr)) - (len(reference_sweep) - 1)
+    print(f"Detected hardware roundtrip latency: {lag} samples ({lag / 48000 * 1000:.2f} ms)")
+    # Align waveforms for zero-phase error model training
+    aligned_take = recorded_amp_take[max(0, lag):]
+    return aligned_take`,
+        conductor: `Temporal cross-correlation R_{xy}[m] = sum_n x[n] y[n-m] maximizes mutual information to estimate delay tau = argmax |R_{xy}[m]|. Truncating calibration headers destroys baseline chirp autocorrelation peaks, inducing non-causal phase distortion and elevated ESR loss during WaveNet optimization.`
+      },
+
+      patchwork_vs_cleanroom: {
+        title: "Software Hygiene: Patchworked Code vs Clean-Room Script Isolation",
+        eli5: `Imagine building a lego castle where half the bricks are wooden Lincoln logs and the other half are plastic mega-blocks. If you force them together with glue, the whole tower wobbles and collapses!
+It's much better to clear the table completely, pick one box of real Lego bricks, and build the castle properly from the instructions.
+In programming, 'clean-room' means clearing out old, messy files so your project is solid, clean, and never wobbles.`,
+        justin: `Look, we originally set the project scope using the Matrix repo specs, and then switched to Gene's (mrgeneko) repo. It feels like we sort of patch worked it, and they clearly aren't interchangeable.
+I'm a purist so to speak. I'm usually hell bent on figuring out why something isn't working properly, but I'd like to purge anything from the prior repo and start fresh. I want to handle the GitHub pulls from start to finish to make sure there isn't anything 'unclean' going on.
+When you patchwork repos together, you get ghost dependencies, conflicting CSV column headers, and scripts fighting over file paths. The right move is clean-room isolation: one clean virtual environment, one cloned upstream repo, and one deterministic dataset pipeline. It's a step forward, and it keeps your signal path pristine.`,
+        code: `# Clean-Room Repository Initialization (Zero Contamination)
+mkdir -p ~/studio_cleanroom && cd ~/studio_cleanroom
+rm -rf old_patchworked_nam_repo
+
+# Fresh clone of upstream mrgeneko parametric repo
+git clone https://github.com/mrgeneko/neural-amp-modeler.git
+cd neural-amp-modeler
+
+# Isolated Python 3.12 Virtual Environment
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt`,
+        conductor: `Clean-room containment isolates runtime dependency graphs and prevents state pollution across divergent upstream ASTs. Enforcing deterministic package locks and isolated virtual environments guarantees reproducible training artifacts across heterogeneous compute clusters.`
+      },
+
+      pot_mapping_csv: {
+        title: "Potentiometer CSV Normalization vs Filename Token Parsing",
+        eli5: `Imagine labeling 50 audio cassettes by writing tiny, messy scribbles on the plastic case with a bad pen: 'G2_B5_M7_T3_V9'. If the ink smudges, you have no idea what song is on the tape!
+Instead, you keep a neat printed ledger table in a notebook: Column 1 is Tape Number, Column 2 is Volume, Column 3 is Bass, Column 4 is Treble.
+A CSV table is that neat printed notebook: the computer can read every number clearly without guessing what smudged scribbles mean.`,
+        justin: `All right, so here's the deal with the knob matrix. In some older repos, people tried encoding knob values into the filename itself, like origin50_g2.0_b5.0_m7.0_t8.0.wav. That's a nightmare — if you mistype one underscore or your DAW exports amp_run_001.wav, the Python script throws an unhandled regex exception and crashes.
+mrgeneko has a native --mapping-csv flag. That means your WAV files stay cleanly named amp_run_001.wav, amp_run_002.wav, and you keep a single structured CSV spreadsheet with headers filename,Gain,Bass,Mids,Treble,Presence,Master.
+Output loaded just fine along with all the pot values. The script parses the table into normalized floating-point tensors between 0.0 and 1.0, matches each WAV file directly, and trains the CatMLP with zero filename hacking.`,
+        code: `import pandas as pd
+import torch
+
+def load_parametric_mapping_csv(csv_path="justin_nam_run_sheet.csv"):
+    df = pd.read_csv(csv_path)
+    # Expected schema: filename, Gain, Bass, Mids, Treble, Presence, Master
+    print(f"Loaded {len(df)} potentiometer takes:")
+    print(df.head(3))
+    
+    # Normalize 0-10 analog pot markings to [0.0, 1.0] neural conditioner weights
+    knob_cols = ['Gain', 'Bass', 'Mids', 'Treble', 'Presence', 'Master']
+    knob_tensors = torch.tensor(df[knob_cols].values, dtype=torch.float32) / 10.0
+    return df['filename'].tolist(), knob_tensors`,
+        conductor: `Decoupling acoustic artifact identifiers from multidimensional parameter tensors via relational CSV schemas enforces Third Normal Form (3NF) data integrity, replacing brittle lexical tokenization with vectorized matrix ingestion.`
       }
     };
 
@@ -9075,7 +9173,7 @@ def listen_for_reaper_trigger(port=5042):
           cadence.textContent = "Level 1 • Zero Jargon • Physical Hardware Intuition";
         } else if (persona === 'justin') {
           speaker.textContent = "Justin Muir (AI Voice Clone)";
-          cadence.textContent = "Level 2 • 9.36 w/turn • Dry Midwestern Realism";
+          cadence.textContent = "Level 2 • 10.5 w/turn • Midwestern Hacker & CLI Purist";
         } else if (persona === 'code') {
           speaker.textContent = "Python / BAML Compiler View";
           cadence.textContent = "Level 3 • Executable Code & Type Contracts";
@@ -9152,6 +9250,14 @@ def listen_for_reaper_trigger(port=5042):
           matchedKey = 'pfsense_vlan';
         } else if (lower.includes('python') || lower.includes('reaper') || lower.includes('script') || lower.includes('lua')) {
           matchedKey = 'python_vs_reaper';
+        } else if (lower.includes('ssh') || lower.includes('shell') || lower.includes('22') || lower.includes('cli') || lower.includes('webui') || lower.includes('cuda')) {
+          matchedKey = 'ssh_shell_vs_webui';
+        } else if (lower.includes('truncated') || lower.includes('190s') || lower.includes('alignment') || lower.includes('chirp') || lower.includes('tone3k') || lower.includes('lag')) {
+          matchedKey = 'sweep_alignment_loss';
+        } else if (lower.includes('patchwork') || lower.includes('clean') || lower.includes('purist') || lower.includes('unclean') || lower.includes('start fresh') || lower.includes('purge')) {
+          matchedKey = 'patchwork_vs_cleanroom';
+        } else if (lower.includes('csv') || lower.includes('mapping') || lower.includes('pot') || lower.includes('run sheet') || lower.includes('runsheet')) {
+          matchedKey = 'pot_mapping_csv';
         }
 
         if (matchedKey && JUSTIN_MIRROR_KNOWLEDGE[matchedKey]) {
