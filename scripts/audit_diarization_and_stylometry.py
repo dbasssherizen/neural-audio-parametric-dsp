@@ -22,7 +22,7 @@ SPEAKER_DANIEL = "DANIEL_BASS_SHERIZEN"
 JUSTIN_TAG = "[SPEAKER: JUSTIN_MUIR]"
 DANIEL_TAG = "[SPEAKER: DANIEL_BASS_SHERIZEN]"
 
-def audit_and_diarize():
+def audit_and_diarize(quiet: bool = False):
     call_files = sorted(glob.glob(os.path.join(NOTES_DIR, "call_*_transcript_*.txt")))
     call_files = [f for f in call_files if not f.endswith(".raw.txt")]
     
@@ -171,7 +171,9 @@ def audit_and_diarize():
         "load", "box", "tube", "amp", "sweep", "dependencies", "ide", "notes", "paper",
         "diagramming", "flow", "charts", "network", "modded", "origin", "marshall", "strace",
         "cuda", "shell", "ssh", "truncated", "mapping", "csv", "clean", "purist",
-        "patchwork", "isolate", "render", "pot", "values", "pulls", "colab", "tone3k"
+        "patchwork", "isolate", "render", "pot", "values", "pulls", "colab", "tone3k",
+        "phase", "correlation", "matrixnam", "mrgeneko", "alignment", "loss", "vram",
+        "latency", "dithering", "gain", "staging", "impedance", "bias"
     ]
     tech_counts = {k: word_freq[k] for k in tech_keywords if k in word_freq}
 
@@ -281,13 +283,16 @@ def audit_and_diarize():
     with open(profile_path, "w", encoding="utf-8") as pf:
         json.dump(updated_profile, pf, indent=2)
 
-    print("=== DIARIZATION & STYLOMETRIC AUDIT COMPLETE ===")
-    print(f"Justin Muir:  {total_combined_justin_turns} turns, {total_combined_justin_words} words (Voice: {total_justin_turns} turns, RCS: {rcs_justin_turns} turns)")
-    print(f"Daniel Bass:  {total_daniel_turns} turns, {total_daniel_words} words")
-    print(f"Total Turns:  {total_combined_justin_turns + total_daniel_turns}")
-    print("Cross-contamination: 0.0% (Zero cross-speaker bleed)")
-    print(f"Audit certificate and profile saved to: {profile_path}")
+    if not quiet:
+        print("=== DIARIZATION & STYLOMETRIC AUDIT COMPLETE ===")
+        print(f"Justin Muir:  {total_combined_justin_turns} turns, {total_combined_justin_words} words (Voice: {total_justin_turns} turns, RCS: {rcs_justin_turns} turns)")
+        print(f"Daniel Bass:  {total_daniel_turns} turns, {total_daniel_words} words")
+        print(f"Total Turns:  {total_combined_justin_turns + total_daniel_turns}")
+        print("Cross-contamination: 0.0% (Zero cross-speaker bleed)")
+        print(f"Audit certificate and profile saved to: {profile_path}")
+
+    return updated_profile
 
 if __name__ == "__main__":
-    audit_and_diarize()
+    audit_and_diarize(quiet=False)
 

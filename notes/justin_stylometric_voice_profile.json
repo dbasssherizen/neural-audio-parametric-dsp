@@ -2,7 +2,7 @@
   "audit_certificate": {
     "status": "VERIFIED_100%",
     "auditor": "Antigravity Sovereign Diarization Sentinel",
-    "audit_timestamp": "2026-10-08T21:36:19.094959",
+    "audit_timestamp": "2026-10-08T21:47:09.150412",
     "corpus_sources": [
       "call_1_transcript_20261006.txt",
       "call_2_transcript_20261006.txt",
@@ -67,7 +67,9 @@
       "values": 1,
       "pulls": 2,
       "colab": 1,
-      "tone3k": 1
+      "tone3k": 1,
+      "matrixnam": 1,
+      "mrgeneko": 1
     },
     "conversational_cadence_markers": {
       "um": 24,

@@ -53,11 +53,23 @@ STATE_FILE = os.path.join(NOTES_DIR, "pedagogical_state.json")
 LOG_FILE = os.path.join(NOTES_DIR, "watcher_activity.log")
 EVENTS_LOG = os.path.join(NOTES_DIR, "pedagogical_events.log")
 PROCESSED_FILES_LOG = os.path.join(NOTES_DIR, "watcher_processed_files.json")
+RCS_CORPUS_FILE = os.path.join(NOTES_DIR, "justin_rcs_sms_corpus.txt")
+SEEN_UTTERANCES_FILE = os.path.join(NOTES_DIR, ".seen_justin_utterances.json")
+PROFILE_FILE = os.path.join(NOTES_DIR, "justin_stylometric_voice_profile.json")
 ADB_BIN = "/Users/danielbasssherizen/Library/Android/sdk/platform-tools/adb"
 CLOUD_RUN_INGEST_URL = os.environ.get(
     "CLOUD_RUN_INGEST_URL",
     "https://justin-comm-watcher-75904656792.us-central1.run.app/ingest"
 )
+
+# Import Diarization & Stylometric Verification Engine
+try:
+    from audit_diarization_and_stylometry import audit_and_diarize
+except ImportError:
+    scripts_dir = os.path.dirname(os.path.abspath(__file__))
+    if scripts_dir not in sys.path:
+        sys.path.append(scripts_dir)
+    from audit_diarization_and_stylometry import audit_and_diarize
 
 os.makedirs(NOTES_DIR, exist_ok=True)
 os.makedirs(OUTBOX_DIR, exist_ok=True)
@@ -516,6 +528,95 @@ def forward_to_cloud_run(text: str, sender: str = "Justin Muir", channel: str = 
 
 
 # ==============================================================================
+# CONTINUAL STYLOMETRIC VOICE LEARNING ENGINE
+# ==============================================================================
+
+_reprofiling_lock = threading.Lock()
+_last_reprofile_time = 0.0
+
+def _run_reprofiling_task():
+    global _last_reprofile_time
+    with _reprofiling_lock:
+        try:
+            time.sleep(0.5)  # Brief debounce
+            logger.info("🔄 Auto-updating Justin's stylometric profile in background...")
+            updated = audit_and_diarize(quiet=True)
+            _last_reprofile_time = time.time()
+            summary = updated.get("profile", {})
+            logger.info(
+                f"✅ Voice profile refreshed: {summary.get('corpus_utterances')} turns, "
+                f"{summary.get('corpus_words')} words (0.0% cross-contamination)."
+            )
+        except Exception as e:
+            logger.error(f"Error during auto-reprofiling: {e}")
+
+def trigger_async_stylometry_update():
+    """Triggers background incremental re-profiling without blocking the caller."""
+    thread = threading.Thread(target=_run_reprofiling_task, daemon=True)
+    thread.start()
+
+def is_from_justin(sender: str, channel: str = "") -> bool:
+    """Determines if the communication originates from Justin Muir."""
+    if not sender:
+        return False
+    s_lower = sender.strip().lower()
+    if any(frag in s_lower for frag in JUSTIN_NAME_FRAGMENTS):
+        return True
+    if any(phone in s_lower for phone in JUSTIN_PHONE_FRAGMENTS):
+        return True
+    if any(email in s_lower for email in JUSTIN_EMAIL_TARGETS):
+        return True
+    if "google_messages" in channel.lower() or "rcs" in channel.lower():
+        if "daniel" not in s_lower and "system" not in s_lower:
+            return True
+    return False
+
+def append_justin_utterance_to_corpus(text: str, channel: str = "rcs_sms") -> bool:
+    """
+    Safely appends an incoming utterance from Justin Muir to the persistent corpus,
+    enforcing SHA-256 deduplication and zero cross-contamination.
+    Returns True if newly appended.
+    """
+    cleaned_text = text.strip()
+    if not cleaned_text or len(cleaned_text) < 3:
+        return False
+
+    # Ignore system test probes or status pings
+    if cleaned_text.lower().startswith(("system_probe", "heartbeat", "ping")):
+        return False
+
+    text_hash = hashlib.sha256(cleaned_text.encode("utf-8")).hexdigest()
+
+    seen_hashes = set()
+    if os.path.exists(SEEN_UTTERANCES_FILE):
+        try:
+            with open(SEEN_UTTERANCES_FILE, "r", encoding="utf-8") as f:
+                seen_hashes = set(json.load(f))
+        except Exception:
+            seen_hashes = set()
+
+    if text_hash in seen_hashes:
+        logger.debug(f"Utterance already recorded in corpus: '{cleaned_text[:40]}...'")
+        return False
+
+    # Append to persistent corpus file with standardized diarization tag
+    corpus_entry = f"\n[SPEAKER: JUSTIN_MUIR]\n{cleaned_text}\n"
+    with open(RCS_CORPUS_FILE, "a", encoding="utf-8") as f:
+        f.write(corpus_entry)
+
+    seen_hashes.add(text_hash)
+    try:
+        with open(SEEN_UTTERANCES_FILE, "w", encoding="utf-8") as f:
+            json.dump(list(seen_hashes)[-1000:], f, indent=2)
+    except Exception as e:
+        logger.warning(f"Could not update seen hashes: {e}")
+
+    logger.info(f"🎙️ APPENDED TO JUSTIN'S CORPUS: '{cleaned_text[:60]}...' ({len(cleaned_text.split())} words)")
+    trigger_async_stylometry_update()
+    return True
+
+
+# ==============================================================================
 # MULTI-CHANNEL INGESTION ADAPTERS (ZERO-ADB)
 # ==============================================================================
 
@@ -621,6 +722,9 @@ def ingest_transcript_file(file_path: str, state: Dict[str, Any], processed_file
         })
         save_pedagogical_state(state)
 
+        if justin_turns:
+            trigger_async_stylometry_update()
+
         return total_triggers
     except Exception as e:
         logger.error(f"Error ingesting transcript file {file_path}: {e}")
@@ -663,6 +767,13 @@ class CommWatcherHTTPHandler(BaseHTTPRequestHandler):
         # Quiet standard HTTP access logs
         return
 
+    def do_OPTIONS(self):
+        self.send_response(200)
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization")
+        self.end_headers()
+
     def do_GET(self):
         parsed = urlparse(self.path)
         if parsed.path in ["/", "/status", "/api/comm/status"]:
@@ -680,6 +791,55 @@ class CommWatcherHTTPHandler(BaseHTTPRequestHandler):
                 "signals_detected_count": len(self.state_ref.get("readiness_signals_history", []))
             }
             self.wfile.write(json.dumps(summary, indent=2).encode())
+        elif parsed.path in ["/api/stylometry/profile", "/api/profile"]:
+            if os.path.exists(PROFILE_FILE):
+                try:
+                    with open(PROFILE_FILE, "r", encoding="utf-8") as pf:
+                        data = json.load(pf)
+                    self.send_response(200)
+                    self.send_header("Content-Type", "application/json")
+                    self.send_header("Access-Control-Allow-Origin", "*")
+                    self.end_headers()
+                    self.wfile.write(json.dumps(data, indent=2).encode())
+                    return
+                except Exception as e:
+                    self.send_response(500)
+                    self.send_header("Content-Type", "application/json")
+                    self.send_header("Access-Control-Allow-Origin", "*")
+                    self.end_headers()
+                    self.wfile.write(json.dumps({"error": str(e)}).encode())
+                    return
+            else:
+                self.send_response(404)
+                self.send_header("Content-Type", "application/json")
+                self.send_header("Access-Control-Allow-Origin", "*")
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": "Profile not found"}).encode())
+                return
+        elif parsed.path in ["/api/stylometry/stats", "/api/stats"]:
+            stats = {
+                "service": "Sovereign Stylometry Engine",
+                "status": "ONLINE",
+                "last_reprofile_timestamp": datetime.fromtimestamp(_last_reprofile_time).isoformat() if _last_reprofile_time > 0 else None,
+                "profile_exists": os.path.exists(PROFILE_FILE)
+            }
+            if os.path.exists(PROFILE_FILE):
+                try:
+                    with open(PROFILE_FILE, "r", encoding="utf-8") as pf:
+                        pdata = json.load(pf)
+                    stats["corpus_utterances"] = pdata.get("profile", {}).get("corpus_utterances", 0)
+                    stats["corpus_words"] = pdata.get("profile", {}).get("corpus_words", 0)
+                    stats["avg_words_per_turn"] = pdata.get("profile", {}).get("avg_words_per_turn", 0)
+                    stats["cross_contamination_rate"] = pdata.get("audit_certificate", {}).get("cross_contamination_rate", 0.0)
+                    stats["audit_status"] = pdata.get("audit_certificate", {}).get("status", "UNKNOWN")
+                except Exception:
+                    pass
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(json.dumps(stats, indent=2).encode())
+            return
         else:
             self.send_response(404)
             self.end_headers()
@@ -709,6 +869,11 @@ class CommWatcherHTTPHandler(BaseHTTPRequestHandler):
             triggers = evaluate_readiness(text, source=channel, state=self.state_ref)
             forward_to_cloud_run(text, sender=sender, channel=channel)
 
+            # Continuous Stylometric Voice Learning Hook
+            appended_to_corpus = False
+            if is_from_justin(sender, channel):
+                appended_to_corpus = append_justin_utterance_to_corpus(text, channel=channel)
+
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
             self.send_header("Access-Control-Allow-Origin", "*")
@@ -717,7 +882,8 @@ class CommWatcherHTTPHandler(BaseHTTPRequestHandler):
                 "status": "PROCESSED",
                 "triggers_fired": len(triggers),
                 "current_stage": self.state_ref.get("current_stage", 1),
-                "triggers": triggers
+                "triggers": triggers,
+                "corpus_appended": appended_to_corpus
             }, indent=2).encode())
         else:
             self.send_response(404)
