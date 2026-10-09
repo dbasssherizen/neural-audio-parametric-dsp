@@ -4201,8 +4201,8 @@ files.download("./marshall_origin50.param.nam")</code></pre>
             </div>
 
             <!-- Viewport Container -->
-            <div class="rounded-2xl border border-slate-800 bg-slate-950/90 p-4 sm:p-6 overflow-hidden shadow-2xl relative min-h-[360px] sm:min-h-[420px] flex items-center justify-center" id="mermaidViewportOuter">
-              <div id="mermaidLiveStudioPreview" class="w-full flex items-center justify-center transition-transform duration-150 origin-center overflow-x-auto">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950/90 p-3 sm:p-4 overflow-auto shadow-2xl relative h-[440px] sm:h-[480px] lg:h-[500px] flex items-center justify-center" id="mermaidViewportOuter">
+              <div id="mermaidLiveStudioPreview" class="w-full h-full flex items-center justify-center transition-transform duration-150 origin-center">
                 <div class="text-slate-500 font-mono text-xs animate-pulse">Rendering diagram...</div>
               </div>
             </div>
@@ -8515,27 +8515,22 @@ function showAudioToast(msg, icon) {
     classDef safety fill:#1c1917,stroke:#f59e0b,stroke-width:2px,color:#f8fafc;
     classDef dsp fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#f8fafc;
 
-    subgraph StudioRig ["🎛️ Justin's Physical Audio Rig (48kHz 24-bit)"]
-        AXE["IK AXE I/O Line Out 5<br/>(48kHz 24-bit Clean DI)"]:::hw
-        REDEYE["Little Labs Redeye 3D<br/>(Transformer Isolated Re-Amp)"]:::hw
-        M50["Marshall Origin 50 Head<br/>(Modded Master / EL34 Tubes)"]:::amp
-        CAPTOR["Two Notes Torpedo Captor X<br/>(8Ω Reactive Loadbox)"]:::safety
-        RETURN["AXE I/O Rear XLR Line In 1<br/>(-3.5 dBFS Headroom)"]:::hw
+    subgraph Rig ["🎛️ Physical Audio Rig (48kHz 24-bit)"]
+        direction LR
+        AXE["IK AXE I/O<br/>Line Out 5"]:::hw -->|Clean DI| REDEYE["Little Labs Redeye<br/>Transformer Iso"]:::hw
+        REDEYE -->|Hi-Z| M50["Marshall Origin 50<br/>EL34 Tube Head"]:::amp
+        M50 -->|50W Speaker| CAPTOR["Torpedo Captor X<br/>8Ω Reactive Load"]:::safety
+        CAPTOR -->|Attenuated XLR| RETURN["AXE I/O Rear XLR In 1<br/>-3.5 dBFS Headroom"]:::hw
     end
 
-    subgraph Workstation ["💻 DAW & DSP Automation"]
-        REAPER["Cockos REAPER ReaScript<br/>(Lua 120Hz Loop)"]:::dsp
-        PYTHON["Python Engine<br/>(nl_daemon_bridge.py)"]:::dsp
-        NAM["Parametric CatMLP Model<br/>(Continuous Potentiometer Sweep)"]:::dsp
+    subgraph Automation ["💻 DAW & DSP Automation Loop"]
+        direction LR
+        REAPER["Cockos REAPER<br/>Lua 120Hz Loop"]:::dsp <-->|HTTP Socket 5042| PYTHON["Python Engine<br/>nl_daemon_bridge.py"]:::dsp
+        PYTHON -->|Torch Tensors| NAM["Parametric CatMLP<br/>Continuous Sweep"]:::dsp
     end
 
-    AXE -->|Balanced Line| REDEYE
-    REDEYE -->|Hi-Z Instrument| M50
-    M50 -->|50W Speaker Level| CAPTOR
-    CAPTOR -->|Attenuated XLR| RETURN
-    RETURN -->|ASIO Stream| REAPER
-    REAPER <-->|HTTP Socket 5042| PYTHON
-    PYTHON -->|Torch Tensors| NAM`
+    RETURN ==>|ASIO Stream In| REAPER
+    REAPER -.->|Send Dry DI Sweep| AXE`
       },
       netops: {
         label: "NetOps pfSense Topology",
@@ -8628,7 +8623,7 @@ function showAudioToast(msg, icon) {
       if (isMermaidStudioInitialized) return;
       const textarea = document.getElementById('mermaidEditorTextarea');
       if (!textarea) return;
-      if (!textarea.value.trim()) {
+      if (!textarea.value.trim() || textarea.value.includes('StudioRig')) {
         textarea.value = MERMAID_STUDIO_PRESETS.reamp.code;
       }
       isMermaidStudioInitialized = true;
@@ -8702,9 +8697,15 @@ function showAudioToast(msg, icon) {
         const svgEl = preview.querySelector('svg');
         if (svgEl) {
           svgEl.style.maxWidth = '100%';
+          svgEl.style.maxHeight = '100%';
+          svgEl.style.width = 'auto';
           svgEl.style.height = 'auto';
+          svgEl.style.objectFit = 'contain';
+          svgEl.style.display = 'block';
+          svgEl.style.margin = 'auto';
           svgEl.style.transform = `scale(${currentMermaidZoom})`;
-          svgEl.style.transformOrigin = 'center top';
+          svgEl.style.transformOrigin = 'center center';
+          svgEl.style.transition = 'transform 0.15s ease-out';
         }
         if (errorBox) errorBox.classList.add('hidden');
         if (statusBadge) { statusBadge.textContent = "Valid SVG"; statusBadge.className = "text-emerald-400"; }
@@ -8726,7 +8727,7 @@ function showAudioToast(msg, icon) {
         const svgEl = preview.querySelector('svg');
         if (svgEl) {
           svgEl.style.transform = `scale(${currentMermaidZoom})`;
-          svgEl.style.transformOrigin = 'center top';
+          svgEl.style.transformOrigin = 'center center';
           svgEl.style.transition = 'transform 0.15s ease-out';
         }
       }
@@ -8741,6 +8742,7 @@ function showAudioToast(msg, icon) {
         const svgEl = preview.querySelector('svg');
         if (svgEl) {
           svgEl.style.transform = 'scale(1.0)';
+          svgEl.style.transformOrigin = 'center center';
         }
       }
       if (levelEl) levelEl.textContent = '100%';
