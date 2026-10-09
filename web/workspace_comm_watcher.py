@@ -39,7 +39,10 @@ from datetime import datetime
 from typing import Dict, Any, List, Optional, Tuple
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
+import urllib.request
+import urllib.error
 import threading
+import socket
 
 # Directory Anchors
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -51,6 +54,10 @@ LOG_FILE = os.path.join(NOTES_DIR, "watcher_activity.log")
 EVENTS_LOG = os.path.join(NOTES_DIR, "pedagogical_events.log")
 PROCESSED_FILES_LOG = os.path.join(NOTES_DIR, "watcher_processed_files.json")
 ADB_BIN = "/Users/danielbasssherizen/Library/Android/sdk/platform-tools/adb"
+CLOUD_RUN_INGEST_URL = os.environ.get(
+    "CLOUD_RUN_INGEST_URL",
+    "https://justin-comm-watcher-75904656792.us-central1.run.app/ingest"
+)
 
 os.makedirs(NOTES_DIR, exist_ok=True)
 os.makedirs(OUTBOX_DIR, exist_ok=True)
@@ -484,6 +491,30 @@ def trigger_stage_unlock(stage_id: int, state: Dict[str, Any]) -> Dict[str, Any]
     return payload
 
 
+def forward_to_cloud_run(text: str, sender: str = "Justin Muir", channel: str = "local_watcher"):
+    """Optionally forwards ingested text to Cloud Run watcher endpoint."""
+    if not CLOUD_RUN_INGEST_URL:
+        return
+    try:
+        payload = json.dumps({
+            "text": text,
+            "sender": sender,
+            "channel": channel,
+            "timestamp": datetime.now().isoformat()
+        }).encode("utf-8")
+        req = urllib.request.Request(
+            CLOUD_RUN_INGEST_URL,
+            data=payload,
+            headers={"Content-Type": "application/json", "User-Agent": "WorkspaceCommWatcher-Bridge/1.0"},
+            method="POST"
+        )
+        with urllib.request.urlopen(req, timeout=5) as response:
+            if response.status == 200:
+                logger.debug(f"☁️ Forwarded to Cloud Run: {channel}")
+    except Exception as e:
+        logger.debug(f"Could not forward to Cloud Run: {e}")
+
+
 # ==============================================================================
 # MULTI-CHANNEL INGESTION ADAPTERS (ZERO-ADB)
 # ==============================================================================
@@ -506,12 +537,12 @@ def parse_transcript_text(content: str) -> List[Dict[str, str]]:
         # Detect speaker headers in transcripts
         # Formats: "The speaker", "You", "Justin Muir", "Justin Muir • Call 2", "Daniel Bass Sherizen:"
         lower_line = line_s.lower()
-        if lower_line in ["the speaker", "speaker", "justin muir", "justin"]:
+        if lower_line in ["the speaker", "speaker", "justin muir", "justin", "[speaker: justin_muir]", "[speaker: justin]"]:
             if current_buffer:
                 turns.append({"speaker": current_speaker, "text": " ".join(current_buffer)})
                 current_buffer = []
             current_speaker = "Justin Muir"
-        elif lower_line in ["you", "daniel", "daniel bass sherizen"]:
+        elif lower_line in ["you", "daniel", "daniel bass sherizen", "[speaker: daniel_bass_sherizen]", "[speaker: daniel]"]:
             if current_buffer:
                 turns.append({"speaker": current_speaker, "text": " ".join(current_buffer)})
                 current_buffer = []
@@ -571,6 +602,7 @@ def ingest_transcript_file(file_path: str, state: Dict[str, Any], processed_file
         for text in eval_texts:
             triggers = evaluate_readiness(text, source=f"file:{os.path.basename(file_path)}", state=state)
             total_triggers += len(triggers)
+            forward_to_cloud_run(text, sender="Justin Muir", channel=f"file:{os.path.basename(file_path)}")
 
         processed_files[file_path] = {
             "hash": file_hash,
@@ -675,6 +707,7 @@ class CommWatcherHTTPHandler(BaseHTTPRequestHandler):
 
             logger.info(f"📥 INGESTED VIA {channel.upper()}: '{text[:70]}...'")
             triggers = evaluate_readiness(text, source=channel, state=self.state_ref)
+            forward_to_cloud_run(text, sender=sender, channel=channel)
 
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
@@ -707,73 +740,183 @@ def start_http_ingestion_server(port: int, state: Dict[str, Any], processed_file
 # OPPORTUNISTIC ADB ADAPTER (FALLBACK)
 # ==============================================================================
 
+def try_wireless_adb_connect() -> bool:
+    """Attempts to auto-connect to known Pixel IP or scan subnet on port 5555."""
+    known_ips = [
+        "192.168.3.211", "192.168.3.70", "192.168.3.71", "192.168.3.72", "192.168.3.73",
+        "192.168.3.80", "192.168.3.216", "192.168.3.224", "192.168.3.226", "192.168.3.230"
+    ]
+    for ip in known_ips:
+        try:
+            s = socket.socket()
+            s.settimeout(0.1)
+            if s.connect_ex((ip, 5555)) == 0:
+                s.close()
+                res = subprocess.run([ADB_BIN, "connect", f"{ip}:5555"], capture_output=True, text=True, timeout=2)
+                if "connected to" in res.stdout.lower():
+                    logger.info(f"⚡ Wireless ADB connected to {ip}:5555")
+                    return True
+            s.close()
+        except Exception:
+            pass
+    return False
+
+
 def check_adb_connected() -> bool:
-    """Checks if an Android device is attached via ADB."""
+    """Checks if an Android device is attached via ADB (USB or Wireless)."""
     if not os.path.exists(ADB_BIN):
         return False
     try:
         res = subprocess.run([ADB_BIN, "get-state"], capture_output=True, text=True, timeout=2)
-        return "device" in res.stdout
+        if "device" in res.stdout:
+            return True
+        return try_wireless_adb_connect()
     except Exception:
         return False
 
 
-def query_opportunistic_adb_sms(state: Dict[str, Any]) -> int:
-    """Queries SMS via ADB if device happens to be connected."""
+def query_opportunistic_adb_notifications(state: Dict[str, Any]) -> int:
+    """
+    Extracts live incoming Google Messages RCS & SMS notifications directly
+    from Android system notification manager dumpsys without needing database root.
+    """
     if not check_adb_connected():
         return 0
 
     try:
+        cmd = [ADB_BIN, "shell", "dumpsys", "notification", "--noredact"]
+        res = subprocess.run(cmd, capture_output=True, text=True, timeout=5)
+        if res.returncode != 0 or not res.stdout:
+            return 0
+
+        seen_hashes = set(state.setdefault("seen_notification_hashes", []))
+        new_triggers = 0
+        raw = res.stdout
+
+        records = raw.split("NotificationRecord(")
+        for rec in records[1:]:
+            if "pkg=com.google.android.apps.messaging" not in rec:
+                continue
+
+            title = None
+            text = None
+
+            for line in rec.splitlines():
+                line = line.strip()
+                if "android.title=" in line and not title:
+                    parts = line.split("android.title=", 1)[-1]
+                    if "(" in parts and ")" in parts:
+                        title = parts.split("(", 1)[-1].rsplit(")", 1)[0].strip()
+                    else:
+                        title = parts.strip()
+                elif ("android.bigText=" in line or "android.text=" in line) and not text:
+                    parts = line.split("=", 1)[-1]
+                    if "(" in parts and ")" in parts:
+                        text = parts.split("(", 1)[-1].rsplit(")", 1)[0].strip()
+                    else:
+                        text = parts.strip()
+
+            if text and text not in ("null", ""):
+                sender_str = title or "Justin Muir"
+                is_justin = any(f in sender_str.lower() for f in JUSTIN_NAME_FRAGMENTS) or \
+                            any(f in sender_str for f in JUSTIN_PHONE_FRAGMENTS)
+
+                msg_hash = hashlib.sha256(f"{sender_str}:{text}".encode()).hexdigest()[:16]
+                if is_justin and msg_hash not in seen_hashes:
+                    seen_hashes.add(msg_hash)
+                    state["seen_notification_hashes"] = list(seen_hashes)[-200:]
+                    logger.info(f"📱 [RCS NOTIFICATION] Ingested from {sender_str}: '{text}'")
+                    triggers = evaluate_readiness(text, source="adb:rcs_notification", state=state)
+                    forward_to_cloud_run(text, sender=sender_str, channel="adb:rcs_notification")
+                    new_triggers += len(triggers)
+
+        return new_triggers
+    except Exception as e:
+        logger.debug(f"Notification dump failed: {e}")
+        return 0
+
+
+def query_opportunistic_adb_sms(state: Dict[str, Any]) -> int:
+    """Queries SMS and MMS conversations via ADB if device happens to be connected."""
+    if not check_adb_connected():
+        return 0
+
+    new_triggers = 0
+    try:
+        # 1. Query standard SMS table with increased limit
         cmd = [
             ADB_BIN, "shell",
             "content", "query", "--uri", "content://sms",
             "--projection", "_id:address:body:date:type:read",
             "--sort", "date DESC",
-            "--limit", "5"
+            "--limit", "50"
         ]
         res = subprocess.run(cmd, capture_output=True, text=True, timeout=5)
-        if res.returncode != 0:
-            return 0
+        if res.returncode == 0 and res.stdout:
+            messages = []
+            raw_rows = res.stdout.strip().split("\n")
+            current_msg = {}
+            for row in raw_rows:
+                row = row.strip()
+                if row.startswith("Row:"):
+                    if current_msg:
+                        messages.append(current_msg)
+                    current_msg = {}
+                for part in row.split(", "):
+                    if "=" in part:
+                        k, v = part.split("=", 1)
+                        k = k.strip().replace("Row: ", "")
+                        current_msg[k] = v.strip()
+            if current_msg:
+                messages.append(current_msg)
 
-        # Parse messages
-        messages = []
-        raw_rows = res.stdout.strip().split("\n")
-        current_msg = {}
-        for row in raw_rows:
-            row = row.strip()
-            if row.startswith("Row:"):
-                if current_msg:
-                    messages.append(current_msg)
-                current_msg = {}
-            for part in row.split(", "):
-                if "=" in part:
-                    k, v = part.split("=", 1)
-                    k = k.strip().replace("Row: ", "")
-                    current_msg[k] = v.strip()
-        if current_msg:
-            messages.append(current_msg)
+            last_id = state.get("last_processed_sms_id", 0)
+            for m in messages:
+                addr = m.get("address", "")
+                if any(f in addr for f in JUSTIN_PHONE_FRAGMENTS):
+                    try:
+                        msg_id = int(m.get("_id", 0))
+                        msg_type = int(m.get("type", 1))
+                        body = m.get("body", "")
+                        if msg_id > last_id and msg_type == 1 and body:
+                            logger.info(f"📱 Ingested SMS via ADB (ID {msg_id}): '{body}'")
+                            triggers = evaluate_readiness(body, source="adb:sms", state=state)
+                            forward_to_cloud_run(body, sender="Justin Muir", channel="adb:sms")
+                            new_triggers += len(triggers)
+                            if msg_id > state.get("last_processed_sms_id", 0):
+                                state["last_processed_sms_id"] = msg_id
+                    except Exception:
+                        pass
 
-        new_triggers = 0
-        last_id = state.get("last_processed_sms_id", 0)
-
-        for m in messages:
-            addr = m.get("address", "")
-            if any(f in addr for f in JUSTIN_PHONE_FRAGMENTS):
-                msg_id = int(m.get("_id", 0))
-                msg_type = int(m.get("type", 1))
-                body = m.get("body", "")
-
-                if msg_id > last_id and msg_type == 1 and body:
-                    logger.info(f"📱 Ingested SMS via ADB (ID {msg_id}): '{body}'")
-                    triggers = evaluate_readiness(body, source="adb:sms", state=state)
-                    new_triggers += len(triggers)
-                    if msg_id > state.get("last_processed_sms_id", 0):
-                        state["last_processed_sms_id"] = msg_id
+        # 2. Also check complete conversations table for MMS
+        mms_cmd = [
+            ADB_BIN, "shell",
+            "content", "query", "--uri", "content://mms-sms/complete-conversations",
+            "--sort", "date DESC",
+            "--limit", "30"
+        ]
+        mms_res = subprocess.run(mms_cmd, capture_output=True, text=True, timeout=5)
+        if mms_res.returncode == 0 and mms_res.stdout:
+            seen_conv_hashes = set(state.setdefault("seen_conv_hashes", []))
+            for line in mms_res.stdout.splitlines():
+                if any(f in line for f in JUSTIN_PHONE_FRAGMENTS) or any(f in line.lower() for f in JUSTIN_NAME_FRAGMENTS):
+                    c_hash = hashlib.sha256(line.encode()).hexdigest()[:16]
+                    if c_hash not in seen_conv_hashes:
+                        seen_conv_hashes.add(c_hash)
+                        state["seen_conv_hashes"] = list(seen_conv_hashes)[-200:]
+                        # Extract any body text in line
+                        if "body=" in line:
+                            body_text = line.split("body=", 1)[-1].split(",")[0].strip()
+                            if body_text and body_text != "NULL":
+                                logger.info(f"📱 Ingested MMS conversation line: '{body_text}'")
+                                triggers = evaluate_readiness(body_text, source="adb:mms", state=state)
+                                forward_to_cloud_run(body_text, sender="Justin Muir", channel="adb:mms")
+                                new_triggers += len(triggers)
 
         return new_triggers
     except Exception as e:
         logger.debug(f"ADB check skipped: {e}")
-        return 0
+        return new_triggers
 
 
 # ==============================================================================
@@ -880,7 +1023,8 @@ def main():
                 # 1. Scan notes/ directory for newly dropped call transcripts or Gemini notes
                 scan_notes_directory(state, processed_files)
 
-                # 2. Opportunistic ADB check if phone happens to be attached
+                # 2. Opportunistic ADB check (RCS/SMS notifications & complete conversations)
+                query_opportunistic_adb_notifications(state)
                 query_opportunistic_adb_sms(state)
 
                 time.sleep(args.interval)

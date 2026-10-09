@@ -44,3 +44,7 @@
 2026-10-07 09:10:16 [INFO] [COMM-WATCHER] 📈 READINESS UPDATE: Stage 5 (Studio Edge Appliance (Gemma 4 E2B/E4B in the Amp Rack)) +35 pts -> Total Score: 70% (Threshold: 80%)
 2026-10-07 15:43:02 [INFO] [COMM-WATCHER] Single check complete. New triggers detected: 0
 2026-10-07 16:46:24 [INFO] [COMM-WATCHER] [DISPATCH_CONFIRMED] Sent detailed parametric NAM diagnosis and clean-slate resolution to Justin Muir (+1 630-418-9227) via RCS.
+2026-10-08 17:44:16 [INFO] [COMM-WATCHER] 🚀 Starting Multi-Channel Pedagogical Watcher Daemon...
+2026-10-08 17:44:16 [INFO] [COMM-WATCHER] Decoupled from physical ADB. Ingesting from notes/, REST API (port 5042), and opportunistic ADB.
+2026-10-08 17:44:16 [INFO] [COMM-WATCHER] 🌐 Ingestion REST API listening on http://0.0.0.0:5042/api/comm/ingest
+2026-10-08 17:51:01 [INFO] [COMM-WATCHER] 📥 INGESTED VIA SYSTEM_PROBE: 'heartbeat verify...'
