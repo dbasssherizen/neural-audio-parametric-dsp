@@ -291,49 +291,59 @@
           </p>
         </div>
 
-        <!-- Quick Launch Action Tools inside Hero -->
-        <div class="flex flex-wrap items-center gap-2.5 pt-3.5 border-t border-slate-800/60">
-          <!-- Featured Flagship Workspaces -->
-          <button onclick="switchStudioWorkspace('workspace-mermaid')" class="px-4 py-2.5 rounded-2xl bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/30 transition active:scale-95 cursor-pointer border border-emerald-400/50">
-            <span>📐</span>
-            <span>Mermaid Studio ↗</span>
-          </button>
-          <button onclick="switchStudioWorkspace('workspace-academy')" class="px-4 py-2.5 rounded-2xl bg-gradient-to-r from-emerald-600 via-indigo-600 to-purple-600 hover:from-emerald-500 hover:to-purple-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-indigo-600/30 transition active:scale-95 cursor-pointer border border-indigo-400/50">
-            <span>🎣</span>
-            <span>AI Academy ↗</span>
-          </button>
-          <button onclick="openJustinVoiceMirror()" class="px-4 py-2.5 rounded-2xl bg-gradient-to-r from-purple-700 via-indigo-700 to-blue-700 hover:from-purple-600 hover:to-blue-600 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-purple-600/30 transition active:scale-95 cursor-pointer border border-purple-400/50">
-            <span>🎙️</span>
-            <span>Voice Mirror &amp; ELI5 ↗</span>
-          </button>
+        <!-- Quick Launch Action Tools inside Hero (Uniform, Even & Organized Cockpit) -->
+        <div class="pt-4 border-t border-slate-800/80 space-y-3">
+          <!-- Tier 1: Interactive Workspaces & AI Engines -->
+          <div class="flex items-center gap-2 overflow-x-auto scrollbar-none pb-0.5">
+            <span class="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold shrink-0 flex items-center gap-1.5 bg-slate-950/80 px-2.5 py-1.5 rounded-lg border border-slate-800/80">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Workspaces
+            </span>
 
-          <!-- Studio Utilities & Assets Divider -->
-          <div class="h-6 w-px bg-slate-800 hidden sm:block mx-1"></div>
+            <button onclick="switchStudioWorkspace('workspace-mermaid')" class="h-9 px-3.5 rounded-xl bg-gradient-to-r from-teal-600/90 to-emerald-600/90 hover:from-teal-500 hover:to-emerald-500 text-white font-bold text-xs inline-flex items-center justify-center gap-2 shadow-md shadow-emerald-950/40 border border-emerald-400/40 transition active:scale-95 cursor-pointer whitespace-nowrap shrink-0">
+              <span>📐</span>
+              <span>Mermaid Studio ↗</span>
+            </button>
+            <button onclick="switchStudioWorkspace('workspace-academy')" class="h-9 px-3.5 rounded-xl bg-gradient-to-r from-emerald-600/90 via-indigo-600/90 to-purple-600/90 hover:from-emerald-500 hover:to-purple-500 text-white font-bold text-xs inline-flex items-center justify-center gap-2 shadow-md shadow-indigo-950/40 border border-indigo-400/40 transition active:scale-95 cursor-pointer whitespace-nowrap shrink-0">
+              <span>🎣</span>
+              <span>AI Academy ↗</span>
+            </button>
+            <button onclick="openJustinVoiceMirror()" class="h-9 px-3.5 rounded-xl bg-gradient-to-r from-purple-700/90 via-indigo-700/90 to-blue-700/90 hover:from-purple-600 hover:to-blue-600 text-white font-bold text-xs inline-flex items-center justify-center gap-2 shadow-md shadow-purple-950/40 border border-purple-400/40 transition active:scale-95 cursor-pointer whitespace-nowrap shrink-0">
+              <span>🎙️</span>
+              <span>Voice Mirror &amp; ELI5 ↗</span>
+            </button>
+            <button id="btnOpenAI" class="h-9 px-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-indigo-300 hover:text-white border border-indigo-500/40 font-bold text-xs inline-flex items-center justify-center gap-2 shadow-sm transition active:scale-95 cursor-pointer whitespace-nowrap shrink-0">
+              <span>🤖</span>
+              <span>Audio AI Co-Pilot</span>
+            </button>
+          </div>
 
-          <button id="btnOpenAI" class="px-3.5 py-2.5 rounded-2xl font-bold text-xs bg-slate-900/90 hover:bg-slate-800 text-indigo-300 border border-indigo-500/40 flex items-center justify-center gap-1.5 shadow backdrop-blur-md transition active:scale-95 cursor-pointer">
-            <span class="text-sm">🤖</span>
-            <span>Audio AI Co-Pilot</span>
-          </button>
-          <a href="/Justin_Muir_Parametric_NAM_Studio_Kit.zip" download class="px-3.5 py-2.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-amber-500/20 transition active:scale-95 text-center">
-            <span>📦</span>
-            <span>Studio Kit (.zip)</span>
-          </a>
-          <a href="/marshall_origin50_params.csv" download class="px-3 py-2.5 sm:px-3.5 sm:py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-sky-300 border border-sky-500/40 text-xs font-bold flex items-center justify-center gap-1.5 backdrop-blur-md transition shadow text-center">
-            <span>📊</span>
-            <span>Marshall 8-Knob CSV</span>
-          </a>
-          <a href="/README_MRGENEKO_WORKFLOW.md" target="_blank" class="px-3 py-2.5 sm:px-3.5 sm:py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-purple-300 border border-purple-500/40 text-xs font-bold flex items-center justify-center gap-1.5 backdrop-blur-md transition shadow text-center">
-            <span>⚡</span>
-            <span>mrgeneko &amp; NAMix ↗</span>
-          </a>
-          <a href="/printable_studio_run_sheet.html" target="_blank" class="px-3 py-2.5 sm:px-3.5 sm:py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-amber-300 border border-amber-500/40 text-xs font-bold flex items-center justify-center gap-1.5 backdrop-blur-md transition text-center">
-            <span>📋</span>
-            <span>Run Sheet ↗</span>
-          </a>
-          <a href="/apps/neural-dsp/index.html" target="_blank" class="px-3 py-2.5 sm:px-3.5 sm:py-2.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-emerald-300 border border-emerald-500/40 text-xs font-bold flex items-center justify-center gap-1.5 backdrop-blur-md transition text-center">
-            <span>🚀</span>
-            <span>Standalone ↗</span>
-          </a>
+          <!-- Tier 2: Studio Kit, Workflows & Assets -->
+          <div class="flex items-center gap-2 overflow-x-auto scrollbar-none pb-0.5">
+            <span class="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold shrink-0 flex items-center gap-1.5 bg-slate-950/80 px-2.5 py-1.5 rounded-lg border border-slate-800/80">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Studio Kit
+            </span>
+
+            <a href="/Justin_Muir_Parametric_NAM_Studio_Kit.zip" download class="h-9 px-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs inline-flex items-center justify-center gap-2 shadow-md shadow-amber-950/40 transition active:scale-95 whitespace-nowrap shrink-0">
+              <span>📦</span>
+              <span>Studio Kit (.zip)</span>
+            </a>
+            <a href="/marshall_origin50_params.csv" download class="h-9 px-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-sky-300 hover:text-white border border-sky-500/40 font-bold text-xs inline-flex items-center justify-center gap-2 transition active:scale-95 whitespace-nowrap shrink-0">
+              <span>📊</span>
+              <span>Marshall 8-Knob CSV</span>
+            </a>
+            <a href="/README_MRGENEKO_WORKFLOW.md" target="_blank" class="h-9 px-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-purple-300 hover:text-white border border-purple-500/40 font-bold text-xs inline-flex items-center justify-center gap-2 transition active:scale-95 whitespace-nowrap shrink-0">
+              <span>⚡</span>
+              <span>mrgeneko &amp; NAMix ↗</span>
+            </a>
+            <a href="/printable_studio_run_sheet.html" target="_blank" class="h-9 px-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-amber-300 hover:text-white border border-amber-500/40 font-bold text-xs inline-flex items-center justify-center gap-2 transition active:scale-95 whitespace-nowrap shrink-0">
+              <span>📋</span>
+              <span>Run Sheet ↗</span>
+            </a>
+            <a href="/apps/neural-dsp/index.html" target="_blank" class="h-9 px-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-emerald-300 hover:text-white border border-emerald-500/40 font-bold text-xs inline-flex items-center justify-center gap-2 transition active:scale-95 whitespace-nowrap shrink-0">
+              <span>🚀</span>
+              <span>Standalone App ↗</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -404,37 +414,37 @@
     </header>
 
     <!-- STUDIO SEGMENTED WORKSPACE CONTROLLER (STICKY RAIL) -->
-    <nav id="studioWorkspaceNav" class="sticky top-2 z-30 bg-slate-950/95 backdrop-blur-md border border-slate-800 rounded-2xl p-2 sm:p-2.5 shadow-2xl flex items-center justify-between gap-2 overflow-hidden">
+    <nav id="studioWorkspaceNav" class="sticky top-2 z-30 bg-slate-950/95 backdrop-blur-md border border-slate-800 rounded-2xl p-2 sm:p-2.5 shadow-2xl flex items-center justify-between gap-3 overflow-hidden">
       <!-- Scrollable Tabs Rail (Smooth Horizontal Scrolling Across Any Device / Aspect Ratio) -->
-      <div class="flex items-center gap-1 sm:gap-1.5 flex-1 min-w-0 overflow-x-auto scrollbar-none py-0.5">
-        <button onclick="switchStudioWorkspace('workspace-amp')" id="tab-btn-amp" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 whitespace-nowrap shrink-0 cursor-pointer">
+      <div class="flex items-center gap-1.5 flex-1 min-w-0 overflow-x-auto scrollbar-none py-0.5">
+        <button onclick="switchStudioWorkspace('workspace-amp')" id="tab-btn-amp" class="studio-tab-btn h-9 px-3.5 rounded-xl text-xs font-bold transition inline-flex items-center justify-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 whitespace-nowrap shrink-0 cursor-pointer">
           <span>🎸</span> <span>1. Amp Studio</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-rig')" id="tab-btn-rig" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0 cursor-pointer">
+        <button onclick="switchStudioWorkspace('workspace-rig')" id="tab-btn-rig" class="studio-tab-btn h-9 px-3.5 rounded-xl text-xs font-bold transition inline-flex items-center justify-center gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0 cursor-pointer">
           <span>🎛️</span> <span>2. Physical Rig</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-tracking')" id="tab-btn-tracking" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0 cursor-pointer">
+        <button onclick="switchStudioWorkspace('workspace-tracking')" id="tab-btn-tracking" class="studio-tab-btn h-9 px-3.5 rounded-xl text-xs font-bold transition inline-flex items-center justify-center gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0 cursor-pointer">
           <span>⚡</span> <span>3. Tracking &amp; Re-Amp</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-cloud')" id="tab-btn-cloud" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0 cursor-pointer">
+        <button onclick="switchStudioWorkspace('workspace-cloud')" id="tab-btn-cloud" class="studio-tab-btn h-9 px-3.5 rounded-xl text-xs font-bold transition inline-flex items-center justify-center gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0 cursor-pointer">
           <span>☁️</span> <span>4. Cloud GPU</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-codewiki')" id="tab-btn-codewiki" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0 cursor-pointer">
-          <span>📖</span> <span>5. Automation &amp; Code Guide</span>
+        <button onclick="switchStudioWorkspace('workspace-codewiki')" id="tab-btn-codewiki" class="studio-tab-btn h-9 px-3.5 rounded-xl text-xs font-bold transition inline-flex items-center justify-center gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0 cursor-pointer">
+          <span>📖</span> <span>5. Code &amp; Guide</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-academy')" id="tab-btn-academy" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-emerald-400 hover:text-emerald-200 border border-emerald-500/40 whitespace-nowrap shrink-0 cursor-pointer">
-          <span>🎣</span> <span>6. Sovereign AI Academy</span>
+        <button onclick="switchStudioWorkspace('workspace-academy')" id="tab-btn-academy" class="studio-tab-btn h-9 px-3.5 rounded-xl text-xs font-bold transition inline-flex items-center justify-center gap-2 bg-slate-900 text-emerald-400 hover:text-emerald-200 border border-emerald-500/40 whitespace-nowrap shrink-0 cursor-pointer">
+          <span>🎣</span> <span>6. AI Academy</span>
         </button>
-        <button onclick="switchStudioWorkspace('workspace-mermaid')" id="tab-btn-mermaid" class="studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-slate-900 text-teal-400 hover:text-teal-200 border border-teal-500/40 whitespace-nowrap shrink-0 cursor-pointer">
+        <button onclick="switchStudioWorkspace('workspace-mermaid')" id="tab-btn-mermaid" class="studio-tab-btn h-9 px-3.5 rounded-xl text-xs font-bold transition inline-flex items-center justify-center gap-2 bg-slate-900 text-teal-400 hover:text-teal-200 border border-teal-500/40 whitespace-nowrap shrink-0 cursor-pointer">
           <span>📐</span> <span>7. Mermaid Studio</span>
         </button>
       </div>
 
-      <!-- Right Telemetry Badge (XL >= 1280px Only to Guarantee Zero Tab Squish / Collision) -->
-      <div class="hidden xl:flex items-center gap-2 pr-1 shrink-0 text-[10px] font-mono">
-        <span class="text-slate-500 uppercase tracking-wider">HUD:</span>
-        <span id="hudKnobBadge" class="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-2 py-0.5 rounded-full font-bold">8 Knobs Active (Origin 50)</span>
-        <span class="bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 px-2 py-0.5 rounded-full font-bold">0.0 Egress</span>
+      <!-- Right Telemetry Badge (2XL >= 1536px Only to Guarantee Zero Tab Squish / Collision on Standard Laptops) -->
+      <div class="hidden 2xl:flex items-center gap-2 pr-1 shrink-0 text-[10px] font-mono">
+        <span class="text-slate-500 uppercase tracking-wider font-bold">HUD:</span>
+        <span id="hudKnobBadge" class="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-2.5 py-1 rounded-full font-bold whitespace-nowrap">8 Knobs Active (Origin 50)</span>
+        <span class="bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 px-2.5 py-1 rounded-full font-bold whitespace-nowrap">0.0 Egress</span>
       </div>
     </nav>
 
@@ -7085,18 +7095,19 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
       };
 
       document.querySelectorAll('.studio-tab-btn').forEach(btn => {
-        btn.className = "studio-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800";
+        btn.className = "studio-tab-btn h-9 px-3.5 rounded-xl text-xs font-bold transition inline-flex items-center justify-center gap-2 bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap shrink-0 cursor-pointer";
       });
 
       const activeBtn = document.getElementById(tabMap[workspaceId]);
       if (activeBtn) {
         if (workspaceId === 'workspace-academy') {
-          activeBtn.className = "studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-emerald-600 text-white shadow-lg shadow-emerald-600/30 whitespace-nowrap shrink-0 cursor-pointer";
+          activeBtn.className = "studio-tab-btn h-9 px-3.5 rounded-xl text-xs font-bold transition inline-flex items-center justify-center gap-2 bg-emerald-600 text-white shadow-lg shadow-emerald-600/30 whitespace-nowrap shrink-0 cursor-pointer";
         } else if (workspaceId === 'workspace-mermaid') {
-          activeBtn.className = "studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-teal-600 text-white shadow-lg shadow-teal-600/30 whitespace-nowrap shrink-0 cursor-pointer";
+          activeBtn.className = "studio-tab-btn h-9 px-3.5 rounded-xl text-xs font-bold transition inline-flex items-center justify-center gap-2 bg-teal-600 text-white shadow-lg shadow-teal-600/30 whitespace-nowrap shrink-0 cursor-pointer";
         } else {
-          activeBtn.className = "studio-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 sm:gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 whitespace-nowrap shrink-0 cursor-pointer";
+          activeBtn.className = "studio-tab-btn h-9 px-3.5 rounded-xl text-xs font-bold transition inline-flex items-center justify-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 whitespace-nowrap shrink-0 cursor-pointer";
         }
+        try { activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' }); } catch(e){}
       }
 
       // Update Mobile Nav
