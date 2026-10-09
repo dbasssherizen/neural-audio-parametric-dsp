@@ -53,3 +53,6 @@ notes/*.log
 
 marshall_origin50_captures.zip
 captures_justin.zip
+
+# Isolated Browser Profiles & Auth Sessions
+.google_messages_isolated_profile/
