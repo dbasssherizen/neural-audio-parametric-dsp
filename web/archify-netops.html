@@ -205,7 +205,8 @@
       top: 16px;
       left: 16px;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      align-items: center;
       gap: 8px;
       z-index: 10;
       pointer-events: none;
@@ -216,7 +217,7 @@
       background: var(--astryx-surface-card);
       border: 1px solid var(--astryx-border);
       border-radius: 10px;
-      padding: 6px;
+      padding: 4px 6px;
       display: flex;
       align-items: center;
       gap: 4px;
@@ -227,14 +228,14 @@
       background: transparent;
       border: none;
       color: var(--astryx-text-muted);
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: bold;
       transition: all 0.15s ease;
     }
@@ -242,6 +243,15 @@
     .ctrl-btn:hover {
       background: var(--astryx-surface-hover);
       color: var(--astryx-text);
+    }
+
+    /* Floating Legend Overlay (Bottom-Left, Non-Colliding) */
+    .legend-overlay {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      z-index: 10;
+      pointer-events: none;
     }
 
     .legend-box {
@@ -256,7 +266,67 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
-      max-width: 270px;
+      max-width: 280px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .legend-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .legend-title {
+      font-weight: 700;
+      color: var(--astryx-text);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10.5px;
+      letter-spacing: 0.5px;
+    }
+
+    .legend-toggle-btn {
+      background: var(--astryx-surface-panel);
+      border: 1px solid var(--astryx-border);
+      color: var(--astryx-text-muted);
+      font-size: 11px;
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      line-height: 1;
+    }
+
+    .legend-toggle-btn:hover {
+      background: var(--astryx-surface-hover);
+      color: var(--astryx-text);
+    }
+
+    .legend-items {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 4px;
+      transition: opacity 0.2s ease;
+    }
+
+    .legend-box.collapsed .legend-items {
+      display: none;
+    }
+
+    .legend-box.collapsed {
+      padding: 6px 10px;
+      border-radius: 8px;
     }
 
     .legend-item {
@@ -467,31 +537,43 @@
   <div id="workspace-container">
     <canvas id="diagram-canvas"></canvas>
 
-    <!-- Overlay HUD Controls -->
+    <!-- Overlay HUD Controls (Top-Left) -->
     <div class="controls-overlay">
       <div class="controls-group">
         <button class="ctrl-btn" onclick="zoomIn()" title="Zoom In">+</button>
         <button class="ctrl-btn" onclick="zoomOut()" title="Zoom Out">−</button>
-        <button class="ctrl-btn" onclick="resetZoom()" title="Reset Zoom">1:1</button>
+        <button class="ctrl-btn" onclick="fitView()" title="Fit Diagram to View">⊡</button>
+        <button class="ctrl-btn" onclick="resetZoom()" title="Reset Zoom (1:1)">1:1</button>
       </div>
+    </div>
 
-      <div class="legend-box">
-        <div style="font-weight: 700; color: var(--astryx-text); margin-bottom: 2px;">NETWORK &amp; VLAN LEGEND</div>
-        <div class="legend-item">
-          <span class="legend-dot" style="background: #38bdf8;"></span>
-          <span>WAN / 802.1Q Core Trunk</span>
+    <!-- Floating Legend Overlay (Bottom-Left, Non-Colliding) -->
+    <div class="legend-overlay">
+      <div class="legend-box" id="legendBox">
+        <div class="legend-header" onclick="toggleLegend()">
+          <div class="legend-title">
+            <span>🏷️</span>
+            <span>NETWORK &amp; VLAN LEGEND</span>
+          </div>
+          <button class="legend-toggle-btn" id="legendToggleBtn" title="Toggle Legend">−</button>
         </div>
-        <div class="legend-item">
-          <span class="legend-dot" style="background: #0ea5e9;"></span>
-          <span>VLAN 10 Audio &amp; MIDI (192.168.10.0/24)</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-dot" style="background: #10b981;"></span>
-          <span>VLAN 20 Compute &amp; TrueNAS (192.168.20.0/24)</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-dot" style="background: #a855f7;"></span>
-          <span>Cross-VLAN Restricted Route (TCP 5042)</span>
+        <div class="legend-items" id="legendItems">
+          <div class="legend-item">
+            <span class="legend-dot" style="background: #38bdf8;"></span>
+            <span>WAN / 802.1Q Core Trunk</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot" style="background: #0ea5e9;"></span>
+            <span>VLAN 10 Audio &amp; MIDI (192.168.10.0/24)</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot" style="background: #10b981;"></span>
+            <span>VLAN 20 Compute &amp; TrueNAS (192.168.20.0/24)</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot" style="background: #a855f7;"></span>
+            <span>Cross-VLAN Restricted Route (TCP 5042)</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1339,6 +1421,14 @@
       if (!animationActive) render();
     }
 
+    function toggleLegend() {
+      const box = document.getElementById("legendBox");
+      const btn = document.getElementById("legendToggleBtn");
+      box.classList.toggle("collapsed");
+      const isCollapsed = box.classList.contains("collapsed");
+      btn.innerText = isCollapsed ? "+" : "−";
+    }
+
     function fitView() {
       const container = document.getElementById("workspace-container");
       const drawerOpen = document.getElementById("inspector-drawer").classList.contains("open");
@@ -1355,15 +1445,18 @@
 
       const graphWidth = maxX - minX;
       const graphHeight = maxY - minY;
-      const padding = 60;
+      const paddingLeft = 70;
+      const paddingRight = 60;
+      const paddingTop = 70;
+      const paddingBottom = 140; // Full clearance for bottom legend
 
-      const scaleX = (availableWidth - padding * 2) / graphWidth;
-      const scaleY = (availableHeight - padding * 2) / graphHeight;
-      const targetScale = Math.min(Math.max(Math.min(scaleX, scaleY), 0.5), 1.1);
+      const scaleX = (availableWidth - paddingLeft - paddingRight) / graphWidth;
+      const scaleY = (availableHeight - paddingTop - paddingBottom) / graphHeight;
+      const targetScale = Math.min(Math.max(Math.min(scaleX, scaleY), 0.45), 1.05);
 
       view.scale = targetScale;
-      view.x = (availableWidth - graphWidth * targetScale) / 2 - minX * targetScale;
-      view.y = (availableHeight - graphHeight * targetScale) / 2 - minY * targetScale;
+      view.x = paddingLeft + (availableWidth - paddingLeft - paddingRight - graphWidth * targetScale) / 2 - minX * targetScale;
+      view.y = paddingTop + (availableHeight - paddingTop - paddingBottom - graphHeight * targetScale) / 2 - minY * targetScale;
 
       if (!animationActive) render();
     }
