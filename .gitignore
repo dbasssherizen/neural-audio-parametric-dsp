@@ -56,3 +56,10 @@ captures_justin.zip
 
 # Isolated Browser Profiles & Auth Sessions
 .google_messages_isolated_profile/
+
+# Sovereign Privacy Quarantine: Private calls & SMS corpus
+notes/call_*.json
+notes/*.txt
+notes/*.log
+notes/.seen_*
+notes/*voice_profile*
