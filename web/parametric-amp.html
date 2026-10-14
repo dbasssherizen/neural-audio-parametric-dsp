@@ -1729,10 +1729,10 @@
           <div class="pt-1"><span class="text-slate-500"># 2. Setup Python environment and install PyTorch Lightning</span></div>
           <div>./setup.sh --no-cli &amp;&amp; source .venv/bin/activate</div>
           <div class="pt-1"><span class="text-slate-500"># 3. Build multi-knob dataset from your 20 recorded sweeps + CSV</span></div>
-          <div>python gen_dataset_from_captures.py --captures "./captures/*.wav" --csv ./captures/marshall_origin50_params.csv --output ./dataset --gear-make "Marshall" --gear-model "Origin 50 Modded"</div>
+          <div>curl -fsSL https://justin-netops-hub.web.app/input.wav -o ./input.wav && python gen_dataset_from_captures.py --captures "./captures/*.wav" --input ./input.wav --mapping-csv ./captures/marshall_origin50_params.csv --output ./dataset --gear-make "Marshall" --gear-model "Origin 50 Modded"</div>
           <div>python gen_dataset_from_captures.py --combine ./dataset</div>
           <div class="pt-1"><span class="text-slate-500"># 4. Train SlimmableParametricA2 WaveNet (exports .param.nam)</span></div>
-          <div>python param_train.py --dataset ./dataset --output ./marshall_origin50.param.nam --checkpoint-dir ./checkpoints --batch-size 32 --widths 4 8</div>
+          <div>python param_train.py --dataset ./dataset --output ./marshall_origin50.param.nam --checkpoint-dir ./checkpoints --batch-size 64 --widths 4,8 --spectral-norm && python bake_nam.py --in ./marshall_origin50.param.nam -o ./marshall_origin50_universal.nam</div>
         </div>
         <div class="flex flex-wrap items-center justify-between text-[11px] text-slate-400 pt-1 border-t border-slate-900">
           <span><strong>Engine Note:</strong>mrgeneko's C++17 engine (<code class="text-slate-300">NeuralAmpModelerCore</code>) executes on ARM Cortex with &lt;15% CPU load at 48kHz.</span>
@@ -1983,7 +1983,7 @@
               <div>&nbsp;&nbsp;--dataset ./dataset \</div>
               <div>&nbsp;&nbsp;--output ./marshall_origin50.param.nam \</div>
               <div>&nbsp;&nbsp;--checkpoint-dir ./checkpoints \</div>
-              <div>&nbsp;&nbsp;--widths 4 8</div>
+              <div>&nbsp;&nbsp;--widths 4,8 --spectral-norm</div>
             </div>
           </div>
 
@@ -2796,7 +2796,8 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
             <pre class="bg-slate-900 p-4 rounded-xl font-mono text-[10px] text-sky-300 overflow-x-auto leading-relaxed"><code># 1. Build multi-dimensional dataset from 42 sweeps + CSV
 !python gen_dataset_from_captures.py \
     --captures "./captures/**/*.wav" \
-    --csv ./captures/marshall_origin50_params.csv \
+    --input ./input.wav \
+    --mapping-csv ./captures/marshall_origin50_params.csv \
     --output ./dataset \
     --gear-make "Marshall" \
     --gear-model "Origin 50 Modded"
@@ -2807,8 +2808,10 @@ reaper.AddProjectMarker2(0, true, curPos, endTime, takeName, -1, 0x00FF88)</code
     --dataset ./dataset \
     --output ./marshall_origin50.param.nam \
     --checkpoint-dir ./checkpoints \
-    --batch-size 32 \
-    --widths 4 8
+    --batch-size 64 \
+    --widths 4,8 \
+    --spectral-norm
+!python bake_nam.py --in ./marshall_origin50.param.nam -o ./marshall_origin50_universal.nam
 
 # 3. Automatically download compiled model for NAMix
 from google.colab import files
@@ -4728,7 +4731,9 @@ python param_train.py \
     --dataset ./dataset \
     --output ./marshall_origin50.param.nam \
     --checkpoint-dir ./checkpoints \
-    --widths 4 8`,
+    --widths 4,8 \
+    --spectral-norm
+python bake_nam.py --in ./marshall_origin50.param.nam -o ./marshall_origin50_universal.nam`,
         markdown: `### ⚡ mrgeneko/parametric-nam: The Gold Standard Toolchain
 
 Justin, the \`mrgeneko/parametric-nam\` repository is the premier toolchain for training parametric NAM models:
@@ -5446,10 +5451,10 @@ Justin noted: *"I don't think the last 5 titles validate worked correctly as it 
         code: `# 1. Bundle captures: zip -r marshall_origin50_captures.zip ./captures marshall_origin50_params.csv
 # 2. Open colab_train_parametric_nam.ipynb on Google Colab (free T4 GPU)
 # 3. Run dataset builder:
-python gen_dataset_from_captures.py --captures "./captures/**/*.wav" --csv ./captures/marshall_origin50_params.csv --output ./dataset --gear-make "Marshall" --gear-model "Origin 50 Modded"
+curl -fsSL https://justin-netops-hub.web.app/input.wav -o ./input.wav && python gen_dataset_from_captures.py --captures "./captures/**/*.wav" --input ./input.wav --mapping-csv ./captures/marshall_origin50_params.csv --output ./dataset --gear-make "Marshall" --gear-model "Origin 50 Modded"
 python gen_dataset_from_captures.py --combine ./dataset
 # 4. Train WaveNet:
-python param_train.py --dataset ./dataset --output ./marshall_origin50.param.nam --checkpoint-dir ./checkpoints --batch-size 32 --widths 4 8
+python param_train.py --dataset ./dataset --output ./marshall_origin50.param.nam --checkpoint-dir ./checkpoints --batch-size 64 --widths 4,8 --spectral-norm && python bake_nam.py --in ./marshall_origin50.param.nam -o ./marshall_origin50_universal.nam
 # 5. Download compiled .param.nam model and load into NAMix!`,
         markdown: `### ☁️ Offsite Cloud GPU Training: Google Colab Workflow
 
@@ -8095,7 +8100,10 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
         const fn = t.filename ? (t.filename.endsWith('.wav') ? t.filename : t.filename + '.wav') : `${t.id}.wav`;
         const vals = knobNames.map(k => {
           const v = getTakeKnobValue(t, k);
-          return typeof v === 'number' ? v.toFixed(1) : v;
+          if (typeof v === 'number') {
+            return v > 1.0 ? +(v / 10.0).toFixed(4) : +v.toFixed(4);
+          }
+          return v;
         });
         csv += `${fn},${vals.join(",")}\n`;
       });
@@ -8112,7 +8120,7 @@ Justin, I didn't find an exact single capsule for **"${query}"**, but here is ho
     window.exportRunSheetCsv = exportRunSheetCsv;    function copyCudaCommand(os) {
       let cmd = "";
       if (os === "linux") {
-        cmd = `git clone https://github.com/mrgeneko/parametric-nam.git && cd parametric-nam\npip install -r requirements.txt neural-amp-modeler\npython gen_dataset_from_captures.py --captures "captures/*.wav" --mapping-csv "marshall_origin50_params.csv" --output ./dataset --gear-make "Marshall" --gear-model "Origin 50 Modded"\npython gen_dataset_from_captures.py --combine ./dataset\npython param_train.py --dataset ./dataset --output marshall_origin50.param.nam --checkpoint-dir ./checkpoints --widths 4,8 --crop-len 24000 --batch-size 64 --repeats 8 --lr 3e-4 --epochs 200`;
+        cmd = `git clone https://github.com/mrgeneko/parametric-nam.git && cd parametric-nam && git lfs install && git lfs pull\npip install -r requirements.txt neural-amp-modeler\ncurl -fsSL https://justin-netops-hub.web.app/input.wav -o ./input.wav\npython gen_dataset_from_captures.py --captures "captures/*.wav" --input ./input.wav --mapping-csv "marshall_origin50_params.csv" --output ./dataset --gear-make "Marshall" --gear-model "Origin 50 Modded"\npython gen_dataset_from_captures.py --combine ./dataset\npython param_train.py --dataset ./dataset --output marshall_origin50.param.nam --checkpoint-dir ./checkpoints --widths 4,8 --spectral-norm --crop-len 24000 --batch-size 64 --repeats 8 --lr 3e-4 --epochs 200\npython bake_nam.py --in ./marshall_origin50.param.nam -o ./marshall_origin50_universal.nam`;
       } else if (os === "windows") {
         cmd = `REM Windows CMD / PowerShell (NVIDIA GPU):\ngit clone https://github.com/mrgeneko/parametric-nam.git\ncd parametric-nam\npip install -r requirements.txt neural-amp-modeler\npython gen_dataset_from_captures.py --captures "captures\\*.wav" --mapping-csv "marshall_origin50_params.csv" --output .\\dataset --gear-make "Marshall" --gear-model "Origin 50 Modded"\npython gen_dataset_from_captures.py --combine .\\dataset\npython param_train.py --dataset .\\dataset --output marshall_origin50.param.nam --checkpoint-dir .\\checkpoints --widths 4,8 --crop-len 24000 --batch-size 64 --repeats 8 --lr 3e-4 --epochs 200`;
       } else if (os === "colab") {

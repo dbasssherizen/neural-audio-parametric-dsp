@@ -143,20 +143,19 @@ def query_recent_sms_messages() -> List[Dict[str, Any]]:
         return []
 
     try:
-        # Query content://sms for Justin's number
+        # Query content://sms for Justin's number (Android 15/16 content query does not support --limit)
         cmd = [
             ADB_BIN, "shell",
             "content", "query", "--uri", "content://sms",
             "--projection", "_id:address:body:date:type:read",
-            "--sort", "date DESC",
-            "--limit", "10"
+            "--sort", "date DESC"
         ]
         res = subprocess.run(cmd, capture_output=True, text=True, timeout=8)
         if res.returncode != 0:
             return []
 
         messages = []
-        raw_rows = res.stdout.strip().split("\n")
+        raw_rows = res.stdout.strip().split("\n")[:25]
         current_msg = {}
         for row in raw_rows:
             row = row.strip()

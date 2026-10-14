@@ -1009,18 +1009,17 @@ def query_opportunistic_adb_sms(state: Dict[str, Any]) -> int:
 
     new_triggers = 0
     try:
-        # 1. Query standard SMS table with increased limit
+        # 1. Query standard SMS table (Android 15/16 content query does not support --limit)
         cmd = [
             ADB_BIN, "shell",
             "content", "query", "--uri", "content://sms",
             "--projection", "_id:address:body:date:type:read",
-            "--sort", "date DESC",
-            "--limit", "50"
+            "--sort", "date DESC"
         ]
-        res = subprocess.run(cmd, capture_output=True, text=True, timeout=5)
+        res = subprocess.run(cmd, capture_output=True, text=True, timeout=8)
         if res.returncode == 0 and res.stdout:
             messages = []
-            raw_rows = res.stdout.strip().split("\n")
+            raw_rows = res.stdout.strip().split("\n")[:50]
             current_msg = {}
             for row in raw_rows:
                 row = row.strip()
@@ -1058,13 +1057,12 @@ def query_opportunistic_adb_sms(state: Dict[str, Any]) -> int:
         mms_cmd = [
             ADB_BIN, "shell",
             "content", "query", "--uri", "content://mms-sms/complete-conversations",
-            "--sort", "date DESC",
-            "--limit", "30"
+            "--sort", "date DESC"
         ]
-        mms_res = subprocess.run(mms_cmd, capture_output=True, text=True, timeout=5)
+        mms_res = subprocess.run(mms_cmd, capture_output=True, text=True, timeout=8)
         if mms_res.returncode == 0 and mms_res.stdout:
             seen_conv_hashes = set(state.setdefault("seen_conv_hashes", []))
-            for line in mms_res.stdout.splitlines():
+            for line in mms_res.stdout.splitlines()[:30]:
                 if any(f in line for f in JUSTIN_PHONE_FRAGMENTS) or any(f in line.lower() for f in JUSTIN_NAME_FRAGMENTS):
                     c_hash = hashlib.sha256(line.encode()).hexdigest()[:16]
                     if c_hash not in seen_conv_hashes:

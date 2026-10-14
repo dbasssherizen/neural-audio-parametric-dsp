@@ -138,13 +138,12 @@ def scan_wireless_sms(device_serial: str, processed_set: set) -> int:
     Safely queries read-only content provider for SMS from Justin.
     """
     logger.info(f"Querying SMS content provider on device {device_serial}...")
-    where_clause = "address LIKE '%6304189227%' OR address LIKE '%630-418-9227%'"
     query_cmd = [
         "-s", device_serial,
         "shell", "content", "query",
         "--uri", "content://sms",
-        "--projection", "_id,address,body,date,type",
-        "--where", f'"{where_clause}"'
+        "--projection", "_id:address:body:date:type",
+        "--sort", "date DESC"
     ]
     code, stdout, stderr = run_adb_command(query_cmd)
     if code != 0:
@@ -153,7 +152,7 @@ def scan_wireless_sms(device_serial: str, processed_set: set) -> int:
 
     new_count = 0
     # Content query output format: Row: 0 _id=123, address=..., body=...
-    rows = stdout.split("Row: ")
+    rows = stdout.split("Row: ")[:50]
     for row in rows:
         if not row.strip():
             continue
@@ -163,6 +162,10 @@ def scan_wireless_sms(device_serial: str, processed_set: set) -> int:
                 if "=" in token:
                     k, v = token.split("=", 1)
                     row_dict[k.strip()] = v.strip()
+
+            addr = row_dict.get("address", "")
+            if not any(pat in addr for pat in JUSTIN_PHONE_PATTERNS):
+                continue
 
             msg_id = row_dict.get("_id")
             body = row_dict.get("body", "")
@@ -225,7 +228,7 @@ def scan_wireless_recordings(device_serial: str, processed_set: set) -> int:
     for line in stdout.splitlines():
         parts = line.strip().split()
         if len(parts) >= 8:
-            fname = parts[-1]
+            fname = " ".join(parts[7:])
             if fname.endswith(".txt") or fname.endswith(".m4a") or fname.endswith(".wav"):
                 unique_key = f"rec_{fname}_{parts[4]}" # name + size
                 if unique_key in processed_set:

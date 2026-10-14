@@ -1,26 +1,21 @@
-# Justin Muir • Marshall Origin 50 (Heavily Modded Head)
-# 45-Take Latin Hypercube Parametric Sampling Matrix
-# Format: take_id,split,Depth,Presence,Master,Treble,Middle,Bass,Gain1,Gain2
-# Designed for mrgeneko/parametric-nam & Reaper_AutoReamp_NAM.lua v3.2
-# Note: Master is clamped >= 3.0 to prevent silent captures.
-take_id,split,Depth,Presence,Master,Treble,Middle,Bass,Gain1,Gain2
-amp_run_001.wav,train,4.5,5.0,5.0,5.0,5.0,5.0,5.0,5.0
-amp_run_002.wav,train,2.0,3.5,4.0,7.0,4.0,3.0,8.0,7.5
-amp_run_003.wav,train,7.5,6.0,3.5,4.0,6.5,8.0,3.0,4.0
-amp_run_004.wav,train,5.0,7.5,6.0,8.5,3.0,2.5,9.5,8.0
-amp_run_005.wav,train,3.0,4.0,5.5,5.5,7.0,5.0,6.0,6.5
-amp_run_006.wav,train,8.0,2.5,4.5,3.0,5.0,7.5,4.0,3.5
-amp_run_007.wav,train,6.0,8.0,7.0,6.0,4.5,4.0,7.5,9.0
-amp_run_008.wav,train,1.5,5.5,5.0,9.0,2.0,3.5,8.5,8.5
-amp_run_009.wav,train,4.0,3.0,6.5,4.5,8.0,6.0,2.5,3.0
-amp_run_010.wav,train,7.0,6.5,4.0,7.5,5.5,5.5,6.5,7.0
-amp_run_011.wav,train,2.5,4.5,5.5,3.5,3.5,7.0,5.5,5.5
-amp_run_012.wav,train,5.5,7.0,3.5,8.0,6.0,4.5,7.0,8.0
-amp_run_013.wav,train,8.5,1.5,6.0,5.0,4.0,8.5,3.5,4.5
-amp_run_014.wav,train,3.5,8.5,4.5,6.5,7.5,3.0,9.0,9.5
-amp_run_015.wav,train,6.5,5.0,7.5,4.0,5.0,6.5,4.5,5.0
-amp_run_016.wav,train,1.0,3.0,5.0,7.0,3.0,4.0,8.0,7.0
-amp_run_017.wav,train,5.0,6.0,4.0,5.5,6.5,5.0,6.0,6.0
-amp_run_018.wav,train,7.5,4.0,6.5,8.5,4.5,7.5,3.0,3.5
-amp_run_019.wav,train,3.0,7.5,3.5,3.0,5.5,3.5,7.5,8.5
-amp_run_020.wav,train,6.0,2.0,5.5,6.0,7.0,6.0,5.0,5.5
+filename,Depth,Presence,Master,Treble,Middle,Bass,Gain1,Gain2
+amp_run_001.wav,0.45,0.5,0.5,0.5,0.5,0.5,0.5,0.5
+amp_run_002.wav,0.2,0.35,0.4,0.7,0.4,0.3,0.8,0.75
+amp_run_003.wav,0.75,0.6,0.35,0.4,0.65,0.8,0.3,0.4
+amp_run_004.wav,0.5,0.75,0.6,0.85,0.3,0.25,0.95,0.8
+amp_run_005.wav,0.3,0.4,0.55,0.55,0.7,0.5,0.6,0.65
+amp_run_006.wav,0.8,0.25,0.45,0.3,0.5,0.75,0.4,0.35
+amp_run_007.wav,0.6,0.8,0.7,0.6,0.45,0.4,0.75,0.9
+amp_run_008.wav,0.15,0.55,0.5,0.9,0.2,0.35,0.85,0.85
+amp_run_009.wav,0.4,0.3,0.65,0.45,0.8,0.6,0.25,0.3
+amp_run_010.wav,0.7,0.65,0.4,0.75,0.55,0.55,0.65,0.7
+amp_run_011.wav,0.25,0.45,0.55,0.35,0.35,0.7,0.55,0.55
+amp_run_012.wav,0.55,0.7,0.35,0.8,0.6,0.45,0.7,0.8
+amp_run_013.wav,0.85,0.15,0.6,0.5,0.4,0.85,0.35,0.45
+amp_run_014.wav,0.35,0.85,0.45,0.65,0.75,0.3,0.9,0.95
+amp_run_015.wav,0.65,0.5,0.75,0.4,0.5,0.65,0.45,0.5
+amp_run_016.wav,0.1,0.3,0.5,0.7,0.3,0.4,0.8,0.7
+amp_run_017.wav,0.5,0.6,0.4,0.55,0.65,0.5,0.6,0.6
+amp_run_018.wav,0.75,0.4,0.65,0.85,0.45,0.75,0.3,0.35
+amp_run_019.wav,0.3,0.75,0.35,0.3,0.55,0.35,0.75,0.85
+amp_run_020.wav,0.6,0.2,0.55,0.6,0.7,0.6,0.5,0.55

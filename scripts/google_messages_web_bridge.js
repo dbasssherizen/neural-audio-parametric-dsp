@@ -227,53 +227,45 @@ async function main() {
       if (targetConv) {
         await targetConv.click();
         await page.waitForTimeout(1500);
+      }
 
-        // Read message bubbles
-        const messageElements = await page.$$(
-          'mws-message-part-content, div[class*="text-msg"], div[class*="incoming"], div[class*="msg-bubble"]'
-        );
+      // Read message wrappers (1 wrapper per message, with accurate outgoing/incoming attribution)
+      const wrappers = await page.$$('mws-message-wrapper');
+      let newCount = 0;
 
-        let newCount = 0;
-        for (const el of messageElements) {
-          const rawText = (await el.innerText()).trim();
-          if (!rawText) continue;
+      for (const w of wrappers) {
+        const isOutgoing = await w.evaluate((node) => {
+          return (
+            node.getAttribute('is-outgoing') === 'true' ||
+            (node.className && String(node.className).includes('outgoing')) ||
+            !!node.querySelector('.outgoing, [class*="outgoing"]')
+          );
+        });
 
-          // Determine if incoming
-          const className = (await el.getAttribute('class')) || '';
-          const parentClass = ((await el.evaluate((node) => node.parentElement?.className)) || '');
-          const isIncoming = className.includes('incoming') || parentClass.includes('incoming') || !className.includes('outgoing');
+        // Strictly skip outgoing messages from Daniel/Max to prevent speaker cross-contamination
+        if (isOutgoing) continue;
 
-          if (!isIncoming) continue;
+        const rawText = await w.evaluate((node) => {
+          const textNode = node.querySelector('mws-message-part-content, div[class*="text-msg"]');
+          return (textNode ? textNode.innerText : node.innerText || '').trim();
+        });
 
-          // Create hash for deduplication
-          const msgHash = Buffer.from(`${TARGET_NAME}:${rawText}`).toString('base64').slice(0, 24);
-          if (!seenHashes.has(msgHash)) {
-            seenHashes.add(msgHash);
-            saveSeenHashes(seenHashes);
+        if (!rawText) continue;
 
-            console.log(`📱 [NEW RCS MSG] '${rawText}'`);
-            await postToWatcher(rawText, TARGET_NAME, 'google_messages_web');
-            newCount++;
-          }
+        // Create hash for deduplication
+        const msgHash = Buffer.from(`${TARGET_NAME}:${rawText}`).toString('base64').slice(0, 24);
+        if (!seenHashes.has(msgHash)) {
+          seenHashes.add(msgHash);
+          saveSeenHashes(seenHashes);
+
+          console.log(`📱 [NEW RCS MSG] '${rawText}'`);
+          await postToWatcher(rawText, TARGET_NAME, 'google_messages_web');
+          newCount++;
         }
+      }
 
-        if (newCount > 0) {
-          console.log(`✅ Ingested ${newCount} new messages from ${TARGET_NAME}.`);
-        }
-      } else {
-        // Fallback: check current visible messages in case thread is already open
-        const visibleMessages = await page.$$('mws-message-part-content, div[class*="text-msg"]');
-        for (const el of visibleMessages) {
-          const rawText = (await el.innerText()).trim();
-          if (!rawText) continue;
-          const msgHash = Buffer.from(`${TARGET_NAME}:${rawText}`).toString('base64').slice(0, 24);
-          if (!seenHashes.has(msgHash)) {
-            seenHashes.add(msgHash);
-            saveSeenHashes(seenHashes);
-            console.log(`📱 [NEW MSG] '${rawText}'`);
-            await postToWatcher(rawText, TARGET_NAME, 'google_messages_web');
-          }
-        }
+      if (newCount > 0) {
+        console.log(`✅ Ingested ${newCount} new messages from ${TARGET_NAME}.`);
       }
     } catch (err) {
       console.warn(`[WARN] Sync cycle error: ${err.message}`);

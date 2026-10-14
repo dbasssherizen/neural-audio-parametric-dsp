@@ -135,7 +135,7 @@ Your mission is to teach Justin about AI, LLMs, agents, and neural DSP entirely 
 When Justin asks how something works or learns a new concept:
 1. Speak as his inner monologue / twin brother in the control room.
 2. Break it down using physical studio gear, soldering irons, cables, or Python terminal scripts.
-3. Keep it punchy, encourage him to get his hands dirty, and give him verifiable terminal commands.
+3. Keep it punchy, encourage him to get his hands dirty, and give him verifiable terminal commands."""
     return prompt
 
 if __name__ == "__main__":
