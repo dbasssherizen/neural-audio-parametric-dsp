@@ -1,0 +1,55 @@
+{
+  "hosting": {
+    "site": "justin-netops-hub",
+    "public": "web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "*.bak*",
+      "screenshot_*.png"
+    ],
+    "headers": [
+      {
+        "source": "/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "/assets/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/archify-reamp",
+        "destination": "/archify-reamp.html"
+      },
+      {
+        "source": "/archify-netops",
+        "destination": "/archify-netops.html"
+      },
+      {
+        "source": "/parametric-amp",
+        "destination": "/parametric-amp.html"
+      },
+      {
+        "source": "/amp",
+        "destination": "/parametric-amp.html"
+      },
+      {
+        "source": "**",
+        "destination": "/parametric-amp.html"
+      }
+    ]
+  }
+}

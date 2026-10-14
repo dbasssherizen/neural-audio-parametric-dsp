@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "anima-sovereign-ai"
+  },
+  "targets": {
+    "anima-sovereign-ai": {
+      "hosting": {
+        "justin-netops-hub": [
+          "justin-netops-hub"
+        ]
+      }
+    }
+  }
+}
