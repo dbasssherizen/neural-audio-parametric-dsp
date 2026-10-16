@@ -31,6 +31,10 @@
     ],
     "rewrites": [
       {
+        "source": "/guitar-studio",
+        "destination": "/guitar-studio.html"
+      },
+      {
         "source": "/archify-reamp",
         "destination": "/archify-reamp.html"
       },

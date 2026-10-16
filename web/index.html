@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="text-scale" content="scale">
   <title>Justin Muir • Parametric Neural Amp Modeler & Hardware Blueprint (Live Redline Studio)</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎸</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -200,9 +201,44 @@
       background-color: rgba(255, 255, 255, 0.95) !important;
     }
 
+    /* Modern Web Guidance: Typography, Focus Accessibility & Deferred Rendering */
+    h1, h2, h3, h4, h5, h6 {
+      text-wrap: balance;
+    }
+    p {
+      text-wrap: pretty;
+    }
+    :focus-visible {
+      outline: 2px solid var(--astryx-brand, #38bdf8);
+      outline-offset: 3px;
+    }
+    .skip-link:not(:focus):not(:active) {
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+    .skip-link:focus {
+      position: fixed;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: 9999;
+      padding: 0.625rem 1rem;
+      border-radius: 0.75rem;
+      background: var(--astryx-brand, #38bdf8);
+      color: #0b0f19;
+      font-weight: 800;
+      font-size: 0.875rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+    }
+
     /* Studio Workspace Transitions */
     .studio-workspace {
       animation: fadeIn 0.25s ease-out;
+      content-visibility: auto;
+      contain-intrinsic-size: auto none auto 500px;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(6px); }
@@ -248,7 +284,8 @@
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen px-3 sm:px-6 md:px-8 py-4 sm:py-6 md:py-8 antialiased font-sans pb-28">
-  <div class="max-w-7xl mx-auto space-y-6">
+  <a href="#main-studio-hub" class="skip-link">Skip to main studio workspace</a>
+  <div id="main-studio-hub" tabindex="-1" class="max-w-7xl mx-auto space-y-6">
 
     <!-- TOP SOVEREIGN AMBIENT GLOW -->
     <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[250px] bg-orange-600/10 blur-[130px] pointer-events-none"></div>
@@ -299,6 +336,10 @@
               <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Workspaces
             </span>
 
+            <a href="guitar-studio.html" target="_blank" class="h-9 px-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-rose-600 hover:from-amber-400 hover:to-rose-500 text-slate-950 font-extrabold text-xs inline-flex items-center justify-center gap-2 shadow-md shadow-amber-950/40 border border-amber-300/60 transition active:scale-95 cursor-pointer whitespace-nowrap shrink-0">
+              <span>🎸</span>
+              <span>48-Titan NAM + Motorized CSV Studio ↗</span>
+            </a>
             <button onclick="switchStudioWorkspace('workspace-mermaid')" class="h-9 px-3.5 rounded-xl bg-gradient-to-r from-teal-600/90 to-emerald-600/90 hover:from-teal-500 hover:to-emerald-500 text-white font-bold text-xs inline-flex items-center justify-center gap-2 shadow-md shadow-emerald-950/40 border border-emerald-400/40 transition active:scale-95 cursor-pointer whitespace-nowrap shrink-0">
               <span>📐</span>
               <span>Mermaid Studio ↗</span>
