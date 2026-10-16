@@ -1,0 +1,298 @@
+{
+  "architecture": "Grey-Box 4-Tube Neural + 4-Knob White-Box Marshall FMV",
+  "total_takes": 20,
+  "nonlinear_tube_knobs": [
+    "gain",
+    "boost",
+    "output",
+    "master"
+  ],
+  "whitebox_fmv_knobs": [
+    "bass",
+    "middle",
+    "treble",
+    "presence"
+  ],
+  "takes": [
+    {
+      "filename": "take_01.wav",
+      "bass": 0.5,
+      "middle": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "fmv_curve": {
+        "100Hz_dB": -1.15,
+        "450Hz_dB": -0.16,
+        "1000Hz_dB": -1.71,
+        "3200Hz_dB": -6.56,
+        "8000Hz_dB": -8.1
+      }
+    },
+    {
+      "filename": "take_02.wav",
+      "bass": 0.5,
+      "middle": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "fmv_curve": {
+        "100Hz_dB": -1.15,
+        "450Hz_dB": -0.16,
+        "1000Hz_dB": -1.71,
+        "3200Hz_dB": -6.56,
+        "8000Hz_dB": -8.1
+      }
+    },
+    {
+      "filename": "take_03.wav",
+      "bass": 0.5,
+      "middle": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "fmv_curve": {
+        "100Hz_dB": -1.15,
+        "450Hz_dB": -0.16,
+        "1000Hz_dB": -1.71,
+        "3200Hz_dB": -6.56,
+        "8000Hz_dB": -8.1
+      }
+    },
+    {
+      "filename": "take_04.wav",
+      "bass": 0.5,
+      "middle": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "fmv_curve": {
+        "100Hz_dB": -1.15,
+        "450Hz_dB": -0.16,
+        "1000Hz_dB": -1.71,
+        "3200Hz_dB": -6.56,
+        "8000Hz_dB": -8.1
+      }
+    },
+    {
+      "filename": "take_05.wav",
+      "bass": 0.5,
+      "middle": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "fmv_curve": {
+        "100Hz_dB": -1.15,
+        "450Hz_dB": -0.16,
+        "1000Hz_dB": -1.71,
+        "3200Hz_dB": -6.56,
+        "8000Hz_dB": -8.1
+      }
+    },
+    {
+      "filename": "take_06.wav",
+      "bass": 0.5,
+      "middle": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "fmv_curve": {
+        "100Hz_dB": -1.15,
+        "450Hz_dB": -0.16,
+        "1000Hz_dB": -1.71,
+        "3200Hz_dB": -6.56,
+        "8000Hz_dB": -8.1
+      }
+    },
+    {
+      "filename": "take_07.wav",
+      "bass": 0.5,
+      "middle": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "fmv_curve": {
+        "100Hz_dB": -1.15,
+        "450Hz_dB": -0.16,
+        "1000Hz_dB": -1.71,
+        "3200Hz_dB": -6.56,
+        "8000Hz_dB": -8.1
+      }
+    },
+    {
+      "filename": "take_08.wav",
+      "bass": 0.5,
+      "middle": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "fmv_curve": {
+        "100Hz_dB": -1.15,
+        "450Hz_dB": -0.16,
+        "1000Hz_dB": -1.71,
+        "3200Hz_dB": -6.56,
+        "8000Hz_dB": -8.1
+      }
+    },
+    {
+      "filename": "take_09.wav",
+      "bass": 0.5,
+      "middle": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "fmv_curve": {
+        "100Hz_dB": -1.15,
+        "450Hz_dB": -0.16,
+        "1000Hz_dB": -1.71,
+        "3200Hz_dB": -6.56,
+        "8000Hz_dB": -8.1
+      }
+    },
+    {
+      "filename": "take_10.wav",
+      "bass": 0.5,
+      "middle": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "fmv_curve": {
+        "100Hz_dB": -1.15,
+        "450Hz_dB": -0.16,
+        "1000Hz_dB": -1.71,
+        "3200Hz_dB": -6.56,
+        "8000Hz_dB": -8.1
+      }
+    },
+    {
+      "filename": "take_11.wav",
+      "bass": 0.5,
+      "middle": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "fmv_curve": {
+        "100Hz_dB": -1.15,
+        "450Hz_dB": -0.16,
+        "1000Hz_dB": -1.71,
+        "3200Hz_dB": -6.56,
+        "8000Hz_dB": -8.1
+      }
+    },
+    {
+      "filename": "take_12.wav",
+      "bass": 0.5,
+      "middle": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "fmv_curve": {
+        "100Hz_dB": -1.15,
+        "450Hz_dB": -0.16,
+        "1000Hz_dB": -1.71,
+        "3200Hz_dB": -6.56,
+        "8000Hz_dB": -8.1
+      }
+    },
+    {
+      "filename": "take_13.wav",
+      "bass": 0.5,
+      "middle": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "fmv_curve": {
+        "100Hz_dB": -1.15,
+        "450Hz_dB": -0.16,
+        "1000Hz_dB": -1.71,
+        "3200Hz_dB": -6.56,
+        "8000Hz_dB": -8.1
+      }
+    },
+    {
+      "filename": "take_14.wav",
+      "bass": 0.5,
+      "middle": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "fmv_curve": {
+        "100Hz_dB": -1.15,
+        "450Hz_dB": -0.16,
+        "1000Hz_dB": -1.71,
+        "3200Hz_dB": -6.56,
+        "8000Hz_dB": -8.1
+      }
+    },
+    {
+      "filename": "take_15.wav",
+      "bass": 0.5,
+      "middle": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "fmv_curve": {
+        "100Hz_dB": -1.15,
+        "450Hz_dB": -0.16,
+        "1000Hz_dB": -1.71,
+        "3200Hz_dB": -6.56,
+        "8000Hz_dB": -8.1
+      }
+    },
+    {
+      "filename": "take_16.wav",
+      "bass": 0.5,
+      "middle": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "fmv_curve": {
+        "100Hz_dB": -1.15,
+        "450Hz_dB": -0.16,
+        "1000Hz_dB": -1.71,
+        "3200Hz_dB": -6.56,
+        "8000Hz_dB": -8.1
+      }
+    },
+    {
+      "filename": "take_17.wav",
+      "bass": 0.2,
+      "middle": 0.2,
+      "treble": 0.8,
+      "presence": 0.7,
+      "fmv_curve": {
+        "100Hz_dB": -7.21,
+        "450Hz_dB": -5.36,
+        "1000Hz_dB": -7.57,
+        "3200Hz_dB": -13.18,
+        "8000Hz_dB": -14.8
+      }
+    },
+    {
+      "filename": "take_18.wav",
+      "bass": 0.8,
+      "middle": 0.9,
+      "treble": 0.3,
+      "presence": 0.3,
+      "fmv_curve": {
+        "100Hz_dB": -0.19,
+        "450Hz_dB": 0.1,
+        "1000Hz_dB": -0.54,
+        "3200Hz_dB": -4.45,
+        "8000Hz_dB": -7.5
+      }
+    },
+    {
+      "filename": "take_19.wav",
+      "bass": 0.7,
+      "middle": 0.7,
+      "treble": 0.7,
+      "presence": 0.7,
+      "fmv_curve": {
+        "100Hz_dB": -0.41,
+        "450Hz_dB": 0.34,
+        "1000Hz_dB": 0.33,
+        "3200Hz_dB": -0.55,
+        "8000Hz_dB": -0.78
+      }
+    },
+    {
+      "filename": "take_20.wav",
+      "bass": 0.6,
+      "middle": 0.7,
+      "treble": 0.8,
+      "presence": 0.6,
+      "fmv_curve": {
+        "100Hz_dB": -0.62,
+        "450Hz_dB": -0.14,
+        "1000Hz_dB": -0.26,
+        "3200Hz_dB": -0.55,
+        "8000Hz_dB": -0.52
+      }
+    }
+  ]
+}
