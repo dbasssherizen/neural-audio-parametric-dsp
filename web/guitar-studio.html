@@ -499,45 +499,104 @@
       <!-- SPARK 7-SLOT SIGNAL CHAIN STRIP -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-2.5" id="spark-chain-grid"></div>
 
-      <!-- 5D PARAMETRIC NAM KNOBS -->
-      <div class="spark-grille rounded-2xl p-4 border border-amber-500/40 space-y-3">
-        <div class="flex flex-wrap items-center justify-between gap-3">
-          <div class="flex items-center gap-3">
+      <!-- 5D PARAMETRIC NAM KNOBS (INTERACTIVE AMP FACEPLATE) -->
+      <div class="spark-grille rounded-2xl p-4 sm:p-5 border border-amber-500/40 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800/80 pb-3">
+          <div class="flex items-start sm:items-center gap-3">
             <div class="px-3 py-1.5 rounded-xl spark-gold text-slate-950 font-black text-xs tracking-wider uppercase shadow shrink-0">
               ORIGIN 50 × NAM GREY-BOX
             </div>
             <div>
-              <h3 class="text-sm font-bold text-white">Continuous FiLM Tube Saturation + Passive FMV Tone Stack Controls</h3>
-              <p class="text-xs text-slate-200">Adjust any knob to hear non-linear FiLM tube saturation + Passive FMV Tone Stack &amp; stream MIDI CC 20–27 to REAPER/NAMix or CSV targets to your RP2040 Motorized Pots.</p>
+              <h3 class="text-sm sm:text-base font-extrabold text-white">Interactive 5-Knob Amp Head Faceplate (Live Audio + MIDI CC + Motorized CSV)</h3>
+              <p class="text-xs text-slate-200 mt-0.5">
+                <strong>How to use this:</strong> Drag any slider below (or click a quick preset) to simultaneously <strong>(1)</strong> shape the live browser guitar synth &amp; tube saturation curve below, <strong>(2)</strong> send real-time <code class="text-amber-300">MIDI CC 20–26</code> to <strong>REAPER / NAMix</strong>, and <strong>(3)</strong> stream target <code class="text-cyan-300">CSV</code> coordinates to your <strong>RP2040 Motorized Potentiometers</strong>.
+              </p>
             </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <button type="button" onclick="pluckNote(0, 0, 0.75)" class="px-3 py-1.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-xs transition shadow cursor-pointer">
+              🔊 Audition Chord
+            </button>
+            <button type="button" onclick="setQuickAmpVoicing(3.2, 5.5, 6.2, 6.8, 8.5)" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-100 border border-slate-600 font-bold text-xs transition cursor-pointer">
+              ✨ Edge-of-Breakup Clean
+            </button>
+            <button type="button" onclick="setQuickAmpVoicing(7.8, 6.0, 7.5, 6.8, 8.5)" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/40 font-bold text-xs transition cursor-pointer">
+              🔥 Origin 50 Boosted Crunch
+            </button>
+            <button type="button" onclick="setQuickAmpVoicing(9.2, 8.2, 3.4, 8.0, 7.8)" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-cyan-500/40 font-bold text-xs transition cursor-pointer">
+              ⚡ Tight Drop-A Chug
+            </button>
+            <button type="button" onclick="resetKnobsToActiveRig()" class="px-2.5 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold text-xs transition cursor-pointer">
+              ↺ Reset to Rig Default
+            </button>
           </div>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 w-full">
-          <div class="bg-slate-950/95 p-3 rounded-xl border border-slate-700 text-center">
-            <label for="knob-gain" class="block text-xs font-extrabold text-slate-100 uppercase tracking-wide">Gain / Drive</label>
-            <input id="knob-gain" type="range" min="0" max="10" step="0.1" value="7.2" class="w-full accent-amber-400 my-1.5" />
-            <div id="val-gain" class="mono text-base font-extrabold text-amber-300">7.2</div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 w-full">
+          <!-- Knob 1: Gain -->
+          <div class="bg-slate-950/95 p-3.5 rounded-xl border border-slate-700 flex flex-col justify-between gap-2">
+            <div class="flex items-center justify-between gap-2">
+              <label for="knob-gain" class="text-xs font-extrabold text-white uppercase tracking-wide">1. Preamp Gain</label>
+              <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 mono text-[11px] font-bold">CC 20 • Tube</span>
+            </div>
+            <input id="knob-gain" type="range" min="0" max="10" step="0.1" value="7.2" class="w-full accent-amber-400 my-1 cursor-pointer" />
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] text-slate-200">ECC83 Saturation &amp; Pull-Boost</span>
+              <span id="val-gain" class="mono text-base font-black text-amber-300">7.2</span>
+            </div>
           </div>
-          <div class="bg-slate-950/95 p-3 rounded-xl border border-slate-700 text-center">
-            <label for="knob-bass" class="block text-xs font-extrabold text-slate-100 uppercase tracking-wide">Bass (FMV)</label>
-            <input id="knob-bass" type="range" min="0" max="10" step="0.1" value="6.6" class="w-full accent-amber-400 my-1.5" />
-            <div id="val-bass" class="mono text-base font-extrabold text-amber-300">6.6</div>
+
+          <!-- Knob 2: Bass -->
+          <div class="bg-slate-950/95 p-3.5 rounded-xl border border-slate-700 flex flex-col justify-between gap-2">
+            <div class="flex items-center justify-between gap-2">
+              <label for="knob-bass" class="text-xs font-extrabold text-white uppercase tracking-wide">2. Bass (FMV)</label>
+              <span class="px-1.5 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 mono text-[11px] font-bold">CC 23 • 140Hz</span>
+            </div>
+            <input id="knob-bass" type="range" min="0" max="10" step="0.1" value="6.6" class="w-full accent-amber-400 my-1 cursor-pointer" />
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] text-slate-200">Low-End Cabinet Thump</span>
+              <span id="val-bass" class="mono text-base font-black text-amber-300">6.6</span>
+            </div>
           </div>
-          <div class="bg-slate-950/95 p-3 rounded-xl border border-slate-700 text-center">
-            <label for="knob-mid" class="block text-xs font-extrabold text-slate-100 uppercase tracking-wide">Mid (Q Peak)</label>
-            <input id="knob-mid" type="range" min="0" max="10" step="0.1" value="8.8" class="w-full accent-amber-400 my-1.5" />
-            <div id="val-mid" class="mono text-base font-extrabold text-amber-300">8.8</div>
+
+          <!-- Knob 3: Mid -->
+          <div class="bg-slate-950/95 p-3.5 rounded-xl border border-slate-700 flex flex-col justify-between gap-2">
+            <div class="flex items-center justify-between gap-2">
+              <label for="knob-mid" class="text-xs font-extrabold text-white uppercase tracking-wide">3. Middle (Q Peak)</label>
+              <span class="px-1.5 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 mono text-[11px] font-bold">CC 24 • 720Hz</span>
+            </div>
+            <input id="knob-mid" type="range" min="0" max="10" step="0.1" value="8.8" class="w-full accent-amber-400 my-1 cursor-pointer" />
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] text-slate-200">Scoop (&lt;4) vs. Desert Bark (&gt;7)</span>
+              <span id="val-mid" class="mono text-base font-black text-amber-300">8.8</span>
+            </div>
           </div>
-          <div class="bg-slate-950/95 p-3 rounded-xl border border-slate-700 text-center">
-            <label for="knob-treble" class="block text-xs font-extrabold text-slate-100 uppercase tracking-wide">Treble / Tilt</label>
-            <input id="knob-treble" type="range" min="0" max="10" step="0.1" value="4.2" class="w-full accent-amber-400 my-1.5" />
-            <div id="val-treble" class="mono text-base font-extrabold text-amber-300">4.2</div>
+
+          <!-- Knob 4: Treble / Tilt -->
+          <div class="bg-slate-950/95 p-3.5 rounded-xl border border-slate-700 flex flex-col justify-between gap-2">
+            <div class="flex items-center justify-between gap-2">
+              <label for="knob-treble" class="text-xs font-extrabold text-white uppercase tracking-wide">4. Treble &amp; Tilt</label>
+              <span class="px-1.5 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 mono text-[11px] font-bold">CC 25 • 2.8kHz</span>
+            </div>
+            <input id="knob-treble" type="range" min="0" max="10" step="0.1" value="4.2" class="w-full accent-amber-400 my-1 cursor-pointer" />
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] text-slate-200">Pick Attack &amp; Bright Channel Blend</span>
+              <span id="val-treble" class="mono text-base font-black text-amber-300">4.2</span>
+            </div>
           </div>
-          <div class="bg-slate-950/95 p-3 rounded-xl border border-slate-700 text-center">
-            <label for="knob-master" class="block text-xs font-extrabold text-slate-100 uppercase tracking-wide">Master / EL34</label>
-            <input id="knob-master" type="range" min="0" max="10" step="0.1" value="7.8" class="w-full accent-amber-400 my-1.5" />
-            <div id="val-master" class="mono text-base font-extrabold text-amber-300">7.8</div>
+
+          <!-- Knob 5: Master / EL34 -->
+          <div class="bg-slate-950/95 p-3.5 rounded-xl border border-slate-700 flex flex-col justify-between gap-2">
+            <div class="flex items-center justify-between gap-2">
+              <label for="knob-master" class="text-xs font-extrabold text-white uppercase tracking-wide">5. Master / EL34</label>
+              <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 mono text-[11px] font-bold">CC 26 • Power</span>
+            </div>
+            <input id="knob-master" type="range" min="0" max="10" step="0.1" value="7.8" class="w-full accent-amber-400 my-1 cursor-pointer" />
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] text-slate-200">Push-Pull Power Sag &amp; Output</span>
+              <span id="val-master" class="mono text-base font-black text-amber-300">7.8</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1857,6 +1916,27 @@ true); // Little-endian IEEE-754 float
       });
 
       requestAnimationFrame(drawOscilloscope);
+    }
+
+        function setQuickAmpVoicing(g, b, m, t, mv) {
+      document.getElementById('knob-gain').value = g;
+      document.getElementById('knob-bass').value = b;
+      document.getElementById('knob-mid').value = m;
+      document.getElementById('knob-treble').value = t;
+      document.getElementById('knob-master').value = mv;
+      updateDspFromKnobs(0);
+      pluckNote(0, 0, 0.55);
+    }
+
+    function resetKnobsToActiveRig() {
+      if (!activeRig || !activeRig.nam_vector) return;
+      setQuickAmpVoicing(
+        activeRig.nam_vector.gain,
+        activeRig.nam_vector.bass,
+        activeRig.nam_vector.mid,
+        activeRig.nam_vector.treble,
+        activeRig.nam_vector.master
+      );
     }
 
     function applyMorph() {
