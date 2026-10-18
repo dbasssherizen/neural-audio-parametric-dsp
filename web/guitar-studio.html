@@ -91,29 +91,137 @@
       pointer-events: none;
       transition: opacity 0.15s ease;
     }
-    /* High-Contrast Music-Stand Light Posture */
+    /* Global Select / Option & Form Input Readability */
+    select, input[type="text"], input[type="search"] {
+      background-color: #0f172a;
+      color: #f8fafc;
+    }
+    select option {
+      background-color: #0f172a;
+      color: #f8fafc;
+    }
+    ::placeholder {
+      color: #cbd5e1 !important;
+      opacity: 0.85 !important;
+    }
+
+    /* High-Contrast Music-Stand Light Posture (WCAG AAA/AA Verified) */
     body[data-theme="music-stand"] {
+      color-scheme: light;
       background-color: #f8fafc !important;
       color: #0f172a !important;
     }
     body[data-theme="music-stand"] header,
     body[data-theme="music-stand"] .glass-card,
+    body[data-theme="music-stand"] .spark-grille,
+    body[data-theme="music-stand"] .bg-slate-800,
     body[data-theme="music-stand"] .bg-slate-900,
+    body[data-theme="music-stand"] .bg-slate-900\/80,
     body[data-theme="music-stand"] .bg-slate-900\/90,
     body[data-theme="music-stand"] .bg-slate-900\/95,
     body[data-theme="music-stand"] .bg-slate-950,
-    body[data-theme="music-stand"] .bg-slate-950\/90 {
+    body[data-theme="music-stand"] .bg-slate-950\/80,
+    body[data-theme="music-stand"] .bg-slate-950\/90,
+    body[data-theme="music-stand"] .bg-slate-950\/95,
+    body[data-theme="music-stand"] .from-slate-950 {
+      background: #ffffff !important;
       background-color: #ffffff !important;
-      border-color: #cbd5e1 !important;
+      background-image: none !important;
+      border-color: #94a3b8 !important;
       color: #0f172a !important;
+    }
+    body[data-theme="music-stand"] .bg-slate-800 {
+      background-color: #f1f5f9 !important;
+      border: 1px solid #cbd5e1 !important;
+    }
+    body[data-theme="music-stand"] select,
+    body[data-theme="music-stand"] select option,
+    body[data-theme="music-stand"] input[type="text"],
+    body[data-theme="music-stand"] input[type="search"] {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+      border-color: #64748b !important;
+    }
+    body[data-theme="music-stand"] ::placeholder {
+      color: #475569 !important;
     }
     body[data-theme="music-stand"] .text-white,
+    body[data-theme="music-stand"] .text-slate-100,
     body[data-theme="music-stand"] .text-slate-200,
-    body[data-theme="music-stand"] .text-slate-300 {
+    body[data-theme="music-stand"] .text-slate-300,
+    body[data-theme="music-stand"] .text-stone-200,
+    body[data-theme="music-stand"] .text-stone-300 {
       color: #0f172a !important;
     }
-    body[data-theme="music-stand"] .text-slate-400 {
-      color: #475569 !important;
+    body[data-theme="music-stand"] .text-slate-200,
+    body[data-theme="music-stand"] .text-slate-500,
+    body[data-theme="music-stand"] .text-stone-400 {
+      color: #334155 !important;
+    }
+        body[data-theme="music-stand"] #fretboard-svg {
+      background-color: #0f172a !important;
+      border-color: #334155 !important;
+    }
+    body[data-theme="music-stand"] .from-stone-950 span {
+      color: #fde68a !important;
+    }
+    /* High-Contrast Semantic Accent Colors on White Music-Stand Surface */
+    body[data-theme="music-stand"] .text-amber-200,
+    body[data-theme="music-stand"] .text-amber-300,
+    body[data-theme="music-stand"] .text-amber-400,
+    body[data-theme="music-stand"] .text-orange-300,
+    body[data-theme="music-stand"] .text-orange-400 {
+      color: #92400e !important;
+    }
+    body[data-theme="music-stand"] .text-cyan-200,
+    body[data-theme="music-stand"] .text-cyan-300,
+    body[data-theme="music-stand"] .text-cyan-400,
+    body[data-theme="music-stand"] .text-sky-300 {
+      color: #0e7490 !important;
+    }
+    body[data-theme="music-stand"] .text-emerald-200,
+    body[data-theme="music-stand"] .text-emerald-300,
+    body[data-theme="music-stand"] .text-emerald-400 {
+      color: #065f46 !important;
+    }
+    body[data-theme="music-stand"] .text-purple-200,
+    body[data-theme="music-stand"] .text-purple-300,
+    body[data-theme="music-stand"] .text-fuchsia-200,
+    body[data-theme="music-stand"] .text-fuchsia-300,
+    body[data-theme="music-stand"] .text-fuchsia-400 {
+      color: #6b21a8 !important;
+    }
+    body[data-theme="music-stand"] .text-indigo-200,
+    body[data-theme="music-stand"] .text-indigo-300 {
+      color: #3730a3 !important;
+    }
+    body[data-theme="music-stand"] .text-rose-300,
+    body[data-theme="music-stand"] .text-rose-400 {
+      color: #9f1239 !important;
+    }
+    body[data-theme="music-stand"] .bg-amber-500\/20,
+    body[data-theme="music-stand"] .bg-amber-500\/15 {
+      background-color: #fef3c7 !important;
+      border-color: #d97706 !important;
+    }
+    body[data-theme="music-stand"] .bg-cyan-500\/20,
+    body[data-theme="music-stand"] .bg-cyan-950\/50 {
+      background-color: #cffafe !important;
+      border-color: #0891b2 !important;
+    }
+    body[data-theme="music-stand"] .bg-emerald-500\/20,
+    body[data-theme="music-stand"] .bg-emerald-600\/20,
+    body[data-theme="music-stand"] .bg-emerald-950\/70 {
+      background-color: #d1fae5 !important;
+      border-color: #059669 !important;
+    }
+    body[data-theme="music-stand"] .bg-purple-500\/20,
+    body[data-theme="music-stand"] .bg-purple-600\/20,
+    body[data-theme="music-stand"] .bg-indigo-500\/20,
+    body[data-theme="music-stand"] .bg-indigo-600\/20,
+    body[data-theme="music-stand"] .bg-indigo-600\/30 {
+      background-color: #ede9fe !important;
+      border-color: #7c3aed !important;
     }
   </style>
 </head>
@@ -132,7 +240,7 @@
             <span class="text-xs px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 font-semibold">Zero Sheet Music • Relative-Pitch Ear Engine</span>
             <span class="text-xs px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 font-mono">4+4 Grey-Box FMV × NAMix VST3 × Motorized CSV Pots</span>
           </div>
-          <p class="text-xs text-slate-400">All 45 Titans Mapped • Custom Guitar/Baritone Rack • IK AXE I/O • Two Notes Captor X • REAPER • RP2040 Motorized CSV Pots • Shortcuts: <code class="text-amber-300">Space</code> Loop • <code class="text-cyan-300">D</code> Drone • <code class="text-fuchsia-300">M</code> 24-TET • <code class="text-slate-300">[ / ]</code> Prev/Next Titan</p>
+          <p class="text-xs text-slate-200">All 45 Titans Mapped • Custom Guitar/Baritone Rack • IK AXE I/O • Two Notes Captor X • REAPER • RP2040 Motorized CSV Pots • Shortcuts: <code class="text-amber-300">Space</code> Loop • <code class="text-cyan-300">D</code> Drone • <code class="text-fuchsia-300">M</code> 24-TET • <code class="text-slate-300">[ / ]</code> Prev/Next Titan</p>
         </div>
       </div>
 
@@ -224,7 +332,7 @@
               <h2 class="text-base font-extrabold text-white" id="active-titan-title">Josh Homme</h2>
               <span id="held-guitar-notice" aria-live="polite" class="hidden text-xs px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-bold"></span>
             </div>
-            <p class="text-xs text-slate-400 mt-0.5" id="active-tuning-subtitle">Tuning: C Standard • Click any glowing fret dot to hear its exact pitch & interval</p>
+            <p class="text-xs text-slate-200 mt-0.5" id="active-tuning-subtitle">Tuning: C Standard • Click any glowing fret dot to hear its exact pitch & interval</p>
           </div>
 
           <!-- Neck Scale Switcher & 24-TET Microtonal Toggle -->
@@ -263,12 +371,12 @@
 
           <div class="flex flex-wrap items-center gap-4 text-xs">
             <div class="flex items-center gap-1.5">
-              <label for="tempo-slider" class="text-slate-400">Tempo:</label>
+              <label for="tempo-slider" class="text-slate-200">Tempo:</label>
               <input id="tempo-slider" type="range" min="50" max="130" value="100" class="w-20 accent-amber-500" />
               <span id="tempo-readout" class="mono font-bold text-amber-300">100%</span>
             </div>
             <div class="flex items-center gap-1.5">
-              <label for="transpose-slider" class="text-slate-400" title="Shift pitch without retuning your guitar!">Shift:</label>
+              <label for="transpose-slider" class="text-slate-200" title="Shift pitch without retuning your guitar!">Shift:</label>
               <input id="transpose-slider" type="range" min="-7" max="7" value="0" class="w-20 accent-cyan-400" />
               <span id="transpose-readout" class="mono font-bold text-cyan-300">0 st</span>
             </div>
@@ -309,11 +417,11 @@
 
         <div class="p-3.5 rounded-xl bg-slate-900/90 border border-amber-500/30 space-y-2">
           <div class="flex items-center justify-between text-xs">
-            <span class="text-slate-400">Anchor Root Note:</span>
+            <span class="text-slate-200">Anchor Root Note:</span>
             <span class="font-bold text-amber-300 mono" id="dossier-root">C2</span>
           </div>
           <div class="flex items-center justify-between text-xs">
-            <span class="text-slate-400">Rhythmic Pulse / Meter:</span>
+            <span class="text-slate-200">Rhythmic Pulse / Meter:</span>
             <span class="font-bold text-cyan-300" id="dossier-meter">4/4</span>
           </div>
           <div class="pt-2 border-t border-slate-800">
@@ -329,14 +437,14 @@
               <span>🎬 Masterclass Breakdown &amp; Artist Secrets</span>
               <span class="px-2 py-0.5 rounded text-xs bg-amber-500/20 text-amber-300 font-mono">Guitar Moves &amp; Beato</span>
             </span>
-            <span id="dossier-video-count" class="text-xs text-slate-400">Curated Audio &amp; Technique Video</span>
+            <span id="dossier-video-count" class="text-xs text-slate-200">Curated Audio &amp; Technique Video</span>
           </div>
           <div id="dossier-videos" class="space-y-2"></div>
         </div>
 
         <!-- Signature Play-Along Tracks -->
         <div>
-          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">🎧 Play Along Immediately on YouTube Music:</h4>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-200 mb-1.5">🎧 Play Along Immediately on YouTube Music:</h4>
           <div class="space-y-1.5 max-h-[168px] overflow-y-auto pr-1" id="dossier-tracks"></div>
         </div>
 
@@ -348,7 +456,7 @@
           </div>
           <canvas id="studio-osc-canvas" role="img" aria-label="Real-Time Tube Saturation Waveshaper and Pitch Detector Oscilloscope" width="380" height="64" class="w-full h-[64px] rounded-lg bg-slate-900 border border-slate-800"></canvas>
           <div class="flex items-center justify-between gap-1.5 pt-1">
-            <span class="text-xs text-slate-400 font-semibold">Push to Motorized CSV / Captor X:</span>
+            <span class="text-xs text-slate-200 font-semibold">Push to Motorized CSV / Captor X:</span>
             <button onclick="beamSparkChannel(0)" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-xs font-bold text-slate-200 transition">CH 1</button>
             <button onclick="beamSparkChannel(1)" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-xs font-bold text-slate-200 transition">CH 2</button>
             <button onclick="beamSparkChannel(2)" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-xs font-bold text-slate-200 transition">CH 3</button>
@@ -358,7 +466,7 @@
           <div class="pt-2 border-t border-slate-800 space-y-1">
             <div class="flex items-center justify-between text-xs">
               <label for="titan-session-note" class="font-bold text-rose-400">📌 Personal Rig & Ear Redline Note:</label>
-              <span id="session-note-status" class="text-xs text-slate-400">Auto-saved</span>
+              <span id="session-note-status" class="text-xs text-slate-200">Auto-saved</span>
             </div>
             <input id="titan-session-note" type="text" placeholder="e.g., Baritone #2 neck P90, roll guitar vol to 7 for intro..."
                    class="w-full bg-slate-900 text-xs text-white px-2.5 py-1.5 rounded-lg border border-slate-800 focus:border-rose-400 focus:outline-none" />
@@ -392,42 +500,44 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-2.5" id="spark-chain-grid"></div>
 
       <!-- 5D PARAMETRIC NAM KNOBS -->
-      <div class="spark-grille rounded-2xl p-4 border border-amber-500/30 flex flex-col lg:flex-row items-center justify-between gap-4">
-        <div class="flex items-center gap-3">
-          <div class="px-3 py-2 rounded-xl spark-gold text-slate-950 font-black text-xs tracking-wider uppercase shadow">
-            ORIGIN 50 × NAM GREY-BOX
-          </div>
-          <div>
-            <h3 class="text-sm font-bold text-white">Continuous 5D FiLM Conditioned Amp Controls</h3>
-            <p class="text-xs text-slate-400">Adjust any knob to hear non-linear FiLM tube saturation + Passive FMV Tone Stack &amp; stream MIDI CC 20–27 to REAPER/NAMix or CSV targets to your RP2040 Motorized Pots.</p>
+      <div class="spark-grille rounded-2xl p-4 border border-amber-500/40 space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div class="px-3 py-1.5 rounded-xl spark-gold text-slate-950 font-black text-xs tracking-wider uppercase shadow shrink-0">
+              ORIGIN 50 × NAM GREY-BOX
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-white">Continuous FiLM Tube Saturation + Passive FMV Tone Stack Controls</h3>
+              <p class="text-xs text-slate-200">Adjust any knob to hear non-linear FiLM tube saturation + Passive FMV Tone Stack &amp; stream MIDI CC 20–27 to REAPER/NAMix or CSV targets to your RP2040 Motorized Pots.</p>
+            </div>
           </div>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 w-full lg:w-auto flex-1 max-w-3xl">
-          <div class="bg-slate-950/90 p-2.5 rounded-xl border border-slate-800 text-center">
-            <label for="knob-gain" class="block text-xs font-bold text-slate-400 uppercase">Gain / Drive</label>
-            <input id="knob-gain" type="range" min="0" max="10" step="0.1" value="7.2" class="w-full accent-amber-500 my-1" />
-            <div id="val-gain" class="mono text-sm font-extrabold text-amber-400">7.2</div>
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 w-full">
+          <div class="bg-slate-950/95 p-3 rounded-xl border border-slate-700 text-center">
+            <label for="knob-gain" class="block text-xs font-extrabold text-slate-100 uppercase tracking-wide">Gain / Drive</label>
+            <input id="knob-gain" type="range" min="0" max="10" step="0.1" value="7.2" class="w-full accent-amber-400 my-1.5" />
+            <div id="val-gain" class="mono text-base font-extrabold text-amber-300">7.2</div>
           </div>
-          <div class="bg-slate-950/90 p-2.5 rounded-xl border border-slate-800 text-center">
-            <label for="knob-bass" class="block text-xs font-bold text-slate-400 uppercase">Bass</label>
-            <input id="knob-bass" type="range" min="0" max="10" step="0.1" value="6.6" class="w-full accent-amber-500 my-1" />
-            <div id="val-bass" class="mono text-sm font-extrabold text-amber-400">6.6</div>
+          <div class="bg-slate-950/95 p-3 rounded-xl border border-slate-700 text-center">
+            <label for="knob-bass" class="block text-xs font-extrabold text-slate-100 uppercase tracking-wide">Bass (FMV)</label>
+            <input id="knob-bass" type="range" min="0" max="10" step="0.1" value="6.6" class="w-full accent-amber-400 my-1.5" />
+            <div id="val-bass" class="mono text-base font-extrabold text-amber-300">6.6</div>
           </div>
-          <div class="bg-slate-950/90 p-2.5 rounded-xl border border-slate-800 text-center">
-            <label for="knob-mid" class="block text-xs font-bold text-slate-400 uppercase">Mid (Q Peak)</label>
-            <input id="knob-mid" type="range" min="0" max="10" step="0.1" value="8.8" class="w-full accent-amber-500 my-1" />
-            <div id="val-mid" class="mono text-sm font-extrabold text-amber-400">8.8</div>
+          <div class="bg-slate-950/95 p-3 rounded-xl border border-slate-700 text-center">
+            <label for="knob-mid" class="block text-xs font-extrabold text-slate-100 uppercase tracking-wide">Mid (Q Peak)</label>
+            <input id="knob-mid" type="range" min="0" max="10" step="0.1" value="8.8" class="w-full accent-amber-400 my-1.5" />
+            <div id="val-mid" class="mono text-base font-extrabold text-amber-300">8.8</div>
           </div>
-          <div class="bg-slate-950/90 p-2.5 rounded-xl border border-slate-800 text-center">
-            <label for="knob-treble" class="block text-xs font-bold text-slate-400 uppercase">Treble</label>
-            <input id="knob-treble" type="range" min="0" max="10" step="0.1" value="4.2" class="w-full accent-amber-500 my-1" />
-            <div id="val-treble" class="mono text-sm font-extrabold text-amber-400">4.2</div>
+          <div class="bg-slate-950/95 p-3 rounded-xl border border-slate-700 text-center">
+            <label for="knob-treble" class="block text-xs font-extrabold text-slate-100 uppercase tracking-wide">Treble / Tilt</label>
+            <input id="knob-treble" type="range" min="0" max="10" step="0.1" value="4.2" class="w-full accent-amber-400 my-1.5" />
+            <div id="val-treble" class="mono text-base font-extrabold text-amber-300">4.2</div>
           </div>
-          <div class="bg-slate-950/90 p-2.5 rounded-xl border border-slate-800 text-center">
-            <label for="knob-master" class="block text-xs font-bold text-slate-400 uppercase">Master / Vol</label>
-            <input id="knob-master" type="range" min="0" max="10" step="0.1" value="7.8" class="w-full accent-amber-500 my-1" />
-            <div id="val-master" class="mono text-sm font-extrabold text-amber-400">7.8</div>
+          <div class="bg-slate-950/95 p-3 rounded-xl border border-slate-700 text-center">
+            <label for="knob-master" class="block text-xs font-extrabold text-slate-100 uppercase tracking-wide">Master / EL34</label>
+            <input id="knob-master" type="range" min="0" max="10" step="0.1" value="7.8" class="w-full accent-amber-400 my-1.5" />
+            <div id="val-master" class="mono text-base font-extrabold text-amber-300">7.8</div>
           </div>
         </div>
       </div>
@@ -483,8 +593,8 @@
           <!-- Input Source 2: File Upload (MP3, WAV, FLAC, Stem) -->
           <div class="md:col-span-4 bg-slate-950/80 p-3 rounded-xl border border-slate-800/80 space-y-1.5">
             <label for="clone-audio-file" class="block text-xs font-bold text-slate-300 uppercase">2. Upload Song / Guitar Stem (.wav, .mp3)</label>
-            <input id="clone-audio-file" type="file" accept="audio/*" class="w-full text-xs text-slate-400 file:mr-2 file:py-1 file:px-2.5 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-slate-800 file:text-amber-300 hover:file:bg-slate-700 cursor-pointer" />
-            <div class="text-xs text-slate-400">Client-side Web Audio FFT analysis (Zero cloud upload, 100% private)</div>
+            <input id="clone-audio-file" type="file" accept="audio/*" class="w-full text-xs text-slate-200 file:mr-2 file:py-1 file:px-2.5 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-slate-800 file:text-amber-300 hover:file:bg-slate-700 cursor-pointer" />
+            <div class="text-xs text-slate-200">Client-side Web Audio FFT analysis (Zero cloud upload, 100% private)</div>
           </div>
 
           <!-- Input Source 3: Live Microphone / Audio Interface Line-In -->
@@ -495,19 +605,19 @@
                 <span id="mic-cloner-dot" class="w-2 h-2 rounded-full bg-slate-500"></span>
                 <span id="mic-cloner-text">Start 5s Live Capture</span>
               </button>
-              <button onclick="stopMicCapture()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-red-500/20 text-slate-400 hover:text-red-300 text-xs transition border border-slate-700" title="Reset Analyzer">Reset</button>
+              <button onclick="stopMicCapture()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-red-500/20 text-slate-200 hover:text-red-300 text-xs transition border border-slate-700" title="Reset Analyzer">Reset</button>
             </div>
-            <div class="text-xs text-slate-400">Play a sustained power chord or riff into your mic</div>
+            <div class="text-xs text-slate-200">Play a sustained power chord or riff into your mic</div>
           </div>
         </div>
 
         <!-- Cloner Telemetry & Spectral Readout -->
         <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex flex-wrap items-center justify-between gap-4 text-xs">
           <div class="flex flex-wrap items-center gap-4">
-            <div><span class="text-slate-400">RMS Energy:</span> <span id="clone-stat-rms" class="mono text-amber-400 font-bold">-24.2 dB</span></div>
-            <div><span class="text-slate-400">Crest Factor:</span> <span id="clone-stat-crest" class="mono text-amber-400 font-bold">4.8 dB</span></div>
-            <div><span class="text-slate-400">Spectral Centroid:</span> <span id="clone-stat-centroid" class="mono text-amber-400 font-bold">1,840 Hz</span></div>
-            <div><span class="text-slate-400">Bass/Mid/Treble Ratio:</span> <span id="clone-stat-ratio" class="mono text-amber-400 font-bold">34% / 46% / 20%</span></div>
+            <div><span class="text-slate-200">RMS Energy:</span> <span id="clone-stat-rms" class="mono text-amber-400 font-bold">-24.2 dB</span></div>
+            <div><span class="text-slate-200">Crest Factor:</span> <span id="clone-stat-crest" class="mono text-amber-400 font-bold">4.8 dB</span></div>
+            <div><span class="text-slate-200">Spectral Centroid:</span> <span id="clone-stat-centroid" class="mono text-amber-400 font-bold">1,840 Hz</span></div>
+            <div><span class="text-slate-200">Bass/Mid/Treble Ratio:</span> <span id="clone-stat-ratio" class="mono text-amber-400 font-bold">34% / 46% / 20%</span></div>
           </div>
 
           <!-- Hardware Burning Controls -->
@@ -592,7 +702,7 @@
           <div id="sysex-hex-log" aria-live="polite" class="mono text-xs text-emerald-300 bg-slate-900 p-2.5 rounded-xl border border-slate-800 h-[92px] overflow-y-auto leading-relaxed">
             CSV:ORIGIN50_TAKE_01,0.72,1.00,0.65,0.66,0.88,0.42,0.78,0.55
           </div>
-          <div class="flex items-center justify-between text-xs text-slate-400">
+          <div class="flex items-center justify-between text-xs text-slate-200">
             <span>MIDI CC 20–27: 8-Knob Origin 50 / NAMix</span>
             <span>CC 1: Morph • CC 64: Riff Loop</span>
           </div>
@@ -639,7 +749,7 @@
           <div class="w-full h-2.5 rounded-full bg-slate-900 border border-slate-800 overflow-hidden">
             <div id="lhs-progress-bar" class="h-full bg-gradient-to-r from-amber-500 via-emerald-400 to-cyan-400 w-0 transition-all duration-200"></div>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed">
+          <p class="text-xs text-slate-200 leading-relaxed">
             With your <strong>IK Multimedia AXE I/O</strong> (Out 5 AMP OUT → <strong>Little Labs Redeye 3D</strong> → <strong>Marshall Origin 50</strong> → <strong>Two Notes Torpedo Captor X</strong>) and <strong>RP2040 Motorized Potentiometers</strong>, this sequencer emits `CSV:TAKE_XX,...` over USB-Serial to physically turn your amp knobs, records the return in <strong>REAPER</strong>, and fuses the 20 static `.nam` models via `combine_static_nams.py` + `marshall_fmv_tonestack.py`.
           </p>
         </div>
@@ -700,7 +810,7 @@
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
                 <span class="text-xs font-bold uppercase text-cyan-400">${slot.type}</span>
-                <span class="text-xs mono text-slate-400">${slot.scale}</span>
+                <span class="text-xs mono text-slate-200">${slot.scale}</span>
               </div>
               <input type="text" value="${slot.name}" aria-label="Guitar slot name ${idx + 1}" onchange="updateArsenalSlot(${idx}, 'name', this.value)"
                      class="w-full bg-slate-900 text-xs font-extrabold text-white px-2 py-1 rounded border border-slate-700 focus:border-amber-400 focus:outline-none" />
@@ -1344,16 +1454,16 @@ true); // Little-endian IEEE-754 float
         return `
           <button onclick="selectRig('${r.id}')"
                   class="defer-rig-card text-left p-2.5 rounded-xl border transition flex flex-col justify-between gap-1 ${isSelected
-                    ? 'bg-amber-500/20 border-amber-500 shadow-md shadow-amber-500/10'
-                    : 'bg-slate-900/80 border-slate-800 hover:border-slate-700'}">
+                    ? 'bg-slate-900 border-2 border-amber-400 ring-2 ring-amber-400/30 shadow-lg'
+                    : 'bg-slate-900/90 border-slate-700/80 hover:border-slate-500'}">
             <div>
               <div class="flex items-center justify-between gap-1">
-                <span class="text-xs font-extrabold uppercase px-1.5 py-0.5 rounded bg-slate-800 text-amber-300">Vol ${r.vol} • ${r.category}</span>
-                <span class="text-xs mono text-slate-400">${r.bpm}</span>
+                <span class="text-xs font-extrabold uppercase px-1.5 py-0.5 rounded ${isSelected ? 'bg-amber-400 text-slate-950' : 'bg-slate-800 text-amber-300'}">Vol ${r.vol} • ${r.category}</span>
+                <span class="text-xs mono font-semibold text-slate-200">${r.bpm} BPM</span>
               </div>
               <div class="text-xs font-extrabold text-white mt-1 truncate">${r.titan}</div>
             </div>
-            <div class="text-xs text-slate-400 truncate">${r.tuning_name.split('(')[0]}</div>
+            <div class="text-xs font-medium text-slate-200 truncate">${r.tuning_name.split('(')[0]}</div>
           </button>
         `;
       }).join('');
@@ -1374,7 +1484,7 @@ true); // Little-endian IEEE-754 float
       const fretW = usableW / numFrets;
       const stringGap = usableH / 5;
 
-      let out = '';
+      let out = `<rect x="0" y="0" width="${width}" height="${height}" rx="10" fill="#090d16" />`;
       out += `<rect x="${leftPad}" y="${topPad - 10}" width="${usableW}" height="${usableH + 20}" rx="6" fill="#131c2e" stroke="#334155" stroke-width="1.5" />`;
       out += `<rect x="${leftPad - 6}" y="${topPad - 10}" width="6" height="${usableH + 20}" fill="#f59e0b" />`;
 
@@ -1450,13 +1560,13 @@ true); // Little-endian IEEE-754 float
       const grid = document.getElementById('spark-chain-grid');
       const sc = activeRig.spark_chain;
       const slots = [
-        { key: 'gate', title: '1. GATE', color: '#10b981' },
-        { key: 'comp', title: '2. COMP / WAH', color: '#06b6d4' },
-        { key: 'drive', title: '3. DRIVE / FUZZ', color: '#f97316' },
-        { key: 'amp', title: '4. AMP HEAD', color: '#f59e0b' },
-        { key: 'mod', title: '5. MOD / EQ', color: '#a855f7' },
-        { key: 'delay', title: '6. DELAY', color: '#3b82f6' },
-        { key: 'reverb', title: '7. REVERB', color: '#ec4899' }
+        { key: 'gate', title: '1. GATE', cls: 'text-emerald-300' },
+        { key: 'comp', title: '2. COMP / Z-TONE', cls: 'text-cyan-300' },
+        { key: 'drive', title: '3. BOOST / TILT', cls: 'text-amber-300' },
+        { key: 'amp', title: '4. AMP HEAD (NAM)', cls: 'text-amber-300' },
+        { key: 'mod', title: '5. FMV TONE STACK', cls: 'text-purple-300' },
+        { key: 'delay', title: '6. DOUBLER / DELAY', cls: 'text-sky-300' },
+        { key: 'reverb', title: '7. DYNIR CAB / ROOM', cls: 'text-rose-300' }
       ];
 
       grid.innerHTML = slots.map(slot => {
@@ -1465,8 +1575,8 @@ true); // Little-endian IEEE-754 float
           <div class="p-3 rounded-xl bg-slate-900/95 border border-slate-800 flex flex-col justify-between gap-2">
             <div>
               <div class="flex items-center justify-between">
-                <span class="text-xs font-black uppercase tracking-wider" style="color:${slot.color}">${slot.title}</span>
-                <span class="text-xs px-1.5 py-0.5 rounded font-bold ${block.on ? 'bg-emerald-500/20 text-emerald-300' : 'bg-slate-800 text-slate-500'}">
+                <span class="text-xs font-black uppercase tracking-wider ${slot.cls}">${slot.title}</span>
+                <span class="text-xs px-1.5 py-0.5 rounded font-bold ${block.on ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40' : 'bg-slate-800 text-slate-200 border border-slate-600'}">
                   ${block.on ? 'ON' : 'BYPASS'}
                 </span>
               </div>
@@ -1517,7 +1627,7 @@ true); // Little-endian IEEE-754 float
         <div class="flex items-center justify-between bg-slate-900/80 px-3 py-1.5 rounded-xl border border-slate-800 text-xs">
           <span class="text-slate-200 font-semibold truncate pr-2">🎵 ${t}</span>
           <a href="https://music.youtube.com/search?q=${encodeURIComponent(activeRig.titan.split('/')[0] + ' ' + t)}" target="_blank" rel="noopener"
-             class="px-2.5 py-0.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold shrink-0">
+             class="px-2.5 py-0.5 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold shrink-0">
             Play on YTM ↗
           </a>
         </div>
